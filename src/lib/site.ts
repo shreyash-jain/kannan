@@ -4,7 +4,7 @@ export const site = {
   tagline:
     "A guest farm 48 minutes from Kruger, rebuilt by Anneli & Matthew since August 2025.",
   description:
-    "Honest, affordable accommodation and a flexible wedding venue in Hazyview, Mpumalanga — 48 minutes from Kruger Mpumalanga International Airport. Self-catering rooms, an 8-bed backpackers, and shaded camping under mango trees on a fully fenced farm. From R350 a night with breakfast.",
+    "Honest, affordable accommodation and a flexible wedding venue in Hazyview, Mpumalanga — 48 minutes from Kruger Mpumalanga International Airport. Lodge units, basic twin rooms, an 8-bed backpackers and shaded camping under mango trees on a fully fenced farm. From R250 per person per night.",
   url: "https://kanaanguestfarm.com",
   locale: "en_ZA",
   region: "Mpumalanga, South Africa",
@@ -46,11 +46,25 @@ export const site = {
     krugerGateMinutesMin: 30,
     krugerGateMinutesMax: 45,
   },
+  // Owner confirmed 2026-05-11: R250 pp/night BASE, breakfast is extra on
+  // request. Earlier brief said "breakfast included" — that was wrong.
   pricing: {
-    fromZAR: 350, // From R350 per person per night, breakfast included
+    fromZAR: 250, // From R250 per person per night, breakfast NOT included
     currency: "ZAR",
     currencySymbol: "R",
-    breakfastIncluded: true,
+    breakfastIncluded: false,
+  },
+  meals: {
+    breakfast: {
+      pricePerPersonZAR: 60,
+      type: "continental",
+      onRequest: true,
+    },
+    dinner: {
+      onRequest: true,
+      style: "Local dishes and braai",
+    },
+    halaal: false,
   },
   capacity: {
     sleepingTotal: 50, // ~40–50 person sleeping capacity across rooms

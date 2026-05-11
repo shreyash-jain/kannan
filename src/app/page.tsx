@@ -17,11 +17,15 @@ export default function HomePage() {
     },
     {
       q: "What does it cost?",
-      a: `From R${site.pricing.fromZAR} per person per night, breakfast included. That is significantly below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
+      a: `From R${site.pricing.fromZAR} per person per night for a room, before breakfast and dinner. That is significantly below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
+    },
+    {
+      q: "Is breakfast included?",
+      a: `No — breakfast is on request, at R${site.meals.breakfast.pricePerPersonZAR} per person for a continental spread. Tell us the day before and we'll have it ready. We can also cook dinner on request — local Lowveld dishes and braai. We do not have a halaal option.`,
     },
     {
       q: "What kinds of accommodation do you offer?",
-      a: `Self-catering lodge units with en-suite bathrooms and kitchenettes; an ${site.capacity.backpackersBeds}-bed backpackers hostel with shared facilities; and ${site.capacity.campsitePitches} shaded campsites under mango trees, with power and water at every pitch.`,
+      a: `Self-catering lodge units with en-suite bathrooms and kitchenettes; basic twin rooms with two single beds and an en-suite bathroom; an ${site.capacity.backpackersBeds}-bed backpackers hostel with shared facilities; and ${site.capacity.campsitePitches} shaded campsites under mango trees with power and water at every pitch.`,
     },
     {
       q: "Do you host weddings or large gatherings?",
@@ -33,7 +37,7 @@ export default function HomePage() {
     },
     {
       q: "What is included in a stay?",
-      a: "Breakfast, free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property.",
+      a: "Free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property. Breakfast and dinner are available on request, at extra cost.",
     },
   ];
 
@@ -53,7 +57,7 @@ export default function HomePage() {
             a guest farm near Kruger.
           </>
         }
-        lede="This is what happened next. A working farm, slowly rebuilt — self-catering lodge rooms, an 8-bed backpackers and shaded camping under forty-year-old mango trees. Honest pricing, breakfast included, and the people who run it answering the phone."
+        lede="This is what happened next. A working farm, slowly rebuilt — self-catering lodge rooms, basic twin rooms, an 8-bed backpackers and shaded camping under forty-year-old mango trees. Honest pricing, and the people who run it answering the phone."
         image={img.heroFarm}
         primaryCta={{ href: whatsappLink("home"), label: "Enquire on WhatsApp" }}
         secondaryCta={{ href: "/stay", label: "See where you sleep" }}
@@ -181,11 +185,12 @@ export default function HomePage() {
           <div>
             <Eyebrow>Chapter 4 · The Welcome</Eyebrow>
             <H2 className="mt-3">
-              From R{site.pricing.fromZAR} a night, breakfast included.
+              From R{site.pricing.fromZAR} per person, per night.
             </H2>
             <p className="mt-4 max-w-2xl text-ink/80">
-              Real beds. Real coffee. Real people answering the phone. Three
-              honest ways to stay on one fenced, family-run farm.
+              Real beds. Real people answering the phone. Four honest ways to
+              stay on one fenced, family-run farm — and breakfast or dinner on
+              request when you want them.
             </p>
           </div>
           <Link
@@ -196,13 +201,20 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <AccommodationCard
             href="/stay#lodge"
             name="Self-catering lodge units"
             summary="Free-standing units with en-suite bathrooms and kitchenettes. Quiet rooms designed for rest after a day in the bush."
             image={img.lodgeRoom}
             meta="Lodge"
+          />
+          <AccommodationCard
+            href="/stay#twin"
+            name="Basic twin rooms"
+            summary="Two single beds, en-suite bathroom, wall fan. Honest comfort for travellers who want a clean place to sleep and nothing they don't need."
+            image={img.twinRoom}
+            meta="Twin"
           />
           <AccommodationCard
             href="/stay#backpackers"

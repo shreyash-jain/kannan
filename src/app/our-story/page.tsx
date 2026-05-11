@@ -146,19 +146,24 @@ export default function OurStoryPage() {
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Chapter 4 · The Welcome</Eyebrow>
             <H2 className="mt-3 mb-5">
-              From R{site.pricing.fromZAR} a night, with breakfast.
+              From R{site.pricing.fromZAR} per person, per night.
             </H2>
             <p>
-              Real beds. Real coffee. Real people answering the phone. Honest
-              pricing because that is the kind of place we wanted to build, not
-              because we were trying to undercut someone else.
+              Real beds. Real people answering the phone. Honest pricing
+              because that is the kind of place we wanted to build, not because
+              we were trying to undercut someone else.
             </p>
             <p>
               The lodge rooms have en-suite bathrooms and kitchenettes. The
-              backpackers has{" "}
-              {site.capacity.backpackersBeds} beds and a kitchen everyone
-              shares. The camping is shaded by trees older than most of the
-              people who pitch under them.
+              basic twin rooms have two single beds and an en-suite. The
+              backpackers has {site.capacity.backpackersBeds} beds and a
+              kitchen everyone shares. The camping is shaded by trees older
+              than most of the people who pitch under them.
+            </p>
+            <p>
+              Breakfast and dinner are on request — R{site.meals.breakfast.pricePerPersonZAR} for a continental
+              spread, local Lowveld dishes and braai for dinner. Tell us the
+              day before. We do not have a halaal option.
             </p>
             <p>
               <Link
