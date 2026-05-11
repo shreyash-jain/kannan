@@ -27,7 +27,7 @@ export function Section({
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-medium uppercase tracking-[0.22em] text-clay">
+    <p className="text-xs font-medium uppercase tracking-[0.22em] text-ochre">
       {children}
     </p>
   );
@@ -43,7 +43,7 @@ export function H1({
   return (
     <h1
       className={cn(
-        "font-display text-4xl leading-[1.05] tracking-tight text-bush-deep sm:text-5xl lg:text-6xl",
+        "font-display text-4xl leading-[1.05] tracking-tight text-forest-deep sm:text-5xl lg:text-6xl",
         className,
       )}
     >
@@ -62,7 +62,7 @@ export function H2({
   return (
     <h2
       className={cn(
-        "font-display text-3xl leading-tight tracking-tight text-bush-deep sm:text-4xl",
+        "font-display text-3xl leading-tight tracking-tight text-forest-deep sm:text-4xl",
         className,
       )}
     >
