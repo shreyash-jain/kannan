@@ -63,21 +63,20 @@ export default function WeddingsPage() {
             <Eyebrow>The setting</Eyebrow>
             <H2 className="mt-3 mb-5">A whole farm, for a whole weekend.</H2>
             <p>
-              Imagine a wedding weekend where everything slows down — where the
-              only thing that truly matters is the two of you, and the people
-              who know your story best. Not a rushed wedding day, but a
-              carefully curated experience where every moment feels personal
-              and completely your own.
+              The kind of weekend where nobody is in a hurry. Where the only
+              thing that really matters is the two of you, and the people
+              you&apos;ve asked to come.
             </p>
             <p>
-              Family and friends arrive early, settle into rooms or pitch under
-              the mango trees, and spend meaningful time together before the
-              celebration even begins. Bachelor and bachelorette evenings on
-              the farm, a rehearsal dinner under soft lights, and the wedding
-              day itself — relaxed, intentional, unmistakably yours.
+              Family and friends arrive on Friday — they settle into rooms or
+              pitch a tent under the mango trees, and the weekend starts long
+              before the ceremony does. There&apos;s a rehearsal dinner. A
+              fire. People who haven&apos;t seen each other in years finding
+              each other again. And then the wedding day, in its own time —
+              relaxed, intentional, and unmistakably yours.
             </p>
             <p className="text-sm italic text-muted">
-              The longer wedding essay (drafted by Anneli) will be polished and
+              Anneli&apos;s longer wedding essay will be polished and
               published in the journal shortly.
             </p>
           </div>
@@ -122,14 +121,14 @@ export default function WeddingsPage() {
         <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Practical information</Eyebrow>
-            <H2 className="mt-3 mb-5">What a weekend looks like.</H2>
+            <H2 className="mt-3 mb-5">How a weekend usually goes.</H2>
             <ul className="mt-4 space-y-3 text-ink/85">
-              <li><strong className="font-medium text-forest-deep">Two- and three-day weekends.</strong> Friday arrival, Saturday celebration, Sunday slow morning.</li>
+              <li><strong className="font-medium text-forest-deep">Two- and three-day weekends.</strong> Friday arrival, Saturday celebration, a Sunday morning nobody is rushing.</li>
               <li><strong className="font-medium text-forest-deep">On-site sleeping</strong> for {site.capacity.sleepingTotal}+ across the lodge rooms, plus camping for many more.</li>
-              <li><strong className="font-medium text-forest-deep">Indoor + outdoor</strong> — main venue, wedding lawn, marquee-ready open space.</li>
-              <li><strong className="font-medium text-forest-deep">Breakfast &amp; dinner set menus on request</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} pp, local dishes and braai for dinner.</li>
-              <li><strong className="font-medium text-forest-deep">Catering & bar</strong> arranged on request.</li>
-              <li><strong className="font-medium text-forest-deep">Fully fenced, motorised gate, secure parking.</strong></li>
+              <li><strong className="font-medium text-forest-deep">Indoor and outdoor</strong> — main venue, wedding lawn, and open space ready for a marquee.</li>
+              <li><strong className="font-medium text-forest-deep">Breakfast and dinner set menus on order</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} pp, local dishes and braai for dinner.</li>
+              <li><strong className="font-medium text-forest-deep">Catering and bar</strong> arranged on request.</li>
+              <li><strong className="font-medium text-forest-deep">Fully fenced</strong>, motorised gate, secure parking.</li>
             </ul>
           </div>
 
@@ -137,14 +136,14 @@ export default function WeddingsPage() {
             <Eyebrow>Also a venue for</Eyebrow>
             <H2 className="mt-3 mb-5">Gatherings of every kind.</H2>
             <p>
-              Family reunions. Milestone birthdays. School excursions and
-              corporate retreats. Team-building weekends. The same farm, sized
-              to the group.
+              Family reunions, milestone birthdays, school groups, corporate
+              retreats and team-building weekends — they all happen here.
+              Same farm, just sized to the group.
             </p>
             <p>
-              Tell us what you&apos;re planning and we&apos;ll suggest a layout
-              that fits — bedding configuration, marquee or no marquee,
-              catering options.
+              Tell us what you&apos;re putting together and we&apos;ll talk
+              through what works — bedding, marquee or no marquee, what to do
+              about food.
             </p>
           </div>
         </div>
@@ -157,8 +156,8 @@ export default function WeddingsPage() {
           </Eyebrow>
           <H2 className="mt-3 text-bone">Let&apos;s talk about your weekend.</H2>
           <p className="mt-6 text-bone/85">
-            WhatsApp is the fastest way to reach us. We reply personally — no
-            forms, no auto-responders.
+            WhatsApp is the easiest way to get hold of us. You&apos;ll get a
+            real reply from one of us — no forms, no auto-responders.
           </p>
           <div className="mt-7">
             <Link

@@ -13,31 +13,31 @@ export default function HomePage() {
   const faqs = [
     {
       q: "Where is Kanaan Guest Farm?",
-      a: `On the R40 in Hazyview, Mpumalanga, in South Africa's Lowveld. ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport (KMIA) and ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the Kruger National Park.`,
+      a: `We're on the R40 in Hazyview, Mpumalanga, in South Africa's Lowveld — about ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport (KMIA), and ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the Kruger National Park.`,
     },
     {
-      q: "What does it cost?",
-      a: `From R${site.pricing.fromZAR} per person sharing, per night (pps). That is well below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
+      q: "What does a stay cost?",
+      a: `From R${site.pricing.fromZAR} per person sharing, per night — well below what most places around here ask. We didn't price it low to undercut anyone; it's just what we think a fair stay should cost.`,
     },
     {
       q: "Is breakfast included?",
-      a: `No — breakfast is a set menu on request, at R${site.meals.breakfast.pricePerPersonZAR} per person for a continental spread. Tell us the day before and we'll have it ready. Dinner is also a set menu on request — local Lowveld dishes and braai. We do not have a halaal option.`,
+      a: `It isn't bundled in — we keep the room rate clean. If you'd like breakfast, it's a R${site.meals.breakfast.pricePerPersonZAR} continental set menu when you order it the day before. Dinner is also on order: local Lowveld dishes and a proper braai. We don't have a halaal option.`,
     },
     {
-      q: "What kinds of accommodation do you offer?",
-      a: `Self-catering lodge units with en-suite bathrooms and kitchenettes; basic twin rooms with two single beds and an en-suite bathroom; an ${site.capacity.backpackersBeds}-bed backpackers hostel with shared facilities; and ${site.capacity.campsitePitches} shaded campsites under mango trees with power and water at every pitch.`,
+      q: "What kinds of rooms do you have?",
+      a: `Four, really. Self-catering lodge units with their own bathrooms and a small kitchen; basic twin rooms with two single beds and an en-suite; an ${site.capacity.backpackersBeds}-bed backpackers with shared facilities; and ${site.capacity.campsitePitches} shaded camping pitches with water and power at every one.`,
     },
     {
       q: "Do you host weddings or large gatherings?",
-      a: `Yes — Kanaan is a flexible wedding and events venue. Up to ${site.capacity.wedding.indoor}+ indoor, ${site.capacity.wedding.withMarquee}+ with a marquee, and ${site.capacity.wedding.withCamping}+ when we include the camping ground. We also host family reunions, school excursions, corporate retreats and team-building weekends.`,
+      a: `Yes. The farm works as a flexible wedding and events venue — up to ${site.capacity.wedding.indoor}+ indoors, ${site.capacity.wedding.withMarquee}+ with a marquee, or ${site.capacity.wedding.withCamping}+ if we open the camping ground too. We also do family reunions, school groups, corporate retreats and team-building weekends.`,
     },
     {
       q: "How close is the Kruger National Park?",
-      a: `Hazyview is one of the closest gateway towns to Kruger. Phabeni and Numbi gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes by road, so an early-morning game drive is easy from the farm.`,
+      a: `Hazyview is one of the closest towns to Kruger. The Phabeni and Numbi gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes by road, so an early-morning game drive is easy to do without having to leave the farm at four in the morning.`,
     },
     {
-      q: "What is included in a stay?",
-      a: "Free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property. Breakfast and dinner are available as set menus on request, at extra cost.",
+      q: "What's included in a stay?",
+      a: "Free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, the entertainment area, and secure parking inside a fenced, gated property. Breakfast and dinner are set menus you can order on the side.",
     },
   ];
 
@@ -57,7 +57,7 @@ export default function HomePage() {
             a guest farm near Kruger.
           </>
         }
-        lede="This is what happened next. A working farm, slowly rebuilt — self-catering lodge rooms, basic twin rooms, an 8-bed backpackers and shaded camping under forty-year-old mango trees. Honest pricing, and the people who run it answering the phone."
+        lede="This is what happened next. A working farm, slowly being put back together — lodge rooms, basic twin rooms, an 8-bed backpackers and shaded camping under mango trees that are older than we are. Prices that feel fair. When you call, one of us picks up."
         image={img.heroFarm}
         primaryCta={{ href: whatsappLink("home"), label: "Enquire on WhatsApp" }}
         secondaryCta={{ href: "/stay", label: "See where you sleep" }}
@@ -84,19 +84,19 @@ export default function HomePage() {
           </div>
           <div>
             <Eyebrow>Chapter 1 · The Discovery</Eyebrow>
-            <H2 className="mt-3">A tired old farm, and what nobody else saw.</H2>
+            <H2 className="mt-3">A tired old farm, and what nobody else was looking at.</H2>
             <div className="prose-kanaan mt-5">
               <p>
-                We bought Kanaan in August 2025. From the road it looked like
-                every other Lowveld farm that had drifted out of love. We
-                walked it once and knew.
+                We bought Kanaan in August 2025. From the road it didn&apos;t
+                look like much — the kind of place travellers tend to drive
+                past without slowing down. But we got out, and we walked it.
               </p>
               <p>
-                Forty-year-old mango trees. Bushveld that stretched until it
-                ran out of light. A river that ran cold in winter. And a
-                position — {site.distances.kmiaMinutes} minutes from the
-                airport — that no amount of renovation can buy you if you
-                don&apos;t already have it.
+                The mango trees had been there forty years. The bushveld
+                stretched on until the light gave out. A cold river runs
+                through it even in summer. And the airport is{" "}
+                {site.distances.kmiaMinutes} minutes away — a thing no amount
+                of renovation can give you if you don&apos;t already have it.
               </p>
               <p>
                 <Link
@@ -125,18 +125,20 @@ export default function HomePage() {
           </div>
           <div className="md:order-1">
             <Eyebrow>Chapter 2 · The Promise</Eyebrow>
-            <H2 className="mt-3">Every review we read. Every thing we changed.</H2>
+            <H2 className="mt-3">We read every review, then started fixing.</H2>
             <div className="prose-kanaan mt-5">
               <p>
-                Before we touched a single wall, we read every review the
-                property had ever received. Taps. Breakfast. The gate. The
-                WiFi. The small things that decide whether a stay feels
-                generous or grudging.
+                Before we picked up a paintbrush, we sat down and read every
+                review the place had ever received. The complaints were never
+                about the views or the price — they were about small things.
+                A tap that wasn&apos;t quite right. Breakfast that needed
+                lifting. A gate that stuck. WiFi that came and went.
               </p>
               <p>
-                We worked through them, one by one. We are still working
-                through them. The farm we hand you today is not the farm we
-                bought.
+                But small is what decides whether a stay feels generous or
+                grudging. So we&apos;ve been working through them, one at a
+                time, and we&apos;re still going. The Kanaan you walk into
+                today isn&apos;t the one we bought.
               </p>
             </div>
           </div>
@@ -158,15 +160,17 @@ export default function HomePage() {
           <div>
             <Eyebrow>Chapter 3 · The Land</Eyebrow>
             <H2 className="mt-3">
-              {site.distances.kmiaMinutes} minutes from the airport. The
-              geography does the heavy lifting.
+              {site.distances.kmiaMinutes} minutes from the airport — the
+              geography does most of the work.
             </H2>
             <Lede>
-              Fly into KMIA. Be on the farm before lunch. Phabeni and Numbi gates
-              are {site.distances.krugerGateMinutesMin}–{site.distances.krugerGateMinutesMax}{" "}
-              minutes away — an early-morning self-drive is easy from here. The
-              Panorama Route is a day. The Sabie River and its waterfalls a
-              short drive.
+              Land at KMIA in the morning and you can be on our veranda by
+              lunch. The Phabeni and Numbi gates of Kruger are{" "}
+              {site.distances.krugerGateMinutesMin}–{site.distances.krugerGateMinutesMax}{" "}
+              minutes away, depending on which suits your route — close enough
+              for an easy early-morning drive without leaving here at four.
+              The Panorama Route is a day. The Sabie River and its waterfalls
+              are a short drive in the other direction.
             </Lede>
             <Link
               href="/the-land"
@@ -188,10 +192,12 @@ export default function HomePage() {
               From R{site.pricing.fromZAR} per person sharing, per night.
             </H2>
             <p className="mt-4 max-w-2xl text-ink/80">
-              Well below the regional average. Real beds. Real people
-              answering the phone. Four honest ways to stay on one fenced,
-              family-run farm — and a breakfast or dinner set menu on request
-              when you want them.
+              That&apos;s well below what most places around here charge.
+              Comfortable beds, hot showers, a real person on the other end of
+              the phone. Four ways to stay — pick whichever fits your trip —
+              and if you&apos;d like breakfast or dinner sorted while
+              you&apos;re here, we&apos;ll put on a set menu. Just tell us the
+              day before.
             </p>
           </div>
           <Link
@@ -250,9 +256,10 @@ export default function HomePage() {
             <Eyebrow>What every stay includes</Eyebrow>
             <H2 className="mt-3">No fine print.</H2>
             <Lede>
-              Breakfast. Free WiFi. A pool kept ready year-round. An
-              entertainment area with pool table and foosball. Hiking and
-              mountain biking trails on the farm. Laundry on request.
+              Free WiFi across the property, a pool that&apos;s kept ready all
+              year, an entertainment area with a pool table and foosball, and
+              walking and mountain biking trails that start at the gate. We do
+              laundry too — just ask.
             </Lede>
             <Link
               href="/stay"
@@ -271,10 +278,12 @@ export default function HomePage() {
             <Eyebrow>Chapter 5 · The Celebration</Eyebrow>
             <H2 className="mt-3">A wedding weekend, in the Lowveld.</H2>
             <Lede>
-              A celebration that begins on a Friday and ends on a Sunday.
-              Guests sleeping on-site. The fire crackling late. Up to{" "}
-              {site.capacity.wedding.withCamping}+ people across the lodge, the
-              wedding lawn, the marquee and the camping ground.
+              The best weddings we&apos;ve seen here are the ones that
+              don&apos;t end on Saturday. Friday night the families arrive and
+              find each other around a fire. Saturday is the day. Sunday
+              nobody is in a hurry. We can hold up to{" "}
+              {site.capacity.wedding.withCamping}+ people across the lodge,
+              the wedding lawn, the marquee and the camping ground.
             </Lede>
             <Link
               href="/weddings"
@@ -311,15 +320,16 @@ export default function HomePage() {
       <section className="bg-forest text-bone">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-ochre">
-            What we are aiming for
+            What we&apos;re aiming for
           </p>
           <p className="mt-6 font-display text-2xl leading-relaxed sm:text-3xl">
-            Spacious. Clean. Safe. Quiet. Warm hosts and bushveld views that
-            go on forever — that last part is just geography.
+            Spacious, clean, safe and quiet. Warm hosts. And views that go on
+            forever — though that last part we can&apos;t take credit for.
+            That&apos;s just the geography of the place.
           </p>
           <p className="mt-6 text-sm text-bone/70">
-            Real guest reviews from Google and Booking.com will land here
-            shortly.
+            Real guest reviews from Google and Booking.com will land here once
+            our Google profile is verified.
           </p>
         </div>
       </section>
@@ -328,13 +338,14 @@ export default function HomePage() {
       <Section>
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Chapter 6 · The Future</Eyebrow>
-          <H2 className="mt-3">We are not done.</H2>
+          <H2 className="mt-3">We&apos;re not finished.</H2>
           <div className="prose-kanaan mx-auto mt-6">
             <p>
-              The vegetable garden goes in this season. The communal fire pit
-              is being rebuilt before winter. The wedding lawn is being
-              levelled. If you stayed with us last year, you will notice a few
-              things. If you come back next year, you will notice more.
+              The vegetable garden goes in this season. The fire pit is being
+              rebuilt before winter. We&apos;re levelling the wedding lawn. If
+              you stayed with us last year, you&apos;ll already see some
+              things have changed. Come back next year and you&apos;ll see
+              more.
             </p>
           </div>
           <p className="mt-6 font-display text-lg italic text-muted">

@@ -31,8 +31,8 @@ export default function TheLandPage() {
       />
       <PageHero
         eyebrow="The Land"
-        title="Big country, small drive."
-        lede={`${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport. ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates. The Panorama Route, the Sabie River and the Lowveld waterfalls are all an easy day from the farm.`}
+        title="Big country, short drives."
+        lede={`We&apos;re ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, and ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of Kruger. The Panorama Route, the Sabie River and the Lowveld waterfalls are all easy days out from the farm.`}
       />
 
       <Section>
@@ -41,19 +41,19 @@ export default function TheLandPage() {
             image={img.kruger}
             eyebrow="Kruger National Park"
             title="Phabeni & Numbi gates"
-            body={`${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes by road. Early-morning self-drives leave the farm before sunrise and are back for lunch.`}
+            body={`${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes by road, depending on the gate. Leave here before sunrise and you'll be at the gate when it opens, and back at the farm for lunch.`}
           />
           <PlaceCard
             image={img.panorama}
             eyebrow="Panorama Route"
             title="God's Window, Blyde Canyon"
-            body="A full day on the escarpment — God's Window, Bourke's Luck Potholes, the Three Rondavels and the Blyde River Canyon."
+            body="A full day along the escarpment — God's Window, Bourke's Luck Potholes, the Three Rondavels and the Blyde River Canyon. Most people split it across two trips."
           />
           <PlaceCard
             image={img.sabieRiver}
             eyebrow="Sabie River"
             title="Greenery & waterfalls"
-            body="The Sabie waterfalls cluster, river trails and shaded picnic spots — a short drive from the farm."
+            body="The Sabie waterfalls cluster, river trails and shaded picnic spots, all a short drive from us."
           />
         </div>
       </Section>
@@ -101,9 +101,9 @@ export default function TheLandPage() {
           items={[
             { title: "Hiking trails", body: "Marked trails through the farm and into the bushveld behind it." },
             { title: "Mountain biking", body: "Single-track and farm roads — bring your own bike." },
-            { title: "Swimming pool", body: "Kept ready year-round, with shade and seating." },
-            { title: "Entertainment area", body: "Pool table, foosball, and a communal braai for evening gatherings." },
-            { title: "Mango grove", body: "Forty-year-old mango trees shade the camping ground and a quiet reading spot." },
+            { title: "Swimming pool", body: "Kept ready all year, with shade and seating around it." },
+            { title: "Entertainment area", body: "Pool table, foosball, and a communal braai for an easy evening." },
+            { title: "Mango grove", body: "The mango trees are forty years old. They shade the camping ground and a corner where most people end up reading." },
             { title: "Stars", body: "Far enough from town that the night sky still feels like the night sky." },
           ]}
         />
@@ -114,8 +114,9 @@ export default function TheLandPage() {
           <Eyebrow>Plan your route</Eyebrow>
           <H2 className="mt-3">Tell us what you want to see.</H2>
           <Lede>
-            We&apos;ll send you a rough day-by-day plan — Kruger, Panorama,
-            Sabie — that fits your stay.
+            Send us what you&apos;re hoping to see and we&apos;ll sketch a
+            rough day-by-day — Kruger, Panorama, Sabie — that fits the days
+            you&apos;re here.
           </Lede>
           <div className="mt-7">
             <Link
