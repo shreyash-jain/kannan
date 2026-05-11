@@ -19,7 +19,7 @@ const planned = [
   { n: 1, chapter: "The Discovery", title: "Why we bought a guest farm we had never seen" },
   { n: 2, chapter: "The Promise", title: "Every review we read. Every thing we changed." },
   { n: 3, chapter: "The Land", title: "What 48 minutes from Kruger actually feels like" },
-  { n: 4, chapter: "The Welcome", title: "What R350 a night near Kruger actually buys you" },
+  { n: 4, chapter: "The Welcome", title: "What R250 a night near Kruger actually buys you" },
   { n: 5, chapter: "The Celebration", title: "An intimate wedding weekend in Hazyview" },
   { n: 6, chapter: "The Future", title: "What we are building next at Kanaan" },
 ] as const;

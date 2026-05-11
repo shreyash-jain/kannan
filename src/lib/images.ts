@@ -44,6 +44,12 @@ export const img = {
     width: 1200,
     height: 1600,
   },
+  twinRoom: {
+    src: "/images/twin-room.jpg",
+    alt: "A basic twin room at Kanaan — two single beds with a scalloped wooden headboard, neutral linen, simple bedside table.",
+    width: 1600,
+    height: 1200,
+  },
   backpackers: {
     src: "/images/backpackers-dorm.jpg",
     alt: "A bunk bed inside the Kanaan backpackers dorm — pine-clad walls, big windows looking out into the trees, a ceiling fan.",
