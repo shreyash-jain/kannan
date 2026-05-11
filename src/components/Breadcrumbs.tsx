@@ -21,7 +21,7 @@ export function Breadcrumbs({
         aria-label="Breadcrumb"
         className="mx-auto max-w-7xl px-5 pt-6 lg:px-8"
       >
-        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-mute">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
           {trail.map((t, i) => {
             const last = i === trail.length - 1;
             return (
@@ -31,7 +31,7 @@ export function Breadcrumbs({
                     {t.label}
                   </span>
                 ) : (
-                  <Link href={t.href} className="hover:text-clay">
+                  <Link href={t.href} className="hover:text-ochre">
                     {t.label}
                   </Link>
                 )}

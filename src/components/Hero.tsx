@@ -29,19 +29,25 @@ export function Hero({
           sizes="100vw"
           className="object-cover"
         />
+        {/* Stronger overlay + left-side fade so the headline always reads
+            against varied imagery (bright skies, light foliage, etc.) */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/65"
+          className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/75"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-transparent"
         />
       </div>
 
       <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 sm:pb-32 sm:pt-44 lg:px-8 lg:pt-52">
-        <div className="max-w-3xl">
-          <span className="text-xs font-medium uppercase tracking-[0.22em] text-cream/85">
+        <div className="max-w-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
+          <span className="text-xs font-medium uppercase tracking-[0.22em] text-bone/90">
             {eyebrow}
           </span>
-          <H1 className="mt-4 text-cream">{title}</H1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/90 sm:text-xl">
+          <H1 className="mt-4 !text-bone">{title}</H1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bone sm:text-xl">
             {lede}
           </p>
           {(primaryCta || secondaryCta) && (
@@ -49,7 +55,7 @@ export function Hero({
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
-                  className="inline-flex items-center rounded-full bg-clay px-6 py-3 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-clay-deep"
+                  className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone shadow-sm transition-colors hover:bg-ochre-deep"
                 >
                   {primaryCta.label}
                 </Link>
@@ -57,7 +63,7 @@ export function Hero({
               {secondaryCta && (
                 <Link
                   href={secondaryCta.href}
-                  className="inline-flex items-center rounded-full border border-cream/40 bg-cream/5 px-6 py-3 text-sm font-medium text-cream backdrop-blur transition-colors hover:bg-cream/10"
+                  className="inline-flex items-center rounded-full border border-bone/40 bg-bone/5 px-6 py-3 text-sm font-medium text-bone backdrop-blur transition-colors hover:bg-bone/10"
                 >
                   {secondaryCta.label}
                 </Link>

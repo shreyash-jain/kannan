@@ -106,3 +106,102 @@ export function faqLd(faqs: { q: string; a: string }[]) {
     })),
   };
 }
+
+export function videoObjectLd(opts: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string; // ISO 8601
+  contentUrl?: string;
+  embedUrl?: string;
+  duration?: string; // ISO 8601 duration, e.g. "PT5M"
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: opts.name,
+    description: opts.description,
+    thumbnailUrl: opts.thumbnailUrl,
+    uploadDate: opts.uploadDate,
+    contentUrl: opts.contentUrl,
+    embedUrl: opts.embedUrl,
+    duration: opts.duration,
+    publisher: { "@id": `${site.url}/#lodging` },
+  };
+}
+
+export function eventVenueLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  image?: string;
+  maximumAttendeeCapacity: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EventVenue",
+    name: opts.name,
+    description: opts.description,
+    url: `${site.url}${opts.path}`,
+    image: opts.image,
+    maximumAttendeeCapacity: opts.maximumAttendeeCapacity,
+    parentOrganization: { "@id": `${site.url}/#lodging` },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressRegion: site.address.region,
+      postalCode: site.address.postalCode,
+      addressCountry: site.address.countryCode,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: site.geo.lat,
+      longitude: site.geo.lng,
+    },
+    amenityFeature: [
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "On-site accommodation",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Camping",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Marquee-ready outdoor space",
+        value: true,
+      },
+    ],
+  };
+}
+
+export function articleLd(opts: {
+  headline: string;
+  description: string;
+  path: string;
+  image?: string;
+  datePublished: string; // ISO 8601
+  dateModified?: string;
+  authors?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    image: opts.image,
+    url: `${site.url}${opts.path}`,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    author: (opts.authors ?? site.hosts).map((name) => ({
+      "@type": "Person",
+      name,
+    })),
+    publisher: { "@id": `${site.url}/#lodging` },
+    mainEntityOfPage: `${site.url}${opts.path}`,
+  };
+}

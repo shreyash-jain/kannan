@@ -39,7 +39,7 @@ export default function ContactPage() {
                     href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full bg-bush px-5 py-2.5 text-sm font-medium text-cream hover:bg-bush-deep"
+                    className="inline-flex items-center rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-bone hover:bg-forest-deep"
                   >
                     WhatsApp {site.contact.whatsappDisplay}
                   </a>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 <li>
                   <Link
                     href={`tel:${site.contact.phonePrimary}`}
-                    className="text-ink/85 hover:text-clay"
+                    className="text-ink/85 hover:text-ochre"
                   >
                     Call {site.contact.phonePrimaryDisplay}
                   </Link>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <li>
                   <Link
                     href={`tel:${site.contact.phoneSecondary}`}
-                    className="text-ink/85 hover:text-clay"
+                    className="text-ink/85 hover:text-ochre"
                   >
                     Call {site.contact.phoneSecondaryDisplay}
                   </Link>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 <li>
                   <Link
                     href={`mailto:${site.contact.email}`}
-                    className="text-ink/85 hover:text-clay"
+                    className="text-ink/85 hover:text-ochre"
                   >
                     Email {site.contact.email}
                   </Link>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 <br />
                 {site.address.region}, {site.address.country}
               </p>
-              <p className="mt-3 text-xs text-mute">
+              <p className="mt-3 text-xs text-muted">
                 Fully fenced property with a motorised gate — please call
                 ahead on arrival.
               </p>
@@ -90,13 +90,13 @@ export default function ContactPage() {
               <Eyebrow>Hours</Eyebrow>
               <ul className="mt-4 space-y-2 text-sm text-ink/85">
                 <li>
-                  Check-in <span className="text-mute">{site.policies.checkIn}</span>
+                  Check-in <span className="text-muted">{site.policies.checkIn}</span>
                 </li>
                 <li>
-                  Check-out <span className="text-mute">{site.policies.checkOut}</span>
+                  Check-out <span className="text-muted">{site.policies.checkOut}</span>
                 </li>
                 <li>
-                  Quiet hours <span className="text-mute">{site.policies.quietHours}</span>
+                  Quiet hours <span className="text-muted">{site.policies.quietHours}</span>
                 </li>
               </ul>
             </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     href={site.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-clay"
+                    className="hover:text-ochre"
                   >
                     Instagram {site.social.instagramHandle}
                   </a>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                     href={site.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-clay"
+                    className="hover:text-ochre"
                   >
                     Facebook
                   </a>
