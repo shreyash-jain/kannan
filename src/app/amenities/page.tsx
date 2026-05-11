@@ -84,15 +84,15 @@ export default function AmenitiesPage() {
           </div>
           <ul className="space-y-3 text-ink/85">
             <li className="border-t border-black/10 pt-3">
-              <strong className="font-medium text-bush-deep">Check-in</strong>
+              <strong className="font-medium text-forest-deep">Check-in</strong>
               {" "}— 14:00–22:00. Please call ahead at the gate.
             </li>
             <li className="border-t border-black/10 pt-3">
-              <strong className="font-medium text-bush-deep">Check-out</strong>
+              <strong className="font-medium text-forest-deep">Check-out</strong>
               {" "}— 05:00–10:00. Rooms must be vacated by 10:00.
             </li>
             <li className="border-t border-black/10 pt-3">
-              <strong className="font-medium text-bush-deep">Quiet hours</strong>
+              <strong className="font-medium text-forest-deep">Quiet hours</strong>
               {" "}— After 23:00.
             </li>
             <li className="border-t border-black/10 pt-3">No smoking inside the rooms.</li>

@@ -133,7 +133,7 @@ export function ContactForm() {
       <div className="flex flex-wrap items-center gap-3 pt-2">
         <button
           type="submit"
-          className="inline-flex items-center rounded-full bg-clay px-6 py-3 text-sm font-medium text-cream hover:bg-clay-deep"
+          className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
         >
           Send by email
         </button>
@@ -141,7 +141,7 @@ export function ContactForm() {
           href={whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-full border border-bush/30 px-6 py-3 text-sm font-medium text-bush-deep hover:bg-bush/5"
+          className="inline-flex items-center rounded-full border border-forest/30 px-6 py-3 text-sm font-medium text-forest-deep hover:bg-forest/5"
         >
           Send on WhatsApp
         </a>
@@ -151,7 +151,7 @@ export function ContactForm() {
         .input {
           width: 100%;
           border-radius: 0.75rem;
-          background: var(--color-cream);
+          background: var(--color-bone);
           border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
           padding: 0.65rem 0.85rem;
           font-size: 0.95rem;
@@ -160,9 +160,9 @@ export function ContactForm() {
         }
         .input:focus {
           outline: none;
-          border-color: var(--color-bush);
+          border-color: var(--color-forest);
           box-shadow: 0 0 0 3px
-            color-mix(in srgb, var(--color-bush) 25%, transparent);
+            color-mix(in srgb, var(--color-forest) 25%, transparent);
         }
       `}</style>
     </form>
@@ -180,7 +180,7 @@ function Field({
 }) {
   return (
     <label htmlFor={htmlFor} className="block">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-mute">
+      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted">
         {label}
       </span>
       {children}

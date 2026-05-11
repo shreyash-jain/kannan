@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Earthy Lowveld palette */
-  --color-cream: #faf6ee;
-  --color-sand: #f0e7d4;
-  --color-clay: #b85c3c;
-  --color-clay-deep: #8e3f25;
-  --color-bush: #4f5d3f;
-  --color-bush-deep: #344028;
-  --color-gold: #c68a36;
-  --color-ink: #1f1d18;
-  --color-mute: #6c6557;
+  /* Kanaan palette — warm, earthy, story-led */
+  --color-ink: #1f1a17;
+  --color-bone: #faf7f2;
+  --color-sand: #e9dfce;
+  --color-ochre: #c97b3a;
+  --color-ochre-deep: #a45f25;
+  --color-forest: #3b5c3f;
+  --color-forest-deep: #283f2b;
+  --color-rust: #8c3b1b;
+  --color-muted: #6b6358;
 
-  --color-background: var(--color-cream);
+  --color-background: var(--color-bone);
   --color-foreground: var(--color-ink);
 
   --font-display: var(--font-fraunces);
@@ -20,7 +20,7 @@
 }
 
 :root {
-  --background: var(--color-cream);
+  --background: var(--color-bone);
   --foreground: var(--color-ink);
   color-scheme: light;
 }
@@ -38,8 +38,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-clay);
-  color: var(--color-cream);
+  background: var(--color-ochre);
+  color: var(--color-bone);
 }
 
 .font-display {
@@ -48,9 +48,10 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Long-read body — brief specifies 1.6–1.7 line-height for a storytelling site */
 .prose-kanaan p {
   font-size: 1.0625rem;
-  line-height: 1.75;
+  line-height: 1.7;
   color: color-mix(in srgb, var(--color-ink) 88%, transparent);
 }
 

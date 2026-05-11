@@ -1,106 +1,123 @@
-// Curated Unsplash images used as placeholders. Each entry documents the slot
-// it fills so the property's real photographs can be swapped in later. Replace
-// the `src` URLs with `/images/<filename>.jpg` once originals are placed in
-// /public/images.
+// Real photographs of Kanaan Guest Farm. Sources sit in /public/images/ and
+// are served directly by Next.js — no remote image host needed.
+//
+// The owners are still producing additional photography and five videos
+// (delivery ~2026-05-12). When new media arrives, replace the relevant entry
+// here rather than touching component code.
 
 export type Img = { src: string; alt: string; width: number; height: number };
 
-const u = (id: string, w = 1600) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=70`;
-
 export const img = {
   heroFarm: {
-    src: u("photo-1547471080-7cc2caa01a7e"),
-    alt: "Sunset over the Lowveld bushveld near Hazyview, with golden grass and acacia trees.",
+    src: "/images/hero-farm.jpg",
+    alt: "The mango grove at Kanaan Guest Farm in Hazyview — forty-year-old trees shading the camping ground and the path to the lodge.",
     width: 1600,
-    height: 1067,
+    height: 2000,
   },
   pool: {
-    src: u("photo-1540541338287-41700207dee6"),
-    alt: "Swimming pool surrounded by garden lawn at a countryside guest farm.",
-    width: 1600,
-    height: 1067,
+    src: "/images/pool.jpg",
+    alt: "The swimming pool at Kanaan Guest Farm, framed by palms and a brick-paved deck.",
+    width: 1200,
+    height: 1600,
   },
   lodgeRoom: {
-    src: u("photo-1505693416388-ac5ce068fe85"),
-    alt: "Simple, calm en-suite bedroom with neutral linen at a self-catering lodge unit.",
-    width: 1600,
-    height: 1067,
+    src: "/images/lodge-room.jpg",
+    alt: "A lodge room at Kanaan Guest Farm — crisp white linen, simple side table, window onto the bushveld.",
+    width: 1280,
+    height: 1600,
   },
   lodgeKitchen: {
-    src: u("photo-1556909114-f6e7ad7d3136"),
-    alt: "Compact self-catering kitchenette with kettle, hob and crockery.",
-    width: 1600,
-    height: 1067,
+    src: "/images/lodge-kitchen.jpg",
+    alt: "The self-catering kitchenette in a Kanaan lodge unit — solid wood cabinetry, microwave, two-plate hob, full sink and crockery shelf.",
+    width: 1200,
+    height: 1600,
   },
   veranda: {
-    src: u("photo-1505691938895-1758d7feb511"),
-    alt: "Shaded veranda overlooking countryside greenery at golden hour.",
+    src: "/images/lodge-veranda.jpg",
+    alt: "The front of a lodge unit at Kanaan — paved patio, a built-in braai under shade, and the bushveld just beyond.",
     width: 1600,
-    height: 1067,
+    height: 1200,
+  },
+  lodgeBathroom: {
+    src: "/images/lodge-bathroom.jpg",
+    alt: "An en-suite bathroom at Kanaan — concrete-finish walls, walk-in shower with rain head and a wooden-framed mirror.",
+    width: 1200,
+    height: 1600,
   },
   backpackers: {
-    src: u("photo-1520250497591-112f2f40a3f4"),
-    alt: "Bunk beds in a relaxed backpackers dorm with wooden floors and warm light.",
+    src: "/images/backpackers-dorm.jpg",
+    alt: "A bunk bed inside the Kanaan backpackers dorm — pine-clad walls, big windows looking out into the trees, a ceiling fan.",
     width: 1600,
-    height: 1067,
+    height: 1200,
+  },
+  backpackersBathroom: {
+    src: "/images/backpackers-bathroom.jpg",
+    alt: "The shared backpackers bathroom at Kanaan — a row of basins on a polished wooden counter, corrugated-iron stall partitions.",
+    width: 1600,
+    height: 1200,
   },
   campingMango: {
-    src: u("photo-1504280390367-361c6d9f38f4"),
-    alt: "Tent pitched in dappled shade under large trees at a campsite.",
+    src: "/images/camping-mango.jpg",
+    alt: "The Kanaan camping ground — open grass shaded by forty-year-old mango trees, room for tents and rooftop campers.",
     width: 1600,
-    height: 1067,
+    height: 1200,
   },
   campfire: {
-    src: u("photo-1478131143081-80f7f84ca84d"),
-    alt: "Campfire glowing at dusk with starlight overhead in the African bushveld.",
+    src: "/images/on-farm-view.jpg",
+    alt: "The view from the stone braai terrace at Kanaan — brick paving, a built-in fire, and the Lowveld escarpment beyond.",
     width: 1600,
-    height: 1067,
+    height: 1200,
   },
   hiking: {
-    src: u("photo-1551632811-561732d1e306"),
-    alt: "Hiker on a Lowveld mountain trail with sweeping bushveld views.",
+    src: "/images/landscape.jpg",
+    alt: "The Lowveld around Kanaan — smooth rock outcrops, valley forest and farmland rolling toward the escarpment.",
     width: 1600,
-    height: 1067,
+    height: 920,
   },
   mtb: {
-    src: u("photo-1485965120184-e220f721d03e"),
-    alt: "Mountain biker on a single-track trail through grassland.",
+    src: "/images/landscape.jpg",
+    alt: "The trails around Kanaan run through Lowveld bushveld and over weathered rock — terrain for hiking and mountain biking.",
     width: 1600,
-    height: 1067,
+    height: 920,
   },
   kruger: {
-    src: u("photo-1516426122078-c23e76319801"),
-    alt: "African elephants crossing a road at sunset in Kruger National Park.",
+    src: "/images/kruger-elephant.jpg",
+    alt: "An elephant by a waterhole near Kruger — the park's Phabeni and Numbi gates are 30–45 minutes from the farm.",
     width: 1600,
-    height: 1067,
+    height: 1600,
   },
   panorama: {
-    src: u("photo-1591967833506-fe1eb2f5e7df"),
-    alt: "Cliffs and forested gorges of the Panorama Route near Graskop, Mpumalanga.",
-    width: 1600,
-    height: 1067,
+    src: "/images/panorama-rondavels.jpg",
+    alt: "The Three Rondavels on the Panorama Route — a viewpoint over the Blyde River Canyon, about ninety minutes from Kanaan.",
+    width: 1200,
+    height: 1200,
   },
   sabieRiver: {
-    src: u("photo-1518173946687-a4c8892bbd9f"),
-    alt: "River winding through subtropical greenery in the Lowveld.",
-    width: 1600,
-    height: 1067,
+    src: "/images/sabie-waterfall.jpg",
+    alt: "A waterfall in the Sabie waterfall cluster near Hazyview — clear pools and a short forest walk in.",
+    width: 1200,
+    height: 1600,
   },
   groups: {
-    src: u("photo-1529390079861-591de354faf5"),
-    alt: "Group of friends sharing a meal outdoors at a long wooden table.",
+    src: "/images/on-farm-view.jpg",
+    alt: "The terrace at Kanaan — set up for an evening gathering, with the Lowveld escarpment in the distance.",
     width: 1600,
-    height: 1067,
+    height: 1200,
   },
   hosts: {
-    src: u("photo-1469854523086-cc02fe5d8800"),
-    alt: "Warm, hospitable farmhouse setting with morning light.",
+    src: "/images/hosts.jpg",
+    alt: "Anneli and Matthew — owners of Kanaan Guest Farm since August 2025.",
     width: 1600,
-    height: 1067,
+    height: 1400,
+  },
+  pillows: {
+    src: "/images/kanaan-pillows.jpg",
+    alt: "Crisp white pillows embroidered with the Kanaan name on an ochre throw — a detail from a lodge room.",
+    width: 1200,
+    height: 1200,
   },
   ogDefault: {
-    src: u("photo-1547471080-7cc2caa01a7e", 1200),
+    src: "/images/og-default.jpg",
     alt: "Kanaan Guest Farm — Hazyview, near Kruger National Park.",
     width: 1200,
     height: 630,

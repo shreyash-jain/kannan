@@ -77,7 +77,7 @@ export default function AttractionsPage() {
           {attractions.map((a) => (
             <li
               key={a.name}
-              className="overflow-hidden rounded-2xl bg-cream ring-1 ring-black/5"
+              className="overflow-hidden rounded-2xl bg-bone ring-1 ring-black/5"
             >
               <div className="relative aspect-16/9">
                 <Image
@@ -89,10 +89,10 @@ export default function AttractionsPage() {
                 />
               </div>
               <div className="p-6">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-clay">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-ochre">
                   {a.drive}
                 </p>
-                <h3 className="mt-2 font-display text-2xl text-bush-deep">
+                <h3 className="mt-2 font-display text-2xl text-forest-deep">
                   {a.name}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink/80">
