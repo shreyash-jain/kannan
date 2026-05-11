@@ -92,7 +92,7 @@ export default function StayPage() {
       <PageHero
         eyebrow="Stay"
         title="Four honest ways to stay near Kruger."
-        lede={`From R${site.pricing.fromZAR} per person sharing, per night — well below the regional average. Lodge units, basic twin rooms, a relaxed backpackers and shaded camping, all on one fenced, family-run farm. Breakfast and dinner set menus on request.`}
+        lede={`From R${site.pricing.fromZAR} a person, sharing — well below what most places around here will ask. Pick from lodge rooms, basic twin rooms, a relaxed backpackers or a shaded camping pitch. All on one fenced, family-run farm. Breakfast and dinner are on order when you want them.`}
       />
 
       <Section>
@@ -121,13 +121,15 @@ export default function StayPage() {
           body={
             <>
               <p>
-                Free-standing units with private en-suite bathrooms and a
-                working kitchenette — kettle, hob, fridge, basic crockery.
-                Quiet rooms designed for rest after a day in the bush.
+                Each unit stands on its own, with its own bathroom and a small
+                kitchen that has what you need — a kettle, a two-plate hob, a
+                fridge, plates and mugs. Quiet rooms, set apart enough that
+                you don&apos;t really hear each other.
               </p>
               <p>
-                Sleeping configurations vary across the units, so tell us your
-                group and we&apos;ll match the best fit.
+                The bedding setup is different from one unit to the next, so
+                tell us who&apos;s coming and we&apos;ll pick the right one
+                for you.
               </p>
             </>
           }
@@ -147,14 +149,14 @@ export default function StayPage() {
           body={
             <>
               <p>
-                Two single beds, an en-suite bathroom, a wall fan and a small
-                table to share a coffee at. No kitchenette, no clutter — built
-                for travellers who want a clean, private place to sleep
-                without paying for things they don&apos;t need.
+                Two single beds, an en-suite, a wall fan and a small table for
+                a morning coffee. No kitchen, no extras — just a clean,
+                private room.
               </p>
               <p>
-                Ideal for friends sharing, or a parent and child on a Kruger
-                trip.
+                They suit friends sharing, or a parent and child on a Kruger
+                trip — anyone who wants somewhere proper to sleep without
+                paying for things they&apos;re not going to use.
               </p>
             </>
           }
@@ -175,14 +177,15 @@ export default function StayPage() {
           body={
             <>
               <p>
-                An {site.capacity.backpackersBeds}-bed dorm with shared
-                bathroom, a communal kitchen and a laid-back living space.
-                Built for hikers, overlanders, and travellers moving through
-                the Lowveld at their own pace.
+                {site.capacity.backpackersBeds} beds, a shared bathroom, a
+                kitchen everyone uses, and a lounge where you&apos;ll usually
+                find someone reading or making coffee. It&apos;s built for
+                hikers, overlanders, and travellers moving through the
+                Lowveld at their own pace.
               </p>
               <p>
-                Stock up in Hazyview before you arrive — the closest large
-                supermarkets are a short drive away.
+                Bring food from Hazyview when you arrive — the closest big
+                supermarkets are a short drive into town.
               </p>
             </>
           }
@@ -198,20 +201,18 @@ export default function StayPage() {
         <StaySection
           id="camping"
           eyebrow={`Camping · ${site.capacity.campsitePitches} shaded pitches`}
-          title="Camping under mango trees."
+          title="Camping under the mango trees."
           body={
             <>
               <p>
-                {site.capacity.campsitePitches} shaded campsites under
-                forty-year-old mango trees, with running water and power at
-                every pitch. Suits tents, rooftop campers and overlanding
-                vehicles.
+                {site.capacity.campsitePitches} pitches in the shade of the
+                mango trees, with water and power at every one. Tents,
+                rooftop campers, big overlanders — they all fit.
               </p>
               <p>
-                For large gatherings we can pitch up to{" "}
-                {site.capacity.campingPeople} people across the camping
-                ground — useful for school groups, family reunions, and
-                wedding overflow.
+                When the camping ground opens up for a wedding, a school
+                group or a family reunion, we can put up to{" "}
+                {site.capacity.campingPeople} people on it.
               </p>
             </>
           }
@@ -232,32 +233,33 @@ export default function StayPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="max-w-3xl">
             <Eyebrow>Dining</Eyebrow>
-            <H2 className="mt-3">Set menus on request, not assumptions.</H2>
+            <H2 className="mt-3">Set menus on order, not assumptions.</H2>
             <Lede>
-              We don&apos;t bundle meals into the room price — you eat when you
-              want it. Order a set-menu breakfast or dinner the day before and
-              we&apos;ll cook for you. Otherwise the kitchen in your unit or
-              the supermarkets in Hazyview have you covered.
+              We don&apos;t bundle meals into the room price — you eat when
+              you feel like it. If you&apos;d like breakfast or dinner, just
+              order it the day before and we&apos;ll cook. Otherwise
+              there&apos;s a kitchen in your unit, or the supermarkets in
+              Hazyview when you head into town.
             </Lede>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <DiningCard
               label={`Breakfast · R${site.meals.breakfast.pricePerPersonZAR} pp`}
-              title="Continental set menu, on request"
-              body="A R60-per-person continental breakfast — bread, cold cuts, cheese, fruit, coffee. Arrange it the day before with Anneli."
+              title="Continental set menu, on order"
+              body="A continental spread — bread, cold cuts, cheese, fruit, proper coffee. R60 a person. Let Anneli know the day before."
             />
             <DiningCard
-              label="Dinner · on request"
+              label="Dinner · on order"
               title="Set menu — local dishes and braai"
-              body="Tell us how many you are and we'll cook. Expect a fixed set menu of local Lowveld dishes and a proper South African braai. No halaal option available."
+              body="Tell us how many you are and we'll cook. It's a set menu — local Lowveld dishes and a proper South African braai. We don't have a halaal option."
             />
           </div>
 
           <p className="mt-10 max-w-2xl text-sm text-muted">
-            Lodge units have a kitchenette if you prefer to self-cater. The
-            backpackers has a shared kitchen. Hazyview town has groceries
-            within a short drive.
+            Lodge units have their own kitchen if you&apos;d rather cook. The
+            backpackers has a shared one. And Hazyview town is a short drive
+            for groceries.
           </p>
         </div>
       </section>
@@ -284,9 +286,9 @@ export default function StayPage() {
           <Eyebrow>Not sure which suits you?</Eyebrow>
           <H2 className="mt-3">Send us your dates.</H2>
           <Lede>
-            We&apos;ll suggest the right room, dorm bed or pitch for your group
-            and your trip — and let you know if you want breakfast or dinner
-            sorted.
+            Tell us when you&apos;re coming and who&apos;s with you. We&apos;ll
+            pick the right room, bed or pitch — and ask whether you&apos;d
+            like breakfast and dinner sorted while we&apos;re at it.
           </Lede>
           <div className="mt-7">
             <Link
