@@ -127,7 +127,7 @@ export default function WeddingsPage() {
               <li><strong className="font-medium text-forest-deep">Two- and three-day weekends.</strong> Friday arrival, Saturday celebration, Sunday slow morning.</li>
               <li><strong className="font-medium text-forest-deep">On-site sleeping</strong> for {site.capacity.sleepingTotal}+ across the lodge rooms, plus camping for many more.</li>
               <li><strong className="font-medium text-forest-deep">Indoor + outdoor</strong> — main venue, wedding lawn, marquee-ready open space.</li>
-              <li><strong className="font-medium text-forest-deep">Breakfast &amp; dinner on request</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} pp, local dishes and braai for dinner.</li>
+              <li><strong className="font-medium text-forest-deep">Breakfast &amp; dinner set menus on request</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} pp, local dishes and braai for dinner.</li>
               <li><strong className="font-medium text-forest-deep">Catering & bar</strong> arranged on request.</li>
               <li><strong className="font-medium text-forest-deep">Fully fenced, motorised gate, secure parking.</strong></li>
             </ul>
