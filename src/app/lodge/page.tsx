@@ -100,7 +100,7 @@ export default function LodgePage() {
               Cook breakfast before a Kruger gate-opening run or wind down the
               day with something simple on the stoep.
             </Lede>
-            <p className="mt-4 text-sm text-mute">
+            <p className="mt-4 text-sm text-muted">
               Tip: stock up in Hazyview before you arrive — the closest large
               supermarkets are in town, a short drive from the farm.
             </p>

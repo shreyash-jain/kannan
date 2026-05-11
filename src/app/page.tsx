@@ -6,30 +6,34 @@ import { AccommodationCard } from "@/components/AccommodationCard";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
-import { site } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 import { faqLd } from "@/lib/jsonld";
 
 export default function HomePage() {
   const faqs = [
     {
-      q: "Where is Kanaan Guest Farm located?",
-      a: "Kanaan Guest Farm is on the R40 in Hazyview, Mpumalanga (1242), in South Africa's Lowveld — a short drive from the Phabeni and Numbi gates of the Kruger National Park, the Sabie River and the Panorama Route.",
+      q: "Where is Kanaan Guest Farm?",
+      a: `On the R40 in Hazyview, Mpumalanga, in South Africa's Lowveld. ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport (KMIA) and ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the Kruger National Park.`,
+    },
+    {
+      q: "What does it cost?",
+      a: `From R${site.pricing.fromZAR} per person per night, breakfast included. That is significantly below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
     },
     {
       q: "What kinds of accommodation do you offer?",
-      a: "We offer self-catering lodge units with en-suite bathrooms and kitchenettes, an 8-bed backpackers hostel with shared facilities, and 10 shaded campsites under mango trees with power and water at every pitch.",
+      a: `Self-catering lodge units with en-suite bathrooms and kitchenettes; an ${site.capacity.backpackersBeds}-bed backpackers hostel with shared facilities; and ${site.capacity.campsitePitches} shaded campsites under mango trees, with power and water at every pitch.`,
     },
     {
-      q: "Is the property suitable for families and groups?",
-      a: "Yes. We host families, school excursions, corporate retreats and team-building groups. Catered meals can be arranged on request, and we have flexible bedding configurations.",
+      q: "Do you host weddings or large gatherings?",
+      a: `Yes — Kanaan is a flexible wedding and events venue. Up to ${site.capacity.wedding.indoor}+ indoor, ${site.capacity.wedding.withMarquee}+ with a marquee, and ${site.capacity.wedding.withCamping}+ when we include the camping ground. We also host family reunions, school excursions, corporate retreats and team-building weekends.`,
     },
     {
       q: "How close is the Kruger National Park?",
-      a: "Hazyview is one of the closest gateway towns to the Kruger. The Phabeni and Numbi entrance gates are roughly 30–45 minutes by road, making early-morning game drives easy from the farm.",
+      a: `Hazyview is one of the closest gateway towns to Kruger. Phabeni and Numbi gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes by road, so an early-morning game drive is easy from the farm.`,
     },
     {
-      q: "Do you have WiFi and a swimming pool?",
-      a: "Yes — free WiFi throughout, a swimming pool, an entertainment area with a pool table and foosball, hiking and mountain biking trails, and a fully fenced property with a motorised gate.",
+      q: "What is included in a stay?",
+      a: "Breakfast, free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property.",
     },
   ];
 
@@ -41,84 +45,184 @@ export default function HomePage() {
       />
 
       <Hero
-        eyebrow="Hazyview · Mpumalanga · Gateway to the Kruger"
+        eyebrow={`Hazyview · Mpumalanga · ${site.distances.kmiaMinutes} minutes from Kruger airport`}
         title={
           <>
-            A peaceful retreat in the
+            In August 2025, we bought{" "}
             <br className="hidden sm:block" />
-            Lowveld bushveld.
+            a guest farm near Kruger.
           </>
         }
-        lede="Self-catering lodge units, an 8-bed backpackers and shaded camping under towering mango trees on a working farm in Hazyview — minutes from the Kruger National Park, the Panorama Route and the Sabie River."
+        lede="This is what happened next. A working farm, slowly rebuilt — self-catering lodge rooms, an 8-bed backpackers and shaded camping under forty-year-old mango trees. Honest pricing, breakfast included, and the people who run it answering the phone."
         image={img.heroFarm}
-        primaryCta={{ href: "/contact", label: "Check availability" }}
-        secondaryCta={{ href: "/lodge", label: "Browse stays" }}
+        primaryCta={{ href: whatsappLink("home"), label: "Enquire on WhatsApp" }}
+        secondaryCta={{ href: "/stay", label: "See where you sleep" }}
       />
 
+      {/* Founder credit — brief Section 10, trust signal above the fold */}
+      <div className="border-b border-black/5 bg-sand">
+        <p className="mx-auto max-w-7xl px-5 py-3 text-center text-xs uppercase tracking-[0.18em] text-muted lg:px-8">
+          Built by {site.hosts.join(" & ")} · Owners since {site.ownedSince}
+        </p>
+      </div>
+
+      {/* Chapter 1 — The Discovery */}
       <Section>
-        <div className="grid gap-12 md:grid-cols-2 md:items-end">
-          <div>
-            <Eyebrow>The farm</Eyebrow>
-            <H2 className="mt-3">
-              Comfort meets nature on a working Lowveld farm.
-            </H2>
+        <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+            <Image
+              src={img.hosts.src}
+              alt={img.hosts.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
-          <div className="prose-kanaan">
-            <p>
-              Kanaan is a small, quiet farm where unspoilt bushveld meets simple,
-              well-kept rooms. Wake to birdsong, walk a trail before breakfast,
-              cool off in the pool and watch the day end from the veranda.
-            </p>
-            <p>
-              Lovingly run by {site.hosts.join(" and ")}, the property is fully
-              fenced with a motorised gate, kept clean and friendly, and built
-              for the way travellers actually move through this part of the
-              country — slowly, with curiosity, and at their own pace.
-            </p>
+          <div>
+            <Eyebrow>Chapter 1 · The Discovery</Eyebrow>
+            <H2 className="mt-3">A tired old farm, and what nobody else saw.</H2>
+            <div className="prose-kanaan mt-5">
+              <p>
+                We bought Kanaan in August 2025. From the road it looked like
+                every other Lowveld farm that had drifted out of love. We
+                walked it once and knew.
+              </p>
+              <p>
+                Forty-year-old mango trees. Bushveld that stretched until it
+                ran out of light. A river that ran cold in winter. And a
+                position — {site.distances.kmiaMinutes} minutes from the
+                airport — that no amount of renovation can buy you if you
+                don&apos;t already have it.
+              </p>
+              <p>
+                <Link
+                  href="/our-story"
+                  className="font-medium text-ochre hover:text-ochre-deep"
+                >
+                  Read the full story →
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
+      {/* Chapter 2 — The Promise */}
       <Section className="pt-0!">
+        <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div className="md:order-2 relative aspect-4/3 overflow-hidden rounded-2xl">
+            <Image
+              src={img.veranda.src}
+              alt={img.veranda.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="md:order-1">
+            <Eyebrow>Chapter 2 · The Promise</Eyebrow>
+            <H2 className="mt-3">Every review we read. Every thing we changed.</H2>
+            <div className="prose-kanaan mt-5">
+              <p>
+                Before we touched a single wall, we read every review the
+                property had ever received. Taps. Breakfast. The gate. The
+                WiFi. The small things that decide whether a stay feels
+                generous or grudging.
+              </p>
+              <p>
+                We worked through them, one by one. We are still working
+                through them. The farm we hand you today is not the farm we
+                bought.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Chapter 3 — The Land (Kruger gateway preview) */}
+      <section className="bg-sand">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
+          <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
+            <Image
+              src={img.kruger.src}
+              alt={img.kruger.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <Eyebrow>Chapter 3 · The Land</Eyebrow>
+            <H2 className="mt-3">
+              {site.distances.kmiaMinutes} minutes from the airport. The
+              geography does the heavy lifting.
+            </H2>
+            <Lede>
+              Fly into KMIA. Be on the farm before lunch. Phabeni and Numbi gates
+              are {site.distances.krugerGateMinutesMin}–{site.distances.krugerGateMinutesMax}{" "}
+              minutes away — an early-morning self-drive is easy from here. The
+              Panorama Route is a day. The Sabie River and its waterfalls a
+              short drive.
+            </Lede>
+            <Link
+              href="/the-land"
+              className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
+            >
+              What 48 minutes from Kruger actually feels like{" "}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Chapter 4 — The Welcome (price + stays) */}
+      <Section>
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <Eyebrow>Stays</Eyebrow>
-            <H2 className="mt-3">Three ways to stay.</H2>
+            <Eyebrow>Chapter 4 · The Welcome</Eyebrow>
+            <H2 className="mt-3">
+              From R{site.pricing.fromZAR} a night, breakfast included.
+            </H2>
+            <p className="mt-4 max-w-2xl text-ink/80">
+              Real beds. Real coffee. Real people answering the phone. Three
+              honest ways to stay on one fenced, family-run farm.
+            </p>
           </div>
           <Link
-            href="/amenities"
-            className="hidden text-sm font-medium text-clay hover:text-clay-deep sm:inline"
+            href="/stay"
+            className="hidden text-sm font-medium text-ochre hover:text-ochre-deep sm:inline"
           >
-            See all amenities →
+            See all stays →
           </Link>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           <AccommodationCard
-            href="/lodge"
+            href="/stay#lodge"
             name="Self-catering lodge units"
-            summary="Free-standing units with en-suite bathrooms and kitchenettes. Quiet, uncluttered rooms designed for rest after a day in the bush."
+            summary="Free-standing units with en-suite bathrooms and kitchenettes. Quiet rooms designed for rest after a day in the bush."
             image={img.lodgeRoom}
             meta="Lodge"
           />
           <AccommodationCard
-            href="/backpackers"
+            href="/stay#backpackers"
             name="Backpackers hostel"
-            summary="An 8-bed dorm with shared bathroom, communal kitchen and a laid-back living space. Built for hikers, overlanders and slow travellers."
+            summary={`An ${site.capacity.backpackersBeds}-bed dorm with shared bathroom, communal kitchen and a laid-back lounge. Built for hikers, overlanders and slow travellers.`}
             image={img.backpackers}
-            meta="Hostel · 8 beds"
+            meta={`Hostel · ${site.capacity.backpackersBeds} beds`}
           />
           <AccommodationCard
-            href="/camping"
+            href="/stay#camping"
             name="Camping under mango trees"
-            summary="10 shaded campsites with running water and power at every pitch. Suits tents, rooftop campers and overlanding vehicles."
+            summary={`${site.capacity.campsitePitches} shaded pitches with running water and power. Suits tents, rooftop campers and overlanding vehicles.`}
             image={img.campingMango}
-            meta="10 pitches"
+            meta={`${site.capacity.campsitePitches} pitches`}
           />
         </div>
       </Section>
 
-      <section className="bg-sand">
+      {/* Amenities glance */}
+      <section className="bg-bone">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
@@ -130,16 +234,16 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <Eyebrow>Amenities</Eyebrow>
-            <H2 className="mt-3">Practical, clean, and easy.</H2>
+            <Eyebrow>What every stay includes</Eyebrow>
+            <H2 className="mt-3">No fine print.</H2>
             <Lede>
-              Free WiFi, a swimming pool kept ready year-round, an entertainment
-              area with pool table and foosball, hiking and mountain biking
-              trails, and laundry on request.
+              Breakfast. Free WiFi. A pool kept ready year-round. An
+              entertainment area with pool table and foosball. Hiking and
+              mountain biking trails on the farm. Laundry on request.
             </Lede>
             <Link
-              href="/amenities"
-              className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-deep"
+              href="/stay"
+              className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
             >
               See the full list <span aria-hidden>→</span>
             </Link>
@@ -147,62 +251,87 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Chapter 5 — The Celebration */}
       <Section>
-        <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:items-start">
+        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div>
-            <Eyebrow>Around Kanaan</Eyebrow>
-            <H2 className="mt-3">Big country, small drive.</H2>
+            <Eyebrow>Chapter 5 · The Celebration</Eyebrow>
+            <H2 className="mt-3">A wedding weekend, in the Lowveld.</H2>
             <Lede>
-              Hazyview is the closest town to the Kruger and a working base for
-              the Panorama Route. Most of the region's icons are inside an
-              hour's drive.
+              A celebration that begins on a Friday and ends on a Sunday.
+              Guests sleeping on-site. The fire crackling late. Up to{" "}
+              {site.capacity.wedding.withCamping}+ people across the lodge, the
+              wedding lawn, the marquee and the camping ground.
             </Lede>
+            <Link
+              href="/weddings"
+              className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
+            >
+              Weddings &amp; gatherings <span aria-hidden>→</span>
+            </Link>
           </div>
           <AmenityList
             items={[
               {
-                title: "Kruger National Park",
-                body: "Phabeni and Numbi gates are 30–45 minutes by road — early-morning self-drives are easy from the farm.",
+                title: "Indoor",
+                body: `Up to ${site.capacity.wedding.indoor}+ guests in the main venue.`,
               },
               {
-                title: "Sabie River",
-                body: "Subtropical greenery, river trails and waterside cafés a short drive from the property.",
+                title: "With marquee",
+                body: `Up to ${site.capacity.wedding.withMarquee}+ on the wedding lawn under canvas.`,
               },
               {
-                title: "Panorama Route",
-                body: "God's Window, Bourke's Luck Potholes, Three Rondavels and Blyde River Canyon — a full day, or split over two.",
+                title: "With camping",
+                body: `Up to ${site.capacity.wedding.withCamping}+ when guests stay the whole weekend on-site.`,
               },
               {
-                title: "Adventure & culture",
-                body: "Skyway Trails canopy tours, Shangana Cultural Village and the Sabie waterfalls cluster.",
-              },
-              {
-                title: "Bourke's Luck Potholes",
-                body: "Ancient water-carved rock formations at the meeting point of the Treur and Blyde rivers.",
-              },
-              {
-                title: "On the farm",
-                body: "Hiking and MTB trails, a swimming pool, sunset stoep — no driving required.",
+                title: "Multi-day",
+                body: "Friday rehearsal dinner. Saturday celebration. Sunday slow morning.",
               },
             ]}
           />
         </div>
       </Section>
 
-      <section className="bg-bush text-cream">
-        <div className="mx-auto max-w-4xl px-5 py-20 text-center lg:px-8">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-gold">
-            Why guests come back
+      {/* What we are aiming for. Real Google / Booking reviews will replace
+          this section once Google Business verification completes. */}
+      <section className="bg-forest text-bone">
+        <div className="mx-auto max-w-3xl px-5 py-20 text-center lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-ochre">
+            What we are aiming for
           </p>
           <p className="mt-6 font-display text-2xl leading-relaxed sm:text-3xl">
-            “Spacious, clean, safe and quiet — Anneli and Matt are warm hosts
-            and the bushveld views go on forever.”
+            Spacious. Clean. Safe. Quiet. Warm hosts and bushveld views that
+            go on forever — that last part is just geography.
           </p>
-          <p className="mt-6 text-sm text-cream/70">— Recurring guest feedback</p>
+          <p className="mt-6 text-sm text-bone/70">
+            Real guest reviews from Google and Booking.com will land here
+            shortly.
+          </p>
         </div>
       </section>
 
+      {/* Chapter 6 — The Future */}
       <Section>
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>Chapter 6 · The Future</Eyebrow>
+          <H2 className="mt-3">We are not done.</H2>
+          <div className="prose-kanaan mx-auto mt-6">
+            <p>
+              The vegetable garden goes in this season. The communal fire pit
+              is being rebuilt before winter. The wedding lawn is being
+              levelled. If you stayed with us last year, you will notice a few
+              things. If you come back next year, you will notice more.
+            </p>
+          </div>
+          <p className="mt-6 font-display text-lg italic text-muted">
+            — {site.hosts.join(" & ")}
+          </p>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section className="pt-0!">
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div>
             <Eyebrow>Frequently asked</Eyebrow>
@@ -211,7 +340,7 @@ export default function HomePage() {
           <dl className="space-y-6">
             {faqs.map((f) => (
               <div key={f.q} className="border-t border-black/10 pt-5">
-                <dt className="font-display text-lg text-bush-deep">{f.q}</dt>
+                <dt className="font-display text-lg text-forest-deep">{f.q}</dt>
                 <dd className="mt-2 text-sm leading-relaxed text-ink/80">
                   {f.a}
                 </dd>
