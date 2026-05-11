@@ -17,11 +17,11 @@ export default function HomePage() {
     },
     {
       q: "What does it cost?",
-      a: `From R${site.pricing.fromZAR} per person per night for a room, before breakfast and dinner. That is significantly below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
+      a: `From R${site.pricing.fromZAR} per person sharing, per night (pps). That is well below the regional average — we kept the pricing honest because that is the kind of place we wanted to build.`,
     },
     {
       q: "Is breakfast included?",
-      a: `No — breakfast is on request, at R${site.meals.breakfast.pricePerPersonZAR} per person for a continental spread. Tell us the day before and we'll have it ready. We can also cook dinner on request — local Lowveld dishes and braai. We do not have a halaal option.`,
+      a: `No — breakfast is a set menu on request, at R${site.meals.breakfast.pricePerPersonZAR} per person for a continental spread. Tell us the day before and we'll have it ready. Dinner is also a set menu on request — local Lowveld dishes and braai. We do not have a halaal option.`,
     },
     {
       q: "What kinds of accommodation do you offer?",
@@ -37,7 +37,7 @@ export default function HomePage() {
     },
     {
       q: "What is included in a stay?",
-      a: "Free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property. Breakfast and dinner are available on request, at extra cost.",
+      a: "Free WiFi across the property, the swimming pool, hiking and mountain biking trails on the farm, an entertainment area, and secure parking inside a fully fenced and gated property. Breakfast and dinner are available as set menus on request, at extra cost.",
     },
   ];
 
@@ -185,12 +185,13 @@ export default function HomePage() {
           <div>
             <Eyebrow>Chapter 4 · The Welcome</Eyebrow>
             <H2 className="mt-3">
-              From R{site.pricing.fromZAR} per person, per night.
+              From R{site.pricing.fromZAR} per person sharing, per night.
             </H2>
             <p className="mt-4 max-w-2xl text-ink/80">
-              Real beds. Real people answering the phone. Four honest ways to
-              stay on one fenced, family-run farm — and breakfast or dinner on
-              request when you want them.
+              Well below the regional average. Real beds. Real people
+              answering the phone. Four honest ways to stay on one fenced,
+              family-run farm — and a breakfast or dinner set menu on request
+              when you want them.
             </p>
           </div>
           <Link

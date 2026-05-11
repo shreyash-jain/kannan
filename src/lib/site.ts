@@ -46,23 +46,29 @@ export const site = {
     krugerGateMinutesMin: 30,
     krugerGateMinutesMax: 45,
   },
-  // Owner confirmed 2026-05-11: R250 pp/night BASE, breakfast is extra on
-  // request. Earlier brief said "breakfast included" — that was wrong.
+  // Owner confirmed 2026-05-11 (Anneli):
+  //   - R250 per person SHARING per night (pps) — well below regional avg
+  //   - Breakfast & dinner are SET MENUS, on request
+  //   - No halaal option
   pricing: {
-    fromZAR: 250, // From R250 per person per night, breakfast NOT included
+    fromZAR: 250, // From R250 per person sharing per night (pps)
     currency: "ZAR",
     currencySymbol: "R",
+    unit: "per person sharing, per night",
+    unitShort: "pps/night",
     breakfastIncluded: false,
+    positioningNote: "well below the regional average",
   },
   meals: {
     breakfast: {
       pricePerPersonZAR: 60,
       type: "continental",
+      style: "Set menu",
       onRequest: true,
     },
     dinner: {
       onRequest: true,
-      style: "Local dishes and braai",
+      style: "Set menu — local Lowveld dishes and braai",
     },
     halaal: false,
   },

@@ -12,11 +12,11 @@ import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Stay — Lodges, twin rooms, backpackers & camping · Kanaan",
-  description: `Affordable Kruger accommodation in Hazyview. Self-catering lodge units, basic twin rooms, an ${site.capacity.backpackersBeds}-bed backpackers, and shaded camping under mango trees. From R${site.pricing.fromZAR} per person per night. ${site.distances.kmiaMinutes} minutes from KMIA.`,
+  description: `Affordable Kruger accommodation in Hazyview. Self-catering lodge units, basic twin rooms, an ${site.capacity.backpackersBeds}-bed backpackers, and shaded camping under mango trees. From R${site.pricing.fromZAR} per person sharing — well below regional average. ${site.distances.kmiaMinutes} minutes from KMIA.`,
   alternates: { canonical: "/stay" },
   openGraph: {
     title: "Stay at Kanaan Guest Farm — Lodge, Twin Rooms, Backpackers, Camping",
-    description: `From R${site.pricing.fromZAR} per person per night. Four honest ways to stay near the Kruger National Park.`,
+    description: `From R${site.pricing.fromZAR} per person sharing, per night. Four honest ways to stay near the Kruger National Park.`,
     images: [{ url: img.lodgeRoom.src, alt: img.lodgeRoom.alt }],
   },
 };
@@ -92,7 +92,7 @@ export default function StayPage() {
       <PageHero
         eyebrow="Stay"
         title="Four honest ways to stay near Kruger."
-        lede={`From R${site.pricing.fromZAR} per person per night. Lodge units, basic twin rooms, a relaxed backpackers and shaded camping — all on one fenced, family-run farm. Breakfast and dinner on request.`}
+        lede={`From R${site.pricing.fromZAR} per person sharing, per night — well below the regional average. Lodge units, basic twin rooms, a relaxed backpackers and shaded camping, all on one fenced, family-run farm. Breakfast and dinner set menus on request.`}
       />
 
       <Section>
@@ -232,25 +232,25 @@ export default function StayPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="max-w-3xl">
             <Eyebrow>Dining</Eyebrow>
-            <H2 className="mt-3">Meals on request, not assumptions.</H2>
+            <H2 className="mt-3">Set menus on request, not assumptions.</H2>
             <Lede>
               We don&apos;t bundle meals into the room price — you eat when you
-              want, what you want. Tell us in advance and we&apos;ll cook for
-              you. Otherwise the kitchen in your unit or the supermarkets in
-              Hazyview have you covered.
+              want it. Order a set-menu breakfast or dinner the day before and
+              we&apos;ll cook for you. Otherwise the kitchen in your unit or
+              the supermarkets in Hazyview have you covered.
             </Lede>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <DiningCard
-              label={`Breakfast · R${site.meals.breakfast.pricePerPersonZAR}`}
-              title="Continental, on request"
+              label={`Breakfast · R${site.meals.breakfast.pricePerPersonZAR} pp`}
+              title="Continental set menu, on request"
               body="A R60-per-person continental breakfast — bread, cold cuts, cheese, fruit, coffee. Arrange it the day before with Anneli."
             />
             <DiningCard
               label="Dinner · on request"
-              title="Local dishes and braai"
-              body="Tell us how many you are and we'll cook. Expect local Lowveld dishes and a proper South African braai. No halaal option available."
+              title="Set menu — local dishes and braai"
+              body="Tell us how many you are and we'll cook. Expect a fixed set menu of local Lowveld dishes and a proper South African braai. No halaal option available."
             />
           </div>
 
@@ -274,7 +274,7 @@ export default function StayPage() {
             { title: "Entertainment area", body: "Pool table, foosball, communal braai." },
             { title: "Free parking", body: "Free, secure parking on the property." },
             { title: "Laundry on request", body: "Ask at reception — separate fees apply." },
-            { title: "Meals on request", body: `R${site.meals.breakfast.pricePerPersonZAR} continental breakfast; dinner on request — local dishes and braai.` },
+            { title: "Set menus on request", body: `R${site.meals.breakfast.pricePerPersonZAR} continental breakfast set menu; dinner set menu — local dishes and braai.` },
           ]}
         />
       </Section>
