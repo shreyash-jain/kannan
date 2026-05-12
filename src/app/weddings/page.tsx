@@ -11,11 +11,11 @@ import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Weddings & Gatherings — Lowveld wedding venue · Kanaan",
-  description: `An intimate wedding and gatherings venue in Hazyview, Mpumalanga. Lodge, camping and marquee options for up to ${site.capacity.wedding.withCamping} guests. Affordable, family-run, and 48 minutes from Kruger.`,
+  description: `A wonderfully warm wedding and gatherings venue in the beautiful heart of Hazyview, Mpumalanga. Lodge, camping and marquee options for up to ${site.capacity.wedding.withCamping} guests. Family-managed, cost-effective, and just 48 minutes from Kruger.`,
   alternates: { canonical: "/weddings" },
   openGraph: {
     title: "Weddings & Gatherings · Kanaan Guest Farm",
-    description: `A Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} people — multi-day weekends, family reunions, school and corporate groups.`,
+    description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — multi-day weekends, family reunions, school groups, corporate retreats and team building.`,
     images: [{ url: img.groups.src, alt: img.groups.alt }],
   },
 };
@@ -47,37 +47,30 @@ export default function WeddingsPage() {
       />
       <PageHero
         eyebrow="Weddings & Gatherings"
-        title="An intimate wedding weekend, in the Lowveld."
-        lede="A celebration that begins on a Friday and ends on a Sunday. Guests sleeping on-site. The fire crackling late. A wedding designed around feeling, not a schedule."
+        title="An unforgettable wedding weekend, in the beautiful Lowveld."
+        lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a wedding designed around feeling and memory rather than the clock. This is more than a wedding — it is an African experience your guests will treasure for years to come."
       />
-
-      {/*
-        Section 6 wedding blog (Anneli's draft) will land here once polished.
-        Brief 2026-05-11 specifies: preserve voice, light polish, fix "Hazy view"
-        → "Hazyview", add H1, meta, practical section, soft WhatsApp CTA.
-      */}
 
       <Section>
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>The setting</Eyebrow>
-            <H2 className="mt-3 mb-5">A whole farm, for a whole weekend.</H2>
+            <H2 className="mt-3 mb-5">A whole farm, for a whole wonderful weekend.</H2>
             <p>
-              The kind of weekend where nobody is in a hurry. Where the only
-              thing that really matters is the two of you, and the people
-              you&apos;ve asked to come.
+              The kind of weekend where no one is in a hurry. Where the only
+              thing that really matters is the two of you, and the people you
+              have asked to be there beside you.
             </p>
             <p>
-              Family and friends arrive on Friday — they settle into rooms or
-              pitch a tent under the mango trees, and the weekend starts long
-              before the ceremony does. There&apos;s a rehearsal dinner. A
-              fire. People who haven&apos;t seen each other in years finding
-              each other again. And then the wedding day, in its own time —
-              relaxed, intentional, and unmistakably yours.
-            </p>
-            <p className="text-sm italic text-muted">
-              Anneli&apos;s longer wedding essay will be polished and
-              published in the journal shortly.
+              Family and friends arrive on Friday and settle into the lodge
+              rooms or pitch a tent in the shade of the mango trees, and the
+              weekend gently begins long before the ceremony does. There is a
+              rehearsal dinner around the fire, the crackle of a traditional
+              braai, the aroma of delicious food drifting through the warm
+              evening air, and people who have not seen each other in years
+              finding each other again. And then the wedding day itself, in
+              its own beautiful time — relaxed, heartfelt, and unmistakably
+              yours.
             </p>
           </div>
 
@@ -95,24 +88,24 @@ export default function WeddingsPage() {
 
       <Section className="pt-0!">
         <Eyebrow>Capacity</Eyebrow>
-        <H2 className="mt-3 mb-10">Sized for your guest list, not someone else&apos;s.</H2>
+        <H2 className="mt-3 mb-10">Lovingly sized for your guest list.</H2>
 
         <div className="grid gap-6 md:grid-cols-3">
           <CapacityCard
             label="Indoor"
             number={site.capacity.wedding.indoor}
-            note="Comfortable indoor seating in the main venue."
+            note="Comfortable indoor seating in our welcoming main venue."
           />
           <CapacityCard
             label="With marquee"
             number={site.capacity.wedding.withMarquee}
-            note="Outdoor marquee on the wedding lawn."
+            note="A beautiful outdoor marquee on the wedding lawn, under the African sky."
             highlight
           />
           <CapacityCard
             label="With camping"
             number={site.capacity.wedding.withCamping}
-            note="Marquee plus on-site camping for guests who stay the weekend."
+            note="Marquee plus on-site camping for guests who stay the whole magical weekend."
           />
         </div>
       </Section>
@@ -121,29 +114,30 @@ export default function WeddingsPage() {
         <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Practical information</Eyebrow>
-            <H2 className="mt-3 mb-5">How a weekend usually goes.</H2>
+            <H2 className="mt-3 mb-5">How a magical weekend usually unfolds.</H2>
             <ul className="mt-4 space-y-3 text-ink/85">
-              <li><strong className="font-medium text-forest-deep">Two- and three-day weekends.</strong> Friday arrival, Saturday celebration, a Sunday morning nobody is rushing.</li>
-              <li><strong className="font-medium text-forest-deep">On-site sleeping</strong> for {site.capacity.sleepingTotal}+ across the lodge rooms, plus camping for many more.</li>
-              <li><strong className="font-medium text-forest-deep">Indoor and outdoor</strong> — main venue, wedding lawn, and open space ready for a marquee.</li>
-              <li><strong className="font-medium text-forest-deep">Breakfast and dinner set menus on order</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} pp, local dishes and braai for dinner.</li>
-              <li><strong className="font-medium text-forest-deep">Catering and bar</strong> arranged on request.</li>
-              <li><strong className="font-medium text-forest-deep">Fully fenced</strong>, motorised gate, secure parking.</li>
+              <li><strong className="font-medium text-forest-deep">Two- and three-day weekends.</strong> A warm Friday arrival, a Saturday of celebration, and a Sunday morning when nobody is in a hurry.</li>
+              <li><strong className="font-medium text-forest-deep">On-site sleeping</strong> for {site.capacity.sleepingTotal}+ guests across the lodge rooms, plus peaceful camping for many more.</li>
+              <li><strong className="font-medium text-forest-deep">Indoor and outdoor</strong> — our main venue, the wedding lawn, and open space ready for a beautiful marquee.</li>
+              <li><strong className="font-medium text-forest-deep">Breakfast and dinner happily prepared</strong> — continental breakfast from R{site.meals.breakfast.pricePerPersonZAR} per person, and a traditional South African braai for dinner.</li>
+              <li><strong className="font-medium text-forest-deep">Catering and bar</strong> warmly arranged on request.</li>
+              <li><strong className="font-medium text-forest-deep">Fully fenced</strong> property with a motorised gate and secure parking, so everyone feels at ease.</li>
             </ul>
           </div>
 
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Also a venue for</Eyebrow>
-            <H2 className="mt-3 mb-5">Gatherings of every kind.</H2>
+            <H2 className="mt-3 mb-5">Gatherings of every wonderful kind.</H2>
             <p>
               Family reunions, milestone birthdays, school groups, corporate
-              retreats and team-building weekends — they all happen here.
-              Same farm, just sized to the group.
+              retreats and team building all find a warm and welcoming home
+              here at Kanaan. The same beautiful farm, lovingly sized to your
+              gathering, with the same genuine South African hospitality.
             </p>
             <p>
-              Tell us what you&apos;re putting together and we&apos;ll talk
-              through what works — bedding, marquee or no marquee, what to do
-              about food.
+              Tell us what you are putting together and we will happily talk
+              through what works — bedding, marquee or no marquee, catering
+              ideas, and how to make the weekend feel truly yours.
             </p>
           </div>
         </div>
@@ -154,10 +148,11 @@ export default function WeddingsPage() {
           <Eyebrow>
             <span className="text-bone/70">Start a conversation</span>
           </Eyebrow>
-          <H2 className="mt-3 text-bone">Let&apos;s talk about your weekend.</H2>
+          <H2 className="mt-3 text-bone">Let us talk about your wonderful weekend.</H2>
           <p className="mt-6 text-bone/85">
-            WhatsApp is the easiest way to get hold of us. You&apos;ll get a
-            real reply from one of us — no forms, no auto-responders.
+            WhatsApp is the easiest, warmest way to reach us. You will get a
+            personal reply from Anneli or Matthew — no forms, no
+            auto-responders, just a real conversation about your celebration.
           </p>
           <div className="mt-7">
             <Link

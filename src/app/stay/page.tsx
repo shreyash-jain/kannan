@@ -11,12 +11,12 @@ import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Stay — Lodges, twin rooms, backpackers & camping · Kanaan",
-  description: `Affordable Kruger accommodation in Hazyview. Self-catering lodge units, basic twin rooms, an ${site.capacity.backpackersBeds}-bed backpackers, and shaded camping under mango trees. From R${site.pricing.fromZAR} per person sharing — well below regional average. ${site.distances.kmiaMinutes} minutes from KMIA.`,
+  title: "Stay — Lodge rooms, twin rooms, backpacker beds & camping · Kanaan",
+  description: `Cost-effective Kruger accommodation in the beautiful heart of Hazyview. Comfortable self-catering lodge rooms, simple twin rooms, an ${site.capacity.backpackersBeds}-bed backpacker dorm, and peaceful camping under forty-year-old mango trees. From R${site.pricing.fromZAR} per person sharing — genuinely affordable, just ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport.`,
   alternates: { canonical: "/stay" },
   openGraph: {
     title: "Stay at Kanaan Guest Farm — Lodge, Twin Rooms, Backpackers, Camping",
-    description: `From R${site.pricing.fromZAR} per person sharing, per night. Four honest ways to stay near the Kruger National Park.`,
+    description: `From R${site.pricing.fromZAR} per person sharing, per night. Four wonderful ways to stay near the world-famous Kruger National Park.`,
     images: [{ url: img.lodgeRoom.src, alt: img.lodgeRoom.alt }],
   },
 };
@@ -91,8 +91,8 @@ export default function StayPage() {
       />
       <PageHero
         eyebrow="Stay"
-        title="Four honest ways to stay near Kruger."
-        lede={`From R${site.pricing.fromZAR} a person, sharing — well below what most places around here will ask. Pick from lodge rooms, basic twin rooms, a relaxed backpackers or a shaded camping pitch. All on one fenced, family-run farm. Breakfast and dinner are on order when you want them.`}
+        title="Four wonderful ways to stay near Kruger."
+        lede={`From R${site.pricing.fromZAR} per person sharing, genuinely affordable and well below the regional average. Choose from comfortable self-catering lodge rooms, simple twin rooms, a sociable backpacker dorm, or a peaceful campsite under forty-year-old mango trees — all on one warmly welcoming, family-managed farm. Breakfast and dinner are happily prepared whenever you would like to order them.`}
       />
 
       <Section>
@@ -117,25 +117,26 @@ export default function StayPage() {
         <StaySection
           id="lodge"
           eyebrow="Lodge · Self-catering"
-          title="Free-standing lodge units, simply done."
+          title="Comfortable self-catering lodge rooms."
           body={
             <>
               <p>
-                Each unit stands on its own, with its own bathroom and a small
-                kitchen that has what you need — a kettle, a two-plate hob, a
-                fridge, plates and mugs. Quiet rooms, set apart enough that
-                you don&apos;t really hear each other.
+                Each room stands on its own, with a private en-suite bathroom
+                and a kitchenette that has everything you need — a kettle, a
+                two-plate hob, a fridge, plates and mugs. Wonderfully quiet
+                and beautifully comfortable, perfect for unwinding after a
+                long day exploring Kruger or the Lowveld.
               </p>
               <p>
-                The bedding setup is different from one unit to the next, so
-                tell us who&apos;s coming and we&apos;ll pick the right one
-                for you.
+                The bedding setup is different from one room to the next, so
+                tell us who is coming and we will lovingly pick the right one
+                for your family or group.
               </p>
             </>
           }
           image={img.lodgeRoom}
           facts={[
-            "En-suite bathroom",
+            "Private en-suite bathroom",
             "Kitchenette (kettle, hob, fridge)",
             "TV + free WiFi",
             "Linen and towels provided",
@@ -144,19 +145,19 @@ export default function StayPage() {
 
         <StaySection
           id="twin"
-          eyebrow="Basic Twin Rooms · Two single beds"
-          title="Honest rooms, fairly priced."
+          eyebrow="Twin Rooms · Two single beds"
+          title="Simple twin rooms, fairly priced and welcoming."
           body={
             <>
               <p>
-                Two single beds, an en-suite, a wall fan and a small table for
-                a morning coffee. No kitchen, no extras — just a clean,
-                private room.
+                Two comfortable single beds, a private en-suite, a wall fan
+                and a small table for a slow morning coffee. Beautifully
+                simple, with everything you need to feel at home.
               </p>
               <p>
-                They suit friends sharing, or a parent and child on a Kruger
-                trip — anyone who wants somewhere proper to sleep without
-                paying for things they&apos;re not going to use.
+                A lovely choice for friends sharing, or for a parent and
+                child on a Kruger adventure — somewhere genuinely affordable
+                and welcoming to rest after a full day on safari.
               </p>
             </>
           }
@@ -164,7 +165,7 @@ export default function StayPage() {
           flip
           facts={[
             "Two single beds",
-            "En-suite bathroom",
+            "Private en-suite bathroom",
             "Wall fan",
             "Linen and towels provided",
           ]}
@@ -172,20 +173,21 @@ export default function StayPage() {
 
         <StaySection
           id="backpackers"
-          eyebrow={`Backpackers · ${site.capacity.backpackersBeds}-bed hostel`}
-          title="A relaxed dorm for hikers and slow travellers."
+          eyebrow={`Backpacker dorm · ${site.capacity.backpackersBeds}-bed hostel`}
+          title="A sociable dorm for adventurers and slow travellers."
           body={
             <>
               <p>
-                {site.capacity.backpackersBeds} beds, a shared bathroom, a
-                kitchen everyone uses, and a lounge where you&apos;ll usually
-                find someone reading or making coffee. It&apos;s built for
-                hikers, overlanders, and travellers moving through the
-                Lowveld at their own pace.
+                {site.capacity.backpackersBeds} comfortable beds, a shared
+                bathroom, a sociable communal kitchen, and a relaxed lounge
+                where you will usually find someone reading, making coffee or
+                swapping safari stories. Wonderfully suited to hikers,
+                overlanders and adventurers moving through the Lowveld at
+                their own pace.
               </p>
               <p>
-                Bring food from Hazyview when you arrive — the closest big
-                supermarkets are a short drive into town.
+                Pick up groceries in Hazyview on your way in — the closest
+                big supermarkets are just a short drive into town.
               </p>
             </>
           }
@@ -200,19 +202,22 @@ export default function StayPage() {
 
         <StaySection
           id="camping"
-          eyebrow={`Camping · ${site.capacity.campsitePitches} shaded pitches`}
-          title="Camping under the mango trees."
+          eyebrow={`Camping · ${site.capacity.campsitePitches} peaceful pitches`}
+          title="Peaceful camping under forty-year-old mango trees."
           body={
             <>
               <p>
-                {site.capacity.campsitePitches} pitches in the shade of the
-                mango trees, with water and power at every one. Tents,
-                rooftop campers, big overlanders — they all fit.
+                {site.capacity.campsitePitches} beautifully shaded pitches
+                beneath mango trees that have been standing for forty years,
+                with power and water at every single one. Tents, rooftop
+                campers, big overlanders — they all find a happy home here.
+                Unpack your bags, put your feet up, and relax beneath the
+                African sky as the evening sounds drift through the air.
               </p>
               <p>
-                When the camping ground opens up for a wedding, a school
-                group or a family reunion, we can put up to{" "}
-                {site.capacity.campingPeople} people on it.
+                When the camping ground opens for a wedding, a school group
+                or a family reunion, we can welcome up to{" "}
+                {site.capacity.campingPeople} happy guests.
               </p>
             </>
           }
@@ -233,12 +238,13 @@ export default function StayPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <div className="max-w-3xl">
             <Eyebrow>Dining</Eyebrow>
-            <H2 className="mt-3">Set menus on order, not assumptions.</H2>
+            <H2 className="mt-3">Home-cooked meals, whenever you would love them.</H2>
             <Lede>
-              We don&apos;t bundle meals into the room price — you eat when
-              you feel like it. If you&apos;d like breakfast or dinner, just
-              order it the day before and we&apos;ll cook. Otherwise
-              there&apos;s a kitchen in your unit, or the supermarkets in
+              We love giving our guests the freedom to eat when and how they
+              like, so meals are not bundled into the room rate. If you would
+              love a breakfast or dinner sorted while you are here, just let
+              us know the day before and we will happily cook. Otherwise
+              there is a kitchen in your lodge room, or the lovely shops of
               Hazyview when you head into town.
             </Lede>
           </div>
@@ -246,37 +252,38 @@ export default function StayPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <DiningCard
               label={`Breakfast · R${site.meals.breakfast.pricePerPersonZAR} pp`}
-              title="Continental set menu, on order"
-              body="A continental spread — bread, cold cuts, cheese, fruit, proper coffee. R60 a person. Let Anneli know the day before."
+              title="A warm continental breakfast, on order"
+              body="A welcoming continental spread — fresh bread, cold cuts, cheese, fruit and proper South African coffee. R60 a person. Just let Anneli know the day before."
             />
             <DiningCard
               label="Dinner · on order"
-              title="Set menu — local dishes and braai"
-              body="Tell us how many you are and we'll cook. It's a set menu — local Lowveld dishes and a proper South African braai. We don't have a halaal option."
+              title="A traditional South African braai"
+              body="Tell us how many you are and we will happily cook. A set menu of local Lowveld dishes and a proper South African braai under the African sky — the aroma of the fire, the warmth of the evening, and a meal you will remember. (We do not offer a halaal option.)"
             />
           </div>
 
           <p className="mt-10 max-w-2xl text-sm text-muted">
-            Lodge units have their own kitchen if you&apos;d rather cook. The
-            backpackers has a shared one. And Hazyview town is a short drive
-            for groceries.
+            Lodge rooms have their own kitchenette if you would rather cook
+            for yourselves. The backpacker dorm has a sociable shared
+            kitchen. And Hazyview town is just a short drive away for
+            groceries.
           </p>
         </div>
       </section>
 
       <Section>
         <Eyebrow>What every stay includes</Eyebrow>
-        <H2 className="mt-3 mb-10">No fine print.</H2>
+        <H2 className="mt-3 mb-10">Everything you need, all included.</H2>
         <AmenityList
           items={[
-            { title: "Free WiFi", body: "Wireless internet across the property; QR code with credentials in-room." },
-            { title: "Swimming pool", body: "Kept ready year-round." },
-            { title: "Fenced & gated", body: "Fully fenced property with a motorised gate. Call ahead for entry." },
-            { title: "On-farm trails", body: "Hiking and mountain biking trails — no driving required." },
-            { title: "Entertainment area", body: "Pool table, foosball, communal braai." },
-            { title: "Free parking", body: "Free, secure parking on the property." },
-            { title: "Laundry on request", body: "Ask at reception — separate fees apply." },
-            { title: "Set menus on request", body: `R${site.meals.breakfast.pricePerPersonZAR} continental breakfast set menu; dinner set menu — local dishes and braai.` },
+            { title: "Free WiFi", body: "Wireless internet across the whole property; QR code with credentials in-room." },
+            { title: "Swimming pool", body: "Sparkling and kept ready year-round, framed by palms." },
+            { title: "Fenced & gated", body: "A fully fenced and secure farm with a motorised gate. Just give us a call on arrival." },
+            { title: "On-farm trails", body: "Hiking and mountain-biking trails that begin right at our gate — no driving required." },
+            { title: "Entertainment area", body: "Pool table, foosball, and a communal braai for a memorable evening together." },
+            { title: "Free parking", body: "Free, secure parking inside our fenced property." },
+            { title: "Laundry on request", body: "Just ask at reception — small additional fees apply." },
+            { title: "Home-cooked meals on request", body: `R${site.meals.breakfast.pricePerPersonZAR} continental breakfast; a traditional South African dinner of local Lowveld dishes and a proper braai.` },
           ]}
         />
       </Section>
@@ -286,9 +293,10 @@ export default function StayPage() {
           <Eyebrow>Not sure which suits you?</Eyebrow>
           <H2 className="mt-3">Send us your dates.</H2>
           <Lede>
-            Tell us when you&apos;re coming and who&apos;s with you. We&apos;ll
-            pick the right room, bed or pitch — and ask whether you&apos;d
-            like breakfast and dinner sorted while we&apos;re at it.
+            Tell us when you are coming and who is travelling with you, and
+            we will happily pick the right room, bed or pitch — and ask
+            whether you would love breakfast and dinner sorted while we are
+            at it.
           </Lede>
           <div className="mt-7">
             <Link
