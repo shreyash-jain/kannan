@@ -2,9 +2,9 @@ export const site = {
   name: "Kanaan Guest Farm",
   shortName: "Kanaan",
   tagline:
-    "A guest farm 48 minutes from Kruger, rebuilt by Anneli & Matthew since August 2025.",
+    "A family-run guest farm in the beautiful heart of Hazyview, 48 minutes from Kruger.",
   description:
-    "Honest, affordable accommodation and a flexible wedding venue in Hazyview, Mpumalanga — 48 minutes from Kruger Mpumalanga International Airport. Lodge units, basic twin rooms, an 8-bed backpackers and shaded camping under mango trees on a fully fenced farm. From R250 per person per night.",
+    "Family-managed accommodation and a wedding and gatherings venue in the beautiful heart of Hazyview, Mpumalanga. Self-catering lodge rooms, twin rooms, backpacker beds and peaceful campsites under forty-year-old mango trees, with the world-famous Kruger National Park just 48 minutes from Kruger Mpumalanga International Airport. Genuine South African hospitality, from R250 per person sharing.",
   url: "https://kanaanguestfarm.com",
   locale: "en_ZA",
   region: "Mpumalanga, South Africa",
@@ -111,15 +111,15 @@ export const nav = [
 // Pre-filled WhatsApp messages per page — brief Section 8.
 // Use whatsappLink(pageKey) to build the URL.
 export const whatsappMessages = {
-  home: "Hi Kanaan, I just visited your website and would like to know more.",
-  stay: "Hi Kanaan, I would like to enquire about a stay.",
+  home: "Hi Anneli and Matthew, I just visited your website and would love to know more about Kanaan.",
+  stay: "Hi Anneli and Matthew, I'd love to enquire about a stay at Kanaan.",
   weddings:
-    "Hi Kanaan, we are planning our wedding and would like more information.",
-  ourStory: "Hi Kanaan, I just read your story and would like to know more.",
+    "Hi Anneli and Matthew, we're planning our wedding and would love to know more about Kanaan.",
+  ourStory: "Hi Anneli and Matthew, I just read your story — I'd love to know more about Kanaan.",
   theLand:
-    "Hi Kanaan, I'd like to know more about visiting Kruger from your farm.",
-  blog: "Hi, I just read your blog and would like to know more.",
-  contact: "Hi Kanaan, I'd like to make an enquiry.",
+    "Hi Anneli and Matthew, I'd love to know more about visiting Kruger and the Lowveld from your farm.",
+  blog: "Hi Anneli and Matthew, I just read your journal — I'd love to come and see Kanaan for myself.",
+  contact: "Hi Anneli and Matthew, I'd love to make an enquiry about Kanaan.",
 } as const;
 
 export type WhatsAppKey = keyof typeof whatsappMessages;

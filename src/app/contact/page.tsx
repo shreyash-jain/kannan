@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & book · Kanaan Guest Farm",
   description:
-    "Book your stay at Kanaan Guest Farm in Hazyview. WhatsApp, phone and email — Anneli and Matt reply personally with availability and the right room or pitch for you.",
+    "Book your African holiday at Kanaan Guest Farm in the beautiful heart of Hazyview. WhatsApp, phone and email — Anneli and Matthew reply personally with warm South African hospitality, availability, and the right room or pitch for your trip.",
   alternates: { canonical: "/contact" },
 };
 
@@ -24,8 +24,8 @@ export default function ContactPage() {
       />
       <PageHero
         eyebrow="Reach us"
-        title="Tell us your dates."
-        lede="WhatsApp is the fastest way to reach us. We'll come back personally with availability and the right room, dorm bed or campsite for your trip."
+        title="Tell us your dates — your African holiday begins here."
+        lede="WhatsApp is the warmest and fastest way to reach us. Anneli or Matthew will personally come back to you with availability, with the right room, dorm bed or peaceful campsite for your trip, and with any little ideas that might make your stay truly memorable."
       />
 
       <Section>
@@ -131,8 +131,9 @@ export default function ContactPage() {
           <div>
             <H2>Send a booking request.</H2>
             <p className="mt-3 max-w-prose text-ink/80">
-              The form opens an email pre-filled with your trip details. We
-              reply personally — usually the same day.
+              The form opens an email pre-filled with your trip details, and
+              we will reply personally — usually the same day, always with
+              genuine warmth.
             </p>
             <div className="mt-8">
               <ContactForm />
