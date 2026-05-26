@@ -5,7 +5,8 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { Video } from "@/components/Video";
+import { img, video } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -50,21 +51,32 @@ export default function OurStoryPage() {
           </div>
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Chapter 1 · The Discovery</Eyebrow>
-            <H2 className="mt-3 mb-5">The moment we walked onto Kanaan, we knew.</H2>
+            <H2 className="mt-3 mb-5">A waterfall, an old man, and a farm that found us back.</H2>
             <p>
-              When we found Kanaan in August 2025, the farm had been quietly
-              waiting a long time. Travellers driving by on the R40 might
-              never have looked twice. But the more we walked the land, the
-              more we saw — and the more it began to feel like home.
+              Anneli had spent years travelling — more than thirty countries,
+              an Argentine vineyard that nearly happened, the long
+              traveller&rsquo;s search for somewhere to settle. The
+              afternoon Matthew took her to a waterfall on a farm he knew —
+              his birthday, the long sundown, the drinks at the water&rsquo;s
+              edge — he mentioned, almost in passing, that the place was
+              for sale.
             </p>
             <p>
-              Mango trees that had been standing for forty years. Bushveld
-              stretching all the way to the horizon. A river running cold
-              through the property, even in the height of summer. And the
-              kind of magical location no amount of renovation can ever buy
-              — just {site.distances.kmiaMinutes} minutes from Kruger
-              Mpumalanga International Airport, with the world-famous Kruger
-              National Park waiting only a short drive away.
+              The next day we drove in. There was no gate. We walked the
+              land — the forty-year-old mango grove, the cold river running
+              through even in summer, the bushveld stretching to the
+              horizon — and we saw, plainly, what nobody else had stopped
+              to see. The old owner caught us on the way out. The day after
+              that, we made an offer. He accepted. We bought Kanaan in{" "}
+              {site.ownedSince}.
+            </p>
+            <p>
+              <Link
+                href="/blog/the-discovery"
+                className="font-medium text-ochre hover:text-ochre-deep"
+              >
+                Read the full story →
+              </Link>
             </p>
           </div>
         </div>
@@ -73,13 +85,10 @@ export default function OurStoryPage() {
       {/* Chapter 2 */}
       <Section className="pt-0!">
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
-          <div className="relative aspect-4/3 overflow-hidden rounded-2xl md:order-1">
-            <Image
-              src={img.veranda.src}
-              alt={img.veranda.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand md:order-1">
+            <Video
+              video={video.lodgeRoomWalk}
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div className="prose-kanaan max-w-prose md:order-2">
@@ -223,24 +232,32 @@ export default function OurStoryPage() {
           <Eyebrow>
             <span className="text-bone/70">Chapter 6 · The Future</span>
           </Eyebrow>
-          <H2 className="mt-3 text-bone">We are not finished — and we never quite will be.</H2>
+          <H2 className="mt-3 text-bone">We had a million ideas. Now we have a plan.</H2>
           <Lede>
             <span className="text-bone/90">
-              The vegetable garden goes in this season. The fire pit is being
-              rebuilt before winter. We are levelling the wedding lawn. Come
-              back in a year and you will see how much more there is to
-              love.
+              The wooden-house backpackers is nearly open. Multi-day Kruger
+              packages launch in the coming weeks. On-request breakfast and
+              dinner are coming next. And the longer view — hiking and
+              cycling routes across the wider farm, low-impact eco-camping on
+              the further land — is taking shape, piece by piece, the way
+              everything here gets built.
             </span>
           </Lede>
           <p className="mt-7 font-display text-lg italic text-bone/85">
             — {site.hosts.join(" & ")}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/blog/the-future"
+              className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+            >
+              Read what we are building next →
+            </Link>
             <Link
               href={whatsappLink("ourStory")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+              className="inline-flex items-center rounded-full border border-bone/40 px-6 py-3 text-sm font-medium text-bone hover:bg-bone/10"
             >
               Say hello on WhatsApp
             </Link>

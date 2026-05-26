@@ -5,7 +5,8 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { Video } from "@/components/Video";
+import { img, video, wedding } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 import { faqLd } from "@/lib/jsonld";
 
@@ -73,13 +74,13 @@ export default function HomePage() {
       {/* Chapter 1 — The Discovery */}
       <Section>
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
-          <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
-            <Image
-              src={img.hosts.src}
-              alt={img.hosts.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
+            <Video
+              video={video.mangoGrove}
+              className="absolute inset-0 h-full w-full object-cover"
+              schemaName="A walk through the mango grove at Kanaan"
+              schemaDescription="A short walk through the forty-year-old mango grove at Kanaan Guest Farm in Hazyview, where the camping ground sits under shade all summer."
+              schemaUploadDate="2026-05-22"
             />
           </div>
           <div>
@@ -249,16 +250,48 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Glimpses — a strip of distinct property photos */}
+      <section className="bg-sand">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <Eyebrow>Glimpses of Kanaan</Eyebrow>
+              <H2 className="mt-3">A wander through the farm.</H2>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+            {[
+              img.lodgeKitchen,
+              img.lodgeBathroom,
+              img.lodgeBedroomEnsuite,
+              img.waterfall,
+              img.mangoRoad,
+              img.veranda,
+            ].map((g) => (
+              <div
+                key={g.src}
+                className="relative aspect-4/5 overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Amenities glance */}
       <section className="bg-bone">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
-          <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
-            <Image
-              src={img.pool.src}
-              alt={img.pool.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+          <div className="relative aspect-5/4 overflow-hidden rounded-2xl bg-sand">
+            <Video
+              video={video.lodgeWalk}
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div>
@@ -283,6 +316,17 @@ export default function HomePage() {
 
       {/* Chapter 5 — The Celebration */}
       <Section>
+        {/* Wide ceremony image — the iconic shot under the mango grove */}
+        <div className="mb-12 relative aspect-[16/9] overflow-hidden rounded-2xl">
+          <Image
+            src={wedding.ceremony.src}
+            alt={wedding.ceremony.alt}
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            className="object-cover"
+          />
+        </div>
+
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div>
             <Eyebrow>Chapter 5 · The Celebration</Eyebrow>
