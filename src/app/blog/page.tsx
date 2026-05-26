@@ -29,13 +29,15 @@ type Post =
     };
 
 // Brief Section 5 — six planned posts, one per chapter, added one at a time.
-// Chapter 3 (The Land) is the first live post — Anneli's AFRICA piece.
 const posts: Post[] = [
   {
     n: 1,
     chapter: "The Discovery",
-    title: "The moment we walked onto Kanaan, we knew",
-    status: "soon",
+    title: "How we found Kanaan",
+    status: "live",
+    href: "/blog/the-discovery",
+    excerpt:
+      "A vineyard in Argentina that did not work out. A birthday at the waterfall. An old man catching us snooping on land that turned out to be his. Anneli on how she and Matthew found Kanaan.",
   },
   {
     n: 2,
@@ -68,8 +70,11 @@ const posts: Post[] = [
   {
     n: 6,
     chapter: "The Future",
-    title: "What we are lovingly building next at Kanaan",
-    status: "soon",
+    title: "What we are building next at Kanaan",
+    status: "live",
+    href: "/blog/the-future",
+    excerpt:
+      "A year of renovations later, Anneli on what is coming next — multi-day Kruger packages, the new wooden-house backpackers, affordable weddings, on-request meals, hiking and cycling trails, and a longer ecotourism vision for the wider farm.",
   },
 ];
 
@@ -85,7 +90,7 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="Journal"
         title="A six-part story from the farm."
-        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld. We are publishing them slowly and lovingly, one at a time — beginning with our invitation to Africa."
+        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — how we found this farm, what we have lovingly changed, and what we are building next. New chapters published as we write them."
       />
 
       <Section>

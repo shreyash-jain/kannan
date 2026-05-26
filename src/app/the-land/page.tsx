@@ -82,14 +82,43 @@ export default function TheLandPage() {
             </p>
           </div>
 
-          <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
-            <Image
-              src={img.hiking.src}
-              alt={img.hiking.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+              <Image
+                src={img.waterfall.src}
+                alt={img.waterfall.alt}
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+              <Image
+                src={img.hiking.src}
+                alt={img.hiking.alt}
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+              <Image
+                src={img.mangoRoad.src}
+                alt={img.mangoRoad.alt}
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+              <Image
+                src={img.trailView.src}
+                alt={img.trailView.alt}
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </Section>

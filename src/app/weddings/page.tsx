@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
-import { Section, Eyebrow, H2 } from "@/components/Section";
+import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { wedding } from "@/lib/images";
 import { eventVenueLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Weddings & Gatherings · Kanaan Guest Farm",
     description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — multi-day weekends, family reunions, school groups, corporate retreats and team building.`,
-    images: [{ url: img.groups.src, alt: img.groups.alt }],
+    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
   },
 };
 
@@ -32,7 +32,7 @@ export default function WeddingsPage() {
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: img.groups.src,
+              image: wedding.ceremony.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -51,8 +51,23 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a wedding designed around feeling and memory rather than the clock. This is more than a wedding — it is an African experience your guests will treasure for years to come."
       />
 
+      {/* Wide ceremony hero — the iconic mango-arch shot */}
+      <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+          <Image
+            src={wedding.ceremony.src}
+            alt={wedding.ceremony.alt}
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            priority
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      {/* The setting + reception photo */}
       <Section>
-        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
+        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>The setting</Eyebrow>
             <H2 className="mt-3 mb-5">A whole farm, for a whole wonderful weekend.</H2>
@@ -74,10 +89,10 @@ export default function WeddingsPage() {
             </p>
           </div>
 
-          <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.groups.src}
-              alt={img.groups.alt}
+              src={wedding.reception.src}
+              alt={wedding.reception.alt}
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
@@ -86,6 +101,7 @@ export default function WeddingsPage() {
         </div>
       </Section>
 
+      {/* Capacity */}
       <Section className="pt-0!">
         <Eyebrow>Capacity</Eyebrow>
         <H2 className="mt-3 mb-10">Lovingly sized for your guest list.</H2>
@@ -110,6 +126,44 @@ export default function WeddingsPage() {
         </div>
       </Section>
 
+      {/* Pull quote from Anneli's own wedding-blog draft */}
+      <section className="bg-sand">
+        <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8">
+          <p className="font-display text-2xl italic leading-relaxed text-forest-deep sm:text-3xl">
+            &ldquo;A wedding designed not around expectations, but around
+            feeling. A place where your story is honoured.&rdquo;
+          </p>
+          <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted">
+            — Anneli, on the Kanaan wedding
+          </p>
+        </div>
+      </section>
+
+      {/* First dance + detail — two-photo strip */}
+      <Section>
+        <div className="grid gap-6 md:grid-cols-[1.6fr_1fr]">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src={wedding.firstDance.src}
+              alt={wedding.firstDance.alt}
+              fill
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+            <Image
+              src={wedding.tableDetail.src}
+              alt={wedding.tableDetail.alt}
+              fill
+              sizes="(min-width: 768px) 35vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </Section>
+
+      {/* Practical info + also a venue for */}
       <Section className="pt-0!">
         <div className="grid gap-12 md:grid-cols-2 md:items-start">
           <div className="prose-kanaan max-w-prose">
@@ -142,6 +196,33 @@ export default function WeddingsPage() {
           </div>
         </div>
       </Section>
+
+      {/* Sunday morning — the lingering image */}
+      <section className="bg-bone">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:items-center">
+            <div>
+              <Eyebrow>Sunday morning</Eyebrow>
+              <H2 className="mt-3 mb-5">No one in a hurry.</H2>
+              <Lede>
+                A long table on the lawn, coffee that takes its time, the last
+                of the cake, and people who slept on the farm last night
+                drifting down for breakfast. The kind of ending that turns a
+                wedding into a memory.
+              </Lede>
+            </div>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+              <Image
+                src={wedding.morningAfter.src}
+                alt={wedding.morningAfter.alt}
+                fill
+                sizes="(min-width: 768px) 55vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-forest text-bone">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center lg:px-8">
