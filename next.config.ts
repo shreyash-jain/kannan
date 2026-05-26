@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root so Turbopack does not climb up to C:\Aadi (which
+  // contains its own .git) and try to resolve node_modules from there.
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
+  outputFileTracingRoot: path.resolve(__dirname),
   images: {
     formats: ["image/avif", "image/webp"],
   },
