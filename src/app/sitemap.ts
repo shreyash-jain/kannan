@@ -9,7 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/weddings", priority: 0.9, changeFrequency: "monthly" },
     { path: "/the-land", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
+    { path: "/blog/the-discovery", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/africa", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/the-future", priority: 0.7, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
   ];
 
