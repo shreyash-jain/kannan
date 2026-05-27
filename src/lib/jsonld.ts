@@ -1,4 +1,5 @@
 import { site } from "./site";
+import { cldImage } from "./cloudinary";
 
 export function organizationLd() {
   return {
@@ -10,7 +11,7 @@ export function organizationLd() {
     url: site.url,
     telephone: site.contact.phonePrimaryDisplay,
     email: site.contact.email,
-    image: [`${site.url}/og.jpg`],
+    image: [cldImage("og-default")],
     priceRange: "$",
     address: {
       "@type": "PostalAddress",

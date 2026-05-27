@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: path.resolve(__dirname),
   images: {
     formats: ["image/avif", "image/webp"],
+    // Cloudinary already serves AVIF/WebP via f_auto, so we let it deliver
+    // the optimised bytes and pass the URL through next/image unchanged.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/dn9snfizy/**",
+      },
+    ],
   },
   poweredByHeader: false,
   compress: true,
