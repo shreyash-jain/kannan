@@ -2,6 +2,10 @@ import { videoObjectLd } from "@/lib/jsonld";
 import type { Vid } from "@/lib/images";
 import { site } from "@/lib/site";
 
+// Relative paths (legacy /videos/...) need the site origin in front for
+// schema; absolute URLs (Cloudinary) get used as-is.
+const absoluteUrl = (u: string) => (u.startsWith("http") ? u : `${site.url}${u}`);
+
 // A muted, looping, autoplay B-roll video used inline on the marketing
 // pages. Poster ensures something is on screen if the video has not loaded
 // yet (or autoplay is blocked). preload="metadata" keeps initial-page
@@ -30,9 +34,9 @@ export function Video({
               videoObjectLd({
                 name: schemaName,
                 description: schemaDescription,
-                thumbnailUrl: `${site.url}${video.poster}`,
+                thumbnailUrl: absoluteUrl(video.poster),
                 uploadDate: schemaUploadDate,
-                contentUrl: `${site.url}${video.src}`,
+                contentUrl: absoluteUrl(video.src),
               }),
             ),
           }}
