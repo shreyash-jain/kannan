@@ -117,8 +117,8 @@ export default function TheLandPage() {
             </div>
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
               <Image
-                src={img.mangoRoad.src}
-                alt={img.mangoRoad.alt}
+                src={img.macGrove.src}
+                alt={img.macGrove.alt}
                 fill
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className="object-cover"
@@ -126,8 +126,8 @@ export default function TheLandPage() {
             </div>
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
               <Image
-                src={img.trailView.src}
-                alt={img.trailView.alt}
+                src={img.goldenShed.src}
+                alt={img.goldenShed.alt}
                 fill
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className="object-cover"
@@ -136,6 +136,39 @@ export default function TheLandPage() {
           </div>
         </div>
       </Section>
+
+      {/* Around the farm — a wider visual tour */}
+      <section className="bg-sand">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="mb-8">
+            <Eyebrow>Around the farm</Eyebrow>
+            <H2 className="mt-3">The wider Kanaan, all the way to the escarpment.</H2>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+            {[
+              img.macGrove,
+              img.macGroveFramed,
+              img.lowveldWildflowers,
+              img.goldenShed,
+              img.trailView,
+              img.mtb,
+            ].map((g) => (
+              <div
+                key={g.src}
+                className="relative aspect-4/5 overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <Section className="pt-0!">
         <Eyebrow>On the farm</Eyebrow>

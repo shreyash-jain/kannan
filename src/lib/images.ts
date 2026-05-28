@@ -27,9 +27,28 @@ export const img = {
     width: 1200,
     height: 1600,
   },
-  mangoRoad: {
-    src: cldImage("mango-road"),
-    alt: "The dirt road winding through the mango grove at Kanaan — the entrance lane travellers turn onto from the R40.",
+  // ---- Wider farm: macadamia grove, wildflowers, the further land ----
+  macGrove: {
+    src: cldImage("mac-grove"),
+    alt: "The macadamia grove on Kanaan — rows of newly-planted young trees stretching toward the Lowveld escarpment.",
+    width: 1200,
+    height: 1600,
+  },
+  macGroveFramed: {
+    src: cldImage("mac-grove-framed"),
+    alt: "Looking out over Kanaan's macadamia grove, framed by the branches of an old tree on the boundary.",
+    width: 1200,
+    height: 1600,
+  },
+  lowveldWildflowers: {
+    src: cldImage("lowveld-wildflowers"),
+    alt: "Wildflowers and tall grass on the wider Kanaan farm, with the rolling hills of the Lowveld opening out beyond.",
+    width: 1200,
+    height: 1600,
+  },
+  goldenShed: {
+    src: cldImage("golden-shed"),
+    alt: "Golden-hour light over an outpost shed on Kanaan, with the macadamia rows and Lowveld valley stretching away below.",
     width: 1200,
     height: 1600,
   },

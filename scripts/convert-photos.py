@@ -60,8 +60,12 @@ PICKS: list[tuple[str, str]] = [
     ("Rooms/IMG_4888.HEIC", "lodge-kitchen-wood.jpg"),  # kitchenette with wooden sideboard
     ("Rooms/IMG_4893.HEIC", "lodge-dining-wood.jpg"),  # dining area, wooden ceiling, curtained windows
     ("Rooms/IMG_4886.HEIC", "lodge-twin-suite.jpg"),  # twin beds + bathroom view + dining
-    ("Old Mangos/20250619_092651.heic", "mango-road.jpg"),  # the road through the mango grove
     ("Old dam/20250626_140004.heic", "lowveld-path.jpg"),  # dirt path with lodge + valley
+    # ---- Wider farm: the macadamia grove + agricultural land --------
+    ("Macs/IMG_0900.HEIC", "mac-grove.jpg"),          # planted macs + Lowveld escarpment
+    ("Macs/IMG_0901.HEIC", "mac-grove-framed.jpg"),   # mac rows framed by tree branches
+    ("Macs/20250709_135225.heic", "lowveld-wildflowers.jpg"),  # wildflowers + rolling hills
+    ("Old dam/20250627_164546.heic", "golden-shed.jpg"),       # golden hour, outpost shed + valley
     # ---- OG share image (distinct crop) -------------------------------
     ("Camp Site/IMG-20250709-WA0107.jpg", "og-default.jpg"),
 ]
