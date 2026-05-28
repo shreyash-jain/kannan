@@ -6,7 +6,8 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { Video } from "@/components/Video";
+import { img, video } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -34,6 +35,19 @@ export default function TheLandPage() {
         title="A whole world of wonder, right at our doorstep."
         lede={`We are just ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, and only ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the world-famous Kruger National Park. The spectacular Panorama Route, the misty mountain town of Sabie and the breathtaking Lowveld waterfalls are all wonderful days out from the farm.`}
       />
+
+      {/* Property tour video — a wide look at the farm before the place cards */}
+      <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+          <Video
+            video={video.propertyTour}
+            className="absolute inset-0 h-full w-full object-cover"
+            schemaName="A tour around Kanaan Guest Farm"
+            schemaDescription="A short walk around Kanaan Guest Farm in Hazyview, Mpumalanga — the mango grove, the lodge units, the camp site, and the Lowveld around them."
+            schemaUploadDate="2026-05-22"
+          />
+        </div>
+      </div>
 
       <Section>
         <div className="grid gap-6 md:grid-cols-3">
