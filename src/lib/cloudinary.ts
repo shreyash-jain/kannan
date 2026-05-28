@@ -2,7 +2,7 @@
 // Originals are uploaded once by scripts/upload-to-cloudinary.py; this
 // module is the only place the cloud name lives in source.
 
-const CLOUD = "dn9snfizy";
+const CLOUD = "dprx4pret";
 const FOLDER = "kanaan";
 
 const IMG_BASE = `https://res.cloudinary.com/${CLOUD}/image/upload`;
