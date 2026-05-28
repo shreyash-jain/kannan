@@ -259,14 +259,18 @@ export default function HomePage() {
               <H2 className="mt-3">A wander through the farm.</H2>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
             {[
               img.lodgeKitchen,
               img.lodgeBathroom,
               img.lodgeBedroomEnsuite,
               img.waterfall,
-              img.mangoRoad,
               img.veranda,
+              img.lowveldWildflowers,
+              img.macGrove,
+              img.goldenShed,
+              img.lodgeDining,
+              img.campingMango,
             ].map((g) => (
               <div
                 key={g.src}
@@ -276,7 +280,7 @@ export default function HomePage() {
                   src={g.src}
                   alt={g.alt}
                   fill
-                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
