@@ -267,4 +267,9 @@ export const video = {
     alt: "Inside a renovated lodge bedroom at Kanaan.",
     poster: cldVideoPoster("lodge-room-walk"),
   },
+  propertyTour: {
+    src: cldVideo("property-tour"),
+    alt: "A wider look around Kanaan Guest Farm — the mango grove, the lodge units and the Lowveld around them.",
+    poster: cldVideoPoster("property-tour"),
+  },
 } as const;
