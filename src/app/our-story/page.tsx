@@ -226,6 +226,34 @@ export default function OurStoryPage() {
         </div>
       </Section>
 
+      {/* The wider farm — agricultural land Anneli mentions in Chapter 6 */}
+      <section className="bg-bone">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.macGrove.src}
+                alt={img.macGrove.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <Eyebrow>The wider farm</Eyebrow>
+              <H2 className="mt-3 mb-5">More than the lodge.</H2>
+              <Lede>
+                Kanaan sits on agricultural ground that runs out into bushveld
+                long after the lodge ends. We are slowly bringing that land
+                back into use — macadamia trees planted in rows, hiking and
+                cycling routes opening up again, and in time, a quieter
+                eco-camp on the further property.
+              </Lede>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Chapter 6 — closing */}
       <section className="bg-forest text-bone">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center lg:px-8">
