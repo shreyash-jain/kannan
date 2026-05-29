@@ -58,6 +58,7 @@ SRC_VID = f"https://res.cloudinary.com/{SOURCE_CLOUD}/video/upload/{FOLDER}"
 
 IMAGE_IDS = [
     "hero-mango-grove", "mango-detail", "mango-road",
+    "mac-grove", "mac-grove-framed", "lowveld-wildflowers", "golden-shed",
     "lodge-room", "twin-room", "lodge-multi-bed", "lodge-twin-suite",
     "lodge-bedroom-ensuite", "lodge-kitchen", "lodge-kitchenette-18",
     "lodge-kitchen-wood", "lodge-dining-wood",
@@ -69,7 +70,7 @@ IMAGE_IDS = [
     "wedding-table-detail", "wedding-first-dance", "wedding-morning-after",
     "og-default", "hosts",
 ]
-VIDEO_IDS = ["mango-grove", "lodge-walk", "lodge-room-walk"]
+VIDEO_IDS = ["mango-grove", "lodge-walk", "lodge-room-walk", "property-tour"]
 
 
 def migrate_one(public_id: str, source_url: str, resource_type: str) -> str:
