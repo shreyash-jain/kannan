@@ -247,7 +247,7 @@ export default function FuturePostPage() {
         {/* Packages */}
         <section className="bg-bone">
           <div className="mx-auto max-w-3xl px-5 py-16 lg:px-8">
-            <Eyebrow>Coming very soon</Eyebrow>
+            <Eyebrow>Live now</Eyebrow>
             <H2 className="mt-3 mb-5">Multi-day packages — arrive once, see everything.</H2>
             <div className="prose-kanaan max-w-prose">
               <p>
@@ -257,26 +257,19 @@ export default function FuturePostPage() {
                 Panorama Route, all sorted from a base they trust.
               </p>
               <p>
-                So we are putting together multi-day packages — three or
-                five days at Kanaan, with meals, transfers, and curated day
-                trips to Kruger, the Blyde River Canyon and beyond. The
-                idea is that you arrive, you unpack once, and we handle
-                the logistics of seeing the Lowveld properly.
-              </p>
-              <p>
-                We will launch the first packages in the coming weeks. If
-                you would like to be among the first to hear when they are
-                ready, send us a message — we will let you know the day
-                they go live.
+                So we put together multi-day packages — two, three or five
+                days at Kanaan, with a full-day Kruger safari included, and
+                optional add-ons for the Panorama Route, an evening at
+                Shangana cultural village, and airport transfers from KMIA.
+                You arrive, you unpack once, and we handle the logistics of
+                seeing the Lowveld properly.
               </p>
               <p>
                 <Link
-                  href={whatsappLink("ourStory")}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/packages"
                   className="font-medium text-ochre hover:text-ochre-deep"
                 >
-                  Be first to hear about the packages →
+                  Build your package →
                 </Link>
               </p>
             </div>
