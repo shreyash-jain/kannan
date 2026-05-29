@@ -16,6 +16,8 @@ function pageKeyFor(pathname: string): WhatsAppKey {
     case "backpackers":
     case "camping":
       return "stay";
+    case "packages":
+      return "packages";
     case "weddings":
     case "groups":
       return "weddings";
