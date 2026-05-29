@@ -102,6 +102,7 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
+  { href: "/packages", label: "Packages" },
   { href: "/weddings", label: "Weddings & Gatherings" },
   { href: "/the-land", label: "The Land" },
   { href: "/blog", label: "Journal" },
@@ -113,6 +114,8 @@ export const nav = [
 export const whatsappMessages = {
   home: "Hi Anneli and Matthew, I just visited your website and would love to know more about Kanaan.",
   stay: "Hi Anneli and Matthew, I'd love to enquire about a stay at Kanaan.",
+  packages:
+    "Hi Anneli and Matthew, I would like to enquire about a multi-day package at Kanaan.",
   weddings:
     "Hi Anneli and Matthew, we're planning our wedding and would love to know more about Kanaan.",
   ourStory: "Hi Anneli and Matthew, I just read your story — I'd love to know more about Kanaan.",

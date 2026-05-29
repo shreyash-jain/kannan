@@ -263,12 +263,12 @@ export default function OurStoryPage() {
           <H2 className="mt-3 text-bone">We had a million ideas. Now we have a plan.</H2>
           <Lede>
             <span className="text-bone/90">
-              The wooden-house backpackers is nearly open. Multi-day Kruger
-              packages launch in the coming weeks. On-request breakfast and
-              dinner are coming next. And the longer view — hiking and
-              cycling routes across the wider farm, low-impact eco-camping on
-              the further land — is taking shape, piece by piece, the way
-              everything here gets built.
+              The wooden-house backpackers is nearly open. Our multi-day
+              Kruger packages are live — build your own on the packages
+              page. On-request breakfast and dinner are coming next. And
+              the longer view — hiking and cycling routes across the wider
+              farm, low-impact eco-camping on the further land — is taking
+              shape, piece by piece, the way everything here gets built.
             </span>
           </Lede>
           <p className="mt-7 font-display text-lg italic text-bone/85">
@@ -276,8 +276,14 @@ export default function OurStoryPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/blog/the-future"
+              href="/packages"
               className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+            >
+              Build a package →
+            </Link>
+            <Link
+              href="/blog/the-future"
+              className="inline-flex items-center rounded-full border border-bone/40 px-6 py-3 text-sm font-medium text-bone hover:bg-bone/10"
             >
               Read what we are building next →
             </Link>
