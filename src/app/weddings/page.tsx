@@ -5,7 +5,7 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { img, wedding } from "@/lib/images";
 import { eventVenueLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wedding & Events · Kanaan Guest Farm",
     description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — intimate weekends, family events, school groups, corporate retreats.`,
-    images: [{ url: img.goldenShed.src, alt: img.goldenShed.alt }],
+    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
   },
 };
 
@@ -32,7 +32,7 @@ export default function WeddingsPage() {
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: img.goldenShed.src,
+              image: wedding.ceremony.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -51,13 +51,12 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide hero — golden hour over the wider farm. The light a Saturday
-          evening ceremony rolls into. */}
+      {/* Wide hero — a wedding ceremony under the mango grove. */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={img.goldenShed.src}
-            alt="Golden hour over the wider Kanaan farm — the light a Saturday-evening ceremony rolls into."
+            src={wedding.ceremony.src}
+            alt={wedding.ceremony.alt}
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             priority
