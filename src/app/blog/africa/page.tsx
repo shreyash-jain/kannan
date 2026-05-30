@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: `${headline} · Kanaan Guest Farm`,
     description:
       "A heart-felt invitation from Anneli — discover Hazyview, Kruger, Sabie and Graskop from a warm family-run guest farm in the Lowveld.",
-    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
+    images: [{ url: img.hiking.src, alt: img.hiking.alt }],
     type: "article",
     publishedTime: datePublished,
     authors: [...site.hosts],
@@ -40,7 +40,7 @@ export default function AfricaPostPage() {
               description:
                 "An invitation to an African family holiday based at Kanaan Guest Farm in Hazyview, Mpumalanga — Kruger, Sabie, Graskop and the wonders of the Lowveld.",
               path: "/blog/africa",
-              image: img.heroFarm.src,
+              image: img.hiking.src,
               datePublished,
             }),
           ),
@@ -75,12 +75,13 @@ export default function AfricaPostPage() {
           </div>
         </header>
 
-        {/* Lead image */}
+        {/* Lead image — the wider Lowveld escarpment from Kanaan, the land
+            this destination guide sits inside. */}
         <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.heroFarm.src}
-              alt={img.heroFarm.alt}
+              src={img.hiking.src}
+              alt="The Lowveld around Kanaan — rolling forest and farmland running toward the escarpment that hides Kruger on one side and the Panorama Route on the other."
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority

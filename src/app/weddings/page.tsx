@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wedding & Events · Kanaan Guest Farm",
     description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — intimate weekends, family events, school groups, corporate retreats.`,
-    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
+    images: [{ url: img.goldenShed.src, alt: img.goldenShed.alt }],
   },
 };
 
@@ -32,7 +32,7 @@ export default function WeddingsPage() {
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: img.heroFarm.src,
+              image: img.goldenShed.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -51,12 +51,13 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide hero — the mango grove (the ceremony spot in waiting) */}
+      {/* Wide hero — golden hour over the wider farm. The light a Saturday
+          evening ceremony rolls into. */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={img.heroFarm.src}
-            alt="The forty-year-old mango grove at Kanaan — the natural ceremony spot, with dappled shade and the Lowveld beyond."
+            src={img.goldenShed.src}
+            alt="Golden hour over the wider Kanaan farm — the light a Saturday-evening ceremony rolls into."
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             priority

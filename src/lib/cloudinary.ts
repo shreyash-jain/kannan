@@ -28,3 +28,15 @@ export function cldVideo(publicId: string, transforms = DEFAULT_VID_TRANSFORMS):
 export function cldVideoPoster(publicId: string, transforms = "f_auto,q_auto,c_limit,w_1600"): string {
   return `${VID_BASE}/${transforms}/${FOLDER}/${publicId}.jpg`;
 }
+
+// Grab an arbitrary frame from a video as a still image. `seconds` is the
+// time offset into the clip — useful when the first frame is not the most
+// flattering (e.g. workers walking past at second 0, but the founder is
+// on camera at second 22).
+export function cldVideoFrame(
+  publicId: string,
+  seconds: number,
+  transforms = "f_auto,q_auto,c_limit,w_1600",
+): string {
+  return `${VID_BASE}/so_${seconds},${transforms}/${FOLDER}/${publicId}.jpg`;
+}
