@@ -78,9 +78,9 @@ export const site = {
     campsitePitches: 10,
     campingPeople: 120,
     wedding: {
-      indoor: 100,
-      withMarquee: 150,
-      withCamping: 220,
+      indoor: 60,
+      withMarquee: 100,
+      withCamping: 150,
     },
   },
   keywords: [
@@ -103,7 +103,7 @@ export const nav = [
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
   { href: "/packages", label: "Packages" },
-  { href: "/weddings", label: "Weddings & Gatherings" },
+  { href: "/weddings", label: "Wedding & Events" },
   { href: "/the-land", label: "The Land" },
   { href: "/blog", label: "Journal" },
   { href: "/contact", label: "Contact" },

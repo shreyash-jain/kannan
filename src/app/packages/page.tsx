@@ -103,8 +103,8 @@ export default function PackagesPage() {
           </div>
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.panorama.src}
-              alt={img.panorama.alt}
+              src={img.goldenShed.src}
+              alt={img.goldenShed.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

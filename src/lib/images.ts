@@ -168,6 +168,9 @@ export const img = {
   },
 
   // ---- Context shots (third-party / regional) --------------------------
+  // Currently UNUSED on the live site. Kept as Cloudinary pointers so we
+  // can drop them back in if we ever need a literal Kruger / Panorama /
+  // Sabie shot, but every page now uses real Kanaan photography instead.
   kruger: {
     src: cldImage("kruger-elephant"),
     alt: "An elephant by a waterhole near Kruger — the park's Phabeni and Numbi gates are 30–45 minutes from Kanaan.",
@@ -207,10 +210,10 @@ export const img = {
     height: 1600,
   },
   groups: {
-    src: cldImage("wedding-ceremony-mango"),
-    alt: "A wedding ceremony at Kanaan Guest Farm — rows of white chairs under the canopy of the forty-year-old mango grove, an arch of dried grass at the altar.",
+    src: cldImage("campfire-terrace"),
+    alt: "Open grass at Kanaan ringed by the forty-year-old mango grove — the kind of space that takes a wedding lawn, a long reception table or a school camp equally well.",
     width: 1600,
-    height: 900,
+    height: 1200,
   },
   hosts: {
     src: cldImage("hosts"),
@@ -230,6 +233,11 @@ export const img = {
 
 // ---------------------------------------------------------------------
 // Wedding photography
+// Currently UNUSED on the live site — the AI-generated wedding set was
+// pulled from /weddings, the home page Chapter 5 and the groups slot in
+// favour of real Kanaan venue photography. These exports remain so we
+// can wire real wedding photos straight into the same slots once Anneli
+// sends through the April-wedding shoot.
 // ---------------------------------------------------------------------
 export const wedding = {
   ceremony: {

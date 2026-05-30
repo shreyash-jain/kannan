@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Land · Kanaan Guest Farm",
     description: `Lodges near the world-famous Kruger National Park — discover what ${site.distances.kmiaMinutes} minutes from the airport actually feels like.`,
-    images: [{ url: img.kruger.src, alt: img.kruger.alt }],
+    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
   },
 };
 
@@ -51,21 +51,21 @@ export default function TheLandPage() {
 
       <Section>
         <div className="grid gap-6 md:grid-cols-3">
-          <PlaceCard
-            image={img.kruger}
+          <DistanceCard
             eyebrow="Kruger National Park"
+            distance={`${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`}
             title="Phabeni & Numbi gates"
             body={`Just ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes by road, depending on the gate you choose. Imagine setting off before sunrise, spotting the legendary Big Five as the bushveld wakes, and being back at the farm for a swim before lunch. Phabeni means shelter in Sotho — a fitting welcome to one of Africa's greatest wildlife destinations.`}
           />
-          <PlaceCard
-            image={img.panorama}
+          <DistanceCard
             eyebrow="Panorama Route"
+            distance="~90 min"
             title="God's Window, Blyde Canyon"
             body="A spectacular day along the escarpment — God's Window, Bourke's Luck Potholes, the Three Rondavels and the breathtaking Blyde River Canyon. The kind of scenery you will remember for a lifetime."
           />
-          <PlaceCard
-            image={img.sabieRiver}
+          <DistanceCard
             eyebrow="Sabie & Graskop"
+            distance="~45 min"
             title="Misty mountains & waterfalls"
             body="The misty mountain town of Sabie waits in one direction with Lone Creek, Horseshoe and Bridal Veil Falls, while Graskop — grassy hillock in Afrikaans — offers the famous Big Swing and the Graskop Gorge Lift. Adventure or peaceful exploring, the choice is yours."
           />
@@ -232,35 +232,30 @@ export default function TheLandPage() {
   );
 }
 
-function PlaceCard({
-  image,
+function DistanceCard({
   eyebrow,
+  distance,
   title,
   body,
 }: {
-  image: { src: string; alt: string };
   eyebrow: string;
+  distance: string;
   title: string;
   body: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-2xl bg-bone ring-1 ring-black/5">
-      <div className="relative aspect-5/4">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover"
-        />
-      </div>
-      <div className="p-6">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-ochre">
-          {eyebrow}
-        </p>
-        <h3 className="mt-2 font-display text-2xl text-forest-deep">{title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-ink/80">{body}</p>
-      </div>
+    <article className="flex h-full flex-col rounded-2xl bg-bone p-7 ring-1 ring-black/5">
+      <p className="text-xs font-medium uppercase tracking-[0.18em] text-ochre">
+        {eyebrow}
+      </p>
+      <p className="mt-4 font-display text-5xl leading-none tracking-tight text-forest-deep">
+        {distance}
+      </p>
+      <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">
+        from our gate
+      </p>
+      <h3 className="mt-5 font-display text-xl text-forest-deep">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-ink/80">{body}</p>
     </article>
   );
 }
