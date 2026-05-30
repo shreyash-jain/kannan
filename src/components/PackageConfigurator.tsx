@@ -37,14 +37,16 @@ function buildItinerary(
     switch (nights) {
       case 2:
         return [
-          { day: "1", text: "Arrival & Kruger — settle in, then a full-day open-vehicle drive into the Kruger National Park (park entry included).", addon: false },
-          { day: "2", text: "Departure — check-out and onward travel.", addon: false },
+          { day: "1", text: "Arrival — settle into your room at Kanaan.", addon: false },
+          { day: "2", text: "Kruger National Park — full-day open-vehicle safari drive (park entry included).", addon: false },
+          { day: "3", text: "Departure — check-out and onward travel.", addon: false },
         ];
       case 3:
         return [
           { day: "1", text: "Arrival — KMIA airport pick-up, settle into your room.", addon: false },
           { day: "2", text: "Kruger National Park — full-day open-vehicle safari drive (park entry included).", addon: false },
-          { day: "3", text: "Departure — check-out, KMIA airport drop-off.", addon: false },
+          { day: "3", text: "Leisure day — relax on the farm or explore Hazyview at your own pace.", addon: false },
+          { day: "4", text: "Departure — check-out, KMIA airport drop-off.", addon: false },
         ];
       case 5:
         return [
@@ -52,7 +54,8 @@ function buildItinerary(
           { day: "2", text: "Kruger National Park — full-day open-vehicle safari drive (park entry included).", addon: false },
           { day: "3", text: "Leisure day — relax on the farm or explore Hazyview at your own pace.", addon: false },
           { day: "4", text: "Leisure day — relax on the farm or explore at your own pace.", addon: false },
-          { day: "5", text: "Departure — check-out, KMIA airport drop-off.", addon: false },
+          { day: "5", text: "Leisure day — relax on the farm or explore at your own pace.", addon: false },
+          { day: "6", text: "Departure — check-out, KMIA airport drop-off.", addon: false },
         ];
     }
   })();
