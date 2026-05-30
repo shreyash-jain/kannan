@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: `How we found Kanaan · Kanaan Guest Farm`,
     description:
       "Anneli on travelling the world, almost buying a vineyard in Argentina, and the day Matthew took her to a waterfall on a farm that quietly turned out to be for sale.",
-    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
+    images: [{ url: img.waterfall.src, alt: img.waterfall.alt }],
     type: "article",
     publishedTime: datePublished,
     authors: [...site.hosts],
@@ -39,7 +39,7 @@ export default function DiscoveryPostPage() {
               description:
                 "Anneli's first-person account of how she and Matthew found Kanaan — the Argentine vineyard that did not work out, the birthday at the waterfall, the old man, and the offer that started everything.",
               path: "/blog/the-discovery",
-              image: img.heroFarm.src,
+              image: img.waterfall.src,
               datePublished,
             }),
           ),
@@ -78,12 +78,13 @@ export default function DiscoveryPostPage() {
           </div>
         </header>
 
-        {/* Lead image */}
+        {/* Lead image — the waterfall on Kanaan, where Matthew took Anneli
+            on his birthday. The literal first image of the story. */}
         <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.heroFarm.src}
-              alt={img.heroFarm.alt}
+              src={img.waterfall.src}
+              alt="The waterfall on Kanaan — the place Matthew took Anneli on his birthday, the afternoon the whole story began."
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority
