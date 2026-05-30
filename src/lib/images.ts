@@ -216,14 +216,13 @@ export const img = {
     height: 1200,
   },
   hosts: {
-    // Still frame pulled from the property-tour video — Matthew talking
-    // through the macadamia grove. A real founder shot beats the previous
-    // stock portrait; a wider Anneli & Matthew portrait can drop straight
-    // back in here when one is shot.
-    src: cldVideoFrame("property-tour", 22),
-    alt: "Matthew — co-owner of Kanaan Guest Farm — in the macadamia grove, the wider farm running away behind him.",
+    // The real Anneli & Matthew portrait — a candid couple shot on the
+    // dam with the Lowveld behind them. Stays as the canonical "hosts"
+    // slot across the site.
+    src: cldImage("hosts"),
+    alt: "Anneli and Matthew — owners of Kanaan Guest Farm since August 2025 — on the dam, laughing, the Lowveld behind them.",
     width: 1600,
-    height: 900,
+    height: 1400,
   },
 
   // ---- Open Graph / share image ---------------------------------------
