@@ -232,6 +232,39 @@ export default function StayPage() {
         />
       </Section>
 
+      {/* Glimpses of the rooms — finished details */}
+      <section className="bg-bone">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="mb-8">
+            <Eyebrow>Glimpses of the rooms</Eyebrow>
+            <H2 className="mt-3">A closer look at the details.</H2>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6">
+            {[
+              img.lodgeKitchen,
+              img.lodgeBathroom,
+              img.lodgeKitchenette,
+              img.lodgeBathroomPine,
+              img.lodgeKitchenWood,
+              img.lodgeDining,
+            ].map((g) => (
+              <div
+                key={g.src}
+                className="relative aspect-4/5 overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  fill
+                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Dining — owner confirmed 2026-05-11: breakfast R60 continental on
           request, dinner on request (local dishes / braai), no halaal */}
       <section id="dining" className="scroll-mt-24 bg-sand">

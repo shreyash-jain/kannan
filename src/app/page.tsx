@@ -6,7 +6,7 @@ import { AccommodationCard } from "@/components/AccommodationCard";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
 import { Video } from "@/components/Video";
-import { img, video, wedding } from "@/lib/images";
+import { img, video } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 import { faqLd } from "@/lib/jsonld";
 
@@ -29,8 +29,8 @@ export default function HomePage() {
       a: `Four wonderful ways to stay. Comfortable self-catering lodge rooms with their own bathrooms and kitchenettes, simple twin rooms with two single beds and an en-suite, an ${site.capacity.backpackersBeds}-bed backpacker dorm with shared facilities, and ${site.capacity.campsitePitches} peaceful campsites under forty-year-old mango trees, with power and water at every pitch.`,
     },
     {
-      q: "Do you host weddings or large gatherings?",
-      a: `Absolutely. Kanaan is a wonderfully flexible venue for weddings and gatherings of every kind — up to ${site.capacity.wedding.indoor}+ guests indoors, ${site.capacity.wedding.withMarquee}+ under a marquee, and ${site.capacity.wedding.withCamping}+ when we open the camping ground for guests staying the whole weekend. Family reunions, milestone birthdays, school groups, corporate retreats and team building all find a happy home here.`,
+      q: "Do you host weddings or events?",
+      a: `Absolutely. Kanaan is a wonderfully flexible venue for weddings and events of every kind — under ${site.capacity.wedding.indoor} guests indoors, ${site.capacity.wedding.indoor}–${site.capacity.wedding.withMarquee} under a marquee, and ${site.capacity.wedding.withMarquee}–${site.capacity.wedding.withCamping} when we open the camping ground for guests staying the whole weekend. Family reunions, milestone birthdays, school groups, corporate retreats and team building all find a happy home here.`,
     },
     {
       q: "How close is the Kruger National Park?",
@@ -152,8 +152,8 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.kruger.src}
-              alt={img.kruger.alt}
+              src={img.waterfall.src}
+              alt="The waterfall on Kanaan, with the Lowveld valley running on toward the Kruger gates — the land the journey begins from."
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -259,14 +259,18 @@ export default function HomePage() {
               <H2 className="mt-3">A wander through the farm.</H2>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
             {[
               img.lodgeKitchen,
               img.lodgeBathroom,
               img.lodgeBedroomEnsuite,
               img.waterfall,
-              img.mangoRoad,
               img.veranda,
+              img.lowveldWildflowers,
+              img.macGrove,
+              img.goldenShed,
+              img.lodgeDining,
+              img.campingMango,
             ].map((g) => (
               <div
                 key={g.src}
@@ -276,7 +280,7 @@ export default function HomePage() {
                   src={g.src}
                   alt={g.alt}
                   fill
-                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -288,10 +292,13 @@ export default function HomePage() {
       {/* Amenities glance */}
       <section className="bg-bone">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
-          <div className="relative aspect-5/4 overflow-hidden rounded-2xl bg-sand">
-            <Video
-              video={video.lodgeWalk}
-              className="absolute inset-0 h-full w-full object-cover"
+          <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
+            <Image
+              src={img.lodgeBedroomEnsuite.src}
+              alt={img.lodgeBedroomEnsuite.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
           <div>
@@ -316,11 +323,11 @@ export default function HomePage() {
 
       {/* Chapter 5 — The Celebration */}
       <Section>
-        {/* Wide ceremony image — the iconic shot under the mango grove */}
+        {/* Wide image — the real ceremony lawn, ringed by the mango grove */}
         <div className="mb-12 relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={wedding.ceremony.src}
-            alt={wedding.ceremony.alt}
+            src={img.campfire.src}
+            alt="Open grass at Kanaan ringed by the forty-year-old mango grove — the wedding lawn waiting for a marquee and a long dinner table."
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             className="object-cover"
@@ -330,7 +337,7 @@ export default function HomePage() {
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div>
             <Eyebrow>Chapter 5 · The Celebration</Eyebrow>
-            <H2 className="mt-3">A wedding weekend, in the beautiful Lowveld.</H2>
+            <H2 className="mt-3">A weekend, in the beautiful Lowveld.</H2>
             <Lede>
               The most memorable weddings we have hosted are the ones that
               last more than a day. Friday evening, family and friends arrive,
@@ -338,31 +345,31 @@ export default function HomePage() {
               yours — the ceremony, the celebration, the dancing under the
               African sky. Sunday morning, nobody is in a hurry. There is
               coffee, the last of the cake, and people heading home full of
-              stories. Kanaan can hold up to{" "}
-              {site.capacity.wedding.withCamping}+ guests across the lodge,
+              stories. Kanaan holds up to{" "}
+              {site.capacity.wedding.withCamping} guests across the lodge,
               the wedding lawn, the marquee area and the camping ground — a
-              whole farm, sized to your gathering.
+              whole farm, sized to your event.
             </Lede>
             <Link
               href="/weddings"
               className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
             >
-              Weddings &amp; gatherings <span aria-hidden>→</span>
+              Wedding &amp; Events <span aria-hidden>→</span>
             </Link>
           </div>
           <AmenityList
             items={[
               {
-                title: "Indoor",
-                body: `Up to ${site.capacity.wedding.indoor}+ guests in the main venue.`,
+                title: "Intimate",
+                body: `Under ${site.capacity.wedding.indoor} guests in the main venue.`,
               },
               {
                 title: "With marquee",
-                body: `Up to ${site.capacity.wedding.withMarquee}+ on the wedding lawn under canvas.`,
+                body: `${site.capacity.wedding.indoor}–${site.capacity.wedding.withMarquee} guests on the wedding lawn under canvas.`,
               },
               {
                 title: "With camping",
-                body: `Up to ${site.capacity.wedding.withCamping}+ when guests stay the whole weekend on-site.`,
+                body: `${site.capacity.wedding.withMarquee}–${site.capacity.wedding.withCamping} guests when they stay the whole weekend on-site.`,
               },
               {
                 title: "Multi-day",
