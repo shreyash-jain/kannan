@@ -144,9 +144,10 @@ export default function TheLandPage() {
             <Eyebrow>Around the farm</Eyebrow>
             <H2 className="mt-3">The wider Kanaan, all the way to the escarpment.</H2>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
             {[
               img.macGrove,
+              img.goldenVista,
               img.macGroveFramed,
               img.lowveldWildflowers,
               img.goldenShed,

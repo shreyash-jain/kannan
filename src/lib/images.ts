@@ -9,17 +9,24 @@
 //   - pool / backpackers / backpackersBathroom (mid-renovation)
 //   - hosts (no real Anneli & Matthew portrait yet)
 
-import { cldImage, cldVideo, cldVideoFrame, cldVideoPoster } from "./cloudinary";
+import { cldImage, cldVideo, cldVideoPoster } from "./cloudinary";
 
 export type Img = { src: string; alt: string; width: number; height: number };
 
 export const img = {
   // ---- Hero / mango grove ----------------------------------------------
+  // The sun setting through the forty-year-old mango grove. The original
+  // is portrait — sun sits mid-frame — so a center-gravity 16:9 crop
+  // gives the cinematic hero band: tree canopy framing the sun and the
+  // Lowveld hills behind.
   heroFarm: {
-    src: cldImage("hero-mango-grove"),
-    alt: "The forty-year-old mango grove at Kanaan Guest Farm, Hazyview — long rows of dappled shade where the camping ground sits in summer.",
-    width: 1200,
-    height: 1600,
+    src: cldImage(
+      "mango-sunset",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "Sunset through the forty-year-old mango grove at Kanaan, the sun dropping behind the Lowveld hills.",
+    width: 1920,
+    height: 1080,
   },
   pillows: {
     src: cldImage("mango-detail"),
@@ -49,6 +56,12 @@ export const img = {
   goldenShed: {
     src: cldImage("golden-shed"),
     alt: "Golden-hour light over an outpost shed on Kanaan, with the macadamia rows and Lowveld valley stretching away below.",
+    width: 1200,
+    height: 1600,
+  },
+  goldenVista: {
+    src: cldImage("golden-vista"),
+    alt: "Golden hour on the rocky outcrop above Kanaan, with the Lowveld valley and farms running all the way to the escarpment.",
     width: 1200,
     height: 1600,
   },
@@ -190,13 +203,22 @@ export const img = {
     height: 1600,
   },
 
-  // ---- Placeholders (awaiting real photos) ----------------------------
+  // ---- Pool — now a real on-property shot --------------------------
+  // The original portrait has surface debris and a worker on the right
+  // edge, so the delivery URL takes a top-heavy 4:3 crop: keeps the
+  // palms, the brick-paved edge and the morning light, drops most of
+  // the water surface.
   pool: {
-    src: cldImage("lodge-dining-wood"),
-    alt: "A quiet corner of a lodge unit at Kanaan — wooden-beamed ceiling, soft linen curtains, a sense of the slowness that runs through the farm. (Pool photography refreshes once the pool work completes.)",
-    width: 1200,
-    height: 1600,
+    src: cldImage(
+      "pool-palms",
+      "f_auto,q_auto,c_fill,g_north,ar_4:3,w_1600",
+    ),
+    alt: "The pool at Kanaan in the morning — palm trees overhead, the brick-paved edge below.",
+    width: 1600,
+    height: 1200,
   },
+
+  // ---- Placeholders (awaiting real photos) ----------------------------
   backpackers: {
     src: cldImage("lodge-multi-bed"),
     alt: "A larger room at Kanaan with multiple beds — the kind of layout we host groups in while the wooden-house dorm is being finished.",
