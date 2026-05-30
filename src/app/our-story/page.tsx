@@ -116,8 +116,8 @@ export default function OurStoryPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.kruger.src}
-              alt={img.kruger.alt}
+              src={img.waterfall.src}
+              alt="The waterfall on Kanaan looking out over the Lowveld valley — the same landscape that runs all the way to the Kruger gates."
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -208,18 +208,18 @@ export default function OurStoryPage() {
               drift home full of stories.
             </p>
             <p>
-              Kanaan holds up to {site.capacity.wedding.withCamping}+ guests
+              Kanaan holds up to {site.capacity.wedding.withCamping} guests
               when we open the camping ground for the whole weekend. The
               same wonderful welcome awaits family reunions, milestone
               birthdays, school groups, corporate retreats and team building —
-              a whole farm, lovingly sized to the gathering.
+              a whole farm, lovingly sized to the event.
             </p>
             <p>
               <Link
                 href="/weddings"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
-                Weddings &amp; gatherings →
+                Wedding &amp; Events →
               </Link>
             </p>
           </div>

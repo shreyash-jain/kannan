@@ -5,18 +5,18 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { wedding } from "@/lib/images";
+import { img } from "@/lib/images";
 import { eventVenueLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Weddings & Gatherings — Lowveld wedding venue · Kanaan",
-  description: `A wonderfully warm wedding and gatherings venue in the beautiful heart of Hazyview, Mpumalanga. Lodge, camping and marquee options for up to ${site.capacity.wedding.withCamping} guests. Family-managed, cost-effective, and just 48 minutes from Kruger.`,
+  title: "Wedding & Events — Lowveld wedding venue · Kanaan",
+  description: `A warm, family-managed wedding and events venue in the beautiful heart of Hazyview, Mpumalanga. Indoor, marquee and on-site camping options for up to ${site.capacity.wedding.withCamping} guests. Just ${site.distances.kmiaMinutes} minutes from Kruger.`,
   alternates: { canonical: "/weddings" },
   openGraph: {
-    title: "Weddings & Gatherings · Kanaan Guest Farm",
-    description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — multi-day weekends, family reunions, school groups, corporate retreats and team building.`,
-    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
+    title: "Wedding & Events · Kanaan Guest Farm",
+    description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — intimate weekends, family events, school groups, corporate retreats.`,
+    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
   },
 };
 
@@ -28,11 +28,11 @@ export default function WeddingsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             eventVenueLd({
-              name: `${site.name} — Weddings & Gatherings`,
+              name: `${site.name} — Wedding & Events`,
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: wedding.ceremony.src,
+              image: img.heroFarm.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -42,21 +42,21 @@ export default function WeddingsPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Weddings & Gatherings", href: "/weddings" },
+          { label: "Wedding & Events", href: "/weddings" },
         ]}
       />
       <PageHero
-        eyebrow="Weddings & Gatherings"
-        title="An unforgettable wedding weekend, in the beautiful Lowveld."
-        lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a wedding designed around feeling and memory rather than the clock. This is more than a wedding — it is an African experience your guests will treasure for years to come."
+        eyebrow="Wedding & Events"
+        title="An unforgettable weekend, in the beautiful Lowveld."
+        lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide ceremony hero — the iconic mango-arch shot */}
+      {/* Wide hero — the mango grove (the ceremony spot in waiting) */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={wedding.ceremony.src}
-            alt={wedding.ceremony.alt}
+            src={img.heroFarm.src}
+            alt="The forty-year-old mango grove at Kanaan — the natural ceremony spot, with dappled shade and the Lowveld beyond."
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             priority
@@ -65,7 +65,7 @@ export default function WeddingsPage() {
         </div>
       </div>
 
-      {/* The setting + reception photo */}
+      {/* The setting + gathering grass */}
       <Section>
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div className="prose-kanaan max-w-prose">
@@ -79,20 +79,19 @@ export default function WeddingsPage() {
             <p>
               Family and friends arrive on Friday and settle into the lodge
               rooms or pitch a tent in the shade of the mango trees, and the
-              weekend gently begins long before the ceremony does. There is a
-              rehearsal dinner around the fire, the crackle of a traditional
-              braai, the aroma of delicious food drifting through the warm
-              evening air, and people who have not seen each other in years
-              finding each other again. And then the wedding day itself, in
-              its own beautiful time — relaxed, heartfelt, and unmistakably
-              yours.
+              weekend gently begins long before the ceremony does. A rehearsal
+              dinner around the fire, the crackle of a traditional braai, the
+              aroma of delicious food drifting through the warm evening air,
+              and people who have not seen each other in years finding each
+              other again. And then the wedding day itself, in its own
+              beautiful time — relaxed, heartfelt, and unmistakably yours.
             </p>
           </div>
 
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={wedding.reception.src}
-              alt={wedding.reception.alt}
+              src={img.campfire.src}
+              alt="Open grass at Kanaan ringed by the mango grove — the lawn the marquee goes up on and the long table that fills it for a wedding dinner."
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
@@ -101,32 +100,32 @@ export default function WeddingsPage() {
         </div>
       </Section>
 
-      {/* Capacity */}
+      {/* Capacity — new realistic bands */}
       <Section className="pt-0!">
         <Eyebrow>Capacity</Eyebrow>
         <H2 className="mt-3 mb-10">Lovingly sized for your guest list.</H2>
 
         <div className="grid gap-6 md:grid-cols-3">
           <CapacityCard
-            label="Indoor"
-            number={site.capacity.wedding.indoor}
-            note="Comfortable indoor seating in our welcoming main venue."
+            label="Intimate"
+            range={`Under ${site.capacity.wedding.indoor} guests`}
+            note="Indoor in our welcoming main venue — close, warm, every face in the room."
           />
           <CapacityCard
-            label="With marquee"
-            number={site.capacity.wedding.withMarquee}
+            label="With a marquee"
+            range={`${site.capacity.wedding.indoor}–${site.capacity.wedding.withMarquee} guests`}
             note="A beautiful outdoor marquee on the wedding lawn, under the African sky."
             highlight
           />
           <CapacityCard
             label="With camping"
-            number={site.capacity.wedding.withCamping}
+            range={`${site.capacity.wedding.withMarquee}–${site.capacity.wedding.withCamping} guests`}
             note="Marquee plus on-site camping for guests who stay the whole magical weekend."
           />
         </div>
       </Section>
 
-      {/* Pull quote from Anneli's own wedding-blog draft */}
+      {/* Pull quote — Anneli's own wedding-blog draft */}
       <section className="bg-sand">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8">
           <p className="font-display text-2xl italic leading-relaxed text-forest-deep sm:text-3xl">
@@ -139,13 +138,13 @@ export default function WeddingsPage() {
         </div>
       </section>
 
-      {/* First dance + detail — two-photo strip */}
+      {/* Two-photo strip — golden hour + lodge interior (real Kanaan) */}
       <Section>
         <div className="grid gap-6 md:grid-cols-[1.6fr_1fr]">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={wedding.firstDance.src}
-              alt={wedding.firstDance.alt}
+              src={img.goldenShed.src}
+              alt="Golden hour over the wider Kanaan farm — the sky guests dance under on a Saturday night."
               fill
               sizes="(min-width: 768px) 60vw, 100vw"
               className="object-cover"
@@ -153,8 +152,8 @@ export default function WeddingsPage() {
           </div>
           <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
             <Image
-              src={wedding.tableDetail.src}
-              alt={wedding.tableDetail.alt}
+              src={img.lodgeBedroomEnsuite.src}
+              alt="A renovated lodge bedroom at Kanaan — where the wedding party and out-of-town guests stay over the weekend."
               fill
               sizes="(min-width: 768px) 35vw, 100vw"
               className="object-cover"
@@ -181,12 +180,12 @@ export default function WeddingsPage() {
 
           <div className="prose-kanaan max-w-prose">
             <Eyebrow>Also a venue for</Eyebrow>
-            <H2 className="mt-3 mb-5">Gatherings of every wonderful kind.</H2>
+            <H2 className="mt-3 mb-5">Events of every wonderful kind.</H2>
             <p>
               Family reunions, milestone birthdays, school groups, corporate
               retreats and team building all find a warm and welcoming home
               here at Kanaan. The same beautiful farm, lovingly sized to your
-              gathering, with the same genuine South African hospitality.
+              event, with the same genuine South African hospitality.
             </p>
             <p>
               Tell us what you are putting together and we will happily talk
@@ -197,7 +196,7 @@ export default function WeddingsPage() {
         </div>
       </Section>
 
-      {/* Sunday morning — the lingering image */}
+      {/* Sunday morning — quiet finish */}
       <section className="bg-bone">
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:items-center">
@@ -205,16 +204,15 @@ export default function WeddingsPage() {
               <Eyebrow>Sunday morning</Eyebrow>
               <H2 className="mt-3 mb-5">No one in a hurry.</H2>
               <Lede>
-                A long table on the lawn, coffee that takes its time, the last
-                of the cake, and people who slept on the farm last night
-                drifting down for breakfast. The kind of ending that turns a
-                wedding into a memory.
+                Coffee that takes its time. The last of the cake. People who
+                slept on the farm last night drifting down for breakfast. The
+                kind of ending that turns a weekend into a memory.
               </Lede>
             </div>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={wedding.morningAfter.src}
-                alt={wedding.morningAfter.alt}
+                src={img.veranda.src}
+                alt="A lodge veranda at Kanaan — the brick-paved patio and built-in braai where Sunday morning unwinds."
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"
@@ -233,7 +231,7 @@ export default function WeddingsPage() {
           <p className="mt-6 text-bone/85">
             WhatsApp is the easiest, warmest way to reach us. You will get a
             personal reply from Anneli or Matthew — no forms, no
-            auto-responders, just a real conversation about your celebration.
+            auto-responders, just a real conversation about your event.
           </p>
           <div className="mt-7">
             <Link
@@ -255,12 +253,12 @@ export default function WeddingsPage() {
 
 function CapacityCard({
   label,
-  number,
+  range,
   note,
   highlight,
 }: {
   label: string;
-  number: number;
+  range: string;
   note: string;
   highlight?: boolean;
 }) {
@@ -275,7 +273,9 @@ function CapacityCard({
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">
         {label}
       </p>
-      <p className="mt-3 font-display text-5xl text-forest-deep">{number}+</p>
+      <p className="mt-3 font-display text-3xl leading-tight text-forest-deep">
+        {range}
+      </p>
       <p className="mt-3 text-sm leading-relaxed text-ink/80">{note}</p>
     </div>
   );
