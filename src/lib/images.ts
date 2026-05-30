@@ -9,7 +9,7 @@
 //   - pool / backpackers / backpackersBathroom (mid-renovation)
 //   - hosts (no real Anneli & Matthew portrait yet)
 
-import { cldImage, cldVideo, cldVideoPoster } from "./cloudinary";
+import { cldImage, cldVideo, cldVideoFrame, cldVideoPoster } from "./cloudinary";
 
 export type Img = { src: string; alt: string; width: number; height: number };
 
@@ -216,10 +216,14 @@ export const img = {
     height: 1200,
   },
   hosts: {
-    src: cldImage("hosts"),
-    alt: "Anneli and Matthew — owners of Kanaan Guest Farm since August 2025.",
+    // Still frame pulled from the property-tour video — Matthew talking
+    // through the macadamia grove. A real founder shot beats the previous
+    // stock portrait; a wider Anneli & Matthew portrait can drop straight
+    // back in here when one is shot.
+    src: cldVideoFrame("property-tour", 22),
+    alt: "Matthew — co-owner of Kanaan Guest Farm — in the macadamia grove, the wider farm running away behind him.",
     width: 1600,
-    height: 1400,
+    height: 900,
   },
 
   // ---- Open Graph / share image ---------------------------------------
