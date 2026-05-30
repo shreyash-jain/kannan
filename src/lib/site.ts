@@ -78,9 +78,9 @@ export const site = {
     campsitePitches: 10,
     campingPeople: 120,
     wedding: {
-      indoor: 100,
-      withMarquee: 150,
-      withCamping: 220,
+      indoor: 60,
+      withMarquee: 100,
+      withCamping: 150,
     },
   },
   keywords: [
@@ -102,7 +102,8 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
-  { href: "/weddings", label: "Weddings & Gatherings" },
+  { href: "/packages", label: "Packages" },
+  { href: "/weddings", label: "Wedding & Events" },
   { href: "/the-land", label: "The Land" },
   { href: "/blog", label: "Journal" },
   { href: "/contact", label: "Contact" },
@@ -113,6 +114,8 @@ export const nav = [
 export const whatsappMessages = {
   home: "Hi Anneli and Matthew, I just visited your website and would love to know more about Kanaan.",
   stay: "Hi Anneli and Matthew, I'd love to enquire about a stay at Kanaan.",
+  packages:
+    "Hi Anneli and Matthew, I would like to enquire about a multi-day package at Kanaan.",
   weddings:
     "Hi Anneli and Matthew, we're planning our wedding and would love to know more about Kanaan.",
   ourStory: "Hi Anneli and Matthew, I just read your story — I'd love to know more about Kanaan.",

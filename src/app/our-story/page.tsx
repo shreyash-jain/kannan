@@ -116,8 +116,8 @@ export default function OurStoryPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.kruger.src}
-              alt={img.kruger.alt}
+              src={img.waterfall.src}
+              alt="The waterfall on Kanaan looking out over the Lowveld valley — the same landscape that runs all the way to the Kruger gates."
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -208,23 +208,51 @@ export default function OurStoryPage() {
               drift home full of stories.
             </p>
             <p>
-              Kanaan holds up to {site.capacity.wedding.withCamping}+ guests
+              Kanaan holds up to {site.capacity.wedding.withCamping} guests
               when we open the camping ground for the whole weekend. The
               same wonderful welcome awaits family reunions, milestone
               birthdays, school groups, corporate retreats and team building —
-              a whole farm, lovingly sized to the gathering.
+              a whole farm, lovingly sized to the event.
             </p>
             <p>
               <Link
                 href="/weddings"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
-                Weddings &amp; gatherings →
+                Wedding &amp; Events →
               </Link>
             </p>
           </div>
         </div>
       </Section>
+
+      {/* The wider farm — agricultural land Anneli mentions in Chapter 6 */}
+      <section className="bg-bone">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.macGrove.src}
+                alt={img.macGrove.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <Eyebrow>The wider farm</Eyebrow>
+              <H2 className="mt-3 mb-5">More than the lodge.</H2>
+              <Lede>
+                Kanaan sits on agricultural ground that runs out into bushveld
+                long after the lodge ends. We are slowly bringing that land
+                back into use — macadamia trees planted in rows, hiking and
+                cycling routes opening up again, and in time, a quieter
+                eco-camp on the further property.
+              </Lede>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Chapter 6 — closing */}
       <section className="bg-forest text-bone">
@@ -235,12 +263,12 @@ export default function OurStoryPage() {
           <H2 className="mt-3 text-bone">We had a million ideas. Now we have a plan.</H2>
           <Lede>
             <span className="text-bone/90">
-              The wooden-house backpackers is nearly open. Multi-day Kruger
-              packages launch in the coming weeks. On-request breakfast and
-              dinner are coming next. And the longer view — hiking and
-              cycling routes across the wider farm, low-impact eco-camping on
-              the further land — is taking shape, piece by piece, the way
-              everything here gets built.
+              The wooden-house backpackers is nearly open. Our multi-day
+              Kruger packages are live — build your own on the packages
+              page. On-request breakfast and dinner are coming next. And
+              the longer view — hiking and cycling routes across the wider
+              farm, low-impact eco-camping on the further land — is taking
+              shape, piece by piece, the way everything here gets built.
             </span>
           </Lede>
           <p className="mt-7 font-display text-lg italic text-bone/85">
@@ -248,8 +276,14 @@ export default function OurStoryPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/blog/the-future"
+              href="/packages"
               className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+            >
+              Build a package →
+            </Link>
+            <Link
+              href="/blog/the-future"
+              className="inline-flex items-center rounded-full border border-bone/40 px-6 py-3 text-sm font-medium text-bone hover:bg-bone/10"
             >
               Read what we are building next →
             </Link>
