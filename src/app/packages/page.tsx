@@ -101,10 +101,12 @@ export default function PackagesPage() {
               </p>
             </div>
           </div>
+          {/* Add-on illustration — Kruger context (currently a stock-but-real
+              Kruger photo; Anneli will send a real safari shot to replace). */}
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.goldenShed.src}
-              alt={img.goldenShed.alt}
+              src={img.kruger.src}
+              alt="A Kruger National Park scene — the kind of day a Kanaan package wraps around."
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -112,6 +114,45 @@ export default function PackagesPage() {
           </div>
         </div>
       </Section>
+
+      {/* A four-up collage: a Lowveld day from the farm */}
+      <section className="bg-bone">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="mb-8 max-w-2xl">
+            <Eyebrow>What a Kanaan day looks like</Eyebrow>
+            <H2 className="mt-3">From the farm, to Kruger, to the canyon.</H2>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {/* Two from Kanaan — surrounds + a room — then Panorama + Kruger.
+                The Panorama / Kruger slots use Cloudinary placeholders
+                pending Anneli's own location shots. */}
+            <CollageTile
+              img={img.lowveldWildflowers}
+              label="On the farm"
+              cropAlt="The wider Kanaan farm, wildflowers and rolling Lowveld hills."
+            />
+            <CollageTile
+              img={img.lodgeBedroomEnsuite}
+              label="Your room"
+              cropAlt="A renovated lodge bedroom at Kanaan — the room you come back to between days out."
+            />
+            <CollageTile
+              img={img.panorama}
+              label="Panorama Route"
+              cropAlt="A Panorama Route viewpoint — the kind of day the add-on takes you on."
+            />
+            <CollageTile
+              img={img.kruger}
+              label="Kruger"
+              cropAlt="A Kruger National Park scene — the full-day safari every package includes."
+            />
+          </div>
+          <p className="mt-5 text-[11px] text-muted">
+            Real safari and Panorama photographs from Anneli replace
+            these tiles when she sends them through.
+          </p>
+        </div>
+      </section>
 
       {/* Closing CTA */}
       <section className="bg-forest text-bone">
@@ -150,6 +191,33 @@ function IncludedCard({ title, body }: { title: string; body: string }) {
     <div className="rounded-2xl border border-black/10 bg-bone p-6">
       <h3 className="font-display text-xl text-forest-deep">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-ink/80">{body}</p>
+    </div>
+  );
+}
+
+function CollageTile({
+  img,
+  label,
+  cropAlt,
+}: {
+  img: { src: string; alt: string };
+  label: string;
+  cropAlt: string;
+}) {
+  return (
+    <div className="relative aspect-4/5 overflow-hidden rounded-xl">
+      <Image
+        src={img.src}
+        alt={cropAlt || img.alt}
+        fill
+        sizes="(min-width: 1024px) 25vw, 50vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent p-3">
+        <p className="text-xs font-medium uppercase tracking-[0.16em] text-bone">
+          {label}
+        </p>
+      </div>
     </div>
   );
 }
