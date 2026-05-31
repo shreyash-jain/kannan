@@ -5,7 +5,8 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { img, wedding } from "@/lib/images";
+import { Video } from "@/components/Video";
+import { img, video, wedding } from "@/lib/images";
 import { eventVenueLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -99,6 +100,21 @@ export default function WeddingsPage() {
           </div>
         </div>
       </Section>
+
+      {/* Venue walk-through — Matthew under the covered area */}
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+          <Video
+            video={video.tourVenue}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+        <p className="mt-3 text-center text-xs text-muted">
+          A walk through the covered wedding-lawn area — where the
+          marquee goes up and the dinner table runs the length of the
+          room.
+        </p>
+      </div>
 
       {/* Capacity — new realistic bands */}
       <Section className="pt-0!">

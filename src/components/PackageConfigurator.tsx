@@ -4,14 +4,54 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { whatsappLink } from "@/lib/site";
 
-// Prices from the client's October 2026 brief (rack rates).
-// Accommodation is per person sharing, per night.
-const ACCOMMODATION_PER_PAX_NIGHT = 450;
+// ---------------------------------------------------------------------
+// Pricing — Anneli, 2026-05-31
+// ---------------------------------------------------------------------
+// Room rates are PER ROOM PER NIGHT (not per pax). Backpackers is per
+// person per night. Children are charged the same as adults for the
+// room rate (Anneli has not flagged a different child rate for rooms).
+// For optional activities, Anneli is confirming whether child rates
+// differ; until she does, adult rates are used and a footnote calls it
+// out. The form is capped at 4 guests; groups larger than 4 are nudged
+// toward WhatsApp for group-discounted pricing.
+
+type Room = "twin" | "double" | "backpackers";
+
+const ROOM_DEFS: Record<
+  Room,
+  {
+    name: string;
+    perNight: (totalPax: number) => number;
+    maxPax: number;
+    pricingNote: string;
+  }
+> = {
+  twin: {
+    name: "Twin room",
+    perNight: (pax) => (pax >= 2 ? 500 : 350),
+    maxPax: 2,
+    pricingNote: "R 350 / 1 guest · R 500 / 2 guests",
+  },
+  double: {
+    name: "Double room",
+    perNight: (pax) => (pax >= 2 ? 650 : 450),
+    maxPax: 2,
+    pricingNote: "R 450 / 1 guest · R 650 / 2 guests",
+  },
+  backpackers: {
+    name: "Backpackers",
+    perNight: (pax) => 200 * pax,
+    maxPax: 4,
+    pricingNote: "R 200 per person per night",
+  },
+};
 
 // Per-person tour costs include the relevant park / venue entry fee.
+// TODO(Anneli): confirm child rates for these — currently using adult
+// rates uniformly with a footnote on the page.
 const TOUR_PRICES = {
-  knpDay: 1825 + 602, // R2,427 — KNP full-day open-vehicle drive + park entry
-  panorama: 1805 + 600, // R2,405 — Panorama Route + Blyde Canyon nature reserve entry
+  knpDay: 1825 + 602, // R 2,427 — KNP open-vehicle drive + park entry
+  panorama: 1805 + 600, // R 2,405 — Panorama Route + Blyde nature-reserve entry
   shangana: 1600, // dinner + dance + drumming at Shangana Cultural Village
 } as const;
 
@@ -19,13 +59,10 @@ const TOUR_PRICES = {
 const TRANSFER_FLAT = 1700;
 
 type Nights = 2 | 3 | 5;
-type Room = "twin" | "double";
-type Pax = 1 | 2;
+type Adults = 1 | 2 | 3 | 4;
+type Children = 0 | 1 | 2 | 3;
 
-const ROOMS: Record<Room, string> = {
-  twin: "Twin room",
-  double: "Double room",
-};
+const MAX_TOTAL = 4;
 
 type DayItem = { day: string; text: string; addon: boolean };
 
@@ -89,7 +126,6 @@ function buildItinerary(
       out.push(d);
     }
   }
-  // Pre-departure injection for shorter packages
   if ((nights === 2 || nights === 3) && addonIdx < addonDays.length) {
     const last = out.pop()!;
     while (addonIdx < addonDays.length) {
@@ -102,27 +138,33 @@ function buildItinerary(
 }
 
 function formatZAR(n: number): string {
-  return "R " + Math.round(n).toLocaleString("en-ZA");
+  return "R " + Math.round(n).toLocaleString("en-ZA");
 }
 
 export function PackageConfigurator() {
   const [nights, setNights] = useState<Nights>(3);
-  const [room, setRoom] = useState<Room>("twin");
-  const [pax, setPax] = useState<Pax>(1);
+  const [adults, setAdults] = useState<Adults>(2);
+  const [children, setChildren] = useState<Children>(0);
+  const [room, setRoom] = useState<Room>("double");
   const [panorama, setPanorama] = useState(false);
   const [shangana, setShangana] = useState(false);
   const [transfer, setTransfer] = useState(false);
 
+  const totalPax = adults + children;
+  const roomDef = ROOM_DEFS[room];
+  const roomTooSmall = totalPax > roomDef.maxPax;
+
   const quote = useMemo(() => {
-    const accommodation = ACCOMMODATION_PER_PAX_NIGHT * pax * nights;
-    const knp = TOUR_PRICES.knpDay * pax;
-    const panoramaCost = panorama ? TOUR_PRICES.panorama * pax : 0;
-    const shanganaCost = shangana ? TOUR_PRICES.shangana * pax : 0;
+    const perNight = roomDef.perNight(totalPax);
+    const accommodation = perNight * nights;
+    const knp = TOUR_PRICES.knpDay * totalPax;
+    const panoramaCost = panorama ? TOUR_PRICES.panorama * totalPax : 0;
+    const shanganaCost = shangana ? TOUR_PRICES.shangana * totalPax : 0;
     const transferCost = transfer ? TRANSFER_FLAT : 0;
     const total =
       accommodation + knp + panoramaCost + shanganaCost + transferCost;
-    return { accommodation, knp, panoramaCost, shanganaCost, transferCost, total };
-  }, [nights, pax, panorama, shangana, transfer]);
+    return { accommodation, knp, panoramaCost, shanganaCost, transferCost, total, perNight };
+  }, [nights, totalPax, panorama, shangana, transfer, roomDef]);
 
   const itinerary = useMemo(
     () => buildItinerary(nights, { panorama, shangana }),
@@ -131,8 +173,12 @@ export function PackageConfigurator() {
 
   const enquiryUrl = useMemo(() => {
     const parts: string[] = [];
+    const guestStr =
+      children > 0
+        ? `${adults} adult${adults > 1 ? "s" : ""} and ${children} child${children > 1 ? "ren" : ""}`
+        : `${adults} adult${adults > 1 ? "s" : ""}`;
     parts.push(
-      `Hi Anneli and Matthew, I would like to enquire about a ${nights}-night package for ${pax} guest${pax > 1 ? "s" : ""} in a ${ROOMS[room].toLowerCase()}.`,
+      `Hi Anneli and Matthew, I would like to enquire about a ${nights}-night package for ${guestStr} in a ${roomDef.name.toLowerCase()}.`,
     );
     const extras: string[] = [];
     if (panorama) extras.push("Panorama Route day trip");
@@ -141,13 +187,36 @@ export function PackageConfigurator() {
     if (extras.length > 0) {
       parts.push("Add-ons: " + extras.join(", ") + ".");
     }
-    parts.push(`Indicative total: ${formatZAR(quote.total)}.`);
+    if (!roomTooSmall) {
+      parts.push(`Indicative total: ${formatZAR(quote.total)}.`);
+    }
     const text = encodeURIComponent(parts.join(" "));
     const number = whatsappLink("contact")
       .replace("https://wa.me/", "")
       .replace(/\?.+$/, "");
     return `https://wa.me/${number}?text=${text}`;
-  }, [nights, pax, room, panorama, shangana, transfer, quote.total]);
+  }, [
+    nights,
+    adults,
+    children,
+    panorama,
+    shangana,
+    transfer,
+    quote.total,
+    roomDef.name,
+    roomTooSmall,
+  ]);
+
+  // For groups bigger than 4 — direct to WhatsApp with a group note.
+  const groupEnquiryUrl = useMemo(() => {
+    const text = encodeURIComponent(
+      "Hi Anneli and Matthew, we are travelling as a group bigger than 4 — could you share group-discounted package rates for us?",
+    );
+    const number = whatsappLink("contact")
+      .replace("https://wa.me/", "")
+      .replace(/\?.+$/, "");
+    return `https://wa.me/${number}?text=${text}`;
+  }, []);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
@@ -169,25 +238,70 @@ export function PackageConfigurator() {
               value={nights}
               onChange={(v) => setNights(v as Nights)}
             />
+
+            <ToggleRow
+              label="Adults"
+              options={[
+                { label: "1", value: 1 },
+                { label: "2", value: 2 },
+                { label: "3", value: 3 },
+                { label: "4", value: 4 },
+              ]}
+              value={adults}
+              onChange={(v) => {
+                const next = v as Adults;
+                setAdults(next);
+                // Cap children so total never exceeds MAX_TOTAL
+                if (next + children > MAX_TOTAL) {
+                  setChildren((MAX_TOTAL - next) as Children);
+                }
+              }}
+            />
+
+            <ToggleRow
+              label="Children"
+              options={([0, 1, 2, 3] as const).map((n) => ({
+                label: String(n),
+                value: n,
+                disabled: adults + n > MAX_TOTAL,
+              }))}
+              value={children}
+              onChange={(v) => setChildren(v as Children)}
+            />
+
             <ToggleRow
               label="Room type"
               options={[
-                { label: "Twin", value: "twin" },
-                { label: "Double", value: "double" },
+                { label: ROOM_DEFS.twin.name, value: "twin" },
+                { label: ROOM_DEFS.double.name, value: "double" },
+                { label: ROOM_DEFS.backpackers.name, value: "backpackers" },
               ]}
               value={room}
               onChange={(v) => setRoom(v as Room)}
             />
-            <ToggleRow
-              label="Guests"
-              options={[
-                { label: "1 guest", value: 1 },
-                { label: "2 guests", value: 2 },
-              ]}
-              value={pax}
-              onChange={(v) => setPax(v as Pax)}
-            />
+
+            <p className="text-[11px] text-muted">
+              {roomDef.pricingNote} ·{" "}
+              {roomDef.maxPax === 4
+                ? "sleeps up to 4 guests"
+                : `sleeps up to ${roomDef.maxPax} guests`}
+            </p>
           </div>
+
+          {/* Group-size note */}
+          <p className="mt-5 rounded-xl bg-sand/60 px-3 py-2 text-[11px] leading-relaxed text-ink/70">
+            This form is set up for parties of up to {MAX_TOTAL} guests.
+            For a bigger group,{" "}
+            <Link
+              href={groupEnquiryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-ochre hover:text-ochre-deep"
+            >
+              WhatsApp us
+            </Link>{" "}
+            and we will share our group-discounted rates.
+          </p>
         </div>
 
         <div>
@@ -220,6 +334,11 @@ export function PackageConfigurator() {
               onToggle={() => setTransfer((s) => !s)}
             />
           </div>
+          <p className="mt-3 text-[11px] leading-relaxed text-muted">
+            Child rates for the activities above are confirmed
+            individually — Anneli will share the exact figures when you
+            enquire.
+          </p>
         </div>
       </div>
 
@@ -230,119 +349,153 @@ export function PackageConfigurator() {
             Your package
           </p>
           <h3 className="mt-1 font-display text-2xl">
-            {nights}-night package — {ROOMS[room]}
+            {nights}-night package — {roomDef.name}
           </h3>
           <p className="text-sm text-bone/85">
-            {pax} {pax === 1 ? "guest" : "guests"}
+            {adults} adult{adults > 1 ? "s" : ""}
+            {children > 0 && `, ${children} child${children > 1 ? "ren" : ""}`}
             {(panorama || shangana || transfer) && ", with add-ons"}
           </p>
         </div>
 
         <div className="px-6 py-6">
-          <div className="flex items-baseline gap-3 border-b border-black/10 pb-4">
-            <span className="font-display text-4xl text-forest-deep">
-              {formatZAR(quote.total)}
-            </span>
-            <span className="text-sm text-muted">
-              {pax === 1 ? "for 1 guest" : "for 2 guests, total"}
-            </span>
-          </div>
-
-          <p className="mt-5 text-xs font-medium uppercase tracking-[0.16em] text-muted">
-            Package breakdown
-          </p>
-          <ul className="mt-3 space-y-1 text-sm">
-            <LineItem
-              label={`Accommodation (${nights} nights × R450/guest/night)`}
-              amount={quote.accommodation}
-            />
-            <LineItem
-              label={`Kruger full-day drive × ${pax} guest${pax > 1 ? "s" : ""}`}
-              amount={quote.knp}
-            />
-          </ul>
-
-          {(panorama || shangana || transfer) && (
+          {roomTooSmall ? (
+            <div className="rounded-xl border border-ochre/40 bg-ochre/5 px-4 py-4 text-sm">
+              <p className="font-medium text-ochre-deep">
+                A {roomDef.name.toLowerCase()} sleeps up to {roomDef.maxPax} guests.
+              </p>
+              <p className="mt-2 text-ink/80">
+                For {totalPax} guests, the Backpackers option fits the
+                whole party — or send us a message and we will arrange
+                multiple rooms with a group rate.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => setRoom("backpackers")}
+                  className="rounded-full bg-forest px-4 py-1.5 text-xs font-medium text-bone hover:bg-forest-deep"
+                >
+                  Switch to Backpackers
+                </button>
+                <Link
+                  href={groupEnquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-forest/30 px-4 py-1.5 text-xs font-medium text-forest hover:bg-forest/10"
+                >
+                  Or WhatsApp us
+                </Link>
+              </div>
+            </div>
+          ) : (
             <>
-              <p className="mt-5 text-xs font-medium uppercase tracking-[0.16em] text-ochre">
-                Add-ons
+              <div className="flex items-baseline gap-3 border-b border-black/10 pb-4">
+                <span className="font-display text-4xl text-forest-deep">
+                  {formatZAR(quote.total)}
+                </span>
+                <span className="text-sm text-muted">
+                  total for {totalPax} guest{totalPax > 1 ? "s" : ""}
+                </span>
+              </div>
+
+              <p className="mt-5 text-xs font-medium uppercase tracking-[0.16em] text-muted">
+                Package breakdown
               </p>
               <ul className="mt-3 space-y-1 text-sm">
-                {panorama && (
-                  <LineItem
-                    label={`Panorama Route × ${pax} guest${pax > 1 ? "s" : ""}`}
-                    amount={quote.panoramaCost}
-                    accent
-                  />
-                )}
-                {shangana && (
-                  <LineItem
-                    label={`Shangana Evening × ${pax} guest${pax > 1 ? "s" : ""}`}
-                    amount={quote.shanganaCost}
-                    accent
-                  />
-                )}
-                {transfer && (
-                  <LineItem
-                    label="KMIA airport transfer"
-                    amount={quote.transferCost}
-                    accent
-                  />
-                )}
+                <LineItem
+                  label={`${roomDef.name} (${nights} night${nights > 1 ? "s" : ""} × ${formatZAR(quote.perNight)} / night)`}
+                  amount={quote.accommodation}
+                />
+                <LineItem
+                  label={`Kruger full-day drive × ${totalPax} guest${totalPax > 1 ? "s" : ""}`}
+                  amount={quote.knp}
+                />
               </ul>
+
+              {(panorama || shangana || transfer) && (
+                <>
+                  <p className="mt-5 text-xs font-medium uppercase tracking-[0.16em] text-ochre">
+                    Add-ons
+                  </p>
+                  <ul className="mt-3 space-y-1 text-sm">
+                    {panorama && (
+                      <LineItem
+                        label={`Panorama Route × ${totalPax} guest${totalPax > 1 ? "s" : ""}`}
+                        amount={quote.panoramaCost}
+                        accent
+                      />
+                    )}
+                    {shangana && (
+                      <LineItem
+                        label={`Shangana Evening × ${totalPax} guest${totalPax > 1 ? "s" : ""}`}
+                        amount={quote.shanganaCost}
+                        accent
+                      />
+                    )}
+                    {transfer && (
+                      <LineItem
+                        label="KMIA airport transfer"
+                        amount={quote.transferCost}
+                        accent
+                      />
+                    )}
+                  </ul>
+                </>
+              )}
+
+              <div className="mt-4 flex items-baseline justify-between border-t border-black/10 pt-3">
+                <span className="text-sm font-medium text-ink">Total</span>
+                <span className="font-display text-xl text-forest-deep">
+                  {formatZAR(quote.total)}
+                </span>
+              </div>
+
+              {/* Itinerary */}
+              <p className="mt-7 text-xs font-medium uppercase tracking-[0.16em] text-muted">
+                Itinerary
+              </p>
+              <ol className="mt-3 space-y-3">
+                {itinerary.map((d, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm leading-relaxed">
+                    <span
+                      className={
+                        "flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-[10px] font-semibold " +
+                        (d.addon
+                          ? "bg-ochre/15 text-ochre-deep"
+                          : "bg-forest/10 text-forest-deep")
+                      }
+                    >
+                      {d.day}
+                    </span>
+                    <span className="text-ink/85">
+                      {d.text}
+                      {d.addon && (
+                        <span className="ml-2 inline-block rounded-full bg-ochre/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ochre-deep">
+                          add-on
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-7">
+                <Link
+                  href={enquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+                >
+                  Enquire on WhatsApp
+                </Link>
+                <p className="mt-3 text-center text-xs text-muted">
+                  Indicative price — Anneli will confirm availability,
+                  child rates for activities, and the final quote on
+                  WhatsApp.
+                </p>
+              </div>
             </>
           )}
-
-          <div className="mt-4 flex items-baseline justify-between border-t border-black/10 pt-3">
-            <span className="text-sm font-medium text-ink">Total</span>
-            <span className="font-display text-xl text-forest-deep">
-              {formatZAR(quote.total)}
-            </span>
-          </div>
-
-          {/* Itinerary */}
-          <p className="mt-7 text-xs font-medium uppercase tracking-[0.16em] text-muted">
-            Itinerary
-          </p>
-          <ol className="mt-3 space-y-3">
-            {itinerary.map((d, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm leading-relaxed">
-                <span
-                  className={
-                    "flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-[10px] font-semibold " +
-                    (d.addon
-                      ? "bg-ochre/15 text-ochre-deep"
-                      : "bg-forest/10 text-forest-deep")
-                  }
-                >
-                  {d.day}
-                </span>
-                <span className="text-ink/85">
-                  {d.text}
-                  {d.addon && (
-                    <span className="ml-2 inline-block rounded-full bg-ochre/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ochre-deep">
-                      add-on
-                    </span>
-                  )}
-                </span>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-7">
-            <Link
-              href={enquiryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
-            >
-              Enquire on WhatsApp
-            </Link>
-            <p className="mt-3 text-center text-xs text-muted">
-              Indicative price — Anneli will confirm availability and final
-              quote on WhatsApp.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -356,7 +509,7 @@ function ToggleRow<T extends string | number>({
   onChange,
 }: {
   label: string;
-  options: { label: string; value: T }[];
+  options: { label: string; value: T; disabled?: boolean }[];
   value: T;
   onChange: (v: T) => void;
 }) {
@@ -368,14 +521,18 @@ function ToggleRow<T extends string | number>({
       <div className="mt-2 flex flex-wrap gap-2">
         {options.map((o) => {
           const on = o.value === value;
+          const disabled = !!o.disabled;
           return (
             <button
               key={String(o.value)}
               type="button"
-              onClick={() => onChange(o.value)}
+              onClick={() => !disabled && onChange(o.value)}
+              disabled={disabled}
               className={
                 "rounded-full px-4 py-1.5 text-sm transition-colors " +
-                (on
+                (disabled
+                  ? "cursor-not-allowed bg-bone text-ink/25 border border-black/5"
+                  : on
                   ? "bg-forest text-bone"
                   : "bg-bone text-ink/70 border border-black/10 hover:border-forest/40 hover:text-forest")
               }

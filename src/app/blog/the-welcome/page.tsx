@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
+import { Video } from "@/components/Video";
+import { img, video } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -257,6 +258,20 @@ export default function WelcomePostPage() {
             </div>
           </div>
         </section>
+
+        {/* Campsite tour clip */}
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+            <Video
+              video={video.tourCamping}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-muted">
+            A walk through the camping ground at Kanaan, under the
+            forty-year-old mango grove.
+          </p>
+        </div>
 
         {/* The campsite under the mango trees */}
         <Section>
