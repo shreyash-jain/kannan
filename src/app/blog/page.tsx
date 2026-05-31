@@ -42,8 +42,11 @@ const posts: Post[] = [
   {
     n: 2,
     chapter: "The Promise",
-    title: "Reading every guest, listening to every story",
-    status: "soon",
+    title: "The promise we made ourselves",
+    status: "live",
+    href: "/blog/the-promise",
+    excerpt:
+      "We took the keys in August 2025, read every review the farm had ever received, and started rebuilding Kanaan the slow, honest way — water, WiFi, the gate, the rooms, one thing at a time.",
   },
   {
     n: 3,
@@ -58,14 +61,20 @@ const posts: Post[] = [
   {
     n: 4,
     chapter: "The Welcome",
-    title: "From R250 per person sharing — and what that wonderful welcome includes",
-    status: "soon",
+    title: "The welcome at Kanaan",
+    status: "live",
+    href: "/blog/the-welcome",
+    excerpt:
+      "What a stay at Kanaan actually feels like — the dust road in, the room you arrive to, the morning at the breakfast table, the long afternoon under the mango trees and the honest line about the kind of traveller the farm was built for.",
   },
   {
     n: 5,
     chapter: "The Celebration",
-    title: "An unforgettable wedding weekend in the beautiful Lowveld",
-    status: "soon",
+    title: "An intimate wedding weekend in the beautiful Lowveld",
+    status: "live",
+    href: "/blog/the-celebration",
+    excerpt:
+      "A multi-day wedding weekend at Kanaan in Hazyview — rehearsal nights around the fire, a relaxed ceremony under the African sky, a Sunday morning no one is in a hurry to leave. Up to 150 guests on the farm.",
   },
   {
     n: 6,
