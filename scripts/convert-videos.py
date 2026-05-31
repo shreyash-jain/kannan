@@ -30,6 +30,8 @@ PICKS: list[tuple[str, str, float, int]] = [
     ("Rooms/IMG_4759.MOV", "lodge-room-walk.mp4", 0.0, DEFAULT_MAX_SECONDS),
     # Longer property tour from the Drive root — user-requested.
     ("IMG_8318.MOV", "property-tour.mp4", 0.0, 30),
+    # Pool video from the Pool folder.
+    ("Pool/20250709_080153.mp4", "pool-tour.mp4", 0.0, 20),
 ]
 
 

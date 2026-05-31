@@ -11,7 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/the-land", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
     { path: "/blog/the-discovery", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/the-promise", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/africa", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/the-welcome", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/the-celebration", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/the-future", priority: 0.7, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
   ];
