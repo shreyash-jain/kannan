@@ -329,4 +329,25 @@ export const video = {
     alt: "A walk past the pool area at Kanaan — the next big project on the list after the lodge rooms.",
     poster: cldVideoPoster("pool-tour"),
   },
+  // ---- Tour segments cut from the long Matthew-narrated walk-through ----
+  tourMacGrove: {
+    src: cldVideo("tour-mac-grove"),
+    alt: "Matthew in the macadamia grove at Kanaan, the Lowveld valley behind him in golden hour.",
+    poster: cldVideoPoster("tour-mac-grove"),
+  },
+  tourVenue: {
+    src: cldVideo("tour-venue"),
+    alt: "Matthew walking through the covered wedding-lawn area at Kanaan — the indoor venue, big enough for a marquee evening.",
+    poster: cldVideoPoster("tour-venue"),
+  },
+  tourCamping: {
+    src: cldVideo("tour-camping"),
+    alt: "A walk through the camping ground at Kanaan, under the forty-year-old mango grove.",
+    poster: cldVideoPoster("tour-camping"),
+  },
+  tourLodgeUnit: {
+    src: cldVideo("tour-lodge-unit"),
+    alt: "Matthew walking past one of the renovated lodge units at Kanaan, talking through what is new about it.",
+    poster: cldVideoPoster("tour-lodge-unit"),
+  },
 } as const;

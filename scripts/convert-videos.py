@@ -32,6 +32,12 @@ PICKS: list[tuple[str, str, float, int]] = [
     ("IMG_8318.MOV", "property-tour.mp4", 0.0, 30),
     # Pool video from the Pool folder.
     ("Pool/20250709_080153.mp4", "pool-tour.mp4", 0.0, 20),
+    # ---- Segments cut out of IMG_8320 (the 5-min Matthew-narrated tour) ----
+    # Each one is a different part of the property — embed individually.
+    ("IMG_8320.MOV", "tour-mac-grove.mp4", 0.0, 18),       # mac grove, golden hour
+    ("IMG_8320.MOV", "tour-venue.mp4", 108.0, 20),         # the covered wedding-lawn area
+    ("IMG_8320.MOV", "tour-camping.mp4", 168.0, 18),       # camping under the mango grove
+    ("IMG_8320.MOV", "tour-lodge-unit.mp4", 280.0, 18),    # a lodge unit walk-around
 ]
 
 
