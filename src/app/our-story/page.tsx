@@ -230,13 +230,10 @@ export default function OurStoryPage() {
       <section className="bg-bone">
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
-              <Image
-                src={img.macGrove.src}
-                alt={img.macGrove.alt}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
+              <Video
+                video={video.tourMacGrove}
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div>
