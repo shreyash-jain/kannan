@@ -233,6 +233,7 @@ export default function OurStoryPage() {
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
               <Video
                 video={video.tourMacGrove}
+                narrated
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>

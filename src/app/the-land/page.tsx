@@ -41,6 +41,7 @@ export default function TheLandPage() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
           <Video
             video={video.propertyTour}
+            narrated
             className="absolute inset-0 h-full w-full object-cover"
             schemaName="A tour around Kanaan Guest Farm"
             schemaDescription="A short walk around Kanaan Guest Farm in Hazyview, Mpumalanga — the mango grove, the lodge units, the camp site, and the Lowveld around them."
@@ -99,8 +100,8 @@ export default function TheLandPage() {
           <div className="grid grid-cols-2 gap-3">
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
               <Image
-                src={img.waterfall.src}
-                alt={img.waterfall.alt}
+                src={img.goldenVista.src}
+                alt={img.goldenVista.alt}
                 fill
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className="object-cover"
@@ -146,13 +147,13 @@ export default function TheLandPage() {
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
             {[
+              img.viewpointGazebo,
               img.macGrove,
               img.goldenVista,
               img.macGroveFramed,
               img.lowveldWildflowers,
               img.goldenShed,
               img.trailView,
-              img.mtb,
             ].map((g) => (
               <div
                 key={g.src}

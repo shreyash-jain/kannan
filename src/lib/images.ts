@@ -65,6 +65,39 @@ export const img = {
     width: 1200,
     height: 1600,
   },
+  // ---- Covered venue + viewpoint gazebo (real Kanaan venue spaces) ----
+  venueCovered: {
+    src: cldImage("venue-covered"),
+    alt: "The covered entertainment area at Kanaan — long tables, chairs and an open view across the Lowveld valley.",
+    width: 1500,
+    height: 1000,
+  },
+  venueTables: {
+    src: cldImage("venue-tables"),
+    alt: "The Kanaan venue from the other side — bar tables, picnic seating and a games area, all under the covered roof.",
+    width: 1500,
+    height: 1000,
+  },
+  viewpointGazebo: {
+    src: cldImage("viewpoint-gazebo"),
+    alt: "The picnic gazebo at the viewpoint above Kanaan — a thatch roof, two picnic tables and the Lowveld valley opening out beyond.",
+    width: 1500,
+    height: 1000,
+  },
+  // ---- Real camping shot: tents under the mango trees ---------------
+  campingTents: {
+    src: cldImage("camping-tents"),
+    alt: "Tents pitched at Kanaan under the forty-year-old mango grove — a vehicle, a motorbike and the open lawn beyond.",
+    width: 1500,
+    height: 1000,
+  },
+  // ---- Lodge unit with bougainvillea (a charming exterior) ----------
+  lodgeBougainvillea: {
+    src: cldImage("lodge-bougainvillea"),
+    alt: "A lodge unit at Kanaan with cascading pink bougainvillea — door number 4, white walls, a small patio with garden chairs.",
+    width: 1200,
+    height: 1600,
+  },
 
   // ---- Lodge interiors (post-renovation IMG_488x batch) ----------------
   lodgeRoom: {
@@ -203,25 +236,28 @@ export const img = {
     height: 1600,
   },
 
-  // ---- Pool — now a real on-property shot --------------------------
-  // The original portrait has surface debris and a worker on the right
-  // edge, so the delivery URL takes a top-heavy 4:3 crop: keeps the
-  // palms, the brick-paved edge and the morning light, drops most of
-  // the water surface.
+  // ---- Pool — the real pool, filled with water (June 2026) ----------
   pool: {
-    src: cldImage(
-      "pool-palms",
-      "f_auto,q_auto,c_fill,g_north,ar_4:3,w_1600",
-    ),
-    alt: "The pool at Kanaan in the morning — palm trees overhead, the brick-paved edge below.",
-    width: 1600,
-    height: 1200,
+    src: cldImage("pool-real"),
+    alt: "The pool at Kanaan, fringed by palms and a brick-paved deck.",
+    width: 1200,
+    height: 1600,
+  },
+  poolSecond: {
+    src: cldImage("pool-second"),
+    alt: "The pool at Kanaan from the other side — brick edge, palms, the kids' play structure beyond.",
+    width: 1200,
+    height: 1500,
   },
 
   // ---- Placeholders (awaiting real photos) ----------------------------
+  // TODO: replace with the real backpacker dorm photos from the previous
+  // website / Google Business Profile when Anneli sends them. The
+  // wooden-house dorm is still under construction so a finished dorm
+  // shot of our own does not exist yet.
   backpackers: {
-    src: cldImage("lodge-multi-bed"),
-    alt: "A larger room at Kanaan with multiple beds — the kind of layout we host groups in while the wooden-house dorm is being finished.",
+    src: cldImage("lodge-twin-suite"),
+    alt: "Twin-bed accommodation at Kanaan with the en-suite shower visible — the layout we use for backpacker bookings while the wooden-house dorm is being finished.",
     width: 1200,
     height: 1600,
   },
@@ -258,14 +294,25 @@ export const img = {
 
 // ---------------------------------------------------------------------
 // Wedding photography
-// Currently UNUSED on the live site — the AI-generated wedding set was
-// pulled from /weddings, the home page Chapter 5 and the groups slot in
-// favour of real Kanaan venue photography. These exports remain so we
-// can wire real wedding photos straight into the same slots once Anneli
-// sends through the April-wedding shoot.
+// `ceremony` and `bridesmaids` are now REAL Kanaan wedding photographs
+// (June 2026 — Anneli sent them across). The remaining slots are still
+// the earlier AI-generated set; they can be replaced one at a time as
+// real April-wedding photos land in the same Cloudinary public_ids.
 // ---------------------------------------------------------------------
 export const wedding = {
   ceremony: {
+    src: cldImage("wedding-arch"),
+    alt: "A real wedding at Kanaan — the ceremony arch on the viewpoint with green and white draping, framed by old trees and the Lowveld valley falling away behind.",
+    width: 1500,
+    height: 1000,
+  },
+  bridesmaids: {
+    src: cldImage("wedding-bridesmaids"),
+    alt: "A bride and her bridesmaids playing peek-a-boo from behind the forty-year-old mango trees at Kanaan, white dress against the dappled green light.",
+    width: 1200,
+    height: 1400,
+  },
+  ceremonyAlt: {
     src: cldImage("wedding-ceremony-mango"),
     alt: "A wedding ceremony at Kanaan Guest Farm — rows of white chairs under the canopy of the forty-year-old mango grove, an arch of dried grass at the altar.",
     width: 1600,
