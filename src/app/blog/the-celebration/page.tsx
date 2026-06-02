@@ -179,8 +179,8 @@ export default function CelebrationPostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.campfire.src}
-              alt="Open grass at Kanaan ringed by the forty-year-old mango grove — the wedding lawn waiting for a marquee and a long dinner table."
+              src={wedding.bridesmaids.src}
+              alt={wedding.bridesmaids.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               className="object-cover"

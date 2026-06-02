@@ -184,8 +184,8 @@ export default function AfricaPostPage() {
 
             <div className="md:order-1 relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.veranda.src}
-                alt={img.veranda.alt}
+                src={img.pillows.src}
+                alt={img.pillows.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"

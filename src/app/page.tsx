@@ -261,16 +261,16 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
             {[
-              img.lodgeKitchen,
-              img.lodgeBathroom,
-              img.lodgeBedroomEnsuite,
-              img.waterfall,
-              img.veranda,
-              img.lowveldWildflowers,
-              img.macGrove,
-              img.goldenShed,
-              img.lodgeDining,
-              img.campingMango,
+              img.lodgeBougainvillea,
+              img.lodgeKitchenWood,
+              img.lodgeBathroomPine,
+              img.poolSecond,
+              img.lodgeMultiBed,
+              img.venueTables,
+              img.pillows,
+              img.mtb,
+              img.lodgeKitchenette,
+              img.campingTents,
             ].map((g) => (
               <div
                 key={g.src}
