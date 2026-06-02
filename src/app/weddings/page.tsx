@@ -106,6 +106,7 @@ export default function WeddingsPage() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
           <Video
             video={video.tourVenue}
+            narrated
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
@@ -168,8 +169,8 @@ export default function WeddingsPage() {
           </div>
           <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
             <Image
-              src={img.lodgeBedroomEnsuite.src}
-              alt="A renovated lodge bedroom at Kanaan — where the wedding party and out-of-town guests stay over the weekend."
+              src={img.twinRoom.src}
+              alt="A twin room at Kanaan — where wedding-party and out-of-town guests stay over the weekend."
               fill
               sizes="(min-width: 768px) 35vw, 100vw"
               className="object-cover"
