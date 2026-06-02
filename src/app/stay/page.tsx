@@ -6,8 +6,7 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -114,19 +113,6 @@ export default function StayPage() {
             Dining
           </a>
         </nav>
-
-        {/* Lodge walk-through — Matthew talking through a renovated unit */}
-        <div className="mb-10">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-            <Video
-              video={video.tourLodgeUnit}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-          <p className="mt-3 text-center text-xs text-muted">
-            A quick walk around one of the renovated lodge units.
-          </p>
-        </div>
 
         <StaySection
           id="lodge"

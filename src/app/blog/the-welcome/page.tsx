@@ -264,6 +264,7 @@ export default function WelcomePostPage() {
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
             <Video
               video={video.tourCamping}
+              narrated
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>

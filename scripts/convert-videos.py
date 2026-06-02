@@ -1,9 +1,12 @@
 """
 Convert raw Drive videos to web-friendly MP4 (H.264) clips.
-- Strips audio (silent B-roll loops better with autoplay)
-- Caps at 720p (max 1280px wide)
-- Trims to MAX_SECONDS so file size stays small
-- Targets <8 MB each so they fit Cloudflare Pages 25MB-per-file limit
+
+- B-roll clips (silent autoplay loops) have audio stripped — see PICKS rows
+  with `silent=True`.
+- Narrated clips (Matthew or Anneli speaking) keep their audio so the viewer
+  can unmute the autoplay-muted video and hear the founder narration.
+- Caps at 720p / 1280px wide; trims to MAX_SECONDS so file size stays small.
+- Target < 10 MB per clip so they comfortably fit Cloudflare Pages 25MB-per-file.
 """
 
 from __future__ import annotations
@@ -23,34 +26,42 @@ OUT = ROOT / "public" / "videos"
 DEFAULT_MAX_SECONDS = 20  # cap clip length
 CRF = 28  # lower = higher quality / larger file. 28 is web-friendly
 
-# (raw_relative_path, output_filename, start_seconds, max_seconds_override)
-PICKS: list[tuple[str, str, float, int]] = [
-    ("Old Mangos/20250619_092711.mp4", "mango-grove.mp4", 0.0, DEFAULT_MAX_SECONDS),
-    ("Lodge Reno (unit 11)/20250709_124153.mp4", "lodge-walk.mp4", 0.0, DEFAULT_MAX_SECONDS),
-    ("Rooms/IMG_4759.MOV", "lodge-room-walk.mp4", 0.0, DEFAULT_MAX_SECONDS),
-    # Longer property tour from the Drive root — user-requested.
-    ("IMG_8318.MOV", "property-tour.mp4", 0.0, 30),
-    # Pool video from the Pool folder.
-    ("Pool/20250709_080153.mp4", "pool-tour.mp4", 0.0, 20),
-    # ---- Segments cut out of IMG_8320 (the 5-min Matthew-narrated tour) ----
-    # Each one is a different part of the property — embed individually.
-    ("IMG_8320.MOV", "tour-mac-grove.mp4", 0.0, 18),       # mac grove, golden hour
-    ("IMG_8320.MOV", "tour-venue.mp4", 108.0, 20),         # the covered wedding-lawn area
-    ("IMG_8320.MOV", "tour-camping.mp4", 168.0, 18),       # camping under the mango grove
-    ("IMG_8320.MOV", "tour-lodge-unit.mp4", 280.0, 18),    # a lodge unit walk-around
+# (raw_relative_path, output_filename, start_seconds, max_seconds, silent)
+PICKS: list[tuple[str, str, float, int, bool]] = [
+    # ---- Silent B-roll loops (no narration in the source) -----------
+    ("Old Mangos/20250619_092711.mp4", "mango-grove.mp4", 0.0, DEFAULT_MAX_SECONDS, True),
+    ("Lodge Reno (unit 11)/20250709_124153.mp4", "lodge-walk.mp4", 0.0, DEFAULT_MAX_SECONDS, True),
+    ("Rooms/IMG_4759.MOV", "lodge-room-walk.mp4", 0.0, DEFAULT_MAX_SECONDS, True),
+    ("Pool/20250709_080153.mp4", "pool-tour.mp4", 0.0, 20, True),
+    # ---- Matthew-narrated walk-throughs (audio kept) ----------------
+    # IMG_8318 is the 30-second walk used on /the-land
+    ("IMG_8318.MOV", "property-tour.mp4", 0.0, 30, False),
+    # IMG_8320 is the 5-minute Matthew-narrated property tour, broken
+    # into four context-specific clips — each embedded on the page
+    # whose section it matches. Audio kept so visitors can unmute and
+    # hear Matthew talking through the farm.
+    ("IMG_8320.MOV", "tour-mac-grove.mp4", 0.0, 18, False),
+    ("IMG_8320.MOV", "tour-venue.mp4", 108.0, 20, False),
+    ("IMG_8320.MOV", "tour-camping.mp4", 168.0, 18, False),
+    ("IMG_8320.MOV", "tour-lodge-unit.mp4", 280.0, 18, False),
 ]
 
 
-def convert(src: Path, dst: Path, start: float, max_seconds: int) -> None:
+def convert(src: Path, dst: Path, start: float, max_seconds: int, silent: bool) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
-    # -ss before -i is fast seek; -t limits duration; -an strips audio.
-    # scale filter caps the LONGEST edge at 1280 and keeps even dimensions.
-    cmd = [
+    # -ss before -i is fast seek; -t limits duration. Silent clips strip
+    # audio with -an; narrated clips re-encode it to AAC for web delivery.
+    cmd: list[str] = [
         FFMPEG, "-y",
         "-ss", str(start),
         "-i", str(src),
         "-t", str(max_seconds),
-        "-an",
+    ]
+    if silent:
+        cmd += ["-an"]
+    else:
+        cmd += ["-c:a", "aac", "-b:a", "96k", "-ac", "2"]
+    cmd += [
         "-vf", "scale='if(gt(iw,ih),min(1280,iw),-2)':'if(gt(iw,ih),-2,min(1280,ih))',fps=30",
         "-c:v", "libx264",
         "-preset", "medium",
@@ -67,14 +78,15 @@ def convert(src: Path, dst: Path, start: float, max_seconds: int) -> None:
 
 def main() -> int:
     print(f"Converting {len(PICKS)} videos -> {OUT}")
-    for rel, name, start, max_seconds in PICKS:
+    for rel, name, start, max_seconds, silent in PICKS:
         src = RAW / rel
         if not src.exists():
             print(f"  MISSING  {rel}")
             continue
         dst = OUT / name
-        print(f"  ... {name}  <-  {rel}  ({max_seconds}s)")
-        convert(src, dst, start, max_seconds)
+        flag = "silent" if silent else "WITH AUDIO"
+        print(f"  ... {name}  <-  {rel}  ({max_seconds}s, {flag})")
+        convert(src, dst, start, max_seconds, silent)
         size_kb = dst.stat().st_size / 1024
         print(f"  {name:24s}  {size_kb:7.1f} KB")
     print("\nDone.")

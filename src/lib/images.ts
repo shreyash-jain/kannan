@@ -219,9 +219,13 @@ export const img = {
   },
 
   // ---- Placeholders (awaiting real photos) ----------------------------
+  // TODO: replace with the real backpacker dorm photos from the previous
+  // website / Google Business Profile when Anneli sends them. The
+  // wooden-house dorm is still under construction so a finished dorm
+  // shot of our own does not exist yet.
   backpackers: {
-    src: cldImage("lodge-multi-bed"),
-    alt: "A larger room at Kanaan with multiple beds — the kind of layout we host groups in while the wooden-house dorm is being finished.",
+    src: cldImage("lodge-twin-suite"),
+    alt: "Twin-bed accommodation at Kanaan with the en-suite shower visible — the layout we use for backpacker bookings while the wooden-house dorm is being finished.",
     width: 1200,
     height: 1600,
   },
