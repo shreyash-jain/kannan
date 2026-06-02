@@ -184,8 +184,8 @@ export default function AfricaPostPage() {
 
             <div className="md:order-1 relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.campfire.src}
-                alt={img.campfire.alt}
+                src={img.veranda.src}
+                alt={img.veranda.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
@@ -213,8 +213,8 @@ export default function AfricaPostPage() {
 
               <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
                 <Image
-                  src={img.waterfall.src}
-                  alt="The waterfall on Kanaan — the same rock-pool kind of beauty the Sabie cluster keeps a little further up the escarpment."
+                  src={img.trailView.src}
+                  alt="A dirt path winding through Kanaan with the Lowveld escarpment beyond — the same hills the Sabie waterfalls hide a little further up."
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
                   className="object-cover"

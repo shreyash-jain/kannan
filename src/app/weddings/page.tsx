@@ -66,6 +66,32 @@ export default function WeddingsPage() {
         </div>
       </div>
 
+      {/* The covered indoor venue — real Kanaan space */}
+      <Section>
+        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-center">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:order-2">
+            <Image
+              src={img.venueCovered.src}
+              alt={img.venueCovered.alt}
+              fill
+              sizes="(min-width: 768px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="prose-kanaan max-w-prose md:order-1">
+            <Eyebrow>The indoor venue</Eyebrow>
+            <H2 className="mt-3 mb-5">A covered room with the Lowveld for a backdrop.</H2>
+            <p>
+              The main covered venue at Kanaan opens straight onto the
+              viewpoint, with long tables, a bar setup and an open view
+              down the valley. It is where the rehearsal dinner happens
+              on Friday and the reception on Saturday, with the African
+              sky just beyond the open edge.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* The setting + gathering grass */}
       <Section>
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:items-center">
@@ -106,6 +132,7 @@ export default function WeddingsPage() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
           <Video
             video={video.tourVenue}
+            narrated
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
@@ -154,13 +181,13 @@ export default function WeddingsPage() {
         </div>
       </section>
 
-      {/* Two-photo strip — golden hour + lodge interior (real Kanaan) */}
+      {/* Two-photo strip — real wedding photographs from a Kanaan wedding */}
       <Section>
         <div className="grid gap-6 md:grid-cols-[1.6fr_1fr]">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.goldenShed.src}
-              alt="Golden hour over the wider Kanaan farm — the sky guests dance under on a Saturday night."
+              src={img.viewpointGazebo.src}
+              alt={img.viewpointGazebo.alt}
               fill
               sizes="(min-width: 768px) 60vw, 100vw"
               className="object-cover"
@@ -168,8 +195,8 @@ export default function WeddingsPage() {
           </div>
           <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
             <Image
-              src={img.lodgeBedroomEnsuite.src}
-              alt="A renovated lodge bedroom at Kanaan — where the wedding party and out-of-town guests stay over the weekend."
+              src={wedding.bridesmaids.src}
+              alt={wedding.bridesmaids.alt}
               fill
               sizes="(min-width: 768px) 35vw, 100vw"
               className="object-cover"

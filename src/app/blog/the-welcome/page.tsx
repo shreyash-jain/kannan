@@ -259,13 +259,25 @@ export default function WelcomePostPage() {
           </div>
         </section>
 
-        {/* Campsite tour clip */}
+        {/* Campsite tour clip + real camping photo */}
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-            <Video
-              video={video.tourCamping}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+          <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+              <Video
+                video={video.tourCamping}
+                narrated
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden rounded-2xl">
+              <Image
+                src={img.campingTents.src}
+                alt={img.campingTents.alt}
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <p className="mt-3 text-center text-xs text-muted">
             A walk through the camping ground at Kanaan, under the
