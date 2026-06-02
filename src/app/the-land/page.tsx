@@ -147,13 +147,13 @@ export default function TheLandPage() {
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
             {[
+              img.viewpointGazebo,
               img.macGrove,
               img.goldenVista,
               img.macGroveFramed,
               img.lowveldWildflowers,
               img.goldenShed,
               img.trailView,
-              img.mtb,
             ].map((g) => (
               <div
                 key={g.src}
