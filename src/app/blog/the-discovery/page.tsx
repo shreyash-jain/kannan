@@ -170,8 +170,8 @@ export default function DiscoveryPostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.veranda.src}
-              alt={img.veranda.alt}
+              src={img.mtb.src}
+              alt={img.mtb.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               className="object-cover"

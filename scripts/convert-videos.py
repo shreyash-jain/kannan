@@ -42,7 +42,9 @@ PICKS: list[tuple[str, str, float, int, bool]] = [
     # hear Matthew talking through the farm.
     ("IMG_8320.MOV", "tour-mac-grove.mp4", 0.0, 18, False),
     ("IMG_8320.MOV", "tour-venue.mp4", 108.0, 20, False),
-    ("IMG_8320.MOV", "tour-camping.mp4", 168.0, 18, False),
+    # Extended to 32s (was 18s) — Anneli wanted the footage that was
+    # being cut off after the ~14s mark of the original clip.
+    ("IMG_8320.MOV", "tour-camping.mp4", 168.0, 32, False),
     ("IMG_8320.MOV", "tour-lodge-unit.mp4", 280.0, 18, False),
 ]
 

@@ -117,8 +117,8 @@ export default function WeddingsPage() {
 
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.campfire.src}
-              alt="Open grass at Kanaan ringed by the mango grove — the lawn the marquee goes up on and the long table that fills it for a wedding dinner."
+              src={img.venueTables.src}
+              alt={img.venueTables.alt}
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
@@ -254,8 +254,8 @@ export default function WeddingsPage() {
             </div>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={img.veranda.src}
-                alt="A lodge veranda at Kanaan — the brick-paved patio and built-in braai where Sunday morning unwinds."
+                src={img.lodgeBougainvillea.src}
+                alt={img.lodgeBougainvillea.alt}
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"

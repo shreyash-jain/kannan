@@ -301,10 +301,18 @@ export const img = {
 // ---------------------------------------------------------------------
 export const wedding = {
   ceremony: {
-    src: cldImage("wedding-arch"),
+    // The source frame has a lot of concrete floor at the bottom and
+    // the actual subject (the draped arch + the gazebo + the Lowveld
+    // view) sits in the upper third. A top-gravity 21:9 cinematic crop
+    // keeps the trees, the arch, the gazebo, the people and the valley
+    // in shot and drops most of the floor.
+    src: cldImage(
+      "wedding-arch",
+      "f_auto,q_auto,c_fill,g_north,ar_21:9,w_1920",
+    ),
     alt: "A real wedding at Kanaan — the ceremony arch on the viewpoint with green and white draping, framed by old trees and the Lowveld valley falling away behind.",
-    width: 1500,
-    height: 1000,
+    width: 1920,
+    height: 823,
   },
   bridesmaids: {
     src: cldImage("wedding-bridesmaids"),
