@@ -116,8 +116,8 @@ export default function OurStoryPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.waterfall.src}
-              alt="The waterfall on Kanaan looking out over the Lowveld valley — the same landscape that runs all the way to the Kruger gates."
+              src={img.goldenVista.src}
+              alt={img.goldenVista.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
