@@ -52,9 +52,12 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide hero — a wedding ceremony under the mango grove. */}
+      {/* Wide hero — a real Kanaan wedding ceremony. Cinematic 21:9
+          container matches the Cloudinary crop ratio so the arch,
+          draping and Lowveld view stay in frame and the floor doesn't
+          get scaled back into view. */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+        <div className="relative aspect-[21/9] overflow-hidden rounded-2xl">
           <Image
             src={wedding.ceremony.src}
             alt={wedding.ceremony.alt}
