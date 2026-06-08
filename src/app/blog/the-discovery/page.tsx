@@ -49,7 +49,7 @@ export default function DiscoveryPostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Discovery", href: "/blog/the-discovery" },
         ]}
       />
@@ -124,6 +124,23 @@ export default function DiscoveryPostPage() {
           </div>
         </Section>
 
+        {/* Inline image — the Mendoza vineyard that almost was, the road
+            not taken before Kanaan. */}
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src={img.argentinaVineyard.src}
+              alt={img.argentinaVineyard.alt}
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-muted">
+            Mendoza, at the foot of the Andes — the project that didn&rsquo;t happen.
+          </p>
+        </div>
+
         {/* Pull quote — the moment */}
         <section className="bg-bone">
           <div className="mx-auto max-w-3xl px-5 py-12 lg:px-8">
@@ -170,8 +187,8 @@ export default function DiscoveryPostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.veranda.src}
-              alt={img.veranda.alt}
+              src={img.mtb.src}
+              alt={img.mtb.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               className="object-cover"
@@ -232,6 +249,23 @@ export default function DiscoveryPostPage() {
             </p>
           </div>
         </Section>
+
+        {/* Inline image — the forty-year-old mango grove, the thing that
+            sealed it for Anneli on that first walk through the property. */}
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src={img.heroFarm.src}
+              alt={img.heroFarm.alt}
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-muted">
+            The forty-year-old mango grove on Kanaan, at sundown.
+          </p>
+        </div>
 
         {/* Body — Part 4: the deeper why */}
         <section className="bg-sand">
@@ -324,6 +358,23 @@ export default function DiscoveryPostPage() {
             </p>
           </div>
         </Section>
+
+        {/* Inline image — campers under the mango grove, a literal scene
+            from the "extraordinary year" Anneli describes just above. */}
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src={img.campingTents.src}
+              alt={img.campingTents.alt}
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-muted">
+            Campers under the mango grove on Kanaan — the first summer.
+          </p>
+        </div>
 
         {/* Hosts portrait + sign-off */}
         <section className="bg-forest text-bone">

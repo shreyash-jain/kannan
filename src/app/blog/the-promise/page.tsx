@@ -50,7 +50,7 @@ export default function PromisePostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Promise", href: "/blog/the-promise" },
         ]}
       />

@@ -129,12 +129,12 @@ export default function PackagesPage() {
             <CollageTile
               img={img.lowveldWildflowers}
               label="On the farm"
-              cropAlt="The wider Kanaan farm, wildflowers and rolling Lowveld hills."
+              cropAlt="Wildflowers and rolling Lowveld hills on the wider Kanaan farm — a stop you can take any time you like."
             />
             <CollageTile
-              img={img.lodgeBedroomEnsuite}
+              img={img.twinRoom}
               label="Your room"
-              cropAlt="A renovated lodge bedroom at Kanaan — the room you come back to between days out."
+              cropAlt="A twin room at Kanaan — soft linen, scalloped wooden headboards, the kind of room you come back to between days out."
             />
             <CollageTile
               img={img.panorama}

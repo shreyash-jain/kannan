@@ -50,7 +50,7 @@ export default function AfricaPostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "Africa", href: "/blog/africa" },
         ]}
       />
@@ -152,8 +152,8 @@ export default function AfricaPostPage() {
 
               <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
                 <Image
-                  src={img.macGroveFramed.src}
-                  alt="Bushveld and the macadamia grove on Kanaan — the same Lowveld landscape that runs all the way to the Kruger gates."
+                  src={img.kruger.src}
+                  alt={img.kruger.alt}
                   fill
                   sizes="(min-width: 768px) 45vw, 100vw"
                   className="object-cover"
@@ -184,8 +184,8 @@ export default function AfricaPostPage() {
 
             <div className="md:order-1 relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.veranda.src}
-                alt={img.veranda.alt}
+                src={img.hazyviewEvening.src}
+                alt={img.hazyviewEvening.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
@@ -213,8 +213,8 @@ export default function AfricaPostPage() {
 
               <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
                 <Image
-                  src={img.trailView.src}
-                  alt="A dirt path winding through Kanaan with the Lowveld escarpment beyond — the same hills the Sabie waterfalls hide a little further up."
+                  src={img.sabieRiver.src}
+                  alt={img.sabieRiver.alt}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
                   className="object-cover"
@@ -229,8 +229,8 @@ export default function AfricaPostPage() {
           <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
             <div className="md:order-2 relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.hiking.src}
-                alt="The Lowveld escarpment seen from Kanaan — the same rolling country the Graskop and Panorama Route viewpoints look out over."
+                src={img.panorama.src}
+                alt={img.panorama.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
