@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wedding & Events · Kanaan Guest Farm",
     description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — intimate weekends, family events, school groups, corporate retreats.`,
-    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
+    images: [{ url: wedding.reception.src, alt: wedding.reception.alt }],
   },
 };
 
@@ -33,7 +33,7 @@ export default function WeddingsPage() {
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: wedding.ceremony.src,
+              image: wedding.reception.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -52,12 +52,14 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide hero — a wedding ceremony under the mango grove. */}
+      {/* Wide hero — a real Kanaan wedding reception under the covered
+          venue. Long table, candles, fairy lights — captures the warmth
+          of the weekend straight away. */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={wedding.ceremony.src}
-            alt={wedding.ceremony.alt}
+            src={wedding.reception.src}
+            alt={wedding.reception.alt}
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             priority
@@ -117,8 +119,8 @@ export default function WeddingsPage() {
 
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.campfire.src}
-              alt="Open grass at Kanaan ringed by the mango grove — the lawn the marquee goes up on and the long table that fills it for a wedding dinner."
+              src={img.venueTables.src}
+              alt={img.venueTables.alt}
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
@@ -254,8 +256,8 @@ export default function WeddingsPage() {
             </div>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={img.veranda.src}
-                alt="A lodge veranda at Kanaan — the brick-paved patio and built-in braai where Sunday morning unwinds."
+                src={img.lodgeBougainvillea.src}
+                alt={img.lodgeBougainvillea.alt}
                 fill
                 sizes="(min-width: 768px) 55vw, 100vw"
                 className="object-cover"

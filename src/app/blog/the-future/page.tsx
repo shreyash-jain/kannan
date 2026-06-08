@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: `What we are building next at Kanaan · Kanaan Guest Farm`,
     description:
       "One year of renovations, and a clear vision for what comes next. Multi-day packages, weddings, the wooden-house backpackers, and a long view of trails and eco-camping on the wider farm.",
-    images: [{ url: img.lodgeRoom.src, alt: img.lodgeRoom.alt }],
+    images: [{ url: img.lodgeTwinSuite.src, alt: img.lodgeTwinSuite.alt }],
     type: "article",
     publishedTime: datePublished,
     authors: [...site.hosts],
@@ -39,7 +39,7 @@ export default function FuturePostPage() {
               description:
                 "Anneli on the next chapter at Kanaan — multi-day packages, the wooden-house backpackers, the affordable wedding venue, on-request meals, and the longer-term vision of trails and eco-camping on the wider farm.",
               path: "/blog/the-future",
-              image: img.lodgeRoom.src,
+              image: img.lodgeTwinSuite.src,
               datePublished,
             }),
           ),
@@ -49,7 +49,7 @@ export default function FuturePostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Future", href: "/blog/the-future" },
         ]}
       />
@@ -82,8 +82,8 @@ export default function FuturePostPage() {
         <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.lodgeRoom.src}
-              alt={img.lodgeRoom.alt}
+              src={img.lodgeTwinSuite.src}
+              alt={img.lodgeTwinSuite.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority
@@ -234,8 +234,8 @@ export default function FuturePostPage() {
             </div>
             <div className="md:order-1 relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.backpackers.src}
-                alt={img.backpackers.alt}
+                src={img.lodgeBougainvillea.src}
+                alt={img.lodgeBougainvillea.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
@@ -307,8 +307,8 @@ export default function FuturePostPage() {
             </div>
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src={img.hiking.src}
-                alt={img.hiking.alt}
+                src={img.macGrove.src}
+                alt={img.macGrove.alt}
                 fill
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="object-cover"

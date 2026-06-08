@@ -8,19 +8,20 @@ const absoluteUrl = (u: string) => (u.startsWith("http") ? u : `${site.url}${u}`
 
 // Inline video used on the marketing pages. Two modes:
 //
-//   default (B-roll)   — muted, looping, autoplay. No controls. The
-//                        clip has no narration; the silent loop is
-//                        ambient background imagery.
+//   default (B-roll)   — muted, looping, autoplay. No controls.
+//                        Ambient background imagery — no narration.
 //
-//   narrated={true}    — autoplay starts muted (browser autoplay rules)
-//                        but a controls bar is shown so the visitor can
-//                        unmute and hear the founder narration. Looping
-//                        is off so the clip plays through cleanly once.
+//   narrated={true}    — does NOT autoplay. Shows the poster image and
+//                        a standard browser play button until the
+//                        viewer chooses to play. Audio comes in
+//                        unmuted (the narration is the whole point).
+//                        Many browsers (notably Brave) block autoplay
+//                        on any video that carries an audio track, so
+//                        a click-to-play UX is the only one that works
+//                        reliably across browsers.
 //
 // Poster ensures something is on screen if the video has not loaded
-// yet (or autoplay is blocked). preload="metadata" keeps initial-page
-// transfer small — the video bytes only start downloading when the
-// element is actually visible.
+// yet. preload="metadata" keeps initial-page transfer small.
 export function Video({
   video,
   className,
@@ -31,7 +32,7 @@ export function Video({
 }: {
   video: Vid;
   className?: string;
-  /** Show controls + drop loop so the viewer can unmute and listen. */
+  /** Show controls + drop autoplay so the viewer chooses to listen. */
   narrated?: boolean;
   schemaName?: string;
   schemaDescription?: string;
@@ -55,17 +56,29 @@ export function Video({
           }}
         />
       )}
-      <video
-        className={className}
-        src={video.src}
-        poster={video.poster}
-        aria-label={video.alt}
-        autoPlay
-        muted
-        playsInline
-        preload="metadata"
-        {...(narrated ? { controls: true } : { loop: true })}
-      />
+      {narrated ? (
+        <video
+          className={className}
+          src={video.src}
+          poster={video.poster}
+          aria-label={video.alt}
+          controls
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <video
+          className={className}
+          src={video.src}
+          poster={video.poster}
+          aria-label={video.alt}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      )}
     </>
   );
 }

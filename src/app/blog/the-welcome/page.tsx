@@ -50,7 +50,7 @@ export default function WelcomePostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Welcome", href: "/blog/the-welcome" },
         ]}
       />
@@ -96,30 +96,49 @@ export default function WelcomePostPage() {
 
         {/* The arrival */}
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-5">The arrival.</H2>
-            <p>
-              You turn off the R40 onto a dust road. There are signs the
-              whole way in now — we put them up early, because more than one
-              guest told us in their own words that they had nearly driven
-              past us on the first try. The track winds for a couple of
-              hundred metres through the bush and then the canopy lifts and
-              the mango grove appears, and behind it the lodge.
-            </p>
-            <p>
-              The motorised gate opens. You roll in slowly because there is
-              no reason to do anything quickly at Kanaan. The first sound
-              you hear — once the car door closes and the engine sighs off
-              — is usually a bird. Sometimes it is the wind moving through
-              the old mango leaves. There is no traffic noise. There is no
-              pool music. Whoever you are, whatever week you have just had
-              before you got here, this is the moment Kanaan starts to do
-              its quiet work on you.
-            </p>
-            <p>
-              {site.distances.kmiaMinutes} minutes ago, you were at Kruger
-              Mpumalanga International Airport. It is hard to believe.
-            </p>
+          <div className="mx-auto max-w-prose">
+            <div className="prose-kanaan">
+              <H2 className="mb-5">The arrival.</H2>
+              <p>
+                You turn off the R40 onto a dust road. There are signs the
+                whole way in now — we put them up early, because more than one
+                guest told us in their own words that they had nearly driven
+                past us on the first try. The track winds for a couple of
+                hundred metres through the bush and then the canopy lifts and
+                the mango grove appears, and behind it the lodge.
+              </p>
+              <p>
+                The motorised gate opens. You roll in slowly because there is
+                no reason to do anything quickly at Kanaan. The first sound
+                you hear — once the car door closes and the engine sighs off
+                — is usually a bird. Sometimes it is the wind moving through
+                the old mango leaves. There is no traffic noise. There is no
+                pool music. Whoever you are, whatever week you have just had
+                before you got here, this is the moment Kanaan starts to do
+                its quiet work on you.
+              </p>
+              <p>
+                {site.distances.kmiaMinutes} minutes ago, you were at Kruger
+                Mpumalanga International Airport. It is hard to believe.
+              </p>
+            </div>
+
+            {/* Supporting image — the front gate and the Kanaan signboard,
+                the literal first thing a guest sees when they roll in. */}
+            <figure className="mt-10">
+              <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+                <Image
+                  src={img.gateSign.src}
+                  alt={img.gateSign.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-muted">
+                The front gate at Kanaan — the sign we put up early.
+              </figcaption>
+            </figure>
           </div>
         </Section>
 
@@ -226,8 +245,8 @@ export default function WelcomePostPage() {
               </div>
               <div className="md:order-1 relative aspect-4/3 overflow-hidden rounded-2xl">
                 <Image
-                  src={img.pool.src}
-                  alt={img.pool.alt}
+                  src={img.poolSunset.src}
+                  alt={img.poolSunset.alt}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
@@ -358,30 +377,79 @@ export default function WelcomePostPage() {
 
         {/* What's nearby */}
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-5">What is just outside the gate.</H2>
-            <p>
-              The Phabeni and Numbi gates of the Kruger National Park are{" "}
-              {site.distances.krugerGateMinutesMin} to{" "}
-              {site.distances.krugerGateMinutesMax} minutes away by road —
-              close enough for an unhurried early-morning game drive and
-              back for lunch. The Panorama Route — God&apos;s Window, the
-              Three Rondavels, Bourke&apos;s Luck Potholes — is a beautiful
-              day out in the other direction. Sabie&apos;s waterfalls and
-              Graskop&apos;s gorge lift are an easy half-day each. There
-              is more in the Lowveld than a single trip can take in.
-            </p>
-            <p>
-              We wrote a longer letter about everything within reach of
-              the farm —{" "}
-              <Link
-                href="/blog/africa"
-                className="font-medium text-ochre hover:text-ochre-deep"
-              >
-                read our invitation to Africa →
-              </Link>{" "}
-              for the full picture.
-            </p>
+          <div className="mx-auto max-w-prose">
+            <div className="prose-kanaan">
+              <H2 className="mb-5">What is just outside the gate.</H2>
+              <p>
+                The Phabeni and Numbi gates of the Kruger National Park are{" "}
+                {site.distances.krugerGateMinutesMin} to{" "}
+                {site.distances.krugerGateMinutesMax} minutes away by road —
+                close enough for an unhurried early-morning game drive and
+                back for lunch. The Panorama Route — God&apos;s Window, the
+                Three Rondavels, Bourke&apos;s Luck Potholes — is a beautiful
+                day out in the other direction. Sabie&apos;s waterfalls and
+                Graskop&apos;s gorge lift are an easy half-day each. There
+                is more in the Lowveld than a single trip can take in.
+              </p>
+              <p>
+                We wrote a longer letter about everything within reach of
+                the farm —{" "}
+                <Link
+                  href="/blog/africa"
+                  className="font-medium text-ochre hover:text-ochre-deep"
+                >
+                  read our invitation to Africa →
+                </Link>{" "}
+                for the full picture.
+              </p>
+            </div>
+
+            {/* Three small context shots — Kruger, Panorama, Sabie — sized
+                to the same prose column as the text above. */}
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              <figure>
+                <div className="relative aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    src={img.kruger.src}
+                    alt={img.kruger.alt}
+                    fill
+                    sizes="(min-width: 768px) 220px, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 text-center text-[10px] uppercase tracking-[0.18em] text-muted">
+                  Kruger · {site.distances.krugerGateMinutesMin}–{site.distances.krugerGateMinutesMax} min
+                </figcaption>
+              </figure>
+              <figure>
+                <div className="relative aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    src={img.panorama.src}
+                    alt={img.panorama.alt}
+                    fill
+                    sizes="(min-width: 768px) 220px, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 text-center text-[10px] uppercase tracking-[0.18em] text-muted">
+                  Panorama · ~90 min
+                </figcaption>
+              </figure>
+              <figure>
+                <div className="relative aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    src={img.sabieRiver.src}
+                    alt={img.sabieRiver.alt}
+                    fill
+                    sizes="(min-width: 768px) 220px, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-2 text-center text-[10px] uppercase tracking-[0.18em] text-muted">
+                  Sabie · ~45 min
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </Section>
 
@@ -410,6 +478,24 @@ export default function WelcomePostPage() {
                 to have you.
               </p>
             </div>
+
+            {/* Supporting image — the campfire grass under the mango grove,
+                the literal "fire most evenings" the copy above promises.
+                Sized to the same prose column so the section reads tight. */}
+            <figure className="mt-10 max-w-prose">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image
+                  src={img.campfire.src}
+                  alt={img.campfire.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-muted">
+                The fire pit at Kanaan, ringed by the forty-year-old mango grove.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
