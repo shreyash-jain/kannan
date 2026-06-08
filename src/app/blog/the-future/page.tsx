@@ -49,7 +49,7 @@ export default function FuturePostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Future", href: "/blog/the-future" },
         ]}
       />

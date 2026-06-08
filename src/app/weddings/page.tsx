@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wedding & Events · Kanaan Guest Farm",
     description: `A breathtaking Lowveld wedding venue for up to ${site.capacity.wedding.withCamping} guests — intimate weekends, family events, school groups, corporate retreats.`,
-    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
+    images: [{ url: wedding.reception.src, alt: wedding.reception.alt }],
   },
 };
 
@@ -33,7 +33,7 @@ export default function WeddingsPage() {
               description:
                 "A flexible Lowveld wedding and events venue with on-site accommodation, camping and marquee-ready outdoor space, in Hazyview, Mpumalanga.",
               path: "/weddings",
-              image: wedding.ceremony.src,
+              image: wedding.reception.src,
               maximumAttendeeCapacity: site.capacity.wedding.withCamping,
             }),
           ),
@@ -52,15 +52,14 @@ export default function WeddingsPage() {
         lede="A celebration that begins on a Friday and ends on a Sunday morning. Family and friends sleeping on-site, the fire crackling late into the night, and a venue designed around feeling and memory rather than the clock."
       />
 
-      {/* Wide hero — a real Kanaan wedding ceremony. Cinematic 21:9
-          container matches the Cloudinary crop ratio so the arch,
-          draping and Lowveld view stay in frame and the floor doesn't
-          get scaled back into view. */}
+      {/* Wide hero — a real Kanaan wedding reception under the covered
+          venue. Long table, candles, fairy lights — captures the warmth
+          of the weekend straight away. */}
       <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
-        <div className="relative aspect-[21/9] overflow-hidden rounded-2xl">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src={wedding.ceremony.src}
-            alt={wedding.ceremony.alt}
+            src={wedding.reception.src}
+            alt={wedding.reception.alt}
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
             priority
