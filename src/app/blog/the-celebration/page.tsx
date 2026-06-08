@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: `An intimate wedding weekend at Kanaan · Lowveld wedding venue`,
     description:
       "A multi-day wedding weekend at Kanaan Guest Farm in Hazyview — rehearsal nights, a relaxed ceremony, Sunday morning slow. Up to 150 guests on the farm.",
-    images: [{ url: wedding.ceremony.src, alt: wedding.ceremony.alt }],
+    images: [{ url: img.viewpointGazebo.src, alt: img.viewpointGazebo.alt }],
     type: "article",
     publishedTime: datePublished,
     authors: [...site.hosts],
@@ -39,7 +39,7 @@ export default function CelebrationPostPage() {
               description:
                 "An intimate, multi-day wedding weekend at Kanaan Guest Farm in Hazyview — rehearsal dinners around the fire, a relaxed ceremony under the African sky, a Sunday morning no one is in a hurry to leave. Up to 150 guests on the farm.",
               path: "/blog/the-celebration",
-              image: wedding.ceremony.src,
+              image: img.viewpointGazebo.src,
               datePublished,
             }),
           ),
@@ -49,7 +49,7 @@ export default function CelebrationPostPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
           { label: "The Celebration", href: "/blog/the-celebration" },
         ]}
       />
@@ -79,12 +79,13 @@ export default function CelebrationPostPage() {
           </div>
         </header>
 
-        {/* Lead image */}
+        {/* Lead image — the picnic gazebo at the viewpoint, the literal
+            ceremony spot above the Lowveld valley. */}
         <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={wedding.ceremony.src}
-              alt={wedding.ceremony.alt}
+              src={img.viewpointGazebo.src}
+              alt={img.viewpointGazebo.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority
@@ -95,32 +96,51 @@ export default function CelebrationPostPage() {
 
         {/* A weekend, not a day */}
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-5">A weekend, not a single day.</H2>
-            <p>
-              Imagine an intimate wedding weekend where everything slows
-              down and the only thing that truly matters is the two of
-              you. A celebration filled with meaning, connection, and the
-              people who know your story best. Not a rushed wedding day,
-              but a carefully curated experience where every moment feels
-              personal, relaxed, and completely your own.
-            </p>
-            <p>
-              Set against the beauty of a rustic guest farm in Hazyview,
-              your wedding becomes more than a single day. It becomes a
-              shared escape. A place where family and lifelong friends
-              arrive early, settle into cosy twin-share rooms, family
-              accommodation, or camping spots beneath the stars, and spend
-              meaningful time together before the celebration even begins.
-            </p>
-            <p>
-              Picture your bachelor and bachelorette celebrations hosted
-              right there on the farm. No travelling, no schedules, no
-              pressure. Just laughter echoing through the evening air, old
-              friends reconnecting around a crackling fire, stories being
-              shared late into the night, and the quiet excitement of
-              knowing tomorrow changes everything.
-            </p>
+          <div className="mx-auto max-w-prose">
+            <div className="prose-kanaan">
+              <H2 className="mb-5">A weekend, not a single day.</H2>
+              <p>
+                Imagine an intimate wedding weekend where everything slows
+                down and the only thing that truly matters is the two of
+                you. A celebration filled with meaning, connection, and the
+                people who know your story best. Not a rushed wedding day,
+                but a carefully curated experience where every moment feels
+                personal, relaxed, and completely your own.
+              </p>
+              <p>
+                Set against the beauty of a rustic guest farm in Hazyview,
+                your wedding becomes more than a single day. It becomes a
+                shared escape. A place where family and lifelong friends
+                arrive early, settle into cosy twin-share rooms, family
+                accommodation, or camping spots beneath the stars, and spend
+                meaningful time together before the celebration even begins.
+              </p>
+              <p>
+                Picture your bachelor and bachelorette celebrations hosted
+                right there on the farm. No travelling, no schedules, no
+                pressure. Just laughter echoing through the evening air, old
+                friends reconnecting around a crackling fire, stories being
+                shared late into the night, and the quiet excitement of
+                knowing tomorrow changes everything.
+              </p>
+            </div>
+
+            {/* Supporting image — the campfire grass under the mango grove,
+                the literal "crackling fire" the copy promises. */}
+            <figure className="mt-10">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image
+                  src={img.campfire.src}
+                  alt={img.campfire.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-muted">
+                The communal fire pit at Kanaan, under the forty-year-old mango grove.
+              </figcaption>
+            </figure>
           </div>
         </Section>
 
@@ -139,6 +159,23 @@ export default function CelebrationPostPage() {
                 love story.
               </p>
             </div>
+
+            {/* Supporting image — long-table reception under Edison bulbs,
+                the literal "soft lights, glasses clinking" scene. */}
+            <figure className="mt-10 max-w-prose">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image
+                  src={wedding.reception.src}
+                  alt={wedding.reception.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-muted">
+                A long-table dinner under warm bulbs strung between the mango trees.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -266,28 +303,64 @@ export default function CelebrationPostPage() {
                 you.
               </p>
             </div>
+
+            {/* Supporting image — the real covered venue at Kanaan, the
+                literal indoor space the practical copy is about. */}
+            <figure className="mt-10 max-w-prose">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image
+                  src={img.venueCovered.src}
+                  alt={img.venueCovered.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-muted">
+                The covered main venue at Kanaan, open to the Lowveld valley.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
         {/* Closing — Anneli's poetic four lines, intact */}
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose text-center">
-            <H2 className="mb-8">Your story, honoured.</H2>
-            <p className="font-display text-2xl leading-relaxed text-forest-deep">
-              A place where your story is honoured.
-            </p>
-            <p className="font-display text-2xl leading-relaxed text-forest-deep">
-              A space where your people feel at home.
-            </p>
-            <p className="font-display text-2xl leading-relaxed text-forest-deep">
-              And a weekend that feels entirely, unmistakably yours.
-            </p>
-            <p className="mt-10 text-base text-ink/80">
-              If any of that sounds like the kind of wedding you have been
-              imagining, send us a message on WhatsApp — Anneli or Matthew
-              will reply personally, and we will start sketching the
-              weekend with you.
-            </p>
+          <div className="mx-auto max-w-prose">
+            <div className="prose-kanaan text-center">
+              <H2 className="mb-8">Your story, honoured.</H2>
+              <p className="font-display text-2xl leading-relaxed text-forest-deep">
+                A place where your story is honoured.
+              </p>
+              <p className="font-display text-2xl leading-relaxed text-forest-deep">
+                A space where your people feel at home.
+              </p>
+              <p className="font-display text-2xl leading-relaxed text-forest-deep">
+                And a weekend that feels entirely, unmistakably yours.
+              </p>
+              <p className="mt-10 text-base text-ink/80">
+                If any of that sounds like the kind of wedding you have been
+                imagining, send us a message on WhatsApp — Anneli or Matthew
+                will reply personally, and we will start sketching the
+                weekend with you.
+              </p>
+            </div>
+
+            {/* Closing image — Sunday-morning breakfast table on the
+                wedding lawn, the slow bookend of the weekend. */}
+            <figure className="mt-12">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                <Image
+                  src={wedding.morningAfter.src}
+                  alt={wedding.morningAfter.alt}
+                  fill
+                  sizes="(min-width: 768px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-xs text-muted">
+                Sunday morning at Kanaan, when nobody is in a hurry.
+              </figcaption>
+            </figure>
           </div>
         </Section>
 

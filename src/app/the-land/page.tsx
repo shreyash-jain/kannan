@@ -50,6 +50,25 @@ export default function TheLandPage() {
         </div>
       </div>
 
+      {/* Wide panorama — the Lowveld this whole page is set inside, the
+          view from the high point on the farm. */}
+      <div className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
+        <figure>
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src={img.lowveldPanorama.src}
+              alt={img.lowveldPanorama.alt}
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 text-center text-xs text-muted">
+            The Lowveld around Kanaan — the country the distances on this page open out into.
+          </figcaption>
+        </figure>
+      </div>
+
       <Section>
         <div className="grid gap-6 md:grid-cols-3">
           <DistanceCard

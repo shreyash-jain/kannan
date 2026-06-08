@@ -3,37 +3,23 @@ import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BlogPostList, type Post } from "@/components/BlogPostList";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Journal · Stories from Kanaan Guest Farm",
+  title: "Journal & Guides · Stories from Kanaan Guest Farm",
   description:
     "The journal of a family-run guest farm in the beautiful heart of Hazyview, Mpumalanga. Heart-felt stories from Anneli and Matthew about Kanaan, Kruger, the Lowveld and the wonderful experiences we are building for you.",
   alternates: { canonical: "/blog" },
 };
 
-type Post =
-  | {
-      n: number;
-      chapter: string;
-      title: string;
-      status: "live";
-      href: string;
-      excerpt: string;
-    }
-  | {
-      n: number;
-      chapter: string;
-      title: string;
-      status: "soon";
-    };
-
-// Brief Section 5 — six planned posts, one per chapter, added one at a time.
 const posts: Post[] = [
+  // ----- Stories: the six-part founder narrative ----------------------
   {
     n: 1,
     chapter: "The Discovery",
     title: "How we found Kanaan",
+    category: "story",
     status: "live",
     href: "/blog/the-discovery",
     excerpt:
@@ -43,6 +29,7 @@ const posts: Post[] = [
     n: 2,
     chapter: "The Promise",
     title: "The promise we made ourselves",
+    category: "story",
     status: "live",
     href: "/blog/the-promise",
     excerpt:
@@ -53,6 +40,7 @@ const posts: Post[] = [
     chapter: "The Land",
     title:
       "Africa: a family holiday at Kanaan Guest Farm in the beautiful heart of Hazyview",
+    category: "story",
     status: "live",
     href: "/blog/africa",
     excerpt:
@@ -62,6 +50,7 @@ const posts: Post[] = [
     n: 4,
     chapter: "The Welcome",
     title: "The welcome at Kanaan",
+    category: "story",
     status: "live",
     href: "/blog/the-welcome",
     excerpt:
@@ -71,6 +60,7 @@ const posts: Post[] = [
     n: 5,
     chapter: "The Celebration",
     title: "An intimate wedding weekend in the beautiful Lowveld",
+    category: "story",
     status: "live",
     href: "/blog/the-celebration",
     excerpt:
@@ -80,11 +70,15 @@ const posts: Post[] = [
     n: 6,
     chapter: "The Future",
     title: "What we are building next at Kanaan",
+    category: "story",
     status: "live",
     href: "/blog/the-future",
     excerpt:
       "A year of renovations later, Anneli on what is coming next — multi-day Kruger packages, the new wooden-house backpackers, affordable weddings, on-request meals, hiking and cycling trails, and a longer ecotourism vision for the wider farm.",
   },
+
+  // ----- Guides will be added here as they're written. The Guides tab
+  // is hidden on the index until the first one lands.
 ];
 
 export default function BlogIndexPage() {
@@ -93,58 +87,17 @@ export default function BlogIndexPage() {
       <Breadcrumbs
         trail={[
           { label: "Home", href: "/" },
-          { label: "Journal", href: "/blog" },
+          { label: "Journal & Guides", href: "/blog" },
         ]}
       />
       <PageHero
-        eyebrow="Journal"
+        eyebrow="Journal & Guides"
         title="A six-part story from the farm."
-        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — how we found this farm, what we have lovingly changed, and what we are building next. New chapters published as we write them."
+        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — how we found this farm, what we have lovingly changed, and what we are building next. Practical guides to the wider Lowveld will follow."
       />
 
       <Section>
-        <ol className="space-y-2">
-          {posts.map((p) => (
-            <li
-              key={p.n}
-              className="flex items-baseline gap-6 border-t border-black/5 pt-6 first:border-t-0 first:pt-0"
-            >
-              <span className="font-display text-3xl text-ochre">
-                {String(p.n).padStart(2, "0")}
-              </span>
-              <div className="flex-1">
-                <Eyebrow>
-                  Chapter {p.n} · {p.chapter}
-                </Eyebrow>
-                {p.status === "live" ? (
-                  <>
-                    <h3 className="mt-2 font-display text-2xl text-forest-deep">
-                      <Link href={p.href} className="hover:text-ochre">
-                        {p.title}
-                      </Link>
-                    </h3>
-                    <p className="mt-2 max-w-prose text-sm leading-relaxed text-ink/80">
-                      {p.excerpt}
-                    </p>
-                    <Link
-                      href={p.href}
-                      className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
-                    >
-                      Read the story <span aria-hidden>→</span>
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <h3 className="mt-2 font-display text-2xl text-forest-deep">
-                      {p.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-muted">Coming soon.</p>
-                  </>
-                )}
-              </div>
-            </li>
-          ))}
-        </ol>
+        <BlogPostList posts={posts} />
       </Section>
 
       <section className="bg-sand">
