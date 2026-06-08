@@ -214,9 +214,8 @@ export const img = {
   },
 
   // ---- Context shots (third-party / regional) --------------------------
-  // Currently UNUSED on the live site. Kept as Cloudinary pointers so we
-  // can drop them back in if we ever need a literal Kruger / Panorama /
-  // Sabie shot, but every page now uses real Kanaan photography instead.
+  // Used on /blog/africa and /blog/the-discovery to give each section a
+  // literal scene shot. Every other page leans on real Kanaan photography.
   kruger: {
     src: cldImage("kruger-elephant"),
     alt: "An elephant by a waterhole near Kruger — the park's Phabeni and Numbi gates are 30–45 minutes from Kanaan.",
@@ -235,6 +234,20 @@ export const img = {
     width: 1200,
     height: 1600,
   },
+  // Gemini-generated context shots — uploaded to the same kanaan/ folder
+  // on Cloudinary by scripts/upload-to-cloudinary.py.
+  hazyviewEvening: {
+    src: cldImage("hazyview-evening"),
+    alt: "A warm Lowveld evening near Hazyview — firelight, hand-woven crafts laid out under string lights between mango trees, an elephant browsing peacefully at a respectful distance in the soft middle ground.",
+    width: 1600,
+    height: 1200,
+  },
+  argentinaVineyard: {
+    src: cldImage("argentina-vineyard"),
+    alt: "A Mendoza vineyard at golden hour — rows of mature vines stretching toward the snow-capped Andes, a small adobe finca half-hidden by poplars in the far background.",
+    width: 1600,
+    height: 900,
+  },
 
   // ---- Pool — the real pool, filled with water (June 2026) ----------
   pool: {
@@ -248,6 +261,28 @@ export const img = {
     alt: "The pool at Kanaan from the other side — brick edge, palms, the kids' play structure beyond.",
     width: 1200,
     height: 1500,
+  },
+  // The pool at sunset — palms in silhouette, soft pink sky over the
+  // Lowveld, brick-paved edge in the warm last light.
+  poolSunset: {
+    src: cldImage("pool-sunset"),
+    alt: "The pool at Kanaan at sunset — brick-paved edge, palms in silhouette, a soft pink and blue sky over the Lowveld beyond.",
+    width: 1200,
+    height: 1800,
+  },
+
+  // ---- Arrival: the gate and the wider Lowveld panorama -------------
+  gateSign: {
+    src: cldImage("gate-sign"),
+    alt: "The Kanaan Guest Farm signboard at the front gate — black ironwork, the Hazyview lettering, a flame tree in flower behind it.",
+    width: 1200,
+    height: 1800,
+  },
+  lowveldPanorama: {
+    src: cldImage("lowveld-panorama"),
+    alt: "The wider Lowveld from above Kanaan — rolling green hills, an orchard valley and the escarpment running away to the horizon.",
+    width: 1600,
+    height: 1200,
   },
 
   // ---- Placeholders (awaiting real photos) ----------------------------
@@ -294,10 +329,11 @@ export const img = {
 
 // ---------------------------------------------------------------------
 // Wedding photography
-// `ceremony` and `bridesmaids` are now REAL Kanaan wedding photographs
-// (June 2026 — Anneli sent them across). The remaining slots are still
-// the earlier AI-generated set; they can be replaced one at a time as
-// real April-wedding photos land in the same Cloudinary public_ids.
+// `ceremony`, `bridesmaids` and `reception` are now REAL Kanaan wedding
+// photographs (June 2026 — Anneli sent them across). The remaining
+// slots (tableDetail, firstDance, morningAfter) are still the earlier
+// AI-generated set; they can be replaced one at a time as real
+// April-wedding photos land in the same Cloudinary public_ids.
 // ---------------------------------------------------------------------
 export const wedding = {
   ceremony: {
@@ -308,7 +344,7 @@ export const wedding = {
     // in shot and drops most of the floor.
     src: cldImage(
       "wedding-arch",
-      "f_auto,q_auto,c_fill,g_north,ar_21:9,w_1920",
+      "f_auto,q_auto,c_crop,g_north,h_0.55/c_fill,ar_21:9,w_1920",
     ),
     alt: "A real wedding at Kanaan — the ceremony arch on the viewpoint with green and white draping, framed by old trees and the Lowveld valley falling away behind.",
     width: 1920,
@@ -327,10 +363,13 @@ export const wedding = {
     height: 900,
   },
   reception: {
+    // A REAL Kanaan wedding reception under the covered venue — long
+    // table, candles, fairy lights, guests gathered. Replaced the earlier
+    // AI long-table render in June 2026.
     src: cldImage("wedding-reception-table"),
-    alt: "A long-table wedding reception at Kanaan, lit by strings of warm Edison bulbs strung between the mango trees, with the Lowveld escarpment visible in the twilight beyond.",
-    width: 1600,
-    height: 1200,
+    alt: "A real wedding reception at Kanaan under the covered venue — a long table set with candles and wildflowers, strings of fairy lights overhead, guests gathered in soft evening light.",
+    width: 1500,
+    height: 1800,
   },
   tableDetail: {
     src: cldImage("wedding-table-detail"),
