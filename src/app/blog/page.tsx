@@ -77,8 +77,16 @@ const posts: Post[] = [
       "A year of renovations later, Anneli on what is coming next — multi-day Kruger packages, the new wooden-house backpackers, affordable weddings, on-request meals, hiking and cycling trails, and a longer ecotourism vision for the wider farm.",
   },
 
-  // ----- Guides will be added here as they're written. The Guides tab
-  // is hidden on the index until the first one lands.
+  // ----- Guides: practical, search-friendly cornerstones --------------
+  {
+    chapter: "Kruger",
+    title: "Kruger from Hazyview: a first-timer's guide",
+    category: "guide",
+    status: "live",
+    href: "/blog/kruger-from-hazyview",
+    excerpt:
+      "Phabeni vs Numbi vs Paul Kruger gates, opening times by season, and the half-day plan that gets you back to Kanaan for lunch. The Kruger guide we wish we had on our first visit.",
+  },
 ];
 
 export default function BlogIndexPage() {
@@ -92,8 +100,8 @@ export default function BlogIndexPage() {
       />
       <PageHero
         eyebrow="Journal & Guides"
-        title="A six-part story from the farm."
-        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — how we found this farm, what we have lovingly changed, and what we are building next. Practical guides to the wider Lowveld will follow."
+        title="Stories from the farm, and guides to the Lowveld."
+        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — and a growing set of practical guides for the week you are planning around your stay."
       />
 
       <Section>
