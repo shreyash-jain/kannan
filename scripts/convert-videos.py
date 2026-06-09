@@ -34,13 +34,17 @@ PICKS: list[tuple[str, str, float, int, bool]] = [
     ("Rooms/IMG_4759.MOV", "lodge-room-walk.mp4", 0.0, DEFAULT_MAX_SECONDS, True),
     ("Pool/20250709_080153.mp4", "pool-tour.mp4", 0.0, 20, True),
     # ---- Matthew-narrated walk-throughs (audio kept) ----------------
-    # IMG_8318 is the 30-second walk used on /the-land
-    ("IMG_8318.MOV", "property-tour.mp4", 0.0, 30, False),
+    # /the-land property tour — owner swapped source from IMG_8318 to
+    # IMG_8320 on 2026-06-09 (the long Matthew-narrated tour). First 60s
+    # of IMG_8320 is the opener that fits the page hero.
+    ("IMG_8320.MOV", "property-tour.mp4", 0.0, 60, False),
     # IMG_8320 is the 5-minute Matthew-narrated property tour, broken
     # into four context-specific clips — each embedded on the page
     # whose section it matches. Audio kept so visitors can unmute and
     # hear Matthew talking through the farm.
-    ("IMG_8320.MOV", "tour-mac-grove.mp4", 0.0, 18, False),
+    # Owner requested 2026-06-09: full narrated tour from 0:20 to 4:11 of
+    # the source — replaces the earlier 18s teaser on /our-story.
+    ("IMG_8320.MOV", "tour-mac-grove.mp4", 20.0, 231, False),
     ("IMG_8320.MOV", "tour-venue.mp4", 108.0, 20, False),
     # Shifted +10s (start was 168.0) — drops the laugh at the head of
     # the old cut and picks up 10s of camping-ground footage at the

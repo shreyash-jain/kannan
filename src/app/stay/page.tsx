@@ -265,6 +265,70 @@ export default function StayPage() {
         </div>
       </section>
 
+      {/* Inside the lodge — wider angles per room type. A mosaic so guests
+          can see the variety of layouts they might be put in, plus the
+          courtyard the rooms open onto. */}
+      <section className="bg-sand">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <div className="mb-8 max-w-2xl">
+            <Eyebrow>Inside the lodge</Eyebrow>
+            <H2 className="mt-3">Room types and the spaces around them.</H2>
+            <Lede>
+              The lodge units come in a few different shapes — quiet doubles,
+              twin singles, larger family rooms, and self-catering layouts.
+              When you tell us who is coming, we put you in the right one.
+            </Lede>
+          </div>
+          <div className="grid gap-3 md:grid-cols-6 md:grid-rows-2">
+            <div className="relative md:col-span-2 md:row-span-2 aspect-[3/4] md:aspect-auto overflow-hidden rounded-2xl">
+              <Image
+                src={img.lodgeCourtyardPatio.src}
+                alt={img.lodgeCourtyardPatio.alt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative md:col-span-2 aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.lodgeModestDouble.src}
+                alt={img.lodgeModestDouble.alt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative md:col-span-2 aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.lodgeDoubleDecorated.src}
+                alt={img.lodgeDoubleDecorated.alt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative md:col-span-2 aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.lodgeFamilyTwin.src}
+                alt={img.lodgeFamilyTwin.alt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="relative md:col-span-2 aspect-4/3 overflow-hidden rounded-2xl">
+              <Image
+                src={img.lodgeKitchenClassic.src}
+                alt={img.lodgeKitchenClassic.alt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Dining — owner confirmed 2026-05-11: breakfast R60 continental on
           request, dinner on request (local dishes / braai), no halaal */}
       <section id="dining" className="scroll-mt-24 bg-sand">
