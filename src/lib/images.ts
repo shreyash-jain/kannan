@@ -173,6 +173,41 @@ export const img = {
     height: 1200,
   },
 
+  // ---- Additional lodge angles (LekkeSlaap archive, June 2026) -----
+  // Real Kanaan shots from the LekkeSlaap listing — used as a glimpses
+  // strip on /stay to give visitors a wider sense of what each lodge
+  // unit actually looks like, beyond the heroes already on the page.
+  lodgeModestDouble: {
+    src: cldImage("lodge-modest-double"),
+    alt: "A lodge unit at Kanaan with a double bed, ceiling fan and wooden-beamed ceiling — fresh white linen, polished concrete floor, a window onto the trees.",
+    width: 1200,
+    height: 1600,
+  },
+  lodgeFamilyTwin: {
+    src: cldImage("lodge-family-twin"),
+    alt: "A larger family room at Kanaan with two single beds, a ceiling fan, tiled floor and a wooden-beamed ceiling — the layout we put a family or a group in.",
+    width: 1200,
+    height: 1600,
+  },
+  lodgeDoubleDecorated: {
+    src: cldImage("lodge-double-decorated"),
+    alt: "A double room at Kanaan with patterned bedding, a wardrobe, ceiling fan and two windows onto the bush — folded towels arranged on the bed for arrival.",
+    width: 1200,
+    height: 1600,
+  },
+  lodgeKitchenClassic: {
+    src: cldImage("lodge-kitchen-classic"),
+    alt: "A self-catering kitchenette in a Kanaan lodge unit — wooden cabinets, microwave, kettle, dining table and chairs alongside, tile floor.",
+    width: 1200,
+    height: 1600,
+  },
+  lodgeCourtyardPatio: {
+    src: cldImage("lodge-courtyard-patio"),
+    alt: "The courtyard outside a Kanaan lodge unit — brick-paved patio, white wrought-iron chairs and a small round table under dappled tree shade.",
+    width: 1500,
+    height: 2000,
+  },
+
   // ---- Camping --------------------------------------------------------
   campingMango: {
     src: cldImage("camping-mango"),
