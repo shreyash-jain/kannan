@@ -12,6 +12,7 @@ export function organizationLd() {
     telephone: site.contact.phonePrimaryDisplay,
     email: site.contact.email,
     image: [cldImage("og-default")],
+    logo: `${site.url}/brand/kanaan-logo.png`,
     priceRange: "$",
     address: {
       "@type": "PostalAddress",

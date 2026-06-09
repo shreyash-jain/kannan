@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { nav, site } from "@/lib/site";
@@ -13,14 +14,17 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${site.name} — home`}
-          className="flex items-baseline gap-2"
+          className="flex items-center"
         >
-          <span className="font-display text-2xl tracking-tight text-forest-deep">
-            Kanaan
-          </span>
-          <span className="hidden text-xs uppercase tracking-[0.18em] text-muted sm:inline">
-            Guest Farm · Hazyview
-          </span>
+          <Image
+            src="/brand/kanaan-logo.png"
+            alt={`${site.name} — Hazyview`}
+            width={640}
+            height={640}
+            priority
+            sizes="(min-width: 1024px) 56px, 44px"
+            className="h-11 w-auto lg:h-14"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
