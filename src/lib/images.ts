@@ -248,6 +248,18 @@ export const img = {
     width: 1600,
     height: 900,
   },
+  lowveldSunriseRoad: {
+    src: cldImage("lowveld-sunrise-road"),
+    alt: "A South African Lowveld sunrise on the road toward the Kruger Phabeni gate — a tarred road bending gently through bushveld, mist sitting low in the valley, soft pink-orange sky and the Drakensberg escarpment silhouetted in the far distance.",
+    width: 1600,
+    height: 1600,
+  },
+  krugerPicnicCoffee: {
+    src: cldImage("kruger-picnic-coffee"),
+    alt: "A weathered wooden picnic table in dappled shade in Kruger National Park — a stainless thermos and an enamel cup of coffee on the table beside a folded paper map, the bushveld and a river bend opening out beyond.",
+    width: 1500,
+    height: 1500,
+  },
 
   // ---- Pool — the real pool, filled with water (June 2026) ----------
   pool: {
