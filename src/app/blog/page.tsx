@@ -4,6 +4,7 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogPostList, type Post } from "@/components/BlogPostList";
+import { img, wedding } from "@/lib/images";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,6 +23,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/the-discovery",
+    image: img.hosts.src,
+    imageAlt: img.hosts.alt,
+    datePublished: "2026-05-22",
+    readingMinutes: 6,
     excerpt:
       "A vineyard in Argentina that did not work out. A birthday at the waterfall. An old man catching us snooping on land that turned out to be his. Anneli on how she and Matthew found Kanaan.",
   },
@@ -32,6 +37,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/the-promise",
+    image: img.gateSign.src,
+    imageAlt: img.gateSign.alt,
+    datePublished: "2026-05-31",
+    readingMinutes: 5,
     excerpt:
       "We took the keys in August 2025, read every review the farm had ever received, and started rebuilding Kanaan the slow, honest way — water, WiFi, the gate, the rooms, one thing at a time.",
   },
@@ -43,6 +52,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/africa",
+    image: img.campingTents.src,
+    imageAlt: img.campingTents.alt,
+    datePublished: "2026-05-12",
+    readingMinutes: 7,
     excerpt:
       "Africa is a place where your heart beats a little faster. An invitation to a warm family holiday based at Kanaan — Kruger, Sabie, Graskop and the wonders of the Lowveld.",
   },
@@ -53,6 +66,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/the-welcome",
+    image: img.veranda.src,
+    imageAlt: img.veranda.alt,
+    datePublished: "2026-05-31",
+    readingMinutes: 6,
     excerpt:
       "What a stay at Kanaan actually feels like — the dust road in, the room you arrive to, the morning at the breakfast table, the long afternoon under the mango trees and the honest line about the kind of traveller the farm was built for.",
   },
@@ -63,6 +80,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/the-celebration",
+    image: wedding.bridesmaids.src,
+    imageAlt: wedding.bridesmaids.alt,
+    datePublished: "2026-05-31",
+    readingMinutes: 6,
     excerpt:
       "A multi-day wedding weekend at Kanaan in Hazyview — rehearsal nights around the fire, a relaxed ceremony under the African sky, a Sunday morning no one is in a hurry to leave. Up to 150 guests on the farm.",
   },
@@ -73,6 +94,10 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/the-future",
+    image: img.macGrove.src,
+    imageAlt: img.macGrove.alt,
+    datePublished: "2026-05-22",
+    readingMinutes: 5,
     excerpt:
       "A year of renovations later, Anneli on what is coming next — multi-day Kruger packages, the new wooden-house backpackers, affordable weddings, on-request meals, hiking and cycling trails, and a longer ecotourism vision for the wider farm.",
   },
@@ -84,6 +109,10 @@ const posts: Post[] = [
     category: "guide",
     status: "live",
     href: "/blog/kruger-from-hazyview",
+    image: img.kruger.src,
+    imageAlt: img.kruger.alt,
+    datePublished: "2026-06-08",
+    readingMinutes: 7,
     excerpt:
       "Phabeni vs Numbi vs Paul Kruger gates, opening times by season, and the half-day plan that gets you back to Kanaan for lunch. The Kruger guide we wish we had on our first visit.",
   },
