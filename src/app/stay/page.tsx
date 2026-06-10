@@ -174,16 +174,22 @@ export default function StayPage() {
         <StaySection
           id="backpackers"
           eyebrow={`Backpacker dorm · ${site.capacity.backpackersBeds}-bed hostel`}
-          title="A sociable dorm for adventurers and slow travellers."
+          title="A sociable wooden-house dorm for adventurers and slow travellers."
           body={
             <>
               <p>
-                {site.capacity.backpackersBeds} comfortable beds, a shared
-                bathroom, a sociable communal kitchen, and a relaxed lounge
-                where you will usually find someone reading, making coffee or
-                swapping safari stories. Wonderfully suited to hikers,
-                overlanders and adventurers moving through the Lowveld at
-                their own pace.
+                Pine-clad walls, slatted wooden floors and a soft cabin
+                light through the curtained windows. {site.capacity.backpackersBeds}{" "}
+                beds in total, spread across a few small rooms — a mix of
+                single beds and sturdy wooden bunks, dressed with fresh
+                linen and a folded towel waiting on each mattress.
+              </p>
+              <p>
+                A shared bathroom, a communal kitchen and a relaxed lounge
+                where you will usually find someone reading, making coffee
+                or swapping safari stories. Wonderfully suited to hikers,
+                overlanders and slow travellers moving through the Lowveld
+                at their own pace.
               </p>
               <p>
                 Pick up groceries in Hazyview on your way in — the closest
@@ -193,12 +199,47 @@ export default function StayPage() {
           }
           image={img.backpackers}
           facts={[
-            `${site.capacity.backpackersBeds} bunk beds`,
-            "Shared bathroom",
-            "Communal kitchen + lounge",
+            `${site.capacity.backpackersBeds} beds — singles + bunks`,
+            "Pine-clad cabin character",
+            "Shared bathroom & kitchen + lounge",
             "Free WiFi · secure parking",
           ]}
         />
+
+        {/* Inside the wooden house — the dorm's other rooms */}
+        <section className="bg-bone">
+          <div className="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+                <Image
+                  src={img.backpackersTwin.src}
+                  alt={img.backpackersTwin.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+                <Image
+                  src={img.backpackersBunk.src}
+                  alt={img.backpackersBunk.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+                <Image
+                  src={img.backpackersWide.src}
+                  alt={img.backpackersWide.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
         <StaySection
           id="camping"

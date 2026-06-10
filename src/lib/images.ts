@@ -332,20 +332,41 @@ export const img = {
     height: 1200,
   },
 
-  // ---- Placeholders (awaiting real photos) ----------------------------
-  // TODO: replace with the real backpacker dorm photos from the previous
-  // website / Google Business Profile when Anneli sends them. The
-  // wooden-house dorm is still under construction so a finished dorm
-  // shot of our own does not exist yet.
+  // ---- Wooden-house backpacker dorm — real photos (June 2026) ------
+  // Anneli sent through finished interiors of the wooden-house dorm.
+  // `backpackers` is the main hero (the three-bed pine-cabin room with
+  // fresh linen + folded towels). The other slots round out a small
+  // gallery of the dorm's variety: twin blue-bedded room, bunk room,
+  // and a wider angle showing the layout.
   backpackers: {
-    src: cldImage("lodge-twin-suite"),
-    alt: "Twin-bed accommodation at Kanaan with the en-suite shower visible — the layout we use for backpacker bookings while the wooden-house dorm is being finished.",
-    width: 1200,
-    height: 1600,
+    src: cldImage("backpackers-three-bed"),
+    alt: "Inside the wooden-house backpacker dorm at Kanaan — three single beds in a row, fresh white linen, towels folded on each bed, pine-clad walls and ceiling, curtained windows looking out into the trees.",
+    width: 1500,
+    height: 2000,
   },
+  backpackersTwin: {
+    src: cldImage("backpackers-twin-blue"),
+    alt: "A second wooden-house room at Kanaan — two single beds dressed in patterned blue-and-white blankets, towels rolled at the foot of each bed, pine walls and curtained windows.",
+    width: 1500,
+    height: 1200,
+  },
+  backpackersBunk: {
+    src: cldImage("backpackers-bunk-bed"),
+    alt: "A bunk-bed room in the wooden-house dorm at Kanaan — a sturdy wooden bunk with a ladder up to the top mattress, a single bed alongside, a wall fan and a curtained window onto the bush.",
+    width: 1500,
+    height: 1200,
+  },
+  backpackersWide: {
+    src: cldImage("backpackers-wide"),
+    alt: "A wider view inside the wooden-house backpacker dorm at Kanaan — slatted wooden floors, two single beds in the foreground, a bunk-and-twin room beyond, a glimpse of the lounge through an open door.",
+    width: 1500,
+    height: 1200,
+  },
+  // Bathroom photo for the dorm still to come; until then we reuse the
+  // pine-clad lodge bathroom which shares the cabin character.
   backpackersBathroom: {
     src: cldImage("lodge-bathroom-pine"),
-    alt: "A bathroom at Kanaan — concrete-finish walls, walk-in shower behind a pine sliding door. (Dedicated backpacker bathroom photography arrives with the wooden-house dorm opening.)",
+    alt: "A bathroom at Kanaan — concrete-finish walls, walk-in shower behind a pine sliding door. (Dedicated backpacker bathroom photography arrives shortly.)",
     width: 1200,
     height: 1600,
   },
