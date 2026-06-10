@@ -334,13 +334,18 @@ export const img = {
 
   // ---- Wooden-house backpacker dorm — real photos (June 2026) ------
   // Anneli sent through finished interiors of the wooden-house dorm.
-  // `backpackers` is the main hero (the three-bed pine-cabin room with
-  // fresh linen + folded towels). The other slots round out a small
-  // gallery of the dorm's variety: twin blue-bedded room, bunk room,
-  // and a wider angle showing the layout.
+  // `backpackers` is the social hero (lounge + kitchen + dining + a bed
+  // visible in the background — the room guests will spend most waking
+  // time in). The other slots show the bedrooms and bunks.
   backpackers: {
+    src: cldImage("backpackers-lounge"),
+    alt: "The common room of the wooden-house backpacker dorm at Kanaan — vaulted pine ceiling and beams, two long red couches around a polished concrete floor, a dining table with chairs in the middle, a small self-catering kitchenette with sink and microwave along the back wall, and a bed glimpsed through a doorway on the left.",
+    width: 2000,
+    height: 1500,
+  },
+  backpackersBeds: {
     src: cldImage("backpackers-three-bed"),
-    alt: "Inside the wooden-house backpacker dorm at Kanaan — three single beds in a row, fresh white linen, towels folded on each bed, pine-clad walls and ceiling, curtained windows looking out into the trees.",
+    alt: "Inside one of the wooden-house dorm rooms at Kanaan — three single beds in a row, fresh white linen, towels folded on each bed, pine-clad walls and ceiling, curtained windows looking out into the trees.",
     width: 1500,
     height: 2000,
   },
