@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { NavPill } from "@/components/NavPill";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
 import { LightboxGallery } from "@/components/Lightbox";
@@ -98,21 +99,11 @@ export default function StayPage() {
 
       <Section>
         <nav aria-label="On this page" className="mb-12 flex flex-wrap gap-2 text-sm">
-          <a href="#lodge" className="rounded-full border border-ink/10 bg-bone px-4 py-1.5 font-medium text-ink/80 hover:border-ochre hover:text-ochre">
-            Lodge
-          </a>
-          <a href="#twin" className="rounded-full border border-ink/10 bg-bone px-4 py-1.5 font-medium text-ink/80 hover:border-ochre hover:text-ochre">
-            Basic Twin Rooms
-          </a>
-          <a href="#backpackers" className="rounded-full border border-ink/10 bg-bone px-4 py-1.5 font-medium text-ink/80 hover:border-ochre hover:text-ochre">
-            Backpackers · {site.capacity.backpackersBeds} beds
-          </a>
-          <a href="#camping" className="rounded-full border border-ink/10 bg-bone px-4 py-1.5 font-medium text-ink/80 hover:border-ochre hover:text-ochre">
-            Camping · {site.capacity.campsitePitches} pitches
-          </a>
-          <a href="#dining" className="rounded-full border border-ink/10 bg-bone px-4 py-1.5 font-medium text-ink/80 hover:border-ochre hover:text-ochre">
-            Dining
-          </a>
+          <NavPill href="#lodge">Lodge</NavPill>
+          <NavPill href="#twin">Basic Twin Rooms</NavPill>
+          <NavPill href="#backpackers">Backpackers · {site.capacity.backpackersBeds} beds</NavPill>
+          <NavPill href="#camping">Camping · {site.capacity.campsitePitches} pitches</NavPill>
+          <NavPill href="#dining">Dining</NavPill>
         </nav>
 
         <StaySection

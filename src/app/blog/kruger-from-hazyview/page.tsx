@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
+import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
-import { site } from "@/lib/site";
+import { createBlogPostMetadata } from "@/lib/blog";
 import {
   TLDR,
   Callout,
@@ -22,39 +22,28 @@ const datePublished = "2026-06-08";
 const headline =
   "Kruger from Hazyview: a first-timer's guide to gates, timing and the morning that works";
 
-export const metadata: Metadata = {
-  title: "Kruger from Hazyview · A first-timer's guide · Journal & Guides",
+export const metadata = createBlogPostMetadata({
+  slug: "kruger-from-hazyview",
+  title: "Kruger from Hazyview",
   description:
     "Phabeni vs Numbi vs Paul Kruger gates, opening times, and the half-day plan that gets you back to Kanaan for lunch. The Kruger guide we wish we had on our first visit.",
-  alternates: { canonical: "/blog/kruger-from-hazyview" },
-  openGraph: {
-    title: "Kruger from Hazyview · A first-timer's guide",
-    description:
-      "The gates, the timing and the half-day plan that gets you back to the farm for lunch — Anneli and Matthew's first-timer's guide to Kruger from Hazyview.",
-    images: [{ url: img.kruger.src, alt: img.kruger.alt }],
-    type: "article",
-    publishedTime: datePublished,
-    authors: [...site.hosts],
-  },
-};
+  image: img.kruger,
+  datePublished,
+  category: "guide",
+});
 
 export default function KrugerGuidePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleLd({
-              headline,
-              description:
-                "A practical, distance-anchored guide to visiting the Kruger National Park from Hazyview — Phabeni vs Numbi vs Paul Kruger gates, gate-opening times by season, the hour-by-hour morning plan, and the five mistakes we see first-timers make.",
-              path: "/blog/kruger-from-hazyview",
-              image: img.kruger.src,
-              datePublished,
-            }),
-          ),
-        }}
+      <JsonLd
+        data={articleLd({
+          headline,
+          description:
+            "A practical, distance-anchored guide to visiting the Kruger National Park from Hazyview — Phabeni vs Numbi vs Paul Kruger gates, gate-opening times by season, the hour-by-hour morning plan, and the five mistakes we see first-timers make.",
+          path: "/blog/kruger-from-hazyview",
+          image: img.kruger.src,
+          datePublished,
+        })}
       />
 
       <Breadcrumbs

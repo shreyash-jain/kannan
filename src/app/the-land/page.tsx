@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
 import { Video } from "@/components/Video";
+import { LightboxGallery } from "@/components/Lightbox";
 import { img, video } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -164,30 +165,33 @@ export default function TheLandPage() {
             <Eyebrow>Around the farm</Eyebrow>
             <H2 className="mt-3">The wider Kanaan, all the way to the escarpment.</H2>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
-            {[
-              img.viewpointGazebo,
-              img.macGrove,
-              img.goldenVista,
-              img.macGroveFramed,
-              img.lowveldWildflowers,
-              img.goldenShed,
-              img.trailView,
-            ].map((g) => (
-              <div
-                key={g.src}
-                className="relative aspect-4/5 overflow-hidden rounded-xl"
-              >
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  fill
-                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
+          <LightboxGallery>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
+              {[
+                img.viewpointGazebo,
+                img.macGrove,
+                img.goldenVista,
+                img.macGroveFramed,
+                img.lowveldWildflowers,
+                img.goldenShed,
+                img.trailView,
+              ].map((g) => (
+                <button
+                  key={g.src}
+                  type="button"
+                  className="relative aspect-4/5 overflow-hidden rounded-xl cursor-zoom-in"
+                >
+                  <Image
+                    src={g.src}
+                    alt={g.alt}
+                    fill
+                    sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </button>
+              ))}
+            </div>
+          </LightboxGallery>
         </div>
       </section>
 
