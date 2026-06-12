@@ -14,11 +14,7 @@ import { cldImage, cldVideo, cldVideoPoster } from "./cloudinary";
 export type Img = { src: string; alt: string; width: number; height: number };
 
 export const img = {
-  // ---- Hero / mango grove ----------------------------------------------
-  // The sun setting through the forty-year-old mango grove. The original
-  // is portrait — sun sits mid-frame — so a center-gravity 16:9 crop
-  // gives the cinematic hero band: tree canopy framing the sun and the
-  // Lowveld hills behind.
+  // ---- HOME HERO / FARM LANDSCAPE ----------------------------------------
   heroFarm: {
     src: cldImage(
       "mango-sunset",
@@ -34,7 +30,8 @@ export const img = {
     width: 1200,
     height: 1600,
   },
-  // ---- Wider farm: macadamia grove, wildflowers, the further land ----
+
+  // ---- THE-LAND SECTION ---------------------------------------------------
   macGrove: {
     src: cldImage("mac-grove"),
     alt: "The macadamia grove on Kanaan — rows of newly-planted young trees stretching toward the Lowveld escarpment.",
@@ -65,7 +62,32 @@ export const img = {
     width: 1200,
     height: 1600,
   },
-  // ---- Covered venue + viewpoint gazebo (real Kanaan venue spaces) ----
+  waterfall: {
+    src: cldImage("waterfall"),
+    alt: "The waterfall on Kanaan — smooth rock shelves and a clear pool spilling over the edge with the Lowveld valley stretching out below.",
+    width: 1600,
+    height: 1200,
+  },
+  hiking: {
+    src: cldImage("lowveld-view"),
+    alt: "The Lowveld around Kanaan — smooth rock outcrops giving way to valley forest and farmland rolling toward the escarpment, a natural place for slow walks.",
+    width: 1600,
+    height: 1200,
+  },
+  mtb: {
+    src: cldImage("trail-cabin"),
+    alt: "A rustic wooden cabin on a hillside above Kanaan — the kind of view that opens up on the farm's hiking and mountain-biking trails.",
+    width: 1600,
+    height: 1200,
+  },
+  trailView: {
+    src: cldImage("lowveld-path"),
+    alt: "A dirt path winding past a small wooden cabin at Kanaan, with the Lowveld escarpment opening out in the distance.",
+    width: 1200,
+    height: 1600,
+  },
+
+  // ---- WEDDINGS / EVENTS --------------------------------------------------
   venueCovered: {
     src: cldImage("venue-covered"),
     alt: "The covered entertainment area at Kanaan — long tables, chairs and an open view across the Lowveld valley.",
@@ -84,7 +106,8 @@ export const img = {
     width: 1500,
     height: 1000,
   },
-  // ---- Real camping shot: tents under the mango trees ---------------
+
+  // ---- ACCOMMODATION / LODGE EXTERIORS ------------------------------------
   campingTents: {
     src: cldImage("camping-tents"),
     alt: "Tents pitched at Kanaan under the forty-year-old mango grove — a vehicle, a motorbike and the open lawn beyond.",
@@ -99,7 +122,7 @@ export const img = {
     height: 1600,
   },
 
-  // ---- Lodge interiors (post-renovation IMG_488x batch) ----------------
+  // ---- LODGE INTERIORS (post-renovation) ----------------------------------
   lodgeRoom: {
     src: cldImage("lodge-room"),
     alt: "A double room in a renovated lodge unit at Kanaan — crisp white linen, wooden ceiling with exposed beams, ceiling fan and a wall-mounted TV.",
@@ -172,11 +195,6 @@ export const img = {
     width: 1600,
     height: 1200,
   },
-
-  // ---- Additional lodge angles (LekkeSlaap archive, June 2026) -----
-  // Real Kanaan shots from the LekkeSlaap listing — used as a glimpses
-  // strip on /stay to give visitors a wider sense of what each lodge
-  // unit actually looks like, beyond the heroes already on the page.
   lodgeModestDouble: {
     src: cldImage("lodge-modest-double"),
     alt: "A lodge unit at Kanaan with a double bed, ceiling fan and wooden-beamed ceiling — fresh white linen, polished concrete floor, a window onto the trees.",
@@ -208,7 +226,7 @@ export const img = {
     height: 2000,
   },
 
-  // ---- Camping --------------------------------------------------------
+  // ---- CAMPING ----------------------------------------------------------------
   campingMango: {
     src: cldImage("camping-mango"),
     alt: "The Kanaan camping ground — open grass under the shade of forty-year-old mango trees, with room for tents, rooftop tents and small campers.",
@@ -222,33 +240,79 @@ export const img = {
     height: 1200,
   },
 
-  // ---- The land: waterfall, valley views, trails -----------------------
-  waterfall: {
-    src: cldImage("waterfall"),
-    alt: "The waterfall on Kanaan — smooth rock shelves and a clear pool spilling over the edge with the Lowveld valley stretching out below.",
-    width: 1600,
+  // ---- BACKPACKERS / WOODEN-HOUSE DORM (real photos, June 2026) -------
+  backpackers: {
+    src: cldImage("backpackers-lounge"),
+    alt: "The common room of the wooden-house backpacker dorm at Kanaan — vaulted pine ceiling and beams, two long red couches around a polished concrete floor, a dining table with chairs in the middle, a small self-catering kitchenette with sink and microwave along the back wall, and a bed glimpsed through a doorway on the left.",
+    width: 2000,
+    height: 1500,
+  },
+  backpackersBeds: {
+    src: cldImage("backpackers-three-bed"),
+    alt: "Inside one of the wooden-house dorm rooms at Kanaan — three single beds in a row, fresh white linen, towels folded on each bed, pine-clad walls and ceiling, curtained windows looking out into the trees.",
+    width: 1500,
+    height: 2000,
+  },
+  backpackersTwin: {
+    src: cldImage("backpackers-twin-blue"),
+    alt: "A second wooden-house room at Kanaan — two single beds dressed in patterned blue-and-white blankets, towels rolled at the foot of each bed, pine walls and curtained windows.",
+    width: 1500,
     height: 1200,
   },
-  hiking: {
-    src: cldImage("lowveld-view"),
-    alt: "The Lowveld around Kanaan — smooth rock outcrops giving way to valley forest and farmland rolling toward the escarpment, a natural place for slow walks.",
-    width: 1600,
+  backpackersBunk: {
+    src: cldImage("backpackers-bunk-bed"),
+    alt: "A bunk-bed room in the wooden-house dorm at Kanaan — a sturdy wooden bunk with a ladder up to the top mattress, a single bed alongside, a wall fan and a curtained window onto the bush.",
+    width: 1500,
     height: 1200,
   },
-  mtb: {
-    src: cldImage("trail-cabin"),
-    alt: "A rustic wooden cabin on a hillside above Kanaan — the kind of view that opens up on the farm's hiking and mountain-biking trails.",
-    width: 1600,
+  backpackersWide: {
+    src: cldImage("backpackers-wide"),
+    alt: "A wider view inside the wooden-house backpacker dorm at Kanaan — slatted wooden floors, two single beds in the foreground, a bunk-and-twin room beyond, a glimpse of the lounge through an open door.",
+    width: 1500,
     height: 1200,
   },
-  trailView: {
-    src: cldImage("lowveld-path"),
-    alt: "A dirt path winding past a small wooden cabin at Kanaan, with the Lowveld escarpment opening out in the distance.",
+  backpackersBathroom: {
+    src: cldImage("lodge-bathroom-pine"),
+    alt: "A bathroom at Kanaan — concrete-finish walls, walk-in shower behind a pine sliding door. (Dedicated backpacker bathroom photography arrives shortly.)",
     width: 1200,
     height: 1600,
   },
 
-  // ---- Context shots (third-party / regional) --------------------------
+  // ---- POOL ---------------------------------------------------------------
+  pool: {
+    src: cldImage("pool-real"),
+    alt: "The pool at Kanaan, fringed by palms and a brick-paved deck.",
+    width: 1200,
+    height: 1600,
+  },
+  poolSecond: {
+    src: cldImage("pool-second"),
+    alt: "The pool at Kanaan from the other side — brick edge, palms, the kids' play structure beyond.",
+    width: 1200,
+    height: 1500,
+  },
+  poolSunset: {
+    src: cldImage("pool-sunset"),
+    alt: "The pool at Kanaan at sunset — brick-paved edge, palms in silhouette, a soft pink and blue sky over the Lowveld beyond.",
+    width: 1200,
+    height: 1800,
+  },
+
+  // ---- ARRIVAL / LANDSCAPE ------------------------------------------------
+  gateSign: {
+    src: cldImage("gate-sign"),
+    alt: "The Kanaan Guest Farm signboard at the front gate — black ironwork, the Hazyview lettering, a flame tree in flower behind it.",
+    width: 1200,
+    height: 1800,
+  },
+  lowveldPanorama: {
+    src: cldImage("lowveld-panorama"),
+    alt: "The wider Lowveld from above Kanaan — rolling green hills, an orchard valley and the escarpment running away to the horizon.",
+    width: 1600,
+    height: 1200,
+  },
+
+  // ---- BLOG CONTEXT SHOTS (third-party / AI-generated) ------------------
   // Used on /blog/africa and /blog/the-discovery to give each section a
   // literal scene shot. Every other page leans on real Kanaan photography.
   kruger: {
@@ -296,84 +360,12 @@ export const img = {
     height: 1500,
   },
 
-  // ---- Pool — the real pool, filled with water (June 2026) ----------
-  pool: {
-    src: cldImage("pool-real"),
-    alt: "The pool at Kanaan, fringed by palms and a brick-paved deck.",
-    width: 1200,
-    height: 1600,
-  },
-  poolSecond: {
-    src: cldImage("pool-second"),
-    alt: "The pool at Kanaan from the other side — brick edge, palms, the kids' play structure beyond.",
-    width: 1200,
-    height: 1500,
-  },
-  // The pool at sunset — palms in silhouette, soft pink sky over the
-  // Lowveld, brick-paved edge in the warm last light.
-  poolSunset: {
-    src: cldImage("pool-sunset"),
-    alt: "The pool at Kanaan at sunset — brick-paved edge, palms in silhouette, a soft pink and blue sky over the Lowveld beyond.",
-    width: 1200,
-    height: 1800,
-  },
-
-  // ---- Arrival: the gate and the wider Lowveld panorama -------------
-  gateSign: {
-    src: cldImage("gate-sign"),
-    alt: "The Kanaan Guest Farm signboard at the front gate — black ironwork, the Hazyview lettering, a flame tree in flower behind it.",
-    width: 1200,
-    height: 1800,
-  },
-  lowveldPanorama: {
-    src: cldImage("lowveld-panorama"),
-    alt: "The wider Lowveld from above Kanaan — rolling green hills, an orchard valley and the escarpment running away to the horizon.",
+  // ---- HOSTS / GENERAL BRAND -----------------------------------------------
+  hosts: {
+    src: cldImage("hosts"),
+    alt: "Anneli and Matthew — owners of Kanaan Guest Farm since August 2025 — on the dam, laughing, the Lowveld behind them.",
     width: 1600,
-    height: 1200,
-  },
-
-  // ---- Wooden-house backpacker dorm — real photos (June 2026) ------
-  // Anneli sent through finished interiors of the wooden-house dorm.
-  // `backpackers` is the social hero (lounge + kitchen + dining + a bed
-  // visible in the background — the room guests will spend most waking
-  // time in). The other slots show the bedrooms and bunks.
-  backpackers: {
-    src: cldImage("backpackers-lounge"),
-    alt: "The common room of the wooden-house backpacker dorm at Kanaan — vaulted pine ceiling and beams, two long red couches around a polished concrete floor, a dining table with chairs in the middle, a small self-catering kitchenette with sink and microwave along the back wall, and a bed glimpsed through a doorway on the left.",
-    width: 2000,
-    height: 1500,
-  },
-  backpackersBeds: {
-    src: cldImage("backpackers-three-bed"),
-    alt: "Inside one of the wooden-house dorm rooms at Kanaan — three single beds in a row, fresh white linen, towels folded on each bed, pine-clad walls and ceiling, curtained windows looking out into the trees.",
-    width: 1500,
-    height: 2000,
-  },
-  backpackersTwin: {
-    src: cldImage("backpackers-twin-blue"),
-    alt: "A second wooden-house room at Kanaan — two single beds dressed in patterned blue-and-white blankets, towels rolled at the foot of each bed, pine walls and curtained windows.",
-    width: 1500,
-    height: 1200,
-  },
-  backpackersBunk: {
-    src: cldImage("backpackers-bunk-bed"),
-    alt: "A bunk-bed room in the wooden-house dorm at Kanaan — a sturdy wooden bunk with a ladder up to the top mattress, a single bed alongside, a wall fan and a curtained window onto the bush.",
-    width: 1500,
-    height: 1200,
-  },
-  backpackersWide: {
-    src: cldImage("backpackers-wide"),
-    alt: "A wider view inside the wooden-house backpacker dorm at Kanaan — slatted wooden floors, two single beds in the foreground, a bunk-and-twin room beyond, a glimpse of the lounge through an open door.",
-    width: 1500,
-    height: 1200,
-  },
-  // Bathroom photo for the dorm still to come; until then we reuse the
-  // pine-clad lodge bathroom which shares the cabin character.
-  backpackersBathroom: {
-    src: cldImage("lodge-bathroom-pine"),
-    alt: "A bathroom at Kanaan — concrete-finish walls, walk-in shower behind a pine sliding door. (Dedicated backpacker bathroom photography arrives shortly.)",
-    width: 1200,
-    height: 1600,
+    height: 1400,
   },
   groups: {
     src: cldImage("campfire-terrace"),
@@ -381,17 +373,8 @@ export const img = {
     width: 1600,
     height: 1200,
   },
-  hosts: {
-    // The real Anneli & Matthew portrait — a candid couple shot on the
-    // dam with the Lowveld behind them. Stays as the canonical "hosts"
-    // slot across the site.
-    src: cldImage("hosts"),
-    alt: "Anneli and Matthew — owners of Kanaan Guest Farm since August 2025 — on the dam, laughing, the Lowveld behind them.",
-    width: 1600,
-    height: 1400,
-  },
 
-  // ---- Open Graph / share image ---------------------------------------
+  // ---- OPEN GRAPH / SOCIAL SHARE ------------------------------------------
   ogDefault: {
     src: cldImage("og-default"),
     alt: "Kanaan Guest Farm — Hazyview, near Kruger National Park.",
