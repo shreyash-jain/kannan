@@ -1,31 +1,28 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
+import { JsonLd } from "@/components/JsonLd";
 import { img, wedding } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
-import { site, whatsappLink } from "@/lib/site";
+import { createBlogPostMetadata } from "@/lib/blog";
+import { whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-31";
 const headline = "An unforgettable wedding weekend in the beautiful Lowveld — at Kanaan Guest Farm, Hazyview";
 
-export const metadata: Metadata = {
-  title: `An intimate wedding weekend in the Lowveld · Kanaan Guest Farm, Hazyview · Journal`,
+export const metadata = createBlogPostMetadata({
+  slug: "the-celebration",
+  title: "The celebration",
   description:
     "An intimate, multi-day wedding venue in Hazyview, Mpumalanga. A weekend at Kanaan where everything slows down and the only thing that matters is the two of you and the people who know your story best.",
-  alternates: { canonical: "/blog/the-celebration" },
-  openGraph: {
-    title: `An intimate wedding weekend at Kanaan · Lowveld wedding venue`,
-    description:
-      "A multi-day wedding weekend at Kanaan Guest Farm in Hazyview — rehearsal nights, a relaxed ceremony, Sunday morning slow. Up to 150 guests on the farm.",
-    images: [{ url: img.viewpointGazebo.src, alt: img.viewpointGazebo.alt }],
-    type: "article",
-    publishedTime: datePublished,
-    authors: [...site.hosts],
-  },
-};
+  image: img.viewpointGazebo,
+  datePublished,
+  category: "story",
+  chapterNumber: 5,
+  chapterName: "The Celebration",
+});
 
 export default function CelebrationPostPage() {
   return (

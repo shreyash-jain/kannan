@@ -1,50 +1,42 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { Video } from "@/components/Video";
+import { JsonLd } from "@/components/JsonLd";
 import { img, video } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
-import { site, whatsappLink } from "@/lib/site";
+import { createBlogPostMetadata } from "@/lib/blog";
+import { whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-31";
 const headline = "The promise we made ourselves at Kanaan Guest Farm";
 
-export const metadata: Metadata = {
-  title: `The promise we made ourselves · Kanaan Guest Farm, Hazyview · Journal`,
+export const metadata = createBlogPostMetadata({
+  slug: "the-promise",
+  title: "The promise we made ourselves",
   description:
     "New owners at Kanaan Guest Farm in Hazyview. We read every old review, listened, and started the long, careful work of putting Kanaan back together — one room, one tap, one gate at a time.",
-  alternates: { canonical: "/blog/the-promise" },
-  openGraph: {
-    title: `The promise we made ourselves · Kanaan Guest Farm`,
-    description:
-      "We took the keys in August 2025, read every review the farm had ever received, and started rebuilding Kanaan the slow, honest way. Here is the promise we made ourselves.",
-    images: [{ url: img.lodgeBathroom.src, alt: img.lodgeBathroom.alt }],
-    type: "article",
-    publishedTime: datePublished,
-    authors: [...site.hosts],
-  },
-};
+  image: img.lodgeBathroom,
+  datePublished,
+  category: "story",
+  chapterNumber: 2,
+  chapterName: "The Promise",
+});
 
 export default function PromisePostPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleLd({
-              headline,
-              description:
-                "The day we took the keys at Kanaan Guest Farm in Hazyview, what the old reviews told us, what we changed first, what is still in progress, and the promise we made ourselves to listen to every guest who walks through the gate.",
-              path: "/blog/the-promise",
-              image: img.lodgeBathroom.src,
-              datePublished,
-            }),
-          ),
-        }}
+      <JsonLd
+        data={articleLd({
+          headline,
+          description:
+            "The day we took the keys at Kanaan Guest Farm in Hazyview, what the old reviews told us, what we changed first, what is still in progress, and the promise we made ourselves to listen to every guest who walks through the gate.",
+          path: "/blog/the-promise",
+          image: img.lodgeBathroom.src,
+          datePublished,
+        })}
       />
 
       <Breadcrumbs
