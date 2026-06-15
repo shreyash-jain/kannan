@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { img, video } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
-import { whatsappLink } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-31";
 const headline = "The promise we made ourselves at Kanaan Guest Farm";

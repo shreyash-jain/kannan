@@ -327,6 +327,44 @@ export const img = {
     width: 1200,
     height: 1200,
   },
+  // --- Panorama Route guide — dedicated Gemini-generated scene shots ---
+  // One literal frame per Panorama Route attraction, so the guide never
+  // reuses a Kanaan landscape that appears on another page. Generate from
+  // the prompts in docs/panorama-image-prompts.md, save each as
+  // public/images/<public_id>.jpg, then run scripts/upload-to-cloudinary.py.
+  panoramaGodsWindow: {
+    src: cldImage(
+      "panorama-gods-window",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "The view from God's Window on the Panorama Route — the Drakensberg escarpment dropping nearly a kilometre to the green Lowveld, forested ridges fading into blue haze toward the horizon in clear winter light.",
+    width: 1920,
+    height: 1080,
+  },
+  wonderView: {
+    src: cldImage("wonder-view"),
+    alt: "Wonder View, a quieter viewpoint a minute up the road from God's Window — a lone traveller at a simple cliff-edge railing, looking out over the vast hazy Lowveld with no crowd in sight.",
+    width: 1600,
+    height: 900,
+  },
+  macMacFalls: {
+    src: cldImage("panorama-mac-mac-falls"),
+    alt: "A tall waterfall near Sabie on the Panorama Route — a white cascade dropping down a dark rock face into a deep, lush green forested amphitheatre, fine mist rising at the base.",
+    width: 1600,
+    height: 900,
+  },
+  graskopGorgeLift: {
+    src: cldImage("graskop-gorge-lift"),
+    alt: "The Graskop Gorge — suspended timber-and-steel boardwalks and a swing bridge threading through dense indigenous rainforest on the gorge floor, dappled green light through the canopy, the glass viewing lift on the cliff beyond.",
+    width: 1600,
+    height: 900,
+  },
+  bourkesLuck: {
+    src: cldImage("bourkes-luck-potholes"),
+    alt: "Bourke's Luck Potholes on the Panorama Route — deep, smooth honey-coloured rock cylinders carved by the swirling Treur and Blyde rivers, turquoise pools in the hollows and a small footbridge arcing over the gorge.",
+    width: 1600,
+    height: 900,
+  },
   sabieRiver: {
     src: cldImage("sabie-waterfall"),
     alt: "A waterfall in the Sabie waterfall cluster near Hazyview — clear pools and a short forest walk in.",

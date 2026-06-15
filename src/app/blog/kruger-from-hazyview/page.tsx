@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
+import { site } from "@/lib/site";
 import {
   TLDR,
   Callout,
@@ -112,25 +113,27 @@ export default function KrugerGuidePage() {
               from Hazyview, and the choice between them is mostly a
               question of how early you want to wake up.
             </p>
-            <StatGrid
-              stats={[
-                {
-                  value: "~15 min",
-                  label: "Phabeni Gate",
-                  body: "Twelve km from Hazyview, the closest gate to Kanaan and our default for a half-day. Phabeni means shelter in Sotho.",
-                },
-                {
-                  value: "~40 min",
-                  label: "Numbi Gate",
-                  body: "A slightly longer drive but a beautiful one, and a less-crowded gate on busy days. Good plan B in school holidays.",
-                },
-                {
-                  value: "~60 min",
-                  label: "Paul Kruger Gate",
-                  body: "Further out, near Skukuza camp — a strong call if you want to spend the whole day in the south of the park.",
-                },
-              ]}
-            />
+          </div>
+          <StatGrid
+            stats={[
+              {
+                value: "~15 min",
+                label: "Phabeni Gate",
+                body: "Twelve km from Hazyview, the closest gate to Kanaan and our default for a half-day. Phabeni means shelter in Sotho.",
+              },
+              {
+                value: "~40 min",
+                label: "Numbi Gate",
+                body: "A slightly longer drive but a beautiful one, and a less-crowded gate on busy days. Good plan B in school holidays.",
+              },
+              {
+                value: "~60 min",
+                label: "Paul Kruger Gate",
+                body: "Further out, near Skukuza camp — a strong call if you want to spend the whole day in the south of the park.",
+              },
+            ]}
+          />
+          <div className="prose-kanaan mx-auto max-w-prose">
             <p>
               For a single Kruger morning, Phabeni is almost always the
               right answer. You leave Kanaan with the first hint of light,
@@ -328,25 +331,27 @@ export default function KrugerGuidePage() {
               Kruger is good year-round. It is not all the same kind of
               good. Here is what we tell guests who ask us when to come.
             </p>
-            <StatGrid
-              stats={[
-                {
-                  value: "May–Sep",
-                  label: "Dry winter",
-                  body: "The best wildlife months. Cool mornings, thin bush, animals concentrated at remaining waterholes. Big-cat sightings peak. Pack warm layers for sunrise.",
-                },
-                {
-                  value: "Oct–Nov",
-                  label: "Shoulder",
-                  body: "Warmer, greener, fewer people. The first rains bring the bush back to life. Migratory birds arrive. A favourite if you can travel outside school terms.",
-                },
-                {
-                  value: "Dec–Apr",
-                  label: "Wet summer",
-                  body: "Lush and beautiful, hot and humid, the bush thick. Newborn antelope, dramatic skies. Sightings are harder but the park is at its most photogenic.",
-                },
-              ]}
-            />
+          </div>
+          <StatGrid
+            stats={[
+              {
+                value: "May–Sep",
+                label: "Dry winter",
+                body: "The best wildlife months. Cool mornings, thin bush, animals concentrated at remaining waterholes. Big-cat sightings peak. Pack warm layers for sunrise.",
+              },
+              {
+                value: "Oct–Nov",
+                label: "Shoulder",
+                body: "Warmer, greener, fewer people. The first rains bring the bush back to life. Migratory birds arrive. A favourite if you can travel outside school terms.",
+              },
+              {
+                value: "Dec–Apr",
+                label: "Wet summer",
+                body: "Lush and beautiful, hot and humid, the bush thick. Newborn antelope, dramatic skies. Sightings are harder but the park is at its most photogenic.",
+              },
+            ]}
+          />
+          <div className="prose-kanaan mx-auto max-w-prose">
             <p>
               For a first visit with children, the dry-winter months are
               the easiest entry point — animals are easier to spot, the
