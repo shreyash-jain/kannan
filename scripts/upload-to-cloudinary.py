@@ -1,5 +1,5 @@
 """
-Upload every photo in public/images/ and every video in public/videos/
+Upload every photo in public/images/ and every video in media/videos/
 to Cloudinary under the `kanaan/` folder. Each asset's public_id matches
 its filename without extension, so the URL is stable and predictable.
 
@@ -59,7 +59,7 @@ cloudinary.config(
 
 CLOUDINARY_FOLDER = "kanaan"
 IMAGES_DIR = ROOT / "public" / "images"
-VIDEOS_DIR = ROOT / "public" / "videos"
+VIDEOS_DIR = ROOT / "media" / "videos"
 
 IMG_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 VID_EXTS = {".mp4", ".webm", ".mov"}
