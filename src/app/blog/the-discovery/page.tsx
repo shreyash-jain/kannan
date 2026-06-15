@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
-import { whatsappLink } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-22";
 const headline = "How we found Kanaan: a waterfall, an old man, and a farm that found us back";
