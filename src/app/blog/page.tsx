@@ -116,6 +116,20 @@ const posts: Post[] = [
     excerpt:
       "Phabeni vs Numbi vs Paul Kruger gates, opening times by season, and the half-day plan that gets you back to Kanaan for lunch. The Kruger guide we wish we had on our first visit.",
   },
+  {
+    chapter: "Panorama Route",
+    title:
+      "The Panorama Route from Hazyview: God's Window, the Blyde Canyon and the loop that works",
+    category: "guide",
+    status: "live",
+    href: "/blog/panorama-route-from-hazyview",
+    image: img.panoramaGodsWindow.src,
+    imageAlt: img.panoramaGodsWindow.alt,
+    datePublished: "2026-06-15",
+    readingMinutes: 9,
+    excerpt:
+      "God's Window, the Blyde River Canyon, a string of waterfalls and a gorge lift into the rainforest — the whole Panorama Route begins about forty minutes from our gate. The half-day loop, the full-day loop, and why a clear winter morning is the one to do it on.",
+  },
 ];
 
 export default function BlogIndexPage() {

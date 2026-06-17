@@ -6,7 +6,9 @@ Convert raw Drive videos to web-friendly MP4 (H.264) clips.
 - Narrated clips (Matthew or Anneli speaking) keep their audio so the viewer
   can unmute the autoplay-muted video and hear the founder narration.
 - Caps at 720p / 1280px wide; trims to MAX_SECONDS so file size stays small.
-- Target < 10 MB per clip so they comfortably fit Cloudflare Pages 25MB-per-file.
+- Output goes to media/videos/ (NOT public/) — these are Cloudinary upload
+  sources served via cldVideo(), kept out of the Cloudflare Pages deploy
+  (Pages rejects any single asset over 25 MiB).
 """
 
 from __future__ import annotations
@@ -21,7 +23,7 @@ FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "raw_photos"
-OUT = ROOT / "public" / "videos"
+OUT = ROOT / "media" / "videos"
 
 DEFAULT_MAX_SECONDS = 20  # cap clip length
 CRF = 28  # lower = higher quality / larger file. 28 is web-friendly
