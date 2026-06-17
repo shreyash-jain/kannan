@@ -4,10 +4,14 @@ import { whatsappLink } from "@/lib/site";
 
 // ---------------------------------------------------------------------
 // Kanaan blog block library — used by every Guide and (over time) by
-// the Story chapters. The grammar is locked: TLDR at the top, max 4
-// images, a callout / stat grid / numbered list every 250–400 words,
-// a closing gradient block as the second-to-last element, then a
-// WhatsApp CTA. Reading rhythm > visual variety.
+// the Story chapters. The grammar is locked: TLDR at the top, prose in
+// a max-w-prose column, a callout / stat grid / numbered list every
+// 250–400 words, a closing gradient block as the second-to-last
+// element, then a WhatsApp CTA. Reading rhythm > visual variety.
+//
+// Width: prose stays in `prose-kanaan max-w-prose`; the data blocks
+// (StatGrid, NumberedList) break OUT to the wider max-w-5xl band and so
+// must be rendered OUTSIDE the prose div. Figures use max-w-5xl too.
 // ---------------------------------------------------------------------
 
 // --- TL;DR -----------------------------------------------------------
@@ -56,11 +60,14 @@ export function Callout({
 }
 
 // --- 3-card stat grid (parallel facts: distances, prices, capacity) --
+// Like NumberedList, this breaks out of the prose column to the wider
+// max-w-5xl band, so render it OUTSIDE the `prose-kanaan max-w-prose`
+// div (close the prose div first), or the cards stay cramped.
 export type Stat = { value: string; label: string; body?: string };
 
 export function StatGrid({ stats }: { stats: Stat[] }) {
   return (
-    <div className="not-prose my-12 grid gap-4 md:grid-cols-3">
+    <div className="not-prose my-12 mx-auto grid w-full max-w-5xl gap-4 px-5 md:grid-cols-3 lg:px-0">
       {stats.map((s, i) => (
         <article
           key={i}

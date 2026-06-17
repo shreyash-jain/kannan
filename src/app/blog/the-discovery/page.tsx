@@ -1,49 +1,41 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
+import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
+import { createBlogPostMetadata } from "@/lib/blog";
 import { site, whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-22";
 const headline = "How we found Kanaan: a waterfall, an old man, and a farm that found us back";
 
-export const metadata: Metadata = {
-  title: `How we found Kanaan · Anneli's story · Journal`,
+export const metadata = createBlogPostMetadata({
+  slug: "the-discovery",
+  title: "How we found Kanaan",
   description:
     "The story of how Anneli and Matthew found Kanaan Guest Farm — a birthday at the waterfall, an old man catching them snooping, and a tired farm in Hazyview that turned out to be exactly what they were looking for.",
-  alternates: { canonical: "/blog/the-discovery" },
-  openGraph: {
-    title: `How we found Kanaan · Kanaan Guest Farm`,
-    description:
-      "Anneli on travelling the world, almost buying a vineyard in Argentina, and the day Matthew took her to a waterfall on a farm that quietly turned out to be for sale.",
-    images: [{ url: img.waterfall.src, alt: img.waterfall.alt }],
-    type: "article",
-    publishedTime: datePublished,
-    authors: [...site.hosts],
-  },
-};
+  image: img.waterfall,
+  datePublished,
+  category: "story",
+  chapterNumber: 1,
+  chapterName: "The Discovery",
+});
 
 export default function DiscoveryPostPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleLd({
-              headline,
-              description:
-                "Anneli's first-person account of how she and Matthew found Kanaan — the Argentine vineyard that did not work out, the birthday at the waterfall, the old man, and the offer that started everything.",
-              path: "/blog/the-discovery",
-              image: img.waterfall.src,
-              datePublished,
-            }),
-          ),
-        }}
+      <JsonLd
+        data={articleLd({
+          headline,
+          description:
+            "Anneli's first-person account of how she and Matthew found Kanaan — the Argentine vineyard that did not work out, the birthday at the waterfall, the old man, and the offer that started everything.",
+          path: "/blog/the-discovery",
+          image: img.waterfall.src,
+          datePublished,
+        })}
       />
 
       <Breadcrumbs

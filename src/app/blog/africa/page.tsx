@@ -1,50 +1,42 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
+import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
-import { site, whatsappLink } from "@/lib/site";
+import { createBlogPostMetadata } from "@/lib/blog";
+import { whatsappLink } from "@/lib/site";
 
 const datePublished = "2026-05-12";
 const headline =
   "Africa: a family holiday at Kanaan Guest Farm in the beautiful heart of Hazyview";
 
-export const metadata: Metadata = {
-  title: `${headline} · Journal`,
+export const metadata = createBlogPostMetadata({
+  slug: "africa",
+  title: "Africa",
   description:
     "Welcome to Africa. A warm, unforgettable family holiday based at Kanaan Guest Farm in Hazyview, Mpumalanga — gateway to the Kruger National Park, Sabie, Graskop, and the wonders of the Lowveld.",
-  alternates: { canonical: "/blog/africa" },
-  openGraph: {
-    title: `${headline} · Kanaan Guest Farm`,
-    description:
-      "A heart-felt invitation from Anneli — discover Hazyview, Kruger, Sabie and Graskop from a warm family-run guest farm in the Lowveld.",
-    images: [{ url: img.hiking.src, alt: img.hiking.alt }],
-    type: "article",
-    publishedTime: datePublished,
-    authors: [...site.hosts],
-  },
-};
+  image: img.hiking,
+  datePublished,
+  category: "story",
+  chapterNumber: 3,
+  chapterName: "Africa",
+});
 
 export default function AfricaPostPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            articleLd({
-              headline,
-              description:
-                "An invitation to an African family holiday based at Kanaan Guest Farm in Hazyview, Mpumalanga — Kruger, Sabie, Graskop and the wonders of the Lowveld.",
-              path: "/blog/africa",
-              image: img.hiking.src,
-              datePublished,
-            }),
-          ),
-        }}
+      <JsonLd
+        data={articleLd({
+          headline,
+          description:
+            "An invitation to an African family holiday based at Kanaan Guest Farm in Hazyview, Mpumalanga — Kruger, Sabie, Graskop and the wonders of the Lowveld.",
+          path: "/blog/africa",
+          image: img.hiking.src,
+          datePublished,
+        })}
       />
 
       <Breadcrumbs
