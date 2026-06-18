@@ -371,6 +371,45 @@ export const img = {
     width: 1200,
     height: 1600,
   },
+  // --- Seasonal Almanac guide (Blog 3) — dedicated Gemini-generated shots ---
+  // One literal frame per season/month beat, so the month-by-month guide
+  // never reuses a landscape that appears on another page. Generate from the
+  // prompts in docs/blog-3-image-prompts.md, save each as
+  // public/images/<public_id>.jpg, then run scripts/upload-to-cloudinary.py.
+  // The "comes home to the farm" beat reuses the real img.poolSunset.
+  lowveldGreenSeason: {
+    src: cldImage(
+      "lowveld-green-season",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "The green-summer Lowveld near Hazyview on a mid-afternoon — emerald bushveld and tall grass running to low blue hills, a towering thunderhead building with shafts of light and a full river catching the sun.",
+    width: 1920,
+    height: 1080,
+  },
+  krugerWinterWaterhole: {
+    src: cldImage("kruger-winter-waterhole"),
+    alt: "A dry-winter morning in southern Kruger — elephants and a few zebra drinking at a shrinking waterhole in open, bare, dusty bushveld, leafless trees and golden grass, ground mist in the crisp early light.",
+    width: 1600,
+    height: 1067,
+  },
+  panoramaClearWinterView: {
+    src: cldImage("panorama-clear-winter-view"),
+    alt: "God's Window on a crisp, clear winter morning — sheer forested cliffs dropping nearly a kilometre to the hazy green Lowveld, layered blue ridges receding to the horizon under a clean deep-blue sky.",
+    width: 1600,
+    height: 900,
+  },
+  sabieWaterfallFullFlow: {
+    src: cldImage("sabie-waterfall-full-flow"),
+    alt: "A tall Panorama Route waterfall at full summer flow — a powerful white ribbon dropping down a dark cliff into a green rainforest amphitheatre, mist rising off the plunge pool, dripping ferns and moss.",
+    width: 1600,
+    height: 1067,
+  },
+  impalaLambingSummer: {
+    src: cldImage("impala-lambing-summer"),
+    alt: "Kruger in November — an impala ewe watching over several wobbly newborn lambs in fresh green grass dotted with wildflowers after the first rains, soft side light and a blurred green background.",
+    width: 1600,
+    height: 1067,
+  },
   // Gemini-generated context shots — uploaded to the same kanaan/ folder
   // on Cloudinary by scripts/upload-to-cloudinary.py.
   hazyviewEvening: {
