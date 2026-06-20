@@ -51,7 +51,7 @@ const months: Month[] = [
     crowds:
       "The festive peak holds until schools return (Term 1 starts 14 Jan 2026), then prices fall sharply. Late January is one of the cheapest, quietest windows of the year.",
     bestFor:
-      "Birders, green-season photographers, value-seekers. A high-malaria month — take precautions.",
+      "Birders, green-season photographers, value-seekers.",
   },
   {
     name: "February",
@@ -61,12 +61,12 @@ const months: Month[] = [
     weather:
       "~28 °C / ~18 °C; ~150 mm and the highest humidity of the year (~79%). Skukuza ~33 °C. No frost.",
     wildlife:
-      "Fair. Greenest and thickest, so sightings take patience. Excellent birding — migrants in breeding plumage, weavers nesting. Start of peak malaria risk. Gates ~05:30–18:30.",
+      "Fair. Greenest and thickest, so sightings take patience. Excellent birding — migrants in breeding plumage, weavers nesting. Gates ~05:30–18:30.",
     panorama:
       "Mostly misty mornings — go early. Waterfalls at maximum flow.",
     crowds:
       "Low season, and genuinely the cheapest stretch of the year — lodges often discount around 25%.",
-    bestFor: "Birders, photographers, budget travellers. High malaria risk.",
+    bestFor: "Birders, photographers, budget travellers.",
   },
   {
     name: "March",
@@ -82,7 +82,7 @@ const months: Month[] = [
     crowds:
       "Quiet and good value until schools break (Term 1 ends 27 Mar); the week after is calm before Easter. Green-season rates.",
     bestFor:
-      "Green-season photographers, waterfall-chasers, value travellers. Malaria still present.",
+      "Green-season photographers, waterfall-chasers, value travellers.",
   },
   {
     name: "April",
@@ -92,7 +92,7 @@ const months: Month[] = [
     weather:
       "~25–26 °C / ~15–16 °C; rain ~45–66 mm as the dry season begins and the skies clear. No frost.",
     wildlife:
-      "Very good — the standout shoulder month. The impala rut begins (most intense in the south); cooler, drier, thinning cover makes for easy sightings. Last migrants depart and malaria starts dropping. Gates ~06:00–18:00 (confirm closing time).",
+      "Very good — the standout shoulder month. The impala rut begins (most intense in the south); cooler, drier, thinning cover makes for easy sightings. Last migrants depart. Gates ~06:00–18:00 (confirm closing time).",
     panorama:
       "Among the best of the year — clear long views and the falls still strong. The rare both-at-once window.",
     crowds:
@@ -108,7 +108,7 @@ const months: Month[] = [
     weather:
       "~24–25 °C days / chilly ~11 °C nights; low rain (~20 mm) under reliably blue skies. Frost essentially unknown at the farm.",
     wildlife:
-      "Excellent. The impala rut is at its loud peak; the bush thins fast and water concentrates the game. Wild dogs begin denning (~May–Sep), so those elusive predators are far easier to find. Low and dropping malaria. Gates ~06:00–17:30.",
+      "Excellent. The impala rut is at its loud peak; the bush thins fast and water concentrates the game. Wild dogs begin denning (~May–Sep), so those elusive predators are far easier to find. Gates ~06:00–17:30.",
     panorama:
       "Very clear — cold nights bring glass-clear air — and the last strong month for waterfall flow before winter thins them.",
     crowds:
@@ -124,7 +124,7 @@ const months: Month[] = [
     weather:
       "~22–23 °C days / cold ~8 °C nights (Skukuza ~6 °C); minimal rain (~13 mm, the driest month) and low humidity. Frost only on the higher escarpment, never at Hazyview.",
     wildlife:
-      "Excellent. Game congregates at the remaining water — reliable and concentrated; leopard and lion peak in the bare bush; wild-dog denning continues. Low malaria. Gates ~06:00–17:30 — pack warm layers for the dark start.",
+      "Excellent. Game congregates at the remaining water — reliable and concentrated; leopard and lion peak in the bare bush; wild-dog denning continues. Gates ~06:00–17:30 — pack warm layers for the dark start.",
     panorama:
       "The clearest, driest month of all, with the best long views of the year. Forest-fed falls hold up even as overall flow declines.",
     crowds:
@@ -140,7 +140,7 @@ const months: Month[] = [
     weather:
       "Cold pre-dawn, mild sunny days. ~22–23 °C / coldest ~8 °C nights (Skukuza ~6 °C); negligible rain (~10–16 mm) and exceptionally clear air. No meaningful frost in the Lowveld.",
     wildlife:
-      "Excellent — one of the very best months. Thin bush and scarce water make for hugely rewarding elephant, buffalo, lion and leopard, especially along the Sabie and the permanent rivers. Wild dogs still denning. Low malaria. Gates ~06:00–17:30.",
+      "Excellent — one of the very best months. Thin bush and scarce water make for hugely rewarding elephant, buffalo, lion and leopard, especially along the Sabie and the permanent rivers. Wild dogs still denning. Gates ~06:00–17:30.",
     panorama:
       "Second-best clarity of the year; the falls are dropping further — come for the views, not the falls.",
     crowds:
@@ -156,7 +156,7 @@ const months: Month[] = [
     weather:
       "Warming but dry. ~24–25 °C / ~10 °C nights; low rain (~22 mm) under clear skies. Late August brings the first warm, dusty days. No frost.",
     wildlife:
-      "Excellent. Very limited water clusters animals predictably — superb for predators, elephant and big cats. Wild-dog pups emerging. The most open, dusty bush of the year. Still low malaria. Gates ~06:00–18:00.",
+      "Excellent. Very limited water clusters animals predictably — superb for predators, elephant and big cats. Wild-dog pups emerging. The most open, dusty bush of the year. Gates ~06:00–18:00.",
     panorama:
       "Clear, though the first spring haze can soften the longest views; the falls are among the lowest of the year.",
     crowds:
@@ -172,7 +172,7 @@ const months: Month[] = [
     weather:
       "Warming and dry. ~26–27 °C / ~13 °C nights; rain ticking up (~30–40 mm) with the first late storms. Trees flush green and knobthorns flower. No frost.",
     wildlife:
-      "Excellent — arguably the best of the year. The last waterholes draw huge concentrations, the bare bush gives maximum visibility, predators are highly active and the first newborns appear late in the month. Malaria starts rising. Gates ~06:00–18:00.",
+      "Excellent — arguably the best of the year. The last waterholes draw huge concentrations, the bare bush gives maximum visibility, predators are highly active and the first newborns appear late in the month. Gates ~06:00–18:00.",
     panorama:
       "Clear but increasingly hazy; the waterfalls are at their weakest before the rains.",
     crowds:
@@ -188,7 +188,7 @@ const months: Month[] = [
     weather:
       "Warming fast and often hot. ~26–27 °C / ~15 °C nights; rain ~45–65 mm in dramatic late-afternoon storms as the first humidity returns. Skukuza hotter. No frost.",
     wildlife:
-      "Very good to excellent. Game is packed at the last water — drive early to beat the fierce midday heat. The first impala lambs drop toward month-end and the first migrants arrive. Malaria climbing. Gates ~05:30–18:00.",
+      "Very good to excellent. Game is packed at the last water — drive early to beat the fierce midday heat. The first impala lambs drop toward month-end and the first migrants arrive. Gates ~05:30–18:00.",
     panorama:
       "Transitional — cloud building and the first storms, but the falls begin recovering. Mornings can still be clear.",
     crowds:
@@ -204,7 +204,7 @@ const months: Month[] = [
     weather:
       "The rains establish. ~27 °C / warm ~16 °C nights; rain ~60–70 mm in afternoon storms. The bush turns lush. No frost.",
     wildlife:
-      "Very good and underrated. The big synchronised impala lambing pulse floods the park with newborns and outstanding predator action — wild dogs feeding pups, lions hunting; wildebeest and zebra calve. Migrants pour back (woodland kingfishers from mid-November). Malaria precautions advised. Gates ~05:30–18:30.",
+      "Very good and underrated. The big synchronised impala lambing pulse floods the park with newborns and outstanding predator action — wild dogs feeding pups, lions hunting; wildebeest and zebra calve. Migrants pour back (woodland kingfishers from mid-November). Gates ~05:30–18:30.",
     panorama:
       "Wet mornings and afternoon mist (start early), but the waterfalls strengthen fast — water over views.",
     crowds:
@@ -220,7 +220,7 @@ const months: Month[] = [
     weather:
       "Hot, humid and wet. ~28 °C / muggy ~17 °C nights; Skukuza 33 °C+. Among the wettest months (~85–95 mm) with frequent heavy storms, full rivers and falls. No frost.",
     wildlife:
-      "Good. Calving continues (impala, wildebeest, zebra young) and birding is excellent with all migrants breeding. Predators are busy, but thick bush and full waterholes disperse the game — drive early and slow. Higher malaria. Gates ~05:30–18:30 (camp gates from ~04:30).",
+      "Good. Calving continues (impala, wildebeest, zebra young) and birding is excellent with all migrants breeding. Predators are busy, but thick bush and full waterholes disperse the game — drive early and slow. Gates ~05:30–18:30 (camp gates from ~04:30).",
     panorama:
       "Cloudiest and wettest — the least reliable long views (go at first light); waterfalls very high and the canyon at its greenest.",
     crowds:
@@ -266,7 +266,7 @@ function MonthCard({ month }: { month: Month }) {
 const faqs = [
   {
     q: "What is the overall best time of year to visit Kruger from Hazyview?",
-    a: "For most first-timers, the dry winter — roughly May to September — is the easiest, most reliable window: thin bush, game gathered at the few remaining water sources, the clearest Panorama views and the lowest malaria. Our own honest favourite is the shoulder either side of the July crowd — May or September — which gives you the same easy sightings, half the people and a softer price.",
+    a: "For most first-timers, the dry winter — roughly May to September — is the easiest, most reliable window: thin bush, game gathered at the few remaining water sources and the clearest Panorama views. Our own honest favourite is the shoulder either side of the July crowd — May or September — which gives you the same easy sightings, half the people and a softer price.",
   },
   {
     q: "What is the cheapest time to visit Kruger, and which 2026 SA school-holiday weeks should we book around?",
@@ -274,19 +274,19 @@ const faqs = [
   },
   {
     q: "When is the best time to visit Kruger with young children?",
-    a: "The dry winter, especially April–early June and September: thin bush, animals at the water and quick sightings; crisp ~11 °C mornings warming to mild ~25 °C days; almost no rain to wash out a Panorama day; and the lowest malaria of the year. The long winter school holiday (~late June–20 July 2026) is built around this season. From Kanaan the close Phabeni gate (~15 minutes) makes the dawn start manageable, with the pool and the mango grove waiting when you come home.",
+    a: "The dry winter, especially April–early June and September: thin bush, animals at the water and quick sightings; crisp ~11 °C mornings warming to mild ~25 °C days; almost no rain to wash out a Panorama day; and it's also Kruger's lowest-risk malaria window, which matters most for little ones (see the malaria question below). The long winter school holiday (~late June–20 July 2026) is built around this season. From Kanaan the close Phabeni gate (~15 minutes) makes the dawn start manageable, with the pool and the mango grove waiting when you come home.",
   },
   {
     q: "Green season or dry season — what's the real difference for a first-time family?",
-    a: "They're almost opposite holidays. The dry winter (May–September) is brown, dusty and cold at dawn, but the open bush makes for easy game — classic Big Five, the lowest malaria and the clearest views. The green summer (November–March) is emerald under storm skies, with impala lambing, migrants in and the falls thundering — but the thick bush scatters the game, it's hot and humid, and malaria needs care. A first family chasing easy sightings should come in winter; if it's birds, babies, lush scenery and value you're after, the green season rewards a little patience.",
+    a: "They're almost opposite holidays. The dry winter (May–September) is brown, dusty and cold at dawn, but the open bush makes for easy game — classic Big Five and the clearest views. The green summer (November–March) is emerald under storm skies, with impala lambing, migrants in and the falls thundering — but the thick bush scatters the game, and it's hot and humid. A first family chasing easy sightings should come in winter; if it's birds, babies, lush scenery and value you're after, the green season rewards a little patience.",
   },
   {
     q: "What's the weather like in Hazyview and the Lowveld each month?",
     a: "Hazyview sits at about 600 m on the wet foot of the escarpment. Daytime highs hold steady around 22–23 °C in midwinter and climb to about 28 °C in midsummer; nights swing from ~18 °C in summer down to ~8 °C at the coldest in July. Rain is strongly seasonal — about 800–900 mm a year, wettest in January, February and December (~95–155 mm) and near-dry in June and July (under ~15 mm). There is no frost in the Hazyview Lowveld — only on the higher escarpment. The Kruger interior at Skukuza runs hotter (~33 °C) and drier.",
   },
   {
-    q: "When is malaria a risk, and which months are lowest?",
-    a: "This is a low-risk area, not malaria-free, and the risk follows the warmth and the rain. It's lowest in the dry winter (~May–September) and highest in the warm, wet months (~November–April, peaking February–May). Practise bite avoidance year-round, and ask your doctor about prophylaxis — especially for green-season travel, young children and pregnancy.",
+    q: "Do we need to worry about malaria — at the farm and in Kruger?",
+    a: "Two honest answers, because the farm and the park are different. Where you actually sleep, you can relax: Hazyview and Kanaan sit in a low-risk pocket of the Lowveld, and you don't need to take malaria tablets just to stay with us — the official maps put our town and its neighbours (White River, Mbombela, Sabie) in the gentlest margin of the region, well off the high-risk belt up on the Mozambique border. We won't tell you it's flatly 'malaria-free,' because that wouldn't be honest — but in practice a stay around Hazyview asks no more than a little common sense on warm summer evenings: a touch of repellent and a long-sleeved shirt at sundown. Kruger itself is a different story: it's a genuine, if generally low and seasonal, malaria area — highest in the warm, wet months (roughly September to May) and very low in the dry winter. So for a day in the park, cover up at dusk and wear repellent, and have a quick word with your doctor about preventative tablets for green-season visits — especially if you're pregnant or travelling with little ones, who should always get a doctor's advice first.",
   },
   {
     q: "What's the best month to do both Kruger and the Panorama Route in one trip?",
@@ -323,7 +323,7 @@ export default function SeasonalAlmanacGuidePage() {
         data={articleLd({
           headline,
           description:
-            "A practical, base-centric month-by-month almanac of the best time to visit Kruger National Park and Hazyview — the weather, wildlife, Panorama Route visibility, waterfall flow, malaria risk and 2026 South African school-holiday crowds for every month of the year, the sweet-spot shoulder months (April–May and September), the honest case for the green season, and a clear best-month verdict for each kind of traveller.",
+            "A practical, base-centric month-by-month almanac of the best time to visit Kruger National Park and Hazyview — the weather, wildlife, Panorama Route visibility, waterfall flow and 2026 South African school-holiday crowds for every month of the year, the sweet-spot shoulder months (April–May and September), the honest case for the green season, and a clear best-month verdict for each kind of traveller.",
           path: "/blog/when-to-visit-kruger-hazyview-month-by-month",
           image: img.lowveldGreenSeason.src,
           datePublished,
@@ -359,7 +359,7 @@ export default function SeasonalAlmanacGuidePage() {
             <TLDR
               items={[
                 "There is no bad month in the Lowveld — only different kinds of good. The month everyone overlooks is often the one we'd choose ourselves.",
-                "Dry winter (May–Sep) is the easiest game viewing, the clearest Panorama views and the lowest malaria — and the busiest, priciest peak sits right in the middle of it.",
+                "Dry winter (May–Sep) is the easiest game viewing and the clearest Panorama views — and the busiest, priciest peak sits right in the middle of it.",
                 "Green summer (Nov–Mar) is the best value and the best birding, with newborn animals and thundering waterfalls — you just trade thick bush and heat for them.",
                 "April–May and September are the sweet spots: winter's easy sightings, half the crowds, softer prices.",
                 "Book around the 2026 South African school holidays — the two peaks are mid-December → mid-January and 27 June → 20 July.",
@@ -409,19 +409,19 @@ export default function SeasonalAlmanacGuidePage() {
             items={[
               {
                 title: "Green Summer · Nov–Mar",
-                body: "Lush, hot and quietly the best value — the months nobody books and we secretly love. The first rains turn the Lowveld emerald under thunderstorm skies; Hazyview sits at ~27–28 °C days and sticky 17–18 °C nights, the Kruger interior 33 °C+. Impala lamb in their thousands from late November, summer migrants flood in, and the falls run to thunder. The trade-offs: thick bush scatters the game, malaria risk is highest, and the long Panorama views need an early start. Best for birders, photographers and value-seekers.",
+                body: "Lush, hot and quietly the best value — the months nobody books and we secretly love. The first rains turn the Lowveld emerald under thunderstorm skies; Hazyview sits at ~27–28 °C days and sticky 17–18 °C nights, the Kruger interior 33 °C+. Impala lamb in their thousands from late November, summer migrants flood in, and the falls run to thunder. The trade-offs: thick bush scatters the game, and the long Panorama views need an early start. Best for birders, photographers and value-seekers.",
               },
               {
                 title: "Autumn Shoulder · Apr–May",
-                body: "The connoisseur's window — easy game viewing, glass-clear escarpment air and soft prices. The rains taper and the bush thins; Hazyview gives 24–26 °C days and crisp 11–15 °C mornings as humidity and malaria fall away. The impala rut roars to an April–May peak, water concentrates the game, and God's Window earns its name. Aside from Easter (3–6 Apr 2026), low crowds and soft rates — arguably the best all-round value before July.",
+                body: "The connoisseur's window — easy game viewing, glass-clear escarpment air and soft prices. The rains taper and the bush thins; Hazyview gives 24–26 °C days and crisp 11–15 °C mornings as the humidity falls away. The impala rut roars to an April–May peak, water concentrates the game, and God's Window earns its name. Aside from Easter (3–6 Apr 2026), low crowds and soft rates — arguably the best all-round value before July.",
               },
               {
                 title: "Dry Winter · Jun–Sep",
-                body: "Classic Big Five country — the easiest, most reliable game viewing and the clearest views of the year. Cold dawns (~8 °C at Hazyview) give way to mild, sunny 22–27 °C days with negligible rain. The bare bush pins the game to the rivers and waterholes; big-cat sightings peak and wild dogs den (~May–Sep). June–July are coldest and busiest with the winter school holidays; August–September are many guides' favourite. Lowest malaria — the trade-off is brown, dusty, cold-dawn country.",
+                body: "Classic Big Five country — the easiest, most reliable game viewing and the clearest views of the year. Cold dawns (~8 °C at Hazyview) give way to mild, sunny 22–27 °C days with negligible rain. The bare bush pins the game to the rivers and waterholes; big-cat sightings peak and wild dogs den (~May–Sep). June–July are coldest and busiest with the winter school holidays; August–September are many guides' favourite. The trade-off is brown, dusty, cold-dawn country.",
               },
               {
                 title: "Spring Build-up · Oct",
-                body: "The hot, dry crescendo — intense waterhole action just before the rains break. The hottest, driest run-up of the year: Hazyview around 27 °C with the first humidity and late thunderstorms. Game is still packed at the last water (drive early), the first impala lambs and migrants arrive, and the malaria risk is climbing. Dust-gold light, building storms and the first hint of green.",
+                body: "The hot, dry crescendo — intense waterhole action just before the rains break. The hottest, driest run-up of the year: Hazyview around 27 °C with the first humidity and late thunderstorms. Game is still packed at the last water (drive early), and the first impala lambs and migrants arrive. Dust-gold light, building storms and the first hint of green.",
               },
             ]}
           />
@@ -518,8 +518,8 @@ export default function SeasonalAlmanacGuidePage() {
             </p>
             <p>
               Yes, the bush is thick and the game takes more patience to find. Yes,
-              it is hot, the mornings can be misty over the escarpment, and malaria
-              wants more care. But the roads are quiet, the rates are soft — even
+              it is hot, and the mornings can be misty over the escarpment. But the
+              roads are quiet, the rates are soft — even
               the upmarket lodges discount in February — and the light, after a
               storm, is the kind photographers drive a long way for. It is not the
               easy-mode safari of July. It is the richer, greener, cheaper one.
@@ -740,6 +740,16 @@ export default function SeasonalAlmanacGuidePage() {
                   label:
                     "Kruger birding & summer-migrant calendar — krugerpark.co.za",
                   href: "https://www.krugerpark.co.za",
+                },
+                {
+                  label:
+                    "SANParks — malaria in Kruger (risk, season & precautions)",
+                  href: "https://www.sanparks.org/parks/kruger/useful-information/malaria",
+                },
+                {
+                  label:
+                    "CDC Yellow Book — South Africa malaria (Mpumalanga / Kruger, seasonal)",
+                  href: "https://www.cdc.gov/yellow-book/hcp/africa-middle-east/south-africa.html",
                 },
               ]}
             />
