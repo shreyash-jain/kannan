@@ -130,6 +130,19 @@ const posts: Post[] = [
     excerpt:
       "God's Window, the Blyde River Canyon, a string of waterfalls and a gorge lift into the rainforest — the whole Panorama Route begins about forty minutes from our gate. The half-day loop, the full-day loop, and why a clear winter morning is the one to do it on.",
   },
+  {
+    chapter: "Seasonal Almanac",
+    title: "When to visit Kruger & Hazyview: a month-by-month almanac",
+    category: "guide",
+    status: "live",
+    href: "/blog/when-to-visit-kruger-hazyview-month-by-month",
+    image: img.lowveldGreenSeason.src,
+    imageAlt: img.lowveldGreenSeason.alt,
+    datePublished: "2026-06-18",
+    readingMinutes: 11,
+    excerpt:
+      "There is no bad month in the Lowveld — only different kinds of good. An honest, base-centric walk through all twelve: what the weather, the wildlife, the Panorama views and the crowds are really like from Hazyview each month — and how to find the one that's yours, away from the two crowded peaks.",
+  },
 ];
 
 export default function BlogIndexPage() {
