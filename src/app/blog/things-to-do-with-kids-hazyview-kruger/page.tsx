@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Won't young kids get bored on a game drive?",
-    a: "They can, if you treat it like an all-day marathon — so don't. Keep drives to two or three hours, give every child a job (chief spotter, binoculars, an animal checklist to tick), pack a snack box, and break the morning at one of Kruger's get-out picnic sites where they can run around safely. Then come home to the pool. One good morning beats a long, fractious day every time.",
+    a: "They can, if you treat it like an all-day marathon — so don't. Keep drives to two or three hours, give everyone a small job to do, pack a snack box, and break the morning at one of Kruger's get-out picnic sites where they can run around and stretch their legs. Then come home to the pool. Two happy hours in the bush will outlast a whole grumpy day.",
   },
   {
     q: "Is it safe to go on safari with children?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "What about malaria with kids?",
-    a: "Good news first: Hazyview and the farm sit in a low-risk pocket — you don't need malaria tablets just to stay with us, only a little common sense with repellent on warm summer evenings. Kruger itself is a low, seasonal risk that's at its very lowest in the dry winter (roughly June to September) — which happens to be the easiest season for game viewing with children anyway. For a green-season park visit, or if you're travelling with very young children or pregnant, have a quick word with your doctor first. There's a fuller honest answer in our month-by-month guide.",
+    a: "Good news first: Hazyview and the farm sit in a low-risk pocket — we won't call it flatly malaria-free, but in practice a stay with us asks no more than a little common sense with repellent on warm summer evenings, not a course of tablets. Kruger itself is a low, seasonal risk that's at its very lowest in the dry winter (roughly May to September) — which happens to be the easiest season for game viewing with children anyway. For a green-season park visit, or if you're travelling with very young children or pregnant, have a quick word with your doctor first. There's a fuller honest answer in our month-by-month guide.",
   },
   {
     q: "What can we do with kids on a rainy day?",
@@ -167,14 +167,14 @@ export default function FamilyKidsGuidePage() {
           <StatGrid
             stats={[
               {
-                value: "~15 min",
+                value: "~40 min",
                 label: "Kruger's Phabeni gate",
-                body: "The closest gate to us — a short, sleepy drive in the dark and you are first into the park for the best of the morning's game.",
+                body: "Our closest gate — about forty minutes from the farm, and only fifteen from Hazyview town. A short, sleepy drive in the dark and you are first into the park for the best of the morning's game.",
               },
               {
-                value: "~35 min",
-                label: "The Panorama Route",
-                body: "The waterfalls and the Graskop Gorge Lift are about half an hour up the road — a comfortable family day out with pancakes in the middle.",
+                value: "~40 min",
+                label: "Graskop & the Gorge Lift",
+                body: "The near end of the Panorama Route — the Gorge Lift, the falls and pancakes — is about forty minutes up the road; the far viewpoints run closer to an hour, so we pick a handful rather than chase them all.",
               },
               {
                 value: "~0 min",
@@ -211,22 +211,29 @@ export default function FamilyKidsGuidePage() {
               },
               {
                 title: "Use the get-out picnic sites",
-                body: "Kruger's fenced picnic spots — Nkuhlu, Afsaal and others — let everyone stretch, run, and use a proper loo. Some have a kiosk and hot water for a midday cuppa; a planned leg-stretch resets the whole car.",
+                body: "Kruger's designated get-out spots — Nkuhlu, Afsaal and others, each with an attendant on hand — let everyone stretch, run, and use a proper loo. Some have a kiosk and hot water for a midday cuppa; a planned leg-stretch resets the whole car.",
               },
               {
                 title: "Pick a camp with a pool",
-                body: "Several of the southern rest camps have swimming pools, so a longer day can have a swim built into the middle of it. Lower Sabie and Skukuza also make easy, child-friendly lunch stops by the river.",
+                body: "A couple of the southern rest camps have a pool — sometimes for overnight guests only, so check with SANParks — which can turn a longer day into a lucky mid-drive swim. Either way, Lower Sabie and Skukuza make easy, child-friendly lunch stops by the river.",
               },
               {
-                title: "Choose the right season",
-                body: "The dry winter (roughly May to September) is easiest with kids: thin bush, animals gathered at the water, quick sightings and Kruger's lowest-risk malaria window. Our seasonal guide goes month by month.",
-              },
-              {
-                title: "Come home for the heat of the day",
-                body: "The genius of basing here is the midday retreat. Let the children nap or swim through the hottest hours and you can always slip back for a golden-hour drive if everyone's keen.",
+                title: "The first one steals the show",
+                body: "Nothing prepares a child for the moment a wild elephant actually steps out of the bush in front of the car — the gasp, then the whisper. Go slowly, get there early, and let them be the one to spot it; that single sighting is the one they'll be telling their teacher about for a term.",
               },
             ]}
           />
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <p>
+              One honest word on cost: Kruger charges a daily conservation fee
+              per person, tiered by where you&rsquo;re from and reduced for
+              children — we won&rsquo;t quote a figure that will be out of date
+              by the time you visit, so check the current SANParks rates and
+              tell us your family, and we&rsquo;ll help you ballpark the day.
+              Half the best things here cost nothing anyway: the waterfall walk,
+              the trails and the pool.
+            </p>
+          </div>
         </Section>
 
         {/* Inline image — a child on their first easy safari */}
@@ -326,7 +333,7 @@ export default function FamilyKidsGuidePage() {
             items={[
               {
                 title: "Skyway Trails zip-lines",
-                body: "A canopy zip-line tour that glides you between treetop platforms high in indigenous forest — guided, harnessed and surprisingly serene. A brilliant half-day for older children and teenagers (check the minimum age and weight before you go).",
+                body: "A canopy zip-line tour that glides you between treetop platforms high in indigenous forest — guided, harnessed and surprisingly serene. A brilliant half-day for older children and teenagers — there's a minimum age and weight, so message us and we'll confirm the current cut-off for your kids before you build the day around it.",
               },
               {
                 title: "Perry's Bridge Reptile Park",
@@ -543,11 +550,11 @@ export default function FamilyKidsGuidePage() {
               },
               {
                 title: "Sun, hats & repellent",
-                body: "Sun is the real hazard here, not the lions. High-factor sunscreen, wide-brimmed hats and a good insect repellent for warm summer evenings are the family essentials.",
+                body: "Sun is the real hazard here, not the lions. High-factor sunscreen, wide-brimmed hats and insect repellent for warm summer evenings are the essentials — and on a hot summer day, start at dawn, carry far more water than feels necessary, and never leave a child in a parked car.",
               },
               {
                 title: "Binoculars & a spotting book",
-                body: "A cheap pair of binoculars per child and a simple animal checklist turn a drive into a game — the best few rand you'll spend on the trip.",
+                body: "A cheap pair of binoculars per child and a simple printed animal checklist — honestly the best few rand you'll spend on the trip.",
               },
               {
                 title: "A proper snack box",
@@ -581,12 +588,12 @@ export default function FamilyKidsGuidePage() {
               {
                 time: "Day 1",
                 title: "Arrive and unwind",
-                body: "Check in, claim the room, and let the children find the pool while you find a deck chair. The week starts slowly on purpose — no one is going anywhere yet.",
+                body: "Check in, claim the room, and let the children loose on the pool while you find the shade and a cold drink. The week starts slowly on purpose — no one is going anywhere yet.",
               },
               {
                 time: "Day 2",
                 title: "A Kruger morning",
-                body: "Through the Phabeni gate before dawn for a short, thrilling game drive, a picnic-site leg-stretch, and home to the pool for the heat of the day. The big one, done early.",
+                body: "Through the Phabeni gate as the sun comes up for a short, thrilling game drive, a picnic-site leg-stretch, and home to the pool before the day turns fierce. The big one, done early.",
               },
               {
                 time: "Day 3",
