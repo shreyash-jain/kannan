@@ -410,6 +410,34 @@ export const img = {
     width: 1600,
     height: 1067,
   },
+  // --- Family & Kids guide (Blog 4) — dedicated generated shots ----------
+  // Only the Hazyview-specific kid scenes with no existing asset are new.
+  // Generate from docs/blog-4-image-prompts.md, save public/images/<id>.jpg,
+  // then run scripts/upload-to-cloudinary.py. The farm beats reuse real
+  // Kanaan photos (poolSecond, campingMango, waterfall, lodgeFamilyTwin,
+  // poolSunset) and the Kruger/Panorama beats reuse the Blog 2/3 scene shots
+  // (graskopGorgeLift, macMacFalls, krugerWinterWaterhole, impalaLambingSummer).
+  familyKrugerKidsHero: {
+    src: cldImage(
+      "family-kruger-kids-hero",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A child seen from behind at an open car window on a first Kruger safari, pointing at elephants crossing the road in warm early-morning Lowveld light.",
+    width: 1920,
+    height: 1080,
+  },
+  hazyviewZiplines: {
+    src: cldImage("hazyview-ziplines-canopy"),
+    alt: "A zip-line canopy tour through indigenous forest near Hazyview — a harnessed adventurer gliding between treetop platforms above a green gorge, seen small and from behind.",
+    width: 1600,
+    height: 1067,
+  },
+  kidsSafariBinoculars: {
+    src: cldImage("kids-safari-binoculars"),
+    alt: "A child looking through binoculars from a car window into the golden bushveld on a self-drive Kruger safari, an impala and a giraffe softly blurred in the distance.",
+    width: 1600,
+    height: 1067,
+  },
   // Gemini-generated context shots — uploaded to the same kanaan/ folder
   // on Cloudinary by scripts/upload-to-cloudinary.py.
   hazyviewEvening: {
