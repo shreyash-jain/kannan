@@ -143,6 +143,19 @@ const posts: Post[] = [
     excerpt:
       "There is no bad month in the Lowveld — only different kinds of good. An honest, base-centric walk through all twelve: what the weather, the wildlife, the Panorama views and the crowds are really like from Hazyview each month — and how to find the one that's yours, away from the two crowded peaks.",
   },
+  {
+    chapter: "Family & Kids",
+    title: "Hazyview & Kruger with kids: a family guide",
+    category: "guide",
+    status: "live",
+    href: "/blog/things-to-do-with-kids-hazyview-kruger",
+    image: img.familyKrugerKidsHero.src,
+    imageAlt: img.familyKrugerKidsHero.alt,
+    datePublished: "2026-06-20",
+    readingMinutes: 12,
+    excerpt:
+      "Big Five mornings, a glass lift into a rainforest, zip-lines, reptile parks and a pool to come home to. The things to do with kids around Hazyview, Kruger and the Panorama Route — and how to pace a family week so nobody melts down before lunch.",
+  },
 ];
 
 export default function BlogIndexPage() {
