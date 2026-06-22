@@ -438,6 +438,39 @@ export const img = {
     width: 1600,
     height: 1067,
   },
+  // --- Cost / booking-closer guide (Blog 5) — dedicated generated shots ----
+  // Four off-farm scene beats with no existing asset. Generate from
+  // docs/blog-5-image-prompts.md, save public/images/<id>.jpg, run
+  // scripts/upload-to-cloudinary.py. The value/closing beats stay REAL farm
+  // photos (lodgeFamilyTwin, lodgeKitchen, poolSunset) — never AI — because the
+  // blog's whole argument is "here are the honest numbers and the real R250 bed".
+  lowveldWeekCostHero: {
+    src: cldImage(
+      "lowveld-week-cost-hero",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A couple stand close together, seen from behind, on a guest-farm veranda at golden hour, looking out over the vast green Lowveld rolling toward the blue Drakensberg escarpment.",
+    width: 1920,
+    height: 1080,
+  },
+  n4RoadtripArrival: {
+    src: cldImage("n4-roadtrip-arrival"),
+    alt: "A dusty family car packed for a week away — luggage in the boot and a loaded roof rack — slowing on an open scenic Mpumalanga highway to turn off onto a red dirt farm road, rolling green hills and the blue Drakensberg in the distance.",
+    width: 1600,
+    height: 900,
+  },
+  krugerEntranceGate: {
+    src: cldImage("kruger-entrance-gate"),
+    alt: "A car waits at the raised red-and-white boom of a thatch-roofed Kruger-style park entrance gate in soft morning light, the tar road curving off into golden bushveld beyond — the point where you pay the conservation fee.",
+    width: 1600,
+    height: 1067,
+  },
+  panoramaPinnacleRock: {
+    src: cldImage("panorama-pinnacle-rock"),
+    alt: "The Pinnacle Rock on the Panorama Route near Graskop — a tall free-standing quartzite spire rising from a deep forested gorge, with green escarpment ridges fading into blue haze behind it in clear winter light.",
+    width: 1600,
+    height: 900,
+  },
   // Gemini-generated context shots — uploaded to the same kanaan/ folder
   // on Cloudinary by scripts/upload-to-cloudinary.py.
   hazyviewEvening: {
