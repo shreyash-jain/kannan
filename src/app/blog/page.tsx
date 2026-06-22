@@ -156,6 +156,19 @@ const posts: Post[] = [
     excerpt:
       "Big Five mornings, a glass lift into a rainforest, zip-lines, reptile parks and a pool to come home to. The things to do with kids around Hazyview, Kruger and the Panorama Route — and how to pace a family week so nobody melts down before lunch.",
   },
+  {
+    chapter: "Planning your budget",
+    title: "What a Kruger & Lowveld week really costs in 2026",
+    category: "guide",
+    status: "live",
+    href: "/blog/cost-of-a-kruger-lowveld-week-2026",
+    image: img.familyKrugerKidsHero.src,
+    imageAlt: img.familyKrugerKidsHero.alt,
+    datePublished: "2026-06-22",
+    readingMinutes: 11,
+    excerpt:
+      "Every real 2026 number, laid out plainly — Kruger gate fees by tier, the Wild Card break-even, activity prices, flights, fuel and food, and three worked weekly budgets. The honest case for basing at Kanaan from R250 per person sharing and day-tripping into all of it.",
+  },
 ];
 
 export default function BlogIndexPage() {
