@@ -19,7 +19,7 @@ export function TLDR({ items }: { items: string[] }) {
   return (
     <aside className="not-prose my-10 rounded-2xl border-l-4 border-ochre bg-sand/70 p-6 md:p-8">
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-ochre">
-        TL;DR
+        In this Article
       </p>
       <ul className="mt-4 space-y-2 text-base leading-relaxed text-ink/85">
         {items.map((item, i) => (
