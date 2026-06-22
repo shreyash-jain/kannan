@@ -157,7 +157,7 @@ export const metadata = createBlogPostMetadata({
   title: "What a Kruger & Lowveld week costs in 2026 — a transparent budget",
   description:
     "Every real 2026 cost of a Kruger and Panorama Route week, laid out plainly: gate fees by passport tier, the Wild Card break-even, activity prices, flights, car hire, fuel and food — plus three worked weekly budgets and why basing at Kanaan from R250 per person sharing wins the budget.",
-  image: img.familyKrugerKidsHero,
+  image: img.lowveldWeekCostHero,
   datePublished,
   category: "guide",
 });
@@ -171,7 +171,7 @@ export default function LowveldCostGuidePage() {
           description:
             "A fully transparent 2026 cost guide to a Kruger National Park and Panorama Route week from Hazyview — the daily conservation fees by tier (SA resident, SADC, international) with child rates, the SANParks Wild Card break-even maths, every major activity and Panorama-stop price, flights and car hire and fuel and tolls, a nightly-rate comparison from Kanaan to private lodges, and three worked weekly budgets (an SA family, an international couple and a backpacker pair) showing why basing outside the park at Kanaan from R250 per person sharing wins the week.",
           path: "/blog/cost-of-a-kruger-lowveld-week-2026",
-          image: img.familyKrugerKidsHero.src,
+          image: img.lowveldWeekCostHero.src,
           datePublished,
         })}
       />
@@ -190,8 +190,8 @@ export default function LowveldCostGuidePage() {
 
       <article>
         <BlogHero
-          image={img.familyKrugerKidsHero.src}
-          alt={img.familyKrugerKidsHero.alt}
+          image={img.lowveldWeekCostHero.src}
+          alt={img.lowveldWeekCostHero.alt}
           eyebrow="Guide · Planning your budget"
           title="What a Lowveld week really costs."
           intro="Every real 2026 number, laid out plainly — gate fees, activities, getting here, food — and the one honest move that makes a Kruger week affordable. Nothing hidden, because once you can see the numbers, the fear goes."
@@ -331,8 +331,8 @@ export default function LowveldCostGuidePage() {
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={img.lowveldSunriseRoad.src}
-                alt={img.lowveldSunriseRoad.alt}
+                src={img.n4RoadtripArrival.src}
+                alt={img.n4RoadtripArrival.alt}
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
                 className="object-cover"
@@ -383,8 +383,8 @@ export default function LowveldCostGuidePage() {
           <figure>
             <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
               <Image
-                src={img.krugerWinterWaterhole.src}
-                alt={img.krugerWinterWaterhole.alt}
+                src={img.krugerEntranceGate.src}
+                alt={img.krugerEntranceGate.alt}
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
                 className="object-cover"
@@ -533,8 +533,8 @@ export default function LowveldCostGuidePage() {
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={img.graskopGorgeLift.src}
-                alt={img.graskopGorgeLift.alt}
+                src={img.panoramaPinnacleRock.src}
+                alt={img.panoramaPinnacleRock.alt}
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
                 className="object-cover"

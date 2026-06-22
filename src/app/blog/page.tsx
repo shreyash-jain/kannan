@@ -162,8 +162,8 @@ const posts: Post[] = [
     category: "guide",
     status: "live",
     href: "/blog/cost-of-a-kruger-lowveld-week-2026",
-    image: img.familyKrugerKidsHero.src,
-    imageAlt: img.familyKrugerKidsHero.alt,
+    image: img.lowveldWeekCostHero.src,
+    imageAlt: img.lowveldWeekCostHero.alt,
     datePublished: "2026-06-22",
     readingMinutes: 11,
     excerpt:
