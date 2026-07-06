@@ -166,8 +166,11 @@ export default function TheLandPage() {
             <H2 className="mt-3">The wider Kanaan, all the way to the escarpment.</H2>
           </div>
           <LightboxGallery>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-7">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
               {[
+                img.hilltopViewpoint,
+                img.rockCascade,
+                img.lowveldViewReal,
                 img.viewpointGazebo,
                 img.macGrove,
                 img.goldenVista,

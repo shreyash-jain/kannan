@@ -239,6 +239,63 @@ export const img = {
     width: 1600,
     height: 1200,
   },
+  // ---- Camping — real photos, July 2026 (from Anneli) ---------------
+  campingGround: {
+    src: cldImage("camping-ground-tent"),
+    alt: "The camping ground at Kanaan — open grass in the dappled shade of the forty-year-old mango grove, a tent pitched among the trees.",
+    width: 1200,
+    height: 1600,
+  },
+  campingAvenue: {
+    src: cldImage("camping-mango-avenue"),
+    alt: "An avenue of forty-year-old mango trees over the grassy camping ground at Kanaan, cabins and shade structures glimpsed beyond.",
+    width: 1200,
+    height: 1600,
+  },
+  campingAblutions: {
+    src: cldImage("camping-ablutions"),
+    alt: "Inside the campers' ablution block at Kanaan — a timber washroom with a row of basins and mirrors, and private toilet and shower cubicles behind corrugated-and-wood doors.",
+    width: 1600,
+    height: 1200,
+  },
+  campingAblutionsExterior: {
+    src: cldImage("camping-ablutions-exterior"),
+    alt: "The campers' ablution block at Kanaan seen from outside — a long, low timber building tucked under the mango trees.",
+    width: 1600,
+    height: 1200,
+  },
+  campingPowerWater: {
+    src: cldImage("camping-power-water"),
+    alt: "A campsite at Kanaan with a tap and a power point right at the pitch, in the shade of the old mango trees.",
+    width: 1600,
+    height: 1200,
+  },
+  campingWaterTank: {
+    src: cldImage("camping-water-tank"),
+    alt: "The Kanaan camping ground under the mango grove — mown grass, a water point and tank, with the lodge buildings beyond the trees.",
+    width: 1600,
+    height: 1200,
+  },
+
+  // ---- REAL LOWVELD VIEWS / TRAILS (July 2026, from Anneli) -----------
+  hilltopViewpoint: {
+    src: cldImage("land-hilltop-viewpoint"),
+    alt: "A shady hilltop lookout on the trails above Kanaan — a fire grate on the rocks and the green Lowveld hills rolling away under a soft sky.",
+    width: 1600,
+    height: 1200,
+  },
+  rockCascade: {
+    src: cldImage("land-rock-cascade"),
+    alt: "Water sliding over smooth rock shelves on the high ground above Kanaan, the orchards and hills of the Lowveld opening out beyond in clear morning light.",
+    width: 1200,
+    height: 1600,
+  },
+  lowveldViewReal: {
+    src: cldImage("land-lowveld-view-real"),
+    alt: "The wide Lowveld view from above Kanaan — rolling green bush, banana and macadamia orchards in the valley and hazy blue hills running to the horizon.",
+    width: 1600,
+    height: 1200,
+  },
 
   // ---- BACKPACKERS / WOODEN-HOUSE DORM (real photos, June 2026) -------
   backpackers: {
