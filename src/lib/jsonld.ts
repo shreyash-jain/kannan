@@ -13,7 +13,7 @@ export function organizationLd() {
     email: site.contact.email,
     image: [cldImage("og-default")],
     logo: `${site.url}/brand/kanaan-logo.png`,
-    priceRange: "$",
+    priceRange: "R250–R1500", // budget tier; TODO(anneli): confirm true upper per-night rate
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,

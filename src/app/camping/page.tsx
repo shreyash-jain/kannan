@@ -5,6 +5,7 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AmenityList } from "@/components/AmenityList";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
+import { LightboxGallery } from "@/components/Lightbox";
 import { img } from "@/lib/images";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site } from "@/lib/site";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     title: "Camping · Kanaan Guest Farm",
     description:
       "Shaded campsites under mango trees in the Lowveld, near the Kruger National Park.",
-    images: [{ url: img.campingMango.src, alt: img.campingMango.alt }],
+    images: [{ url: img.campingGround.src, alt: img.campingGround.alt }],
   },
 };
 
@@ -35,7 +36,7 @@ export default function CampingPage() {
               description:
                 "10 shaded campsites under mango trees, with power and water at every pitch. Suitable for tents, rooftop campers and overlanding vehicles.",
               path: "/camping",
-              image: img.campingMango.src,
+              image: img.campingGround.src,
             }),
           ),
         }}
@@ -56,8 +57,8 @@ export default function CampingPage() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.campingMango.src}
-              alt={img.campingMango.alt}
+              src={img.campingGround.src}
+              alt={img.campingGround.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -102,6 +103,37 @@ export default function CampingPage() {
             </Lede>
           </div>
         </div>
+      </Section>
+
+      <Section className="pt-0!">
+        <Eyebrow>More of the camp</Eyebrow>
+        <H2 className="mt-3 mb-10">Around the campsite.</H2>
+        <LightboxGallery>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+            {[
+              img.campingAvenue,
+              img.campingMango,
+              img.campingWaterTank,
+              img.campingAblutions,
+              img.campingAblutionsExterior,
+              img.campingPowerWater,
+            ].map((g) => (
+              <button
+                key={g.src}
+                type="button"
+                className="relative aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl"
+              >
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </button>
+            ))}
+          </div>
+        </LightboxGallery>
       </Section>
 
       <Section className="pt-0!">

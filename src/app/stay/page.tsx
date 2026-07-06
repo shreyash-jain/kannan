@@ -79,7 +79,7 @@ export default function StayPage() {
               name: `${site.name} — Camping`,
               description: `${site.capacity.campsitePitches} shaded campsites under mango trees, with power and water at every pitch.`,
               path: "/stay#camping",
-              image: img.campingMango.src,
+              image: img.campingGround.src,
             }),
           ),
         }}
@@ -134,6 +134,36 @@ export default function StayPage() {
             "Linen and towels provided",
           ]}
         />
+
+        {/* Inside the lodge — the range of room layouts, right below Lodge */}
+        <section className="bg-sand">
+          <div className="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+            <LightboxGallery>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+                {[
+                  img.lodgeDoubleDecorated,
+                  img.lodgeFamilyTwin,
+                  img.lodgeKitchenClassic,
+                  img.lodgeBathroom,
+                ].map((g) => (
+                  <button
+                    key={g.src}
+                    type="button"
+                    className="relative aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl"
+                  >
+                    <Image
+                      src={g.src}
+                      alt={g.alt}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </button>
+                ))}
+              </div>
+            </LightboxGallery>
+          </div>
+        </section>
 
         <StaySection
           id="twin"
@@ -265,7 +295,7 @@ export default function StayPage() {
               </p>
             </>
           }
-          image={img.campingMango}
+          image={img.campingGround}
           flip
           facts={[
             `${site.capacity.campsitePitches} pitches, power + water`,
@@ -274,109 +304,37 @@ export default function StayPage() {
             "Fenced + gated property",
           ]}
         />
+
+        {/* Camping — real photos of the ground and facilities */}
+        <section className="bg-bone">
+          <div className="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+            <LightboxGallery>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+                {[
+                  img.campingAvenue,
+                  img.campingAblutions,
+                  img.campingPowerWater,
+                  img.campingWaterTank,
+                ].map((g) => (
+                  <button
+                    key={g.src}
+                    type="button"
+                    className="relative aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl"
+                  >
+                    <Image
+                      src={g.src}
+                      alt={g.alt}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </button>
+                ))}
+              </div>
+            </LightboxGallery>
+          </div>
+        </section>
       </Section>
-
-      {/* Glimpses of the rooms — finished details */}
-      <section className="bg-bone">
-        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-          <div className="mb-8">
-            <Eyebrow>Glimpses of the rooms</Eyebrow>
-            <H2 className="mt-3">A closer look at the details.</H2>
-          </div>
-          <LightboxGallery>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6">
-              {[
-                img.lodgeKitchen,
-                img.lodgeBathroom,
-                img.lodgeKitchenette,
-                img.lodgeBathroomPine,
-                img.lodgeKitchenWood,
-                img.lodgeDining,
-              ].map((g) => (
-                <button
-                  key={g.src}
-                  type="button"
-                  className="relative aspect-4/5 cursor-zoom-in overflow-hidden rounded-xl"
-                >
-                  <Image
-                    src={g.src}
-                    alt={g.alt}
-                    fill
-                    sizes="(min-width: 1024px) 16vw, (min-width: 768px) 25vw, 50vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </button>
-              ))}
-            </div>
-          </LightboxGallery>
-        </div>
-      </section>
-
-      {/* Inside the lodge — wider angles per room type. A mosaic so guests
-          can see the variety of layouts they might be put in, plus the
-          courtyard the rooms open onto. */}
-      <section className="bg-sand">
-        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-          <div className="mb-8 max-w-2xl">
-            <Eyebrow>Inside the lodge</Eyebrow>
-            <H2 className="mt-3">Room types and the spaces around them.</H2>
-            <Lede>
-              The lodge units come in a few different shapes — quiet doubles,
-              twin singles, larger family rooms, and self-catering layouts.
-              When you tell us who is coming, we put you in the right one.
-            </Lede>
-          </div>
-          <LightboxGallery>
-            <div className="grid gap-3 md:grid-cols-6 md:grid-rows-2">
-              <button type="button" className="relative md:col-span-2 md:row-span-2 aspect-[3/4] md:aspect-auto cursor-zoom-in overflow-hidden rounded-2xl">
-                <Image
-                  src={img.lodgeCourtyardPatio.src}
-                  alt={img.lodgeCourtyardPatio.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </button>
-              <button type="button" className="relative md:col-span-2 aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl">
-                <Image
-                  src={img.lodgeModestDouble.src}
-                  alt={img.lodgeModestDouble.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </button>
-              <button type="button" className="relative md:col-span-2 aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl">
-                <Image
-                  src={img.lodgeDoubleDecorated.src}
-                  alt={img.lodgeDoubleDecorated.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </button>
-              <button type="button" className="relative md:col-span-2 aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl">
-                <Image
-                  src={img.lodgeFamilyTwin.src}
-                  alt={img.lodgeFamilyTwin.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </button>
-              <button type="button" className="relative md:col-span-2 aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl">
-                <Image
-                  src={img.lodgeKitchenClassic.src}
-                  alt={img.lodgeKitchenClassic.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </button>
-            </div>
-          </LightboxGallery>
-        </div>
-      </section>
 
       {/* Dining — owner confirmed 2026-05-11: breakfast R60 continental on
           request, dinner on request (local dishes / braai), no halaal */}
