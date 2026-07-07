@@ -18,6 +18,9 @@ this whole pack true.
   routes prerendered.
 - **11 blog posts live:** 6 founder Stories + 5 Guides (Kruger, Panorama Route, Seasonal
   Almanac, Family & Kids, Cost-of-a-week). All wired into `src/app/blog/page.tsx`.
+- **A 12th post is up for review** on `blog-6-under-the-mango-trees`: Story · Chapter 7
+  "Under the Mango Trees" — the entity-defining mango-grove origin piece. Wired into the
+  index and `sitemap.ts` (which also picked up the 5 previously-missing guide URLs).
 
 ## In flight
 
@@ -25,6 +28,7 @@ this whole pack true.
 | --- | --- | --- | --- |
 | Camping photos + per-category galleries + SEO tweaks | landed on `main` (`76df683`) | **Done / merged** | none |
 | Duplicate of the above, committed on an older base | `accommodation-photos-galleries` (2 commits, same subjects as main) | **Stale** | Confirm nothing unique is on it, then delete the branch to avoid confusion |
+| Story · Chapter 7 "Under the Mango Trees" (`under-the-mango-trees`) | `blog-6-under-the-mango-trees` | **Up for review** | Owner/reviewer read-through, then merge the PR into `main` |
 | Next Guide (Logistics/Planning segment) | not started | **Queued** | Pick the next guide topic, branch, follow `BLOG_PLAYBOOK.md` |
 
 There is **no unfinished code** in the working tree. The genuine open work is (a) the next
@@ -87,4 +91,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-07-06*
+*Last updated: 2026-07-07*
