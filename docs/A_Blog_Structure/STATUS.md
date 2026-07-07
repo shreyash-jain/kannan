@@ -32,6 +32,7 @@ this whole pack true.
 | Camping photos + per-category galleries + SEO tweaks | landed on `main` (`76df683`) | **Done / merged** | none |
 | Duplicate of the above, committed on an older base | `accommodation-photos-galleries` (2 commits, same subjects as main) | **Stale** | Confirm nothing unique is on it, then delete the branch to avoid confusion |
 | Guide "Under the Mango Trees" (`under-the-mango-trees`) | `blog-6-under-the-mango-trees` | **Up for review** | Owner/reviewer read-through, then merge the PR into `main` |
+| Guide "First Light" dawn drive (`early-morning-kruger-safari-from-hazyview`) | `blog-7-first-light` (stacked on blog-6) | **Up for review** | Read-through; merge after blog-6, then this PR shows just blog-7. AI hero + first-sighting images still to generate (`docs/blog-7-image-prompts.md`) |
 | Next Guide (Logistics/Planning segment) | not started | **Queued** | Pick the next guide topic, branch, follow `BLOG_PLAYBOOK.md` |
 
 There is **no unfinished code** in the working tree. The genuine open work is (a) the next
