@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/the-celebration", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/the-future", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/under-the-mango-trees", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/early-morning-kruger-safari-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/kruger-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/panorama-route-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/when-to-visit-kruger-hazyview-month-by-month", priority: 0.7, changeFrequency: "monthly" },

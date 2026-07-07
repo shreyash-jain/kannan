@@ -572,6 +572,32 @@ export const img = {
     height: 1500,
   },
 
+  // --- First Light dawn-drive guide (Blog 7) — AI dawn scenes -------------
+  // Off-farm pre-dawn / in-park scenes no on-site camera can capture, so this
+  // guide is AI imagery throughout (the body also reuses lowveldSunriseRoad,
+  // krugerEntranceGate, krugerWinterWaterhole, krugerPicnicCoffee). These two
+  // slots are PLACEHOLDERS pointing at the closest existing asset so the page
+  // renders complete now; generate the dedicated frames from
+  // docs/blog-7-image-prompts.md, save as public/images/<public_id>.jpg, run
+  // scripts/upload-to-cloudinary.py, then swap each public_id below.
+  krugerDawnDriveHero: {
+    // TODO(media): swap "lowveld-sunrise-road" -> "kruger-dawn-drive-hero"
+    src: cldImage(
+      "lowveld-sunrise-road",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "First light on the road into Kruger from Hazyview — headlights on a misty bushveld road as the charcoal pre-dawn sky warms to apricot over the treeline.",
+    width: 1920,
+    height: 1080,
+  },
+  krugerDawnElephant: {
+    // TODO(media): swap "kruger-winter-waterhole" -> "kruger-dawn-elephant"
+    src: cldImage("kruger-winter-waterhole"),
+    alt: "A big elephant bull emerging from the dawn mist on a Kruger roadside, backlit by the first apricot light — the grey boulder that lifts its trunk.",
+    width: 1600,
+    height: 1067,
+  },
+
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------
   hosts: {
     src: cldImage("hosts"),
