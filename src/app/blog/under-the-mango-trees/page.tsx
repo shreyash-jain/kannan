@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Section, Eyebrow, H2, Lede } from "@/components/Section";
+import { Section, Eyebrow, H2 } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { Video } from "@/components/Video";
-import { WhatsAppCTA } from "@/components/blog/Blocks";
+import { WhatsAppCTA, BlogHero } from "@/components/blog/Blocks";
 import { JsonLd } from "@/components/JsonLd";
 import { img, wedding, video } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
@@ -22,9 +22,7 @@ export const metadata = createBlogPostMetadata({
     "The origin story of Kanaan Guest Farm, told through the forty-year-old mango grove that shades it — who planted it, the seasons of the fruit, the campfires and weddings beneath its branches, and how Anneli and Matthew came to be its keepers.",
   image: img.underMangoTreesHero,
   datePublished,
-  category: "story",
-  chapterNumber: 7,
-  chapterName: "The Grove",
+  category: "guide",
 });
 
 export default function MangoTreesPostPage() {
@@ -53,44 +51,16 @@ export default function MangoTreesPostPage() {
       />
 
       <article>
-        {/* Hero */}
-        <header className="bg-sand">
-          <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8">
-            <Eyebrow>Chapter 7 · The Grove · Journal</Eyebrow>
-            <h1 className="mt-4 font-display text-4xl leading-tight text-forest-deep sm:text-5xl">
-              Under the mango trees.
-            </h1>
-            <Lede>
-              Someone pushed these saplings into the ground forty years ago,
-              knowing they would never sit in the shade. This is the story of
-              the grove that made the farm — and how we came to be the ones
-              keeping it.
-            </Lede>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted">
-              Written by Anneli ·{" "}
-              {new Date(datePublished).toLocaleDateString("en-ZA", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </p>
-          </div>
-        </header>
-
-        {/* Lead image — the forty-year-old mango grove at sunset, the literal
-            subject of the whole piece. */}
-        <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-            <Image
-              src={img.underMangoTreesHero.src}
-              alt={img.underMangoTreesHero.alt}
-              fill
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              priority
-              className="object-cover"
-            />
-          </div>
-        </div>
+        <BlogHero
+          image={img.underMangoTreesHero.src}
+          alt={img.underMangoTreesHero.alt}
+          eyebrow="Guide · The Farm's Story"
+          title="Under the mango trees."
+          intro="Someone pushed these saplings into the ground forty years ago, knowing they would never sit in the shade. This is the story of the grove that made the farm — and how we came to be the ones keeping it."
+          byline="Anneli & Matthew"
+          datePublished={datePublished}
+          readingMinutes={7}
+        />
 
         {/* The hook */}
         <Section>

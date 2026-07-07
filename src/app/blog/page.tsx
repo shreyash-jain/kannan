@@ -101,20 +101,6 @@ const posts: Post[] = [
     excerpt:
       "A year of renovations later, Anneli on what is coming next — multi-day Kruger packages, the new wooden-house backpackers, affordable weddings, on-request meals, hiking and cycling trails, and a longer ecotourism vision for the wider farm.",
   },
-  {
-    n: 7,
-    chapter: "The Grove",
-    title: "Under the mango trees",
-    category: "story",
-    status: "live",
-    href: "/blog/under-the-mango-trees",
-    image: img.underMangoTreesHero.src,
-    imageAlt: img.underMangoTreesHero.alt,
-    datePublished: "2026-07-07",
-    readingMinutes: 7,
-    excerpt:
-      "Someone planted these trees forty years ago knowing they would never sit in their shade. This year, a couple got married under them. The origin story of Kanaan, told through the grove that shades it — and how Anneli and Matthew came to be its keepers.",
-  },
 
   // ----- Guides: practical, search-friendly cornerstones --------------
   {
@@ -183,6 +169,19 @@ const posts: Post[] = [
     excerpt:
       "Every real 2026 number, laid out plainly — Kruger gate fees by tier, the Wild Card break-even, activity prices, flights, fuel and food, and three worked weekly budgets. The honest case for basing at Kanaan from R250 per person sharing and day-tripping into all of it.",
   },
+  {
+    chapter: "The Farm's Story",
+    title: "Under the mango trees",
+    category: "guide",
+    status: "live",
+    href: "/blog/under-the-mango-trees",
+    image: img.underMangoTreesHero.src,
+    imageAlt: img.underMangoTreesHero.alt,
+    datePublished: "2026-07-07",
+    readingMinutes: 7,
+    excerpt:
+      "Someone planted these trees forty years ago knowing they would never sit in their shade. This year, a couple got married under them. The origin story of Kanaan, told through the grove that shades it — and how Anneli and Matthew came to be its keepers.",
+  },
 ];
 
 export default function BlogIndexPage() {
@@ -197,7 +196,7 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="Journal & Guides"
         title="Stories from the farm, and guides to the Lowveld."
-        lede="Seven warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — and a growing set of practical guides for the week you are planning around your stay."
+        lede="Six warm chapters from Anneli and Matthew about Kanaan, Hazyview, Kruger and the wonders of the Lowveld — and a growing set of guides and blogs for the week you are planning around your stay."
       />
 
       <Section>
