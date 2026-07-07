@@ -108,8 +108,8 @@ const posts: Post[] = [
     category: "story",
     status: "live",
     href: "/blog/under-the-mango-trees",
-    image: img.heroFarm.src,
-    imageAlt: img.heroFarm.alt,
+    image: img.underMangoTreesHero.src,
+    imageAlt: img.underMangoTreesHero.alt,
     datePublished: "2026-07-07",
     readingMinutes: 7,
     excerpt:

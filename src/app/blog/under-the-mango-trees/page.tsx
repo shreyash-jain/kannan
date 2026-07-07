@@ -20,7 +20,7 @@ export const metadata = createBlogPostMetadata({
   title: "Under the mango trees",
   description:
     "The origin story of Kanaan Guest Farm, told through the forty-year-old mango grove that shades it — who planted it, the seasons of the fruit, the campfires and weddings beneath its branches, and how Anneli and Matthew came to be its keepers.",
-  image: img.heroFarm,
+  image: img.underMangoTreesHero,
   datePublished,
   category: "story",
   chapterNumber: 7,
@@ -36,7 +36,7 @@ export default function MangoTreesPostPage() {
           description:
             "Anneli on the mango grove at the heart of Kanaan Guest Farm in Hazyview — planted forty years ago by someone who knew they would never sit in its shade. The story of the grove that made the farm: who planted it, the year in the mango, the campfires and the wedding held beneath the trees, and how Anneli and Matthew came to be its keepers.",
           path: "/blog/under-the-mango-trees",
-          image: img.heroFarm.src,
+          image: img.underMangoTreesHero.src,
           datePublished,
         })}
       />
@@ -82,8 +82,8 @@ export default function MangoTreesPostPage() {
         <div className="mx-auto max-w-5xl px-5 pt-12 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src={img.heroFarm.src}
-              alt={img.heroFarm.alt}
+              src={img.underMangoTreesHero.src}
+              alt={img.underMangoTreesHero.alt}
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority
