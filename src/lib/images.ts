@@ -31,6 +31,23 @@ export const img = {
     height: 1600,
   },
 
+  // ---- UNDER THE MANGO TREES — dedicated story hero (Blog 6) --------------
+  // Signature hero for /blog/under-the-mango-trees. PLACEHOLDER: the public_id
+  // below is still the real `mango-sunset` so the page renders complete today.
+  // To land the dedicated frame: generate from docs/blog-6-image-prompts.md,
+  // save as public/images/under-mango-trees-hero.jpg, run
+  // scripts/upload-to-cloudinary.py, then swap the public_id here from
+  // "mango-sunset" to "under-mango-trees-hero" (alt already fits both).
+  underMangoTreesHero: {
+    src: cldImage(
+      "mango-sunset",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "The forty-year-old mango grove at Kanaan in golden afternoon light — the oldest thing on the farm, and the reason there is a farm at all.",
+    width: 1920,
+    height: 1080,
+  },
+
   // ---- THE-LAND SECTION ---------------------------------------------------
   macGrove: {
     src: cldImage("mac-grove"),
