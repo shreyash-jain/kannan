@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/the-welcome", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/the-celebration", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog/the-future", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/under-the-mango-trees", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/kruger-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/panorama-route-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/when-to-visit-kruger-hazyview-month-by-month", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/things-to-do-with-kids-hazyview-kruger", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/cost-of-a-kruger-lowveld-week-2026", priority: 0.7, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
   ];
 
