@@ -31,6 +31,21 @@ export const img = {
     height: 1600,
   },
 
+  // ---- UNDER THE MANGO TREES — dedicated story hero (Blog 6) --------------
+  // Signature hero for /blog/under-the-mango-trees. The dedicated frame was
+  // generated 1:1 (square), so generative-fill extends it outward to a true
+  // 16:9 hero (keeps the full canopy arch + the chair) instead of centre-
+  // cropping the composition away. Swap to c_fill if a native 16:9 source lands.
+  underMangoTreesHero: {
+    src: cldImage(
+      "under-mango-trees-hero",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "The forty-year-old mango grove at Kanaan in golden afternoon light — the oldest thing on the farm, and the reason there is a farm at all.",
+    width: 1920,
+    height: 1080,
+  },
+
   // ---- THE-LAND SECTION ---------------------------------------------------
   macGrove: {
     src: cldImage("mac-grove"),
