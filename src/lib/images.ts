@@ -40,7 +40,7 @@ export const img = {
   // "mango-sunset" to "under-mango-trees-hero" (alt already fits both).
   underMangoTreesHero: {
     src: cldImage(
-      "mango-sunset",
+      "under-mango-trees-hero",
       "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
     ),
     alt: "The forty-year-old mango grove at Kanaan in golden afternoon light — the oldest thing on the farm, and the reason there is a farm at all.",
@@ -581,9 +581,8 @@ export const img = {
   // docs/blog-7-image-prompts.md, save as public/images/<public_id>.jpg, run
   // scripts/upload-to-cloudinary.py, then swap each public_id below.
   krugerDawnDriveHero: {
-    // TODO(media): swap "lowveld-sunrise-road" -> "kruger-dawn-drive-hero"
     src: cldImage(
-      "lowveld-sunrise-road",
+      "kruger-dawn-drive-hero",
       "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
     ),
     alt: "First light on the road into Kruger from Hazyview — headlights on a misty bushveld road as the charcoal pre-dawn sky warms to apricot over the treeline.",
@@ -591,8 +590,7 @@ export const img = {
     height: 1080,
   },
   krugerDawnElephant: {
-    // TODO(media): swap "kruger-winter-waterhole" -> "kruger-dawn-elephant"
-    src: cldImage("kruger-winter-waterhole"),
+    src: cldImage("kruger-dawn-elephant"),
     alt: "A big elephant bull emerging from the dawn mist on a Kruger roadside, backlit by the first apricot light — the grey boulder that lifts its trunk.",
     width: 1600,
     height: 1067,
