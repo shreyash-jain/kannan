@@ -57,7 +57,7 @@ function CostTable({ title, rows }: { title: string; rows: Row[] }) {
 const faqs = [
   {
     q: "How much does a week in Kruger and the Lowveld cost in 2026?",
-    a: "Less than most people fear, once you see it laid out. The bed is the small part — accommodation at Kanaan is R200 to R325 per person sharing — and Kruger's gate fee is modest and only charged on the days you actually drive in. The bigger, more personal numbers are getting here (a drive or a flight) and how many days you spend in the park. Base outside the park, self-cater, and a Lowveld week for a family is genuinely affordable.",
+    a: "Less than most people fear, once you see it laid out. The bed is the small part — accommodation at Kanaan is R200 to R250 per person sharing — and Kruger's gate fee is modest and only charged on the days you actually drive in. The bigger, more personal numbers are getting here (a drive or a flight) and how many days you spend in the park. Base outside the park, self-cater, and a Lowveld week for a family is genuinely affordable.",
   },
   {
     q: "Is Kruger expensive to visit?",
@@ -154,7 +154,7 @@ export default function LowveldCostGuidePage() {
             <TLDR
               items={[
                 "The gate fees are modest — R134 (SA resident) to R602 (international) per person per day. The bed is where a Lowveld week is really won or lost.",
-                "Base outside the park at Kanaan from R200 per person sharing (R200–R325 depending on the room) and day-trip in: you skip the in-park premium and pay Kruger fees only on the days you actually go.",
+                "Base outside the park at Kanaan from R200 per person sharing (R200–R250 depending on the room) and day-trip in: you skip the in-park premium and pay Kruger fees only on the days you actually go.",
                 "A whole Panorama Route day is only about R300–R450 in gate fees for an SA family — the activities are genuinely cheap.",
                 "Doing four or more full days in Kruger? Buy the SANParks Wild Card — we'll tell you honestly which side of the line your week falls on.",
                 "A plain end-of-week summary at the bottom — accommodation, travel, activities and food — so you can see the whole shape at a glance.",
@@ -196,7 +196,7 @@ export default function LowveldCostGuidePage() {
           <StatGrid
             stats={[
               {
-                value: "R200–R325",
+                value: "R200–R250",
                 label: "Your bed, per person",
                 body: "A night at Kanaan, sharing — self-catering, with all of it a day-trip away. Depending on the room; roughly R900 a night for a family of four.",
               },
@@ -455,7 +455,7 @@ export default function LowveldCostGuidePage() {
             rows={[
               {
                 item: "Kanaan — per person sharing",
-                price: "R200–R325",
+                price: "R200–R250",
                 note: "≈ R900 a night for a family of four, depending on the room. Self-catering, fifteen to forty-five minutes from the gate.",
               },
               {
@@ -580,7 +580,7 @@ export default function LowveldCostGuidePage() {
             rows={[
               {
                 item: "Accommodation",
-                price: "R200–R325 pp / night",
+                price: "R200–R250 pp / night",
                 note: "The one number in your control, and the one that decides the week. At Kanaan, self-catering, fifteen to forty-five minutes from the gate — about R900 a night for a family of four.",
               },
               {
