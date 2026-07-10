@@ -41,7 +41,11 @@ export const img = {
   underMangoTreesHero: {
     src: cldImage(
       "under-mango-trees-hero",
-      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+      // Source render is square (1:1). Generative-fill extends it outward to a
+      // true 16:9 hero (keeps the full canopy arch + the chair) instead of
+      // centre-cropping the composition away. Swap back to c_fill if a native
+      // 16:9 source is ever generated.
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
     ),
     alt: "The forty-year-old mango grove at Kanaan in golden afternoon light — the oldest thing on the farm, and the reason there is a farm at all.",
     width: 1920,
