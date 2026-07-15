@@ -587,17 +587,26 @@ export const img = {
   krugerDawnDriveHero: {
     src: cldImage(
       "kruger-dawn-drive-hero",
-      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+      // Source render is square (1:1) and vertically composed — dawn sky on top,
+      // misty road through the middle, car interior at the bottom giving the POV.
+      // A 16:9 centre-crop would cut both the sky and the car, so generative-fill
+      // extends it sideways instead. Swap to c_fill if a native 16:9 source lands.
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
     ),
     alt: "First light on the road into Kruger from Hazyview — headlights on a misty bushveld road as the charcoal pre-dawn sky warms to apricot over the treeline.",
     width: 1920,
     height: 1080,
   },
   krugerDawnElephant: {
-    src: cldImage("kruger-dawn-elephant"),
+    // Square (1:1) source rendered into a 16:9 figure — generative-fill widens it
+    // so the road he is crossing survives instead of being cropped away.
+    src: cldImage(
+      "kruger-dawn-elephant",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
     alt: "A big elephant bull emerging from the dawn mist on a Kruger roadside, backlit by the first apricot light — the grey boulder that lifts its trunk.",
     width: 1600,
-    height: 1067,
+    height: 900,
   },
 
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------
