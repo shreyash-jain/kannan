@@ -195,6 +195,19 @@ const posts: Post[] = [
     excerpt:
       "4:47am, the kettle, the cold, the gate. A minute-by-minute account of the single best morning of any Kruger trip — the dawn drive through Phabeni — and why you can only catch it when you sleep 30 minutes from the gate.",
   },
+  {
+    chapter: "Things to do",
+    title: "Things to do around Hazyview",
+    category: "guide",
+    status: "live",
+    href: "/blog/things-to-do-around-hazyview",
+    image: img.panoramaGodsWindow.src,
+    imageAlt: img.panoramaGodsWindow.alt,
+    datePublished: "2026-07-15",
+    readingMinutes: 11,
+    excerpt:
+      "Kruger, the Panorama Route and Sabie's waterfalls all within an hour of the gate — plus sanctuaries, zip-lines, quad biking, rafting and a toboggan run. The whole menu, and a five-day plan that fits it in without anyone melting down.",
+  },
 ];
 
 export default function BlogIndexPage() {
