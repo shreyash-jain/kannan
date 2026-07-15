@@ -485,7 +485,15 @@ export default function LowveldCostGuidePage() {
               If you take one thing away, take this. Four simple categories — where
               the money actually goes on a Lowveld family week — with the honest
               shape of each. Only the accommodation and the gate fees are fixed;
-              the rest bends to how you like to travel.
+              the rest bends to how you like to travel. For the full list of what
+              there actually is to do out here, we&rsquo;ve put it all in the{" "}
+              <Link
+                href="/blog/things-to-do-around-hazyview"
+                className="font-medium text-ochre hover:text-ochre-deep"
+              >
+                things-to-do guide
+              </Link>
+              .
             </p>
           </div>
           <CostTable
