@@ -12,31 +12,67 @@ this whole pack true.
 - **Before you leave:** update "In flight" and "Recommended next actions", commit, **push
   your branch**, open a PR into `main`. Bump the `Last updated` date below.
 
-## Snapshot (verified 2026-07-06)
+## Snapshot (verified 2026-07-16)
 
-- `main` is clean and level with `origin/main`. `npm run build` compiles clean → 30 static
-  routes prerendered.
-- **11 blog posts live:** 6 founder Stories + 5 Guides (Kruger, Panorama Route, Seasonal
-  Almanac, Family & Kids, Cost-of-a-week). All wired into `src/app/blog/page.tsx`.
-- **A 12th post is up for review** on `blog-6-under-the-mango-trees`: **Guide** "Under the
-  Mango Trees" — the entity-defining mango-grove origin blog. NB: the founder **Journal
-  (Story) series is closed at its 6 chapters**; every new post is filed under the **Guide**
-  category (used simply as the label for blog posts — they need not be how-to guides).
-  Wired into the index Guides tab and `sitemap.ts` (which also picked up the 5
-  previously-missing guide URLs).
+> **The repo is the only source of truth.** Blog *titles* get planned in chats and decks and
+> are easy to lose track of — a post only exists if there is a
+> `src/app/blog/<slug>/page.tsx`. The two lists below are that check, run against
+> `origin`. If a title isn't here, it hasn't been built.
+
+### ✅ LIVE on `main` — 12 posts
+
+- **6 founder Stories** (series is **closed** — no new ones): `the-discovery`,
+  `the-promise`, `africa`, `the-welcome`, `the-celebration`, `the-future`.
+- **6 Guides**: `kruger-from-hazyview`, `panorama-route-from-hazyview`,
+  `when-to-visit-kruger-hazyview-month-by-month`, `things-to-do-with-kids-hazyview-kruger`,
+  `cost-of-a-kruger-lowveld-week-2026`, and **`under-the-mango-trees`** (merged; its AI hero
+  is live and generative-filled to a true 16:9).
+
+Every new post is filed under the **Guide** category — "Guide" is just the label for a blog
+post; it need not be a how-to (the mango-grove piece is a narrative filed as a Guide).
+
+### 🚧 BUILT but NOT merged — all sitting on `blog-7-first-light`
+
+| What | Why it matters |
+| --- | --- |
+| **Revised cost blog** — leaner, R200–R250, no fuel/variable, "week at a glance" summary, things-to-do split out | **Anneli's review changes are NOT live.** `main` still serves the OLD cost blog (no summary, activities menu still inside it). |
+| **`things-to-do-around-hazyview`** — the new broad Activities guide | The content Anneli asked to be split *out* of the cost blog. Hub for "things to do in Hazyview"; the kids guide stays the child-specific spoke. |
+| **`early-morning-kruger-safari-from-hazyview`** — "First Light" dawn drive | Written; both AI images fixed (generative-filled square→16:9). **Never sent to the owner.** |
+| **`.npmrc`** (`legacy-peer-deps=true`) | See blocker 1. |
+
+### ⚠️ Two live blockers — read before deploying anything
+
+1. **`main` has no `.npmrc` → the next deploy from `main` WILL FAIL.** `npx
+   @cloudflare/next-on-pages` dies on an npm ERESOLVE: `wrangler@4.110` now requires
+   `@cloudflare/workers-types@^5` while `next-on-pages` pins `^4`. The one-line
+   `.npmrc` fixes it and exists on `blog-6`/`blog-7` but was never merged to `main`.
+2. **Anneli's cost-blog feedback is not live** — it is stranded on `blog-7-first-light`.
+   Merging that branch publishes it *and* fixes blocker 1.
 
 ## In flight
 
 | Work | Branch | State | Next action |
 | --- | --- | --- | --- |
-| Camping photos + per-category galleries + SEO tweaks | landed on `main` (`76df683`) | **Done / merged** | none |
-| Duplicate of the above, committed on an older base | `accommodation-photos-galleries` (2 commits, same subjects as main) | **Stale** | Confirm nothing unique is on it, then delete the branch to avoid confusion |
-| Guide "Under the Mango Trees" (`under-the-mango-trees`) | `blog-6-under-the-mango-trees` | **Up for review** | Owner/reviewer read-through, then merge the PR into `main` |
-| Guide "First Light" dawn drive (`early-morning-kruger-safari-from-hazyview`) | `blog-7-first-light` (stacked on blog-6) | **Up for review** | Read-through; merge after blog-6, then this PR shows just blog-7. AI hero + first-sighting images still to generate (`docs/blog-7-image-prompts.md`) |
-| Next Guide (Logistics/Planning segment) | not started | **Queued** | Pick the next guide topic, branch, follow `BLOG_PLAYBOOK.md` |
+| "Under the Mango Trees" | merged to `main` | **Done / live** | none |
+| Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Built, awaiting merge** | **Merge into `main`.** This one merge publishes Anneli's cost changes, ships 2 new guides and unblocks the deploy. |
+| Food guide — restaurants, breakfast/lunch/dinner, honest 💲💲💲 grading | not started | **Next up** | Research current reviews/prices (Red Litchi, Kuka, River's Edge, Mugg & Bean, Spur, Casterbridge, Perry's Bridge) *before* writing — Anneli asked for honest grading. Then follow `BLOG_PLAYBOOK.md`. |
 
-There is **no unfinished code** in the working tree. The genuine open work is (a) the next
-blog in the editorial pipeline and (b) the security remediation below.
+## Owner feedback log (Anneli) — what she has actually asked for
+
+Keep this current; it is the record of what the client wants, so nobody has to re-listen to
+voice notes.
+
+- **2026-07-08 (typed):** the cost blog is *"very cost focused"* → make it **leaner**;
+  accommodation **R200–R325** (Aadi later tightened this to **R200–R250** — use R200–R250);
+  **leave out variable stuff like fuel**; add a bottom **summary: Accommodation / Travel /
+  Activities / Food**. ✅ done (on `blog-7-first-light`).
+- **2026-07-15 (voice note):** the cost blog mixed **cost AND things to do** → **split it**.
+  (1) edit the cost blog to be **purely cost**; (2) **create the Activities guide** from the
+  content that was in it, using her "Hazyview Activities – 5 Day Guide" list, and *"make it
+  broad"*; (3) then a **Food** blog. That is **1 edit + 2 new blogs** — she specified nothing
+  else. ✅ (1) and (2) done; (3) outstanding.
+- **Standing rule:** Hazyview is **not** a malaria area. Never frame malaria as a
+  farm/Hazyview risk; scope any mention to inside Kruger only.
 
 ## Standing decisions (settled — don't re-litigate)
 
@@ -99,4 +135,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-07-07*
+*Last updated: 2026-07-16*
