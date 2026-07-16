@@ -182,6 +182,32 @@ const posts: Post[] = [
     excerpt:
       "Someone planted these trees forty years ago knowing they would never sit in their shade. This year, a couple got married under them. The origin story of Kanaan, told through the grove that shades it — and how Anneli and Matthew came to be its keepers.",
   },
+  {
+    chapter: "The dawn drive",
+    title: "First Light: an early-morning Kruger safari",
+    category: "guide",
+    status: "live",
+    href: "/blog/early-morning-kruger-safari-from-hazyview",
+    image: img.krugerDawnDriveHero.src,
+    imageAlt: img.krugerDawnDriveHero.alt,
+    datePublished: "2026-07-07",
+    readingMinutes: 9,
+    excerpt:
+      "4:47am, the kettle, the cold, the gate. A minute-by-minute account of the single best morning of any Kruger trip — the dawn drive through Phabeni — and why you can only catch it when you sleep 30 minutes from the gate.",
+  },
+  {
+    chapter: "Things to do",
+    title: "Things to do around Hazyview",
+    category: "guide",
+    status: "live",
+    href: "/blog/things-to-do-around-hazyview",
+    image: img.panoramaGodsWindow.src,
+    imageAlt: img.panoramaGodsWindow.alt,
+    datePublished: "2026-07-15",
+    readingMinutes: 11,
+    excerpt:
+      "Kruger, the Panorama Route and Sabie's waterfalls all within an hour of the gate — plus sanctuaries, zip-lines, quad biking, rafting and a toboggan run. The whole menu, and a five-day plan that fits it in without anyone melting down.",
+  },
 ];
 
 export default function BlogIndexPage() {
