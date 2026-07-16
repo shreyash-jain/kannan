@@ -32,12 +32,10 @@ export const img = {
   },
 
   // ---- UNDER THE MANGO TREES — dedicated story hero (Blog 6) --------------
-  // Signature hero for /blog/under-the-mango-trees. PLACEHOLDER: the public_id
-  // below is still the real `mango-sunset` so the page renders complete today.
-  // To land the dedicated frame: generate from docs/blog-6-image-prompts.md,
-  // save as public/images/under-mango-trees-hero.jpg, run
-  // scripts/upload-to-cloudinary.py, then swap the public_id here from
-  // "mango-sunset" to "under-mango-trees-hero" (alt already fits both).
+  // Signature hero for /blog/under-the-mango-trees. The dedicated frame was
+  // generated 1:1 (square), so generative-fill extends it outward to a true
+  // 16:9 hero (keeps the full canopy arch + the chair) instead of centre-
+  // cropping the composition away. Swap to c_fill if a native 16:9 source lands.
   underMangoTreesHero: {
     src: cldImage(
       "under-mango-trees-hero",
