@@ -39,6 +39,10 @@ export const img = {
   underMangoTreesHero: {
     src: cldImage(
       "under-mango-trees-hero",
+      // Source render is square (1:1). Generative-fill extends it outward to a
+      // true 16:9 hero (keeps the full canopy arch + the chair) instead of
+      // centre-cropping the composition away. Swap back to c_fill if a native
+      // 16:9 source is ever generated.
       "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
     ),
     alt: "The forty-year-old mango grove at Kanaan in golden afternoon light — the oldest thing on the farm, and the reason there is a farm at all.",
@@ -568,6 +572,39 @@ export const img = {
     alt: "A weathered wooden picnic table in dappled shade in Kruger National Park — a stainless thermos and an enamel cup of coffee on the table beside a folded paper map, the bushveld and a river bend opening out beyond.",
     width: 1500,
     height: 1500,
+  },
+
+  // --- First Light dawn-drive guide (Blog 7) — AI dawn scenes -------------
+  // Off-farm pre-dawn / in-park scenes no on-site camera can capture, so this
+  // guide is AI imagery throughout (the body also reuses lowveldSunriseRoad,
+  // krugerEntranceGate, krugerWinterWaterhole, krugerPicnicCoffee). These two
+  // slots are PLACEHOLDERS pointing at the closest existing asset so the page
+  // renders complete now; generate the dedicated frames from
+  // docs/blog-7-image-prompts.md, save as public/images/<public_id>.jpg, run
+  // scripts/upload-to-cloudinary.py, then swap each public_id below.
+  krugerDawnDriveHero: {
+    src: cldImage(
+      "kruger-dawn-drive-hero",
+      // Source render is square (1:1) and vertically composed — dawn sky on top,
+      // misty road through the middle, car interior at the bottom giving the POV.
+      // A 16:9 centre-crop would cut both the sky and the car, so generative-fill
+      // extends it sideways instead. Swap to c_fill if a native 16:9 source lands.
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "First light on the road into Kruger from Hazyview — headlights on a misty bushveld road as the charcoal pre-dawn sky warms to apricot over the treeline.",
+    width: 1920,
+    height: 1080,
+  },
+  krugerDawnElephant: {
+    // Square (1:1) source rendered into a 16:9 figure — generative-fill widens it
+    // so the road he is crossing survives instead of being cropped away.
+    src: cldImage(
+      "kruger-dawn-elephant",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A big elephant bull emerging from the dawn mist on a Kruger roadside, backlit by the first apricot light — the grey boulder that lifts its trunk.",
+    width: 1600,
+    height: 900,
   },
 
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------

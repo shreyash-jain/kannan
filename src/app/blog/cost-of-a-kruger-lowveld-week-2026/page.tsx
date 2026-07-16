@@ -20,7 +20,7 @@ import {
 
 const datePublished = "2026-06-22";
 const headline =
-  "What a Lowveld week really costs in 2026 — and why we base you at Kanaan from R250 a night";
+  "What a Lowveld week really costs in 2026 — and why we base you at Kanaan from R200 a night";
 
 // --- Inline cost table (wide data block, rendered outside the prose column) ---
 type Row = { item: string; price: string; note?: string };
@@ -54,57 +54,10 @@ function CostTable({ title, rows }: { title: string; rows: Row[] }) {
   );
 }
 
-// --- One worked weekly budget, line by line ---------------------------------
-type LineItem = { label: string; calc?: string; subtotal: string };
-function BudgetBuild({
-  persona,
-  lineItems,
-  total,
-  perDay,
-}: {
-  persona: string;
-  lineItems: LineItem[];
-  total: string;
-  perDay: string;
-}) {
-  return (
-    <article className="flex flex-col rounded-2xl border border-black/5 bg-bone p-6 md:p-7">
-      <h3 className="font-display text-lg leading-snug text-forest-deep md:text-xl">
-        {persona}
-      </h3>
-      <dl className="mt-4 divide-y divide-black/5">
-        {lineItems.map((li) => (
-          <div
-            key={li.label}
-            className="flex items-baseline justify-between gap-4 py-2.5"
-          >
-            <div>
-              <dt className="text-sm text-ink/85">{li.label}</dt>
-              {li.calc && (
-                <dd className="mt-0.5 text-xs text-ink/55">{li.calc}</dd>
-              )}
-            </div>
-            <span className="font-medium text-forest-deep whitespace-nowrap">
-              {li.subtotal}
-            </span>
-          </div>
-        ))}
-      </dl>
-      <div className="mt-4 flex items-baseline justify-between border-t-2 border-ochre/30 pt-3">
-        <span className="font-display text-base text-forest-deep">
-          Week total
-        </span>
-        <span className="font-display text-xl text-forest-deep">{total}</span>
-      </div>
-      <p className="mt-2 text-xs text-muted">{perDay}</p>
-    </article>
-  );
-}
-
 const faqs = [
   {
     q: "How much does a week in Kruger and the Lowveld cost in 2026?",
-    a: "It depends who's coming, but here are three honest worked weeks. A South African family of four, self-driving and based with us, spends roughly R12,000–R13,000 on the ground for the whole week. An international couple who fly in and hire a car run about R16,000 on the ground (before their airfare). A budget pair doing four nights can do it for around R4,000. The bed is the small part — accommodation from R250 per person sharing — and the gate fees and getting here are the bigger numbers.",
+    a: "Less than most people fear, once you see it laid out. The bed is the small part — accommodation at Kanaan is R200 to R250 per person sharing — and Kruger's gate fee is modest and only charged on the days you actually drive in. The bigger, more personal numbers are getting here (a drive or a flight) and how many days you spend in the park. Base outside the park, self-cater, and a Lowveld week for a family is genuinely affordable.",
   },
   {
     q: "Is Kruger expensive to visit?",
@@ -112,7 +65,7 @@ const faqs = [
   },
   {
     q: "What's the cheapest way to do Kruger?",
-    a: "Claim the South African resident rate with your ID, self-drive rather than booking guided drives, base outside the park (we're from R250 per person sharing), self-cater, use the free Panorama viewpoints like Wonder View, and buy a Wild Card only if you'll do four or more full days in the park. A pair travelling light can do four nights for around R4,000, excluding getting here.",
+    a: "Claim the South African resident rate with your ID, self-drive rather than booking guided drives, base outside the park (we're from R200 per person sharing), self-cater, use the free Panorama viewpoints like Wonder View, and buy a Wild Card only if you'll do four or more full days in the park. Sleep close, cook your own meals, and the week comes right down.",
   },
   {
     q: "Do children pay Kruger entry fees?",
@@ -123,16 +76,12 @@ const faqs = [
     a: "It is if you'll spend four or more full days in the park. A South African family card is around R1,870 and breaks even at about five park days; an international family card is R8,745 and pays back in roughly five to six. Wild Card holders pay no daily conservation fee at all. For one to three days, just pay the daily fee. Our rule of thumb: four-plus days, buy the card — and we'll tell you honestly which side of the line your week falls on, even though it isn't our sale.",
   },
   {
-    q: "How much does it cost to get to Hazyview from Johannesburg?",
-    a: "By road it's about 390 kilometres: budget roughly R900–R1,250 in fuel plus R261 in N4 tolls each way, so around R1,200–R1,500 per car one way, and a scenic four-and-a-half to five-hour drive. Or fly Johannesburg to KMIA (the Kruger Mpumalanga airport, about 48 minutes from us) from around R700 return on FlySafair up to R2,700-plus on Airlink, then hire a car or take a transfer. For a family, driving usually wins — and you arrive with your own wheels for game drives.",
-  },
-  {
-    q: "How much does a Kruger trip cost from the UK or overseas?",
-    a: "Your big variable is the long-haul flight to Johannesburg — very roughly R12,000–R25,000-plus per person depending on where you start and the season, so price your own origin. From Joburg it's a short hop to KMIA from about R700, or the scenic self-drive. On the ground, an international couple's five-night Lowveld week comes to around R16,000 including Kruger fees, a hire car and food. For reference, our R250 per person a night is about US$14, £11 or €13.",
+    q: "How do I get to Hazyview from Johannesburg?",
+    a: "Two easy ways. By road it's a scenic four-and-a-half to five-hour drive of about 390 kilometres down the N4 — and you arrive with your own car for game drives. Or fly Johannesburg to KMIA (the Kruger Mpumalanga airport, about 48 minutes from us) in under an hour, then hire a car or take a transfer. For a family, driving usually works out simplest; for a couple short on time, the flight is lovely.",
   },
   {
     q: "Is it cheaper to stay inside Kruger or outside?",
-    a: "Outside, for most families. SANParks bungalows inside the park run roughly R1,700–R2,900 a night and you pay the conservation fee for every night you're in the park. Based with us at about R1,000 a night for a family of four — with gate fees only on the days you actually drive in — a week works out clearly cheaper, and you still wake up fifteen to forty-five minutes from the gate.",
+    a: "Outside, for most families. SANParks bungalows inside the park run roughly R1,700–R2,900 a night and you pay the conservation fee for every night you're in the park. Based with us at about R900 a night for a family of four — with gate fees only on the days you actually drive in — a week works out clearly cheaper, and you still wake up fifteen to forty-five minutes from the gate.",
   },
   {
     q: "How much are the Panorama Route attractions?",
@@ -140,7 +89,7 @@ const faqs = [
   },
   {
     q: "What does a guided game drive cost compared with self-driving?",
-    a: "Self-driving costs you only your gate fee and fuel. A guided drive with a ranger is about R450–R650 per adult (children around R350), usually with the entry fee for that window included. Our suggestion: take one guided morning early in your stay to learn how to read the bush, then self-drive the rest of the week at your own pace.",
+    a: "Self-driving costs you only your gate fee. A guided drive with a ranger is about R450–R650 per adult (children around R350), usually with the entry fee for that window included. Our suggestion: take one guided morning early in your stay to learn how to read the bush, then self-drive the rest of the week at your own pace.",
   },
   {
     q: "When is the cheapest time to visit the Lowveld?",
@@ -154,9 +103,9 @@ const faqs = [
 
 export const metadata = createBlogPostMetadata({
   slug: "cost-of-a-kruger-lowveld-week-2026",
-  title: "What a Kruger & Lowveld week costs in 2026 — a transparent budget",
+  title: "What a Kruger & Lowveld week costs in 2026 — the honest, simple version",
   description:
-    "Every real 2026 cost of a Kruger and Panorama Route week, laid out plainly: gate fees by passport tier, the Wild Card break-even, activity prices, flights, car hire, fuel and food — plus three worked weekly budgets and why basing at Kanaan from R250 per person sharing wins the budget.",
+    "The real 2026 cost of a Kruger and Panorama Route week for a family, laid out simply: gate fees by passport tier, the Wild Card break-even, how cheap the Panorama Route really is, and a plain end-of-week summary — plus why basing at Kanaan from R200 per person sharing wins the budget.",
   image: img.lowveldWeekCostHero,
   datePublished,
   category: "guide",
@@ -169,7 +118,7 @@ export default function LowveldCostGuidePage() {
         data={articleLd({
           headline,
           description:
-            "A fully transparent 2026 cost guide to a Kruger National Park and Panorama Route week from Hazyview — the daily conservation fees by tier (SA resident, SADC, international) with child rates, the SANParks Wild Card break-even maths, every major activity and Panorama-stop price, flights and car hire and fuel and tolls, a nightly-rate comparison from Kanaan to private lodges, and three worked weekly budgets (an SA family, an international couple and a backpacker pair) showing why basing outside the park at Kanaan from R250 per person sharing wins the week.",
+            "A clear, honest 2026 cost guide to a Kruger National Park and Panorama Route week from Hazyview for families — the daily conservation fees by tier (SA resident, SADC, international) with child rates, the SANParks Wild Card break-even maths, how genuinely cheap the Panorama Route stops are, a nightly-rate comparison from Kanaan to private lodges, and a simple end-of-week summary of accommodation, travel, activities and food showing why basing outside the park at Kanaan from R200 per person sharing wins the week.",
           path: "/blog/cost-of-a-kruger-lowveld-week-2026",
           image: img.lowveldWeekCostHero.src,
           datePublished,
@@ -194,10 +143,10 @@ export default function LowveldCostGuidePage() {
           alt={img.lowveldWeekCostHero.alt}
           eyebrow="Guide · Planning your budget"
           title="What a Lowveld week really costs."
-          intro="Every real 2026 number, laid out plainly — gate fees, activities, getting here, food — and the one honest move that makes a Kruger week affordable. Nothing hidden, because once you can see the numbers, the fear goes."
+          intro="The honest, simple version — the gate fees, the activities, the bed — and the one move that makes a Kruger family week affordable. Nothing hidden, because once you can see the shape of it, the fear goes."
           byline="Anneli & Matthew"
           datePublished={datePublished}
-          readingMinutes={11}
+          readingMinutes={8}
         />
 
         <Section>
@@ -205,10 +154,10 @@ export default function LowveldCostGuidePage() {
             <TLDR
               items={[
                 "The gate fees are modest — R134 (SA resident) to R602 (international) per person per day. The bed is where a Lowveld week is really won or lost.",
-                "Base outside the park at Kanaan from R250 per person sharing and day-trip in: you skip the in-park premium and pay Kruger fees only on the days you actually go.",
+                "Base outside the park at Kanaan from R200 per person sharing (R200–R250 depending on the room) and day-trip in: you skip the in-park premium and pay Kruger fees only on the days you actually go.",
                 "A whole Panorama Route day is only about R300–R450 in gate fees for an SA family — the activities are genuinely cheap.",
                 "Doing four or more full days in Kruger? Buy the SANParks Wild Card — we'll tell you honestly which side of the line your week falls on.",
-                "Three worked budgets below: an SA family of four ~R12,600 for the week, an international couple ~R16,100 on the ground, a backpacker pair ~R4,120.",
+                "A plain end-of-week summary at the bottom — accommodation, travel, activities and food — so you can see the whole shape at a glance.",
                 "Every figure is 2026 and dated — fees valid to 31 October 2026, with a modest rise expected from 1 November. Verify the live number before you rely on it.",
               ]}
             />
@@ -219,19 +168,17 @@ export default function LowveldCostGuidePage() {
               actually cost?</em> It is a fair question, and most travel pages
               dodge it — a vague &ldquo;from&rdquo; price here, a hidden park fee
               there, and you are left guessing. So we wrote this to do the
-              opposite. Every real 2026 number, laid out plainly: what the gate
-              charges, what the activities cost, what it takes to get here, and
-              what a week really comes to for three different kinds of family.
+              opposite: the real 2026 numbers, laid out simply, so a family can
+              see the shape of a Lowveld week before they book it.
             </p>
             <p>
               And here is the thing the numbers reveal, which we will say right at
               the top: <strong>Kruger itself is not expensive.</strong> The gate
-              fee is modest, the Panorama Route is cheap, and the petrol is the
-              petrol. Where a Lowveld week is quietly won or lost is the bed — and
-              that is the one number you have the most control over. Sleep inside
-              the park or at a private lodge and the cost runs away from you; base
-              yourself out here on the farm and day-trip in, and the whole week
-              comes back within reach.
+              fee is modest and the Panorama Route is pocket money. Where a Lowveld
+              week is quietly won or lost is the bed — and that is the one number
+              you have the most control over. Sleep inside the park or at a private
+              lodge and the cost runs away from you; base yourself out here on the
+              farm and day-trip in, and the whole week comes back within reach.
             </p>
           </div>
         </Section>
@@ -249,9 +196,9 @@ export default function LowveldCostGuidePage() {
           <StatGrid
             stats={[
               {
-                value: "R250",
+                value: "R200–R250",
                 label: "Your bed, per person",
-                body: "A night at Kanaan, sharing — self-catering, with all of it a day-trip away. Around R1,000 a night for a family of four.",
+                body: "A night at Kanaan, sharing — self-catering, with all of it a day-trip away. Depending on the room; roughly R900 a night for a family of four.",
               },
               {
                 value: "R134–R602",
@@ -269,61 +216,17 @@ export default function LowveldCostGuidePage() {
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-4">What it costs to get here.</H2>
+            <H2 className="mb-4">Getting here is the easy part.</H2>
             <p>
-              There are two ways to arrive, and for a family the cheaper one is
-              usually the lovelier too. The drive from Johannesburg is a scenic
-              four-and-a-half hours down the N4, and you roll up with your own car
-              for game drives. Flying into KMIA — the Kruger Mpumalanga airport,
-              about forty-eight minutes from our gate — is quicker but adds a hire
-              car or a transfer on the far end.
+              There are two ways to arrive, and for a family the drive is usually
+              the loveliest. The N4 from Johannesburg is a scenic four-and-a-half
+              hours and you roll up with your own car for game drives. Or you fly
+              into KMIA — the Kruger Mpumalanga airport, about forty-eight minutes
+              from our gate — and pick up a hire car or a transfer on this end.
+              Either way you are at the farm in time for a sundowner. We&rsquo;ll
+              always help you weigh up which suits your group when you message us.
             </p>
           </div>
-          <CostTable
-            title="Getting here & getting around (2026)"
-            rows={[
-              {
-                item: "Petrol — 95 unleaded, inland",
-                price: "R28.06 / litre",
-                note: "A record high (June 2026). The price is regulated monthly, so re-check it close to your trip.",
-              },
-              {
-                item: "Joburg → Hazyview self-drive (~390 km)",
-                price: "~R1,200–R1,500 / car, one way",
-                note: "Fuel ~R900–R1,250 plus R261 in N4 tolls. About 4½–5 hours. Return tolls R522.",
-              },
-              {
-                item: "Flight Joburg ↔ KMIA — FlySafair",
-                price: "R700–R1,800 return",
-                note: "Budget fares; excludes a checked bag (~R210 per item each way). Fares move daily.",
-              },
-              {
-                item: "Flight Joburg ↔ KMIA — Airlink",
-                price: "R2,700–R7,500 return",
-                note: "Full-service, checked bag included. About a 55-minute hop.",
-              },
-              {
-                item: "Flight Cape Town ↔ KMIA",
-                price: "R2,600–R3,200 return",
-                note: "Direct on FlySafair and Airlink, about 2h40. Seasonal.",
-              },
-              {
-                item: "Car hire at KMIA — economy",
-                price: "~R350–R600 / day",
-                note: "Add zero-excess insurance (~R150–R300/day) up front. A sedan copes fine on the tar roads.",
-              },
-              {
-                item: "Car hire at KMIA — family SUV",
-                price: "R900–R1,300 / day",
-                note: "The most-rented class; add zero-excess cover ~R200–R350/day.",
-              },
-              {
-                item: "KMIA → Hazyview private transfer",
-                price: "~R900–R1,500 / vehicle",
-                note: "Up to six people, about 75 minutes — but then you've no car for self-drive game viewing.",
-              },
-            ]}
-          />
         </Section>
 
         {/* Inline image — the self-drive arrival */}
@@ -392,7 +295,7 @@ export default function LowveldCostGuidePage() {
             </div>
             <figcaption className="mt-3 text-center text-xs text-muted">
               You pay the gate fee for the days you drive in — and self-driving
-              costs only that fee and your fuel.
+              costs only that fee.
             </figcaption>
           </figure>
         </div>
@@ -452,161 +355,6 @@ export default function LowveldCostGuidePage() {
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-4">The Panorama Route is the cheap day.</H2>
-            <p>
-              If Kruger is the headline, the Panorama Route is the bargain. Most of
-              the famous viewpoints charge a few rand at a gate, the waterfalls are
-              pocket money, and the one paid showpiece — the Graskop Gorge Lift —
-              is worth every cent. Here is the menu, plus the bigger family
-              activities worth budgeting for.
-            </p>
-          </div>
-          <CostTable
-            title="Activities & attractions (2026, per person unless noted)"
-            rows={[
-              {
-                item: "Graskop Gorge Lift — glass lift + forest walk",
-                price: "R205 adult / R138 child",
-                note: "Under-4 free; a family of four ≈ R686. The signature Panorama family experience. Zipline add-on +R150.",
-              },
-              {
-                item: "Graskop Big Swing / Zipline",
-                price: "Swing R750 · Zip R280 · combo R900",
-                note: "Big Swing 12+, zipline 7+. The teenage highlight of the week.",
-              },
-              {
-                item: "God's Window",
-                price: "~R35 SA / ~R70 international",
-                note: "Cash at the gate. Free alternative up the road: Wonder View — the same vista, no stairs, no fee.",
-              },
-              {
-                item: "Bourke's Luck Potholes",
-                price: "~R75 SA / ~R150 international",
-                note: "Child ~R35 (SA). Cash only; confirm the 2026 figure at the gate.",
-              },
-              {
-                item: "Waterfalls (Lisbon, Berlin, Mac Mac)",
-                price: "~R25–R50 SA",
-                note: "Mac Mac Pools (swimmable) ~R50. Budget about R50 per person; it varies by access point.",
-              },
-              {
-                item: "Blyde River Canyon boat cruise (90 min)",
-                price: "R430 adult / R220 child",
-                note: "The closest hippo-and-croc cruise (~120 km, a full Panorama-north day). Plus a small reserve entry (~R55 SA).",
-              },
-              {
-                item: "Skyway Trails canopy zip-line (Hazyview)",
-                price: "R695",
-                note: "One rate for adults and children; ~2½ hours over the Sabie valley, transfer included.",
-              },
-              {
-                item: "Perry's Bridge Reptile Park (Hazyview)",
-                price: "R184 adult / R103 child",
-                note: "Under-5 free. Central and undercover — the rainy-day winner. Closed Fridays outside school holidays.",
-              },
-              {
-                item: "Chimp Eden guided tour (~1 hr away)",
-                price: "R290 SA / R330 intl adult",
-                note: "Child R150 / R175; under-6 free. An ethical Jane Goodall sanctuary — book ahead.",
-              },
-              {
-                item: "Moholoholo Wildlife Centre (~2 hrs)",
-                price: "R240 adult / R120 child",
-                note: "Best paired with a Blyde / Panorama-north day rather than a casual half-day.",
-              },
-              {
-                item: "Sabie River rafting / tubing (2 hrs)",
-                price: "R600 (Wed & Fri from R460)",
-                note: "One rate (no child discount), minimum age about 5. Seasonal — confirm the river is running.",
-              },
-              {
-                item: "Kruger guided game drive (~3 hrs)",
-                price: "~R450–R650 adult / ~R350 child",
-                note: "Booked at the camp desks; varies by camp and usually includes that day's entry. One guided morning, then self-drive the rest.",
-              },
-            ]}
-          />
-        </Section>
-
-        {/* Inline image — the Graskop Gorge Lift */}
-        <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <figure>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-              <Image
-                src={img.panoramaPinnacleRock.src}
-                alt={img.panoramaPinnacleRock.alt}
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-xs text-muted">
-              The Graskop Gorge Lift — the one Panorama Route stop worth paying
-              for, at R205 a head.
-            </figcaption>
-          </figure>
-        </div>
-
-        <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-4">Three real weekly budgets, with the maths shown.</H2>
-            <p>
-              Enough principle — here is what it actually adds up to. Three honest
-              weeks, three different families, every line shown so you can swap in
-              your own numbers. These are illustrative and conservative; recompute
-              the live figures before you rely on them, and message us and
-              we&rsquo;ll build yours with you.
-            </p>
-          </div>
-          <div className="not-prose mx-auto my-8 grid w-full max-w-5xl gap-4 px-5 lg:grid-cols-3 lg:px-0">
-            <BudgetBuild
-              persona="SA family of four · self-drive · 5 nights"
-              lineItems={[
-                { label: "Kanaan", calc: "R250 × 4 × 5 nights", subtotal: "R5,000" },
-                { label: "Breakfasts", calc: "R60 × 4 × 3 mornings", subtotal: "R720" },
-                { label: "Kruger — 2 self-drive days", calc: "R402/day × 2 + levy", subtotal: "~R812" },
-                { label: "Panorama gate stops", calc: "God's Window + falls + Bourke's Luck", subtotal: "~R450" },
-                { label: "Graskop Gorge Lift", calc: "2 × R205 + 2 × R138", subtotal: "R686" },
-                { label: "Groceries (week)", calc: "mid-range self-catering", subtotal: "~R2,000" },
-                { label: "Two braais", calc: "R200 × 2", subtotal: "R400" },
-                { label: "One meal out", calc: "family of four", subtotal: "~R750" },
-                { label: "Fuel — local touring", calc: "~600–900 km @ R28/L", subtotal: "~R1,800" },
-              ]}
-              total="~R12,600"
-              perDay="≈ R630 per person per day — and only ~R250 of that is the bed. Excludes getting here from home."
-            />
-            <BudgetBuild
-              persona="International couple · fly + hire car · 5 nights"
-              lineItems={[
-                { label: "Kanaan", calc: "R250 × 2 × 5 nights", subtotal: "R2,500" },
-                { label: "Breakfasts", calc: "R60 × 2 × 5", subtotal: "R600" },
-                { label: "Kruger — 3 self-drive days", calc: "R1,204/day × 3 + levy", subtotal: "~R3,648" },
-                { label: "One guided morning drive", calc: "2 × ~R600", subtotal: "~R1,200" },
-                { label: "Panorama day", calc: "gate stops + lift + Blyde cruise", subtotal: "~R1,700" },
-                { label: "Food (self-cater + 2 meals out)", calc: "~R1,200 + ~R900", subtotal: "~R2,100" },
-                { label: "Car hire (economy, 5 days)", calc: "~R550/day, excess waived", subtotal: "~R2,750" },
-                { label: "Fuel — week of touring", calc: "~700 km @ R28/L", subtotal: "~R1,600" },
-              ]}
-              total="~R16,100"
-              perDay="≈ R1,610 per person per day. Excludes international airfare to Joburg. Here the gate fees, not the bed, are the big number."
-            />
-            <BudgetBuild
-              persona="Budget pair · self-drive · 4 nights"
-              lineItems={[
-                { label: "Kanaan", calc: "R250 × 2 × 4 nights", subtotal: "R2,000" },
-                { label: "Kruger — 1 day (SA residents)", calc: "2 × R134 + levy", subtotal: "~R271" },
-                { label: "Free/cheap Panorama loop", calc: "Wonder View free + a waterfall", subtotal: "~R50" },
-                { label: "Groceries (4 days, two)", calc: "braais + basics", subtotal: "~R900" },
-                { label: "Fuel — modest touring", calc: "~400 km @ R28/L", subtotal: "~R900" },
-              ]}
-              total="~R4,120"
-              perDay="≈ R515 per person per day — barely more than a shared hostel bunk buys, for a private farm bed. Excludes getting here."
-            />
-          </div>
-        </Section>
-
-        <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Where you sleep decides the budget.</H2>
             <p>
               This is the comparison that makes the whole case. The gate fees are
@@ -620,8 +368,8 @@ export default function LowveldCostGuidePage() {
             rows={[
               {
                 item: "Kanaan — per person sharing",
-                price: "R250",
-                note: "≈ R500 a night for a couple, ~R1,000 for a family of four. Self-catering, fifteen to forty-five minutes from the gate.",
+                price: "R200–R250",
+                note: "≈ R900 a night for a family of four, depending on the room. Self-catering, fifteen to forty-five minutes from the gate.",
               },
               {
                 item: "Hazyview mid-range lodge — room for two",
@@ -647,7 +395,7 @@ export default function LowveldCostGuidePage() {
           />
           <div className="prose-kanaan mx-auto max-w-prose">
             <p>
-              Put plainly: a family of four sleeps <strong>seven nights</strong>{" "}
+              Put plainly: a family of four sleeps <strong>several nights</strong>{" "}
               at Kanaan for less than <strong>one night per person</strong> at a
               private lodge. That is the difference between a holiday you talk
               yourself out of and one you actually book.
@@ -655,7 +403,7 @@ export default function LowveldCostGuidePage() {
           </div>
         </Section>
 
-        {/* Inline images — the actual R250 bed + the self-catering kitchen */}
+        {/* Inline images — the actual bed + the self-catering kitchen */}
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
@@ -669,7 +417,7 @@ export default function LowveldCostGuidePage() {
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs text-muted">
-                A family room at Kanaan — the actual bed behind the R250 figure.
+                A family room at Kanaan — the actual bed behind the price.
               </figcaption>
             </figure>
             <figure>
@@ -723,10 +471,6 @@ export default function LowveldCostGuidePage() {
                 body: "Wonder View has the same drop as God's Window with no stairs and no fee, and a whole Panorama day in gate fees is only ~R300–R450 for an SA family of four.",
               },
               {
-                title: "For a family, drive rather than fly",
-                body: "Once you add four air fares plus a transfer or hire car, the scenic N4 self-drive (~R1,200–R1,500 one way per car) usually wins — and you arrive with your own wheels for game drives.",
-              },
-              {
                 title: "Travel the value shoulder",
                 body: "January to March (outside Easter) is cheapest for private accommodation and flights. Park fees barely move with the season — but they rise ~15% from 1 November 2026, so an earlier week is genuinely a little cheaper.",
               },
@@ -734,11 +478,55 @@ export default function LowveldCostGuidePage() {
           />
         </Section>
 
+        <Section className="pt-0!">
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <H2 className="mb-4">The week at a glance.</H2>
+            <p>
+              If you take one thing away, take this. Four simple categories — where
+              the money actually goes on a Lowveld family week — with the honest
+              shape of each. Only the accommodation and the gate fees are fixed;
+              the rest bends to how you like to travel. For the full list of what
+              there actually is to do out here, we&rsquo;ve put it all in the{" "}
+              <Link
+                href="/blog/things-to-do-around-hazyview"
+                className="font-medium text-ochre hover:text-ochre-deep"
+              >
+                things-to-do guide
+              </Link>
+              .
+            </p>
+          </div>
+          <CostTable
+            title="A Lowveld family week — the four things you're paying for"
+            rows={[
+              {
+                item: "Accommodation",
+                price: "R200–R250 pp / night",
+                note: "The one number in your control, and the one that decides the week. At Kanaan, self-catering, fifteen to forty-five minutes from the gate — about R900 a night for a family of four.",
+              },
+              {
+                item: "Travel",
+                price: "Drive or fly",
+                note: "The scenic N4 self-drive from Joburg (~4½ hours, own car for game drives), or a flight into KMIA about 48 minutes away. Depends on where you're starting — we'll help you choose.",
+              },
+              {
+                item: "Activities",
+                price: "Modest & mostly fixed",
+                note: "Kruger's gate fee (R134 SA to R602 international per person per day, only on the days you go in) and a genuinely cheap Panorama Route (~R300–R450 for a whole family day). The Graskop Gorge Lift is the one paid showpiece worth it.",
+              },
+              {
+                item: "Food",
+                price: "As lean as you like",
+                note: "Self-cater and braai and it's a grocery bill (~R1,250–R2,500 for a family week); add a meal out when you want one. Breakfast on request at ~R60 per person.",
+              },
+            ]}
+          />
+        </Section>
+
         <Callout eyebrow="A quick, honest word on the numbers">
-          Every figure here is dated for 2026, gate fees are valid to 31 October
-          2026, and the petrol price changes monthly. Prices move — verify the
-          live figure before you rely on it, and message us, because we keep ours
-          current.
+          Every figure here is dated for 2026, and gate fees are valid to 31
+          October 2026. Prices move — verify the live figure before you rely on
+          it, and message us, because we keep ours current.
         </Callout>
 
         <Section>
@@ -789,7 +577,7 @@ export default function LowveldCostGuidePage() {
                   because the thing that stops people booking a Lowveld holiday is
                   almost never the price, it&rsquo;s not being able to see it.
                   Now you can. Send us your dates and who&rsquo;s coming, and
-                  we&rsquo;ll build the week&rsquo;s budget with you, honestly, and
+                  we&rsquo;ll build the week&rsquo;s shape with you, honestly, and
                   tell you exactly where to save.
                 </>
               }
@@ -824,15 +612,6 @@ export default function LowveldCostGuidePage() {
                 {
                   label: "Blyde Canyon Adventure Centre — boat trips",
                   href: "https://blydecanyon.co.za/boat-trips/",
-                },
-                {
-                  label:
-                    "BusinessTech — South African petrol price (June 2026)",
-                  href: "https://businesstech.co.za/news/energy/862147/south-africans-set-to-pay-the-highest-petrol-price-in-history/",
-                },
-                {
-                  label: "N4 toll tariffs — Gauteng to Mpumalanga",
-                  href: "https://randtools.co.za/drive/gauteng-to-mpumalanga",
                 },
               ]}
             />
@@ -877,8 +656,8 @@ export default function LowveldCostGuidePage() {
                   Hazyview & Kruger with kids
                 </h3>
                 <p className="mt-2 text-sm text-ink/80">
-                  What to actually do with children once you&rsquo;ve budgeted
-                  the week — and how to pace it.
+                  What to actually do with children once you&rsquo;ve seen the
+                  numbers — and how to pace the week.
                 </p>
               </Link>
             </div>
