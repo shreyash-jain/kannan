@@ -208,6 +208,20 @@ const posts: Post[] = [
     excerpt:
       "Kruger, the Panorama Route and Sabie's waterfalls all within an hour of the gate — plus sanctuaries, zip-lines, quad biking, rafting and a toboggan run. The whole menu, and a five-day plan that fits it in without anyone melting down.",
   },
+  {
+    chapter: "Where to stay",
+    title:
+      "Accommodation near Kruger National Park: where to stay, and why Hazyview works",
+    category: "guide",
+    status: "live",
+    href: "/blog/accommodation-near-kruger-national-park",
+    image: img.stayNearKrugerArrival.src,
+    imageAlt: img.stayNearKrugerArrival.alt,
+    datePublished: "2026-07-27",
+    readingMinutes: 11,
+    excerpt:
+      "In-park rest camps or a base just outside the gate? The honest trade-off, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
+  },
 ];
 
 export default function BlogIndexPage() {
