@@ -151,9 +151,10 @@ export default function AccommodationNearKrugerPage() {
               which ones really are.
             </p>
             <p>
-              So this is not a sales pitch. It is what we would tell a friend —
-              from two people who live half an hour from Phabeni gate and wave
-              guests off to the park most mornings of the year.
+              So this is not a sales pitch — it is what we would tell a friend.
+              We live half an hour from Phabeni gate and wave guests off to the
+              park most mornings of the year, so we have a fair idea of what
+              works.
             </p>
           </div>
         </Section>
@@ -162,18 +163,19 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Inside the park, or just outside it?</H2>
             <p>
-              The rest camps inside Kruger are special — waking to hyena calls
-              behind the fence is something everyone should do once. But they
-              book out months ahead, they cost more than most guest farms
-              outside, and on the day you want to rest there is very little to
-              rest into.
+              The rest camps inside Kruger are special, and waking up to hyena
+              calls behind the fence is something everyone should do once. But
+              they book out months ahead, they cost more than most guest farms
+              outside the park, and on the day you just want to rest, there is
+              not much to do.
             </p>
             <p>
-              Staying outside the gate flips that. You still make the
-              opening-time drive, which is the best game viewing of the day, and
-              then you come home to a kitchen, a pool and a braai. On the day
-              nobody wants to see another impala, the Panorama Route is waiting
-              instead. Gate times shift with the season, so check{" "}
+              Staying just outside the gate changes all of that. You still make
+              the opening-time drive, which is the best game viewing of the day,
+              and then you come home to a kitchen, a pool and a braai. And on
+              the day nobody wants to see another impala, you have the whole
+              Panorama Route instead. Gate times move with the season, so have a
+              look at{" "}
               <a
                 href="https://www.sanparks.org/parks/kruger"
                 target="_blank"
@@ -226,12 +228,12 @@ export default function AccommodationNearKrugerPage() {
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-4">Why Hazyview, of all the towns nearby.</H2>
+            <H2 className="mb-4">Why Hazyview makes a good base.</H2>
             <p>
-              Several towns line the southern edge of the park, and they each
-              have their case. Hazyview&rsquo;s is simple: it is the one that
-              sits between the Kruger gates <em>and</em> the escarpment, so you
-              never have to choose a side of your holiday.
+              There are a few towns to choose from along the southern side of
+              the park, and we would pick Hazyview every time. It sits between
+              the Kruger gates <em>and</em> the escarpment, so you get the game
+              drives and the mountains without ever moving your bags.
             </p>
           </div>
           {/* Inline image — the valley from the air, the geography argument */}
@@ -280,26 +282,25 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">What Kanaan is like.</H2>
             <p>
-              We took over the farm in {site.ownedSince} and have been rebuilding
-              it slowly — the water, the WiFi, the gate, then the rooms, one at a
-              time. What we could not renovate is the part guests mention
-              afterwards: the forty-year-old mango grove, the view down the
-              valley, and Anneli or Matthew meeting you at the gate instead of a
-              front desk.
+              We took over the farm in {site.ownedSince} and we have been fixing
+              it up slowly — the water, the WiFi, the gate, and now the rooms,
+              one at a time. The things guests talk about afterwards were
+              already here: the forty-year-old mango grove, the view down the
+              valley, and one of us meeting you at the gate instead of a front
+              desk.
             </p>
             <p>
-              It is a working farm, which means space — lawns, macadamia rows,
-              trails, a waterfall on our own land and a pool that has ended a
-              great many hot Kruger afternoons. It also means quiet evenings,
-              while town is still close enough that a forgotten bag of charcoal
-              is a ten-minute problem.
+              It is a working farm, so there is room to spread out — lawns,
+              macadamia rows, walking trails, a waterfall on our own land, and a
+              pool that has rescued a lot of hot afternoons. The evenings out
+              here are properly quiet, and town is close enough that a forgotten
+              bag of charcoal only costs you ten minutes.
             </p>
           </div>
           <Callout eyebrow="What we are, and what we are not">
-            We are not a five-star lodge and we do not price like one. We are a
-            comfortable, affordable, family-run farm half an hour from the
-            Kruger gate — and for a week in the Lowveld, that is usually the
-            better trade.
+            We are not a five-star lodge and we do not charge like one. We are a
+            comfortable, affordable family farm half an hour from the Kruger
+            gate — and for a week in the Lowveld, that suits most people better.
           </Callout>
         </Section>
 
@@ -343,10 +344,10 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">The four ways to stay.</H2>
             <p>
-              A guest farm can hold four budgets on one property, under the same
-              trees. The bedding differs from room to room, so tell us who is
-              coming and we will match you up. Photographs and current rates are
-              on our{" "}
+              On one farm, under the same trees, we can look after four very
+              different budgets. The beds differ from room to room, so tell us
+              who is coming and we will put you in the right one. Photographs
+              and current rates are on our{" "}
               <Link
                 href="/stay"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -372,7 +373,7 @@ export default function AccommodationNearKrugerPage() {
               },
               {
                 title: `Camping under the mango grove · ${site.capacity.campsitePitches} pitches`,
-                body: "Shaded grass, power and water at every pitch, and a timber ablution block with hot showers. The cheapest bed near the gate — and on a warm Lowveld night, arguably the best.",
+                body: "Shaded grass, power and water at every pitch, and a timber ablution block with hot showers. The cheapest way to sleep near the gate, and on a warm Lowveld night it is hard to beat.",
               },
             ]}
           />
@@ -434,13 +435,13 @@ export default function AccommodationNearKrugerPage() {
               Families, couples, backpackers, campers — all at once.
             </H2>
             <p>
-              Because the farm offers all four kinds of accommodation, a group
-              that would normally split across three price brackets can stay
-              together. We have had grandparents in a lodge unit, parents in a
-              family room and students in the dorm, all at the same braai.
-              Families get space and a kitchen, couples get quiet evenings, and
-              campers get a cheap bed half an hour from the gate. One thing to
-              know: we are not set up for pets.
+              Because we have all four kinds of room, a group that would
+              normally have to split up can stay together. We have had
+              grandparents in a lodge unit, the parents in a family room and the
+              students in the dorm, everyone at the same braai. Families get the
+              space and a kitchen, couples get the quiet, and campers get a
+              cheap bed half an hour from the gate. One thing to know: we are
+              not set up for pets.
             </p>
           </div>
           {/* Inline image — the mixed-group braai a farm makes possible */}
@@ -457,7 +458,7 @@ export default function AccommodationNearKrugerPage() {
               </div>
               <figcaption className="mt-3 text-center text-xs text-muted">
                 A lit unit on one side, tents on the other, everybody at the
-                same fire. This is the part a hotel cannot do.
+                same fire. That is the bit you do not get at a hotel.
               </figcaption>
             </figure>
           </div>
@@ -467,10 +468,10 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Kruger and the Panorama Route from here.</H2>
             <p>
-              From here the park is a morning: through Phabeni or Numbi at
-              opening, the southern loops, a picnic site for coffee, home for
-              lunch. Which gate to use and the half-day plan that works are in
-              our{" "}
+              From here, Kruger is a morning out — through Phabeni or Numbi at
+              opening, round the southern loops, a picnic site for coffee, home
+              for lunch. Which gate to use and the half-day plan that works are
+              in our{" "}
               <Link
                 href="/blog/kruger-from-hazyview"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -489,9 +490,9 @@ export default function AccommodationNearKrugerPage() {
               — worth checking, as they are reviewed each year.
             </p>
             <p>
-              The other direction is the escarpment: God&rsquo;s Window, the
-              Blyde River Canyon, the Graskop gorge lift and a string of
-              waterfalls. Our{" "}
+              Go the other way and you are on the escarpment — God&rsquo;s
+              Window, the Blyde River Canyon, the Graskop gorge lift and a whole
+              string of waterfalls. Our{" "}
               <Link
                 href="/blog/panorama-route-from-hazyview"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -555,18 +556,17 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">What a week here costs.</H2>
             <p>
-              The bed is only one line of the budget. Gate fees, fuel, an
-              activity or two and food all add up, and a cheap room can quietly
-              cost you more if it sits an hour further from the gate or has
-              nowhere to cook. Ours start at R{site.pricing.fromZAR} per person
-              sharing per night, camping costs less, and most units have a
-              kitchenette — so the food bill stays yours rather than a
-              restaurant&rsquo;s.
+              Your room is only part of it. Gate fees, fuel, an activity or two
+              and food all add up, and a cheap room can end up costing you more
+              if it sits an hour further from the gate or has nowhere to cook.
+              Ours start at R{site.pricing.fromZAR} per person sharing per
+              night, camping is less, and most units have a kitchenette — so you
+              are not paying restaurant prices three times a day.
             </p>
           </div>
           <Callout eyebrow="Every real number, in one place">
-            We laid out the whole 2026 arithmetic — gate fees by tier, the Wild
-            Card break-even, flights, food and three worked weekly budgets — in
+            We worked out every 2026 number — gate fees by tier, when a Wild Card
+            starts paying for itself, flights, food and three weekly budgets — in
             the{" "}
             <Link
               href="/blog/cost-of-a-kruger-lowveld-week-2026"
@@ -600,7 +600,7 @@ export default function AccommodationNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <ClosingBlock
               title="Where to stay near Kruger"
-              thesis="The best accommodation near Kruger National Park is not the grandest. It is close enough for the dawn drive, comfortable enough to come home to, and priced so the rest of the week is still affordable."
+              thesis="The best accommodation near Kruger National Park is not the fanciest. It is close enough for the early drive, comfortable enough to come home to, and priced so you can still afford the rest of the week."
               body={
                 <>
                   That is what we have built here — a real farm half an hour
