@@ -123,7 +123,7 @@ export default function AccommodationNearKrugerPage() {
           image={img.stayNearKrugerArrival.src}
           alt={img.stayNearKrugerArrival.alt}
           eyebrow="Guide · Where to stay"
-          title="Accommodation near Kruger National Park — why Hazyview works."
+          title="Accommodation near Kruger National Park."
           intro="Not a sales pitch, just our real take on where to sleep near the park: inside Kruger or just outside it, why Hazyview, and the four ways to stay with us — from R250 per person sharing."
           byline="Anneli & Matthew"
           datePublished={datePublished}
