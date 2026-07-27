@@ -24,5 +24,35 @@
         "prompt": "A large, calm elephant bull standing on or just beside a misty Kruger park road in the soft apricot light of very early morning, seen from a respectful distance from the viewpoint of a stopped car a little way down the road. He emerges from thin dawn mist and long golden winter grass so that at first glance he reads almost like a huge grey boulder — until the raised, curling trunk and great ears give him away. Warm low sunlight rakes in from the side behind him, backlighting the mist and the fine dust around his feet into a glowing haze and rim-lighting the ridge of his back and the edges of his ears. Bare golden trees and blue-grey bush recede into mist behind him. Utterly still, monumental, quietly thrilling. Natural true colour, soft directional dawn light, shallow-to-medium depth of field keeping the elephant crisp against a dissolving misty background. No text, no people, no faces."
       }
     ]
+  },
+  "blog-10": {
+    "shared_style": "Photorealistic travel/landscape photograph, shot on a full-frame camera, natural light, rich but true-to-life colour, high dynamic range, crisp South African Lowveld light. No text, no captions, no watermark, no logos. Any people are small, incidental and seen from behind or in soft profile — no recognisable faces.",
+    "images": [
+      {
+        "public_id": "stay-near-kruger-arrival",
+        "aspect": "16:9",
+        "prompt": "Late golden-hour arrival at a modest, well-kept guest farm cottage in the South African Lowveld near Hazyview. A dusty hire car parked on a brick-paved patio in front of a whitewashed unit with a wooden-beamed veranda and a built-in braai, a suitcase and a cooler box just set down beside the open boot, bougainvillea against the wall. Beyond the unit, mown grass gives way to green bushveld and the hazy blue Drakensberg escarpment in the far distance. Unpretentious and welcoming — a real working farm, not a luxury lodge. Photographic, warm low sun, no people, no text."
+      },
+      {
+        "public_id": "kruger-rest-camp-dusk",
+        "aspect": "16:9",
+        "prompt": "Dusk inside a Kruger-style national-park rest camp in South Africa — a few round thatched rondavels on mown grass, warm lamplight in one window, the tall perimeter game fence running along the edge of the frame and open golden bushveld stretching away into blue evening haze beyond it. A single camp chair beside a braai stand in the foreground. Quiet, atmospheric, slightly institutional — the appeal and the limits of sleeping inside the park. Photographic, no people, no text, no signage."
+      },
+      {
+        "public_id": "hazyview-base-aerial",
+        "aspect": "16:9",
+        "prompt": "A high, wide aerial view over the Hazyview area of Mpumalanga, South Africa, in clear late-afternoon light. In the foreground, green banana, mango and macadamia orchards and scattered farmsteads on rolling hills; a tarred road threading through them toward flat golden bushveld opening out on the right-hand horizon; the tall forested wall of the Drakensberg escarpment rising on the left, layered blue ridges behind it. One valley, park on one side and mountains on the other. Photographic drone perspective, long shadows, no text, no map labels, no aircraft."
+      },
+      {
+        "public_id": "predawn-kitchenette-coffee",
+        "aspect": "16:9",
+        "prompt": "The inside of a small self-catering kitchenette in a farm lodge unit before dawn, lit only by a single warm lamp. Steam rising from a kettle on a two-plate hob, coffee being poured into a stainless travel thermos, a set of car keys, binoculars and a folded park map on the counter beside it. The window above is still black, with the very first cold blue-grey light just showing at the bottom of the sky. Quiet, purposeful, the morning of a game drive. Photographic, close, shallow depth of field, hands only if any (no faces), no text, no branding."
+      },
+      {
+        "public_id": "farm-braai-mixed-group",
+        "aspect": "16:9",
+        "prompt": "An evening braai on the lawn of a Lowveld guest farm under enormous old mango trees, last blue light in the sky. Coals glowing in a simple braai stand, a long mismatched table with camp chairs and a few plastic garden chairs pulled up to it, a family's lodge-unit door lit warm on one side and a couple of backpackers' tents pitched in the dappled shade on the other, a dusty overland vehicle parked beyond. People present only as soft dark shapes at a respectful distance. Sociable, unpretentious, everyone in one place. Photographic, faces not identifiable, no text, no logos."
+      }
+    ]
   }
 }

@@ -40,22 +40,44 @@ post; it need not be a how-to (the mango-grove piece is a narrative filed as a G
 | **`early-morning-kruger-safari-from-hazyview`** — "First Light" dawn drive | Written; both AI images fixed (generative-filled square→16:9). **Never sent to the owner.** |
 | **`.npmrc`** (`legacy-peer-deps=true`) | See blocker 1. |
 
-### ⚠️ Two live blockers — read before deploying anything
+### ✅ Both former blockers are CLEARED (2026-07-27)
 
-1. **`main` has no `.npmrc` → the next deploy from `main` WILL FAIL.** `npx
-   @cloudflare/next-on-pages` dies on an npm ERESOLVE: `wrangler@4.110` now requires
-   `@cloudflare/workers-types@^5` while `next-on-pages` pins `^4`. The one-line
-   `.npmrc` fixes it and exists on `blog-6`/`blog-7` but was never merged to `main`.
-2. **Anneli's cost-blog feedback is not live** — it is stranded on `blog-7-first-light`.
-   Merging that branch publishes it *and* fixes blocker 1.
+The two blockers this file used to carry — no `.npmrc` on `main`, and Anneli's cost-blog
+feedback stranded on a branch — were both resolved when **`blog-7-first-light` merged
+(PR #20)**. `main` now has `.npmrc`, the revised cost blog, the Activities guide and the
+"First Light" dawn drive, so `main` is **14 posts** and deployable. The section above
+(and the 12-post snapshot) is left as written on 2026-07-16 and is now out of date —
+re-verify it against `origin/main` before trusting it.
 
 ## In flight
 
 | Work | Branch | State | Next action |
 | --- | --- | --- | --- |
 | "Under the Mango Trees" | merged to `main` | **Done / live** | none |
-| Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Built, awaiting merge** | **Merge into `main`.** This one merge publishes Anneli's cost changes, ships 2 new guides and unblocks the deploy. |
-| Food guide — restaurants, breakfast/lunch/dinner, honest 💲💲💲 grading | not started | **Next up** | Research current reviews/prices (Red Litchi, Kuka, River's Edge, Mugg & Bean, Spur, Casterbridge, Perry's Bridge) *before* writing — Anneli asked for honest grading. Then follow `BLOG_PLAYBOOK.md`. |
+| Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Merged (PR #20)** | none — this is what cleared both old blockers. |
+| Weddings guide — `wedding-venues-near-kruger-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** | Owner has not reviewed. Note it links to `/blog/where-to-eat-around-hazyview`, which does **not** exist on `main` — that link 404s until the food guide lands. |
+| Where-to-stay guide — `accommodation-near-kruger-national-park` | `blog-10-where-to-stay` | **Built, verified, PR open** | Owner has not reviewed. Branched straight off `main`, so it is independent of blog-9 — every link resolves today. |
+| Food guide — `where-to-eat-around-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** (this row said "not started" — it was wrong) | Owner has not reviewed it. It ships together with blog-9 as things stand, because both live on that one branch. |
+
+## 📌 Blog 10 (where to stay near Kruger) — what to know
+
+- **`accommodation-near-kruger-national-park`, branched straight off `main`.** Unlike
+  blog-9 it has no branch dependencies: its five in-body internal links (`/stay`,
+  `/camping`, `/blog/kruger-from-hazyview`, `/blog/panorama-route-from-hazyview`,
+  `/blog/cost-of-a-kruger-lowveld-week-2026`) and both "Keep reading" cards all resolve
+  on `main` today.
+- **Five external links across five domains** (sanparks.org, krugerpark.co.za,
+  kmiairport.co.za, mpumalanga.com, sa-venues.com), each repeated in the Sources block.
+- **Imagery is a deliberate mix.** Five dedicated AI frames (`stay-near-kruger-arrival`
+  → hero, `kruger-rest-camp-dusk`, `hazyview-base-aerial`, `predawn-kitchenette-coffee`,
+  `farm-braai-mixed-group`) cover scenes no on-site camera can reach; every source render
+  is square, so each slot uses `c_pad,ar_16:9,b_gen_fill`. **What the guest actually
+  books stays real photography** — `lodgeRoom`, `lodgeKitchen`, `campingGround`,
+  `poolSunset`. Prompts and two small AI text artefacts are logged in
+  `docs/blog-10-image-prompts.md`.
+- **Unreviewed by the owner.** It quotes **from R250 pps** and the capacity numbers from
+  `site.ts`, and states plainly that we are **not set up for pets** (`petsAllowed: false`)
+  — worth confirming both with Anneli before it goes live.
 
 ## Owner feedback log (Anneli) — what she has actually asked for
 
@@ -135,4 +157,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-07-16*
+*Last updated: 2026-07-27*

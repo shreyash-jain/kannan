@@ -607,6 +607,64 @@ export const img = {
     height: 900,
   },
 
+  // --- "Where to stay near Kruger" guide (Blog 10) ------------------------
+  // Five dedicated frames generated from docs/blog-10-image-prompts.md (July
+  // 2026) and uploaded to the kanaan/ folder. Every source render is square
+  // (1:1), so each is generative-filled outward to a true 16:9 rather than
+  // centre-cropped — same treatment as underMangoTreesHero / krugerDawnDriveHero.
+  //
+  // These AI frames cover only scenes no on-site camera can reach (an arrival
+  // at golden hour, inside a park rest camp, the valley from the air, a 4:45am
+  // kitchen, an evening braai). The guide deliberately keeps REAL Kanaan
+  // photography for the rooms, the kitchenette, the camping ground and the
+  // pool — the same honesty logic as the cost and dawn-drive guides: whatever
+  // the guest actually books is carried by a real photograph.
+  stayNearKrugerArrival: {
+    src: cldImage(
+      "stay-near-kruger-arrival",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "Golden-hour arrival at a Lowveld guest farm near Hazyview — a dusty bakkie parked on a brick-paved patio beside a whitewashed cottage with a veranda, built-in braai and bougainvillea, a suitcase and cooler box set down, with green bushveld and the blue escarpment behind.",
+    width: 1920,
+    height: 1080,
+  },
+  krugerRestCampDusk: {
+    src: cldImage(
+      "kruger-rest-camp-dusk",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "Dusk inside a Kruger-style national park rest camp — stone-and-thatch rondavels with one window lit warm, a camp chair and braai stand on the grass, and the perimeter game fence with open golden bushveld stretching away beyond it.",
+    width: 1600,
+    height: 900,
+  },
+  hazyviewBaseAerial: {
+    src: cldImage(
+      "hazyview-base-aerial",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "An aerial view over the Hazyview valley in Mpumalanga — green orchards, farmsteads and a tarred road threading through the hills, with the forested Drakensberg escarpment rising on the left and flat golden bushveld opening out toward Kruger on the right.",
+    width: 1600,
+    height: 900,
+  },
+  predawnKitchenetteCoffee: {
+    src: cldImage(
+      "predawn-kitchenette-coffee",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A self-catering kitchenette before dawn, lit by a single lamp — a kettle steaming on a two-plate hob, coffee being poured into a travel thermos, binoculars, car keys and a folded park map on the counter, and the first cold light behind the window.",
+    width: 1600,
+    height: 900,
+  },
+  farmBraaiMixedGroup: {
+    src: cldImage(
+      "farm-braai-mixed-group",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "An evening braai on a Lowveld farm lawn under big old trees — coals glowing, a long table with mismatched chairs, guests gathered as soft shapes in the firelight, a lit unit doorway on one side and tents and an overland vehicle on the other.",
+    width: 1600,
+    height: 900,
+  },
+
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------
   hosts: {
     src: cldImage("hosts"),
