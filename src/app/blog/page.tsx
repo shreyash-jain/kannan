@@ -218,9 +218,9 @@ const posts: Post[] = [
     image: img.stayNearKrugerArrival.src,
     imageAlt: img.stayNearKrugerArrival.alt,
     datePublished: "2026-07-27",
-    readingMinutes: 11,
+    readingMinutes: 7,
     excerpt:
-      "In-park rest camps or a base just outside the gate? The honest trade-off, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
+      "In-park rest camps, or a room just outside the gate? What each one is really like, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
   },
 ];
 
