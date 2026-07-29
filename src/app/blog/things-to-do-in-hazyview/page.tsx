@@ -38,10 +38,17 @@ import {
 // the detailed version, so the hub keeps the authority. Do not let this page
 // grow into a second full activities guide.
 //
-// KEEP IT TIGHT: this was trimmed once already for repetition. The Kanaan
-// pitch belongs in exactly three places — the StatGrid section near the top,
-// item 7, and the ClosingBlock. Do not re-add a fourth "why stay with us"
-// section, and do not restate the distances outside the StatGrid and the FAQ.
+// KEEP IT TIGHT: this was trimmed twice for repetition. The Kanaan pitch
+// belongs in exactly three places — the StatGrid section near the top, item 7,
+// and the ClosingBlock. Do not re-add a fourth "why stay with us" section, and
+// do not restate the distances outside the StatGrid and the stay FAQ.
+//
+// FAQ IS CAPPED AT 4 (owner call). The four kept are the ones that each own a
+// distinct long-tail from the brief and are NOT already answered by the body:
+// best-things-to-do, besides-safari, for-families, where-to-stay. Dropped:
+// how-far (the StatGrid answers it — the figure now rides in the stay answer),
+// how-many-days, booking-ahead, and best-time-of-year (that keyword belongs to
+// /blog/when-to-visit-kruger-hazyview-month-by-month — do not compete with it).
 //
 // Link budget (per brief): 5 contextual INTERNAL links —
 //   /blog/kruger-from-hazyview · /blog/panorama-route-from-hazyview ·
@@ -66,28 +73,12 @@ const faqs = [
     a: "Rather a lot, which surprises most first-time visitors. The Panorama Route is a full day of viewpoints, waterfalls and canyon scenery about forty minutes up the escarpment, and Sabie's waterfall cluster makes a gentle half-day. Closer in there are canopy zip-lines, quad biking and river rafting for teenagers, wildlife sanctuaries for a slower morning, and the craft-and-restaurant villages at Perry's Bridge and Casterbridge.",
   },
   {
-    q: "How far is Hazyview from Kruger National Park?",
-    a: `The Phabeni Gate is about ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from our gate, which makes it the closest Kruger gate to Hazyview; Numbi and Paul Kruger are also within reach. That is close enough to leave in the dark and be through the boom as it opens — which matters, because the first two hours are the best game viewing of the day.`,
-  },
-  {
     q: "What are the best places to visit near Hazyview for families?",
     a: "The Graskop Gorge Lift is the family winner — a glass lift into a rainforest, with boardwalks and swing bridges on the gorge floor. Mac Mac Pools near Sabie are a safe, shallow swim, and Perry's Bridge Reptile Park is undercover for a rainy day. A self-drive Kruger morning works better with children than people expect, provided you go early and come home before the heat.",
   },
   {
-    q: "How many days do you need in Hazyview?",
-    a: "Five days lets you do all seven without rushing. Three gets you Kruger, the Panorama Route and one slow day, which is a perfectly good trip. Under three and you are choosing between the park and the escarpment rather than enjoying both — so pick one, do it properly, and come back for the other.",
-  },
-  {
     q: "Where should we stay in Hazyview?",
-    a: `Somewhere close to the Phabeni gate, with a kitchen and space to breathe. We are a family-run guest farm just outside town, from R${site.pricing.fromZAR} per person sharing per night, with self-catering lodge rooms, twin rooms, a backpacker dorm and shaded camping under a forty-year-old mango grove. Every attraction on this list is a day trip from the same bed — which is the whole argument for basing here rather than moving on every second night.`,
-  },
-  {
-    q: "Do you need to book Hazyview activities in advance?",
-    a: "Mostly no. The Panorama Route stops, the waterfalls and a Kruger self-drive you can simply turn up and do. Worth booking ahead: the guided sanctuary tours, the canopy zip-line, and rafting — which also depends on the river actually running. Tell us the night before and we will help you sort it.",
-  },
-  {
-    q: "What is the best time of year to visit Hazyview?",
-    a: "There is no bad month, only different kinds of good. The dry winter months from May to September give the best game viewing — thin bush, animals gathered at water — and the clearest escarpment views, but they are busier and need booking earlier. Green summer is lush, dramatic and much quieter, with waterfalls at full flow.",
+    a: `Somewhere close to the Phabeni gate, with a kitchen and space to breathe. We are a family-run guest farm just outside town, from R${site.pricing.fromZAR} per person sharing per night, with self-catering lodge rooms, twin rooms, a backpacker dorm and shaded camping under a forty-year-old mango grove. The Phabeni gate is ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes away, so every attraction on this list is a day trip from the same bed.`,
   },
 ];
 
