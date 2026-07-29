@@ -217,7 +217,7 @@ const posts: Post[] = [
     image: img.hazyviewThingsToDoHero.src,
     imageAlt: img.hazyviewThingsToDoHero.alt,
     datePublished: "2026-07-27",
-    readingMinutes: 9,
+    readingMinutes: 7,
     excerpt:
       "The seven we would actually send you to — Kruger, the Panorama Route, God's Window, Bourke's Luck Potholes, the Sabie waterfalls, the hills behind the farm, and one afternoon with nothing planned at all. The short first-timer's shortlist, every one of them a day trip from the same bed.",
   },
