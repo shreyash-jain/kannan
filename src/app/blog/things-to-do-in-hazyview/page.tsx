@@ -34,9 +34,14 @@ import {
 //
 // NOTE ON CANNIBALISATION: /blog/things-to-do-around-hazyview is the deep
 // ~11-minute hub for this topic. This post is deliberately the SHORT
-// first-timer's shortlist (7 picks, ~9 min) and links UP to that hub twice as
+// first-timer's shortlist (7 picks, ~7 min) and links UP to that hub twice as
 // the detailed version, so the hub keeps the authority. Do not let this page
 // grow into a second full activities guide.
+//
+// KEEP IT TIGHT: this was trimmed once already for repetition. The Kanaan
+// pitch belongs in exactly three places — the StatGrid section near the top,
+// item 7, and the ClosingBlock. Do not re-add a fourth "why stay with us"
+// section, and do not restate the distances outside the StatGrid and the FAQ.
 //
 // Link budget (per brief): 5 contextual INTERNAL links —
 //   /blog/kruger-from-hazyview · /blog/panorama-route-from-hazyview ·
@@ -54,35 +59,35 @@ const headline =
 const faqs = [
   {
     q: "What are the best things to do in Hazyview?",
-    a: "Seven stand out, and they fit comfortably into a week. A day in Kruger National Park through the Phabeni gate; the Panorama Route along the top of the escarpment; God's Window for the view everybody comes for; Bourke's Luck Potholes where two rivers have carved the rock into cylinders; the string of waterfalls around Sabie; hiking and mountain biking in the hills; and — genuinely — a slow afternoon on a farm doing nothing at all. All seven are day trips from one bed.",
+    a: "Seven stand out: a day in Kruger National Park through the Phabeni gate, the Panorama Route along the escarpment, God's Window, Bourke's Luck Potholes, the waterfalls around Sabie, hiking and mountain biking in the hills, and a slow afternoon on a farm doing nothing at all. All seven are day trips from a single base.",
   },
   {
     q: "What is there to do near Kruger National Park besides a safari?",
-    a: "Rather a lot, which surprises most first-time visitors. The Panorama Route is a full day of viewpoints, waterfalls and canyon scenery about forty minutes up the escarpment. Sabie's waterfall cluster makes a gentle half-day. There are canopy zip-lines, quad biking and river rafting for teenagers, wildlife sanctuaries for a slower morning, and craft-and-restaurant villages at Perry's Bridge and Casterbridge when nobody wants an alarm clock.",
+    a: "Rather a lot, which surprises most first-time visitors. The Panorama Route is a full day of viewpoints, waterfalls and canyon scenery about forty minutes up the escarpment, and Sabie's waterfall cluster makes a gentle half-day. Closer in there are canopy zip-lines, quad biking and river rafting for teenagers, wildlife sanctuaries for a slower morning, and the craft-and-restaurant villages at Perry's Bridge and Casterbridge.",
   },
   {
     q: "How far is Hazyview from Kruger National Park?",
-    a: `The Phabeni Gate is about ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from our gate by road, which makes it the closest Kruger gate to Hazyview. Numbi and Paul Kruger are also within easy reach. That is close enough to leave in the dark, be through the boom as it opens, and be back at the farm for a late breakfast — which matters, because the first two hours after opening are the best game viewing of the day.`,
+    a: `The Phabeni Gate is about ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from our gate, which makes it the closest Kruger gate to Hazyview; Numbi and Paul Kruger are also within reach. That is close enough to leave in the dark and be through the boom as it opens — which matters, because the first two hours are the best game viewing of the day.`,
   },
   {
     q: "What are the best places to visit near Hazyview for families?",
-    a: "The Graskop Gorge Lift is the family winner — a glass lift into a rainforest, with boardwalks and swing bridges on the gorge floor. Mac Mac Pools near Sabie are a safe, shallow swim. Perry's Bridge Reptile Park is undercover and saves a rainy day. And a self-drive Kruger morning works better with children than people expect, provided you go early and come home before the heat. Teenagers tend to want the zip-lines and the toboggan run.",
+    a: "The Graskop Gorge Lift is the family winner — a glass lift into a rainforest, with boardwalks and swing bridges on the gorge floor. Mac Mac Pools near Sabie are a safe, shallow swim, and Perry's Bridge Reptile Park is undercover for a rainy day. A self-drive Kruger morning works better with children than people expect, provided you go early and come home before the heat.",
   },
   {
     q: "How many days do you need in Hazyview?",
-    a: "Five days lets you do all seven of these without rushing. Three days gets you Kruger, the Panorama Route and one slow day, which is a perfectly good trip. Anything under three and you are choosing between the park and the escarpment rather than enjoying both — so if your time is short, pick one, do it properly, and come back for the other.",
+    a: "Five days lets you do all seven without rushing. Three gets you Kruger, the Panorama Route and one slow day, which is a perfectly good trip. Under three and you are choosing between the park and the escarpment rather than enjoying both — so pick one, do it properly, and come back for the other.",
   },
   {
     q: "Where should we stay in Hazyview?",
-    a: `Somewhere close to the Phabeni gate, with a kitchen and space to breathe. We are a family-run guest farm just outside town, from R${site.pricing.fromZAR} per person sharing per night, with self-catering lodge rooms, twin rooms, a backpacker dorm and shaded camping under a forty-year-old mango grove. Every attraction on this list is a day trip from the same bed, which is really the whole argument for basing here rather than moving on every second night.`,
+    a: `Somewhere close to the Phabeni gate, with a kitchen and space to breathe. We are a family-run guest farm just outside town, from R${site.pricing.fromZAR} per person sharing per night, with self-catering lodge rooms, twin rooms, a backpacker dorm and shaded camping under a forty-year-old mango grove. Every attraction on this list is a day trip from the same bed — which is the whole argument for basing here rather than moving on every second night.`,
   },
   {
     q: "Do you need to book Hazyview activities in advance?",
-    a: "Mostly no. The Panorama Route stops, the waterfalls and a Kruger self-drive you can simply turn up and do. The ones worth booking ahead are the guided sanctuary tours, the canopy zip-line, and rafting — which also depends on the river actually running. Tell us the night before and we will help you sort it; we know who to phone.",
+    a: "Mostly no. The Panorama Route stops, the waterfalls and a Kruger self-drive you can simply turn up and do. Worth booking ahead: the guided sanctuary tours, the canopy zip-line, and rafting — which also depends on the river actually running. Tell us the night before and we will help you sort it.",
   },
   {
     q: "What is the best time of year to visit Hazyview?",
-    a: "There is no bad month, only different kinds of good. The dry winter months from May to September give you the best game viewing — thin bush, animals gathered at water — and the clearest escarpment views. The green summer months are lush, dramatic and much quieter, with waterfalls at full flow and afternoon thunderstorms that clear as fast as they arrive. Winter is busier and needs booking earlier.",
+    a: "There is no bad month, only different kinds of good. The dry winter months from May to September give the best game viewing — thin bush, animals gathered at water — and the clearest escarpment views, but they are busier and need booking earlier. Green summer is lush, dramatic and much quieter, with waterfalls at full flow.",
   },
 ];
 
@@ -132,7 +137,7 @@ export default function ThingsToDoInHazyviewPage() {
           intro="Hazyview is known as the gateway to Kruger, but there is a great deal more to this corner of Mpumalanga than a game drive. Waterfalls, a thousand-metre cliff view, forest trails and a farm to come home to — here are the seven we would actually send you to, all of them an easy day from our gate."
           byline="Anneli & Matthew"
           datePublished={datePublished}
-          readingMinutes={9}
+          readingMinutes={7}
         />
 
         <Section>
@@ -151,16 +156,12 @@ export default function ThingsToDoInHazyviewPage() {
             <p>
               Guests arrive planning a safari and discover, somewhere around day
               two, that a rainforest gorge, a kilometre-deep cliff view and a
-              waterfall you can swim under are all sitting within an hour of the
-              same farm gate. Nobody gets through the lot in one visit. That is
-              rather the point &mdash; you come back.
-            </p>
-            <p>
-              So this is the short version: the seven we would put on a
-              first-timer&rsquo;s list, in the order we would do them. If you
-              want the whole menu &mdash; sanctuaries, zip-lines, quad biking,
-              rafting, the toboggan run and a five-day plan that fits them all
-              in &mdash; we have written that up properly in our{" "}
+              waterfall you can swim under are all within an hour of the same
+              farm gate. Nobody gets through the lot in one visit &mdash; which
+              is rather the point. So here are the seven we would put on a
+              first-timer&rsquo;s list, in the order we would do them. For the
+              whole menu, including sanctuaries, zip-lines, rafting and a
+              five-day plan, we have written that up properly in our{" "}
               <Link
                 href="/blog/things-to-do-around-hazyview"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -178,8 +179,7 @@ export default function ThingsToDoInHazyviewPage() {
             <p>
               The whole case for staying here is the driving times. Three
               completely different days out, in three different directions, all
-              from one bed &mdash; and a quiet, farm-style place to come back to
-              that is not a hotel corridor.
+              from one bed.
             </p>
           </div>
           <StatGrid
@@ -208,17 +208,11 @@ export default function ThingsToDoInHazyviewPage() {
             <H2 className="mb-4">1. Kruger National Park</H2>
             <p>
               No list of things to do near Kruger National Park is complete
-              without the park itself, and no one skips it. The{" "}
-              <strong>Phabeni gate</strong> is the closest to us, which is what
-              makes a genuine dawn start possible rather than theoretical
-              &mdash; and the first two or three hours after the gate opens are
-              the best game viewing of the entire day.
-            </p>
-            <p>
-              Most of our guests self-drive. An ordinary car copes perfectly
-              well, the roads are good, and you pay the daily conservation fee
-              at the boom &mdash; roughly R134 per person for South African
-              residents and R602 for international visitors in 2026, though{" "}
+              without the park itself. Most of our guests self-drive: an
+              ordinary car copes perfectly well, the roads are good, and you pay
+              the daily conservation fee at the boom &mdash; roughly R134 per
+              person for South African residents and R602 for international
+              visitors in 2026, though{" "}
               <a
                 href="https://www.sanparks.org/parks/kruger/rates-entry-fees"
                 target="_blank"
@@ -227,11 +221,10 @@ export default function ThingsToDoInHazyviewPage() {
               >
                 SANParks publishes the current rates here
               </a>{" "}
-              and they are reviewed every year. If it is your first safari, one
-              guided sunrise drive early in the week teaches you how to read the
-              bush, and you self-drive the rest with your eye in. Which gate,
-              what the drive really takes and the half-day loop that gets you
-              home for lunch are all in our{" "}
+              and reviews them annually. If it is your first safari, one guided
+              sunrise drive early in the week teaches you to read the bush, and
+              you self-drive the rest with your eye in. Which gate to use and
+              the half-day loop that gets you home for lunch are both in our{" "}
               <Link
                 href="/blog/kruger-from-hazyview"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -269,13 +262,9 @@ export default function ThingsToDoInHazyviewPage() {
               If Kruger is the headline, the Panorama Route is the surprise: a
               scenic drive along the top of the escarpment through some of the
               most dramatic landscape in South Africa, strung with viewpoints
-              and waterfalls that mostly cost pocket money at a gate. It is an
-              easy day trip from Hazyview and it pairs perfectly with a rest day
-              between safari mornings &mdash; different scenery, different
-              light, no 4:45am alarm.
-            </p>
-            <p>
-              It helps to have{" "}
+              and waterfalls that mostly cost pocket money at a gate. It pairs
+              perfectly with a rest day between safari mornings &mdash;
+              different scenery, no 4:45am alarm. It helps to have{" "}
               <a
                 href="https://www.sa-venues.com/maps/mpumalanga-panorama-route.htm"
                 target="_blank"
@@ -283,17 +272,15 @@ export default function ThingsToDoInHazyviewPage() {
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 a route map open beside you
-              </a>{" "}
-              &mdash; the stops come up quickly and the turnoffs are easy to
-              miss. Our{" "}
+              </a>
+              , because the turnoffs come up fast and are easy to miss. Our{" "}
               <Link
                 href="/blog/panorama-route-from-hazyview"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 Panorama Route guide
               </Link>{" "}
-              sets out both the half-day loop and the full-day version, and
-              which one to attempt depending on what time you actually leave.
+              sets out both the half-day and full-day loops.
             </p>
           </div>
         </Section>
@@ -303,20 +290,14 @@ export default function ThingsToDoInHazyviewPage() {
             <H2 className="mb-4">3. God&rsquo;s Window</H2>
             <p>
               One of the most photographed viewpoints in the country, and worth
-              the queue. The escarpment drops close to a kilometre straight into
-              the Lowveld, and on a clear winter morning you can see the ridges
-              fading blue into the haze for what feels like forever. Entry is
-              about R35 for South African residents. It is a quick stop &mdash;
-              twenty minutes, maybe forty if you walk up to the rainforest
-              platform &mdash; but it is a memorable one, and a must for
-              first-time visitors.
-            </p>
-            <p>
-              An honest local tip: <strong>Wonder View</strong>, a minute
-              further up the road, has effectively the same vista with no
-              stairs, no entrance fee and usually no crowd. If the God&rsquo;s
-              Window car park is heaving, drive on. For the wider set of
-              Mpumalanga attractions around it,{" "}
+              the queue: the escarpment drops close to a kilometre straight into
+              the Lowveld, and on a clear winter morning the ridges fade blue
+              into the haze for what feels like forever. Entry is about R35 for
+              South African residents, and twenty minutes covers it. One honest
+              local tip &mdash; <strong>Wonder View</strong>, a minute further
+              up the road, has effectively the same vista with no stairs, no fee
+              and usually no crowd, so if the car park is heaving, drive on. For
+              the wider set of Mpumalanga attractions around it,{" "}
               <a
                 href="https://www.mpumalanga.com/"
                 target="_blank"
@@ -355,16 +336,12 @@ export default function ThingsToDoInHazyviewPage() {
             <p>
               Where the Treur River meets the Blyde, centuries of swirling water
               and grit have drilled the rock into deep honey-coloured cylinders,
-              with turquoise pools sitting in the hollows and a footbridge
-              arcing over the gorge. It is an easy, photogenic stop &mdash;
-              boardwalks, no real walking to speak of &mdash; and it slots
-              naturally into the Panorama Route day. Around R75 for South
-              African residents, and it has historically been cash only, so
-              check at the gate rather than counting on a card machine.
-            </p>
-            <p>
-              You are at the southern end of the Blyde River Canyon here, one of
-              the largest green canyons on earth. If you have the day for it,{" "}
+              with turquoise pools in the hollows and a footbridge arcing over
+              the gorge. Boardwalks, no real walking, and it slots naturally
+              into the Panorama Route day &mdash; around R75 for South African
+              residents, historically cash only, so check at the gate rather
+              than counting on a card machine. You are at the southern end of
+              the Blyde River Canyon here; if you have a full day for it,{" "}
               <a
                 href="https://blydecanyon.co.za/boat-trips/"
                 target="_blank"
@@ -373,8 +350,7 @@ export default function ThingsToDoInHazyviewPage() {
               >
                 the boat cruises further north
               </a>{" "}
-              take you in under the Three Rondavels among the hippos and crocs
-              &mdash; a full day out rather than an add-on.
+              take you in under the Three Rondavels among the hippos and crocs.
             </p>
           </div>
         </Section>
@@ -390,20 +366,15 @@ export default function ThingsToDoInHazyviewPage() {
             <H2 className="mb-4">5. The Sabie waterfalls</H2>
             <p>
               In the other direction the land turns green and misty and fills
-              with water. Sabie is a forestry town ringed by waterfalls, several
-              of them a short detour off the main road, and it makes the
-              gentlest and prettiest day of the week &mdash; the one to do when
-              everybody needs a slower morning and some fresh air.
-            </p>
-            <p>
-              The cluster strings together easily: <strong>Mac Mac Falls</strong>{" "}
-              with its swimmable pools just up the road,{" "}
-              <strong>Lone Creek Falls</strong> (a short flat walk in, and the
-              most accessible of them),{" "}
-              <strong>Horseshoe</strong> and <strong>Sabie Falls</strong> right
-              by town. Most charge somewhere between R25 and R50 a head. Take a
-              picnic, take a towel, and do not plan anything for the late
-              afternoon.
+              with water. Sabie is a forestry town ringed by waterfalls, and it
+              makes the gentlest day of the week &mdash; the one for when
+              everybody needs a slower morning. The cluster strings together
+              easily: <strong>Mac Mac Falls</strong> with its swimmable pools
+              just up the road, <strong>Lone Creek Falls</strong> (a short flat
+              walk in, and the most accessible), <strong>Horseshoe</strong> and{" "}
+              <strong>Sabie Falls</strong> right by town. Most charge between
+              R25 and R50 a head. Take a picnic and a towel, and plan nothing
+              for the late afternoon.
             </p>
           </div>
         </Section>
@@ -432,18 +403,14 @@ export default function ThingsToDoInHazyviewPage() {
             <H2 className="mb-4">6. Hiking and mountain biking</H2>
             <p>
               For travellers who want to be out of the car, the hills around
-              Hazyview open up into trails with views over farmland, forest and
-              the escarpment beyond &mdash; a proper contrast to a day spent
-              sitting in a game-viewing vehicle looking through a window.
-            </p>
-            <p>
-              The best part is that you do not have to drive anywhere for it.
-              The trails start on the farm and run out into the wider property
-              and the hills behind it: a waterfall on our own land, rock shelves
-              to sit on, a hilltop lookout with a fire grate, and the whole
-              valley going gold at the end of the afternoon. It costs nothing
-              and it is the most underrated half of most people&rsquo;s week. If
-              you would rather walk in deep forest than open hill,{" "}
+              Hazyview open into trails with views over farmland, forest and the
+              escarpment &mdash; and you do not have to drive anywhere for it.
+              The trails start on the farm and run out into the wider property:
+              a waterfall on our own land, rock shelves to sit on, a hilltop
+              lookout, and the whole valley going gold at the end of the
+              afternoon. It costs nothing, and it is the most underrated half of
+              most people&rsquo;s week. If you would rather walk in deep forest
+              than open hill,{" "}
               <a
                 href="https://www.graskopgorgeliftcompany.co.za/rates.html"
                 target="_blank"
@@ -452,56 +419,32 @@ export default function ThingsToDoInHazyviewPage() {
               >
                 the Graskop Gorge Lift
               </a>{" "}
-              drops you by glass lift into an indigenous rainforest with
-              boardwalks and swing bridges along the gorge floor &mdash; the one
-              paid showpiece on the escarpment we think is worth every cent.
+              drops you into an indigenous rainforest by glass lift, with
+              boardwalks and swing bridges along the gorge floor.
             </p>
           </div>
         </Section>
 
-        {/* Inline image — the trails and lookout above the farm */}
-        <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <figure>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-              <Image
-                src={img.hilltopViewpoint.src}
-                alt={img.hilltopViewpoint.alt}
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-xs text-muted">
-              The hilltop lookout on the trails above the farm &mdash; no car,
-              no fee, and the whole valley in front of you.
-            </figcaption>
-          </figure>
-        </div>
-
-        <Section>
+        <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">7. The farm-stay experience at Kanaan</H2>
             <p>
-              Sometimes the best thing to do is very little at all. We put this
-              seventh on the list deliberately, because almost every itinerary
-              we see is one day too full &mdash; and the afternoon people
-              actually describe when they get home is usually the one where
-              nothing was planned.
-            </p>
-            <p>
-              Open grounds, the mango grove, the farm animals, a pool, a braai
-              and the unhurried pace of a working farm make an afternoon here
-              one of the more memorable parts of a Hazyview stay, and children
-              in particular need no further entertainment than a lawn and
-              somewhere to run. The rooms, the camping and what a night actually
-              costs are all laid out on our{" "}
+              Almost every itinerary we see is one day too full. Open grounds,
+              the mango grove, the farm animals, a pool and a braai make an
+              unhurried afternoon here one of the more memorable parts of a
+              Hazyview stay &mdash; and children need no further entertainment
+              than a lawn to run on. There are four ways to stay, from R
+              {site.pricing.fromZAR} per person sharing: self-catering lodge
+              rooms, twin rooms, a wooden-house backpacker dorm and shaded
+              camping under forty-year-old mango trees. They are all laid out,
+              with rates, on our{" "}
               <Link
                 href="/stay"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 stay page
               </Link>
-              , from R{site.pricing.fromZAR} per person sharing.
+              .
             </p>
           </div>
         </Section>
@@ -529,24 +472,23 @@ export default function ThingsToDoInHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Activities for families and couples</H2>
             <p>
-              The same seven things suit very different travellers, and it is
-              mostly a question of how you pace them. Here is how we would shape
-              it depending on who is in the car.
+              The same seven things suit very different travellers. It is mostly
+              a question of how you pace them.
             </p>
           </div>
           <NumberedList
             items={[
               {
                 title: "With small children",
-                body: "Kruger early and home by eleven, before the heat and the boredom arrive together. Mac Mac Pools for a shallow swim, the Graskop Gorge Lift because a glass lift into a forest beats any museum, and long afternoons on the farm lawn. Two big outings a week is plenty; the rest should be unstructured.",
+                body: "Kruger early and home by eleven, before the heat and the boredom arrive together. Mac Mac Pools for a shallow swim, the Graskop Gorge Lift because a glass lift into a forest beats any museum, and long afternoons on the lawn. Two big outings a week is plenty.",
               },
               {
                 title: "With teenagers",
-                body: "This is where the Lowveld earns its keep. Pair a Kruger morning with the adrenaline side — the Graskop gorge swing, the canopy zip-lines over the Sabie valley, quad biking, or rafting when the river is running. Give them one day where the itinerary is entirely theirs.",
+                body: "Pair a Kruger morning with the adrenaline side — the Graskop gorge swing, the canopy zip-lines over the Sabie valley, quad biking, or rafting when the river is running. Give them one day where the itinerary is entirely theirs.",
               },
               {
                 title: "As a couple",
-                body: "The Panorama Route on a clear morning, a long lunch somewhere on the escarpment, and the waterfalls at the quiet end of the afternoon. Skip the queue at God's Window and go to Wonder View instead. Then a veranda, a braai and the valley going pink — that is the evening you came for.",
+                body: "The Panorama Route on a clear morning, a long lunch on the escarpment, and the waterfalls at the quiet end of the afternoon. Skip the queue at God's Window for Wonder View. Then a veranda, a braai, and the valley going pink.",
               },
               {
                 title: "With a mixed group",
@@ -556,9 +498,9 @@ export default function ThingsToDoInHazyviewPage() {
           />
           <div className="prose-kanaan mx-auto max-w-prose">
             <p>
-              If you are travelling with children specifically, we have gone
-              into far more detail &mdash; ages, drive times, what to pack and
-              what to drop &mdash; in our{" "}
+              Travelling with children specifically? We have gone into far more
+              detail &mdash; ages, drive times, what to pack and what to drop
+              &mdash; in our{" "}
               <Link
                 href="/blog/things-to-do-with-kids-hazyview-kruger"
                 className="font-medium text-ochre hover:text-ochre-deep"
@@ -566,29 +508,6 @@ export default function ThingsToDoInHazyviewPage() {
                 Hazyview and Kruger family guide
               </Link>
               .
-            </p>
-          </div>
-        </Section>
-
-        <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
-            <H2 className="mb-4">Why choose Kanaan for your Hazyview stay</H2>
-            <p>
-              With this many attractions inside an hour, where you sleep decides
-              how much of them you actually see. A base close to the Phabeni
-              gate is what turns &ldquo;we should do Kruger one day&rdquo; into
-              being through the boom at opening; a kitchen is what stops a week
-              of eating out; and a farm with room to breathe is what makes the
-              rest days as good as the big ones.
-            </p>
-            <p>
-              We are a family-run guest farm, not a resort, and we would rather
-              tell you honestly what suits you than sell you a package. Four
-              ways to stay &mdash; self-catering lodge rooms, twin rooms, a
-              wooden-house backpacker dorm and shaded camping under
-              forty-year-old mango trees &mdash; from R{site.pricing.fromZAR}{" "}
-              per person sharing, {site.distances.krugerGateMinutesMin}&ndash;
-              {site.distances.krugerGateMinutesMax} minutes from the gate.
             </p>
           </div>
         </Section>
@@ -627,9 +546,9 @@ export default function ThingsToDoInHazyviewPage() {
                 <>
                   Tell us who is coming and how long you have, and we will build
                   the week with you &mdash; which morning for Kruger, which day
-                  for the escarpment, what to book ahead, what to skip if the
-                  weather turns, and which of these your particular crew will
-                  genuinely love. We live here. You will get the honest version.
+                  for the escarpment, what to book ahead, and what to skip if
+                  the weather turns. We live here. You will get the honest
+                  version.
                 </>
               }
             />
