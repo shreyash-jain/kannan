@@ -220,6 +220,18 @@ const posts: Post[] = [
     readingMinutes: 7,
     excerpt:
       "The seven we would actually send you to — Kruger, the Panorama Route, God's Window, Bourke's Luck Potholes, the Sabie waterfalls, the hills behind the farm, and one afternoon with nothing planned at all. The short first-timer's shortlist, every one of them a day trip from the same bed.",
+    chapter: "Where to stay",
+    title:
+      "Accommodation near Kruger National Park: where to stay, and why Hazyview works",
+    category: "guide",
+    status: "live",
+    href: "/blog/accommodation-near-kruger-national-park",
+    image: img.stayNearKrugerArrival.src,
+    imageAlt: img.stayNearKrugerArrival.alt,
+    datePublished: "2026-07-27",
+    readingMinutes: 7,
+    excerpt:
+      "In-park rest camps, or a room just outside the gate? What each one is really like, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
   },
 ];
 
