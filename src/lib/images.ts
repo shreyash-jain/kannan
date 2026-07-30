@@ -607,6 +607,22 @@ export const img = {
     height: 900,
   },
 
+  // --- "7 best things to do in Hazyview" guide — REAL farm hero ------------
+  // The argument of this shortlist is "every one of these is reachable from one
+  // bed", so the hero is the view FROM the farm rather than a stock attraction
+  // shot — and it stays a REAL Kanaan photograph, the same honesty logic as the
+  // cost guide. The attractions get their own dedicated frames in the body.
+  // Source is 4:3; a centre 16:9 crop keeps the orchard valley and the
+  // escarpment running to the horizon.
+  hazyviewThingsToDoHero: {
+    src: cldImage(
+      "land-lowveld-view-real",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "The wide Lowveld view from above Kanaan Guest Farm outside Hazyview — rolling green bush, banana and macadamia orchards in the valley and hazy blue hills running to the horizon, with Kruger, the Panorama Route and the Sabie waterfalls all within an easy drive.",
+    width: 1920,
+    height: 1080,
+  },
   // --- "Where to stay near Kruger" guide (Blog 10) ------------------------
   // Five dedicated frames generated from docs/blog-10-image-prompts.md (July
   // 2026) and uploaded to the kanaan/ folder. Every source render is square
