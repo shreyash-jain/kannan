@@ -297,7 +297,7 @@ export function BlogHero({
   readingMinutes: number;
 }) {
   return (
-    <header className="relative h-[70vh] min-h-[560px] w-full overflow-hidden bg-forest-deep">
+    <header className="relative w-full overflow-hidden bg-forest-deep">
       <Image
         src={image}
         alt={alt}
@@ -307,7 +307,11 @@ export function BlogHero({
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/40 via-forest-deep/55 to-forest-deep/85" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-end pb-16 md:pb-20">
+      {/* The height lives on this in-flow layer, not on the header, so a long
+          H1 grows the hero instead of overflowing it — the eyebrow used to get
+          clipped off the top when the title ran to four lines. The image is
+          `fill`, so it stretches to whatever height this ends up being. */}
+      <div className="relative z-10 flex min-h-[max(70vh,560px)] flex-col items-center justify-end pt-24 pb-16 md:pb-20">
         <div className="mx-auto max-w-3xl px-5 text-center text-bone lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-bone/75">
             {eyebrow}
