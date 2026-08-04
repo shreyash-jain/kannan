@@ -1,39 +1,44 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
+import { livePosts } from "@/lib/posts";
+
+type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
+
+/** Fixed pages. Blog posts are NOT listed here — see below. */
+const staticRoutes: {
+  path: string;
+  priority: number;
+  changeFrequency: ChangeFrequency;
+}[] = [
+  { path: "", priority: 1.0, changeFrequency: "weekly" },
+  { path: "/our-story", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/stay", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/weddings", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/the-land", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
+  { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
-    { path: "", priority: 1.0, changeFrequency: "weekly" },
-    { path: "/our-story", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/stay", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/weddings", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/the-land", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
-    { path: "/blog/the-discovery", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/the-promise", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/africa", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/the-welcome", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/the-celebration", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/the-future", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/under-the-mango-trees", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/early-morning-kruger-safari-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/things-to-do-around-hazyview", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/things-to-do-in-hazyview", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/kruger-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/panorama-route-from-hazyview", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/when-to-visit-kruger-hazyview-month-by-month", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/things-to-do-with-kids-hazyview-kruger", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/blog/cost-of-a-kruger-lowveld-week-2026", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
-  ];
+  const now = new Date();
 
-  const lastModified = new Date();
-
-  return routes.map((r) => ({
+  const staticEntries = staticRoutes.map((r) => ({
     url: `${site.url}${r.path}`,
-    lastModified,
+    lastModified: now,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
+
+  // Every live post is derived from the shared registry, so publishing a post
+  // submits it to Google automatically. This list was previously typed out by
+  // hand and drifted out of sync with /blog — one post shipped unsubmitted.
+  const postEntries = livePosts.map((p) => ({
+    url: `${site.url}${p.href}`,
+    lastModified: p.datePublished ? new Date(p.datePublished) : now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...postEntries];
 }

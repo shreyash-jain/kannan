@@ -75,7 +75,12 @@ get preview URLs (`<branch>.kannan.pages.dev`).
 | --- | --- | --- |
 | `CLOUDINARY_URL` | `.env.local` (gitignored) | Includes the Cloudinary API secret. Used by `scripts/upload-to-cloudinary.py`. Treat as compromised — see Trap 1. |
 | Cloudflare Pages build-env secrets | Cloudflare dashboard | For the Pages project `kannan`. |
-| `G-ZPFRGBWMRS` | in code (`layout.tsx`) | Google Analytics measurement ID — public by nature, not a secret. |
+| `G-FXNZS6QH3L` | in code (`layout.tsx`) | Google Analytics measurement ID, Kanaan-owned property. Public by nature, not a secret. This is the property `/admin` reports on. |
+| `G-ZPFRGBWMRS` | in code (`layout.tsx`) | Legacy GA4 property on a former employee's Google account — no admin access. Still tagged so history stays unbroken if access is recovered; safe to delete once that is ruled out. |
+| `GOOGLE_ANALYTICS_PROPERTY_ID` | env / Cloudflare | Numeric GA4 **property** ID (not the stream ID, not the `G-` measurement ID). Read by `src/lib/ga.ts`. |
+| `GOOGLE_ANALYTICS_CLIENT_EMAIL` | env / Cloudflare | Service account with Viewer on the GA4 property. |
+| `GOOGLE_ANALYTICS_PRIVATE_KEY` | env / Cloudflare | Service-account key. Store encrypted; one line, `\n` sequences intact. |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | env / Cloudflare | Sign-in for `/admin`. |
 
 The Cloudinary **cloud name** (`dprx4pret`) is public delivery info and correctly lives in
 `src/lib/cloudinary.ts`.
