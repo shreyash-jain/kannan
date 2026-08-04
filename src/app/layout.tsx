@@ -5,10 +5,20 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { SiteChrome } from "@/components/SiteChrome";
 import { site } from "@/lib/site";
 import { organizationLd, websiteLd } from "@/lib/jsonld";
 
-const GA_MEASUREMENT_ID = "G-ZPFRGBWMRS";
+// The Kanaan-owned GA4 property. This is the one /admin reports on.
+// Measurement IDs are public by design — they ship to every visitor's browser.
+const GA_MEASUREMENT_ID = "G-FXNZS6QH3L";
+ 
+// The original property, which sits on a former employee's Google account that
+// nobody here can currently administer. It is kept firing so that IF access is
+// ever recovered, its history runs unbroken rather than stopping the day the
+// new property went live. Delete this constant and its gtag('config') call
+// below to cut that account off from the site's traffic.
+const GA_LEGACY_MEASUREMENT_ID = "G-ZPFRGBWMRS";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -104,6 +114,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_LEGACY_MEASUREMENT_ID}');
           `}
         </Script>
         <script
@@ -114,10 +125,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd()) }}
         />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFab />
+        <SiteChrome
+          header={<Header />}
+          footer={<Footer />}
+          fab={<WhatsAppFab />}
+        >
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );
