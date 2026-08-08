@@ -702,6 +702,102 @@ export const img = {
     width: 1600,
     height: 1200,
   },
+  familySafariHero: {
+    src: cldImage(
+      "family-kruger-selfdrive-hero",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "A family's own car stopped on a quiet southern Kruger road at golden hour, children leaning from the back windows as a breeding herd of elephants crosses ahead.",
+    width: 1920,
+    height: 1080,
+  },
+  hazyviewFoodHero: {
+    src: cldImage(
+      "hazyview-evening",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A warm Lowveld evening near Hazyview — string lights strung between old trees over a gathering place, the unhurried end of a day in the bush.",
+    width: 1920,
+    height: 1080,
+  },
+  kidsCarSafariKit: {
+    src: cldImage(
+      "kids-car-safari-kit",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "The back seat of a family car on a game drive — a half-ticked animal spotting checklist, small binoculars, rusks, a soft toy giraffe and a folded park map, with golden bushveld sliding past the window.",
+    width: 1600,
+    height: 900,
+  },
+  krugerBigFiveLion: {
+    src: cldImage(
+      "kruger-big-five-lion",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A big male lion with a full dark mane lying in long golden Kruger grass in low early light, head up and rim-lit by the sun behind him.",
+    width: 1600,
+    height: 900,
+  },
+  krugerGuideHero: {
+    src: cldImage(
+      "kruger-ultimate-guide-hero",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "The wide southern Kruger bushveld from high ground — elephants, zebra, impala and a giraffe gathered at a waterhole, with layer after layer of bush running back to a hazy escarpment.",
+    width: 1920,
+    height: 1080,
+  },
+  krugerMorningWalk: {
+    src: cldImage(
+      "kruger-picnic-coffee", // TODO: swap to "kruger-guided-morning-walk"
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A guided walking safari in Kruger at first light — a small line of walkers following an armed guide single-file through dewy golden grass.",
+    width: 1600,
+    height: 900,
+  },
+  krugerPicnicSiteFamily: {
+    src: cldImage(
+      "kruger-picnic-site-family",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A designated Kruger picnic site in dappled mid-morning shade — a kettle and cooler box on a wooden table, children running off an hour of sitting still on the grass beyond.",
+    width: 1600,
+    height: 900,
+  },
+  krugerSelfDriveRoad: {
+    src: cldImage(
+      "kruger-selfdrive-road",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "An ordinary dusty hatchback pulled over on the gravel verge of a quiet Kruger tar road, two giraffes browsing in the bush alongside and the road curving away to a hazy blue horizon.",
+    width: 1600,
+    height: 900,
+  },
+  krugerSunsetDrive: {
+    src: cldImage("impala-lambing-summer"), // TODO: swap to "kruger-sunset-open-vehicle"
+    alt: "An open-sided Kruger safari vehicle on a bush road at golden hour, guests seated high under a blazing orange Lowveld sky.",
+    width: 1600,
+    height: 1067,
+  },
+  panoramaFamilyViewpoint: {
+    src: cldImage(
+      "panorama-family-viewpoint",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A family of four seen from behind at a railing on a short paved Panorama Route viewpoint, the forested gorge and blue escarpment ridges falling away in clear winter light.",
+    width: 1600,
+    height: 900,
+  },
+  sabieWaterfallFamilyWalk: {
+    src: cldImage(
+      "sabie-waterfall-family-walk",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "Two adults and two children on a timber boardwalk through dripping green rainforest near Sabie, walking toward a waterfall that drops into a dark pool between mossy rocks and tree ferns.",
+    width: 1600,
+    height: 900,
+  },
 } as const;
 
 // ---------------------------------------------------------------------
@@ -763,6 +859,46 @@ export const wedding = {
   morningAfter: {
     src: cldImage("wedding-morning-after"),
     alt: "A long Sunday-morning breakfast table on Kanaan's wedding lawn, under the dappled shade of mango trees, set with South African breakfast plates and the Lowveld escarpment in the distance.",
+    width: 1600,
+    height: 900,
+  },
+  firstDanceNight: {
+    src: cldImage(
+      "wedding-first-dance-night",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "An evening wedding celebration at Kanaan — a couple dancing in soft silhouette under warm Edison-bulb string lights, the mango grove dark behind them and stars scattered overhead.",
+    width: 1600,
+    height: 900,
+  },
+  krugerHero: {
+    src: cldImage(
+      "wedding-kruger-hero",
+      // Source render is square (1:1). Generative-fill extends it outward to a
+      // true 16:9 hero instead of centre-cropping the arch and the valley away
+      // — the same treatment as underMangoTreesHero / krugerDawnDriveHero.
+      // Swap to c_fill only if a native 16:9 source is ever generated.
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1920",
+    ),
+    alt: "A wedding ceremony arch on the viewpoint at Kanaan Guest Farm near Hazyview, draped in greenery and soft white fabric, with the green Lowveld valley and the blue Drakensberg escarpment falling away behind in golden-hour light.",
+    width: 1920,
+    height: 1080,
+  },
+  marqueeLawn: {
+    src: cldImage(
+      "wedding-marquee-lawn",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "An open-sided marquee pitched on the wedding lawn at Kanaan at dusk — a long table set with candles and proteas, fairy lights strung through the mango branches overhead, and the Lowveld valley and hills fading into a pink evening sky.",
+    width: 1600,
+    height: 900,
+  },
+  sundayBreakfast: {
+    src: cldImage(
+      "wedding-sunday-breakfast",
+      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
+    ),
+    alt: "A long Sunday-morning breakfast table on the wedding lawn at Kanaan, in the dappled shade of the forty-year-old mango trees — coffee, fresh bread and the last of the cake, with the Lowveld valley beyond.",
     width: 1600,
     height: 900,
   },

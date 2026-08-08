@@ -234,6 +234,62 @@ export const posts: Post[] = [
     excerpt:
       "In-park rest camps, or a room just outside the gate? What each one is really like, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
   },
+  {
+    chapter: "Weddings",
+    title:
+      "Wedding venues near Kruger: getting married at Kanaan in Hazyview",
+    category: "guide",
+    status: "live",
+    href: "/blog/wedding-venues-near-kruger-hazyview",
+    image: wedding.krugerHero.src,
+    imageAlt: wedding.krugerHero.alt,
+    datePublished: "2026-07-16",
+    readingMinutes: 8,
+    excerpt:
+      "An honest guide to a Lowveld wedding venue near Kruger National Park. What makes a farm wedding at Kanaan in Hazyview different — guest capacity from intimate to 150, where everyone sleeps, catering, the legal bit, the best time of year, and how to start planning. From R250 per person sharing, 30–45 minutes from the Kruger gate.",
+  },
+  {
+    chapter: "Food & Drink",
+    title:
+      "Where to eat around Hazyview — an honest food guide",
+    category: "guide",
+    status: "live",
+    href: "/blog/where-to-eat-around-hazyview",
+    image: img.hazyviewFoodHero.src,
+    imageAlt: img.hazyviewFoodHero.alt,
+    datePublished: "2026-07-16",
+    readingMinutes: 8,
+    excerpt:
+      "An honest, price-graded guide to eating around Hazyview near Kruger: the Perry's Bridge cluster (Kuka Café, Pioneer's Butcher & Grill, Topolino's), Red Litchi Farm Café, fine dining at Summerfields, the familiar mall chains — and how to eat brilliantly on the farm itself, from a braai under the mango trees to our on-request meals.",
+  },
+  {
+    chapter: "Family Stays",
+    title:
+      "Family accommodation near Kruger National Park: a farm stay that works with kids",
+    category: "guide",
+    status: "live",
+    href: "/blog/family-accommodation-near-kruger-national-park",
+    image: img.familySafariHero.src,
+    imageAlt: img.familySafariHero.alt,
+    datePublished: "2026-07-27",
+    readingMinutes: 8,
+    excerpt:
+      "Planning a family safari near Kruger National Park? An honest guide to whether Kruger is good for kids, why a farm stay beats a hotel room, and the self-catering family accommodation at Kanaan Guest Farm in Hazyview — 30–45 minutes from the gates, from R250 per person sharing.",
+  },
+  {
+    chapter: "Kruger Guide",
+    title:
+      "The ultimate Kruger National Park travel guide: Big 5, safari tips & where to stay",
+    category: "guide",
+    status: "live",
+    href: "/blog/ultimate-kruger-national-park-travel-guide",
+    image: img.krugerGuideHero.src,
+    imageAlt: img.krugerGuideHero.alt,
+    datePublished: "2026-07-27",
+    readingMinutes: 8,
+    excerpt:
+      "A complete Kruger National Park travel guide — what to expect from a Big 5 safari, how many days to spend, self-drive vs guided safari, Kruger's own sunrise and sunset drives (and why you have to book them at the gate), what to pack, and where to stay near Hazyview from R250 per person sharing.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
