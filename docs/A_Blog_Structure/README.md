@@ -7,12 +7,17 @@ files in this repo.
 
 **Read in this order:**
 1. `README.md` (this file) — the 60-second picture, the rules, where things live.
-2. `BLOG_PLAYBOOK.md` — the blog structure: how to add or edit a blog post correctly.
+2. `CLIENT.md` — who the client is, who reads them, Anneli's voice, and every standing
+   instruction they have given. Living file: add to it after every round of feedback.
+3. `BLOG_PLAYBOOK.md` — the blog structure: how to add or edit a blog post correctly.
    This is the main day-to-day task and the reason this folder is named *A_Blog_Structure*.
-3. `ARCHITECTURE.md` — how the whole site works, the verified commands, and the traps.
-4. `STATUS.md` — the living ledger: where we are right now and what to do next.
+4. `ARCHITECTURE.md` — how the whole site works, the verified commands, and the traps.
+5. `STATUS.md` — the living ledger: where we are right now and what to do next.
 
-> **These four files win.** When they conflict with memory, an old README, a comment,
+The day-to-day workflow is the **`/blog`** command (`.claude/commands/blog.md`). It is
+identical in every client repo; everything client-specific lives in this folder.
+
+> **These five files win.** When they conflict with memory, an old README, a comment,
 > or chat history, believe these — they were derived from the repo and verified on the
 > date at the bottom of each file. If you find them wrong, fix them (don't work around
 > them) and update the date.
