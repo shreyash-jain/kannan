@@ -220,28 +220,28 @@ export default function HomePage() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <AccommodationCard
-            href="/stay#lodge"
+            href="/stay/lodge"
             name="Self-catering lodge rooms"
             summary="Comfortable, free-standing units with their own bathrooms and kitchenettes — your private base for unforgettable Kruger adventures."
             image={img.lodgeRoom}
             meta="Lodge"
           />
           <AccommodationCard
-            href="/stay#twin"
+            href="/stay/twin-room"
             name="Simple twin rooms"
             summary="Two single beds and an en-suite — fairly priced, comfortable, and welcoming, for travellers who want somewhere lovely to rest."
             image={img.twinRoom}
             meta="Twin"
           />
           <AccommodationCard
-            href="/stay#backpackers"
+            href="/stay/wooden-house"
             name="Backpacker dorm"
             summary={`An ${site.capacity.backpackersBeds}-bed dorm with a shared kitchen and a relaxed communal lounge — perfect for hikers, overlanders and adventurers exploring at their own pace.`}
             image={img.backpackers}
             meta={`Hostel · ${site.capacity.backpackersBeds} beds`}
           />
           <AccommodationCard
-            href="/stay#camping"
+            href="/stay/camping"
             name="Camping under mango trees"
             summary={`${site.capacity.campsitePitches} peaceful pitches in the shade of forty-year-old mango trees, with power and water at every one — for tents, rooftop campers and overlanders alike.`}
             image={img.campingMango}

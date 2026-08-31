@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { nav, site } from "@/lib/site";
+import { rooms, spaces, roomPhotos } from "@/data/rooms";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -28,17 +29,43 @@ export function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-7 text-sm font-medium text-ink/80">
-            {nav.slice(1).map((n) => (
-              <li key={n.href}>
-                <Link
-                  href={n.href}
-                  className="transition-colors hover:text-ochre"
-                >
-                  {n.label}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex items-center gap-5 text-sm font-medium text-ink/80 xl:gap-7">
+            {nav.slice(1).map((n) =>
+              n.href === "/stay" ? (
+                <li key={n.href} className="group relative">
+                  <Link
+                    href={n.href}
+                    className="inline-flex items-center gap-1 transition-colors hover:text-ochre"
+                  >
+                    {n.label}
+                    <svg
+                      aria-hidden
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mt-0.5 transition-transform group-hover:rotate-180"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </Link>
+                  <RoomsMenu />
+                </li>
+              ) : (
+                <li key={n.href}>
+                  <Link
+                    href={n.href}
+                    className="transition-colors hover:text-ochre"
+                  >
+                    {n.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
 
@@ -96,6 +123,24 @@ export function Header() {
                 >
                   {n.label}
                 </Link>
+                {n.href === "/stay" && (
+                  <ul className="mb-1 ml-3 flex flex-col border-l border-black/10 pl-4">
+                    {[...rooms, ...spaces].map((room) => (
+                      <li key={room.slug}>
+                        <Link
+                          href={`/stay/${room.slug}`}
+                          onClick={() => setOpen(false)}
+                          className="flex items-baseline justify-between gap-3 py-2 text-sm text-ink/75 hover:text-ochre"
+                        >
+                          <span>{room.name}</span>
+                          <span className="flex-none text-xs text-muted">
+                            {room.occupancy}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
             <li className="pt-2">
@@ -112,5 +157,60 @@ export function Header() {
         </nav>
       )}
     </header>
+  );
+}
+
+/**
+ * The panel that drops from the "Rooms" tab. Clicking Rooms goes straight
+ * to the card catalogue; hovering it is a shortcut into one room. A plain
+ * list of names does not answer the question people arrive with, so every
+ * row carries a thumbnail, who fits, and how many photographs wait behind it.
+ */
+function RoomsMenu() {
+  const entries = [...rooms, ...spaces];
+
+  return (
+    <div className="invisible absolute left-1/2 top-full z-50 w-[640px] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="overflow-hidden rounded-2xl border border-black/8 bg-bone shadow-[0_16px_48px_-12px_rgba(31,26,23,0.28)]">
+        <div className="grid grid-cols-2 gap-1 p-3">
+          {entries.map((room) => (
+            <Link
+              key={room.slug}
+              href={`/stay/${room.slug}`}
+              className="group/row flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-sand"
+            >
+              <span className="relative h-14 w-16 flex-none overflow-hidden rounded-lg">
+                <Image
+                  src={room.hero.src}
+                  alt=""
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </span>
+              <span className="min-w-0">
+                <span className="block truncate font-display text-base leading-snug text-forest-deep">
+                  {room.name}
+                </span>
+                <span className="mt-0.5 block text-xs text-muted">
+                  {room.occupancy} · {roomPhotos(room).length} photos
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="flex items-center justify-between gap-4 border-t border-black/8 bg-sand/60 px-5 py-3">
+          <span className="text-xs text-muted">
+            Every room photographed, from R{site.pricing.fromZAR} per person sharing.
+          </span>
+          <Link
+            href="/stay"
+            className="flex-none text-sm font-medium text-ochre hover:text-ochre-deep"
+          >
+            See every room →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

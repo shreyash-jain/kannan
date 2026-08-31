@@ -354,6 +354,84 @@ export const img = {
     height: 1600,
   },
 
+  // ---- TWIN ROOM (professional shoot, August 2026) --------------------
+  twinRoomPair: {
+    src: cldImage("twin-room-pair"),
+    alt: "A twin room at Kanaan — two single beds with scalloped wooden headboards, striped grey-and-white bedding and a folded white towel on each, a blue upholstered bench at the foot of one bed and a framed fish-eagle print on the wall.",
+    width: 1067,
+    height: 1600,
+  },
+  twinRoomBeds: {
+    src: cldImage("twin-room-beds"),
+    alt: "The two single beds of a Kanaan twin room seen straight on — scalloped wooden headboards, crisp striped linen, tiled floor and soft morning light across the room.",
+    width: 1067,
+    height: 1600,
+  },
+  twinRoomHeadboard: {
+    src: cldImage("twin-room-headboard"),
+    alt: "A closer view of one bed in a Kanaan twin room — the scalloped wooden headboard, a plump white pillow and a folded towel laid at the foot.",
+    width: 1067,
+    height: 1600,
+  },
+
+  // ---- THE WOODEN HOUSE — backpacker dorm (professional shoot, Aug 2026)
+  woodenHouseExterior: {
+    src: cldImage("wooden-house-exterior"),
+    alt: "The wooden house at Kanaan seen from outside — a timber-clad cabin under dappled tree shade, with a paved terrace and garden chairs at the front.",
+    width: 1600,
+    height: 1067,
+  },
+  woodenHouseBunkRoom: {
+    src: cldImage("wooden-house-bunk-room"),
+    alt: "A room in the wooden house at Kanaan — a sturdy wooden bunk with a ladder up to the top mattress, a single bed alongside, pine-clad walls, a wall fan and blue curtains at the window.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseBunkLadder: {
+    src: cldImage("wooden-house-bunk-ladder"),
+    alt: "The wooden bunk in the Kanaan wooden house, closer in — a broad timber ladder to the upper mattress, warm pine walls and slatted wooden floors.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseSingleBed: {
+    src: cldImage("wooden-house-single-bed"),
+    alt: "A single bed beneath a window in the wooden house at Kanaan — blue curtains drawn back, pine-clad walls and afternoon light falling across the pillow.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseKitchen: {
+    src: cldImage("wooden-house-kitchen"),
+    alt: "The shared self-catering kitchen in the wooden house at Kanaan — pine cabinets, shelves of storage jars, a toaster oven and microwave on the counter, and a round dining table with red and wooden chairs.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseDining: {
+    src: cldImage("wooden-house-dining"),
+    alt: "The round dining table in the wooden house at Kanaan, with red and wooden chairs pulled up to it and the kitchen counter running along the wall behind.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseLoungeCorner: {
+    src: cldImage("wooden-house-lounge-corner"),
+    alt: "A corner of the common room in the Kanaan wooden house — a tall fridge, a red leather couch, a guitar propped against the wall and a pine door standing open onto the stonework beyond.",
+    width: 1067,
+    height: 1600,
+  },
+
+  // ---- ENTERTAINMENT ROOM (professional shoot, August 2026) -----------
+  entertainmentPoolTable: {
+    src: cldImage("entertainment-pool-table"),
+    alt: "The pool table in the entertainment room at Kanaan — blue baize, cue and ball mid-game, with the foosball table and a wooden sideboard behind it.",
+    width: 1600,
+    height: 1067,
+  },
+  entertainmentRoomWide: {
+    src: cldImage("entertainment-room-wide"),
+    alt: "The entertainment room at Kanaan under its wooden-beamed ceiling — the pool table in the middle, foosball along the wall, a television and a fridge for the evening.",
+    width: 1067,
+    height: 1600,
+  },
+
   // ---- POOL ---------------------------------------------------------------
   pool: {
     src: cldImage("pool-real"),

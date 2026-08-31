@@ -132,3 +132,13 @@ export function whatsappLink(key: WhatsAppKey = "home"): string {
   const text = encodeURIComponent(whatsappMessages[key]);
   return `https://wa.me/${number}?text=${text}`;
 }
+
+// A WhatsApp link with a message we compose on the spot — used by /rooms so
+// each room asks about itself by name ("...about the Twin Rooms").
+export function whatsappAbout(subject: string): string {
+  const number = site.contact.whatsapp.replace(/\D/g, "");
+  const text = encodeURIComponent(
+    `Hi Anneli and Matthew, I'd love to enquire about ${subject} at Kanaan.`,
+  );
+  return `https://wa.me/${number}?text=${text}`;
+}

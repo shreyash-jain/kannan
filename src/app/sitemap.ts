@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { livePosts } from "@/lib/posts";
+import { roomPages } from "@/data/rooms";
 
 type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
@@ -40,5 +41,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...postEntries];
+  // Room pages come from the same registry the catalogue renders from, so a
+  // new room is submitted to Google the moment it is added.
+  const roomEntries = roomPages.map((room) => ({
+    url: `${site.url}/stay/${room.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...roomEntries, ...postEntries];
 }
