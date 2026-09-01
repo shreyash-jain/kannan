@@ -33,8 +33,9 @@ export default function StayPage() {
               Every room on the farm, in photographs.
             </h1>
             <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-ink/80">
-              Photographed exactly as they are, from R{site.pricing.fromZAR} per
-              person sharing.
+              Photographed exactly as they are. Self-catering, with home-cooked
+              meals whenever you would like them — from R{site.pricing.fromZAR}{" "}
+              per person sharing.
             </p>
           </div>
           <SharePage

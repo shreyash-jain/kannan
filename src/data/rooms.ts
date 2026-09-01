@@ -46,6 +46,7 @@ export const rooms: Room[] = [
     body: [
       "Each room stands on its own, with a private en-suite bathroom and a kitchenette that has everything you need — a kettle, a two-plate hob, a fridge, plates and mugs. Wonderfully quiet and beautifully comfortable, perfect for unwinding after a long day exploring Kruger or the Lowveld.",
       "The bedding setup is different from one room to the next, so tell us who is coming and we will lovingly pick the right one for your family or group.",
+      "Self-catering simply means the kitchen is yours to use whenever you like — it does not mean you are on your own. Cook for yourselves, or ask us about our meal options and we will happily do the cooking.",
     ],
     facts: [
       "Private en-suite bathroom",
@@ -114,7 +115,7 @@ export const rooms: Room[] = [
     body: [
       `Pine-clad walls, slatted wooden floors and a soft cabin light through the curtained windows. ${site.capacity.backpackersBeds} beds in total, spread across a few small rooms — a mix of single beds and sturdy wooden bunks, dressed with fresh linen and a folded towel waiting on each mattress.`,
       "A shared bathroom, a communal kitchen and a relaxed lounge where you will usually find someone reading, making coffee or swapping safari stories. Wonderfully suited to hikers, overlanders and slow travellers moving through the Lowveld at their own pace.",
-      "Pick up groceries in Hazyview on your way in — the closest big supermarkets are just a short drive into town.",
+      "Pick up groceries in Hazyview on your way in — the closest big supermarkets are just a short drive into town — or ask us about our meal options and we will happily cook for you.",
     ],
     facts: [
       `${site.capacity.backpackersBeds} beds — singles + bunks`,
@@ -149,7 +150,10 @@ export const rooms: Room[] = [
       "Peaceful camping under forty-year-old mango trees, with power and water at every pitch.",
     body: [
       `${site.capacity.campsitePitches} beautifully shaded pitches beneath mango trees that have been standing for forty years, with power and water at every single one. Tents, rooftop campers, big overlanders — they all find a happy home here. Unpack your bags, put your feet up, and relax beneath the African sky as the evening sounds drift through the air.`,
-      `When the camping ground opens for a wedding, a school group or a family reunion, we can welcome up to ${site.capacity.campingPeople} happy guests.`,
+      "A timber ablution block sits a short walk from the pitches, with hot showers, a row of basins and private toilet cubicles, kept clean and ready for you. The whole farm is fenced with a motorised gate, so you can leave your tent standing and head into Kruger for the day without a second thought.",
+      `Evenings belong to the fire. Bring wood and something to braai, or ask us about our meal options and we will happily cook — a warm continental breakfast at R${site.meals.breakfast.pricePerPersonZAR} a person, or a proper South African dinner under the stars. The swimming pool and the walking and mountain-biking trails that start at our gate are yours too, whichever pitch you are on.`,
+      `It makes a lovely base for the park: the Kruger gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes away, so an early start has you through and looking for game before the day warms up.`,
+      `And when the camping ground opens for a wedding, a school group or a family reunion, we can welcome up to ${site.capacity.campingPeople} happy guests.`,
     ],
     facts: [
       `${site.capacity.campsitePitches} pitches, power + water`,
