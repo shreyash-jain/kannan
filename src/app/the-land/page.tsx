@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { EditorialSplit, ChipRow, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { CTA } from "@/components/CTA";
@@ -22,12 +21,6 @@ export const metadata: Metadata = {
 export default function TheLandPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "The Land", href: "/the-land" },
-        ]}
-      />
 
       {/* The distances are the whole point of this page, so they are
           answered in the hero rather than three scrolls down. */}

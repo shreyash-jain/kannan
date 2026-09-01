@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { EditorialSplit } from "@/components/Blocks";
 import { CTA } from "@/components/CTA";
@@ -23,12 +22,6 @@ export const metadata: Metadata = {
 export default function FacilitiesPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Facilities", href: "/facilities" },
-        ]}
-      />
 
       <Hero
         eyebrow="Facilities"

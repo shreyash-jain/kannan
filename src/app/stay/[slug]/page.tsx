@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Section, Eyebrow, H1, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoomCard } from "@/components/RoomCard";
 import { LightboxGallery } from "@/components/Lightbox";
 import { CTA } from "@/components/CTA";
@@ -67,14 +66,6 @@ export default async function RoomPage({
           }}
         />
       )}
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Stay", href: "/stay" },
-          { label: room.name, href: `/stay/${room.slug}` },
-        ]}
-      />
 
       {/* The room itself: one big photograph, and the facts beside it. */}
       <section className="border-b border-black/5 bg-sand">

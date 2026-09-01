@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/Hero";
 import { Section } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FilterGallery, type GalleryItem } from "@/components/FilterGallery";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
@@ -78,12 +77,6 @@ const items: GalleryItem[] = [
 export default function GalleryPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Gallery", href: "/gallery" },
-        ]}
-      />
       <PageHero
         eyebrow="Gallery"
         title="The whole farm, in photographs."

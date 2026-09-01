@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
@@ -23,12 +22,6 @@ export const metadata: Metadata = {
 export default function OurStoryPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Our Story", href: "/our-story" },
-        ]}
-      />
       <PageHero
         eyebrow="Our Story"
         title="A family farm near Kruger, lovingly brought back to life."

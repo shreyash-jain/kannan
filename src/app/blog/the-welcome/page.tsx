@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
@@ -44,14 +43,6 @@ export default function WelcomePostPage() {
             }),
           ),
         }}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          { label: "The Welcome", href: "/blog/the-welcome" },
-        ]}
       />
 
       <article>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { EditorialSplit, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { AccommodationCard } from "@/components/AccommodationCard";
@@ -23,12 +22,6 @@ export const metadata: Metadata = {
 export default function GroupFunctionsPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Group Functions", href: "/group-functions" },
-        ]}
-      />
 
       <Hero
         eyebrow="Group Functions & School Groups"

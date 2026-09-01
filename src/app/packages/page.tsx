@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageHero } from "@/components/Hero";
+import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { PackageConfigurator } from "@/components/PackageConfigurator";
 import { img } from "@/lib/images";
@@ -23,20 +22,17 @@ export const metadata: Metadata = {
 export default function PackagesPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Packages", href: "/packages" },
-        ]}
-      />
-      <PageHero
+      <Hero
         eyebrow="Packages"
         title="Arrive once, see the Lowveld properly."
-        lede={`Curated 2-, 3- and 5-night experiences from Kanaan — full-day Kruger safari included, with optional Panorama Route, Shangana cultural evening and KMIA airport transfers. You arrive, you unpack, we handle the rest.`}
+        lede="Unpack in one place and let the Lowveld come to you — Kruger one day, the escarpment the next, the farm in between."
+        image={img.poolReal}
+        primaryCta={{ href: "#build", label: "Build your stay" }}
+        secondaryCta={{ href: "/stay", label: "See where you will sleep" }}
       />
 
       {/* Configurator */}
-      <Section>
+      <Section id="build" className="scroll-mt-24">
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Build your package</Eyebrow>
           <H2 className="mt-3 mb-5">Pick the shape that fits your trip.</H2>
@@ -61,7 +57,7 @@ export default function PackagesPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <IncludedCard
               title="A comfortable bed"
-              body={`A twin or double room in one of our renovated lodge units — your private base for the duration of your stay, with linen, towels and free WiFi.`}
+              body="A lodge room sleeping two to seven, a twin room, a bed in the wooden house or a shaded pitch — your private base for the stay, with linen, towels and free WiFi."
             />
             <IncludedCard
               title="A full-day Kruger safari"
@@ -101,12 +97,10 @@ export default function PackagesPage() {
               </p>
             </div>
           </div>
-          {/* Add-on illustration — Kruger context (currently a stock-but-real
-              Kruger photo; Anneli will send a real safari shot to replace). */}
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
             <Image
-              src={img.kruger.src}
-              alt="A Kruger National Park scene — the kind of day a Kanaan package wraps around."
+              src={img.krugerEntranceGate.src}
+              alt={img.krugerEntranceGate.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -127,30 +121,26 @@ export default function PackagesPage() {
                 The Panorama / Kruger slots use Cloudinary placeholders
                 pending Anneli's own location shots. */}
             <CollageTile
-              img={img.lowveldWildflowers}
+              img={img.heroFarm}
               label="On the farm"
-              cropAlt="Wildflowers and rolling Lowveld hills on the wider Kanaan farm — a stop you can take any time you like."
+              cropAlt="Sunset through the forty-year-old mango grove at Kanaan."
             />
             <CollageTile
-              img={img.twinRoom}
+              img={img.lodgeRoom}
               label="Your room"
-              cropAlt="A twin room at Kanaan — soft linen, scalloped wooden headboards, the kind of room you come back to between days out."
+              cropAlt="A renovated lodge room at Kanaan — the room you come back to between days out."
             />
             <CollageTile
-              img={img.panorama}
+              img={img.bourkesLuck}
               label="Panorama Route"
-              cropAlt="A Panorama Route viewpoint — the kind of day the add-on takes you on."
+              cropAlt="Bourke's Luck Potholes on the Panorama Route."
             />
             <CollageTile
-              img={img.kruger}
+              img={img.krugerEntranceGate}
               label="Kruger"
-              cropAlt="A Kruger National Park scene — the full-day safari every package includes."
+              cropAlt="A Kruger National Park entrance gate — the full-day safari every package includes."
             />
           </div>
-          <p className="mt-5 text-[11px] text-muted">
-            Real safari and Panorama photographs from Anneli replace
-            these tiles when she sends them through.
-          </p>
         </div>
       </section>
 

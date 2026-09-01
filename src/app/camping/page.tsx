@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AmenityList } from "@/components/AmenityList";
 import { EditorialSplit, PhotoGrid, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { CTA } from "@/components/CTA";
@@ -37,12 +36,6 @@ export default function CampingPage() {
             }),
           ),
         }}
-      />
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Camping", href: "/camping" },
-        ]}
       />
 
       <Hero

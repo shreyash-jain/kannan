@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AmenityList } from "@/components/AmenityList";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 
@@ -17,12 +16,6 @@ export const metadata: Metadata = {
 export default function GroupsPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Groups", href: "/groups" },
-        ]}
-      />
       <PageHero
         eyebrow="Groups & retreats"
         title="A working farm built for groups that want room to think."

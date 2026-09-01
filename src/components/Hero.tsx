@@ -91,11 +91,13 @@ export function PageHero({
   lede?: string;
 }) {
   return (
-    <section className="border-b border-black/5 bg-sand">
-      <div className="mx-auto max-w-7xl px-5 pb-[clamp(1.5rem,4svh,3rem)] pt-[clamp(1.75rem,4.5svh,3.25rem)] lg:px-8">
+    // An inset card rather than a full-bleed band — the sharp-cornered
+    // strip running edge to edge read as a stray block of colour.
+    <section className="px-5 pt-5 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-3xl bg-sand px-6 pb-[clamp(1.25rem,3svh,2rem)] pt-[clamp(1.25rem,3.5svh,2.25rem)] sm:px-9">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <H1 className="fluid-h1 mt-3">{title}</H1>
-        {lede && <Lede>{lede}</Lede>}
+        <H1 className="page-h1 mt-2">{title}</H1>
+        {lede && <p className="page-lede mt-2 text-ink/85">{lede}</p>}
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
@@ -36,14 +35,6 @@ export default function PromisePostPage() {
           image: img.lodgeBathroom.src,
           datePublished,
         })}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          { label: "The Promise", href: "/blog/the-promise" },
-        ]}
       />
 
       <article>

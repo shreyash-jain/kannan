@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
 
@@ -16,12 +15,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Contact", href: "/contact" },
-        ]}
-      />
       <PageHero
         eyebrow="Reach us"
         title="Tell us your dates — your African holiday begins here."
