@@ -38,14 +38,15 @@ export const rooms: Room[] = [
     slug: "lodge",
     name: "The Lodge Rooms",
     eyebrow: "Lodge · Self-catering",
-    occupancy: "Sleeps 2–4",
+    // Anneli, 2026-09-01: lodge rooms sleep 2–7.
+    occupancy: "Sleeps 2–7",
     summary:
-      "Free-standing rooms with a private en-suite and a kitchenette of your own — wonderfully quiet, and beautifully comfortable after a long day in Kruger.",
+      "Free-standing rooms with a private en-suite and a kitchenette of your own, sleeping two to seven — perfect for families, and beautifully comfortable after a long day in Kruger.",
     lede:
       "Each room stands on its own, with a private en-suite bathroom and a kitchenette that has everything you need.",
     body: [
       "Each room stands on its own, with a private en-suite bathroom and a kitchenette that has everything you need — a kettle, a two-plate hob, a fridge, plates and mugs. Wonderfully quiet and beautifully comfortable, perfect for unwinding after a long day exploring Kruger or the Lowveld.",
-      "The bedding setup is different from one room to the next, so tell us who is coming and we will lovingly pick the right one for your family or group.",
+      "The rooms sleep anywhere from two to seven, which makes them perfect for families — everybody together under one roof, with a kitchen of your own and room to spread out. The bedding setup is different from one room to the next, so tell us who is coming and we will lovingly pick the right one for your family or group.",
       "Self-catering simply means the kitchen is yours to use whenever you like — it does not mean you are on your own. Cook for yourselves, or ask us about our meal options and we will happily do the cooking.",
     ],
     facts: [

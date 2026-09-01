@@ -76,7 +76,7 @@ export const site = {
     sleepingTotal: 50, // ~40–50 person sleeping capacity across rooms
     backpackersBeds: 8,
     campsitePitches: 10,
-    campingPeople: 120,
+    campingPeople: 80, // Anneli, 2026-09-01: "Camping up to 80" (was 120)
     wedding: {
       indoor: 60,
       withMarquee: 100,
