@@ -56,7 +56,6 @@ export const rooms: Room[] = [
     ],
     hero: img.lodgeRoom,
     gallery: [
-      img.lodgeDoubleDecorated,
       img.lodgeBedroomEnsuite,
       img.lodgeFamilyTwin,
       img.lodgeKitchenClassic,
@@ -75,11 +74,11 @@ export const rooms: Room[] = [
     eyebrow: "Twin Rooms · Two single beds",
     occupancy: "Sleeps 2",
     summary:
-      "Two comfortable single beds with scalloped wooden headboards, a private en-suite and a big window onto the trees. Beautifully simple, and fairly priced.",
+      "Two comfortable single beds under soft patterned blankets, a bathroom of your own and a big window onto the trees. Beautifully simple, and fairly priced.",
     lede:
       "Two comfortable single beds, a private en-suite, a wall fan and a small table for a slow morning coffee.",
     body: [
-      "Two comfortable single beds, a private en-suite, a wall fan and a small table for a slow morning coffee. Beautifully simple, with everything you need to feel at home.",
+      "Two comfortable single beds, a private en-suite, a wall fan and a writing desk under the window for a slow morning coffee. Beautifully simple, with everything you need to feel at home.",
       "A lovely choice for friends sharing, or for a parent and child on a Kruger adventure — somewhere genuinely affordable and welcoming to rest after a full day on safari.",
     ],
     facts: [
@@ -88,16 +87,26 @@ export const rooms: Room[] = [
       "Wall fan",
       "Linen and towels provided",
     ],
-    hero: img.twinRoomPair,
-    // Anneli, reviewing the preview: the suite, its red-check kitchen and its
-    // pine-door bathroom are a twin unit, not a lodge one. Moved across.
+    // The scalloped-headboard set — twinRoomPair, twinRoomBeds,
+    // twinRoomHeadboard and the older twinRoom — is NOT a twin room (Anneli,
+    // reviewing the preview). Those slots stay in images.ts until we are told
+    // which room they actually belong to.
+    hero: img.twinRoomTwoBeds,
+    // Ordered the way a guest walks a room: beds, then the bathroom, then
+    // the details, then the door they will be looking for on arrival. The
+    // suite, red-check kitchen and pine-door bathroom moved across from the
+    // lodge earlier on Anneli's say-so.
     gallery: [
-      img.twinRoomBeds,
-      img.twinRoomHeadboard,
-      img.twinRoom,
+      img.twinRoomSingleWindow,
+      img.twinRoomDouble,
       img.lodgeTwinSuite,
-      img.lodgeKitchen,
+      img.twinRoomShowerScreed,
+      img.twinRoomShowerTiled,
       img.lodgeBathroomPine,
+      img.twinRoomBasin,
+      img.twinRoomDesk,
+      img.lodgeKitchen,
+      img.twinRoomDoor20,
     ],
     ldType: "Hotel",
     ldDescription:
@@ -115,7 +124,7 @@ export const rooms: Room[] = [
     body: [
       `Pine-clad walls, slatted wooden floors and a soft cabin light through the curtained windows. ${site.capacity.backpackersBeds} beds in total, spread across a few small rooms — a mix of single beds and sturdy wooden bunks, dressed with fresh linen and a folded towel waiting on each mattress.`,
       "A shared bathroom, a communal kitchen and a relaxed lounge where you will usually find someone reading, making coffee or swapping safari stories. Wonderfully suited to hikers, overlanders and slow travellers moving through the Lowveld at their own pace.",
-      "Pick up groceries in Hazyview on your way in — the closest big supermarkets are just a short drive into town — or ask us about our meal options and we will happily cook for you.",
+      "Pick up groceries in Hazyview on your way in — the closest big supermarkets are just a short drive into town — or enquire about our meal options and we will happily cook for you.",
     ],
     facts: [
       `${site.capacity.backpackersBeds} beds — singles + bunks`,

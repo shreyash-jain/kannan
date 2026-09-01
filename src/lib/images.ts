@@ -374,6 +374,56 @@ export const img = {
     height: 1600,
   },
 
+  // ---- TWIN ROOM — the screed-bathroom unit, door 20 (Aug 2026 shoot) ----
+  twinRoomTwoBeds: {
+    src: cldImage("twin-room-two-beds"),
+    alt: "A twin room at Kanaan with two single beds side by side under leaf-patterned blankets in ochre, blue and grey, a folded towel on each, a wooden chest at the foot and a big curtained window onto the trees.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomSingleWindow: {
+    src: cldImage("twin-room-single-window"),
+    alt: "One of the single beds in a Kanaan twin room, tucked beneath a tall window with the bush beyond — leaf-patterned blanket, a folded towel and soft afternoon light.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomDouble: {
+    src: cldImage("twin-room-double"),
+    alt: "A double bed in a Kanaan twin room, made up with the same leaf-patterned blanket in ochre and blue, plump white pillows and folded towels laid across the foot.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomShowerScreed: {
+    src: cldImage("twin-room-shower-screed"),
+    alt: "The bathroom of a Kanaan twin room — a large walk-in shower finished in smooth grey screed, a white curtain drawn back and a wooden chest of drawers alongside.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomShowerTiled: {
+    src: cldImage("twin-room-shower-tiled"),
+    alt: "A white-tiled shower in a Kanaan twin room, simple and spotless, with a black mixer and rose against the square-tiled wall.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomBasin: {
+    src: cldImage("twin-room-basin"),
+    alt: "A pedestal basin and slim wall mirror in a Kanaan twin room, the mirror catching the reflection of a bright window.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomDesk: {
+    src: cldImage("twin-room-desk"),
+    alt: "A wooden writing desk and red-seated chair beneath the window of a Kanaan twin room, with the farm buildings and mango shade visible outside.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomDoor20: {
+    src: cldImage("twin-room-door-20"),
+    alt: "The door to twin room 20 at Kanaan — a warm timber door numbered in white, a green step, a shaded veranda and a tree just beyond.",
+    width: 1024,
+    height: 1536,
+  },
+
   // ---- THE WOODEN HOUSE — backpacker dorm (professional shoot, Aug 2026)
   woodenHouseExterior: {
     src: cldImage("wooden-house-exterior"),
