@@ -102,9 +102,11 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
+  { href: "/camping", label: "Camping" },
   { href: "/packages", label: "Packages" },
-  { href: "/weddings", label: "Wedding & Events" },
+  { href: "/group-functions", label: "Group Functions" },
   { href: "/the-land", label: "The Land" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Journal & Guides" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -116,8 +118,9 @@ export const whatsappMessages = {
   stay: "Hi Anneli and Matthew, I'd love to enquire about a stay at Kanaan.",
   packages:
     "Hi Anneli and Matthew, I would like to enquire about a multi-day package at Kanaan.",
-  weddings:
-    "Hi Anneli and Matthew, we're planning our wedding and would love to know more about Kanaan.",
+  groupFunctions:
+    "Hi Anneli and Matthew, I would like to enquire about bringing a group to Kanaan.",
+  camping: "Hi Anneli and Matthew, I'd love to enquire about camping at Kanaan.",
   ourStory: "Hi Anneli and Matthew, I just read your story — I'd love to know more about Kanaan.",
   theLand:
     "Hi Anneli and Matthew, I'd love to know more about visiting Kruger and the Lowveld from your farm.",

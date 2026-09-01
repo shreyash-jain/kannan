@@ -33,10 +33,15 @@ const ROOM_DEFS: Record<
     pricingNote: "R 350 / 1 guest · R 500 / 2 guests",
   },
   double: {
-    name: "Double room",
-    perNight: (pax) => (pax >= 2 ? 650 : 450),
-    maxPax: 2,
-    pricingNote: "R 450 / 1 guest · R 650 / 2 guests",
+    // Anneli, 2026-09-01: "We have rooms that accommodate 4 people" — the
+    // lodge rooms sleep 2 to 7. This was capped at 2, which sent every
+    // family of four to the backpackers dorm.
+    name: "Lodge room",
+    // TODO(Anneli): confirm the rate for 3+ guests. Until then this scales
+    // at the 2-guest per-person rate rather than under-quoting the room.
+    perNight: (pax) => (pax >= 3 ? 325 * pax : pax === 2 ? 650 : 450),
+    maxPax: 7,
+    pricingNote: "R 450 / 1 guest · R 650 / 2 guests · larger rooms quoted",
   },
   backpackers: {
     name: "Backpackers",
@@ -365,7 +370,7 @@ export function PackageConfigurator() {
                 A {roomDef.name.toLowerCase()} sleeps up to {roomDef.maxPax} guests.
               </p>
               <p className="mt-2 text-ink/80">
-                For {totalPax} guests, the Backpackers option fits the
+                For {totalPax} guests, the Backpackers option also fits the
                 whole party — or send us a message and we will arrange
                 multiple rooms with a group rate.
               </p>

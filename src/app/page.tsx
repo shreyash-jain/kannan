@@ -5,8 +5,7 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 import { faqLd } from "@/lib/jsonld";
 
@@ -75,13 +74,6 @@ export default function HomePage() {
       <Section>
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
-            <Video
-              video={video.mangoGrove}
-              className="absolute inset-0 h-full w-full object-cover"
-              schemaName="A walk through the mango grove at Kanaan"
-              schemaDescription="A short walk through the forty-year-old mango grove at Kanaan Guest Farm in Hazyview, where the camping ground sits under shade all summer."
-              schemaUploadDate="2026-05-22"
-            />
           </div>
           <div>
             <Eyebrow>Chapter 1 · The Discovery</Eyebrow>
@@ -351,7 +343,7 @@ export default function HomePage() {
               whole farm, sized to your event.
             </Lede>
             <Link
-              href="/weddings"
+              href="/group-functions"
               className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
             >
               Wedding &amp; Events <span aria-hidden>→</span>

@@ -26,6 +26,13 @@ export type Room = {
   body: string[];
   /** At-a-glance facts, shown on both the card and the page. */
   facts: string[];
+  /**
+   * Rate in ZAR, per person sharing per night. Omit to fall back to the
+   * site-wide from-price. Set priceToZAR as well where the rate varies
+   * between units of the same type.
+   */
+  priceFromZAR?: number;
+  priceToZAR?: number;
   hero: Img;
   gallery: Img[];
   /** Schema.org type — omitted for spaces that are not somewhere to sleep. */
@@ -38,8 +45,10 @@ export const rooms: Room[] = [
     slug: "lodge",
     name: "The Lodge Rooms",
     eyebrow: "Lodge · Self-catering",
-    // Anneli, 2026-09-01: lodge rooms sleep 2–7.
+    // Anneli, 2026-09-01: lodge rooms sleep 2–7, R300–R350.
     occupancy: "Sleeps 2–7",
+    priceFromZAR: 300,
+    priceToZAR: 350,
     summary:
       "Free-standing rooms with a private en-suite and a kitchenette of your own, sleeping two to seven — perfect for families, and beautifully comfortable after a long day in Kruger.",
     lede:
@@ -74,6 +83,7 @@ export const rooms: Room[] = [
     name: "The Twin Rooms",
     eyebrow: "Twin Rooms · Two single beds",
     occupancy: "Sleeps 2",
+    priceFromZAR: 250,
     summary:
       "Two comfortable single beds under soft patterned blankets, a bathroom of your own and a big window onto the trees. Beautifully simple, and fairly priced.",
     lede:
@@ -216,6 +226,23 @@ export const roomPages: Room[] = [...rooms, ...spaces];
 
 export function roomBySlug(slug: string): Room | undefined {
   return roomPages.find((r) => r.slug === slug);
+}
+
+/**
+ * What this room costs, per person sharing per night. Falls back to the
+ * site-wide from-price for rooms whose own rate we have not been given.
+ */
+export function roomRate(room: Room): { from: number; to?: number } {
+  return {
+    from: room.priceFromZAR ?? site.pricing.fromZAR,
+    to: room.priceToZAR,
+  };
+}
+
+/** The rate as it reads on the page: "R300–R350" or "R250". */
+export function roomRateLabel(room: Room): string {
+  const { from, to } = roomRate(room);
+  return to ? `R${from}–R${to}` : `R${from}`;
 }
 
 /** Every photograph of a room, hero first — used for the "N photos" badge. */

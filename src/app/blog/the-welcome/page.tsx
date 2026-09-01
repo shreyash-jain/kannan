@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -282,11 +281,6 @@ export default function WelcomePostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.tourCamping}
-                narrated
-                className="absolute inset-0 h-full w-full object-cover"
-              />
             </div>
             <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden rounded-2xl">
               <Image

@@ -5,8 +5,7 @@ import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -86,10 +85,6 @@ export default function OurStoryPage() {
       <Section className="pt-0!">
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand md:order-1">
-            <Video
-              video={video.lodgeRoomWalk}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
           </div>
           <div className="prose-kanaan max-w-prose md:order-2">
             <Eyebrow>Chapter 2 · The Promise</Eyebrow>
@@ -216,7 +211,7 @@ export default function OurStoryPage() {
             </p>
             <p>
               <Link
-                href="/weddings"
+                href="/group-functions"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 Wedding &amp; Events →
@@ -231,11 +226,6 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.tourMacGrove}
-                narrated
-                className="absolute inset-0 h-full w-full object-cover"
-              />
             </div>
             <div>
               <Eyebrow>The wider farm</Eyebrow>

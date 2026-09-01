@@ -10,6 +10,7 @@ export function Hero({
   image,
   primaryCta,
   secondaryCta,
+  children,
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -17,9 +18,11 @@ export function Hero({
   image: Img;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
+  /** Optional block under the buttons — used for the stat strips. */
+  children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="hero-fit relative isolate flex items-end overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image
           src={image.src}
@@ -41,13 +44,13 @@ export function Hero({
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 sm:pb-32 sm:pt-44 lg:px-8 lg:pt-52">
+      <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
           <span className="text-xs font-medium uppercase tracking-[0.22em] text-bone/90">
             {eyebrow}
           </span>
-          <H1 className="mt-4 !text-bone">{title}</H1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bone sm:text-xl">
+          <H1 className="fluid-h1 mt-4 !text-bone">{title}</H1>
+          <p className="fluid-lede mt-6 max-w-2xl text-bone">
             {lede}
           </p>
           {(primaryCta || secondaryCta) && (
@@ -70,6 +73,7 @@ export function Hero({
               )}
             </div>
           )}
+          {children}
         </div>
       </div>
     </section>
@@ -88,9 +92,9 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-black/5 bg-sand">
-      <div className="mx-auto max-w-7xl px-5 pb-14 pt-20 sm:pt-24 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 pb-[clamp(1.5rem,4svh,3rem)] pt-[clamp(1.75rem,4.5svh,3.25rem)] lg:px-8">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <H1 className="mt-3">{title}</H1>
+        <H1 className="fluid-h1 mt-3">{title}</H1>
         {lede && <Lede>{lede}</Lede>}
       </div>
     </section>

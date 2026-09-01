@@ -73,20 +73,6 @@ export const posts: Post[] = [
       "What a stay at Kanaan actually feels like — the dust road in, the room you arrive to, the morning at the breakfast table, the long afternoon under the mango trees and the honest line about the kind of traveller the farm was built for.",
   },
   {
-    n: 5,
-    chapter: "The Celebration",
-    title: "An intimate wedding weekend in the beautiful Lowveld",
-    category: "story",
-    status: "live",
-    href: "/blog/the-celebration",
-    image: wedding.bridesmaids.src,
-    imageAlt: wedding.bridesmaids.alt,
-    datePublished: "2026-05-31",
-    readingMinutes: 6,
-    excerpt:
-      "A multi-day wedding weekend at Kanaan in Hazyview — rehearsal nights around the fire, a relaxed ceremony under the African sky, a Sunday morning no one is in a hurry to leave. Up to 150 guests on the farm.",
-  },
-  {
     n: 6,
     chapter: "The Future",
     title: "What we are building next at Kanaan",

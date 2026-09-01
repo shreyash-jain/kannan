@@ -26,10 +26,10 @@ const nextConfig: NextConfig = {
     return [
       { source: "/lodge", destination: "/stay/lodge", permanent: true },
       { source: "/backpackers", destination: "/stay/wooden-house", permanent: true },
-      { source: "/camping", destination: "/stay/camping", permanent: true },
-      { source: "/amenities", destination: "/the-land", permanent: true },
+      { source: "/amenities", destination: "/facilities", permanent: true },
       { source: "/attractions", destination: "/the-land", permanent: true },
-      { source: "/groups", destination: "/weddings", permanent: true },
+      { source: "/weddings", destination: "/group-functions", permanent: true },
+      { source: "/groups", destination: "/group-functions", permanent: true },
     ];
   },
 };

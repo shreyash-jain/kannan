@@ -482,6 +482,28 @@ export const img = {
     height: 1600,
   },
 
+  // ---- HIGH-RESOLUTION REPLACEMENTS (Sept 2026) -------------------------
+  // Each of these replaced a slot that was being upscaled: the old sources
+  // were 750x401, 750x606 and a portrait crop forced into a wide hero.
+  poolReal: {
+    src: cldImage("pool-real"),
+    alt: "The swimming pool at Kanaan — clear blue water, a brick surround and palms and old trees standing over it.",
+    width: 1600,
+    height: 1067,
+  },
+  venueLawnWide: {
+    src: cldImage("venue-lawn-wide"),
+    alt: "The covered venue at Kanaan seen across the lawn — a long open-sided roof under mango trees, with the Lowveld opening out beyond it.",
+    width: 1600,
+    height: 1067,
+  },
+  campingAvenueWide: {
+    src: cldImage("camping-avenue-wide"),
+    alt: "The avenue of forty-year-old mango trees over the camping ground at Kanaan, a track running between them and power points at the pitches.",
+    width: 2400,
+    height: 1800,
+  },
+
   // ---- POOL ---------------------------------------------------------------
   pool: {
     src: cldImage("pool-real"),

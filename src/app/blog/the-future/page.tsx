@@ -167,7 +167,7 @@ export default function FuturePostPage() {
               </p>
               <p>
                 <Link
-                  href="/weddings"
+                  href="/group-functions"
                   className="font-medium text-ochre hover:text-ochre-deep"
                 >
                   See the venue →

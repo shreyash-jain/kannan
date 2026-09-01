@@ -3,9 +3,8 @@ import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
 import { JsonLd } from "@/components/JsonLd";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
 import { site, whatsappLink } from "@/lib/site";
@@ -206,10 +205,6 @@ export default function PromisePostPage() {
           {/* Lodge renovation walk-through — the work as it actually was */}
           <div className="mx-auto mt-10 max-w-3xl">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.lodgeWalk}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
             </div>
             <p className="mt-3 text-center text-xs text-muted">
               A walk past one of the lodge units mid-renovation, in the
@@ -308,10 +303,6 @@ export default function PromisePostPage() {
             {/* Pool tour — honest documentation of the pool area as it is */}
             <div className="mt-10">
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-bone">
-                <Video
-                  video={video.poolTour}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
               </div>
               <p className="mt-3 text-center text-xs text-muted">
                 The pool area — the next big project on the list after the

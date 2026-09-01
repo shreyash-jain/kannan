@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RoomCard } from "@/components/RoomCard";
 import { LightboxGallery } from "@/components/Lightbox";
 import { CTA } from "@/components/CTA";
-import { roomBySlug, roomPages, roomPhotos } from "@/data/rooms";
+import { roomBySlug, roomPages, roomPhotos, roomRateLabel } from "@/data/rooms";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappAbout } from "@/lib/site";
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   return {
     title: `${room.name} — ${room.occupancy} · Kanaan Guest Farm`,
-    description: `${room.summary} ${room.occupancy}, from R${site.pricing.fromZAR} per person sharing at Kanaan Guest Farm in Hazyview, ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport.`,
+    description: `${room.summary} ${room.occupancy}, ${roomRateLabel(room)} per person sharing at Kanaan Guest Farm in Hazyview, ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport.`,
     alternates: { canonical: `/stay/${room.slug}` },
     openGraph: {
       title: `${room.name} · Kanaan Guest Farm`,
@@ -124,9 +124,8 @@ export default async function RoomPage({
                 </Link>
                 {room.ldType && (
                   <span className="text-sm text-muted">
-                    From{" "}
                     <strong className="font-semibold text-forest-deep">
-                      R{site.pricing.fromZAR}
+                      {roomRateLabel(room)}
                     </strong>{" "}
                     {site.pricing.unit}
                   </span>

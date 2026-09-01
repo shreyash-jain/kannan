@@ -68,3 +68,36 @@ body {
   );
   height: 1px;
 }
+
+/* ---------------------------------------------------------------------
+   Fluid, height-aware sizing.
+
+   Tailwind's sm:/lg: are WIDTH-only breakpoints, so a 1440x900 laptop and
+   a 1728x1117 one both matched lg: and both got the hero's fixed pt-52 —
+   208px of top padding. The taller screen absorbed it; the shorter one
+   pushed its call-to-action buttons off the bottom of the viewport.
+
+   These scale continuously with the viewport instead, so layout responds
+   to the height of the screen as well as its width.
+   --------------------------------------------------------------------- */
+.fluid-h1 { font-size: clamp(2.1rem, 1.1rem + 2.6vw, 3.4rem); line-height: 1.05; }
+.fluid-h2 { font-size: clamp(1.6rem, 1.1rem + 1.5vw, 2.4rem); line-height: 1.15; }
+.fluid-lede { font-size: clamp(1rem, 0.94rem + 0.28vw, 1.15rem); line-height: 1.65; }
+.fluid-band { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
+
+/* A hero can never be taller than the screen it is on. */
+.hero-fit {
+  min-height: min(84svh, 660px);
+  padding-block: clamp(2.5rem, 7svh, 4.5rem);
+}
+.hero-fit-short { min-height: min(58svh, 440px); }
+
+/* Media capped by height. A 16:9 box in a 1280px column is 720px tall —
+   taller than the usable height of a 13" laptop, so it could never be
+   seen whole at any scroll position. */
+.media-band { height: clamp(220px, 40svh, 460px); }
+.tile-cap { max-height: clamp(170px, 26svh, 270px); }
+
+/* Prose measure — was running the full 1280px, about 130 characters. */
+.measure { max-width: 64ch; }
+.measure-tight { max-width: 54ch; }

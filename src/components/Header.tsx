@@ -28,8 +28,8 @@ export function Header() {
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-5 text-sm font-medium text-ink/80 xl:gap-7">
+        <nav aria-label="Primary" className="hidden min-w-0 lg:block">
+          <ul className="flex items-center gap-4 overflow-x-auto text-sm font-medium whitespace-nowrap text-ink/80 [scrollbar-width:none] xl:gap-6">
             {nav.slice(1).map((n) =>
               n.href === "/stay" ? (
                 <li key={n.href} className="group relative">
@@ -139,6 +139,15 @@ export function Header() {
                         </Link>
                       </li>
                     ))}
+                    <li>
+                      <Link
+                        href="/facilities"
+                        onClick={() => setOpen(false)}
+                        className="block py-2 text-sm text-ink/75 hover:text-ochre"
+                      >
+                        Facilities
+                      </Link>
+                    </li>
                   </ul>
                 )}
               </li>
@@ -200,9 +209,12 @@ function RoomsMenu() {
           ))}
         </div>
         <div className="flex items-center justify-between gap-4 border-t border-black/8 bg-sand/60 px-5 py-3">
-          <span className="text-xs text-muted">
-            Every room photographed, from R{site.pricing.fromZAR} per person sharing.
-          </span>
+          <Link
+            href="/facilities"
+            className="text-sm font-medium text-ink/75 hover:text-ochre"
+          >
+            Facilities — what is on the farm
+          </Link>
           <Link
             href="/stay"
             className="flex-none text-sm font-medium text-ochre hover:text-ochre-deep"

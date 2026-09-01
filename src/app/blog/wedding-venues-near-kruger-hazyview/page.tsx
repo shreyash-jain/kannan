@@ -600,7 +600,7 @@ export default function WeddingVenueGuidePage() {
               for the guests who want a safari morning. And when the packages are
               ready, they will live on our main{" "}
               <Link
-                href="/weddings"
+                href="/group-functions"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 weddings &amp; events page
@@ -705,7 +705,7 @@ export default function WeddingVenueGuidePage() {
           title="Let's start sketching your weekend."
           body="Send Anneli or Matthew your dates and rough guest count, and we'll share the current wedding options personally — the venue, the marquee, where everyone sleeps, and how to make the weekend yours. No forms, no auto-responses, just a real conversation about your celebration."
           buttonLabel="Start a wedding enquiry on WhatsApp"
-          pageKey="weddings"
+          pageKey="groupFunctions"
         />
 
         {/* Related */}
