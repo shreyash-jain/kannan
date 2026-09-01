@@ -61,9 +61,6 @@ export const rooms: Room[] = [
       img.lodgeKitchenClassic,
       img.lodgeBathroom,
       img.lodgeModestDouble,
-      img.lodgeKitchen,
-      img.lodgeTwinSuite,
-      img.lodgeBathroomPine,
       img.lodgeCourtyardPatio,
       img.veranda,
     ],
@@ -91,7 +88,16 @@ export const rooms: Room[] = [
       "Linen and towels provided",
     ],
     hero: img.twinRoomPair,
-    gallery: [img.twinRoomBeds, img.twinRoomHeadboard, img.twinRoom],
+    // Anneli, reviewing the preview: the suite, its red-check kitchen and its
+    // pine-door bathroom are a twin unit, not a lodge one. Moved across.
+    gallery: [
+      img.twinRoomBeds,
+      img.twinRoomHeadboard,
+      img.twinRoom,
+      img.lodgeTwinSuite,
+      img.lodgeKitchen,
+      img.lodgeBathroomPine,
+    ],
     ldType: "Hotel",
     ldDescription:
       "Simple twin rooms with two single beds and an en-suite bathroom, on a family-run farm in Hazyview, Mpumalanga.",
