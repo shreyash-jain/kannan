@@ -85,12 +85,23 @@ body {
 .fluid-lede { font-size: clamp(1rem, 0.94rem + 0.28vw, 1.15rem); line-height: 1.65; }
 .fluid-band { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
 
-/* A hero can never be taller than the screen it is on. */
+/* A hero can never be taller than the screen it is on.
+   The gaps INSIDE it scale too — fixed mt-4/mt-6/mt-9 margins were still
+   adding ~76px regardless of how little height the screen had. */
 .hero-fit {
-  min-height: min(84svh, 660px);
-  padding-block: clamp(2.5rem, 7svh, 4.5rem);
+  min-height: min(78svh, 620px);
+  padding-block: clamp(1.75rem, 5.5svh, 4rem);
 }
-.hero-fit-short { min-height: min(58svh, 440px); }
+.hero-fit-short { min-height: min(52svh, 400px); }
+.hero-gap-sm { margin-top: clamp(0.4rem, 1.4svh, 1rem); }
+.hero-gap-md { margin-top: clamp(0.7rem, 2.2svh, 1.5rem); }
+.hero-gap-lg { margin-top: clamp(0.9rem, 3svh, 2.25rem); }
+/* On a short screen the lede is the biggest space-eater — cap it so the
+   buttons always survive. Nothing is hidden on a normal-height screen. */
+.hero-lede { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;
+  -webkit-line-clamp: 5; }
+@media (max-height: 800px) { .hero-lede { -webkit-line-clamp: 4; } }
+@media (max-height: 700px) { .hero-lede { -webkit-line-clamp: 3; } }
 
 /* Media capped by height. A 16:9 box in a 1280px column is 720px tall —
    taller than the usable height of a 13" laptop, so it could never be

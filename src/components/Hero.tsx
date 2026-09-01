@@ -49,12 +49,12 @@ export function Hero({
           <span className="text-xs font-medium uppercase tracking-[0.22em] text-bone/90">
             {eyebrow}
           </span>
-          <H1 className="fluid-h1 mt-4 !text-bone">{title}</H1>
-          <p className="fluid-lede mt-6 max-w-2xl text-bone">
+          <H1 className="fluid-h1 hero-gap-sm !text-bone">{title}</H1>
+          <p className="fluid-lede hero-gap-md hero-lede max-w-2xl text-bone">
             {lede}
           </p>
           {(primaryCta || secondaryCta) && (
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="hero-gap-lg flex flex-wrap gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
