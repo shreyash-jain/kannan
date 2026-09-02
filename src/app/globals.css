@@ -26,6 +26,10 @@
 }
 
 html {
+  /* Reserve the scrollbar gutter permanently. Without it, the lightbox
+     locking body scroll removes the scrollbar, the page becomes ~15px
+     wider, and everything — fixed elements included — jumps right. */
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

@@ -51,11 +51,17 @@ export function LightboxGallery({
     };
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
+    const prevPadding = document.body.style.paddingRight;
+    // Safari only shipped scrollbar-gutter recently, so measure what the
+    // scrollbar was actually occupying and hold that width open.
+    const gutter = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    if (gutter > 0) document.body.style.paddingRight = `${gutter}px`;
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPadding;
     };
   }, [active]);
 
