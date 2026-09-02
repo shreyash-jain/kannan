@@ -52,19 +52,22 @@ export function FilterGallery({
       </p>
 
       <LightboxGallery>
-        <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        {/* Uniform squares, tight gaps. A 4:5 tile with a max-height cap was
+            fighting its own aspect ratio, so rows came out uneven — and the
+            source photos are a mix of portrait and landscape anyway. */}
+        <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {shown.map((i) => (
             <button
               key={i.photo.src}
               type="button"
-              className="tile-cap relative aspect-4/5 cursor-zoom-in overflow-hidden rounded-xl"
+              className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-lg bg-sand"
             >
               <Image
                 src={i.photo.src}
                 alt={i.photo.alt}
                 fill
-                sizes="(min-width: 1024px) 23vw, (min-width: 768px) 33vw, 50vw"
-                className="object-cover transition-transform duration-500 hover:scale-105"
+                sizes="(min-width: 1280px) 19vw, (min-width: 1024px) 24vw, (min-width: 640px) 32vw, 49vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
             </button>
           ))}
