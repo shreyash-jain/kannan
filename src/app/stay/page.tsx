@@ -9,12 +9,12 @@ import { rooms, spaces, diningCard, roomPhotos } from "@/data/rooms";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Stay — every room on the farm, in photographs · Kanaan",
+  title: "Stay — where you will sleep at Kanaan Guest Farm, Hazyview",
   description: `Every way to stay at Kanaan Guest Farm in Hazyview, photographed room by room: self-catering lodge rooms, twin rooms, an ${site.capacity.backpackersBeds}-bed wooden house and ${site.capacity.campsitePitches} shaded campsites under the mango trees. From R${site.pricing.fromZAR} per person sharing, ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport.`,
   alternates: { canonical: "/stay" },
   openGraph: {
-    title: "Stay at Kanaan Guest Farm — every room, in photographs",
-    description: `Every room on the farm, photographed as it actually is. From R${site.pricing.fromZAR} per person sharing.`,
+    title: "This is where you will stay · Kanaan Guest Farm",
+    description: `A variety of rooms sleeping two to seven, plus dorm beds and shaded campsites. From R${site.pricing.fromZAR} per person sharing.`,
     images: [{ url: rooms[0].hero.src, alt: rooms[0].hero.alt }],
   },
 };
@@ -30,17 +30,21 @@ export default function StayPage() {
           <div>
             <Eyebrow>Stay</Eyebrow>
             <h1 className="mt-2 font-display text-3xl leading-tight tracking-tight text-forest-deep sm:text-4xl">
-              Every room on the farm, in photographs.
+              This is where you will stay.
             </h1>
-            <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-ink/80">
-              Photographed exactly as they are. Self-catering, with home-cooked
-              meals whenever you would like them — from R{site.pricing.fromZAR}{" "}
-              per person sharing.
+            <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-ink/80">
+              We have a lovely variety of rooms spread across the farm,
+              sleeping anywhere from two to seven people in a single room — so
+              a family can stay together, friends can share, and a couple on a
+              Kruger trip still has somewhere quiet to land. Self-catering
+              lodge rooms, simple twin rooms, beds in the wooden house and
+              shaded campsites under the forty-year-old mango trees, from R
+              {site.pricing.fromZAR} per person sharing.
             </p>
           </div>
           <SharePage
             url={`${site.url}/stay`}
-            title="Every room at Kanaan Guest Farm"
+            title="Where you will stay at Kanaan Guest Farm"
             className="flex-none"
           />
         </div>
