@@ -20,6 +20,9 @@ export function LightboxGallery({
 }) {
   const [active, setActive] = useState<Active>(null);
   const [zoomed, setZoomed] = useState(false);
+  // Drives the entrance transition — false on the frame the portal
+  // mounts, true immediately after, so the CSS has something to move from.
+  const [shown, setShown] = useState(false);
 
   function handleClick(e: MouseEvent<HTMLDivElement>) {
     const target = e.target as HTMLElement;
@@ -32,12 +35,17 @@ export function LightboxGallery({
   }
 
   function close() {
-    setActive(null);
-    setZoomed(false);
+    setShown(false);
+    // Let the exit transition play before the portal unmounts.
+    window.setTimeout(() => {
+      setActive(null);
+      setZoomed(false);
+    }, 180);
   }
 
   useEffect(() => {
     if (!active) return;
+    const raf = requestAnimationFrame(() => setShown(true));
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
     };
@@ -45,6 +53,7 @@ export function LightboxGallery({
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
+      cancelAnimationFrame(raf);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
     };
@@ -60,7 +69,9 @@ export function LightboxGallery({
             role="dialog"
             aria-modal="true"
             aria-label="Image viewer"
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-forest-deep/90 p-4 backdrop-blur-sm"
+            className={`fixed inset-0 z-[100] flex items-center justify-center bg-ink/94 p-4 transition-all duration-200 ease-out ${
+              shown ? "opacity-100 backdrop-blur-md" : "opacity-0 backdrop-blur-none"
+            }`}
             onClick={close}
           >
             <button
@@ -70,7 +81,9 @@ export function LightboxGallery({
                 close();
               }}
               aria-label="Close image viewer"
-              className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-bone/15 text-bone backdrop-blur-sm transition-colors hover:bg-bone/30"
+              className={`absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-bone/15 text-bone backdrop-blur-sm transition-all duration-200 hover:bg-bone/30 ${
+                shown ? "opacity-100" : "opacity-0"
+              }`}
             >
               <svg
                 width="20"
@@ -104,11 +117,17 @@ export function LightboxGallery({
               }}
               style={{
                 cursor: zoomed ? "zoom-out" : "zoom-in",
-                transform: zoomed ? "scale(1.8)" : "scale(1)",
-                transition: "transform 0.3s ease",
+                transform: zoomed
+                  ? "scale(1.8)"
+                  : shown
+                    ? "scale(1) translateY(0)"
+                    : "scale(0.94) translateY(12px)",
+                opacity: shown ? 1 : 0,
+                transition:
+                  "transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease-out",
                 touchAction: "pinch-zoom",
               }}
-              className="max-h-[90vh] max-w-[95vw] rounded-lg object-contain shadow-2xl"
+              className="max-h-[90vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
             />
           </div>,
           document.body,
