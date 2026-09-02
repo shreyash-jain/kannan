@@ -491,6 +491,12 @@ export const img = {
     width: 1600,
     height: 1067,
   },
+  venueShadeLawn: {
+    src: cldImage("venue-shade-lawn"),
+    alt: "The open lawn at Kanaan under the mango trees, with the long open-sided shade structure standing along one side and the Lowveld beyond.",
+    width: 1600,
+    height: 1067,
+  },
   venueLawnWide: {
     src: cldImage("venue-lawn-wide"),
     alt: "The covered venue at Kanaan seen across the lawn — a long open-sided roof under mango trees, with the Lowveld opening out beyond it.",

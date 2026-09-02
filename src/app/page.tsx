@@ -293,8 +293,8 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.viewpointGazebo.src}
-              alt={img.viewpointGazebo.alt}
+              src={img.venueShadeLawn.src}
+              alt={img.venueShadeLawn.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
