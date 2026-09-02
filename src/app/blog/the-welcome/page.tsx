@@ -172,7 +172,7 @@ export default function WelcomePostPage() {
               <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
                 <Image
                   src={img.lodgeBedroomEnsuite.src}
-                  alt="A renovated lodge bedroom at Kanaan with the en-suite shower visible through the doorway — wooden ceiling, soft linen, a small rug at the foot of the bed."
+                  alt={img.lodgeBedroomEnsuite.alt}
                   fill
                   sizes="(min-width: 768px) 45vw, 100vw"
                   className="object-cover"

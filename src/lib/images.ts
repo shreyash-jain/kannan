@@ -168,7 +168,7 @@ export const img = {
   },
   lodgeBedroomEnsuite: {
     src: cldImage("lodge-bedroom-ensuite"),
-    alt: "A renovated lodge bedroom at Kanaan with the en-suite shower visible through the doorway — wooden ceiling, soft linen, a small rug at the foot of the bed.",
+    alt: "A renovated en-suite bathroom in a Kanaan lodge unit — smooth screed walls, a glass-screened shower, a vessel basin on a screed counter and a wooden-framed mirror under the exposed pine ceiling.",
     width: 1200,
     height: 1600,
   },
