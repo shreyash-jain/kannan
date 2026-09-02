@@ -79,8 +79,8 @@ export default function OurStoryPage() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand md:order-1">
             <Image
-                src={img.lodgeRoom.src}
-                alt={img.lodgeRoom.alt}
+                src={img.woodenHouseExterior.src}
+                alt={img.woodenHouseExterior.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
