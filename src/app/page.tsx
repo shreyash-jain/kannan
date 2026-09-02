@@ -74,6 +74,13 @@ export default function HomePage() {
       <Section>
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
+            <Image
+                src={img.macGroveFramed.src}
+                alt={img.macGroveFramed.alt}
+                fill
+                sizes="(min-width: 768px) 45vw, 100vw"
+                className="object-cover"
+              />
           </div>
           <div>
             <Eyebrow>Chapter 1 · The Discovery</Eyebrow>

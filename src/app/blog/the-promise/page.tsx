@@ -196,10 +196,17 @@ export default function PromisePostPage() {
           {/* Lodge renovation walk-through — the work as it actually was */}
           <div className="mx-auto mt-10 max-w-3xl">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+              <Image
+                src={img.lodgeCourtyardPatio.src}
+                alt={img.lodgeCourtyardPatio.alt}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+              />
             </div>
             <p className="mt-3 text-center text-xs text-muted">
-              A walk past one of the lodge units mid-renovation, in the
-              first weeks after we took the keys.
+              One of the lodge units after the work — the patio, the paint and
+              the bougainvillea that came with it.
             </p>
           </div>
         </Section>
@@ -294,10 +301,17 @@ export default function PromisePostPage() {
             {/* Pool tour — honest documentation of the pool area as it is */}
             <div className="mt-10">
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-bone">
+                <Image
+                src={img.poolReal.src}
+                alt={img.poolReal.alt}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+              />
               </div>
               <p className="mt-3 text-center text-xs text-muted">
-                The pool area — the next big project on the list after the
-                lodge rooms.
+                The pool — kept ready year-round, and the next area on the list
+                after the lodge rooms.
               </p>
             </div>
           </div>

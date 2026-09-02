@@ -272,6 +272,13 @@ export default function WelcomePostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
+              <Image
+                src={img.campingAvenueWide.src}
+                alt={img.campingAvenueWide.alt}
+                fill
+                sizes="(min-width: 768px) 55vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden rounded-2xl">
               <Image

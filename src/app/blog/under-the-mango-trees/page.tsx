@@ -79,10 +79,17 @@ export default function MangoTreesPostPage() {
         {/* Featured B-roll — the slow walk through the grove */}
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-forest-deep">
+            <Image
+                src={img.underMangoTreesHero.src}
+                alt={img.underMangoTreesHero.alt}
+                fill
+                sizes="(min-width: 768px) 900px, 100vw"
+                className="object-cover"
+              />
           </div>
           <p className="mt-3 text-center text-xs text-muted">
-            A slow walk through the grove at golden hour — the oldest thing on
-            the farm, and the reason there is a farm at all.
+            The grove at golden hour — the oldest thing on the farm, and the
+            reason there is a farm at all.
           </p>
         </div>
 

@@ -78,6 +78,13 @@ export default function OurStoryPage() {
       <Section className="pt-0!">
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand md:order-1">
+            <Image
+                src={img.lodgeBedroomEnsuite.src}
+                alt={img.lodgeBedroomEnsuite.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
           </div>
           <div className="prose-kanaan max-w-prose md:order-2">
             <Eyebrow>Chapter 2 · The Promise</Eyebrow>
@@ -219,6 +226,13 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
+              <Image
+                src={img.hilltopViewpoint.src}
+                alt={img.hilltopViewpoint.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div>
               <Eyebrow>The wider farm</Eyebrow>
