@@ -3,7 +3,13 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { createPortal } from "react-dom";
 
-type Active = { src: string; alt: string } | null;
+type Active = {
+  /** The full-resolution frame we are loading. */
+  src: string;
+  /** The tile the user clicked — already in cache, so it paints instantly. */
+  preview: string;
+  alt: string;
+} | null;
 
 /**
  * Wrap any block of <Image>s and tapping one opens a fullscreen viewer.
@@ -23,6 +29,9 @@ export function LightboxGallery({
   // Drives the entrance transition — false on the frame the portal
   // mounts, true immediately after, so the CSS has something to move from.
   const [shown, setShown] = useState(false);
+  // False until the full-resolution frame has decoded, so the cached
+  // thumbnail can hold the space instead of an empty screen.
+  const [loaded, setLoaded] = useState(false);
 
   function handleClick(e: MouseEvent<HTMLDivElement>) {
     const target = e.target as HTMLElement;
@@ -32,8 +41,10 @@ export function LightboxGallery({
     e.preventDefault();
     // A grid tile may be a small crop with the full frame on data-full —
     // open that rather than blowing up a 520px thumbnail.
+    const shown = img.currentSrc || img.src;
     const full = img.getAttribute("data-full");
-    setActive({ src: full || img.currentSrc || img.src, alt: img.alt });
+    setActive({ src: full || shown, preview: shown, alt: img.alt });
+    setLoaded(false);
     setZoomed(false);
   }
 
@@ -43,6 +54,7 @@ export function LightboxGallery({
     window.setTimeout(() => {
       setActive(null);
       setZoomed(false);
+      setLoaded(false);
     }, 180);
   }
 
@@ -116,28 +128,54 @@ export function LightboxGallery({
               {zoomed ? "Click to reset · ESC to close" : "Click to zoom · ESC to close"}
             </div>
 
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={active.src}
-              alt={active.alt}
-              onClick={(e) => {
-                e.stopPropagation();
-                setZoomed((z) => !z);
-              }}
-              style={{
-                cursor: zoomed ? "zoom-out" : "zoom-in",
-                transform: zoomed
-                  ? "scale(1.8)"
-                  : shown
-                    ? "scale(1) translateY(0)"
-                    : "scale(0.94) translateY(12px)",
-                opacity: shown ? 1 : 0,
-                transition:
-                  "transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease-out",
-                touchAction: "pinch-zoom",
-              }}
-              className="max-h-[90vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
-            />
+            {/* The clicked tile, blurred and scaled, holding the frame while
+                the full-resolution file arrives. It is already in cache, so
+                it paints on the first frame rather than showing nothing. */}
+            <div className="relative flex max-h-[90vh] max-w-[95vw] items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={active.preview}
+                alt=""
+                aria-hidden
+                style={{
+                  transform: zoomed
+                    ? "scale(1.8)"
+                    : shown
+                      ? "scale(1)"
+                      : "scale(0.94) translateY(12px)",
+                  opacity: loaded ? 0 : shown ? 1 : 0,
+                  filter: "blur(14px)",
+                  transition:
+                    "transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms ease-out",
+                }}
+                className="absolute inset-0 h-full w-full rounded-xl object-contain"
+              />
+
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={active.src}
+                alt={active.alt}
+                onLoad={() => setLoaded(true)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setZoomed((z) => !z);
+                }}
+                style={{
+                  cursor: zoomed ? "zoom-out" : "zoom-in",
+                  transform: zoomed
+                    ? "scale(1.8)"
+                    : shown
+                      ? "scale(1) translateY(0)"
+                      : "scale(0.94) translateY(12px)",
+                  opacity: loaded && shown ? 1 : 0,
+                  transition:
+                    "transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 320ms ease-out",
+                  touchAction: "pinch-zoom",
+                }}
+                className="max-h-[90vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
+              />
+            </div>
+
           </div>,
           document.body,
         )}
