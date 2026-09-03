@@ -3,8 +3,7 @@ import { PageHero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { FilterGallery, type GalleryItem } from "@/components/FilterGallery";
 import { CTA } from "@/components/CTA";
-import { img } from "@/lib/images";
-import { rooms, spaces, roomPhotos } from "@/data/rooms";
+import { proPhotos } from "@/data/proPhotos";
 
 export const metadata: Metadata = {
   title: "Gallery — the whole farm in photographs · Kanaan Guest Farm",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gallery · Kanaan Guest Farm",
     description: "The whole farm, in photographs.",
-    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
+    images: [{ url: proPhotos[0].src, alt: proPhotos[0].alt }],
   },
 };
 
@@ -26,53 +25,12 @@ const categories = [
   { id: "facilities", label: "Facilities" },
 ];
 
-/** Room photography comes straight from the catalogue, so the gallery can
- *  never drift from what the room pages show. */
-const roomItems: GalleryItem[] = [...rooms, ...spaces]
-  .filter((r) => r.slug !== "camping")
-  .flatMap((r) => roomPhotos(r).slice(0, 4))
-  .map((photo) => ({ photo, category: "rooms" }));
-
-const items: GalleryItem[] = [
-  ...roomItems,
-  ...[
-    img.campingAvenueWide,
-    img.campingGround,
-    img.campingAvenue,
-    img.campingTents,
-    img.campingMango,
-    img.campfire,
-    img.campingWaterTank,
-  ].map((photo) => ({ photo, category: "camping" })),
-  ...[
-    img.venueLawnWide,
-    img.venueCovered,
-    img.venueTables,
-    img.farmBraaiMixedGroup,
-    img.viewpointGazebo,
-  ].map((photo) => ({ photo, category: "venue" })),
-  ...[
-    img.lowveldViewReal,
-    img.hilltopViewpoint,
-    img.rockCascade,
-    img.goldenVista,
-    img.macGrove,
-    img.macGroveFramed,
-    img.heroFarm,
-    img.waterfall,
-    img.lowveldWildflowers,
-    img.goldenShed,
-    img.trailView,
-  ].map((photo) => ({ photo, category: "land" })),
-  ...[
-    img.poolReal,
-    img.entertainmentPoolTable,
-    img.entertainmentRoomWide,
-    img.campingAblutions,
-    img.campingAblutionsExterior,
-    img.gateSign,
-  ].map((photo) => ({ photo, category: "facilities" })),
-];
+/* Every frame from the professional shoot, categorised by looking at each
+   one. The gallery is the one place the whole set belongs. */
+const items: GalleryItem[] = proPhotos.map((photo) => ({
+  photo,
+  category: photo.category,
+}));
 
 export default function GalleryPage() {
   return (
