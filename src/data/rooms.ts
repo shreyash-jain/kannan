@@ -68,17 +68,13 @@ export const rooms: Room[] = [
     hero: img.lodgeRoom,
     gallery: [
       img.lodgeBedroomEnsuite,
-      img.lodgeFamilyTwin,
       img.lodgeKitchenClassic,
       img.lodgeBathroom,
       img.lodgeModestDouble,
-      img.lodgeCourtyardPatio,
       img.veranda,
       // From the professional shoot, chosen off the photo index (Sept 2026).
       pro(5715),
       pro(5741),
-      pro(5771),
-      pro(5800),
       pro(5928),
       pro(6027),
     ],
