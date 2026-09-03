@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
+import { pro } from "@/data/proPhotos";
 import { articleLd, faqLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
 import { site } from "@/lib/site";
@@ -106,17 +106,6 @@ export default function AccommodationNearKrugerPage() {
         })}
       />
       <JsonLd data={faqLd(faqs)} />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          {
-            label: "Accommodation near Kruger",
-            href: "/blog/accommodation-near-kruger-national-park",
-          },
-        ]}
-      />
 
       <article>
         <BlogHero
@@ -449,8 +438,8 @@ export default function AccommodationNearKrugerPage() {
             <figure>
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
-                  src={img.farmBraaiMixedGroup.src}
-                  alt={img.farmBraaiMixedGroup.alt}
+                  src={pro(6070).src}
+                  alt={pro(6070).alt}
                   fill
                   sizes="(min-width: 1024px) 1024px, 100vw"
                   className="object-cover"

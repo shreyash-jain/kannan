@@ -1,289 +1,159 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { PageHero } from "@/components/Hero";
+import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { AmenityList } from "@/components/AmenityList";
+import { AccommodationCard } from "@/components/AccommodationCard";
+import { EditorialSplit, ChipRow, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { LightboxGallery } from "@/components/Lightbox";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Lodges near Kruger National Park · The Land at Kanaan",
-  description: `Just ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport and only ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from the Kruger gates, with the spectacular Panorama Route close by. Discover the wonders of the Lowveld from Kanaan Guest Farm in the beautiful heart of Hazyview, Mpumalanga.`,
+  title: "The Land — Kruger, the Panorama Route and the Lowveld from Kanaan",
+  description: `Kanaan Guest Farm is ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport and ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the Kruger National Park, with the Panorama Route, Sabie and Graskop all day trips from the farm gate.`,
   alternates: { canonical: "/the-land" },
   openGraph: {
     title: "The Land · Kanaan Guest Farm",
-    description: `Lodges near the world-famous Kruger National Park — discover what ${site.distances.kmiaMinutes} minutes from the airport actually feels like.`,
-    images: [{ url: img.heroFarm.src, alt: img.heroFarm.alt }],
+    description: "Kruger before breakfast, the escarpment by lunch, the fire lit by dark.",
+    images: [{ url: img.lowveldViewReal.src, alt: img.lowveldViewReal.alt }],
   },
 };
 
 export default function TheLandPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "The Land", href: "/the-land" },
-        ]}
-      />
-      <PageHero
+
+      {/* The distances are the whole point of this page, so they are
+          answered in the hero rather than three scrolls down. */}
+      <Hero
         eyebrow="The Land"
         title="A whole world of wonder, right at our doorstep."
-        lede={`We are just ${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, and only ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates of the world-famous Kruger National Park. The spectacular Panorama Route, the misty mountain town of Sabie and the breathtaking Lowveld waterfalls are all wonderful days out from the farm.`}
-      />
-
-      {/* Property tour video — a wide look at the farm before the place cards */}
-      <div className="mx-auto max-w-7xl px-5 pt-12 lg:px-8">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-          <Video
-            video={video.propertyTour}
-            narrated
-            className="absolute inset-0 h-full w-full object-cover"
-            schemaName="A tour around Kanaan Guest Farm"
-            schemaDescription="A short walk around Kanaan Guest Farm in Hazyview, Mpumalanga — the mango grove, the lodge units, the camp site, and the Lowveld around them."
-            schemaUploadDate="2026-05-22"
-          />
-        </div>
-      </div>
-
-      {/* Wide panorama — the Lowveld this whole page is set inside, the
-          view from the high point on the farm. */}
-      <div className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
-        <figure>
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-            <Image
-              src={img.lowveldPanorama.src}
-              alt={img.lowveldPanorama.alt}
-              fill
-              sizes="(min-width: 1280px) 1280px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="mt-3 text-center text-xs text-muted">
-            The Lowveld around Kanaan — the country the distances on this page open out into.
-          </figcaption>
-        </figure>
-      </div>
-
-      <Section>
-        <div className="grid gap-6 md:grid-cols-3">
-          <DistanceCard
-            eyebrow="Kruger National Park"
-            distance={`${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`}
-            title="Phabeni & Numbi gates"
-            body={`Just ${site.distances.krugerGateMinutesMin} to ${site.distances.krugerGateMinutesMax} minutes by road, depending on the gate you choose. Imagine setting off before sunrise, spotting the legendary Big Five as the bushveld wakes, and being back at the farm for a swim before lunch. Phabeni means shelter in Sotho — a fitting welcome to one of Africa's greatest wildlife destinations.`}
-          />
-          <DistanceCard
-            eyebrow="Panorama Route"
-            distance="~90 min"
-            title="God's Window, Blyde Canyon"
-            body="A spectacular day along the escarpment — God's Window, Bourke's Luck Potholes, the Three Rondavels and the breathtaking Blyde River Canyon. The kind of scenery you will remember for a lifetime."
-          />
-          <DistanceCard
-            eyebrow="Sabie & Graskop"
-            distance="~45 min"
-            title="Misty mountains & waterfalls"
-            body="The misty mountain town of Sabie waits in one direction with Lone Creek, Horseshoe and Bridal Veil Falls, while Graskop — grassy hillock in Afrikaans — offers the famous Big Swing and the Graskop Gorge Lift. Adventure or peaceful exploring, the choice is yours."
-          />
-        </div>
-      </Section>
-
-      <Section className="pt-0!">
-        <div className="grid gap-12 md:grid-cols-2 md:items-start">
-          <div>
-            <Eyebrow>Getting here</Eyebrow>
-            <H2 className="mt-3 mb-5">Easy to find, wonderfully tucked away.</H2>
-            <dl className="space-y-5 text-ink/85">
-              <div>
-                <dt className="font-display text-lg text-forest-deep">From Kruger Mpumalanga International Airport</dt>
-                <dd className="mt-1">Just {site.distances.kmiaMinutes} minutes by road, on the scenic R40 north toward Hazyview.</dd>
-              </div>
-              <div>
-                <dt className="font-display text-lg text-forest-deep">From Johannesburg (OR Tambo)</dt>
-                <dd className="mt-1">Around 4½ wonderful hours on the N4 east, with breathtaking Lowveld scenery as you exit toward Hazyview.</dd>
-              </div>
-              <div>
-                <dt className="font-display text-lg text-forest-deep">From the Kruger gates</dt>
-                <dd className="mt-1">Just {site.distances.krugerGateMinutesMin} to {site.distances.krugerGateMinutesMax} minutes from Phabeni or Numbi — straight back to the farm after an unforgettable morning game drive.</dd>
-              </div>
-            </dl>
-            <p className="mt-6 text-sm text-muted">
-              Our fully fenced and secure property has a motorised gate — please give us a call when you arrive and we will welcome you in.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-              <Image
-                src={img.goldenVista.src}
-                alt={img.goldenVista.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-              <Image
-                src={img.hiking.src}
-                alt={img.hiking.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-              <Image
-                src={img.macGrove.src}
-                alt={img.macGrove.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
-              <Image
-                src={img.goldenShed.src}
-                alt={img.goldenShed.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Around the farm — a wider visual tour */}
-      <section className="bg-sand">
-        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-          <div className="mb-8">
-            <Eyebrow>Around the farm</Eyebrow>
-            <H2 className="mt-3">The wider Kanaan, all the way to the escarpment.</H2>
-          </div>
-          <LightboxGallery>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-              {[
-                img.hilltopViewpoint,
-                img.rockCascade,
-                img.lowveldViewReal,
-                img.viewpointGazebo,
-                img.macGrove,
-                img.goldenVista,
-                img.macGroveFramed,
-                img.lowveldWildflowers,
-                img.goldenShed,
-                img.trailView,
-              ].map((g) => (
-                <button
-                  key={g.src}
-                  type="button"
-                  className="relative aspect-4/5 overflow-hidden rounded-xl cursor-zoom-in"
-                >
-                  <Image
-                    src={g.src}
-                    alt={g.alt}
-                    fill
-                    sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </button>
-              ))}
-            </div>
-          </LightboxGallery>
-        </div>
-      </section>
-
-      <Section className="pt-0!">
-        <Eyebrow>On the farm</Eyebrow>
-        <H2 className="mt-3 mb-10">Wonderful days, without ever leaving Kanaan.</H2>
-        <AmenityList
+        lede="Kruger before breakfast, the escarpment by lunch, and the fire lit by dark. Everything worth seeing in the Lowveld is a day trip from the farm gate."
+        image={img.lowveldViewReal}
+        primaryCta={{ href: whatsappLink("theLand"), label: "Plan your days with us" }}
+        secondaryCta={{ href: "/stay", label: "See where you will sleep" }}
+      >
+        <StatStrip
           items={[
-            { title: "Hiking trails", body: "Beautifully marked trails meandering through the farm and into the bushveld beyond." },
-            { title: "Mountain biking", body: "Single-track and farm roads through stunning Lowveld scenery — bring your own bike." },
-            { title: "Swimming pool", body: "Sparkling and kept ready year-round, with shade and seating around it." },
-            { title: "Entertainment area", body: "Pool table, foosball, and a communal braai for a memorable evening with family or new friends." },
-            { title: "Mango grove", body: "Forty-year-old mango trees shading the camping ground and a quiet corner where guests often end up reading the afternoon away." },
-            { title: "African night sky", body: "Far enough from town that the stars still feel truly magical — a wonderful way to end the day." },
+            {
+              value: `${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax}`,
+              unit: "min",
+              label: "Kruger · Phabeni & Numbi",
+            },
+            { value: String(site.distances.kmiaMinutes), unit: "min", label: "Kruger Mpumalanga Airport" },
+            { value: "~90", unit: "min", label: "Panorama Route" },
+            { value: "~45", unit: "min", label: "Sabie & Graskop" },
           ]}
         />
+      </Hero>
+
+      <Section>
+        <Eyebrow>Days out from the farm</Eyebrow>
+        <H2 className="mt-2">Three directions, three completely different days.</H2>
+        <Lede>
+          Leave after coffee, be back for a swim. None of these need an early
+          night before or a long drive home after.
+        </Lede>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AccommodationCard
+            href="/blog/kruger-from-hazyview"
+            name="Phabeni & Numbi gates"
+            meta={`Kruger · ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`}
+            summary="Set off before sunrise, find the Big Five as the bushveld wakes, and be back for a swim before lunch. Phabeni means shelter in Sotho — a fitting welcome."
+            image={img.krugerEntranceGate}
+          />
+          <AccommodationCard
+            href="/blog/panorama-route-from-hazyview"
+            name="God's Window, Blyde Canyon"
+            meta="Panorama Route · ~90 min"
+            summary="A day along the escarpment — God's Window, Bourke's Luck Potholes, the Three Rondavels and the Blyde River Canyon. Scenery you will remember for a lifetime."
+            image={img.bourkesLuck}
+          />
+          <AccommodationCard
+            href="/blog/things-to-do-around-hazyview"
+            name="Misty mountains & waterfalls"
+            meta="Sabie & Graskop · ~45 min"
+            summary="Sabie waits one way with Lone Creek, Horseshoe and Bridal Veil Falls. Graskop — grassy hillock — offers the Big Swing and the Gorge Lift."
+            image={img.graskopGorgeLift}
+          />
+        </div>
       </Section>
 
-      <section className="bg-bone">
-        <div className="mx-auto max-w-3xl px-5 py-12 text-center lg:px-8">
-          <Eyebrow>From the journal</Eyebrow>
-          <H2 className="mt-3">Read Anneli&apos;s invitation to Africa.</H2>
-          <Lede>
-            Anneli has written a heart-felt introduction to a family holiday
-            based at Kanaan — Kruger, Sabie, Graskop and the wonders of the
-            Lowveld, in her own warm words.
-          </Lede>
-          <div className="mt-6">
-            <Link
-              href="/blog/africa"
-              className="inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
-            >
-              Read the story <span aria-hidden>→</span>
-            </Link>
-          </div>
+      <section className="fluid-band bg-sand">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <EditorialSplit
+            eyebrow="The wider farm"
+            title="More than the lodge."
+            image={img.hilltopViewpoint}
+            pull="In time, a quieter eco-camp on the further property."
+          >
+            <p>
+              Kanaan sits on agricultural ground that runs out into bushveld
+              long after the lodge ends. We are slowly bringing that land back
+              into use — macadamia trees planted in rows, hiking and cycling
+              routes opening up again.
+            </p>
+            <p>
+              Walk far enough and the rows give way to a rocky outcrop, a
+              waterfall, and a view that runs all the way to the escarpment.
+              Most guests never expect the farm to be this big.
+            </p>
+          </EditorialSplit>
         </div>
       </section>
 
-      <section className="bg-sand">
-        <div className="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8">
-          <Eyebrow>Plan your African adventure</Eyebrow>
-          <H2 className="mt-3">Tell us what you would love to see.</H2>
-          <Lede>
-            Send us a wish list of what you are hoping to experience and we
-            will happily sketch a day-by-day — Kruger, Panorama, Sabie,
-            Graskop — that fits beautifully into the days you are here.
-          </Lede>
-          <div className="mt-7">
-            <Link
-              href={whatsappLink("theLand")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full bg-forest px-6 py-3 text-sm font-medium text-bone hover:bg-forest-deep"
-            >
-              Ask us about Kruger on WhatsApp
-            </Link>
+      <Section>
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="lg:order-2">
+            <ThumbQuad
+              photos={[img.gateSign, img.rockCascade, img.macGrove, img.heroFarm]}
+            />
           </div>
+          <div className="lg:order-1">
+            <Eyebrow>Getting here</Eyebrow>
+            <H2 className="mt-2">Easy to find, wonderfully tucked away.</H2>
+            <dl className="measure-tight mt-5 grid gap-4 text-ink/85">
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">From Kruger Mpumalanga International Airport</dt>
+                <dd className="mt-1 text-sm">Just {site.distances.kmiaMinutes} minutes by road, on the scenic R40 north toward Hazyview.</dd>
+              </div>
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">From Johannesburg (OR Tambo)</dt>
+                <dd className="mt-1 text-sm">Around 4½ wonderful hours on the N4 east, with breathtaking Lowveld scenery as you exit toward Hazyview.</dd>
+              </div>
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">From the Kruger gates</dt>
+                <dd className="mt-1 text-sm">Just {site.distances.krugerGateMinutesMin} to {site.distances.krugerGateMinutesMax} minutes from Phabeni or Numbi — straight back after a morning game drive.</dd>
+              </div>
+            </dl>
+            <p className="measure-tight mt-5 text-sm text-muted">
+              Our fully fenced and secure property has a motorised gate — please
+              give us a call when you arrive and we will welcome you in.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <section className="fluid-band bg-sand">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <Eyebrow>Without leaving the farm</Eyebrow>
+          <H2 className="mt-2">Wonderful days, without ever getting in the car.</H2>
+          <ChipRow
+            items={[
+              "Hiking trails from the gate",
+              "Mountain-biking routes",
+              "The waterfall & rock pool",
+              "Swimming pool",
+              "The mango grove",
+              "Braai under the stars",
+              "The macadamia rows",
+              "Hilltop viewpoint",
+              "African night sky",
+            ]}
+          />
         </div>
       </section>
 
       <CTA />
     </>
-  );
-}
-
-function DistanceCard({
-  eyebrow,
-  distance,
-  title,
-  body,
-}: {
-  eyebrow: string;
-  distance: string;
-  title: string;
-  body: string;
-}) {
-  return (
-    <article className="flex h-full flex-col rounded-2xl bg-bone p-7 ring-1 ring-black/5">
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-ochre">
-        {eyebrow}
-      </p>
-      <p className="mt-4 font-display text-5xl leading-none tracking-tight text-forest-deep">
-        {distance}
-      </p>
-      <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">
-        from our gate
-      </p>
-      <h3 className="mt-5 font-display text-xl text-forest-deep">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink/80">{body}</p>
-    </article>
   );
 }

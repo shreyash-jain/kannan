@@ -3,10 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,12 +22,6 @@ export const metadata: Metadata = {
 export default function OurStoryPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Our Story", href: "/our-story" },
-        ]}
-      />
       <PageHero
         eyebrow="Our Story"
         title="A family farm near Kruger, lovingly brought back to life."
@@ -86,10 +78,13 @@ export default function OurStoryPage() {
       <Section className="pt-0!">
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-start">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand md:order-1">
-            <Video
-              video={video.lodgeRoomWalk}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <Image
+                src={img.woodenHouseExterior.src}
+                alt={img.woodenHouseExterior.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
           </div>
           <div className="prose-kanaan max-w-prose md:order-2">
             <Eyebrow>Chapter 2 · The Promise</Eyebrow>
@@ -216,7 +211,7 @@ export default function OurStoryPage() {
             </p>
             <p>
               <Link
-                href="/weddings"
+                href="/group-functions"
                 className="font-medium text-ochre hover:text-ochre-deep"
               >
                 Wedding &amp; Events →
@@ -231,10 +226,12 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.tourMacGrove}
-                narrated
-                className="absolute inset-0 h-full w-full object-cover"
+              <Image
+                src={img.hilltopViewpoint.src}
+                alt={img.hilltopViewpoint.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
             <div>

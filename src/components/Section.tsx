@@ -62,7 +62,7 @@ export function H2({
   return (
     <h2
       className={cn(
-        "font-display text-3xl leading-tight tracking-tight text-forest-deep sm:text-4xl",
+        "fluid-h2 font-display tracking-tight text-forest-deep",
         className,
       )}
     >
@@ -73,7 +73,7 @@ export function H2({
 
 export function Lede({ children }: { children: React.ReactNode }) {
   return (
-    <p className="max-w-2xl text-lg leading-relaxed text-ink/85 sm:text-xl">
+    <p className="fluid-lede measure text-ink/85">
       {children}
     </p>
   );

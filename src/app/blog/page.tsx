@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogPostList } from "@/components/BlogPostList";
 import { posts } from "@/lib/posts";
 import { whatsappLink } from "@/lib/site";
@@ -17,12 +16,6 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-        ]}
-      />
       <PageHero
         eyebrow="Journal & Guides"
         title="Stories from the farm, and guides to the Lowveld."

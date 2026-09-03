@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 
@@ -60,12 +59,6 @@ const attractions: {
 export default function AttractionsPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Attractions", href: "/attractions" },
-        ]}
-      />
       <PageHero
         eyebrow="Around Kanaan"
         title="The Kruger on one side, the Panorama Route on the other."

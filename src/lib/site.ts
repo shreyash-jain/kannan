@@ -76,7 +76,7 @@ export const site = {
     sleepingTotal: 50, // ~40–50 person sleeping capacity across rooms
     backpackersBeds: 8,
     campsitePitches: 10,
-    campingPeople: 120,
+    campingPeople: 80, // Anneli, 2026-09-01: "Camping up to 80" (was 120)
     wedding: {
       indoor: 60,
       withMarquee: 100,
@@ -102,9 +102,11 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
+  { href: "/camping", label: "Camping" },
   { href: "/packages", label: "Packages" },
-  { href: "/weddings", label: "Wedding & Events" },
+  { href: "/group-functions", label: "Group Functions" },
   { href: "/the-land", label: "The Land" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Journal & Guides" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -116,8 +118,9 @@ export const whatsappMessages = {
   stay: "Hi Anneli and Matthew, I'd love to enquire about a stay at Kanaan.",
   packages:
     "Hi Anneli and Matthew, I would like to enquire about a multi-day package at Kanaan.",
-  weddings:
-    "Hi Anneli and Matthew, we're planning our wedding and would love to know more about Kanaan.",
+  groupFunctions:
+    "Hi Anneli and Matthew, I would like to enquire about bringing a group to Kanaan.",
+  camping: "Hi Anneli and Matthew, I'd love to enquire about camping at Kanaan.",
   ourStory: "Hi Anneli and Matthew, I just read your story — I'd love to know more about Kanaan.",
   theLand:
     "Hi Anneli and Matthew, I'd love to know more about visiting Kruger and the Lowveld from your farm.",
@@ -130,5 +133,15 @@ export type WhatsAppKey = keyof typeof whatsappMessages;
 export function whatsappLink(key: WhatsAppKey = "home"): string {
   const number = site.contact.whatsapp.replace(/\D/g, "");
   const text = encodeURIComponent(whatsappMessages[key]);
+  return `https://wa.me/${number}?text=${text}`;
+}
+
+// A WhatsApp link with a message we compose on the spot — used by /rooms so
+// each room asks about itself by name ("...about the Twin Rooms").
+export function whatsappAbout(subject: string): string {
+  const number = site.contact.whatsapp.replace(/\D/g, "");
+  const text = encodeURIComponent(
+    `Hi Anneli and Matthew, I'd love to enquire about ${subject} at Kanaan.`,
+  );
   return `https://wa.me/${number}?text=${text}`;
 }

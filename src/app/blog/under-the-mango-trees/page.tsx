@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
 import { WhatsAppCTA, BlogHero } from "@/components/blog/Blocks";
 import { JsonLd } from "@/components/JsonLd";
-import { img, wedding, video } from "@/lib/images";
+import { img, wedding } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
 import { whatsappLink } from "@/lib/site";
@@ -37,17 +35,6 @@ export default function MangoTreesPostPage() {
           image: img.underMangoTreesHero.src,
           datePublished,
         })}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          {
-            label: "Under the Mango Trees",
-            href: "/blog/under-the-mango-trees",
-          },
-        ]}
       />
 
       <article>
@@ -92,17 +79,17 @@ export default function MangoTreesPostPage() {
         {/* Featured B-roll — the slow walk through the grove */}
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-forest-deep">
-            <Video
-              video={video.mangoGrove}
-              schemaName="A walk through the mango grove at Kanaan Guest Farm"
-              schemaDescription="A slow walk through the forty-year-old mango grove at the heart of Kanaan Guest Farm in Hazyview, at golden hour."
-              schemaUploadDate={datePublished}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <Image
+                src={img.underMangoTreesHero.src}
+                alt={img.underMangoTreesHero.alt}
+                fill
+                sizes="(min-width: 768px) 900px, 100vw"
+                className="object-cover"
+              />
           </div>
           <p className="mt-3 text-center text-xs text-muted">
-            A slow walk through the grove at golden hour — the oldest thing on
-            the farm, and the reason there is a farm at all.
+            The grove at golden hour — the oldest thing on the farm, and the
+            reason there is a farm at all.
           </p>
         </div>
 

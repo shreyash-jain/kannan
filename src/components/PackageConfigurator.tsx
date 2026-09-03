@@ -33,10 +33,15 @@ const ROOM_DEFS: Record<
     pricingNote: "R 350 / 1 guest · R 500 / 2 guests",
   },
   double: {
-    name: "Double room",
-    perNight: (pax) => (pax >= 2 ? 650 : 450),
-    maxPax: 2,
-    pricingNote: "R 450 / 1 guest · R 650 / 2 guests",
+    // Anneli, 2026-09-01: "We have rooms that accommodate 4 people" — the
+    // lodge rooms sleep 2 to 7. This was capped at 2, which sent every
+    // family of four to the backpackers dorm.
+    name: "Lodge room",
+    // TODO(Anneli): confirm the rate for 3+ guests. Until then this scales
+    // at the 2-guest per-person rate rather than under-quoting the room.
+    perNight: (pax) => (pax >= 3 ? 325 * pax : pax === 2 ? 650 : 450),
+    maxPax: 7,
+    pricingNote: "R 450 / 1 guest · R 650 / 2 guests · larger rooms quoted",
   },
   backpackers: {
     name: "Backpackers",
@@ -57,6 +62,13 @@ const TOUR_PRICES = {
 
 // Flat fee, return trip.
 const TRANSFER_FLAT = 1700;
+
+// Meals added to a package, per person per day. Anneli, 2026-09-01:
+// "Add R75 for breakfast and R120 for Dinner on the package". Deliberately
+// NOT the same constant as site.meals — she quoted these for packages, and
+// the standalone breakfast on /facilities is still the R60 she confirmed in
+// May. Worth reconciling with her, but not worth guessing at.
+const PACKAGE_MEALS = { breakfast: 75, dinner: 120 } as const;
 
 type Nights = 2 | 3 | 5;
 type Adults = 1 | 2 | 3 | 4;
@@ -302,6 +314,19 @@ export function PackageConfigurator() {
             </Link>{" "}
             and we will share our group-discounted rates.
           </p>
+
+          <p className="mt-3 border-t border-black/10 pt-3 text-xs leading-relaxed text-muted">
+            Meals can be added to any package:{" "}
+            <strong className="font-medium text-forest-deep">
+              R{PACKAGE_MEALS.breakfast}
+            </strong>{" "}
+            per person for breakfast and{" "}
+            <strong className="font-medium text-forest-deep">
+              R{PACKAGE_MEALS.dinner}
+            </strong>{" "}
+            per person for dinner, per day. Just say so when you send your
+            dates and we will add them.
+          </p>
         </div>
 
         <div>
@@ -365,7 +390,7 @@ export function PackageConfigurator() {
                 A {roomDef.name.toLowerCase()} sleeps up to {roomDef.maxPax} guests.
               </p>
               <p className="mt-2 text-ink/80">
-                For {totalPax} guests, the Backpackers option fits the
+                For {totalPax} guests, the Backpackers option also fits the
                 whole party — or send us a message and we will arrange
                 multiple rooms with a group rate.
               </p>

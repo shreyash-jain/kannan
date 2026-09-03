@@ -10,6 +10,8 @@ export function Hero({
   image,
   primaryCta,
   secondaryCta,
+  back,
+  children,
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -17,9 +19,13 @@ export function Hero({
   image: Img;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
+  /** A way back to the page above this one. */
+  back?: { href: string; label: string };
+  /** Optional block under the buttons — used for the stat strips. */
+  children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="hero-fit relative isolate flex items-end overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image
           src={image.src}
@@ -41,17 +47,27 @@ export function Hero({
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 sm:pb-32 sm:pt-44 lg:px-8 lg:pt-52">
+      {back && (
+        <Link
+          href={back.href}
+          className="absolute left-5 top-6 z-10 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/55 px-3.5 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-colors hover:bg-forest-deep/75 lg:left-8"
+        >
+          <span aria-hidden>←</span>
+          {back.label}
+        </Link>
+      )}
+
+      <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
           <span className="text-xs font-medium uppercase tracking-[0.22em] text-bone/90">
             {eyebrow}
           </span>
-          <H1 className="mt-4 !text-bone">{title}</H1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bone sm:text-xl">
+          <H1 className="fluid-h1 hero-gap-sm !text-bone">{title}</H1>
+          <p className="fluid-lede hero-gap-md hero-lede max-w-2xl text-bone">
             {lede}
           </p>
           {(primaryCta || secondaryCta) && (
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="hero-gap-lg flex flex-wrap gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -70,6 +86,7 @@ export function Hero({
               )}
             </div>
           )}
+          {children}
         </div>
       </div>
     </section>
@@ -87,11 +104,13 @@ export function PageHero({
   lede?: string;
 }) {
   return (
-    <section className="border-b border-black/5 bg-sand">
-      <div className="mx-auto max-w-7xl px-5 pb-14 pt-20 sm:pt-24 lg:px-8">
+    // An inset card rather than a full-bleed band — the sharp-cornered
+    // strip running edge to edge read as a stray block of colour.
+    <section className="px-5 pt-5 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-3xl bg-sand px-6 pb-[clamp(1.25rem,3svh,2rem)] pt-[clamp(1.25rem,3.5svh,2.25rem)] sm:px-9">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <H1 className="mt-3">{title}</H1>
-        {lede && <Lede>{lede}</Lede>}
+        <H1 className="page-h1 mt-2">{title}</H1>
+        {lede && <p className="page-lede mt-2 text-ink/85">{lede}</p>}
       </div>
     </section>
   );

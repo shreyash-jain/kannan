@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AmenityList } from "@/components/AmenityList";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 import { lodgingTypeLd } from "@/lib/jsonld";
@@ -39,12 +38,6 @@ export default function LodgePage() {
             }),
           ),
         }}
-      />
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Lodge", href: "/lodge" },
-        ]}
       />
       <PageHero
         eyebrow="Stays · Self-catering"

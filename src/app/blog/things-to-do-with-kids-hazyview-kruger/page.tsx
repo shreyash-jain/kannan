@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
@@ -89,17 +88,6 @@ export default function FamilyKidsGuidePage() {
         })}
       />
       <JsonLd data={faqLd(faqs)} />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          {
-            label: "Hazyview & Kruger with kids",
-            href: "/blog/things-to-do-with-kids-hazyview-kruger",
-          },
-        ]}
-      />
 
       <article>
         <BlogHero

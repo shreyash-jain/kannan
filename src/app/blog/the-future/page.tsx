@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
@@ -44,14 +43,6 @@ export default function FuturePostPage() {
             }),
           ),
         }}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          { label: "The Future", href: "/blog/the-future" },
-        ]}
       />
 
       <article>
@@ -167,7 +158,7 @@ export default function FuturePostPage() {
               </p>
               <p>
                 <Link
-                  href="/weddings"
+                  href="/group-functions"
                   className="font-medium text-ochre hover:text-ochre-deep"
                 >
                   See the venue →

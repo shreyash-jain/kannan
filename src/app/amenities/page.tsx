@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PageHero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AmenityList } from "@/components/AmenityList";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
 
@@ -17,12 +16,6 @@ export const metadata: Metadata = {
 export default function AmenitiesPage() {
   return (
     <>
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Amenities", href: "/amenities" },
-        ]}
-      />
       <PageHero
         eyebrow="At Kanaan"
         title="Comfort meets nature."

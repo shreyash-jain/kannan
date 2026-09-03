@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -45,14 +43,6 @@ export default function WelcomePostPage() {
             }),
           ),
         }}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          { label: "The Welcome", href: "/blog/the-welcome" },
-        ]}
       />
 
       <article>
@@ -182,7 +172,7 @@ export default function WelcomePostPage() {
               <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
                 <Image
                   src={img.lodgeBedroomEnsuite.src}
-                  alt="A renovated lodge bedroom at Kanaan with the en-suite shower visible through the doorway — wooden ceiling, soft linen, a small rug at the foot of the bed."
+                  alt={img.lodgeBedroomEnsuite.alt}
                   fill
                   sizes="(min-width: 768px) 45vw, 100vw"
                   className="object-cover"
@@ -282,10 +272,12 @@ export default function WelcomePostPage() {
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.tourCamping}
-                narrated
-                className="absolute inset-0 h-full w-full object-cover"
+              <Image
+                src={img.campingAvenueWide.src}
+                alt={img.campingAvenueWide.alt}
+                fill
+                sizes="(min-width: 768px) 55vw, 100vw"
+                className="object-cover"
               />
             </div>
             <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden rounded-2xl">

@@ -5,8 +5,7 @@ import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { AmenityList } from "@/components/AmenityList";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { site, whatsappLink } from "@/lib/site";
 import { faqLd } from "@/lib/jsonld";
 
@@ -75,13 +74,13 @@ export default function HomePage() {
       <Section>
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand">
-            <Video
-              video={video.mangoGrove}
-              className="absolute inset-0 h-full w-full object-cover"
-              schemaName="A walk through the mango grove at Kanaan"
-              schemaDescription="A short walk through the forty-year-old mango grove at Kanaan Guest Farm in Hazyview, where the camping ground sits under shade all summer."
-              schemaUploadDate="2026-05-22"
-            />
+            <Image
+                src={img.macGroveFramed.src}
+                alt={img.macGroveFramed.alt}
+                fill
+                sizes="(min-width: 768px) 45vw, 100vw"
+                className="object-cover"
+              />
           </div>
           <div>
             <Eyebrow>Chapter 1 · The Discovery</Eyebrow>
@@ -220,28 +219,28 @@ export default function HomePage() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <AccommodationCard
-            href="/stay#lodge"
+            href="/stay/lodge"
             name="Self-catering lodge rooms"
             summary="Comfortable, free-standing units with their own bathrooms and kitchenettes — your private base for unforgettable Kruger adventures."
             image={img.lodgeRoom}
             meta="Lodge"
           />
           <AccommodationCard
-            href="/stay#twin"
+            href="/stay/twin-room"
             name="Simple twin rooms"
             summary="Two single beds and an en-suite — fairly priced, comfortable, and welcoming, for travellers who want somewhere lovely to rest."
             image={img.twinRoom}
             meta="Twin"
           />
           <AccommodationCard
-            href="/stay#backpackers"
+            href="/stay/wooden-house"
             name="Backpacker dorm"
             summary={`An ${site.capacity.backpackersBeds}-bed dorm with a shared kitchen and a relaxed communal lounge — perfect for hikers, overlanders and adventurers exploring at their own pace.`}
             image={img.backpackers}
             meta={`Hostel · ${site.capacity.backpackersBeds} beds`}
           />
           <AccommodationCard
-            href="/stay#camping"
+            href="/stay/camping"
             name="Camping under mango trees"
             summary={`${site.capacity.campsitePitches} peaceful pitches in the shade of forty-year-old mango trees, with power and water at every one — for tents, rooftop campers and overlanders alike.`}
             image={img.campingMango}
@@ -294,8 +293,8 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8">
           <div className="relative aspect-5/4 overflow-hidden rounded-2xl">
             <Image
-              src={img.lodgeBedroomEnsuite.src}
-              alt={img.lodgeBedroomEnsuite.alt}
+              src={img.venueShadeLawn.src}
+              alt={img.venueShadeLawn.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -351,7 +350,7 @@ export default function HomePage() {
               whole farm, sized to your event.
             </Lede>
             <Link
-              href="/weddings"
+              href="/group-functions"
               className="mt-7 inline-flex items-center gap-1 text-sm font-medium text-ochre hover:text-ochre-deep"
             >
               Wedding &amp; Events <span aria-hidden>→</span>

@@ -26,6 +26,10 @@
 }
 
 html {
+  /* Reserve the scrollbar gutter permanently. Without it, the lightbox
+     locking body scroll removes the scrollbar, the page becomes ~15px
+     wider, and everything — fixed elements included — jumps right. */
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -67,4 +71,67 @@ body {
     transparent
   );
   height: 1px;
+}
+
+/* ---------------------------------------------------------------------
+   Fluid, height-aware sizing.
+
+   Tailwind's sm:/lg: are WIDTH-only breakpoints, so a 1440x900 laptop and
+   a 1728x1117 one both matched lg: and both got the hero's fixed pt-52 —
+   208px of top padding. The taller screen absorbed it; the shorter one
+   pushed its call-to-action buttons off the bottom of the viewport.
+
+   These scale continuously with the viewport instead, so layout responds
+   to the height of the screen as well as its width.
+   --------------------------------------------------------------------- */
+.fluid-h1 { font-size: clamp(2.1rem, 1.1rem + 2.6vw, 3.4rem); line-height: 1.05; }
+.fluid-h2 { font-size: clamp(1.6rem, 1.1rem + 1.5vw, 2.4rem); line-height: 1.15; }
+.fluid-lede { font-size: clamp(1rem, 0.94rem + 0.28vw, 1.15rem); line-height: 1.65; }
+.fluid-band { padding-block: clamp(2.75rem, 6vh, 4.5rem); }
+
+/* A hero can never be taller than the screen it is on.
+   The gaps INSIDE it scale too — fixed mt-4/mt-6/mt-9 margins were still
+   adding ~76px regardless of how little height the screen had. */
+.hero-fit {
+  min-height: min(78svh, 620px);
+  padding-block: clamp(1.75rem, 5.5svh, 4rem);
+}
+.hero-fit-short { min-height: min(52svh, 400px); }
+.hero-gap-sm { margin-top: clamp(0.4rem, 1.4svh, 1rem); }
+.hero-gap-md { margin-top: clamp(0.7rem, 2.2svh, 1.5rem); }
+.hero-gap-lg { margin-top: clamp(0.9rem, 3svh, 2.25rem); }
+/* On a short screen the lede is the biggest space-eater — cap it so the
+   buttons always survive. Nothing is hidden on a normal-height screen. */
+.hero-lede { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;
+  -webkit-line-clamp: 5; }
+@media (max-height: 800px) { .hero-lede { -webkit-line-clamp: 4; } }
+@media (max-height: 700px) { .hero-lede { -webkit-line-clamp: 3; } }
+
+/* Media capped by height. A 16:9 box in a 1280px column is 720px tall —
+   taller than the usable height of a 13" laptop, so it could never be
+   seen whole at any scroll position. */
+.media-band { height: clamp(220px, 40svh, 460px); }
+.tile-cap { max-height: clamp(170px, 26svh, 270px); }
+
+/* Prose measure — was running the full 1280px, about 130 characters. */
+.measure { max-width: 64ch; }
+.measure-tight { max-width: 54ch; }
+
+/* Inner-page headings. The full hero H1 scale was pushing the first useful
+   thing — a phone number, a booking form — below the fold on pages whose
+   only job is to be acted on. Smaller, narrower so it wraps sooner, and
+   the standfirst capped at three lines. */
+.page-h1 {
+  font-size: clamp(1.75rem, 1.1rem + 1.9vw, 2.6rem);
+  line-height: 1.1;
+  max-width: 22ch;
+}
+.page-lede {
+  font-size: clamp(0.95rem, 0.9rem + 0.22vw, 1.05rem);
+  line-height: 1.6;
+  max-width: 58ch;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
 }

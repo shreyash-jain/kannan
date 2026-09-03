@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { Video } from "@/components/Video";
 import { JsonLd } from "@/components/JsonLd";
-import { img, video } from "@/lib/images";
+import { img } from "@/lib/images";
 import { articleLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
 import { site, whatsappLink } from "@/lib/site";
@@ -37,14 +35,6 @@ export default function PromisePostPage() {
           image: img.lodgeBathroom.src,
           datePublished,
         })}
-      />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          { label: "The Promise", href: "/blog/the-promise" },
-        ]}
       />
 
       <article>
@@ -206,14 +196,17 @@ export default function PromisePostPage() {
           {/* Lodge renovation walk-through — the work as it actually was */}
           <div className="mx-auto mt-10 max-w-3xl">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-sand">
-              <Video
-                video={video.lodgeWalk}
-                className="absolute inset-0 h-full w-full object-cover"
+              <Image
+                src={img.lodgeCourtyardPatio.src}
+                alt={img.lodgeCourtyardPatio.alt}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
               />
             </div>
             <p className="mt-3 text-center text-xs text-muted">
-              A walk past one of the lodge units mid-renovation, in the
-              first weeks after we took the keys.
+              One of the lodge units after the work — the patio, the paint and
+              the bougainvillea that came with it.
             </p>
           </div>
         </Section>
@@ -308,14 +301,17 @@ export default function PromisePostPage() {
             {/* Pool tour — honest documentation of the pool area as it is */}
             <div className="mt-10">
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-bone">
-                <Video
-                  video={video.poolTour}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
+                <Image
+                src={img.poolReal.src}
+                alt={img.poolReal.alt}
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+              />
               </div>
               <p className="mt-3 text-center text-xs text-muted">
-                The pool area — the next big project on the list after the
-                lodge rooms.
+                The pool — kept ready year-round, and the next area on the list
+                after the lodge rooms.
               </p>
             </div>
           </div>

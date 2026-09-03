@@ -11,7 +11,28 @@
 
 import { cldImage, cldVideo, cldVideoPoster } from "./cloudinary";
 
-export type Img = { src: string; alt: string; width: number; height: number };
+/**
+ * A small square crop for grid tiles. A tile draws at ~260px; the full
+ * frame is 1600px and close to a megabyte, so this is roughly a tenth of
+ * the bytes. Uses an explicit `thumb` when a photo carries one, otherwise
+ * rewrites the transform segment of the Cloudinary URL.
+ */
+export function thumbOf(image: { src: string; thumb?: string }): string {
+  if (image.thumb) return image.thumb;
+  return image.src.replace(
+    /\/upload\/[^/]+\//,
+    "/upload/f_auto,q_auto,c_fill,g_auto,ar_1:1,w_520/",
+  );
+}
+
+export type Img = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** Optional small crop for grid tiles; the viewer still opens `src`. */
+  thumb?: string;
+};
 
 export const img = {
   // ---- HOME HERO / FARM LANDSCAPE ----------------------------------------
@@ -168,7 +189,7 @@ export const img = {
   },
   lodgeBedroomEnsuite: {
     src: cldImage("lodge-bedroom-ensuite"),
-    alt: "A renovated lodge bedroom at Kanaan with the en-suite shower visible through the doorway — wooden ceiling, soft linen, a small rug at the foot of the bed.",
+    alt: "A renovated en-suite bathroom in a Kanaan lodge unit — smooth screed walls, a glass-screened shower, a vessel basin on a screed counter and a wooden-framed mirror under the exposed pine ceiling.",
     width: 1200,
     height: 1600,
   },
@@ -352,6 +373,162 @@ export const img = {
     alt: "A bathroom at Kanaan — concrete-finish walls, walk-in shower behind a pine sliding door. (Dedicated backpacker bathroom photography arrives shortly.)",
     width: 1200,
     height: 1600,
+  },
+
+  // ---- TWIN ROOM (professional shoot, August 2026) --------------------
+  twinRoomPair: {
+    src: cldImage("twin-room-pair"),
+    alt: "A twin room at Kanaan — two single beds with scalloped wooden headboards, striped grey-and-white bedding and a folded white towel on each, a blue upholstered bench at the foot of one bed and a framed fish-eagle print on the wall.",
+    width: 1067,
+    height: 1600,
+  },
+  twinRoomBeds: {
+    src: cldImage("twin-room-beds"),
+    alt: "The two single beds of a Kanaan twin room seen straight on — scalloped wooden headboards, crisp striped linen, tiled floor and soft morning light across the room.",
+    width: 1067,
+    height: 1600,
+  },
+  twinRoomHeadboard: {
+    src: cldImage("twin-room-headboard"),
+    alt: "A closer view of one bed in a Kanaan twin room — the scalloped wooden headboard, a plump white pillow and a folded towel laid at the foot.",
+    width: 1067,
+    height: 1600,
+  },
+
+  // ---- TWIN ROOM — the screed-bathroom unit, door 20 (Aug 2026 shoot) ----
+  twinRoomTwoBeds: {
+    src: cldImage("twin-room-two-beds"),
+    alt: "A twin room at Kanaan with two single beds side by side under leaf-patterned blankets in ochre, blue and grey, a folded towel on each, a wooden chest at the foot and a big curtained window onto the trees.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomSingleWindow: {
+    src: cldImage("twin-room-single-window"),
+    alt: "One of the single beds in a Kanaan twin room, tucked beneath a tall window with the bush beyond — leaf-patterned blanket, a folded towel and soft afternoon light.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomDouble: {
+    src: cldImage("twin-room-double"),
+    alt: "A double bed in a Kanaan twin room, made up with the same leaf-patterned blanket in ochre and blue, plump white pillows and folded towels laid across the foot.",
+    width: 1024,
+    height: 683,
+  },
+  twinRoomShowerScreed: {
+    src: cldImage("twin-room-shower-screed"),
+    alt: "The bathroom of a Kanaan twin room — a large walk-in shower finished in smooth grey screed, a white curtain drawn back and a wooden chest of drawers alongside.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomShowerTiled: {
+    src: cldImage("twin-room-shower-tiled"),
+    alt: "A white-tiled shower in a Kanaan twin room, simple and spotless, with a black mixer and rose against the square-tiled wall.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomBasin: {
+    src: cldImage("twin-room-basin"),
+    alt: "A pedestal basin and slim wall mirror in a Kanaan twin room, the mirror catching the reflection of a bright window.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomDesk: {
+    src: cldImage("twin-room-desk"),
+    alt: "A wooden writing desk and red-seated chair beneath the window of a Kanaan twin room, with the farm buildings and mango shade visible outside.",
+    width: 1024,
+    height: 1536,
+  },
+  twinRoomDoor20: {
+    src: cldImage("twin-room-door-20"),
+    alt: "The door to twin room 20 at Kanaan — a warm timber door numbered in white, a green step, a shaded veranda and a tree just beyond.",
+    width: 1024,
+    height: 1536,
+  },
+
+  // ---- THE WOODEN HOUSE — backpacker dorm (professional shoot, Aug 2026)
+  woodenHouseExterior: {
+    src: cldImage("wooden-house-exterior"),
+    alt: "The wooden house at Kanaan seen from outside — a timber-clad cabin under dappled tree shade, with a paved terrace and garden chairs at the front.",
+    width: 1600,
+    height: 1067,
+  },
+  woodenHouseBunkRoom: {
+    src: cldImage("wooden-house-bunk-room"),
+    alt: "A room in the wooden house at Kanaan — a sturdy wooden bunk with a ladder up to the top mattress, a single bed alongside, pine-clad walls, a wall fan and blue curtains at the window.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseBunkLadder: {
+    src: cldImage("wooden-house-bunk-ladder"),
+    alt: "The wooden bunk in the Kanaan wooden house, closer in — a broad timber ladder to the upper mattress, warm pine walls and slatted wooden floors.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseSingleBed: {
+    src: cldImage("wooden-house-single-bed"),
+    alt: "A single bed beneath a window in the wooden house at Kanaan — blue curtains drawn back, pine-clad walls and afternoon light falling across the pillow.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseKitchen: {
+    src: cldImage("wooden-house-kitchen"),
+    alt: "The shared self-catering kitchen in the wooden house at Kanaan — pine cabinets, shelves of storage jars, a toaster oven and microwave on the counter, and a round dining table with red and wooden chairs.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseDining: {
+    src: cldImage("wooden-house-dining"),
+    alt: "The round dining table in the wooden house at Kanaan, with red and wooden chairs pulled up to it and the kitchen counter running along the wall behind.",
+    width: 1067,
+    height: 1600,
+  },
+  woodenHouseLoungeCorner: {
+    src: cldImage("wooden-house-lounge-corner"),
+    alt: "A corner of the common room in the Kanaan wooden house — a tall fridge, a red leather couch, a guitar propped against the wall and a pine door standing open onto the stonework beyond.",
+    width: 1067,
+    height: 1600,
+  },
+
+  // ---- ENTERTAINMENT ROOM (professional shoot, August 2026) -----------
+  entertainmentPoolTable: {
+    src: cldImage("entertainment-pool-table"),
+    alt: "The pool table in the entertainment room at Kanaan — blue baize, cue and ball mid-game, with the foosball table and a wooden sideboard behind it.",
+    width: 1600,
+    height: 1067,
+  },
+  entertainmentRoomWide: {
+    src: cldImage("entertainment-room-wide"),
+    alt: "The entertainment room at Kanaan under its wooden-beamed ceiling — the pool table in the middle, foosball along the wall, a television and a fridge for the evening.",
+    width: 1067,
+    height: 1600,
+  },
+
+  // ---- HIGH-RESOLUTION REPLACEMENTS (Sept 2026) -------------------------
+  // Each of these replaced a slot that was being upscaled: the old sources
+  // were 750x401, 750x606 and a portrait crop forced into a wide hero.
+  poolReal: {
+    src: cldImage("pool-real"),
+    alt: "The swimming pool at Kanaan — clear blue water, a brick surround and palms and old trees standing over it.",
+    width: 1600,
+    height: 1067,
+  },
+  venueShadeLawn: {
+    src: cldImage("venue-shade-lawn"),
+    alt: "The open lawn at Kanaan under the mango trees, with the long open-sided shade structure standing along one side and the Lowveld beyond.",
+    width: 1600,
+    height: 1067,
+  },
+  venueLawnWide: {
+    src: cldImage("venue-lawn-wide"),
+    alt: "The covered venue at Kanaan seen across the lawn — a long open-sided roof under mango trees, with the Lowveld opening out beyond it.",
+    width: 1600,
+    height: 1067,
+  },
+  campingAvenueWide: {
+    src: cldImage("camping-avenue-wide"),
+    alt: "The avenue of forty-year-old mango trees over the camping ground at Kanaan, a track running between them and power points at the pitches.",
+    width: 2400,
+    height: 1800,
   },
 
   // ---- POOL ---------------------------------------------------------------
@@ -668,15 +845,6 @@ export const img = {
       "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
     ),
     alt: "A self-catering kitchenette before dawn, lit by a single lamp — a kettle steaming on a two-plate hob, coffee being poured into a travel thermos, binoculars, car keys and a folded park map on the counter, and the first cold light behind the window.",
-    width: 1600,
-    height: 900,
-  },
-  farmBraaiMixedGroup: {
-    src: cldImage(
-      "farm-braai-mixed-group",
-      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
-    ),
-    alt: "An evening braai on a Lowveld farm lawn under big old trees — coals glowing, a long table with mismatched chairs, guests gathered as soft shapes in the firelight, a lit unit doorway on one side and tents and an overland vehicle on the other.",
     width: 1600,
     height: 900,
   },

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
@@ -78,17 +77,6 @@ export default function WhereToEatAroundHazyviewPage() {
         })}
       />
       <JsonLd data={faqLd(faqs)} />
-
-      <Breadcrumbs
-        trail={[
-          { label: "Home", href: "/" },
-          { label: "Journal & Guides", href: "/blog" },
-          {
-            label: "Where to eat around Hazyview",
-            href: "/blog/where-to-eat-around-hazyview",
-          },
-        ]}
-      />
 
       <article>
         <BlogHero
