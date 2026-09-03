@@ -5,7 +5,10 @@ import { useState } from "react";
 import type { Img } from "@/lib/images";
 import { LightboxGallery } from "./Lightbox";
 
-export type GalleryItem = { photo: Img; category: string };
+export type GalleryItem = {
+  photo: Img & { thumb?: string };
+  category: string;
+};
 
 /**
  * A gallery is only useful if you can find ONE thing fast, so this filters
@@ -63,10 +66,11 @@ export function FilterGallery({
               className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-lg bg-sand"
             >
               <Image
-                src={i.photo.src}
+                src={i.photo.thumb ?? i.photo.src}
+                data-full={i.photo.src}
                 alt={i.photo.alt}
                 fill
-                sizes="(min-width: 1280px) 19vw, (min-width: 1024px) 24vw, (min-width: 640px) 32vw, 49vw"
+                sizes="260px"
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
             </button>

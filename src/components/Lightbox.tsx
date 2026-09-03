@@ -30,7 +30,10 @@ export function LightboxGallery({
     if (!img) return;
     if (target.closest("a")) return;
     e.preventDefault();
-    setActive({ src: img.currentSrc || img.src, alt: img.alt });
+    // A grid tile may be a small crop with the full frame on data-full —
+    // open that rather than blowing up a 520px thumbnail.
+    const full = img.getAttribute("data-full");
+    setActive({ src: full || img.currentSrc || img.src, alt: img.alt });
     setZoomed(false);
   }
 

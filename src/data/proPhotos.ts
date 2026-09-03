@@ -18,7 +18,17 @@ export type ProCategory =
   | "land"
   | "facilities";
 
-export type ProPhoto = Img & { id: string; category: ProCategory };
+export type ProPhoto = Img & {
+  id: string;
+  category: ProCategory;
+  /**
+   * A small square crop for grid tiles. The full frame is 1600px and about
+   * 900KB; a tile renders at roughly 250px. Asking Cloudinary for the size
+   * we actually draw is ~56KB — sixteen times less over the wire, and it
+   * does not depend on an image optimiser being available at the edge.
+   */
+  thumb: string;
+};
 
 const RAW: { id: string; category: ProCategory; alt: string }[] = [
   { id: "arn-5694", category: "land", alt: "The Lowveld seen from the high ground on Kanaan — the braai stand at the viewpoint and the valley falling away beyond it." },
@@ -132,6 +142,7 @@ export const proPhotos: ProPhoto[] = RAW.map((p) => ({
   id: p.id,
   category: p.category,
   src: cldImage(`pro/${p.id}`),
+  thumb: cldImage(`pro/${p.id}`, "f_auto,q_auto,c_fill,g_auto,ar_1:1,w_520"),
   alt: p.alt,
   width: 1600,
   height: 1067,
