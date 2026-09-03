@@ -9,6 +9,7 @@ import { CTA } from "@/components/CTA";
 import { roomBySlug, roomPages, roomPhotos, roomRateLabel } from "@/data/rooms";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappAbout } from "@/lib/site";
+import { thumbOf } from "@/lib/images";
 
 export function generateStaticParams() {
   return roomPages.map((room) => ({ slug: room.slug }));
@@ -141,20 +142,24 @@ export default async function RoomPage({
         <H2 className="mt-3 mb-8">
           {room.name}, from every angle.
         </H2>
+        {/* Smaller, uniform tiles, and each one loads a 520px crop rather
+            than the full frame. Clicking opens the full-resolution file —
+            the viewer reads data-full and eases it in over the thumbnail. */}
         <LightboxGallery>
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {photos.map((photo) => (
               <button
                 key={photo.src}
                 type="button"
-                className="relative aspect-4/3 cursor-zoom-in overflow-hidden rounded-2xl"
+                className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-lg bg-sand"
               >
                 <Image
-                  src={photo.src}
+                  src={thumbOf(photo)}
+                  data-full={photo.src}
                   alt={photo.alt}
                   fill
-                  sizes="(min-width: 1024px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="260px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
                 />
               </button>
             ))}

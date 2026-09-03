@@ -11,7 +11,28 @@
 
 import { cldImage, cldVideo, cldVideoPoster } from "./cloudinary";
 
-export type Img = { src: string; alt: string; width: number; height: number };
+/**
+ * A small square crop for grid tiles. A tile draws at ~260px; the full
+ * frame is 1600px and close to a megabyte, so this is roughly a tenth of
+ * the bytes. Uses an explicit `thumb` when a photo carries one, otherwise
+ * rewrites the transform segment of the Cloudinary URL.
+ */
+export function thumbOf(image: { src: string; thumb?: string }): string {
+  if (image.thumb) return image.thumb;
+  return image.src.replace(
+    /\/upload\/[^/]+\//,
+    "/upload/f_auto,q_auto,c_fill,g_auto,ar_1:1,w_520/",
+  );
+}
+
+export type Img = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** Optional small crop for grid tiles; the viewer still opens `src`. */
+  thumb?: string;
+};
 
 export const img = {
   // ---- HOME HERO / FARM LANDSCAPE ----------------------------------------

@@ -8,6 +8,7 @@
 // were shot professionally in August 2026; the rest are the farm's own.
 
 import { img, type Img } from "@/lib/images";
+import { pro } from "./proPhotos";
 import { site } from "@/lib/site";
 
 export type Room = {
@@ -73,6 +74,13 @@ export const rooms: Room[] = [
       img.lodgeModestDouble,
       img.lodgeCourtyardPatio,
       img.veranda,
+      // From the professional shoot, chosen off the photo index (Sept 2026).
+      pro(5715),
+      pro(5741),
+      pro(5771),
+      pro(5800),
+      pro(5928),
+      pro(6027),
     ],
     ldType: "Hotel",
     ldDescription:

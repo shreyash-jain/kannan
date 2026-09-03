@@ -151,3 +151,10 @@ export const proPhotos: ProPhoto[] = RAW.map((p) => ({
 export function proByCategory(category: ProCategory): ProPhoto[] {
   return proPhotos.filter((p) => p.category === category);
 }
+
+/** One frame by its photographer number, e.g. pro(6017) -> arn-6017. */
+export function pro(frame: number): ProPhoto {
+  const found = proPhotos.find((p) => p.id === `arn-${frame}`);
+  if (!found) throw new Error(`no professional photo arn-${frame}`);
+  return found;
+}
