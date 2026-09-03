@@ -6,6 +6,7 @@ import { EditorialSplit, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
+import { pro } from "@/data/proPhotos";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -68,7 +69,7 @@ export default function GroupFunctionsPage() {
             name="Team & family gatherings"
             meta="Reunions & milestones"
             summary="Work weekends, reunions and milestone birthdays. Everyone sleeps on the farm, so the evening ends around the fire instead of in a car park."
-            image={img.farmBraaiMixedGroup}
+            image={pro(6070)}
           />
         </div>
       </Section>

@@ -265,7 +265,7 @@ export const diningCard = {
   eyebrow: "Dining · On request",
   summary: `A warm continental breakfast at R${site.meals.breakfast.pricePerPersonZAR} a person, and a traditional South African braai for dinner — both cooked to order, just let us know the day before.`,
   href: "/stay#dining",
-  image: img.farmBraaiMixedGroup,
+  image: pro(6070),
   facts: [
     `Breakfast · R${site.meals.breakfast.pricePerPersonZAR} pp`,
     "Dinner · on order",

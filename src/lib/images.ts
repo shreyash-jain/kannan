@@ -848,15 +848,6 @@ export const img = {
     width: 1600,
     height: 900,
   },
-  farmBraaiMixedGroup: {
-    src: cldImage(
-      "farm-braai-mixed-group",
-      "f_auto,q_auto,c_pad,ar_16:9,b_gen_fill,w_1600",
-    ),
-    alt: "An evening braai on a Lowveld farm lawn under big old trees — coals glowing, a long table with mismatched chairs, guests gathered as soft shapes in the firelight, a lit unit doorway on one side and tents and an overland vehicle on the other.",
-    width: 1600,
-    height: 900,
-  },
 
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------
   hosts: {
