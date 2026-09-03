@@ -55,6 +55,7 @@ export default async function GroupPage({
         title={group.name}
         lede={group.lede}
         image={group.hero}
+        back={{ href: "/group-functions", label: "Group Functions" }}
         primaryCta={{ href: enquire, label: "Enquire about your group" }}
         secondaryCta={{ href: "/gallery", label: "See the farm" }}
       >

@@ -71,6 +71,13 @@ export default async function RoomPage({
       {/* The room itself: one big photograph, and the facts beside it. */}
       <section className="border-b border-black/5 bg-sand">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
+          <Link
+            href="/stay"
+            className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-ink/70 transition-colors hover:text-ochre"
+          >
+            <span aria-hidden>←</span>
+            All rooms
+          </Link>
           <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-center">
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image

@@ -10,6 +10,7 @@ export function Hero({
   image,
   primaryCta,
   secondaryCta,
+  back,
   children,
 }: {
   eyebrow: string;
@@ -18,6 +19,8 @@ export function Hero({
   image: Img;
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
+  /** A way back to the page above this one. */
+  back?: { href: string; label: string };
   /** Optional block under the buttons — used for the stat strips. */
   children?: React.ReactNode;
 }) {
@@ -43,6 +46,16 @@ export function Hero({
           className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-transparent"
         />
       </div>
+
+      {back && (
+        <Link
+          href={back.href}
+          className="absolute left-5 top-6 z-10 inline-flex items-center gap-1.5 rounded-full bg-forest-deep/55 px-3.5 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-colors hover:bg-forest-deep/75 lg:left-8"
+        >
+          <span aria-hidden>←</span>
+          {back.label}
+        </Link>
+      )}
 
       <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">

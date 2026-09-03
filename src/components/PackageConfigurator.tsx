@@ -63,6 +63,13 @@ const TOUR_PRICES = {
 // Flat fee, return trip.
 const TRANSFER_FLAT = 1700;
 
+// Meals added to a package, per person per day. Anneli, 2026-09-01:
+// "Add R75 for breakfast and R120 for Dinner on the package". Deliberately
+// NOT the same constant as site.meals — she quoted these for packages, and
+// the standalone breakfast on /facilities is still the R60 she confirmed in
+// May. Worth reconciling with her, but not worth guessing at.
+const PACKAGE_MEALS = { breakfast: 75, dinner: 120 } as const;
+
 type Nights = 2 | 3 | 5;
 type Adults = 1 | 2 | 3 | 4;
 type Children = 0 | 1 | 2 | 3;
@@ -306,6 +313,19 @@ export function PackageConfigurator() {
               WhatsApp us
             </Link>{" "}
             and we will share our group-discounted rates.
+          </p>
+
+          <p className="mt-3 border-t border-black/10 pt-3 text-xs leading-relaxed text-muted">
+            Meals can be added to any package:{" "}
+            <strong className="font-medium text-forest-deep">
+              R{PACKAGE_MEALS.breakfast}
+            </strong>{" "}
+            per person for breakfast and{" "}
+            <strong className="font-medium text-forest-deep">
+              R{PACKAGE_MEALS.dinner}
+            </strong>{" "}
+            per person for dinner, per day. Just say so when you send your
+            dates and we will add them.
           </p>
         </div>
 
