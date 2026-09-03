@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { livePosts } from "@/lib/posts";
 import { roomPages } from "@/data/rooms";
+import { groupTypes } from "@/data/groups";
 
 type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
@@ -53,5 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...roomEntries, ...postEntries];
+  const groupEntries = groupTypes.map((g) => ({
+    url: `${site.url}/group-functions/${g.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...roomEntries, ...groupEntries, ...postEntries];
 }

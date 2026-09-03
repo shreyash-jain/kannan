@@ -6,7 +6,7 @@ import { EditorialSplit, ThumbQuad, StatStrip } from "@/components/Blocks";
 import { AccommodationCard } from "@/components/AccommodationCard";
 import { CTA } from "@/components/CTA";
 import { img } from "@/lib/images";
-import { pro } from "@/data/proPhotos";
+import { groupTypes } from "@/data/groups";
 import { site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -50,27 +50,16 @@ export default function GroupFunctionsPage() {
           hosts who live on site.
         </Lede>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AccommodationCard
-            href={whatsappLink("groupFunctions")}
-            name="School groups & tours"
-            meta="Most popular"
-            summary="Dorm beds, camping and a fenced property with one gate. Kruger is half an hour away, the trails start at the fence, and there is space for a whole grade to be outside at once."
-            image={img.campingAvenue}
-          />
-          <AccommodationCard
-            href={whatsappLink("groupFunctions")}
-            name="Church & community weekends"
-            meta="Whole-farm use"
-            summary={`A covered hall for ${site.capacity.wedding.indoor}, a fire big enough for everyone, and accommodation across four price points so nobody is priced out of the weekend.`}
-            image={img.venueTables}
-          />
-          <AccommodationCard
-            href={whatsappLink("groupFunctions")}
-            name="Team & family gatherings"
-            meta="Reunions & milestones"
-            summary="Work weekends, reunions and milestone birthdays. Everyone sleeps on the farm, so the evening ends around the fire instead of in a car park."
-            image={pro(6070)}
-          />
+          {groupTypes.map((g) => (
+            <AccommodationCard
+              key={g.slug}
+              href={`/group-functions/${g.slug}`}
+              name={g.name}
+              meta={g.eyebrow}
+              summary={g.summary}
+              image={g.hero}
+            />
+          ))}
         </div>
       </Section>
 
