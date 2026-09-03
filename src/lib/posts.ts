@@ -221,20 +221,6 @@ export const posts: Post[] = [
       "In-park rest camps, or a room just outside the gate? What each one is really like, why Hazyview sits between Kruger and the escarpment, and the four ways to stay on a working guest farm — lodge rooms, twin rooms, a backpacker dorm and camping under forty-year-old mango trees. From R250 per person sharing.",
   },
   {
-    chapter: "Weddings",
-    title:
-      "Wedding venues near Kruger: getting married at Kanaan in Hazyview",
-    category: "guide",
-    status: "live",
-    href: "/blog/wedding-venues-near-kruger-hazyview",
-    image: wedding.krugerHero.src,
-    imageAlt: wedding.krugerHero.alt,
-    datePublished: "2026-07-16",
-    readingMinutes: 8,
-    excerpt:
-      "An honest guide to a Lowveld wedding venue near Kruger National Park. What makes a farm wedding at Kanaan in Hazyview different — guest capacity from intimate to 150, where everyone sleeps, catering, the legal bit, the best time of year, and how to start planning. From R250 per person sharing, 30–45 minutes from the Kruger gate.",
-  },
-  {
     chapter: "Food & Drink",
     title:
       "Where to eat around Hazyview — an honest food guide",
