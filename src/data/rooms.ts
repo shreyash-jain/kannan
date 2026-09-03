@@ -77,6 +77,18 @@ export const rooms: Room[] = [
       pro(5741),
       pro(5928),
       pro(6027),
+      // Second pass, marked on the gallery contact sheets.
+      pro(5964),
+      pro(5965),
+      pro(6017),
+      pro(6021),
+      pro(5986),
+      pro(6029),
+      pro(6033),
+      pro(5956),
+      pro(5962),
+      pro(6004),
+      pro(6007),
     ],
     ldType: "Hotel",
     ldDescription:
