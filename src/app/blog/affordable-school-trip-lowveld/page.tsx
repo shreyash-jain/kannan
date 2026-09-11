@@ -39,8 +39,8 @@ import {
 // body text. Every h3 here carries explicit display-font classes, and the
 // FAQ uses the same not-prose divide-y block as the cost guide.
 //
-// Link budget: 7 contextual INTERNAL links in the body (marketing's ask) —
-//   /group-functions/school-groups · /camping ·
+// Link budget: 8 contextual INTERNAL links in the body (marketing's ask) —
+//   /group-functions · /group-functions/school-groups · /camping ·
 //   /blog/when-to-visit-kruger-hazyview-month-by-month ·
 //   /blog/kruger-from-hazyview · /blog/panorama-route-from-hazyview ·
 //   /blog/things-to-do-around-hazyview ·
@@ -245,7 +245,8 @@ export default function AffordableSchoolTripLowveldPage() {
             <h3 className={h3}>Make somebody itemise &ldquo;included&rdquo;</h3>
             <p>
               Linen, teacher rooms, venue hire, campsite power. Two quotes R80
-              apart are often R300 apart once you know. Our venue seats{" "}
+              apart are often R300 apart once you know.{" "}
+              <Link href="/group-functions">Our venue</Link> seats{" "}
               {site.capacity.wedding.indoor};{" "}
               <Link href="/camping">the campsites</Link> have a tap and power at
               the pitch.
