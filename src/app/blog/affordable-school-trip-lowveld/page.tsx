@@ -75,8 +75,10 @@ import {
 // Panorama Route per-site entry fees are deliberately NOT quoted: the public
 // figures disagree and no primary source was reachable.
 //
-// Farm facts come from src/lib/site.ts — never typed by hand. No group rate
-// and no dinner price are quoted anywhere, because neither exists in site.ts.
+// Farm facts come from src/lib/site.ts — never typed by hand. The school
+// group rate (from R180 per learner a night) came from marketing on
+// 2026-09-11 and lives in site.pricing.schoolGroupFromZAR. No dinner price
+// is quoted anywhere, because none exists in site.ts.
 // ---------------------------------------------------------------------
 
 const datePublished = "2026-09-11";
@@ -92,7 +94,7 @@ const faqs = [
   },
   {
     q: "What is the cheapest way to accommodate a school group in the Lowveld?",
-    a: `Spread the group across dorm beds, twin rooms and camping. Our rate starts at R${site.pricing.fromZAR} per person sharing; we quote schools on real numbers and dates.`,
+    a: `Spread the group across dorm beds, twin rooms and camping. School groups start at R${site.pricing.schoolGroupFromZAR} per learner a night; we quote on real numbers and dates.`,
   },
   {
     q: "Can you cater, and can we cook for ourselves?",
@@ -146,7 +148,7 @@ export default function AffordableSchoolTripLowveldPage() {
               items={[
                 `Kruger's Phabeni and Numbi gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from Hazyview — one bus day buys a full park day.`,
                 "SANParks counts everyone 12 and over as an adult: R134 a head until 31 October 2026, R140 after. There is no scholar rate.",
-                `Ask for a group rate on real numbers, and make somebody itemise "included". Ours starts at R${site.pricing.fromZAR} per person sharing.`,
+                `Ask for a group rate on real numbers, and make somebody itemise "included". School groups start at R${site.pricing.schoolGroupFromZAR} per learner a night.`,
                 `Set menus cost less than choice. Breakfast is R${site.meals.breakfast.pricePerPersonZAR} a head; the kitchen is yours for the meal you self-cater.`,
                 "Buy one excursion properly. The trails, waterfall, pool and fire cost nothing on top of the bed.",
               ]}
@@ -223,8 +225,8 @@ export default function AffordableSchoolTripLowveldPage() {
             <p>
               A published rate is written for two people on a weekend, not
               fifty-two learners on a Tuesday in May. Our{" "}
-              <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">group rate</Link> starts at R{site.pricing.fromZAR} per person
-              sharing; what a
+              <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">group rate</Link> for schools starts at R{site.pricing.schoolGroupFromZAR} per
+              learner a night; what a
               school pays depends on numbers and dates. Vagueness gets priced
               as risk.
             </p>
@@ -504,7 +506,7 @@ export default function AffordableSchoolTripLowveldPage() {
 
         <WhatsAppCTA
           title="Send us your numbers and we'll send you a real figure."
-          body={`Learner count, staff count and your dates — that is all we need. Anneli or Matthew will come back personally with what we would quote, how we would split the group across the beds and camping, and what we would do with each day. From R${site.pricing.fromZAR} per person sharing.`}
+          body={`Learner count, staff count and your dates — that is all we need. Anneli or Matthew will come back personally with what we would quote, how we would split the group across the beds and camping, and what we would do with each day. School groups from R${site.pricing.schoolGroupFromZAR} per learner a night.`}
           buttonLabel="Enquire about a school group on WhatsApp"
           pageKey="groupFunctions"
         />
