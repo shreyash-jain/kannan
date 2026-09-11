@@ -265,16 +265,16 @@ export const posts: Post[] = [
   {
     chapter: "School Groups",
     title:
-      "Planning an affordable school trip to the Lowveld: the four decisions that actually move the number",
+      "Affordable School Trip Lowveld: Smart Accommodation, Catering & Excursion Choices That Stretch Every Rand",
     category: "guide",
     status: "live",
     href: "/blog/affordable-school-trip-lowveld",
     image: img.campingAvenueWide.src,
     imageAlt: img.campingAvenueWide.alt,
     datePublished: "2026-09-11",
-    readingMinutes: 9,
+    readingMinutes: 5,
     excerpt:
-      "Planning an affordable school trip to the Lowveld? What a Kruger school excursion really costs per learner, why SANParks counts a twelve-year-old as an adult, how budget school accommodation is actually priced, what makes group catering work — and a five-step way to build the whole budget in order.",
+      "What a Kruger school excursion really costs per learner, why SANParks counts a twelve-year-old as an adult, how budget school accommodation is actually priced, what makes group catering work — and a five-step way to build the budget in order.",
   },
 ];
 
