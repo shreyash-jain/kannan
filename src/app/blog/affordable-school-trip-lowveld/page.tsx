@@ -47,8 +47,13 @@ import {
 // body text. Every h3 here carries explicit display-font classes, and the
 // FAQ uses the same not-prose divide-y block as the cost guide.
 //
-// Link budget: 8 contextual INTERNAL links in the body (marketing's ask) —
-//   /group-functions · /group-functions/school-groups · /camping ·
+// Link budget (marketing's ask, 2026-09-11): SEVEN in-body links to
+// /group-functions on varied anchors — "account for everybody", "two
+// groups", "group rate", "Our venue", "School group catering", "the dorm
+// end of the farm", "group functions page" — plus the seven other
+// internal links below. More links to one page than we would normally
+// put in 1,000 words; their call.
+//   /group-functions/school-groups · /camping ·
 //   /blog/when-to-visit-kruger-hazyview-month-by-month ·
 //   /blog/kruger-from-hazyview · /blog/panorama-route-from-hazyview ·
 //   /blog/things-to-do-around-hazyview ·
@@ -149,12 +154,12 @@ export default function AffordableSchoolTripLowveldPage() {
 
             <p>
               The first thing a teacher asks us is never the price — it is
-              whether they can account for everybody at nine at night. The
+              whether they can <Link href="/group-functions">account for everybody</Link> at nine at night. The
               price comes two messages later: <em>what would sixty of us cost?</em>
             </p>
             <p>
               Honestly, it depends on four decisions the school has not made
-              yet. We have watched two groups of the same size do the same week
+              yet. We have watched <Link href="/group-functions">two groups</Link> of the same size do the same week
               here for very different money; the difference was the order they
               asked things in. An affordable school trip to the Lowveld is
               about asking four questions early, in the right order.
@@ -174,8 +179,7 @@ export default function AffordableSchoolTripLowveldPage() {
                 Kruger&rsquo;s gates open
               </a>{" "}
               at 06:00 in winter and 05:30 in summer. A bus leaves in the dark
-              and is back for a swim by mid-afternoon. One bus day, one full
-              park day.
+              and is back for a swim by mid-afternoon.
             </p>
             <p>
               The other half is the ground: trails from our fence, a waterfall,
@@ -217,8 +221,9 @@ export default function AffordableSchoolTripLowveldPage() {
             <h3 className={h3}>Ask for a group rate, with real numbers</h3>
             <p>
               A published rate is written for two people on a weekend, not
-              fifty-two learners on a Tuesday in May. Ours
-              starts at R{site.pricing.fromZAR} per person sharing; what a
+              fifty-two learners on a Tuesday in May. Our{" "}
+              <Link href="/group-functions">group rate</Link> starts at R{site.pricing.fromZAR} per person
+              sharing; what a
               school pays depends on numbers and dates. Vagueness gets priced
               as risk.
             </p>
@@ -273,8 +278,8 @@ export default function AffordableSchoolTripLowveldPage() {
             sizes="(min-width: 1024px) 64rem, 100vw"
           />
           <figcaption className="mt-3 text-center text-xs text-muted">
-            The wooden house — the dorm end of the farm, and the cheapest bed
-            we have.
+            The wooden house — <Link href="/group-functions">the dorm end of the farm</Link>, and the
+            cheapest bed we have.
           </figcaption>
           </figure>
         </div>
@@ -285,7 +290,7 @@ export default function AffordableSchoolTripLowveldPage() {
 
             <h3 className={h3}>One set menu, cooked once</h3>
             <p>
-              School group catering in South Africa gets expensive when groups
+              <Link href="/group-functions">School group catering</Link> in South Africa gets expensive when groups
               ask for choice three times a day. We cook a
               continental breakfast at R{site.meals.breakfast.pricePerPersonZAR}{" "}
               a head and a braai dinner, both set menus on order. No halaal
@@ -446,8 +451,9 @@ export default function AffordableSchoolTripLowveldPage() {
               thesis="A school trip is not made affordable by cutting things out of it — but by knowing which four decisions carry the money, and making those deliberately."
               body={
                 <>
-                  Send us your learner count, staff count and dates, and Anneli
-                  or Matthew will reply personally with a real figure.
+                  Tell us your learner count, staff count and dates on our{" "}
+                  <Link href="/group-functions">group functions page</Link>, and Anneli or Matthew will reply
+                  personally with a real figure.
                 </>
               }
             />
