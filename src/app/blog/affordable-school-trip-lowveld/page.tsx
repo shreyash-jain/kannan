@@ -89,8 +89,10 @@ const faqs = [
 
 export const metadata = createBlogPostMetadata({
   slug: "affordable-school-trip-lowveld",
-  // Title tag 50 chars, meta description 149 — inside the brief's limits.
-  title: "Affordable School Trip Lowveld: Stretch Every Rand",
+  // Marketing asked for the full topic as the title, verbatim (2026-09-11),
+  // over the brief's own 60-character cap — their call, recorded here.
+  title:
+    "Affordable School Trip Lowveld: Smart Accommodation, Catering & Excursion Choices That Stretch Every Rand",
   description:
     "Planning an affordable school trip to the Lowveld? Gate fees, group accommodation, catering and excursions — the four decisions that move the number.",
   image: img.campingAvenueWide,
@@ -251,7 +253,8 @@ export default function AffordableSchoolTripLowveldPage() {
           </div>
         </Section>
 
-        <figure className="mx-auto my-12 w-full max-w-5xl px-5 lg:px-0">
+        <div className="mx-auto my-12 max-w-5xl px-5 lg:px-8">
+          <figure>
           <Image
             src={img.woodenHouseExterior.src}
             alt={img.woodenHouseExterior.alt}
@@ -264,7 +267,8 @@ export default function AffordableSchoolTripLowveldPage() {
             The wooden house — the dorm end of the farm, and the cheapest bed
             we have.
           </figcaption>
-        </figure>
+          </figure>
+        </div>
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
@@ -360,7 +364,8 @@ export default function AffordableSchoolTripLowveldPage() {
           </div>
         </Section>
 
-        <figure className="mx-auto my-12 w-full max-w-5xl px-5 lg:px-0">
+        <div className="mx-auto my-12 max-w-5xl px-5 lg:px-8">
+          <figure>
           <Image
             src={img.hilltopViewpoint.src}
             alt={img.hilltopViewpoint.alt}
@@ -372,7 +377,8 @@ export default function AffordableSchoolTripLowveldPage() {
           <figcaption className="mt-3 text-center text-xs text-muted">
             The hilltop above the farm. No ticket, nothing to book.
           </figcaption>
-        </figure>
+          </figure>
+        </div>
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
