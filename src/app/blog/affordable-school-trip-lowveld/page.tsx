@@ -270,7 +270,7 @@ export default function AffordableSchoolTripLowveldPage() {
           </div>
         </Section>
 
-        <div className="mx-auto my-12 max-w-7xl px-5 lg:px-8">
+        <div className="mx-auto my-12 max-w-5xl px-5 lg:px-8">
           <figure>
           <Image
             src={img.woodenHouseExterior.src}
@@ -383,7 +383,7 @@ export default function AffordableSchoolTripLowveldPage() {
           </div>
         </Section>
 
-        <div className="mx-auto my-12 max-w-7xl px-5 lg:px-8">
+        <div className="mx-auto my-12 max-w-5xl px-5 lg:px-8">
           <figure>
           <Image
             src={img.hilltopViewpoint.src}
