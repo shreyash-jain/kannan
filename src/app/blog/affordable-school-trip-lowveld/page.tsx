@@ -35,6 +35,12 @@ import {
 // closing block, FAQ included, TLDR and Sources excluded — is held under
 // that. Do not let it creep back up.
 //
+// Column width: marketing asked (2026-09-11) for the reading column on THIS
+// post to be as wide as the data blocks — max-w-5xl instead of the site's
+// max-w-prose. Every other guide keeps max-w-prose; this is a per-post
+// choice, not a site change. The wide blocks no longer "break out" here
+// because the prose is already at their width.
+//
 // Sub-headings: `.prose-kanaan` styles only <p>, so a bare <h3> renders as
 // body text. Every h3 here carries explicit display-font classes, and the
 // FAQ uses the same not-prose divide-y block as the cost guide.
@@ -128,7 +134,7 @@ export default function AffordableSchoolTripLowveldPage() {
         />
 
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <TLDR
               items={[
                 `Kruger's Phabeni and Numbi gates are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from Hazyview — one bus day buys a full park day.`,
@@ -201,7 +207,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </Section>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
               Budget school accommodation in the Lowveld, without the compromise
             </H2>
@@ -272,7 +278,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </div>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Catering that feeds the budget, not just the kids</H2>
 
             <h3 className={h3}>One set menu, cooked once</h3>
@@ -302,7 +308,7 @@ export default function AffordableSchoolTripLowveldPage() {
             conservation fees.
           </Callout>
 
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <p>
               Under the{" "}
               <a
@@ -382,7 +388,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </div>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Budget the whole trip in this order</H2>
           </div>
 
@@ -414,7 +420,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </Section>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Questions we get asked most</H2>
             <div className="not-prose mt-8 divide-y divide-black/10 border-t border-black/10">
               {faqs.map((f) => (
@@ -432,7 +438,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </Section>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
               title="In closing — cheap school tours are not the goal"
               thesis="A school trip is not made affordable by cutting things out of it — but by knowing which four decisions carry the money, and making those deliberately."
@@ -450,7 +456,7 @@ export default function AffordableSchoolTripLowveldPage() {
         </Section>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-5xl">
             <Sources
               items={[
                 {
