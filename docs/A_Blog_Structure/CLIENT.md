@@ -76,6 +76,23 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **School groups: from R180 per learner per night** (marketing, 2026-09-11, unit
+  confirmed). Lives in `site.pricing.schoolGroupFromZAR`; quote it from there. The
+  general R250 pps rate is not the number a teacher wants — lead with R180 on anything
+  aimed at schools. Dinner (braai) still has no published price; write it as on request.
+- **Links in the body must look like links.** The site has no global anchor styling.
+  Every inline link needs `font-medium text-ochre underline decoration-ochre/50
+  underline-offset-4 hover:text-ochre-deep` — marketing twice reported "not
+  hyperlinked" when the colour alone was used. *Why:* plain-text links are invisible.
+- **Sub-headings need explicit classes.** `.prose-kanaan` styles only `<p>`; a bare
+  `<h3>` renders as body text. Use the display font on every h3, and the not-prose
+  divide-y block for FAQs (see the cost guide). *Why:* the school-trip post shipped its
+  first preview with every sub-heading looking like a paragraph.
+- **Marketing prefers a wide reading column on the school-trip post** (`max-w-7xl`,
+  the header's edges) with photos at `max-w-5xl`. Per-post choice, not a site
+  change — the other guides keep `max-w-prose`. Ask before widening another.
+- **Marketing wants the exact supplied topic as the H1 *and* the tab title**, even past
+  the 60-character cap in their own brief. Use it verbatim; do not shorten.
 - **Hazyview is not a malaria area.** Anneli's own correction. Never frame malaria as a
   farm or Hazyview risk; if it's mentioned at all, scope it strictly to Kruger. *Why:* it
   scares guests off a risk that doesn't apply to where they'd actually be sleeping.
@@ -94,4 +111,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-08-21.*
+*Last reviewed: 2026-09-11.*
