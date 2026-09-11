@@ -154,12 +154,12 @@ export default function AffordableSchoolTripLowveldPage() {
 
             <p>
               The first thing a teacher asks us is never the price — it is
-              whether they can <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">account for everybody</Link> at nine at night. The
+              whether they can <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">account for everybody</Link> at nine at night. The
               price comes two messages later: <em>what would sixty of us cost?</em>
             </p>
             <p>
               Honestly, it depends on four decisions the school has not made
-              yet. We have watched <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">two groups</Link> of the same size do the same week
+              yet. We have watched <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">two groups</Link> of the same size do the same week
               here for very different money; the difference was the order they
               asked things in. An affordable school trip to the Lowveld is
               about asking four questions early, in the right order.
@@ -175,7 +175,7 @@ export default function AffordableSchoolTripLowveldPage() {
                 href="https://www.krugerpark.co.za/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-ochre hover:text-ochre-deep"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep"
               >
                 Kruger&rsquo;s gates open
               </a>{" "}
@@ -186,7 +186,7 @@ export default function AffordableSchoolTripLowveldPage() {
               The other half is the ground: trails from our fence, a waterfall,
               a rock pool and a hilltop over the valley. Three afternoons,
               nothing to pay — the{" "}
-              <Link href="/group-functions/school-groups" className="font-medium text-ochre hover:text-ochre-deep">
+              <Link href="/group-functions/school-groups" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">
                 school groups page
               </Link>{" "}
               has the beds, the fence and the capacity.
@@ -223,7 +223,7 @@ export default function AffordableSchoolTripLowveldPage() {
             <p>
               A published rate is written for two people on a weekend, not
               fifty-two learners on a Tuesday in May. Our{" "}
-              <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">group rate</Link> starts at R{site.pricing.fromZAR} per person
+              <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">group rate</Link> starts at R{site.pricing.fromZAR} per person
               sharing; what a
               school pays depends on numbers and dates. Vagueness gets priced
               as risk.
@@ -236,7 +236,7 @@ export default function AffordableSchoolTripLowveldPage() {
                 href="https://www.gov.za/about-sa/school-calendar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-ochre hover:text-ochre-deep"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep"
               >
                 2027 terms
               </a>{" "}
@@ -246,13 +246,13 @@ export default function AffordableSchoolTripLowveldPage() {
                 href="https://www.sanparks.org/parks/kruger/what-to-do/day-visits"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-ochre hover:text-ochre-deep"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep"
               >
                 SANParks caps daily visitors
               </a>
               , and day visitors can be turned away. Book the day visit ahead.
               Our{" "}
-              <Link href="/blog/when-to-visit-kruger-hazyview-month-by-month" className="font-medium text-ochre hover:text-ochre-deep">
+              <Link href="/blog/when-to-visit-kruger-hazyview-month-by-month" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">
                 month-by-month almanac
               </Link>{" "}
               says what each term feels like.
@@ -262,9 +262,9 @@ export default function AffordableSchoolTripLowveldPage() {
             <p>
               Linen, teacher rooms, venue hire, campsite power. Two quotes R80
               apart are often R300 apart once you know.{" "}
-              <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">Our venue</Link> seats{" "}
+              <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">Our venue</Link> seats{" "}
               {site.capacity.wedding.indoor};{" "}
-              <Link href="/camping" className="font-medium text-ochre hover:text-ochre-deep">the campsites</Link> have a tap and power at
+              <Link href="/camping" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">the campsites</Link> have a tap and power at
               the pitch.
             </p>
           </div>
@@ -281,7 +281,7 @@ export default function AffordableSchoolTripLowveldPage() {
             sizes="(min-width: 1024px) 64rem, 100vw"
           />
           <figcaption className="mt-3 text-center text-xs text-muted">
-            The wooden house — <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">the dorm end of the farm</Link>, and the
+            The wooden house — <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">the dorm end of the farm</Link>, and the
             cheapest bed we have.
           </figcaption>
           </figure>
@@ -293,7 +293,7 @@ export default function AffordableSchoolTripLowveldPage() {
 
             <h3 className={h3}>One set menu, cooked once</h3>
             <p>
-              <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">School group catering</Link> in South Africa gets expensive when groups
+              <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">School group catering</Link> in South Africa gets expensive when groups
               ask for choice three times a day. We cook a
               continental breakfast at R{site.meals.breakfast.pricePerPersonZAR}{" "}
               a head and a braai dinner, both set menus on order. No halaal
@@ -325,7 +325,7 @@ export default function AffordableSchoolTripLowveldPage() {
                 href="https://www.sanparks.org/travel/book/useful-information/rates-fees"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-ochre hover:text-ochre-deep"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep"
               >
                 SANParks fee schedule
               </a>
@@ -341,7 +341,7 @@ export default function AffordableSchoolTripLowveldPage() {
             <h3 className={h3}>One flagship day, not four half-days</h3>
             <p>
               Each half-day costs a bus, a gate and two hours of road.{" "}
-              <Link href="/blog/kruger-from-hazyview" className="font-medium text-ochre hover:text-ochre-deep">Kruger from Hazyview</Link>{" "}
+              <Link href="/blog/kruger-from-hazyview" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">Kruger from Hazyview</Link>{" "}
               shows how one good day runs.
             </p>
 
@@ -357,7 +357,7 @@ export default function AffordableSchoolTripLowveldPage() {
             <h3 className={h3}>Combine the transport</h3>
             <p>
               The{" "}
-              <Link href="/blog/panorama-route-from-hazyview" className="font-medium text-ochre hover:text-ochre-deep">
+              <Link href="/blog/panorama-route-from-hazyview" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">
                 Panorama Route
               </Link>{" "}
               is ninety minutes away. Done on the way in or out, it costs entry
@@ -366,16 +366,16 @@ export default function AffordableSchoolTripLowveldPage() {
                 href="https://www.mpumalanga.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-ochre hover:text-ochre-deep"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep"
               >
                 site
               </a>{" "}
               and ask for a school rate — most have one unpublished.{" "}
-              <Link href="/blog/things-to-do-around-hazyview" className="font-medium text-ochre hover:text-ochre-deep">
+              <Link href="/blog/things-to-do-around-hazyview" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">
                 Things to do around Hazyview
               </Link>{" "}
               has the rest;{" "}
-              <Link href="/blog/cost-of-a-kruger-lowveld-week-2026" className="font-medium text-ochre hover:text-ochre-deep">
+              <Link href="/blog/cost-of-a-kruger-lowveld-week-2026" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">
                 what a Lowveld week costs
               </Link>{" "}
               does the maths for families.
@@ -457,7 +457,7 @@ export default function AffordableSchoolTripLowveldPage() {
               body={
                 <>
                   Tell us your learner count, staff count and dates on our{" "}
-                  <Link href="/group-functions" className="font-medium text-ochre hover:text-ochre-deep">group functions page</Link>, and Anneli or Matthew will reply
+                  <Link href="/group-functions" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep hover:decoration-ochre-deep">group functions page</Link>, and Anneli or Matthew will reply
                   personally with a real figure.
                 </>
               }
