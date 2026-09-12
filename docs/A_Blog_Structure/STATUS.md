@@ -58,7 +58,7 @@ re-verify it against `origin/main` before trusting it.
 | Weddings guide — `wedding-venues-near-kruger-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** | Owner has not reviewed. Note it links to `/blog/where-to-eat-around-hazyview`, which does **not** exist on `main` — that link 404s until the food guide lands. |
 | Where-to-stay guide — `accommodation-near-kruger-national-park` | `blog-10-where-to-stay` | **Built, verified, PR open** | Owner has not reviewed. Branched straight off `main`, so it is independent of blog-9 — every link resolves today. |
 | Food guide — `where-to-eat-around-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** (this row said "not started" — it was wrong) | Owner has not reviewed it. It ships together with blog-9 as things stand, because both live on that one branch. |
-| School-groups guide — `affordable-school-trip-lowveld` | `blog-14-affordable-school-trip-lowveld` | **Built, pushed, on `preview`. No PR yet.** | Marketing has the preview link; owner has not reviewed. Branched straight off `main` — every dependency (`campingAvenueWide`, `woodenHouseExterior`, `hilltopViewpoint`, `site.capacity.campingPeople`, `/group-functions/school-groups`) already exists there. |
+| School-groups guide — `affordable-school-trip-lowveld` | `blog-14-affordable-school-trip-lowveld` | **PR #36 open into `main`** (2026-09-12). On `preview`. | Marketing approved on preview; waiting on the owner. Merge only when marketing says publish. Branched straight off `main` — every dependency (`campingAvenueWide`, `woodenHouseExterior`, `hilltopViewpoint`, `site.capacity.campingPeople`, `/group-functions/school-groups`) already exists there. |
 
 ## ⚠️ `preview` is NOT level with `main` (2026-09-11)
 
@@ -179,4 +179,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-09-11*
+*Last updated: 2026-09-12*
