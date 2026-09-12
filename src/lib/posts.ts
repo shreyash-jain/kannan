@@ -262,6 +262,20 @@ export const posts: Post[] = [
     excerpt:
       "A complete Kruger National Park travel guide — what to expect from a Big 5 safari, how many days to spend, self-drive vs guided safari, Kruger's own sunrise and sunset drives (and why you have to book them at the gate), what to pack, and where to stay near Hazyview from R250 per person sharing.",
   },
+  {
+    chapter: "School Groups",
+    title:
+      "Affordable School Trip Lowveld: Smart Accommodation, Catering & Excursion Choices That Stretch Every Rand",
+    category: "guide",
+    status: "live",
+    href: "/blog/affordable-school-trip-lowveld",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-09-11",
+    readingMinutes: 5,
+    excerpt:
+      "What a Kruger school excursion really costs per learner, why SANParks counts a twelve-year-old as an adult, how budget school accommodation is actually priced, what makes group catering work — and a five-step way to build the budget in order.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

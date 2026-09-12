@@ -52,6 +52,9 @@ export const site = {
   //   - No halaal option
   pricing: {
     fromZAR: 250, // From R250 per person sharing per night (pps)
+    // Marketing (Shreyash), 2026-09-11: "School groups prices from R180 per
+    // learner". Read as per learner per night, consistent with fromZAR.
+    schoolGroupFromZAR: 180,
     currency: "ZAR",
     currencySymbol: "R",
     unit: "per person sharing, per night",

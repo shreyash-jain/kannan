@@ -58,6 +58,28 @@ re-verify it against `origin/main` before trusting it.
 | Weddings guide — `wedding-venues-near-kruger-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** | Owner has not reviewed. Note it links to `/blog/where-to-eat-around-hazyview`, which does **not** exist on `main` — that link 404s until the food guide lands. |
 | Where-to-stay guide — `accommodation-near-kruger-national-park` | `blog-10-where-to-stay` | **Built, verified, PR open** | Owner has not reviewed. Branched straight off `main`, so it is independent of blog-9 — every link resolves today. |
 | Food guide — `where-to-eat-around-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** (this row said "not started" — it was wrong) | Owner has not reviewed it. It ships together with blog-9 as things stand, because both live on that one branch. |
+| School-groups guide — `affordable-school-trip-lowveld` | `blog-14-affordable-school-trip-lowveld` | **PR #36 open into `main`** (2026-09-12). On `preview`. | Marketing approved on preview; waiting on the owner. Merge only when marketing says publish. Branched straight off `main` — every dependency (`campingAvenueWide`, `woodenHouseExterior`, `hilltopViewpoint`, `site.capacity.campingPeople`, `/group-functions/school-groups`) already exists there. |
+
+## ⚠️ `preview` is NOT level with `main` (2026-09-11)
+
+The documented procedure (`CLAUDE.md` → the `preview` branch) says to
+`git merge --no-edit origin/main` before merging a post in. **That merge currently
+conflicts** and was deliberately aborted, not resolved:
+
+- **Conflict:** add/add in `src/data/rooms.ts`, between the room galleries on `main`
+  (PR #35, `80d0014` — "rebuild /stay as a room-by-room photo catalogue") and the
+  different set already on `preview` (`ee8c5f2`, `a347355`).
+- `main` carries the "second pass, marked on the gallery contact sheets" frames
+  (`pro(5964)`, `5965`, `6017`, `6021`, `5986`, `6029`, `6033`, `5956`, `5962`, `6004`,
+  `6007`); `preview` carries `lodgeFamilyTwin`, `lodgeCourtyardPatio`, `pro(5771)` and
+  `pro(5800)` instead.
+- **Resolving it either way silently drops frames Anneli marked**, so it was left alone.
+  Per `CLAUDE.md`, a conflict that is not "two posts touching the same index" is a
+  stop-and-ask, and the person who owns `feat/rooms-catalogue` should settle it.
+
+So the school-groups post reached `preview` by **cherry-pick** (`6e352fb`), not by merge.
+`preview` therefore sits on its own older base plus that one post. **Before the next
+preview merge, someone must settle `rooms.ts`** — until then, expect the same conflict.
 
 ## 📌 Blog 10 (where to stay near Kruger) — what to know
 
@@ -157,4 +179,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-07-27*
+*Last updated: 2026-09-12*
