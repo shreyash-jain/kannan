@@ -276,6 +276,20 @@ export const posts: Post[] = [
     excerpt:
       "What a Kruger school excursion really costs per learner, why SANParks counts a twelve-year-old as an adult, how budget school accommodation is actually priced, what makes group catering work — and a five-step way to build the budget in order.",
   },
+  {
+    chapter: "Celebrations",
+    title:
+      "Best Venues for Milestone Birthday Parties Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/milestone-birthday-venues-kruger-national-park",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-09-15",
+    readingMinutes: 6,
+    excerpt:
+      "Where a fortieth, sixtieth or eightieth actually works in the Lowveld. Five areas near Kruger — Hazyview, the Sabi Sand, Hoedspruit, Marloth Park and White River — honestly compared on beds and price, from R250 to R29,600 a night, and why, once the guest list passes twenty, the bed decides the birthday.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
