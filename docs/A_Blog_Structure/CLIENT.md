@@ -76,6 +76,35 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **No AI render may depict a scene on this farm** (owner, 2026-09-03, commit
+  `a347355`): Anneli pulled an invented braai-with-people frame off three pages. Anything
+  showing Kanaan must be a real photograph (the `pro()` shoot or an `img` slot). Generated
+  images are only for places we cannot photograph — a private-lodge deck, a Marloth Park
+  stoep — and even then say so in the caption. *Why:* the farm's pitch is "as it actually
+  is"; a picture of something that never happened here undoes that.
+- **Marketing widened the milestone-birthday post too** (2026-09-15): first asked for the
+  gap under the TLDR box closed, then for the text to fill the margins. Settled on
+  `max-w-5xl` (photo width) on that post, with `pb-0!` sections so blocks sit closer.
+  Precedent now: two wide posts (school-trip at `max-w-7xl`, birthdays at `max-w-5xl`),
+  the rest narrow. Still ask before widening another; and expect "blank space" feedback
+  on a narrow column from this reviewer.
+- **Marketing wants short posts now: "under 1,500 words"** (2026-09-15, milestone-birthday
+  post) — the brief said 1,800–2,500 and the first draft was 2,550; it was cut to ~1,450
+  including FAQ, captions and sources. Ask for the target length up front; when unstated,
+  aim for about 1,400 and keep every keyword heading.
+- **Sabi Sand is on the Hazyview side, not Hoedspruit** — Shaw's Gate is ~37 km up the
+  R536 from town (Sabi Sabi's own directions). Briefs have filed it under Hoedspruit;
+  correct it every time. Hoedspruit's reserves are Timbavati, Klaserie, Thornybush,
+  Balule and Kapama.
+- **Kanaan has no boma.** Do not borrow the word. We have a communal fire, a braai stand
+  at the viewpoint and the covered, open-sided venue (60 seated / 100 with a marquee).
+  Say that plainly; a "boma dinner" keyword is fine when describing what lodges offer.
+- **Verified 2026 comparison figures** (reuse, do not re-guess): Sabi Sabi Bush Lodge
+  R29,600 pps/night, Earth Lodge R44,000, plus a R450 reserve levy (sabisabi.com/rates,
+  valid 1 Mar 2026–28 Feb 2027); Kruger conservation fee R134 SA / R602 international per
+  adult per day to 31 Oct 2026; SANParks festive-season **day-visitor quotas** at each gate
+  with a R59/R29 online pre-booking fee. The cost guide's "Sabi Sand from R11,500" line
+  is stale against this.
 - **School groups: from R180 per learner per night** (marketing, 2026-09-11, unit
   confirmed). Lives in `site.pricing.schoolGroupFromZAR`; quote it from there. The
   general R250 pps rate is not the number a teacher wants — lead with R180 on anything
@@ -111,4 +140,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-09-11.*
+*Last reviewed: 2026-09-15.*
