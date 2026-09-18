@@ -245,11 +245,14 @@ export function WhatsAppCTA({
   body,
   buttonLabel = "Start a stay on WhatsApp",
   pageKey = "blog",
+  href,
 }: {
   title: string;
   body: string;
   buttonLabel?: string;
   pageKey?: Parameters<typeof whatsappLink>[0];
+  /** Overrides the pageKey-derived link — used for a post that tracks its own dedicated WhatsApp number. */
+  href?: string;
 }) {
   return (
     <section className="bg-forest text-bone">
@@ -263,7 +266,7 @@ export function WhatsAppCTA({
         <p className="mt-5 text-bone/85">{body}</p>
         <div className="mt-7">
           <Link
-            href={whatsappLink(pageKey)}
+            href={href ?? whatsappLink(pageKey)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
