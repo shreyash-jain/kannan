@@ -966,6 +966,31 @@ export const img = {
     width: 1600,
     height: 900,
   },
+
+  // ---- "Cab in Hazyview" logistics guide (Blog 16) -----------------------
+  // Two dedicated AI frames -- there is no real Kanaan photography of a
+  // local taxi run, and the subject is a generic drive/pickup rather than
+  // the farm itself. Generated natively close to 16:9, so a plain c_fill
+  // crop is enough (no generative-fill needed). No plates, logos, faces or
+  // signage, per the visual-direction rules in CLIENT.md.
+  cabHazyviewRoadHero: {
+    src: cldImage(
+      "cab-hazyview-road-hero",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A plain white sedan taxi driving away down a quiet tarred road near Hazyview at golden hour, mango trees framing the road and the Lowveld hills rising beyond.",
+    width: 1920,
+    height: 1080,
+  },
+  cabHazyviewAirportPickup: {
+    src: cldImage(
+      "cab-hazyview-airport-pickup",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1600",
+    ),
+    alt: "A driver, seen from behind, loading a travel bag into the boot of a plain silver minivan at the outdoor arrivals curb of a small regional airport, Lowveld hills in the distance.",
+    width: 1600,
+    height: 900,
+  },
 } as const;
 
 // ---------------------------------------------------------------------

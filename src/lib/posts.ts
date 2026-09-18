@@ -290,6 +290,19 @@ export const posts: Post[] = [
     excerpt:
       "Where a fortieth, sixtieth or eightieth actually works in the Lowveld. Five areas near Kruger — Hazyview, the Sabi Sand, Hoedspruit, Marloth Park and White River — honestly compared on beds and price, from R250 to R29,600 a night, and why, once the guest list passes twenty, the bed decides the birthday.",
   },
+  {
+    chapter: "Getting Around",
+    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
+    category: "guide",
+    status: "live",
+    href: "/blog/cab-in-hazyview",
+    image: img.cabHazyviewRoadHero.src,
+    imageAlt: img.cabHazyviewRoadHero.alt,
+    datePublished: "2026-09-18",
+    readingMinutes: 4,
+    excerpt:
+      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
