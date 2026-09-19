@@ -54,6 +54,16 @@ export default function ContactPage() {
                   </Link>
                 </li>
                 <li>
+                  <a
+                    href={`https://wa.me/${site.contact.whatsappVerification.replace("+", "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-ink/85 hover:text-ochre"
+                  >
+                    WhatsApp {site.contact.whatsappVerificationDisplay}
+                  </a>
+                </li>
+                <li>
                   <Link
                     href={`mailto:${site.contact.email}`}
                     className="text-ink/85 hover:text-ochre"

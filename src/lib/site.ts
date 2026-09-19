@@ -25,7 +25,19 @@ export const site = {
     phoneSecondaryDisplay: "+27 82 930 2211",
     whatsapp: "+27637943880",
     whatsappDisplay: "+27 63 794 3880",
+    // The number on the Meta business-verification form. It must appear on
+    // the site verbatim so the reviewer can match it; the two above do not.
+    whatsappVerification: "+27642116345",
+    whatsappVerificationDisplay: "+27 64 211 6345",
     email: "bookings@kanaanguestfarm.com",
+  },
+  // Legal operator. Rendered in the footer of every page so Meta's reviewer
+  // can cross-check trading name, registered name, CIPC number and the
+  // address on the Mbombela statement against the verification form.
+  operator: {
+    legalName: "Simba Ventures (Pty) Ltd",
+    registrationNumber: "2024/504677/07",
+    registeredAddress: "Glencairn 8/4 RE, White River, 1240, Mpumalanga, South Africa",
   },
   social: {
     instagram: "https://www.instagram.com/kanaan_guest_farm/",
