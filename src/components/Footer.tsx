@@ -53,6 +53,16 @@ export function Footer() {
             </li>
             <li>
               <a
+                href={`https://wa.me/${site.contact.whatsappVerification.replace("+", "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ochre"
+              >
+                {site.contact.whatsappVerificationDisplay}
+              </a>
+            </li>
+            <li>
+              <a
                 href={`mailto:${site.contact.email}`}
                 className="hover:text-ochre"
               >
