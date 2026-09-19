@@ -53,6 +53,16 @@ export function Footer() {
             </li>
             <li>
               <a
+                href={`https://wa.me/${site.contact.whatsappVerification.replace("+", "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ochre"
+              >
+                {site.contact.whatsappVerificationDisplay}
+              </a>
+            </li>
+            <li>
+              <a
                 href={`mailto:${site.contact.email}`}
                 className="hover:text-ochre"
               >
@@ -90,6 +100,13 @@ export function Footer() {
           </p>
           <p>
             Hosted by {site.hosts.join(" & ")} · Hazyview, Mpumalanga
+          </p>
+        </div>
+        {/* Legal operator line — wording fixed for Meta business verification. */}
+        <div className="mx-auto max-w-7xl px-5 pb-5 text-xs leading-relaxed text-bone/55 lg:px-8">
+          <p>
+            {site.name} is operated by {site.operator.legalName} · Reg. No.{" "}
+            {site.operator.registrationNumber} · {site.operator.registeredAddress}
           </p>
         </div>
       </div>
