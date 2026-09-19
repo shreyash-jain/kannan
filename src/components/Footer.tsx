@@ -106,16 +106,7 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-5 pb-5 text-xs leading-relaxed text-bone/55 lg:px-8">
           <p>
             {site.name} is operated by {site.operator.legalName} · Reg. No.{" "}
-            {site.operator.registrationNumber} · {site.operator.registeredAddress}{" "}
-            · WhatsApp{" "}
-            <a
-              href={`https://wa.me/${site.contact.whatsappVerification.replace("+", "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-bone"
-            >
-              {site.contact.whatsappVerificationDisplay}
-            </a>
+            {site.operator.registrationNumber} · {site.operator.registeredAddress}
           </p>
         </div>
       </div>
