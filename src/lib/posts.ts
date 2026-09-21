@@ -1,5 +1,6 @@
 import type { Post } from "@/components/BlogPostList";
 import { img, wedding } from "@/lib/images";
+import { pro } from "@/data/proPhotos";
 
 /**
  * The single source of truth for every blog post on the site.
@@ -302,6 +303,20 @@ export const posts: Post[] = [
     readingMinutes: 4,
     excerpt:
       "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+  },
+  {
+    chapter: "Work crews",
+    title:
+      "Contractor accommodation in Hazyview: affordable self-catering rooms near Kruger, with secure parking, Wi-Fi and group rates for work crews",
+    category: "guide",
+    status: "live",
+    href: "/blog/contractor-accommodation-hazyview",
+    image: pro(5782).src,
+    imageAlt: "A row of numbered lodge room doors under a shaded walkway at Kanaan Guest Farm — contractor accommodation in Hazyview.",
+    datePublished: "2026-09-21",
+    readingMinutes: 5,
+    excerpt:
+      "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking — 48 minutes from Kruger's airport. Group and long-stay bookings quoted individually.",
   },
 ];
 
