@@ -286,6 +286,7 @@ export function BlogHero({
   byline,
   datePublished,
   readingMinutes,
+  titleSize = "default",
 }: {
   image: string;
   alt: string;
@@ -295,7 +296,16 @@ export function BlogHero({
   byline: string;
   datePublished: string;
   readingMinutes: number;
+  /**
+   * `compact` for a long keyword H1 (a full brief topic line): one size
+   * down at every breakpoint so it does not run to seven lines.
+   */
+  titleSize?: "default" | "compact";
 }) {
+  const titleClass =
+    titleSize === "compact"
+      ? "text-3xl md:text-4xl lg:text-[2.75rem]"
+      : "text-4xl md:text-5xl lg:text-6xl";
   return (
     <header className="relative w-full overflow-hidden bg-forest-deep">
       <Image
@@ -316,7 +326,9 @@ export function BlogHero({
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-bone/75">
             {eyebrow}
           </p>
-          <h1 className="mt-5 font-display text-4xl leading-tight text-bone md:text-5xl lg:text-6xl">
+          <h1
+            className={`mt-5 font-display leading-tight text-bone ${titleClass}`}
+          >
             {title}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-bone/85 md:text-lg">
