@@ -119,7 +119,7 @@ const seriesPosts: { title: string; href: string | null }[] = [
 ];
 
 export const metadata = createBlogPostMetadata({
-  slug: "discounted-contractor-accommodation-hazyview",
+  slug: "contractor-accommodation-hazyview",
   title: headline,
   description:
     "Discounted accommodation for contractors in Hazyview: reduced group rates for teams on longer stays near Kruger. Self-catering rooms, secure parking, Wi-Fi.",
@@ -136,7 +136,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
           headline,
           description:
             "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for work teams booking longer stays near Kruger. Self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi, free parking and laundry on request. From R250 per person sharing, 48 minutes from Kruger Mpumalanga International Airport.",
-          path: "/blog/discounted-contractor-accommodation-hazyview",
+          path: "/blog/contractor-accommodation-hazyview",
           image: pro(5873).src,
           datePublished,
         })}

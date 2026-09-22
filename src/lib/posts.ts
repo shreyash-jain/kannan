@@ -297,7 +297,7 @@ export const posts: Post[] = [
       "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for teams booking longer stays near Kruger",
     category: "guide",
     status: "live",
-    href: "/blog/discounted-contractor-accommodation-hazyview",
+    href: "/blog/contractor-accommodation-hazyview",
     image: pro(5873).src,
     imageAlt: "Whitewashed self-catering lodge rooms under a flowering bougainvillea at Kanaan Guest Farm — discounted contractor accommodation in Hazyview.",
     datePublished: "2026-09-21",
