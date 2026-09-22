@@ -1,5 +1,6 @@
 import type { Post } from "@/components/BlogPostList";
 import { img, wedding } from "@/lib/images";
+import { pro } from "@/data/proPhotos";
 
 /**
  * The single source of truth for every blog post on the site.
@@ -289,6 +290,34 @@ export const posts: Post[] = [
     readingMinutes: 6,
     excerpt:
       "Where a fortieth, sixtieth or eightieth actually works in the Lowveld. Five areas near Kruger — Hazyview, the Sabi Sand, Hoedspruit, Marloth Park and White River — honestly compared on beds and price, from R250 to R29,600 a night, and why, once the guest list passes twenty, the bed decides the birthday.",
+  },
+  {
+    chapter: "Contractor & group stays",
+    title:
+      "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for teams booking longer stays near Kruger",
+    category: "guide",
+    status: "live",
+    href: "/blog/discounted-contractor-accommodation-hazyview",
+    image: pro(5873).src,
+    imageAlt: "Whitewashed self-catering lodge rooms under a flowering bougainvillea at Kanaan Guest Farm — discounted contractor accommodation in Hazyview.",
+    datePublished: "2026-09-21",
+    readingMinutes: 8,
+    excerpt:
+      "For the site agent who needs beds for eight by Monday: reduced group rates for teams booking longer stays, quoted per booking on top of R250 per person sharing. Self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi, free parking and laundry on request — 48 minutes from Kruger's airport.",
+  },
+  {
+    chapter: "Work crews",
+    title:
+      "Contractor accommodation in Hazyview: affordable self-catering rooms near Kruger, with secure parking, Wi-Fi and group rates for work crews",
+    category: "guide",
+    status: "live",
+    href: "/blog/contractor-accommodation-hazyview",
+    image: pro(5782).src,
+    imageAlt: "A row of numbered lodge room doors under a shaded walkway at Kanaan Guest Farm — contractor accommodation in Hazyview.",
+    datePublished: "2026-09-21",
+    readingMinutes: 5,
+    excerpt:
+      "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking — 48 minutes from Kruger's airport. Group and long-stay bookings quoted individually.",
   },
 ];
 
