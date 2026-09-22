@@ -172,10 +172,10 @@ export default function CampingPage() {
           Bringing a work crew? The campsites are how a large or short-notice
           team fits when the rooms are full — see our guide to{" "}
           <Link
-            href="/blog/contractor-accommodation-hazyview"
+            href="/blog/discounted-contractor-accommodation-hazyview"
             className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
           >
-            contractor accommodation in Hazyview, near Kruger
+            discounted contractor accommodation near Kruger
           </Link>
           .
         </p>
