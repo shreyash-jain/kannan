@@ -132,10 +132,10 @@ export default function TheLandPage() {
               gate, and the Kruger gates half an hour away, are why work teams
               base here too — see our{" "}
               <Link
-                href="/blog/discounted-contractor-accommodation-hazyview"
+                href="/blog/contractor-accommodation-hazyview"
                 className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
               >
-                team accommodation near Kruger National Park
+                contractor accommodation near Kruger
               </Link>{" "}
               guide.
             </p>
