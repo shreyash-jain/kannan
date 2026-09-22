@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
       { source: "/attractions", destination: "/the-land", permanent: true },
       { source: "/weddings", destination: "/group-functions", permanent: true },
       { source: "/groups", destination: "/group-functions", permanent: true },
+      // The contractor post was briefly live at this address (22 Sept 2026)
+      // before marketing chose the pillar piece as the one contractor post.
+      {
+        source: "/blog/contractor-accommodation-hazyview",
+        destination: "/blog/discounted-contractor-accommodation-hazyview",
+        permanent: true,
+      },
     ];
   },
 };
