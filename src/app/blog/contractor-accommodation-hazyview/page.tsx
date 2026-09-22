@@ -20,42 +20,31 @@ import {
 } from "@/components/blog/Blocks";
 
 // ---------------------------------------------------------------------
-// PILLAR post for the "Contractor & Group Stays" content pillar
-// (marketing brief, 2026-09-21). Posts 2–5 of the pillar link back here;
-// when each one goes live, add it to the "Keep reading" cards at the foot
-// of this page:
-//   2. /blog/contractor-housing-near-kruger-lowveld-guide
-//   3. /blog/long-stay-accommodation-lowveld
-//   4. /blog/group-accommodation-near-kruger
-//   5. /blog/hazyview-vs-white-river-nelspruit-work-accommodation
-//
-// SEO focus:
-//   • Primary:   discounted accommodation for contractors Hazyview
-//   • Pillar:    discounted accommodation Hazyview · contractor
-//                accommodation near Kruger · group rates accommodation
-//                Mpumalanga · long stay accommodation Lowveld · team
-//                accommodation near Kruger National Park · affordable crew
-//                housing Hazyview
-// Woven into the H1, intro, the five H2s, FAQ and meta — never stuffed.
+// SEO focus for this Guide (commercial intent — site agents and project
+// managers booking a crew near Kruger):
+//   • Focus keyword (1):  contractor accommodation Hazyview
+//   • Primary:            affordable self-catering rooms near Kruger ·
+//                         group rates for work crews · Hazyview
+//                         accommodation for contractors
+//   • Secondary:          secure parking · self-catering lodge rooms Kruger ·
+//                         Wi-Fi guest house Hazyview · long-stay accommodation
+//                         Mpumalanga · crew accommodation Mpumalanga · work
+//                         team lodging near Kruger Mpumalanga airport
+// Woven into the H1, intro, headings, FAQ and meta — never stuffed.
 //
 // Editorial stance: the number a site agent manages is the all-in cost per
-// head per night, not the room rate. We put a R250 bed and a kitchenette
-// next to SARS's tax-free meals-and-incidentals figure (R595/day, 2027 tax
-// year from 1 March 2026) and let the reader do the sum.
+// head per night, not the room rate. We put a kitchenette and a R60
+// breakfast next to SARS's tax-free meals-and-incidentals figure
+// (R595/day from 1 March 2026) and let the reader do the sum. We also say plainly what we are not: a hotel with a
+// bar and a night porter, or a roof for sixty.
 //
-// Rates: the owner has NOT confirmed a discount rule (percentage or
-// night threshold). "Reduced group rates for longer stays" is therefore
-// written as quoted per booking, with no figure. If Anneli gives one,
-// put it in site.ts first and quote it from there. Every Kanaan price on
-// this page comes from site.ts / rooms.ts.
+// Length: the marketing lead asked for 1,200 words (2026-09-21). H1 and
+// tab title are the brief's full Topic line, verbatim, per the standing
+// instruction (marketing confirmed it again on this post).
 //
-// This post replaces the earlier /blog/contractor-accommodation-hazyview
-// (same branch, never on main) so the site carries one contractor post.
-//
-// H1 and tab title are the brief's full Topic line, verbatim, per the
-// standing instruction (marketing confirmed it again on this post).
-// Length target ~1,300 words incl. FAQ (marketing asked for ~1,200 on the
-// previous version).
+// Rates: no contractor or long-stay discount has been confirmed by the
+// owner, so group and long-stay bookings are described as "quoted
+// individually". Every Kanaan price comes from site.ts / rooms.ts.
 //
 // Imagery: every frame is a real photograph of Kanaan (owner rule, Sept
 // 2026: no AI render may depict a scene on this farm).
@@ -66,55 +55,31 @@ import {
 
 const datePublished = "2026-09-21";
 const headline =
-  "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for teams booking longer stays near Kruger";
+  "Contractor accommodation in Hazyview: affordable self-catering rooms near Kruger, with secure parking, Wi-Fi and group rates for work crews";
 
 const linkClass =
   "font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep";
 
 const faqs = [
   {
-    q: "Do you offer discounted accommodation for contractors in Hazyview?",
-    a: `Yes. Teams booking longer stays get a reduced group rate, quoted per booking on top of our standard R${site.pricing.fromZAR} per person sharing in a twin room and R300–R350 in a self-catering lodge room. Send crew size, room count and the project dates, and Anneli or Matthew will come back with the room mix and the rate in writing.`,
-  },
-  {
-    q: "What counts as a long stay for the reduced rate?",
-    a: "There is no magic number, and we would rather not invent one. As a rule of thumb: a week is worth asking about, a month is worth a proper conversation, and dates outside the school holidays help the number more than anything else. Tell us the real dates and we will tell you the real rate.",
+    q: "Do you offer discounted rates for long-term contractor bookings?",
+    a: `We quote every group and long-stay booking individually rather than off a rate card. Send us crew size, how many rooms you need and the project dates, and Anneli or Matthew will come back with the room mix and a number in writing. Our standard rates are R${site.pricing.fromZAR} per person sharing in a twin room and R300–R350 in a self-catering lodge room.`,
   },
   {
     q: "Is there secure, fenced parking for company vehicles and trailers?",
-    a: "Yes. The whole farm is fenced with a motorised gate at the R40 entrance, and parking inside the fence is free. Bakkies, trailers and small plant park next to the rooms overnight. Call us when you reach the gate on the first evening and we will open it.",
+    a: "Yes. The whole farm is fenced with a motorised gate at the R40 entrance, and parking inside the fence is free. Bakkies, trailers and small plant park next to the rooms overnight. Give us a call when you reach the gate on the first evening.",
   },
   {
-    q: "Can you take a crew of ten or more in one booking?",
+    q: "Is Wi-Fi included for daily reporting?",
+    a: "Free wireless internet covers the whole property, and each room has a QR code with the login on the wall. It is fine for timesheets, photos to head office, video calls and the evening's admin. If your project needs a guaranteed line for something heavier, tell us and we will be honest about whether the farm can carry it.",
+  },
+  {
+    q: "Can you accommodate a large crew of ten or more in one booking?",
     a: `Comfortably. We sleep around ${site.capacity.sleepingTotal} under roof across lodge rooms (2–7 each), twin rooms and the ${site.capacity.backpackersBeds}-bed wooden house, with ${site.capacity.campsitePitches} powered campsites for up to ${site.capacity.campingPeople} beyond that. A crew of twelve usually lands as four twin rooms and a lodge room for the foreman.`,
   },
   {
-    q: "How far is Kanaan from Hazyview town, the Kruger gates and the airport?",
-    a: `We are on the R40 a few minutes outside Hazyview — shops, fuel and hardware stores are minutes away. The Phabeni and Numbi gates of the Kruger National Park are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes, Kruger Mpumalanga International Airport is ${site.distances.kmiaMinutes} minutes, White River about forty minutes and Mbombela (Nelspruit) roughly an hour.`,
-  },
-];
-
-// Pillar posts 2–5 (marketing brief, 2026-09-21). `href: null` renders as
-// "Coming soon"; set the path when the post is live.
-const seriesPosts: { title: string; href: string | null }[] = [
-  {
-    title:
-      "Where to stay for work near Kruger National Park: a contractor's guide",
-    href: null, // /blog/contractor-housing-near-kruger-lowveld-guide
-  },
-  {
-    title:
-      "Long-stay vs short-stay: booking extended accommodation in the Lowveld",
-    href: null, // /blog/long-stay-accommodation-lowveld
-  },
-  {
-    title: "Group accommodation near Kruger: planning for teams of 10–20",
-    href: null, // /blog/group-accommodation-near-kruger
-  },
-  {
-    title:
-      "Hazyview vs White River vs Nelspruit: where should work teams stay?",
-    href: null, // /blog/hazyview-vs-white-river-nelspruit-work-accommodation
+    q: "How far is Kanaan Guest Farm from Hazyview town and Kruger Mpumalanga Airport?",
+    a: `We are on the R40 just outside Hazyview — a few minutes to the shops, fuel and hardware stores in town. Kruger Mpumalanga International Airport is ${site.distances.kmiaMinutes} minutes, White River about forty kilometres and Mbombela (Nelspruit) roughly an hour. The Kruger gates at Phabeni and Numbi are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes away.`,
   },
 ];
 
@@ -122,22 +87,22 @@ export const metadata = createBlogPostMetadata({
   slug: "contractor-accommodation-hazyview",
   title: headline,
   description:
-    "Discounted accommodation for contractors in Hazyview: reduced group rates for teams on longer stays near Kruger. Self-catering rooms, secure parking, Wi-Fi.",
-  image: pro(5873),
+    "Affordable self-catering contractor accommodation in Hazyview with secure parking, free Wi-Fi and group rates for work crews. 48 min from Kruger's airport. Book at Kanaan Guest Farm.",
+  image: pro(5782),
   datePublished,
   category: "guide",
 });
 
-export default function DiscountedContractorAccommodationHazyviewPage() {
+export default function ContractorAccommodationHazyviewPage() {
   return (
     <>
       <JsonLd
         data={articleLd({
           headline,
           description:
-            "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for work teams booking longer stays near Kruger. Self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi, free parking and laundry on request. From R250 per person sharing, 48 minutes from Kruger Mpumalanga International Airport.",
+            "Contractor accommodation in Hazyview for work crews, site teams and engineers near Kruger: self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. From R250 per person sharing, 48 minutes from Kruger Mpumalanga International Airport. Group and long-stay bookings quoted individually.",
           path: "/blog/contractor-accommodation-hazyview",
-          image: pro(5873).src,
+          image: pro(5782).src,
           datePublished,
         })}
       />
@@ -145,14 +110,14 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
 
       <article>
         <BlogHero
-          image={pro(5873).src}
-          alt="Discounted contractor accommodation in Hazyview — whitewashed self-catering lodge rooms under a flowering bougainvillea at Kanaan Guest Farm, near Kruger."
-          eyebrow="Guide · Contractor & group stays"
+          image={pro(5782).src}
+          alt="Contractor accommodation in Hazyview — a row of numbered lodge room doors under a shaded walkway at Kanaan Guest Farm, self-catering rooms near Kruger for a work crew."
+          eyebrow="Guide · Work crews near Kruger"
           title={headline}
-          intro="Reduced rates for the teams who stay longest, and the honest arithmetic a project budget actually needs — written by the family who run the farm."
+          intro="Where a site team sleeps well, parks behind a gate, cooks its own supper and keeps the day rate honest — written by the family who run the farm."
           byline="Anneli & Matthew"
           datePublished={datePublished}
-          readingMinutes={8}
+          readingMinutes={5}
           titleSize="compact"
         />
 
@@ -160,23 +125,23 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-5xl [&>aside]:mb-4">
             <TLDR
               items={[
-                `Discounted accommodation for contractors in Hazyview: teams booking longer stays get a reduced group rate, quoted per booking on top of our standard R${site.pricing.fromZAR} per person sharing.`,
-                `Four kinds of bed inside one fence — self-catering lodge rooms sleeping 2–7, twin rooms, an ${site.capacity.backpackersBeds}-bed wooden house and ${site.capacity.campsitePitches} powered campsites for up to ${site.capacity.campingPeople}.`,
-                "Free Wi-Fi across the farm, free parking behind a motorised gate, laundry on request, and a kitchen the crew runs itself.",
-                `${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Phabeni and Numbi gates, about an hour from Mbombela.`,
+                `Contractor accommodation in Hazyview from R${site.pricing.fromZAR} per person sharing: self-catering lodge rooms sleeping 2–7, twin rooms, an ${site.capacity.backpackersBeds}-bed wooden house and ${site.capacity.campsitePitches} powered campsites.`,
+                "A fully fenced farm with a motorised gate and free parking inside — bakkies, trailers and plant stay next to the rooms overnight.",
+                "Free Wi-Fi across the property, a kitchenette in every lodge room and a shared kitchen in the wooden house, so the crew controls its own food costs.",
+                `${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, minutes from Hazyview town, about an hour from Mbombela. Group and long-stay bookings quoted individually.`,
               ]}
             />
             <p>
-              Eight people, six weeks, starting Monday. If that is the brief
-              on your desk, this page is for you. We run Kanaan Guest Farm on
-              the R40 a few minutes outside Hazyview, and a work team that
-              books for a month is worth more to us than a row of rooms
-              standing empty between the school holidays &mdash; so we price
-              it that way. Reduced group rates for longer stays, self-catering
-              rooms, a gate the bakkies sleep behind, and Wi-Fi that carries
-              the day&rsquo;s report to head office. That is the offer. The
-              rest of this page is the detail, including the parts that might
-              not suit your contract.
+              If you are the site agent, the project manager or the person in
+              the office who has to find contractor accommodation in Hazyview
+              for eight people by Monday, this is written for you. We run
+              Kanaan Guest Farm on the R40, a few minutes outside town and{" "}
+              {site.distances.kmiaMinutes} minutes from Kruger&rsquo;s
+              airport, and we would far rather have a crew of eight for six
+              weeks than a row of empty rooms between holiday seasons.
+              Self-catering rooms, secure parking behind a motorised gate,
+              free Wi-Fi, and a rate a project budget can carry. That is the
+              whole offer, and the rest of this page is the detail.
             </p>
             <p className="not-prose">
               <Link
@@ -194,14 +159,13 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
-              Why Hazyview is a base for work teams near Kruger
+              Why Hazyview works as a base for contractor teams
             </H2>
             <p>
-              Hazyview is where the Lowveld&rsquo;s work is. The banana and
-              macadamia estates start at the edge of town. The Sabie timber
-              plantations are forty minutes up the hill. The Kruger rest
-              camps, with their roads, fences, water and endless maintenance,
-              are through Phabeni gate half an hour away. And{" "}
+              Hazyview sits where the Lowveld&rsquo;s work is. The banana and
+              macadamia estates start at the edge of town; the Sabie timber
+              plantations are forty minutes up the hill; the Kruger rest camps
+              and their endless maintenance are through Phabeni gate; and{" "}
               <a
                 href="https://www.nra.co.za/sanral-pages/view/upgrade-of-the-r40-national-road-gets-thumbs-up-from-the-traditional-leadership-in-bushbuckridge-local-municipality-sanral-stop-over"
                 target="_blank"
@@ -210,16 +174,12 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
               >
                 SANRAL&rsquo;s upgrade of the R40
               </a>{" "}
-              from Hazyview to Maviljan and on to Arthur Seat runs straight
-              past our entrance. A crew based here reaches White River in
-              about forty minutes and Mbombela in an hour, without paying city
-              hotel rates to sleep near the site.
-            </p>
-            <p>
-              For rotating teams the airport matters more than the town.
-              Kruger Mpumalanga International is one straight road from our
-              gate. Fly a specialist in on Monday morning, drive them back on
-              Friday, and nobody spends a night in Mbombela on the way.
+              from Hazyview towards Bushbuckridge runs past our gate. A crew
+              based here reaches White River in about forty minutes and
+              Mbombela in an hour, without paying city hotel rates to sleep
+              near the site. For rotating teams, Kruger Mpumalanga
+              International Airport is one straight road away — fly a
+              specialist in on Monday, drive them to the gate on Friday.
             </p>
           </div>
           <StatGrid
@@ -230,9 +190,9 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
                 body: "One road, the R40. Fly-in, fly-out crews without a Mbombela detour.",
               },
               {
-                value: `${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`,
-                label: "To the Phabeni and Numbi gates",
-                body: "Kruger's maintenance contracts, and a Saturday game drive for the crew.",
+                value: `R${site.pricing.fromZAR}`,
+                label: "Per person sharing, per night",
+                body: "Twin rooms. Self-catering lodge rooms sleeping 2–7 are R300–R350.",
               },
               {
                 value: `~${site.capacity.sleepingTotal}`,
@@ -247,8 +207,8 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={pro(5787).src}
-                alt="Contractor accommodation near Kruger with parking at the door — twin rooms 17 and 18 at Kanaan Guest Farm, Hazyview, with the hard-standing forecourt where a crew's bakkie parks overnight inside the fence."
+                src={pro(6076).src}
+                alt="Secure parking accommodation in Hazyview — the motorised security gate at the R40 entrance to Kanaan Guest Farm, the only way on or off the fenced property."
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
                 className="object-cover"
@@ -256,8 +216,8 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
               />
             </div>
             <figcaption className="mt-3 text-center text-xs text-muted">
-              Rooms 17 and 18. The bakkie parks on the forecourt outside
-              the door, behind the motorised gate on the R40.
+              The gate on the R40. Everything behind it — rooms, vehicles,
+              trailers — is inside the fence.
             </figcaption>
           </figure>
         </div>
@@ -265,169 +225,59 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
-              How Kanaan&rsquo;s group rates work for longer stays
+              What a work crew actually needs from Hazyview accommodation for
+              contractors
             </H2>
             <p>
-              Here is the plain version. Our standard rate is R
-              {site.pricing.fromZAR} per person sharing in a twin room and
-              R300&ndash;R350 in a self-catering lodge room. A team booking a
-              longer stay &mdash; weeks, not a weekend &mdash; gets a reduced
-              group rate on top of that, and we quote it per booking rather
-              than off a printed table, because two crews of ten are never
-              quite the same booking.
-            </p>
-            <p>
-              What moves the number in your favour: more nights, more rooms,
-              and dates that fall outside the school holidays. A crew of
-              twelve in four twin rooms for five weeks in February is the
-              booking we like most. Eight people for three nights over Easter
-              is not, and we will say so.
-            </p>
-            <p>
-              Nothing is bundled in that you did not ask for. Breakfast is a R
-              {site.meals.breakfast.pricePerPersonZAR} continental, ordered the
-              day before, for whoever wants it. A braai dinner is on request.
-              Laundry is on request at a small charge, which matters on a
-              multi-week rotation. Everything else &mdash; Wi-Fi, parking, the
-              pool, the fire &mdash; is already in the rate.
-            </p>
-          </div>
-          <Callout eyebrow="The number that matters">
-            SARS allows an employee away overnight R595 a day, tax-free, for
-            meals and incidentals. A crew with a kitchenette and a R
-            {site.meals.breakfast.pricePerPersonZAR} breakfast spends a
-            fraction of that &mdash; and the bed itself starts at R
-            {site.pricing.fromZAR}.
-          </Callout>
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <p>
-              Now the honest part. We are a family farm, not a hotel. No bar,
-              no night porter, no room service, no halaal menu. Check-in is
-              14:00 to 22:00, so tell us if the crew lands late. And past
-              about {site.capacity.sleepingTotal} people the rest of the team
-              is in tents &mdash; good tents, on powered pitches under the
-              mango trees, but tents. If none of that is a problem for your
-              contract, read on.
-            </p>
-          </div>
-        </Section>
-
-        <Section className="pb-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              What counts as a &ldquo;long stay&rdquo; for discount purposes
-            </H2>
-            <p>
-              We get asked for the magic number and we do not have one,
-              because it would be a lie the moment a different crew phoned.
-              What we can tell you is how we think about it. A weekend is a
-              weekend, and it is charged at the standard rate. A week is
-              where a booking starts to change our planning &mdash; one
-              clean, one check-in, one key handover instead of seven &mdash;
-              and that is worth asking about. A month or more is a proper
-              conversation, and the more of it falls outside the school
-              holidays, the better the number gets.
-            </p>
-            <p>
-              Two things count as much as the nights. How many rooms you
-              take, and whether the booking is firm. A confirmed crew of
-              twelve for five weeks lets us turn other enquiries away with a
-              clear conscience; &ldquo;probably eight, maybe from March&rdquo;
-              does not, and we price the two differently. Tell us the real
-              dates and the real headcount and you will get the real rate.
-            </p>
-          </div>
-        </Section>
-
-        <Section className="pb-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              Benefits of booking longer: rate savings, settled routine and
-              self-catering value
-            </H2>
-            <p>
-              The reduced rate is the obvious one. The other two are the
-              ones site agents tell us they did not expect.
+              Not a spa. Four things, in this order, and we have built the
+              farm around them.
             </p>
           </div>
           <NumberedList
             variant="grid"
             items={[
               {
-                title: "Rate savings",
-                body: `A longer booking gets a reduced group rate on top of our standard R${site.pricing.fromZAR} per person sharing, quoted in writing before you commit. Multiply a few rand a night by twelve people and five weeks and it is a line item the project notices.`,
+                title: "A kitchen, to control food costs",
+                body: "Every lodge room has a kitchenette — kettle, two-plate hob, fridge, plates and mugs. The wooden house has a full shared kitchen. A crew on a six-week posting eats for far less than restaurant prices, and eats when the shift ends, not when a dining room opens.",
               },
               {
-                title: "A settled routine",
-                body: "Same room, same key, same Wi-Fi code, the bakkie in the same spot behind the gate. By the second week nobody is living out of a bag. A crew that sleeps properly and eats at a table turns up on site in a better mood, and foremen notice that before they notice the invoice.",
+                title: "Secure parking for bakkies and trailers",
+                body: "The farm is fully fenced with a motorised gate, and parking inside is free. Vehicles, trailers and small plant stay next to the rooms, not on a town street.",
               },
               {
-                title: "Self-catering value",
-                body: `A weekly shop in Hazyview, cooked in the room or the wooden house kitchen, costs a fraction of five weeks of restaurant suppers — and every rand of the R595 SARS subsistence figure the crew does not spend on food is theirs. Breakfast at R${site.meals.breakfast.pricePerPersonZAR} is there for whoever wants it, not bundled in.`,
+                title: "Wi-Fi that works for reporting",
+                body: "Free wireless internet across the property, with a QR code in every room. Timesheets, site photos, invoices and the evening call to head office all go through without a data bundle.",
+              },
+              {
+                title: "Room mixes that fit a crew",
+                body: `Twin rooms for pairs, lodge rooms sleeping 2–7 for the foreman or a small team who want their own door, ${site.capacity.backpackersBeds} beds in the wooden house for the bigger group. Tell us the crew and we build the mix.`,
               },
             ]}
           />
+          <Callout eyebrow="The number that matters">
+            SARS allows an employee away overnight R595 a day, tax-free, for
+            meals and incidentals. A crew with a kitchenette and a R
+            {site.meals.breakfast.pricePerPersonZAR} breakfast spends a
+            fraction of that — and the bed itself is R{site.pricing.fromZAR}.
+          </Callout>
         </Section>
 
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
-              Who books long stays near Kruger
+              Contractor accommodation options at Kanaan Guest Farm
             </H2>
             <p>
-              Four kinds of guest, and they want slightly different things
-              from the same farm.
-            </p>
-            <p>
-              <strong>Contractors and site teams.</strong> Road, water,
-              electrical and building crews on the R40 upgrade, the estates
-              and the town. They want the gate, the parking and a rate the
-              project budget can carry, and they want it confirmed on paper.
-              This page is mostly for them.
-            </p>
-            <p>
-              <strong>Conservation and park staff.</strong> Kruger&rsquo;s
-              rest camps, fences and roads need maintenance teams,
-              researchers and field staff who are in the park by day and
-              need a bed outside it at night. Phabeni gate is half an hour
-              from our door, and a lodge room with a kitchenette suits
-              someone who keeps park hours.
-            </p>
-            <p>
-              <strong>Seasonal workers.</strong> The harvest months on the
-              macadamia and banana estates bring supervisors, packhouse staff
-              and drivers who need a roof for the season rather than the
-              year. The wooden house and the twin rooms are the practical
-              fit, and the reduced rate applies to them as much as to a
-              construction crew.
-            </p>
-            <p>
-              <strong>Remote workers.</strong> A month of Wi-Fi, a desk under
-              the window and Kruger for the weekend. Honest note: our rates
-              are per person sharing, so if you are one person on your own,
-              say so and we will quote the room properly rather than let you
-              assume.
-            </p>
-          </div>
-        </Section>
-
-        <Section className="pb-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              Room options for teams (lodge / twin / dorm / camping)
-            </H2>
-            <p>
-              Four kinds of bed inside one fence, all photographed room by
-              room on our{" "}
+              Four kinds of bed inside one fence. All of it is photographed
+              room by room on our{" "}
               <Link href="/stay" className={linkClass}>
                 Stay page
-              </Link>{" "}
-              so nobody arrives surprised.
+              </Link>
+              , so nobody arrives surprised.
             </p>
 
             <h3 className="mt-8 mb-3 font-display text-xl text-forest-deep md:text-2xl">
-              Self-catering lodge rooms (sleeps 2&ndash;7) &mdash;
-              R300&ndash;R350 pps
+              Self-catering lodge rooms (sleeps 2–7) — R300–R350 pps
             </h3>
             <p>
               Free-standing{" "}
@@ -436,13 +286,13 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
               </Link>{" "}
               with a private en-suite, a kitchenette, a TV and Wi-Fi. The
               right room for a foreman, an engineer or a small team who want
-              their own door after a long shift. The bedding differs from room
-              to room &mdash; some are doubles, some sleep seven &mdash; so
-              say who is coming.
+              privacy after a long shift. The bedding differs from room to
+              room — some are doubles, some sleep a family of seven — so say
+              who is coming.
             </p>
 
             <h3 className="mt-8 mb-3 font-display text-xl text-forest-deep md:text-2xl">
-              Twin rooms (sleeps 2) &mdash; R{site.pricing.fromZAR} pps
+              Twin rooms (sleeps 2) — R{site.pricing.fromZAR} pps
             </h3>
             <p>
               Two single beds, a private en-suite, a wall fan and a desk under
@@ -455,17 +305,16 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
             </p>
 
             <h3 className="mt-8 mb-3 font-display text-xl text-forest-deep md:text-2xl">
-              The wooden house &mdash; our dorm ({site.capacity.backpackersBeds}{" "}
-              beds)
+              The wooden house ({site.capacity.backpackersBeds} beds)
             </h3>
             <p>
               Singles and timber bunks across a few small rooms, a shared
               bathroom, a proper shared kitchen and a lounge. For a larger
-              crew on a tight budget,{" "}
+              crew,{" "}
               <Link href="/stay/wooden-house" className={linkClass}>
                 the wooden house
               </Link>{" "}
-              is the most affordable roof on the farm.
+              is the most cost-effective roof on the farm.
             </p>
 
             <h3 className="mt-8 mb-3 font-display text-xl text-forest-deep md:text-2xl">
@@ -478,7 +327,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
               <Link href="/camping" className={linkClass}>
                 Camping
               </Link>{" "}
-              is how a very large or short-notice crew fits when the rooms are
+              is how a very large or short-term crew fits when the rooms are
               full.
             </p>
           </div>
@@ -489,8 +338,8 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
             <figure>
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
-                  src={pro(6004).src}
-                  alt="Self-catering lodge room kitchenette for a contractor stay in Hazyview — gas hob, oven, fridge, kettle and a sunny window at Kanaan Guest Farm."
+                  src={img.lodgeKitchenClassic.src}
+                  alt="Self-catering kitchenette in a lodge room at Kanaan Guest Farm, Hazyview — cabinets, microwave, oven, kettle and a dining table, so a crew cooks its own supper."
                   fill
                   sizes="(min-width: 1024px) 340px, 100vw"
                   className="object-cover"
@@ -503,8 +352,8 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
             <figure>
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
-                  src={pro(5771).src}
-                  alt="Twin room for a pair of crew members at Kanaan Guest Farm, Hazyview — two single beds, a desk under the window and morning light, from R250 per person sharing."
+                  src={img.twinRoomPair.src}
+                  alt="Twin room for a pair of crew members at Kanaan Guest Farm, Hazyview — two single beds, en-suite bathroom, from R250 per person sharing."
                   fill
                   sizes="(min-width: 1024px) 340px, 100vw"
                   className="object-cover"
@@ -518,16 +367,15 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
             <figure>
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
-                  src={img.woodenHouseExterior.src}
-                  alt="The 8-bed wooden house at Kanaan Guest Farm — timber-clad dorm accommodation for a work crew in Hazyview, with a deck and braai outside the door."
+                  src={img.woodenHouseKitchen.src}
+                  alt="The shared self-catering kitchen in the 8-bed wooden house at Kanaan Guest Farm — budget crew accommodation near Kruger with a kitchen the team runs itself."
                   fill
                   sizes="(min-width: 1024px) 340px, 100vw"
                   className="object-cover"
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs text-muted">
-                The wooden house: eight beds, a shared kitchen and a deck for
-                the evening.
+                The wooden house kitchen, where a crew of eight feeds itself.
               </figcaption>
             </figure>
           </div>
@@ -536,88 +384,42 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
-              What&rsquo;s included (Wi-Fi, parking, laundry, self-catering)
+              Group rates for work crews and longer stays
             </H2>
             <p>
-              Not a spa. Four things a work crew actually needs, and all four
-              are in the rate or a phone call away.
+              We do not run a discount table, and we would rather not pretend
+              to. What we do is quote every group and long-stay booking
+              individually: the more rooms and the more weeks, the harder we
+              work on the number. Our standard rates are R
+              {site.pricing.fromZAR} per person sharing in a twin room and
+              R300–R350 in a lodge room, and nothing is bundled in that you
+              did not ask for. A continental breakfast is R
+              {site.meals.breakfast.pricePerPersonZAR} a person on order the
+              day before; a braai dinner is on request for whoever wants it.
+              Laundry is available at a small charge, which matters on a
+              multi-week rotation.
             </p>
-          </div>
-          <NumberedList
-            variant="grid"
-            items={[
-              {
-                title: "Free Wi-Fi across the farm",
-                body: "A QR code on every room wall with the login. Timesheets, site photos, invoices and the evening call to head office all go through without a data bundle. If your project needs a guaranteed line for something heavier, tell us and we will be honest about whether the farm can carry it.",
-              },
-              {
-                title: "Free, secure parking inside the gate",
-                body: "The farm is fully fenced with a motorised gate on the R40. Bakkies, trailers and small plant park next to the rooms overnight, not on a town street. Call us from the road and the gate opens.",
-              },
-              {
-                title: "Self-catering, so the crew controls its food costs",
-                body: "A kitchenette in every lodge room — kettle, two-plate hob, fridge, plates and mugs. A full shared kitchen in the wooden house. Hazyview's supermarkets are minutes away for the weekly shop.",
-              },
-              {
-                title: "Laundry on request",
-                body: "Ask at reception; a small charge applies. On a multi-week rotation it is the difference between packing for six weeks and packing for one.",
-              },
-            ]}
-          />
-          <div className="prose-kanaan mx-auto max-w-5xl">
             <p>
-              After knock-off there is the pool, the{" "}
+              Now the honest part. We are a family farm, not a hotel. There
+              is no bar, no night porter and no room service; check-in is
+              14:00 to 22:00, so tell us if the crew lands late. We do not
+              offer a halaal menu. And past about{" "}
+              {site.capacity.sleepingTotal} people the rest of the team is in
+              tents, which suits some contracts and not others. If none of
+              that is a problem, the{" "}
               <Link href="/stay/entertainment-room" className={linkClass}>
-                entertainment room
-              </Link>{" "}
-              with a pool table and foosball, the communal fire, and the
-              walking trails that start at{" "}
-              <Link href="/the-land" className={linkClass}>
-                our gate
+                pool table
               </Link>
-              . It is not a resort. It is a farm where a tired crew can sit
-              outside.
+              , the swimming pool and the fire are yours after knock-off.
             </p>
           </div>
         </Section>
 
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">Tips for a comfortable multi-week stay</H2>
-            <p>
-              Things the crews who have stayed longest wish they had known on
-              day one.
-            </p>
-          </div>
-          <NumberedList
-            items={[
-              {
-                title: "Pack for a week, not a month",
-                body: "Laundry is on request at a small charge, so there is no need to bring six weeks of overalls. Ask at reception on the first day and settle into a weekly rhythm.",
-              },
-              {
-                title: "Do one big shop in Hazyview on the way in",
-                body: "The supermarkets are a few minutes from the gate. Stock the kitchenette or the wooden house kitchen on the first evening and the week runs itself; the small basics are already in the room.",
-              },
-              {
-                title: "Tell us the shift pattern",
-                body: "Early starts, late finishes, a rotation that lands at 23:00 on a Sunday — say so when you book. Check-in is 14:00 to 22:00 and the gate is motorised, so we need to know when to expect the bakkie.",
-              },
-              {
-                title: "Claim the desk",
-                body: "The twin rooms have a writing desk under the window and the lodge rooms a table. Whoever does the evening admin should have the room with the desk, and the Wi-Fi code is on the wall.",
-              },
-              {
-                title: "Build the weekend in",
-                body: "A crew that has been here a fortnight has earned a Saturday in Kruger. Phabeni gate is half an hour away, and our day packages and a group braai at the fire are there for the asking. It is the difference between a posting and a stay.",
-              },
-            ]}
-          />
-        </Section>
-
-        <Section className="pb-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">How to request a team quote</H2>
+            <H2 className="mb-4">
+              How to book contractor accommodation at Kanaan Guest Farm
+            </H2>
           </div>
           <NumberedList
             items={[
@@ -626,7 +428,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
                 body: "On WhatsApp, or through the contact page on this site. How many people, how many need their own room, first and last night, and whether anyone flies in.",
               },
               {
-                title: "We confirm the room mix and the reduced rate in writing",
+                title: "We confirm the mix and the rate in writing",
                 body: "Anneli or Matthew reply personally with which rooms, the per-person figure for that booking, and what breakfast or dinner would add if you want it.",
               },
               {
@@ -639,9 +441,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
 
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              FAQs about discounted contractor accommodation in Hazyview
-            </H2>
+            <H2 className="mb-4">FAQs for contractor and work-crew bookings</H2>
             <div className="not-prose mt-8 divide-y divide-black/10 border-t border-black/10">
               {faqs.map((f) => (
                 <div key={f.q} className="py-6">
@@ -660,8 +460,8 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
-              title="Book your team's stay near Kruger"
-              thesis="Contractor accommodation near Kruger comes down to four things: a bed the budget can carry, a gate the bakkie sleeps behind, a kitchen, and Wi-Fi that carries the day's report. We have all four on one farm, a reduced rate for the teams who stay longest, and a family at the gate who will tell you straight whether we fit your contract."
+              title="Book your crew's stay near Kruger"
+              thesis="Contractor accommodation in Hazyview comes down to four things: a bed the budget can carry, a gate the bakkie sleeps behind, a kitchen, and Wi-Fi that carries the day's report. We have all four on one farm, and a family at the gate who will tell you straight whether we fit your contract."
               body={
                 <>
                   Send us the crew size and the project dates on WhatsApp, or
@@ -670,9 +470,9 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
                     contact page
                   </Link>
                   , and Anneli or Matthew will come back with the room mix and
-                  an honest number &mdash; from R{site.pricing.fromZAR} per
-                  person sharing before the long-stay rate. If the team is
-                  here long enough to see a weekend, our{" "}
+                  an honest number — from R{site.pricing.fromZAR} per person
+                  sharing. If the team is staying long enough to see a
+                  weekend, our{" "}
                   <Link href="/packages" className={linkClass}>
                     Kruger day packages
                   </Link>{" "}
@@ -685,7 +485,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
               }
             />
             <p className="font-display text-base italic text-forest-deep">
-              &mdash; Anneli &amp; Matthew
+              — Anneli &amp; Matthew
             </p>
           </div>
         </Section>
@@ -700,13 +500,11 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
                   href: "https://www.sars.gov.za/tax-rates/employers/subsistence-allowances-and-advances/",
                 },
                 {
-                  label:
-                    "SANRAL — Upgrade of the R40 national road, Hazyview to Maviljan and Arthur Seat",
+                  label: "SANRAL — Upgrade of the R40 national road, Hazyview to Arthur Seat",
                   href: "https://www.nra.co.za/sanral-pages/view/upgrade-of-the-r40-national-road-gets-thumbs-up-from-the-traditional-leadership-in-bushbuckridge-local-municipality-sanral-stop-over",
                 },
                 {
-                  label:
-                    "Kruger Mpumalanga International Airport — airlines and routes",
+                  label: "Kruger Mpumalanga International Airport — airlines and routes",
                   href: "https://www.kmiairport.co.za/airlines/",
                 },
                 {
@@ -719,84 +517,16 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
         </Section>
 
         <WhatsAppCTA
-          title="Get a group quote for your team"
-          body="Tell us how many you are, how many rooms you need and the project dates. We reply personally, with the room mix and the reduced rate in writing."
+          title="Get a group quote for your crew"
+          body="Tell us how many you are, how many rooms you need and the project dates. We reply personally, with the room mix and the rate in writing."
           buttonLabel="Enquire on WhatsApp"
           pageKey="groupFunctions"
         />
-
-        <Section className="pb-0!">
-          <div className="mx-auto max-w-5xl">
-            <Eyebrow>Related reading in this series</Eyebrow>
-            <p className="mt-3 max-w-2xl text-base text-ink/80">
-              This is the first of five guides on contractor and group stays
-              near Kruger. The rest are being written; each one links here
-              when it goes live.
-            </p>
-            {/* When a pillar post ships, replace its `href: null` with the
-                real path (listed at the top of this file) and it becomes a
-                link automatically. */}
-            <ul className="mt-6 divide-y divide-black/10 border-y border-black/10">
-              {seriesPosts.map((post) => (
-                <li
-                  key={post.title}
-                  className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
-                >
-                  {post.href ? (
-                    <Link
-                      href={post.href}
-                      className="font-display text-lg text-forest-deep hover:text-ochre"
-                    >
-                      {post.title}
-                    </Link>
-                  ) : (
-                    <span className="font-display text-lg text-forest-deep/80">
-                      {post.title}
-                    </span>
-                  )}
-                  <span className="shrink-0 text-xs uppercase tracking-[0.2em] text-muted">
-                    {post.href ? "Read the guide" : "Coming soon"}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Section>
 
         <Section>
           <div className="mx-auto max-w-5xl">
             <Eyebrow>Keep reading</Eyebrow>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              <Link
-                href="/group-functions"
-                className="group block rounded-2xl border border-black/5 bg-bone p-6 transition-colors hover:border-ochre/40"
-              >
-                <p className="text-xs uppercase tracking-[0.2em] text-muted">
-                  Group functions · Teams and gatherings
-                </p>
-                <h3 className="mt-3 font-display text-xl text-forest-deep group-hover:text-ochre">
-                  Team braais, meetings and gatherings on the farm
-                </h3>
-                <p className="mt-2 text-sm text-ink/80">
-                  The covered venue, the lawn and the fire, for a crew that
-                  has earned a Saturday.
-                </p>
-              </Link>
-              <Link
-                href="/packages"
-                className="group block rounded-2xl border border-black/5 bg-bone p-6 transition-colors hover:border-ochre/40"
-              >
-                <p className="text-xs uppercase tracking-[0.2em] text-muted">
-                  Packages · Kruger and the Panorama Route
-                </p>
-                <h3 className="mt-3 font-display text-xl text-forest-deep group-hover:text-ochre">
-                  Day packages for the weekend off
-                </h3>
-                <p className="mt-2 text-sm text-ink/80">
-                  A Kruger morning or an escarpment day, put together for a
-                  group that is already here.
-                </p>
-              </Link>
               <Link
                 href="/stay"
                 className="group block rounded-2xl border border-black/5 bg-bone p-6 transition-colors hover:border-ochre/40"
@@ -805,7 +535,7 @@ export default function DiscountedContractorAccommodationHazyviewPage() {
                   Stay · Every room, photographed
                 </p>
                 <h3 className="mt-3 font-display text-xl text-forest-deep group-hover:text-ochre">
-                  This is where your team will stay
+                  This is where your crew will stay
                 </h3>
                 <p className="mt-2 text-sm text-ink/80">
                   Lodge rooms, twin rooms, the wooden house and the campsites,
