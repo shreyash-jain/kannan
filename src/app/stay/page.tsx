@@ -152,6 +152,17 @@ export default function StayPage() {
             { title: "Home-cooked meals on request", body: `R${site.meals.breakfast.pricePerPersonZAR} continental breakfast; a traditional South African dinner of local Lowveld dishes and a proper braai.` },
           ]}
         />
+        <p className="mt-8 max-w-2xl text-sm text-muted">
+          Booking for a work crew, or staying for weeks rather than nights?
+          We offer reduced group rates for longer stays — read about{" "}
+          <Link
+            href="/blog/discounted-contractor-accommodation-hazyview"
+            className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+          >
+            discounted accommodation for contractors in Hazyview
+          </Link>
+          .
+        </p>
       </Section>
 
       <section className="bg-bone">
