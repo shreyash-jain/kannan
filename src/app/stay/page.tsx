@@ -156,7 +156,7 @@ export default function StayPage() {
           Booking for a work crew, or staying for weeks rather than nights?
           We offer reduced group rates for longer stays — read about{" "}
           <Link
-            href="/blog/contractor-accommodation-hazyview"
+            href="/blog/discounted-contractor-accommodation-hazyview"
             className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
           >
             discounted accommodation for contractors in Hazyview
