@@ -49,6 +49,20 @@ feedback stranded on a branch — were both resolved when **`blog-7-first-light`
 (and the 12-post snapshot) is left as written on 2026-07-16 and is now out of date —
 re-verify it against `origin/main` before trusting it.
 
+## 📌 Contractor accommodation (2026-09-21/22) — what happened
+
+- Two briefs arrived for the same keyword family: *Contractor accommodation in Hazyview*
+  (this chat) and *Discounted accommodation for contractors* (a parallel chat). Both were
+  built on `blog-17-contractor-accommodation-hazyview`; PR #39 merged both live on
+  2026-09-22. Marketing then chose the pillar and PR #40 removed the other.
+- **Live:** `/blog/discounted-contractor-accommodation-hazyview` (pillar; posts 2–5 of the
+  series are listed in its header comment as "coming soon"). Rates are "quoted per
+  booking" — **Anneli has not confirmed a contractor/long-stay discount rule.**
+- **Retired:** `/blog/contractor-accommodation-hazyview` — 301 to the pillar in
+  `next.config.ts`. The post itself is recoverable from commit `938f697` if wanted.
+- `BlogHero` gained `titleSize="compact"` (on `main` via #39) for long topic-line H1s.
+- `preview` is level with `main` as of `6852bf1`.
+
 ## In flight
 
 | Work | Branch | State | Next action |
