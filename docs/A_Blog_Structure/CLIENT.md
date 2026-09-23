@@ -76,6 +76,21 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **A brief's "Topic" and "Topic Variation" are one post, not two** (2026-09-22,
+  contractor-accommodation brief). Two chats each wrote one of the pair on the same branch,
+  then overwrote, restored and retired each other's version; both went live for an
+  afternoon before marketing chose the *Discounted accommodation for contractors* pillar
+  (`/blog/discounted-contractor-accommodation-hazyview`). The other address now 301s to it.
+  *Why:* two posts on one keyword compete with each other, and two sessions on one branch
+  compete with each other. **One post per brief, one chat per post**, and before writing a
+  post check the branch and `origin/preview` for a sibling on the same keyword.
+- **Long keyword H1s use `BlogHero titleSize="compact"`** (2026-09-21). The full topic line
+  ran to seven lines at the default size; the compact setting is one step down at every
+  breakpoint. Other posts are untouched. *Why:* marketing wants the whole topic line as the
+  H1, so the hero has to make room for it rather than the title being shortened.
+- **The `timeline` list variant is for clock times only.** Its big left column is the
+  `time` label; a titled step without `time` renders the title at display size and wraps
+  badly. Titled steps use the default numbered list. (2026-09-21, contractor post.)
 - **No AI render may depict a scene on this farm** (owner, 2026-09-03, commit
   `a347355`): Anneli pulled an invented braai-with-people frame off three pages. Anything
   showing Kanaan must be a real photograph (the `pro()` shoot or an `img` slot). Generated
@@ -140,4 +155,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-09-15.*
+*Last reviewed: 2026-09-22.*
