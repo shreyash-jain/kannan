@@ -60,6 +60,73 @@ const headline =
 const linkClass =
   "font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep";
 
+// Road distances to Hazyview, measured town centre to town centre (Rome2Rio,
+// verified 2026-09-28). Our gate is a few minutes further out on the R40.
+// Marketing, 2026-09-28: crews drive from Gauteng, they do not fly — so the
+// drive leads this post and the airport is a footnote.
+const drives: { from: string; distance: string; time: string; note: string }[] = [
+  {
+    from: "Hazyview",
+    distance: "Minutes",
+    time: "On the R40",
+    note: "The shops, fuel, hardware and the builders' merchants — the closest stop on this list.",
+  },
+  {
+    from: "Nelspruit (Mbombela)",
+    distance: "57 km",
+    time: "About 1 hour",
+    note: "The nearest city: suppliers, the big hardware chains, the hospitals.",
+  },
+  {
+    from: "Acornhoek",
+    distance: "69 km",
+    time: "About 1 hour",
+    note: "Straight up the R40 through Bushbuckridge. Busy road, unmarked speed bumps — allow more than the map says.",
+  },
+  {
+    from: "Pretoria",
+    distance: "372 km",
+    time: "About 4 hours",
+    note: "N4 east through Witbank and Belfast, then down into the Lowveld.",
+  },
+  {
+    from: "Johannesburg",
+    distance: "394 km",
+    time: "About 4½ hours",
+    note: "The N4 the whole way, then the R40 north at Nelspruit. One comfortable day's drive with a bakkie and a trailer.",
+  },
+];
+
+function DriveTable() {
+  return (
+    <div className="not-prose mx-auto my-10 w-full max-w-5xl px-5 lg:px-0">
+      <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-ochre">
+        How far the crew is driving
+      </p>
+      <div className="overflow-hidden rounded-2xl border border-black/5 bg-bone">
+        {drives.map((d) => (
+          <div
+            key={d.from}
+            className="grid grid-cols-1 gap-1 border-b border-black/5 p-4 last:border-0 md:grid-cols-[1fr_auto] md:items-baseline md:gap-6"
+          >
+            <div>
+              <p className="font-medium text-forest-deep">{d.from}</p>
+              <p className="mt-1 text-xs leading-relaxed text-ink/65">{d.note}</p>
+            </div>
+            <p className="font-display text-lg leading-tight text-forest-deep md:whitespace-nowrap md:text-right">
+              {d.distance} · {d.time}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-xs text-muted">
+        Road distances to Hazyview, town centre to town centre (Rome2Rio,
+        September 2026). Our gate is a few minutes further out on the R40.
+      </p>
+    </div>
+  );
+}
+
 const faqs = [
   {
     q: "Do you offer discounted rates for long-term contractor bookings?",
@@ -78,8 +145,8 @@ const faqs = [
     a: `Comfortably. We sleep around ${site.capacity.sleepingTotal} under roof across lodge rooms (2–7 each), twin rooms and the ${site.capacity.backpackersBeds}-bed wooden house, with ${site.capacity.campsitePitches} powered campsites for up to ${site.capacity.campingPeople} beyond that. A crew of twelve usually lands as four twin rooms and a lodge room for the foreman.`,
   },
   {
-    q: "How far is Kanaan Guest Farm from Hazyview town and Kruger Mpumalanga Airport?",
-    a: `We are on the R40 just outside Hazyview — a few minutes to the shops, fuel and hardware stores in town. Kruger Mpumalanga International Airport is ${site.distances.kmiaMinutes} minutes, White River about forty kilometres and Mbombela (Nelspruit) roughly an hour. The Kruger gates at Phabeni and Numbi are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes away.`,
+    q: "How far is Kanaan Guest Farm from Johannesburg, Pretoria and the Lowveld towns?",
+    a: `Road distances to Hazyview: Johannesburg 394 km (about 4½ hours on the N4), Pretoria 372 km (about 4 hours), Acornhoek 69 km and Nelspruit (Mbombela) 57 km, both about an hour. Hazyview itself is minutes away — we are on the R40 just outside town. Kruger Mpumalanga International Airport is ${site.distances.kmiaMinutes} minutes if someone does fly in, and the Kruger gates at Phabeni and Numbi are ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes.`,
   },
 ];
 
@@ -87,7 +154,7 @@ export const metadata = createBlogPostMetadata({
   slug: "contractor-accommodation-hazyview",
   title: headline,
   description:
-    "Affordable self-catering contractor accommodation in Hazyview with secure parking, free Wi-Fi and group rates for work crews. 48 min from Kruger's airport. Book at Kanaan Guest Farm.",
+    "Affordable self-catering contractor accommodation in Hazyview with secure parking, free Wi-Fi and group rates for work crews. 4½ hours from Johannesburg on the N4. Book at Kanaan Guest Farm.",
   image: pro(5782),
   datePublished,
   category: "guide",
@@ -100,7 +167,7 @@ export default function ContractorAccommodationHazyviewPage() {
         data={articleLd({
           headline,
           description:
-            "Contractor accommodation in Hazyview for work crews, site teams and engineers near Kruger: self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. From R250 per person sharing, 48 minutes from Kruger Mpumalanga International Airport. Group and long-stay bookings quoted individually.",
+            "Contractor accommodation in Hazyview for work crews, site teams and engineers near Kruger: self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. From R250 per person sharing. Road distances: Johannesburg 394 km, Pretoria 372 km, Acornhoek 69 km, Nelspruit 57 km, Hazyview minutes away. Group and long-stay bookings quoted individually.",
           path: "/blog/contractor-accommodation-hazyview",
           image: pro(5782).src,
           datePublished,
@@ -128,16 +195,16 @@ export default function ContractorAccommodationHazyviewPage() {
                 `Contractor accommodation in Hazyview from R${site.pricing.fromZAR} per person sharing: self-catering lodge rooms sleeping 2–7, twin rooms, an ${site.capacity.backpackersBeds}-bed wooden house and ${site.capacity.campsitePitches} powered campsites.`,
                 "A fully fenced farm with a motorised gate and free parking inside — bakkies, trailers and plant stay next to the rooms overnight.",
                 "Free Wi-Fi across the property, a kitchenette in every lodge room and a shared kitchen in the wooden house, so the crew controls its own food costs.",
-                `${site.distances.kmiaMinutes} minutes from Kruger Mpumalanga International Airport, minutes from Hazyview town, about an hour from Mbombela. Group and long-stay bookings quoted individually.`,
+                "One day's drive from Gauteng — 394 km from Johannesburg, 372 km from Pretoria — and about an hour from Nelspruit or Acornhoek. Group and long-stay bookings quoted individually.",
               ]}
             />
             <p>
               If you are the site agent, the project manager or the person in
               the office who has to find contractor accommodation in Hazyview
               for eight people by Monday, this is written for you. We run
-              Kanaan Guest Farm on the R40, a few minutes outside town and{" "}
-              {site.distances.kmiaMinutes} minutes from Kruger&rsquo;s
-              airport, and we would far rather have a crew of eight for six
+              Kanaan Guest Farm on the R40, a few minutes outside town and
+              one day&rsquo;s drive from Gauteng, and we would far rather have
+              a crew of eight for six
               weeks than a row of empty rooms between holiday seasons.
               Self-catering rooms, secure parking behind a motorised gate,
               free Wi-Fi, and a rate a project budget can carry. That is the
@@ -174,20 +241,29 @@ export default function ContractorAccommodationHazyviewPage() {
               >
                 SANRAL&rsquo;s upgrade of the R40
               </a>{" "}
-              from Hazyview towards Bushbuckridge runs past our gate. A crew
-              based here reaches White River in about forty minutes and
-              Mbombela in an hour, without paying city hotel rates to sleep
-              near the site. For rotating teams, Kruger Mpumalanga
-              International Airport is one straight road away — fly a
-              specialist in on Monday, drive them to the gate on Friday.
+              from Hazyview towards Bushbuckridge runs past our gate. Almost
+              every crew that stays with us drives down, and it is one
+              comfortable day from Gauteng: the N4 the whole way, then north
+              on the R40 at Nelspruit. Leave Johannesburg after an early
+              breakfast and the bakkie is parked inside our fence by
+              mid-afternoon, with the trailer still hitched to it.
+            </p>
+            <p>
+              From here the working Lowveld is close. Nelspruit is an hour for
+              suppliers and the big hardware chains; Acornhoek is an hour the
+              other way, straight up the R40 through Bushbuckridge; White
+              River is about forty minutes. And Hazyview itself — fuel,
+              groceries, the builders&rsquo; merchants — is minutes from the
+              gate, which matters at half past five when someone realises a
+              part is missing.
             </p>
           </div>
           <StatGrid
             stats={[
               {
-                value: `${site.distances.kmiaMinutes} min`,
-                label: "To Kruger Mpumalanga airport",
-                body: "One road, the R40. Fly-in, fly-out crews without a Mbombela detour.",
+                value: "394 km",
+                label: "From Johannesburg",
+                body: "About 4½ hours on the N4; Pretoria is 372 km. One day's drive with a trailer.",
               },
               {
                 value: `R${site.pricing.fromZAR}`,
@@ -201,6 +277,7 @@ export default function ContractorAccommodationHazyviewPage() {
               },
             ]}
           />
+          <DriveTable />
         </Section>
 
         <div className="mx-auto my-10 max-w-5xl px-5 lg:px-8">
@@ -502,6 +579,11 @@ export default function ContractorAccommodationHazyviewPage() {
                 {
                   label: "SANRAL — Upgrade of the R40 national road, Hazyview to Arthur Seat",
                   href: "https://www.nra.co.za/sanral-pages/view/upgrade-of-the-r40-national-road-gets-thumbs-up-from-the-traditional-leadership-in-bushbuckridge-local-municipality-sanral-stop-over",
+                },
+                {
+                  label:
+                    "Rome2Rio — road distances and drive times to Hazyview (Johannesburg, Pretoria, Acornhoek, Mbombela), September 2026",
+                  href: "https://www.rome2rio.com/s/Johannesburg/Hazyview",
                 },
                 {
                   label: "Kruger Mpumalanga International Airport — airlines and routes",

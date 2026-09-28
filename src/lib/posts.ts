@@ -330,7 +330,7 @@ export const posts: Post[] = [
     datePublished: "2026-09-21",
     readingMinutes: 5,
     excerpt:
-      "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking — 48 minutes from Kruger's airport. Group and long-stay bookings quoted individually.",
+      "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. One day's drive from Gauteng — 394 km from Johannesburg, 372 from Pretoria — and about an hour from Nelspruit or Acornhoek. Group and long-stay bookings quoted individually.",
   },
 ];
 
