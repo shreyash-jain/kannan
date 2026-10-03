@@ -38,8 +38,10 @@ export default function StayPage() {
               a family can stay together, friends can share, and a couple on a
               Kruger trip still has somewhere quiet to land. Self-catering
               lodge rooms, simple twin rooms, beds in the wooden house and
-              shaded campsites under the forty-year-old mango trees, from R
-              {site.pricing.fromZAR} per person sharing.
+              shaded campsites under the forty-year-old mango trees. From R
+              {site.pricing.fromZAR} per person sharing a night when you stay
+              two nights or more, or R{site.pricing.singleNightZAR} for a
+              single night.
             </p>
           </div>
           <SharePage

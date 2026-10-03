@@ -34,6 +34,8 @@ export type Room = {
    */
   priceFromZAR?: number;
   priceToZAR?: number;
+  /** Rate for a one-night stay, where it differs from the longer-stay rate. */
+  priceSingleNightZAR?: number;
   hero: Img;
   gallery: Img[];
   /** Schema.org type — omitted for spaces that are not somewhere to sleep. */
@@ -248,17 +250,39 @@ export function roomBySlug(slug: string): Room | undefined {
  * What this room costs, per person sharing per night. Falls back to the
  * site-wide from-price for rooms whose own rate we have not been given.
  */
-export function roomRate(room: Room): { from: number; to?: number } {
-  return {
-    from: room.priceFromZAR ?? site.pricing.fromZAR,
-    to: room.priceToZAR,
-  };
+export function roomRate(room: Room): {
+  from: number;
+  to?: number;
+  singleNight?: number;
+} {
+  const from = room.priceFromZAR ?? site.pricing.fromZAR;
+  // Only rooms on the standard rate carry the single-night surcharge; a room
+  // with its own price keeps it until we are told otherwise.
+  const singleNight =
+    room.priceSingleNightZAR ??
+    (room.priceFromZAR === undefined || room.priceFromZAR === site.pricing.fromZAR
+      ? site.pricing.singleNightZAR
+      : undefined);
+  return { from, to: room.priceToZAR, singleNight };
 }
 
 /** The rate as it reads on the page: "R300–R350" or "R250". */
 export function roomRateLabel(room: Room): string {
   const { from, to } = roomRate(room);
   return to ? `R${from}–R${to}` : `R${from}`;
+}
+
+/**
+ * The full rate sentence, including the one-night surcharge where it applies:
+ * "R275 for one night, R250 a night for two or more".
+ */
+export function roomRateSentence(room: Room): string {
+  const { from, to, singleNight } = roomRate(room);
+  const base = to ? `R${from}–R${to}` : `R${from}`;
+  if (!singleNight || singleNight === from) {
+    return `${base} ${site.pricing.unit}`;
+  }
+  return `R${singleNight} for one night, ${base} a night for two or more — per person sharing`;
 }
 
 /** Every photograph of a room, hero first — used for the "N photos" badge. */
