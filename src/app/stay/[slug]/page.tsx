@@ -11,7 +11,7 @@ import {
   roomPages,
   roomPhotos,
   roomRateLabel,
-  roomRateSentence,
+  roomRateLines,
 } from "@/data/rooms";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappAbout } from "@/lib/site";
@@ -128,7 +128,13 @@ export default async function RoomPage({
                   Enquire about this room
                 </Link>
                 {room.ldType && (
-                  <span className="text-sm text-muted">{roomRateSentence(room)}</span>
+                  <span className="text-sm leading-relaxed text-muted">
+                    {roomRateLines(room).map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </span>
                 )}
               </div>
             </div>

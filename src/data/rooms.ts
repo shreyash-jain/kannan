@@ -273,16 +273,21 @@ export function roomRateLabel(room: Room): string {
 }
 
 /**
- * The full rate sentence, including the one-night surcharge where it applies:
- * "R275 for one night, R250 a night for two or more".
+ * The rate as Anneli words it, one line each:
+ *   R275 for 1 night
+ *   R250 for more than 1 night per person sharing
+ * A room on its own rate with no surcharge keeps a single line.
  */
-export function roomRateSentence(room: Room): string {
+export function roomRateLines(room: Room): string[] {
   const { from, to, singleNight } = roomRate(room);
   const base = to ? `R${from}–R${to}` : `R${from}`;
   if (!singleNight || singleNight === from) {
-    return `${base} ${site.pricing.unit}`;
+    return [`${base} ${site.pricing.unit}`];
   }
-  return `R${singleNight} for one night, ${base} a night for two or more — per person sharing`;
+  return [
+    `R${singleNight} for 1 night`,
+    `${base} for more than 1 night per person sharing`,
+  ];
 }
 
 /** Every photograph of a room, hero first — used for the "N photos" badge. */
