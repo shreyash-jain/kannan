@@ -63,7 +63,10 @@ export const site = {
   //   - Breakfast & dinner are SET MENUS, on request
   //   - No halaal option
   pricing: {
-    fromZAR: 250, // From R250 per person sharing per night (pps)
+    // Anneli, 2026-10-03: a single-night surcharge. fromZAR stays the
+    // longer-stay rate, so every "from R250" claim on the site is still true.
+    fromZAR: 250, // 2+ nights, per person sharing per night (pps)
+    singleNightZAR: 275, // one night only, pps
     // Marketing (Shreyash), 2026-09-11: "School groups prices from R180 per
     // learner". Read as per learner per night, consistent with fromZAR.
     schoolGroupFromZAR: 180,
