@@ -150,10 +150,37 @@ function DecemberDay() {
     { from: 18, to: 20, label: "Braai", tone: "bg-rust" },
   ];
   const marks = [
-    { h: 5.08, t: "05:05", n: "sunrise" },
-    { h: 5.5, t: "05:30", n: "gates open" },
-    { h: 18.5, t: "18:30", n: "gates close" },
+    // Sunrise and the gate opening are 25 minutes apart, too close to share
+    // a row, so sunrise sits above the bar and the gate times below it.
+    { h: 5.08, t: "05:05", n: "sunrise", above: true },
+    { h: 5.5, t: "05:30", n: "gates open", above: false },
+    { h: 18.5, t: "18:30", n: "gates close", above: false },
   ];
+  const markRow = (above: boolean) => (
+    <div className={`relative h-10 text-xs text-ink/70 ${above ? "mb-2" : "mt-2"}`}>
+      {marks
+        .filter((m) => m.above === above)
+        .map((m) => (
+          <span
+            key={m.t}
+            className="absolute -translate-x-1/2 whitespace-nowrap text-center"
+            style={{ left: pct(m.h) }}
+          >
+            {above ? (
+              <>
+                {m.n}
+                <strong className="block font-medium text-ink">{m.t}</strong>
+              </>
+            ) : (
+              <>
+                <strong className="block font-medium text-ink">{m.t}</strong>
+                {m.n}
+              </>
+            )}
+          </span>
+        ))}
+    </div>
+  );
   return (
     <figure className="not-prose mx-auto mt-10 max-w-5xl px-5 lg:px-8">
       <div className="rounded-2xl border border-black/10 bg-bone p-6 md:p-10">
@@ -163,7 +190,8 @@ function DecemberDay() {
         <h3 className="mt-2 font-display text-2xl text-forest-deep md:text-3xl">
           How we plan a December day
         </h3>
-        <div className="relative mt-10 h-12 overflow-hidden rounded-full bg-sand">
+        <div className="mt-8">{markRow(true)}</div>
+        <div className="relative h-12 overflow-hidden rounded-full bg-sand">
           {bands.map((b) => (
             <div
               key={b.label}
@@ -173,18 +201,7 @@ function DecemberDay() {
             />
           ))}
         </div>
-        <div className="relative mt-2 h-10 text-xs text-ink/70">
-          {marks.map((m) => (
-            <span
-              key={m.t}
-              className="absolute -translate-x-1/2 whitespace-nowrap text-center"
-              style={{ left: pct(m.h) }}
-            >
-              <strong className="block font-medium text-ink">{m.t}</strong>
-              {m.n}
-            </span>
-          ))}
-        </div>
+        {markRow(false)}
         <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-5">
           {bands.map((b) => {
             const fmt = (h: number) =>
