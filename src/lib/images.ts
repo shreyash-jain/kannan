@@ -870,6 +870,24 @@ export const img = {
     width: 1600,
     height: 1200,
   },
+  // --- Christmas family vacation guide — two generated off-farm scenes ----
+  // A Kruger road and a Kruger picnic site only; no AI frame shows the farm.
+  // qwen/qwen-image-3, 1822x1024, uploaded straight to kanaan/ (2026-10-05).
+  hazyviewChristmasKrugerDawn: {
+    src: cldImage(
+      "hazyview-christmas-kruger-dawn",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A zebra mare and her foal crossing a rain-wet tar road in southern Kruger at a pink December sunrise, lush green summer bushveld and misty hills behind.",
+    width: 1822,
+    height: 1024,
+  },
+  hazyviewChristmasPicnic: {
+    src: cldImage("hazyview-christmas-picnic-breakfast"),
+    alt: "Christmas breakfast on a wooden picnic table in the green summer bushveld: a red checked cloth, an enamel coffee pot, tin mugs, mince pies, a basket of fruit and lychees, Christmas crackers and binoculars.",
+    width: 1822,
+    height: 1024,
+  },
   familySafariHero: {
     src: cldImage(
       "family-kruger-selfdrive-hero",

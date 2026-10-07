@@ -319,6 +319,20 @@ export const posts: Post[] = [
     excerpt:
       "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. One day's drive from Gauteng — 394 km from Johannesburg, 372 from Pretoria — and about an hour from Nelspruit or Acornhoek. Group and long-stay bookings quoted individually.",
   },
+  {
+    chapter: "Christmas & festive season",
+    title:
+      "Planning Your Lowveld Christmas Family Vacation: A Complete Hazyview Guide",
+    category: "guide",
+    status: "live",
+    href: "/blog/hazyview-christmas-family-vacation",
+    image: img.hazyviewChristmasKrugerDawn.src,
+    imageAlt: img.hazyviewChristmasKrugerDawn.alt,
+    datePublished: "2026-10-05",
+    readingMinutes: 7,
+    excerpt:
+      "December in Hazyview is hot, green and stormy, and Kruger caps day visitors at every gate over the holidays. Here's how we'd plan a family Christmas: December weather, the festive gate-booking rule, the Panorama Route, a five-day itinerary, a packing list and how many nights you need.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
