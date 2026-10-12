@@ -888,6 +888,24 @@ export const img = {
     width: 1822,
     height: 1024,
   },
+  // --- Johannesburg to Kruger road-trip guide — two generated off-farm
+  // scenes (the escarpment drive, a Kruger road at dawn). No AI frame shows
+  // the farm. qwen/qwen-image-3, 1822x1024, uploaded to kanaan/ (2026-10-05).
+  jhbKrugerEscarpment: {
+    src: cldImage(
+      "jhb-kruger-escarpment-descent",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A small silver car winding down a tar road from grassy escarpment hills into the wide Mpumalanga Lowveld at golden hour, orchards and bushveld stretching to hazy blue hills.",
+    width: 1822,
+    height: 1024,
+  },
+  jhbKrugerFirstMorning: {
+    src: cldImage("jhb-kruger-first-morning-windscreen"),
+    alt: "The view through a car windscreen on an early-morning Kruger game drive: two elephants crossing a narrow tar road in pink dawn light, mist lying low in the bushveld.",
+    width: 1822,
+    height: 1024,
+  },
   familySafariHero: {
     src: cldImage(
       "family-kruger-selfdrive-hero",
