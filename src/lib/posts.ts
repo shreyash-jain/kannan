@@ -333,6 +333,20 @@ export const posts: Post[] = [
     excerpt:
       "December in Hazyview is hot, green and stormy, and Kruger caps day visitors at every gate over the holidays. Here's how we'd plan a family Christmas: December weather, the festive gate-booking rule, the Panorama Route, a five-day itinerary, a packing list and how many nights you need.",
   },
+  {
+    chapter: "Johannesburg to Kruger",
+    title:
+      "Why Hazyview Is an Ideal Stop Between Johannesburg and Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/johannesburg-to-kruger-national-park-hazyview",
+    image: img.jhbKrugerEscarpment.src,
+    imageAlt: img.jhbKrugerEscarpment.alt,
+    datePublished: "2026-10-05",
+    readingMinutes: 6,
+    excerpt:
+      "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

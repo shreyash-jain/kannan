@@ -68,6 +68,7 @@ re-verify it against `origin/main` before trusting it.
 | Work | Branch | State | Next action |
 | --- | --- | --- | --- |
 | "Under the Mango Trees" | merged to `main` | **Done / live** | none |
+| Joburg-to-Kruger road-trip guide — `johannesburg-to-kruger-national-park-hazyview` | `blog-19-johannesburg-to-kruger` | **PR open into `main`** (2026-10-13). On `preview`. | Marketing reviewed on preview (two rounds: wider column; scenic Dullstroom–Lydenburg–Sabie route, no Boer War). Merge only when marketing says publish. ~1,300 words; five code-built infographics; two AI off-farm frames (`jhbKrugerEscarpment`, `jhbKrugerFirstMorning`), real farm photos. Quotes R275 single night / R250 2+ nights from `site.pricing`. Scenic-route distances are OSRM estimates between the pinned towns. |
 | Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Merged (PR #20)** | none — this is what cleared both old blockers. |
 | Weddings guide — `wedding-venues-near-kruger-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** | Owner has not reviewed. Note it links to `/blog/where-to-eat-around-hazyview`, which does **not** exist on `main` — that link 404s until the food guide lands. |
 | Where-to-stay guide — `accommodation-near-kruger-national-park` | `blog-10-where-to-stay` | **Built, verified, PR open** | Owner has not reviewed. Branched straight off `main`, so it is independent of blog-9 — every link resolves today. |
@@ -194,4 +195,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-09-15*
+*Last updated: 2026-10-13*
