@@ -64,19 +64,11 @@ const faqs = [
   },
   {
     q: "How long does it take to drive from Johannesburg to Hazyview?",
-    a: "About 4½ hours. Allow five or six with stops and roadworks.",
+    a: "About 4½ hours on the N4, or around six through Dullstroom and Sabie.",
   },
   {
     q: "Which Kruger gate is closest to Hazyview?",
-    a: `Phabeni Gate, 12 km from town. From our farm, Phabeni and Numbi are both ${gateMin}utes away.`,
-  },
-  {
-    q: "Can you visit Kruger from Hazyview in one day?",
-    a: "Easily. Most guests do a morning drive and are back for lunch.",
-  },
-  {
-    q: "Is Hazyview suitable for a family holiday?",
-    a: "Very. Everything is close, with space to run around afterwards.",
+    a: `Phabeni, 12 km from town and ${gateMin}utes from our farm.`,
   },
   {
     q: "Where should I stay between Johannesburg and Kruger?",
@@ -94,42 +86,71 @@ export const metadata = createBlogPostMetadata({
   category: "guide",
 });
 
-// --- Infographic 1: the route, Johannesburg to the gate ---------------
-const route = [
+// --- Infographic 1: the two routes, Johannesburg to Hazyview --------
+// Scenic-route legs from OpenStreetMap routing (OSRM), 2026-10-13, between
+// the towns marketing pinned (Dullstroom, Lydenburg/Mashishing, Sabie). It
+// leaves the N4 at Belfast, before the Machadodorp plaza, so only the
+// Middelburg toll applies.
+type Stop = { place: string; note: string; home?: boolean };
+
+const n4Route: Stop[] = [
   { place: "Johannesburg / OR Tambo", note: "Head east for eMalahleni" },
   { place: "N4 east", note: "Tolls: Middelburg R84 · Machadodorp R126" },
   { place: "Mbombela (Nelspruit)", note: "Turn north onto the R40" },
-  { place: "Hazyview · Kanaan", note: "57 km later, on the R40" },
+  { place: "Hazyview · Kanaan", note: "57 km later, on the R40", home: true },
   { place: "Phabeni Gate", note: "12 km from Hazyview" },
 ];
 
-function RouteInfographic() {
+const scenicRoute: Stop[] = [
+  { place: "Belfast", note: "Leave the N4 here, after the Middelburg toll" },
+  { place: "Dullstroom", note: "35 km on the R540" },
+  { place: "Lydenburg", note: "56 km on, also called Mashishing" },
+  { place: "Sabie", note: "55 km over the Long Tom Pass" },
+  { place: "Hazyview · Kanaan", note: "45 km down the R536", home: true },
+];
+
+function RouteInfographic({
+  eyebrow,
+  stats,
+  stops,
+  tone = "bg-forest",
+}: {
+  eyebrow: string;
+  stats: string[];
+  stops: Stop[];
+  tone?: string;
+}) {
   return (
     <figure className="not-prose mx-auto my-12 w-full max-w-5xl px-5 lg:px-0">
-      <div className="rounded-3xl bg-forest p-6 text-bone md:p-10">
+      <div className={`rounded-3xl p-6 text-bone md:p-10 ${tone}`}>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-ochre">
-          The drive at a glance
+          {eyebrow}
         </p>
         <div className="mt-3 flex flex-wrap items-baseline gap-x-8 gap-y-2">
-          <p className="font-display text-4xl md:text-5xl">394 km</p>
-          <p className="font-display text-2xl text-bone/80 md:text-3xl">
-            about 4½ hours
-          </p>
-          <p className="font-display text-2xl text-bone/80 md:text-3xl">
-            R210 in tolls
-          </p>
+          {stats.map((st, i) => (
+            <p
+              key={st}
+              className={
+                i === 0
+                  ? "font-display text-4xl md:text-5xl"
+                  : "font-display text-2xl text-bone/80 md:text-3xl"
+              }
+            >
+              {st}
+            </p>
+          ))}
         </div>
         <ol className="relative mt-8 grid gap-6 md:grid-cols-5 md:gap-4">
           <span
             aria-hidden
             className="absolute left-[0.6rem] top-2 bottom-2 w-0.5 bg-ochre/50 md:left-0 md:right-0 md:top-[0.6rem] md:bottom-auto md:h-0.5 md:w-auto"
           />
-          {route.map((r, i) => (
+          {stops.map((r) => (
             <li key={r.place} className="relative pl-9 md:pl-0 md:pt-9">
               <span
                 aria-hidden
                 className={`absolute left-0 top-0 h-5 w-5 rounded-full border-4 border-forest ${
-                  i === 3 ? "bg-bone" : "bg-ochre"
+                  r.home ? "bg-bone" : "bg-ochre"
                 }`}
               />
               <p className="font-display text-lg leading-snug">{r.place}</p>
@@ -139,7 +160,7 @@ function RouteInfographic() {
         </ol>
       </div>
       <figcaption className="mt-3 text-center text-xs text-muted">
-        Car toll fees from 1 March 2026.
+        Car tolls from 1 March 2026. Times exclude stops.
       </figcaption>
     </figure>
   );
@@ -153,7 +174,6 @@ const twoWays = [
     rows: [
       ["Day 1", "4½ hours driving, then a gate queue in the heat"],
       ["First game drive", "The hottest, quietest hours"],
-      ["You arrive", "Tired, racing the closing time"],
     ],
   },
   {
@@ -162,7 +182,6 @@ const twoWays = [
     rows: [
       ["Day 1", "Arrive mid-afternoon, swim, braai, sleep"],
       ["First game drive", "At the gate when it opens"],
-      ["You arrive", "Rested, with the best hours ahead"],
     ],
   },
 ];
@@ -285,12 +304,12 @@ const seasons = [
   {
     months: "May–September",
     name: "Dry winter",
-    points: ["Thin bush, easier game viewing", "Clear Panorama Route views", "Cool mornings, 06:00 gate opening"],
+    points: ["Thin bush, easier game viewing", "Clear Panorama Route views"],
   },
   {
     months: "October–April",
     name: "Green summer",
-    points: ["Lush bush and baby animals", "Full waterfalls, great birding", "Hot days, afternoon storms, 05:30 gates"],
+    points: ["Lush bush, baby animals, birds", "Full waterfalls, afternoon storms"],
   },
 ];
 
@@ -345,7 +364,7 @@ export default function JohannesburgToKrugerPage() {
           eyebrow="Guide · Road trip"
           title={headline}
           titleSize="compact"
-          intro="Most people driving from Johannesburg to Kruger see Hazyview as a fuel stop and a set of traffic lights before the gate. We'd like to make the case for staying the night."
+          intro="Most people driving to Kruger see Hazyview as a fuel stop before the gate. We'd like to make the case for staying the night."
           byline="Anneli & Matthew"
           datePublished={datePublished}
           readingMinutes={6}
@@ -355,7 +374,7 @@ export default function JohannesburgToKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <TLDR
               items={[
-                "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4 and R40.",
+                "Johannesburg to Hazyview is 394 km on the N4, or a scenic day through Dullstroom and Sabie.",
                 "Hazyview isn't halfway. It's the last town before three Kruger gates.",
                 "Sleep here and you're at the gate fresh for its 05:30 or 06:00 opening.",
                 "One base covers Kruger, the Panorama Route and Sabie's waterfalls.",
@@ -373,15 +392,22 @@ export default function JohannesburgToKrugerPage() {
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">How far is Hazyview from Johannesburg?</H2>
-            <h3 className={h3}>Johannesburg to Hazyview by car</h3>
             <p>
-              It&rsquo;s 394 km, about four and a half hours if the roads are
-              kind. Head east to eMalahleni, join the N4 past Middelburg and
-              Belfast, and drop off the escarpment to Mbombela. Then it&rsquo;s
-              57 km north on the R40. We&rsquo;re right on it.
+              There are two good ways down. One is quick. The other is a day
+              out in itself.
+            </p>
+            <h3 className={h3}>Route 1: Johannesburg to Hazyview on the N4</h3>
+            <p>
+              It&rsquo;s 394 km, about four and a half hours, and the route
+              Google Maps will give you: the N4 east to Mbombela, then 57 km
+              north on the R40. We&rsquo;re right on it.
             </p>
           </div>
-          <RouteInfographic />
+          <RouteInfographic
+            eyebrow="Route 1 · The quick way, on the N4"
+            stats={["394 km", "about 4½ hours", "R210 in tolls"]}
+            stops={n4Route}
+          />
           <div className="prose-kanaan mx-auto max-w-5xl">
             <p>
               Keep R210 for the two N4 tolls, at{" "}
@@ -393,8 +419,47 @@ export default function JohannesburgToKrugerPage() {
               >
                 2026 car rates
               </a>
-              . Middelburg and Belfast are easy fuel stops. And arrive before
-              dark: the R40 has people and animals on the verges at night.
+              . Arrive before dark: the R40 has people and animals on the
+              verges at night.
+            </p>
+            <h3 className={h3}>
+              Route 2: the scenic way, through Dullstroom, Lydenburg and Sabie
+            </h3>
+            <p>
+              This is the one we love. Leave the N4 at Belfast and climb to{" "}
+              <strong>Dullstroom</strong>, a trout-fishing village about
+              2,000 m up and one of the coldest towns in the country. Bring a
+              jersey, and stop for breakfast.
+            </p>
+            <p>
+              Then <strong>Lydenburg</strong> (officially Mashishing), in an
+              area rich in history, and up the Long Tom Pass to more than
+              2,000 m. Near the top is{" "}
+              <a
+                href="https://www.sa-venues.com/things-to-do/mpumalanga/hops-hollow-brewery/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={link}
+              >
+                Hops Hollow
+              </a>
+              , one of the highest breweries in Africa. The road drops into{" "}
+              <strong>Sabie</strong> for waterfalls and pancakes, 45 km from
+              our gate.
+            </p>
+          </div>
+          <RouteInfographic
+            eyebrow="Route 2 · The scenic way, from Belfast"
+            stats={["About 415 km", "6 hours' driving", "R84 in tolls"]}
+            stops={scenicRoute}
+            tone="bg-forest-deep"
+          />
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <p>
+              The catch: it&rsquo;s only about 20 km longer but well over an
+              hour slower. Leave early and cross the pass in
+              daylight, as it gets thick mist. Tired children? Take the N4
+              down and the scenic way home.
             </p>
           </div>
         </Section>
@@ -411,10 +476,9 @@ export default function JohannesburgToKrugerPage() {
             </p>
             <h3 className={h3}>1. Break up the Johannesburg to Kruger road trip</h3>
             <p>
-              Four and a half hours is fine for two adults and a podcast. It
-              feels much longer with children in the back, or after an
-              overnight flight into OR Tambo. Ending the day at a pool, not a
-              gate queue, changes the whole holiday.
+              Four and a half hours feels much longer with children in the
+              back, or after an overnight flight. Ending the day at a pool,
+              not a gate queue, changes the holiday.
             </p>
             <h3 className={h3}>2. Start your Kruger adventure fresh</h3>
             <p>
@@ -430,9 +494,9 @@ export default function JohannesburgToKrugerPage() {
           <TwoWaysInfographic />
           <div className="prose-kanaan mx-auto max-w-5xl">
             <p>
-              One fair exception: if you&rsquo;ve booked a camp inside Kruger,
-              like Skukuza, driving straight in works. Leave early, use Paul
-              Kruger Gate, and check closing times on{" "}
+              One exception: booked a camp inside Kruger? Drive
+              straight in through Paul Kruger Gate, and check closing times
+              on{" "}
               <a
                 href="https://www.sanparks.org/parks/kruger"
                 target="_blank"
@@ -467,7 +531,7 @@ export default function JohannesburgToKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Hazyview is close to Kruger National Park</H2>
             <p>
-              Three gates are within easy reach. More in our{" "}
+              More in our{" "}
               <Link href="/blog/kruger-from-hazyview" className={link}>
                 Kruger from Hazyview guide
               </Link>
@@ -498,8 +562,8 @@ export default function JohannesburgToKrugerPage() {
             </p>
             <h3 className={h3}>Enjoy Hazyview&rsquo;s family attractions</h3>
             <p>
-              Zip-lines, Perry&rsquo;s Bridge Reptile Park, quad bikes and
-              rafting. Here&rsquo;s{" "}
+              Zip-lines, Perry&rsquo;s Bridge Reptile Park and rafting.
+              Here&rsquo;s{" "}
               <Link href="/blog/things-to-do-around-hazyview" className={link}>
                 everything to do around Hazyview
               </Link>
@@ -514,9 +578,8 @@ export default function JohannesburgToKrugerPage() {
               Why Hazyview works better as a base than constantly changing hotels
             </H2>
             <p>
-              Johannesburg, Kruger, Graskop, another hotel, home: that&rsquo;s
-              a lot of packing. From Hazyview, every day trip ends at the same
-              room and the same braai.
+              No packing up every morning. Every day trip ends at the same
+              room.
             </p>
           </div>
           <BaseInfographic />
@@ -529,11 +592,9 @@ export default function JohannesburgToKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Why stay at Kanaan Guest Farm in Hazyview?</H2>
             <p>
-              We&rsquo;re a family-run farm on the R40, {gateMin}utes from
-              Phabeni and Numbi and 4½ hours from OR Tambo. Self-catering lodge
+              We&rsquo;re a family-run farm on the R40: self-catering lodge
               rooms, campsites under forty-year-old mango trees, a pool,
-              hiking and biking trails, our own waterfall, braai spots and a
-              secure gate. See{" "}
+              trails, our own waterfall and a secure gate. See{" "}
               <Link href="/facilities" className={link}>
                 everything on the farm
               </Link>
@@ -632,10 +693,6 @@ export default function JohannesburgToKrugerPage() {
             variant="grid"
             items={[
               {
-                title: "Leave early",
-                body: "Be in Hazyview by mid-afternoon, well before dark.",
-              },
-              {
                 title: "Book ahead in the holidays",
                 body: "School holidays and long weekends fill up fast.",
               },
@@ -678,8 +735,7 @@ export default function JohannesburgToKrugerPage() {
               thesis="Don't rush the last stretch. Make Hazyview part of the trip, not just the road to it."
               body={
                 <>
-                  Send us your dates and we&rsquo;ll help plan your first
-                  morning in the park.
+                  Send us your dates.
                 </>
               }
             />
@@ -702,6 +758,10 @@ export default function JohannesburgToKrugerPage() {
                   label:
                     "Pretoria News — 2026 N4 toll fees",
                   href: "https://pretorianews.co.za/motoring/industry-news/2026-03-11-heres-how-much-youll-pay-in-toll-fees-on-south-africas-major-routes-after-sanrals-2026-increase",
+                },
+                {
+                  label: "Hops Hollow Brewery, Long Tom Pass",
+                  href: "https://www.sa-venues.com/things-to-do/mpumalanga/hops-hollow-brewery/",
                 },
                 {
                   label:
