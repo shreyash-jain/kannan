@@ -76,6 +76,17 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **No Boer War history — say "rich in history" instead** (Anneli, 2026-10-13, Joburg-to-
+  Kruger post). A line about the Long Tom Pass being named after Boer War guns was pulled.
+  *Why:* there is a lot of politics around the Boer War, and the area has plenty of other
+  history that appeals to all cultures. Refer to Lydenburg, the Long Tom Pass and the
+  escarpment towns as an area "rich in history" and leave it there.
+- **The scenic Joburg route is a selling point** (Anneli, 2026-10-13): N4 to Belfast, then
+  Dullstroom → Lydenburg (Mashishing) → Long Tom Pass → Sabie → Hazyview. Her highlights:
+  Dullstroom, Hops Hollow brewery near the top of the pass ("one of the highest breweries in
+  Africa"; sources disagree on highest vs second-highest, so don't rank it), Sabie's
+  waterfalls and pancakes. ~415 km, about six hours' driving, only the Middelburg toll.
+
 - **A brief's "Topic" and "Topic Variation" are one post, not two** (2026-09-22,
   contractor-accommodation brief). Two chats each wrote one of the pair on the same branch,
   then overwrote, restored and retired each other's version; both went live for an
