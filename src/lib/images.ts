@@ -991,6 +991,17 @@ export const img = {
     width: 1600,
     height: 900,
   },
+  // Real phone screenshot of the Kanaan Transfers WhatsApp booking chat —
+  // not AI-generated, kept at its native portrait crop (no c_fill).
+  cabKanaanTransfersScreenshot: {
+    src: cldImage(
+      "cab-kanaan-transfers-whatsapp-screenshot",
+      "f_auto,q_auto,c_limit,w_720",
+    ),
+    alt: "A real WhatsApp conversation booking a car through Kanaan Transfers — asking for a car, picking a time, and the automatic reply confirming the booking.",
+    width: 712,
+    height: 1600,
+  },
 } as const;
 
 // ---------------------------------------------------------------------

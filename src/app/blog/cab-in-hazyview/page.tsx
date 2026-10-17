@@ -20,12 +20,12 @@ import {
 const datePublished = "2026-09-18";
 const headline = "Need a cab in Hazyview? Here's the easiest way to get around";
 
-// A dedicated WhatsApp number for this post only, so organic-search leads
-// from this guide can be counted separately from the farm's main enquiry
-// line. Not part of site.ts — do not reuse this number on any other post.
+// Kanaan Transfers' own WhatsApp number — a separate local transport service,
+// distinct from the farm's main enquiry line. Not part of site.ts — do not
+// reuse this number on any other post.
 const CAB_LEADS_WHATSAPP_NUMBER = "27642116345";
 const cabLeadsWhatsappHref = `https://wa.me/${CAB_LEADS_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi, I found your guide on getting a cab in Hazyview and would love a hand arranging a lift.",
+  "Hi, I found your guide on getting a cab in Hazyview — I'd like to book a ride with Kanaan Transfers.",
 )}`;
 
 export const metadata = createBlogPostMetadata({
@@ -69,10 +69,10 @@ export default function CabInHazyviewPage() {
             <TLDR
               items={[
                 "Uber and Bolt don't cover Hazyview — the nearest reliable app coverage is Nelspruit, over 40 minutes away.",
-                "A Hazyview taxi service works on an agreed fare, not a meter, so confirm the price and the pickup point before you get in.",
-                "The fastest route to a trustworthy driver is your guesthouse, not a street corner — ask before you land.",
-                "Fares depend mostly on distance and time of day; a KMIA airport run costs more than a hop into town.",
-                "Once you have a driver who shows up on time, save the number — you won't need to look twice.",
+                "Kanaan Transfers is a local car service you book over WhatsApp — share your pin, get a fare upfront, no meter and no app to download.",
+                "Trips start from R50 and cover a 50km radius around Hazyview — town errands, activities, the Panorama Route.",
+                "The vehicle seats up to four, so it suits couples, small families and solo travellers well.",
+                "KMIA airport is just outside that 50km radius, so airport transfers are arranged directly rather than through the automatic quote.",
               ]}
             />
 
@@ -86,7 +86,7 @@ export default function CabInHazyviewPage() {
               network here.
             </p>
             <p>
-              {`That catches out a lot of first-time visitors. You land at Kruger Mpumalanga International Airport, ${site.distances.kmiaMinutes} minutes from Hazyview, phone in hand, and there is no app to open. The honest answer is that a taxi Hazyview South Africa visitor can rely on isn't a tap-and-go service — it's a person, usually recommended by whoever you're staying with.`}
+              {`That catches out a lot of first-time visitors. You land at Kruger Mpumalanga International Airport, ${site.distances.kmiaMinutes} minutes from Hazyview, phone in hand, and there is no app to open. The honest answer is that a taxi Hazyview South Africa visitor can rely on isn't a tap-and-go service — it's Kanaan Transfers, a local car service you reach on WhatsApp.`}
             </p>
           </div>
         </Section>
@@ -95,17 +95,27 @@ export default function CabInHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">What to Expect From a Local Hazyview Taxi Service</H2>
             <p>
-              A local Hazyview transport service looks nothing like a
-              metered city cab. Once you know the difference, it stops
-              feeling risky and starts feeling simple.
+              Getting around the Lowveld just got easier. Kanaan Transfers
+              offers safe, comfortable and affordable transport within a
+              50km radius of Hazyview, with trips starting from only R50.
+              Whether you need a quick ride into town, a day trip to
+              explore the Panorama Route or a Kruger gate, or a transfer to
+              or from the airport, it&rsquo;s a service built for exactly
+              this. The vehicle seats up to four passengers — comfortable
+              for couples, small families and solo travellers.
+            </p>
+            <p>
+              It&rsquo;s a growing local business, with more vehicles on
+              the way. What stays constant is local knowledge, on-time
+              pickups and fair pricing.
             </p>
           </div>
           <NumberedList
             variant="grid"
             items={[
               {
-                title: "No meter, an agreed fare",
-                body: "The price is set before you leave, not calculated on arrival. Ask, agree, then go — don't climb in first and negotiate after.",
+                title: "A fare before you confirm",
+                body: "You get a quote before you commit to anything — no meter running, no surprise at the end of the trip.",
               },
               {
                 title: "The driver knows the back roads",
@@ -113,39 +123,53 @@ export default function CabInHazyviewPage() {
               },
               {
                 title: "Door-to-door, not a rank",
-                body: "Most drivers will fetch you from your gate rather than expect you to find them. There isn't a formal taxi rank for visitors in the way a city has one.",
+                body: "Your driver fetches you from exactly where you are. There isn't a formal taxi rank for visitors in the way a city has one.",
               },
               {
-                title: "Cash first, card sometimes",
-                body: "Carry cash as your default. A few drivers take EFT or a card machine, but don't assume it — ask when you book.",
+                title: "A 50km radius, not everywhere",
+                body: "Kanaan Transfers covers a 50km radius around Hazyview. Outside that — like the airport — it's arranged directly rather than through the standard quote.",
               },
             ]}
           />
         </Section>
 
         <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-prose overflow-hidden">
+            <figure className="float-right ml-5 mb-3 w-32 sm:w-40">
+              <div className="overflow-hidden rounded-xl border border-black/5 shadow-sm">
+                <Image
+                  src={img.cabKanaanTransfersScreenshot.src}
+                  alt={img.cabKanaanTransfersScreenshot.alt}
+                  width={img.cabKanaanTransfersScreenshot.width}
+                  height={img.cabKanaanTransfersScreenshot.height}
+                  sizes="160px"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted">
+                Booking starts with one WhatsApp message.
+              </figcaption>
+            </figure>
             <H2 className="mb-4">How to Book a Cab in Hazyview in Minutes</H2>
             <p>
-              There is no single Hazyview cab booking app to download, and
-              that's really the whole trick to understand. Booking is a
-              phone call or a WhatsApp message, and it takes less time than
-              searching for an app that isn't going to appear.
+              There is no app to download. Hazyview cab booking online
+              means one WhatsApp chat, and the whole thing takes less time
+              than it would to find an app that isn't coming.
             </p>
           </div>
           <NumberedList
             items={[
               {
-                title: "Ask your accommodation first",
-                body: "Most guesthouses in Hazyview — us included — know a driver personally and can call one on your behalf before you've even unpacked.",
+                title: "Message Kanaan Transfers and share your pin",
+                body: "Say where you're headed, or drop a location pin. You'll get the distance and a fare confirmed before anything is booked.",
               },
               {
-                title: "Confirm the fare and the exact pickup point",
-                body: "\"Pick me up in Hazyview\" is too vague. Give a gate, a business name or a landmark, and agree the rand amount out loud.",
+                title: "Confirm the time and add a card",
+                body: "Now or a set day and time — your choice. It's a cash-free service, so a card is added on file; nothing is charged until the trip is done.",
               },
               {
-                title: "Save the number for the rest of your stay",
-                body: "One driver who arrives on time beats renegotiating with a stranger every morning. Most guests use the same person for their whole trip.",
+                title: "Get your driver's name and plate",
+                body: "Once it's confirmed you're told exactly who's coming and what they're driving, so you know who to look for.",
               },
             ]}
           />
@@ -155,35 +179,37 @@ export default function CabInHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Cab Fares and What Affects the Price</H2>
             <p>
-              Nobody in Hazyview quotes one flat rate, because the honest
-              answer is "it depends." Three things move the number most.
+              Trips with Kanaan Transfers start from R50, and the exact
+              fare is quoted upfront, before you confirm anything. Distance
+              is what moves the number most.
             </p>
           </div>
           <StatGrid
             stats={[
               {
-                value: "Shortest",
+                value: "From R50",
                 label: "A hop into town",
-                body: "The Spar, a pharmacy, a restaurant on the R40 — this is the cheapest trip, and still worth agreeing the fare before you climb in.",
+                body: "The Spar, a pharmacy, a restaurant on the R40 — the shortest trips, and the fare is confirmed in the same chat before you book.",
               },
               {
-                value: "Longest",
+                value: "By distance",
+                label: "Day trips and gate runs",
+                body: "Panorama Route viewpoints and Kruger gates within the 50km radius — the quote scales with the kilometres, shown before you confirm.",
+              },
+              {
+                value: "Outside 50km",
                 label: "The KMIA airport run",
-                body: `About ${site.distances.kmiaMinutes} minutes each way to or from Kruger Mpumalanga International Airport. Distance is the single biggest factor in the price.`,
-              },
-              {
-                value: "Variable",
-                label: "Odd hours",
-                body: "A 04:30 pickup for a Kruger gate opening, or a late arrival off a delayed flight, often costs more than the same trip at midday.",
+                body: `Kruger Mpumalanga International Airport is about ${site.distances.kmiaMinutes} minutes and roughly 62km from Hazyview — just past the standard radius, so it's arranged directly rather than auto-quoted.`,
               },
             ]}
           />
           <div className="prose-kanaan mx-auto max-w-prose">
             <p>
               We won't pretend a 24 hour cab Hazyview visitors can summon on
-              demand is guaranteed — some drivers will take a late-night
-              call, but a 2am airport arrival is exactly the trip worth
-              arranging a day ahead, not hoping to flag down on the R40.
+              demand is guaranteed — Kanaan Transfers is a growing local
+              business with a small, expanding fleet, so a late-night or
+              early-morning trip is worth booking a day ahead rather than
+              messaging on the spot.
             </p>
           </div>
         </Section>
@@ -211,7 +237,7 @@ export default function CabInHazyviewPage() {
               Best Uses for a Hazyview Cab (Airport, Safari, Town Trips)
             </H2>
             <p>
-              A cab isn't the right tool for every part of a Lowveld
+              A cab isn&rsquo;t the right tool for every part of a Lowveld
               holiday — you still need your own vehicle to self-drive inside
               Kruger. Where it earns its keep is everything around that.
             </p>
@@ -221,7 +247,7 @@ export default function CabInHazyviewPage() {
             items={[
               {
                 title: "Airport transfers",
-                body: "The obvious one. If you flew into KMIA without hiring a car, a pre-arranged transfer is simpler than trying to find one on arrival.",
+                body: "KMIA sits just past the standard 50km radius, so message Kanaan Transfers directly to arrange a pickup rather than expecting the instant quote.",
               },
               {
                 title: "Activity pickups",
@@ -243,17 +269,17 @@ export default function CabInHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <ClosingBlock
               title="The easiest way to get around"
-              thesis="A cab in Hazyview isn't an app you open — it's a person you ask for, ideally before you land."
+              thesis="A cab in Hazyview isn't an app you open — it's Kanaan Transfers, one WhatsApp chat away."
               body={
                 <>
                   That is the one honest thing worth remembering about
-                  transport in a small Lowveld town: the system runs on
-                  referrals, not algorithms.{" "}
+                  transport in a small Lowveld town: no meter, no rank, just
+                  a chat and a quote.{" "}
                   <Link
                     href="/blog/kruger-from-hazyview"
                     className="font-medium text-ochre hover:text-ochre-deep"
                   >
-                    Once you're sorted for a lift
+                    Once you&rsquo;re sorted for a lift
                   </Link>
                   , the rest of the logistics — which Kruger gate, which
                   morning — get a lot easier.
@@ -289,8 +315,8 @@ export default function CabInHazyviewPage() {
 
         <WhatsAppCTA
           title="Need a hand arranging a lift?"
-          body="Message us before you land and we'll point you to a driver we already trust — the same person can fetch you from the airport and run you around for the rest of your stay."
-          buttonLabel="Ask us about getting around"
+          body="Getting around the Lowveld just got easier. Kanaan Transfers offers safe, comfortable and affordable transport within a 50km radius of Hazyview, from only R50 a trip — town rides, Panorama Route days, Kruger gates and more, in a vehicle that seats up to four. Message us to book your ride."
+          buttonLabel="Message Kanaan Transfers"
           href={cabLeadsWhatsappHref}
         />
 
