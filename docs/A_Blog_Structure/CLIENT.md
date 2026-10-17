@@ -87,6 +87,8 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   Africa"; sources disagree on highest vs second-highest, so don't rank it), Sabie's
   waterfalls and pancakes. ~415 km, about six hours' driving, only the Middelburg toll.
 
+- **Camping post: "under 1,300 words" and "fill the space left & right"** (marketing, 2026-10-05). The brief asked for 1,500–1,800; marketing capped it at 1,300, counted from the H1 to the WhatsApp band including captions, FAQ and the infographic. They then asked for the text column to fill the width, so that post reads at `max-w-5xl` like the birthday post. *Why:* the trend is now consistently shorter and wider — default to ~1,300 words and expect a request to widen; ask before widening, as before.
+- **Infographics are coded, not generated** (2026-10-05, camping post). A comparison/drive-time panel built in the page stays sharp on phones and its numbers come from `site.ts` and the article, so they cannot drift. *Why:* generated images garble text and figures, and may not depict the farm.
 - **A brief's "Topic" and "Topic Variation" are one post, not two** (2026-09-22,
   contractor-accommodation brief). Two chats each wrote one of the pair on the same branch,
   then overwrote, restored and retired each other's version; both went live for an
@@ -166,4 +168,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-09-22.*
+*Last reviewed: 2026-10-17.*
