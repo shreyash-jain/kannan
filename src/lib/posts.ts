@@ -347,6 +347,19 @@ export const posts: Post[] = [
     excerpt:
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
+  {
+    chapter: "Guest farms near Kruger",
+    title: "Best Guest Farms Near Kruger National Park for a Safari Holiday",
+    category: "guide",
+    status: "live",
+    href: "/blog/best-guest-farms-near-kruger-national-park",
+    image: img.lowveldViewReal.src,
+    imageAlt: img.lowveldViewReal.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
