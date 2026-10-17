@@ -373,6 +373,20 @@ export const posts: Post[] = [
     excerpt:
       "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
   },
+  {
+    chapter: "Camping",
+    title:
+      "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/camping-near-kruger-national-park",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Camp inside Kruger and you pay the park fee every day; camp just outside and you pay it only on the days you drive in. Camping near versus inside the park, what a good Lowveld campsite needs, when to go, what to pack and how many nights.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
