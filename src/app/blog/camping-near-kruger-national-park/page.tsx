@@ -260,72 +260,41 @@ function InsideVsOutside() {
 
 // --- The worked example, as a two-column cost table --------------------
 function CostExample() {
-  const cols = [
-    { title: "South African couple", s: sa, per: fee.sa },
-    { title: "International couple", s: intl, per: fee.intl },
+  const rows = [
+    { label: "Inside Kruger (Pretoriuskop)", a: sa.inside, b: intl.inside },
+    { label: "Just outside, at Kanaan", a: sa.outside, b: intl.outside },
   ];
   return (
-    <div className="not-prose mx-auto mt-10 max-w-5xl px-5 lg:px-8">
-      <div className="grid gap-4 md:grid-cols-2">
-        {cols.map(({ title, s, per }) => (
-          <div
-            key={title}
-            className="overflow-hidden rounded-2xl border border-black/10 bg-bone"
-          >
-            <p className="bg-forest-deep px-6 py-4 font-display text-xl text-bone">
-              {title}
-            </p>
-            <div className="divide-y divide-black/10 px-6 text-sm">
-              <div className="py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted">
-                  Inside Kruger (Pretoriuskop)
-                </p>
-                <p className="mt-2 flex justify-between text-ink/85">
-                  <span>Campsite, {nights} × {r(site_.pkLow)}</span>
-                  <span>{r(insideSite)}</span>
-                </p>
-                <p className="mt-1 flex justify-between text-ink/85">
-                  <span>
-                    Park fees, 2 adults × {nights} days × {r(per)}
-                  </span>
-                  <span>{r(s.insideFees)}</span>
-                </p>
-                <p className="mt-2 flex justify-between font-medium text-forest-deep">
-                  <span>Total</span>
-                  <span>{r(s.inside)}</span>
-                </p>
-              </div>
-              <div className="py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-ochre-deep">
-                  Just outside, at Kanaan
-                </p>
-                <p className="mt-2 flex justify-between text-ink/85">
-                  <span>Pitch for two, {nights} × {r(campTwo)}</span>
-                  <span>{r(ourPitch)}</span>
-                </p>
-                <p className="mt-1 flex justify-between text-ink/85">
-                  <span>
-                    Park fees, 2 adults × {krugerDays} days × {r(per)}
-                  </span>
-                  <span>{r(s.outsideFees)}</span>
-                </p>
-                <p className="mt-2 flex justify-between font-medium text-forest-deep">
-                  <span>Total</span>
-                  <span>{r(s.outside)}</span>
-                </p>
-              </div>
-            </div>
-            <p className="flex justify-between bg-sand/60 px-6 py-4 font-display text-2xl text-forest-deep">
-              <span>You save</span>
-              <span>{r(s.saving)}</span>
-            </p>
-          </div>
-        ))}
-      </div>
+    <div className="not-prose mx-auto mt-6 max-w-3xl px-5 lg:px-8">
+      <table className="w-full overflow-hidden rounded-2xl border border-black/10 bg-bone text-sm">
+        <thead className="bg-forest-deep text-left text-bone">
+          <tr>
+            <th className="px-4 py-3 font-medium">
+              Couple, {nights} nights, {krugerDays} Kruger days
+            </th>
+            <th className="px-4 py-3 text-right font-medium">South African</th>
+            <th className="px-4 py-3 text-right font-medium">International</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-black/10">
+          {rows.map((row) => (
+            <tr key={row.label}>
+              <td className="px-4 py-3 text-ink/85">{row.label}</td>
+              <td className="px-4 py-3 text-right text-ink/85">{r(row.a)}</td>
+              <td className="px-4 py-3 text-right text-ink/85">{r(row.b)}</td>
+            </tr>
+          ))}
+          <tr className="bg-sand/60 font-medium text-forest-deep">
+            <td className="px-4 py-3">You save</td>
+            <td className="px-4 py-3 text-right">{r(sa.saving)}</td>
+            <td className="px-4 py-3 text-right">{r(intl.saving)}</td>
+          </tr>
+        </tbody>
+      </table>
       <p className="mt-3 text-center text-xs text-muted">
-        Pretoriuskop&rsquo;s rate from 1 November 2026; over the festive
-        season it is {r(site_.pkHigh)} a night. Fuel for the drive to the gate
-        is not included.
+        Inside: campsite {nights} × {r(site_.pkLow)} plus park fees for {nights}{" "}
+        days. Outside: our pitch {nights} × {r(campTwo)} plus park fees for{" "}
+        {krugerDays} days. Fuel not included.
       </p>
     </div>
   );
@@ -390,7 +359,7 @@ export default function CampingNearKrugerPage() {
             <TLDR
               items={[
                 "Camping inside Kruger puts you in the park at dawn and dusk. Camping just outside gives you Kruger plus the rest of the Lowveld from one pitch.",
-                `Outside, you pay park fees only on the days you drive in. A couple doing ${nights} nights with ${krugerDays} Kruger days saves about ${r(sa.saving)} (South Africans) or ${r(intl.saving)} (international guests).`,
+                "Outside, you pay park fees only on the days you go in, so it usually costs less as well.",
                 `At Kanaan, camping is ${r(campTwo)} a night for two or ${r(campSolo)} on your own, ${gateMin}–${gateMax} minutes from Phabeni gate.`,
               ]}
             />
@@ -471,13 +440,10 @@ export default function CampingNearKrugerPage() {
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">And what it costs: inside vs outside.</H2>
+            <H2 className="mb-4">And what it costs.</H2>
             <p>
-              Camping inside Kruger isn&rsquo;t included in the park fee. You
-              pay twice. First the campsite: a site for two at Pretoriuskop is{" "}
-              {r(site_.pkLow)} a night from 1 November 2026, rising to{" "}
-              {r(site_.pkHigh)} over the festive season, and Skukuza runs from{" "}
-              {r(site_.skLow)} to {r(site_.skHigh)} (
+              Inside Kruger you pay twice: the campsite, about{" "}
+              {r(site_.pkLow)} to {r(site_.skHigh)} a night for two (
               <a
                 href="https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_pretoriuskop-camp.html"
                 target="_blank"
@@ -486,18 +452,8 @@ export default function CampingNearKrugerPage() {
               >
                 2026/27 rates
               </a>
-              ; SANParks{" "}
-              <a
-                href="https://www.sanparks.org/parks/kruger/rates-entry-fees"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                quotes on request
-              </a>
-              ). Then the daily conservation fee, per person, for every day
-              you&rsquo;re in the park: R{fee.sa} for a South African adult,
-              R{fee.sadc} for SADC nationals and R{fee.intl} for international
+              ), and the park fee per person for every day you&rsquo;re there,
+              R{fee.sa} for South Africans and R{fee.intl} for international
               visitors (
               <a
                 href="https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf"
@@ -505,21 +461,14 @@ export default function CampingNearKrugerPage() {
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                SANParks fee sheet
+                SANParks
               </a>
-              ).
-            </p>
-            <p>
-              Take a couple camping for {nights} nights who spend {krugerDays}{" "}
-              of those days on game drives:
+              ). Outside, you pay the park fee only on the days you go in.
             </p>
           </div>
           <CostExample />
-          <div className="prose-kanaan mx-auto mt-8 max-w-5xl">
+          <div className="prose-kanaan mx-auto mt-6 max-w-5xl">
             <p>
-              The gap is far bigger for international guests, because their
-              daily fee is almost five times the South African one. Two honest
-              caveats. Holders of a SANParks{" "}
               <a
                 href="https://www.sanparks.org/wild-card"
                 target="_blank"
@@ -528,9 +477,7 @@ export default function CampingNearKrugerPage() {
               >
                 Wild Card
               </a>{" "}
-              pay no daily fee, so for them it comes down to site versus pitch.
-              And if you want to be in the park every single day, waking up
-              inside saves you the drive. For those trips, camp inside.
+              holders pay no daily fee, so for them the gap is small.
             </p>
           </div>
         </Section>
