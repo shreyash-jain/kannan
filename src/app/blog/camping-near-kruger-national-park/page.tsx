@@ -404,7 +404,8 @@ export default function CampingNearKrugerPage() {
             </p>
             <p>
               Anyone planning{" "}
-              <strong>camping near Kruger National Park</strong> ends up with
+              <strong>camping near Kruger National Park</strong>{" "}
+              ends up with
               the same question: inside the park, or just outside on its
               doorstep? Cost is the biggest difference, but it isn&rsquo;t the
               only one.
