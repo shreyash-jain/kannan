@@ -848,20 +848,6 @@ export const img = {
     width: 1600,
     height: 900,
   },
-  // --- Camping near Kruger guide (2026-10-05) — AI frames of places off the
-  // farm only; every Kanaan frame in that post is a real photograph.
-  krugerRestCampCampsite: {
-    src: cldImage("kruger-rest-camp-campsite"),
-    alt: "A campsite inside a Kruger rest camp at golden hour — a dusty 4x4 with a rooftop tent, a green dome tent on red earth, a lantern and kettle on a camp table, and the perimeter fence and bushveld beyond.",
-    width: 1822,
-    height: 1024,
-  },
-  krugerCampingKitFlatlay: {
-    src: cldImage("kruger-camping-kit-flatlay"),
-    alt: "Kit for a Kruger camping trip laid out on a canvas groundsheet in dappled shade — binoculars, a head torch, a bush hat, a steel water bottle, an enamel mug, a rolled sleeping bag, a rain jacket, a braai grid and rusks.",
-    width: 1822,
-    height: 1024,
-  },
 
   // ---- HOSTS / GENERAL BRAND -----------------------------------------------
   hosts: {

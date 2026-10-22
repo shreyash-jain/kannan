@@ -359,7 +359,7 @@ export const posts: Post[] = [
     datePublished: "2026-10-17",
     readingMinutes: 6,
     excerpt:
-      "Camp inside Kruger and you pay the park fee every day; camp just outside and you pay it only on the days you drive in. Camping near versus inside the park, what a good Lowveld campsite needs, when to go, what to pack and how many nights.",
+      "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
   },
 ];
 
