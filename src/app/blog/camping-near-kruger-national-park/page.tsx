@@ -382,6 +382,7 @@ export default function CampingNearKrugerPage() {
           path: "/blog/camping-near-kruger-national-park",
           image: img.campingAvenueWide.src,
           datePublished,
+          authors: ["Anneli & Matthew"],
         })}
       />
       <JsonLd data={faqLd(faqs)} />
