@@ -347,6 +347,20 @@ export const posts: Post[] = [
     excerpt:
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
+  {
+    chapter: "Camping",
+    title:
+      "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/camping-near-kruger-national-park",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
