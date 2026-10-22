@@ -89,8 +89,8 @@ const faqs = [
     a: `No. Inside Kruger you pay for the campsite (about ${r(site_.pkLow)} to ${r(site_.skHigh)} a night for two, depending on camp and season) and, separately, the daily conservation fee per person for every day you're in the park.`,
   },
   {
-    q: "Is it cheaper to camp outside Kruger?",
-    a: `Usually, because you only pay park fees on the days you drive in. For a couple doing ${nights} nights with ${krugerDays} Kruger days, camping at Kanaan works out about ${r(sa.saving)} cheaper for South Africans and ${r(intl.saving)} cheaper for international guests. Wild Card holders pay no daily fee, so for them the gap is much smaller.`,
+    q: "Can I do Kruger and the Panorama Route from one campsite?",
+    a: `Yes, that's the main reason to base yourself in Hazyview. Phabeni gate is ${gateMin}–${gateMax} minutes one way, and Graskop and God's Window about 45 minutes to an hour the other. You pitch once and don't pack up mid-trip.`,
   },
   {
     q: "How much is camping at Kanaan?",
@@ -105,7 +105,7 @@ const faqs = [
 const baseMetadata = createBlogPostMetadata({
   slug: "camping-near-kruger-national-park",
   title: headline,
-  description: `Camping inside Kruger or just outside it? Kruger campsite prices plus daily park fees, a worked cost example for SA and international couples, and why Hazyview makes a good base. Camping at Kanaan from ${r(campSolo)} a night.`,
+  description: `Camping inside Kruger or just outside it? What each gives you: day trips beyond the park, evenings in Hazyview, rest days on a farm, and what it all costs, with a worked example. Camping at Kanaan from ${r(campSolo)} a night.`,
   image: img.campingAvenueWide,
   datePublished,
   category: "guide",
@@ -136,14 +136,14 @@ export const metadata: Metadata = {
 // --- Infographic: inside vs outside at a glance, plus drive times ------
 const compareRows: { label: string; inside: string; near: string }[] = [
   {
-    label: "Campsite",
-    inside: `${r(site_.pkLow)}–${r(site_.skHigh)} a night per site for two`,
-    near: `${r(campTwo)} a night for two at Kanaan`,
+    label: "Dawn in the bush",
+    inside: "You're already in",
+    near: `${gateMin}–${gateMax} min to Phabeni gate`,
   },
   {
-    label: "Park fee",
-    inside: "Every day you're in the park",
-    near: "Only the days you drive in",
+    label: "Day trips",
+    inside: "Kruger only, realistically",
+    near: "Panorama Route, Graskop, Sabie",
   },
   {
     label: "Evenings",
@@ -151,9 +151,9 @@ const compareRows: { label: string; inside: string; near: string }[] = [
     near: "Out to dinner in Hazyview if you like",
   },
   {
-    label: "Day trips",
-    inside: "Kruger only, realistically",
-    near: "Panorama Route, Graskop, Sabie",
+    label: "Shops & fuel",
+    inside: "Camp shop basics",
+    near: "Hazyview, a short drive",
   },
   {
     label: "Booking",
@@ -164,6 +164,11 @@ const compareRows: { label: string; inside: string; near: string }[] = [
     label: "Signal",
     inside: "Patchy in places",
     near: "Free WiFi on the farm",
+  },
+  {
+    label: "Cost",
+    inside: `Site ${r(site_.pkLow)}–${r(site_.skHigh)} for two, plus park fee every day`,
+    near: `Pitch ${r(campTwo)} for two, park fee only on Kruger days`,
   },
 ];
 
@@ -186,27 +191,6 @@ function InsideVsOutside() {
             Camping inside Kruger vs just outside it
           </p>
         </div>
-
-        <div className="grid gap-px bg-black/10 sm:grid-cols-3">
-          {[
-            { who: "South African adult", amount: fee.sa },
-            { who: "SADC adult", amount: fee.sadc },
-            { who: "International adult", amount: fee.intl },
-          ].map((f) => (
-            <div key={f.who} className="bg-sand/60 px-6 py-5 md:px-8">
-              <p className="font-display text-3xl text-forest-deep">
-                R{f.amount}
-              </p>
-              <p className="mt-1 text-sm text-ink/80">
-                {f.who}, per day in the park
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className="border-b border-black/10 px-6 py-3 text-xs text-muted md:px-8">
-          SANParks conservation fees, 1 Nov 2026 to 31 Oct 2027. Charged on
-          top of any campsite.
-        </p>
 
         <div className="hidden grid-cols-[1fr_1.4fr_1.4fr] gap-4 px-6 pt-5 text-xs font-medium uppercase tracking-[0.18em] text-muted md:grid md:px-8">
           <span />
@@ -267,7 +251,8 @@ function InsideVsOutside() {
       </div>
       <figcaption className="mt-3 text-center text-xs text-muted">
         Kruger campsite rates are 2026/27 guide prices for Pretoriuskop and
-        Skukuza. Drive times are approximate.
+        Skukuza; the cost section below has the full sum. Drive times are
+        approximate.
       </figcaption>
     </figure>
   );
@@ -275,72 +260,41 @@ function InsideVsOutside() {
 
 // --- The worked example, as a two-column cost table --------------------
 function CostExample() {
-  const cols = [
-    { title: "South African couple", s: sa, per: fee.sa },
-    { title: "International couple", s: intl, per: fee.intl },
+  const rows = [
+    { label: "Inside Kruger (Pretoriuskop)", a: sa.inside, b: intl.inside },
+    { label: "Just outside, at Kanaan", a: sa.outside, b: intl.outside },
   ];
   return (
-    <div className="not-prose mx-auto mt-10 max-w-5xl px-5 lg:px-8">
-      <div className="grid gap-4 md:grid-cols-2">
-        {cols.map(({ title, s, per }) => (
-          <div
-            key={title}
-            className="overflow-hidden rounded-2xl border border-black/10 bg-bone"
-          >
-            <p className="bg-forest-deep px-6 py-4 font-display text-xl text-bone">
-              {title}
-            </p>
-            <div className="divide-y divide-black/10 px-6 text-sm">
-              <div className="py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-muted">
-                  Inside Kruger (Pretoriuskop)
-                </p>
-                <p className="mt-2 flex justify-between text-ink/85">
-                  <span>Campsite, {nights} × {r(site_.pkLow)}</span>
-                  <span>{r(insideSite)}</span>
-                </p>
-                <p className="mt-1 flex justify-between text-ink/85">
-                  <span>
-                    Park fees, 2 adults × {nights} days × {r(per)}
-                  </span>
-                  <span>{r(s.insideFees)}</span>
-                </p>
-                <p className="mt-2 flex justify-between font-medium text-forest-deep">
-                  <span>Total</span>
-                  <span>{r(s.inside)}</span>
-                </p>
-              </div>
-              <div className="py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-ochre-deep">
-                  Just outside, at Kanaan
-                </p>
-                <p className="mt-2 flex justify-between text-ink/85">
-                  <span>Pitch for two, {nights} × {r(campTwo)}</span>
-                  <span>{r(ourPitch)}</span>
-                </p>
-                <p className="mt-1 flex justify-between text-ink/85">
-                  <span>
-                    Park fees, 2 adults × {krugerDays} days × {r(per)}
-                  </span>
-                  <span>{r(s.outsideFees)}</span>
-                </p>
-                <p className="mt-2 flex justify-between font-medium text-forest-deep">
-                  <span>Total</span>
-                  <span>{r(s.outside)}</span>
-                </p>
-              </div>
-            </div>
-            <p className="flex justify-between bg-sand/60 px-6 py-4 font-display text-2xl text-forest-deep">
-              <span>You save</span>
-              <span>{r(s.saving)}</span>
-            </p>
-          </div>
-        ))}
-      </div>
+    <div className="not-prose mx-auto mt-6 max-w-3xl px-5 lg:px-8">
+      <table className="w-full overflow-hidden rounded-2xl border border-black/10 bg-bone text-sm">
+        <thead className="bg-forest-deep text-left text-bone">
+          <tr>
+            <th className="px-4 py-3 font-medium">
+              Couple, {nights} nights, {krugerDays} Kruger days
+            </th>
+            <th className="px-4 py-3 text-right font-medium">South African</th>
+            <th className="px-4 py-3 text-right font-medium">International</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-black/10">
+          {rows.map((row) => (
+            <tr key={row.label}>
+              <td className="px-4 py-3 text-ink/85">{row.label}</td>
+              <td className="px-4 py-3 text-right text-ink/85">{r(row.a)}</td>
+              <td className="px-4 py-3 text-right text-ink/85">{r(row.b)}</td>
+            </tr>
+          ))}
+          <tr className="bg-sand/60 font-medium text-forest-deep">
+            <td className="px-4 py-3">You save</td>
+            <td className="px-4 py-3 text-right">{r(sa.saving)}</td>
+            <td className="px-4 py-3 text-right">{r(intl.saving)}</td>
+          </tr>
+        </tbody>
+      </table>
       <p className="mt-3 text-center text-xs text-muted">
-        Pretoriuskop&rsquo;s rate from 1 November 2026; over the festive
-        season it is {r(site_.pkHigh)} a night. Fuel for the drive to the gate
-        is not included.
+        Inside: campsite {nights} × {r(site_.pkLow)} plus park fees for {nights}{" "}
+        days. Outside: our pitch {nights} × {r(campTwo)} plus park fees for{" "}
+        {krugerDays} days. Fuel not included.
       </p>
     </div>
   );
@@ -378,7 +332,7 @@ export default function CampingNearKrugerPage() {
         data={articleLd({
           headline,
           description:
-            "Camping inside Kruger National Park versus camping just outside it in Hazyview: Kruger campsite rates on top of the daily conservation fee, a worked cost example for South African and international couples, and what camping at Kanaan Guest Farm includes.",
+            "Camping inside Kruger National Park versus camping just outside it in Hazyview: what each gives you, day trips beyond the park, Kruger campsite rates on top of the daily conservation fee with a worked cost example, and what camping at Kanaan Guest Farm includes.",
           path: "/blog/camping-near-kruger-national-park",
           image: img.campingAvenueWide.src,
           datePublished,
@@ -394,7 +348,7 @@ export default function CampingNearKrugerPage() {
           eyebrow="Guide · Camping inside vs outside Kruger"
           title={headline}
           titleSize="compact"
-          intro="Inside the park, or just outside on its doorstep? What each really costs, and what you get for the difference."
+          intro="Inside the park, or just outside on its doorstep? What each gives you, what each costs, and how to choose."
           byline="Matthew"
           datePublished={datePublished}
           readingMinutes={6}
@@ -404,8 +358,8 @@ export default function CampingNearKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <TLDR
               items={[
-                `Camping inside Kruger means two bills: the campsite (about ${r(site_.pkLow)} to ${r(site_.skHigh)} a night for two) and the park fee for every day you're there.`,
-                `Camp just outside and you pay park fees only on the days you drive in. A couple doing ${nights} nights with ${krugerDays} Kruger days saves about ${r(sa.saving)} (South Africans) or ${r(intl.saving)} (international guests).`,
+                "Camping inside Kruger puts you in the park at dawn and dusk. Camping just outside gives you Kruger plus the rest of the Lowveld from one pitch.",
+                "Outside, you pay park fees only on the days you go in, so it usually costs less as well.",
                 `At Kanaan, camping is ${r(campTwo)} a night for two or ${r(campSolo)} on your own, ${gateMin}–${gateMax} minutes from Phabeni gate.`,
               ]}
             />
@@ -414,30 +368,82 @@ export default function CampingNearKrugerPage() {
               Quarter to five, still dark, and the only sound under the mango
               trees is a kettle on a gas ring. An hour later you&rsquo;re at
               the Phabeni gate. By lunchtime you&rsquo;re back, the tent where
-              you left it and the pool still cool.
+              you left it and the pool still cool. Tomorrow it&rsquo;s the
+              waterfalls.
             </p>
             <p>
               Anyone planning{" "}
-              <strong>camping near Kruger National Park</strong> ends up with
+              <strong>camping near Kruger National Park</strong>{" "}
+              ends up with
               the same question: inside the park, or just outside on its
-              doorstep? Here&rsquo;s the honest answer, with the sums.
+              doorstep? Cost is the biggest difference, but it isn&rsquo;t the
+              only one.
             </p>
           </div>
         </Section>
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">What camping inside Kruger really costs.</H2>
+            <H2 className="mb-4">Inside Kruger or on its doorstep?</H2>
             <p>
               Kruger&rsquo;s rest camps are lovely places to camp, and the
-              nearest to us, Pretoriuskop and Skukuza, both have campsites. But
-              camping isn&rsquo;t included in the park fee. You pay twice.
+              nearest to us, Pretoriuskop and Skukuza, both have campsites. You
+              wake up inside the park, you&rsquo;re on the road as soon as the
+              camp gate opens, and the night sounds beyond the fence are the
+              park&rsquo;s own. If Kruger is the whole trip, that&rsquo;s hard
+              to beat.
             </p>
             <p>
-              First, the campsite. A site for two at Pretoriuskop is{" "}
-              {r(site_.pkLow)} a night from 1 November 2026, rising to{" "}
-              {r(site_.pkHigh)} over the festive season. Skukuza runs from{" "}
-              {r(site_.skLow)} to {r(site_.skHigh)} (
+              Camping just outside is a different kind of trip. Kruger is one
+              part of it, alongside the escarpment, the waterfalls, a town with
+              everything you need, and afternoons that aren&rsquo;t spent in a
+              car. Here&rsquo;s how the two compare.
+            </p>
+          </div>
+          <InsideVsOutside />
+        </Section>
+
+        <Section>
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <H2 className="mb-4">Why camp just outside Kruger.</H2>
+          </div>
+          <NumberedList
+            variant="grid"
+            items={[
+              {
+                title: "It usually costs less",
+                body: "You pay park fees only on the days you go in. The sum is below.",
+              },
+              {
+                title: "Day trips beyond Kruger",
+                body: "God's Window, Graskop and the Sabie waterfalls make a full day out, and you come back to the same pitch.",
+              },
+              {
+                title: "Hazyview on the doorstep",
+                body: "Supermarkets, fuel, restaurants and a pharmacy a short drive away, not a camp shop.",
+              },
+              {
+                title: "Evenings are your own",
+                body: "Kruger's camp gates close at dusk. From here you can drive into town for dinner, or stay by the fire.",
+              },
+              {
+                title: "Rest days that feel like holiday",
+                body: "A swim, a walk or a ride on the farm trails, a braai under the mangoes. No park fees, no car.",
+              },
+              {
+                title: "Easier to book, easier to reach",
+                body: "Popular Kruger camps fill months ahead in the holidays. Phone signal is patchy in the park; we have free WiFi.",
+              },
+            ]}
+          />
+        </Section>
+
+        <Section>
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <H2 className="mb-4">And what it costs.</H2>
+            <p>
+              Inside Kruger you pay twice: the campsite, about{" "}
+              {r(site_.pkLow)} to {r(site_.skHigh)} a night for two (
               <a
                 href="https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_pretoriuskop-camp.html"
                 target="_blank"
@@ -446,54 +452,23 @@ export default function CampingNearKrugerPage() {
               >
                 2026/27 rates
               </a>
-              ; SANParks itself{" "}
-              <a
-                href="https://www.sanparks.org/parks/kruger/rates-entry-fees"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                quotes on request
-              </a>
-              ).
-            </p>
-            <p>
-              Second, the daily conservation fee, per person, for every day
-              you&rsquo;re in the park: R{fee.sa} for a South African adult,
-              R{fee.sadc} for SADC nationals and R{fee.intl} for international
-              visitors from 1 November 2026 (
+              ), and the park fee per person for every day you&rsquo;re there,
+              R{fee.sa} for South Africans and R{fee.intl} for international
+              visitors (
               <a
                 href="https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                SANParks fee sheet
+                SANParks
               </a>
-              ). Camp inside and that includes the lazy day you spend in camp.
-            </p>
-          </div>
-          <InsideVsOutside />
-        </Section>
-
-        <Section>
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              The sum: a couple, {nights} nights, {krugerDays} days in Kruger.
-            </H2>
-            <p>
-              Take two adults camping for {nights} nights who spend{" "}
-              {krugerDays} of those days on game drives. Inside, they pay the
-              site and the park fee for every night. Outside, they pay our
-              pitch and the park fee only on the two Kruger days.
+              ). Outside, you pay the park fee only on the days you go in.
             </p>
           </div>
           <CostExample />
-          <div className="prose-kanaan mx-auto mt-8 max-w-5xl">
+          <div className="prose-kanaan mx-auto mt-6 max-w-5xl">
             <p>
-              The gap is far bigger for international guests, because their
-              daily fee is almost five times the South African one. Two honest
-              caveats. Holders of a SANParks{" "}
               <a
                 href="https://www.sanparks.org/wild-card"
                 target="_blank"
@@ -502,46 +477,9 @@ export default function CampingNearKrugerPage() {
               >
                 Wild Card
               </a>{" "}
-              pay no daily fee, so for them it comes down to site versus pitch.
-              And if you want to be in the park every single day, waking up
-              inside saves you the drive. For those trips, camp inside.
+              holders pay no daily fee, so for them the gap is small.
             </p>
           </div>
-        </Section>
-
-        <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">Why camp just outside Kruger.</H2>
-          </div>
-          <NumberedList
-            variant="grid"
-            items={[
-              {
-                title: "Park fees only on Kruger days",
-                body: "Rest days on the farm cost nothing in park fees.",
-              },
-              {
-                title: "Day trips beyond Kruger",
-                body: "The Panorama Route, Graskop and the Sabie waterfalls are all an easy day out.",
-              },
-              {
-                title: "Hazyview on the doorstep",
-                body: "Supermarkets, fuel, restaurants and a pharmacy, a short drive away.",
-              },
-              {
-                title: "No gate curfew",
-                body: "Kruger's camp gates close at dusk. From here you can drive into town for dinner.",
-              },
-              {
-                title: "Easier to book",
-                body: "Popular Kruger camps fill up months ahead in the holidays.",
-              },
-              {
-                title: "Better signal",
-                body: "Phone signal is patchy in parts of the park. We have free WiFi.",
-              },
-            ]}
-          />
         </Section>
 
         <Section className="pt-0!">
@@ -672,8 +610,8 @@ export default function CampingNearKrugerPage() {
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
-              title="In closing: pay for the park on the days you're in it"
-              thesis="Camping inside Kruger is wonderful. Camping on its doorstep usually costs less, and gives you the rest of the Lowveld too."
+              title="In closing: Kruger, and everything around it"
+              thesis="Camping inside Kruger is wonderful if the park is the whole trip. Camp on its doorstep and you get Kruger, the escarpment and evenings of your own, and it usually costs less."
               body={
                 <>
                   Send us your dates and what you&rsquo;re sleeping in, and
