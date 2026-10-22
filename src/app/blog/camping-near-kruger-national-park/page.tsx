@@ -125,11 +125,11 @@ export const metadata: Metadata = {
     "campsites near Kruger",
     "affordable camping near Kruger",
   ],
-  authors: [{ name: "Anneli & Matthew" }],
+  authors: [{ name: "Matthew" }],
   openGraph: {
     ...baseMetadata.openGraph,
     type: "article",
-    authors: ["Anneli & Matthew"],
+    authors: ["Matthew"],
   } as Metadata["openGraph"],
 };
 
@@ -382,7 +382,7 @@ export default function CampingNearKrugerPage() {
           path: "/blog/camping-near-kruger-national-park",
           image: img.campingAvenueWide.src,
           datePublished,
-          authors: ["Anneli & Matthew"],
+          authors: ["Matthew"],
         })}
       />
       <JsonLd data={faqLd(faqs)} />
@@ -395,7 +395,7 @@ export default function CampingNearKrugerPage() {
           title={headline}
           titleSize="compact"
           intro="Inside the park, or just outside on its doorstep? What each really costs, and what you get for the difference."
-          byline="Anneli & Matthew"
+          byline="Matthew"
           datePublished={datePublished}
           readingMinutes={6}
         />
@@ -682,7 +682,7 @@ export default function CampingNearKrugerPage() {
               }
             />
             <p className="font-display text-base italic text-forest-deep">
-              — Anneli &amp; Matthew
+              — Matthew
             </p>
           </div>
         </Section>
