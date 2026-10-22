@@ -347,6 +347,20 @@ export const posts: Post[] = [
     excerpt:
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
+  {
+    chapter: "Group functions",
+    title:
+      "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
+    category: "guide",
+    status: "live",
+    href: "/blog/year-end-functions-hazyview",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-10-22",
+    readingMinutes: 8,
+    excerpt:
+      "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
