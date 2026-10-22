@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, Eyebrow, H2 } from "@/components/Section";
@@ -9,7 +10,6 @@ import { createBlogPostMetadata } from "@/lib/blog";
 import { site } from "@/lib/site";
 import {
   TLDR,
-  StatGrid,
   NumberedList,
   ClosingBlock,
   WhatsAppCTA,
@@ -18,31 +18,34 @@ import {
 } from "@/components/blog/Blocks";
 
 // ---------------------------------------------------------------------
-// SEO focus (search-optimised Guide, brief supplied 2026-10-05):
+// SEO focus (search-optimised Guide):
 //   • Focus keyword:  camping near Kruger National Park
-//   • Secondary:      Lowveld camping · camping in the Lowveld · camping near
-//                     Kruger · Hazyview camping · campsites near Kruger ·
-//                     affordable camping near Kruger · family camping near
-//                     Kruger · camping accommodation Hazyview
+//   • Secondary:      camping inside vs outside Kruger · Kruger camping
+//                     prices · Hazyview camping · Lowveld camping ·
+//                     campsites near Kruger · affordable camping near Kruger
 // H1 and tab title are the brief's topic line verbatim (standing marketing
-// rule). Length: marketing asked for under 1,300 words on this one.
+// rule).
 //
-// The angle: Kruger's daily conservation fee is charged for every day you
-// are in the park, so a camper based outside pays it only on drive days.
-// Figures are the SANParks 1 Nov 2026 – 31 Oct 2027 fee sheet; the
-// concession (Wild Card holders, every-day drivers) is stated plainly.
-//
-// Brief corrections: price is R275 pps for one night, R250 for 2+ nights
-// (site.pricing, Anneli 2026-10-03), not a flat R250. The 30–45 minutes is
-// to Phabeni; Numbi is the alternative, a little further.
+// Revision 2026-10-22 (marketing): the whole post is now camping INSIDE
+// Kruger vs camping just OUTSIDE it, with a worked cost example.
+//   • Kruger campsites are priced per site (two people) on top of the
+//     per-person daily conservation fee. SANParks quotes accommodation on
+//     request only, so site rates come from krugerpark.co.za's 2026/27
+//     tables: Pretoriuskop R411 (1 Nov–8 Dec 2026) to R536, Skukuza R423 to
+//     R551. Conservation fees are the SANParks 1 Nov 2026–31 Oct 2027 sheet.
+//   • Inside, the fee is counted for each of the three nights in the park
+//     (SANParks: payable for every day/night stayed). That is the low
+//     reading, so the saving shown is, if anything, understated.
+//   • Our camping rate is per pitch: site.pricing.campingTwoZAR /
+//     campingSoloZAR. The R275/R250 pps rate is for rooms.
+//   • No claim that we are the cheapest campsite near Hazyview — there are
+//     cheaper caravan parks. We position on value.
 //
 // Width: marketing asked for the text to fill the space (2026-10-05), so
 // this post reads at max-w-5xl, like the birthday post. Others stay narrow.
 //
-// Images: every frame of the farm is a real photograph (owner rule,
-// 2026-09-03). The two generated frames show places we cannot photograph —
-// a rest-camp campsite inside Kruger and a packing flat-lay — and are
-// captioned as illustrations.
+// Images: real farm photographs only. We have no real photograph from
+// inside Kruger, so the two AI frames from the first draft were removed.
 // ---------------------------------------------------------------------
 
 const datePublished = "2026-10-17";
@@ -51,65 +54,116 @@ const headline =
 
 const gateMin = site.distances.krugerGateMinutesMin;
 const gateMax = site.distances.krugerGateMinutesMax;
-const rate = site.pricing.fromZAR;
-const oneNight = site.pricing.singleNightZAR;
+const campTwo = site.pricing.campingTwoZAR;
+const campSolo = site.pricing.campingSoloZAR;
+const roomOne = site.pricing.singleNightZAR;
+const roomTwoPlus = site.pricing.fromZAR;
 
 // SANParks daily conservation fees, 1 Nov 2026 – 31 Oct 2027, per adult per day.
 const fee = { sa: 140, sadc: 296, intl: 692 };
+// Kruger campsite, per site per night for two (krugerpark.co.za, 2026/27).
+const site_ = { pkLow: 411, pkHigh: 536, skLow: 423, skHigh: 551 };
+
+// The worked example: a couple, 3 nights, 2 days in Kruger.
+const nights = 3;
+const krugerDays = 2;
+const insideSite = site_.pkLow * nights;
+const ourPitch = campTwo * nights;
+function scenario(perAdult: number) {
+  const insideFees = perAdult * 2 * nights;
+  const outsideFees = perAdult * 2 * krugerDays;
+  const inside = insideSite + insideFees;
+  const outside = ourPitch + outsideFees;
+  return { insideFees, outsideFees, inside, outside, saving: inside - outside };
+}
+const sa = scenario(fee.sa);
+const intl = scenario(fee.intl);
+const r = (n: number) => `R${n.toLocaleString("en-US")}`;
 
 const linkClass =
   "font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep";
 
 const faqs = [
   {
-    q: "Where is the best place to camp near Kruger National Park?",
-    a: "For Kruger plus the Panorama Route, Hazyview: outside the southern gates, on the road to the escarpment, with shops and fuel in town. For a park-only trip, a SANParks rest camp such as Pretoriuskop or Skukuza.",
+    q: "Is camping included in the Kruger entry fee?",
+    a: `No. Inside Kruger you pay for the campsite (about ${r(site_.pkLow)} to ${r(site_.skHigh)} a night for two, depending on camp and season) and, separately, the daily conservation fee per person for every day you're in the park.`,
   },
   {
-    q: "Do your campsites have power and water?",
-    a: `All ${site.capacity.campsitePitches} pitches have their own plug point and tap, with hot showers a short walk away.`,
+    q: "Is it cheaper to camp outside Kruger?",
+    a: `Usually, because you only pay park fees on the days you drive in. For a couple doing ${nights} nights with ${krugerDays} Kruger days, camping at Kanaan works out about ${r(sa.saving)} cheaper for South Africans and ${r(intl.saving)} cheaper for international guests. Wild Card holders pay no daily fee, so for them the gap is much smaller.`,
   },
   {
-    q: "Can I camp with a rooftop tent, caravan or overland truck?",
-    a: "Yes. Tell us what you're bringing and we'll point you to the right spot.",
+    q: "How much is camping at Kanaan?",
+    a: `${r(campTwo)} a night for two people sharing a pitch, or ${r(campSolo)} a night on your own. Ask us about pensioner and long-stay discounts.`,
   },
   {
-    q: "Can I leave my campsite set up while I'm in Kruger?",
-    a: "Yes. The farm is fenced with a motorised gate, so your camp stays put.",
+    q: "Can I leave my camp set up while I'm in Kruger?",
+    a: "Yes. The farm is fenced with a motorised gate, so your tent and chairs stay put while you're on a game drive.",
   },
 ];
 
-export const metadata = createBlogPostMetadata({
+const baseMetadata = createBlogPostMetadata({
   slug: "camping-near-kruger-national-park",
   title: headline,
-  description:
-    "Planning a camping trip near Kruger National Park? Lowveld camping tips, what to pack, when to go, camping near vs inside Kruger, and why Hazyview makes an ideal base.",
+  description: `Camping inside Kruger or just outside it? Kruger campsite prices plus daily park fees, a worked cost example for SA and international couples, and why Hazyview makes a good base. Camping at Kanaan from ${r(campSolo)} a night.`,
   image: img.campingAvenueWide,
   datePublished,
   category: "guide",
 });
 
-// --- The infographic: near vs inside, plus drive times from our gate ---
+export const metadata: Metadata = {
+  ...baseMetadata,
+  // This page's own keywords, replacing the site-wide set (which carries
+  // wedding and backpacker terms that don't belong on a camping post).
+  keywords: [
+    "camping near Kruger National Park",
+    "camping inside vs outside Kruger",
+    "Kruger camping prices",
+    "Kruger campsite rates",
+    "Hazyview camping",
+    "Lowveld camping",
+    "campsites near Kruger",
+    "affordable camping near Kruger",
+  ],
+  authors: [{ name: "Anneli & Matthew" }],
+  openGraph: {
+    ...baseMetadata.openGraph,
+    type: "article",
+    authors: ["Anneli & Matthew"],
+  } as Metadata["openGraph"],
+};
+
+// --- Infographic: inside vs outside at a glance, plus drive times ------
 const compareRows: { label: string; inside: string; near: string }[] = [
   {
-    label: "Daily park fee",
+    label: "Campsite",
+    inside: `${r(site_.pkLow)}–${r(site_.skHigh)} a night per site for two`,
+    near: `${r(campTwo)} a night for two at Kanaan`,
+  },
+  {
+    label: "Park fee",
     inside: "Every day you're in the park",
     near: "Only the days you drive in",
   },
   {
-    label: "Dawn in the bush",
-    inside: "You're already in",
-    near: `${gateMin}–${gateMax} min to Phabeni gate`,
+    label: "Evenings",
+    inside: "Camp gates close at dusk",
+    near: "Out to dinner in Hazyview if you like",
   },
   {
-    label: "Shops & fuel",
-    inside: "Camp shop basics",
-    near: "Hazyview, a short drive",
+    label: "Day trips",
+    inside: "Kruger only, realistically",
+    near: "Panorama Route, Graskop, Sabie",
   },
   {
-    label: "Panorama Route",
-    inside: "A long day out and back",
-    near: "Graskop 45 min to an hour",
+    label: "Booking",
+    inside: "Popular camps fill months ahead",
+    near: "Usually easier at short notice",
+  },
+  {
+    label: "Signal",
+    inside: "Patchy in places",
+    near: "Free WiFi on the farm",
   },
 ];
 
@@ -120,7 +174,7 @@ const driveTimes: { place: string; minutes: number; label: string }[] = [
   { place: "Three Rondavels", minutes: 90, label: "~90 min" },
 ];
 
-function CampingAtAGlance() {
+function InsideVsOutside() {
   return (
     <figure className="not-prose mx-auto mt-10 max-w-5xl px-5 lg:px-8">
       <div className="overflow-hidden rounded-2xl border border-black/10 bg-bone">
@@ -129,11 +183,10 @@ function CampingAtAGlance() {
             At a glance
           </p>
           <p className="mt-2 font-display text-2xl md:text-3xl">
-            Camping near Kruger vs camping inside Kruger
+            Camping inside Kruger vs just outside it
           </p>
         </div>
 
-        {/* Fee strip — the number that decides it for most people */}
         <div className="grid gap-px bg-black/10 sm:grid-cols-3">
           {[
             { who: "South African adult", amount: fee.sa },
@@ -151,41 +204,40 @@ function CampingAtAGlance() {
           ))}
         </div>
         <p className="border-b border-black/10 px-6 py-3 text-xs text-muted md:px-8">
-          SANParks conservation fees, 1 Nov 2026 to 31 Oct 2027.
+          SANParks conservation fees, 1 Nov 2026 to 31 Oct 2027. Charged on
+          top of any campsite.
         </p>
 
-        {/* Comparison rows */}
         <div className="hidden grid-cols-[1fr_1.4fr_1.4fr] gap-4 px-6 pt-5 text-xs font-medium uppercase tracking-[0.18em] text-muted md:grid md:px-8">
           <span />
           <span>Inside Kruger</span>
-          <span className="text-ochre-deep">Near Kruger, from Hazyview</span>
+          <span className="text-ochre-deep">Just outside, from Hazyview</span>
         </div>
         <dl className="divide-y divide-black/10 px-6 md:px-8">
-          {compareRows.map((r) => (
+          {compareRows.map((row) => (
             <div
-              key={r.label}
+              key={row.label}
               className="grid gap-2 py-4 md:grid-cols-[1fr_1.4fr_1.4fr] md:gap-4"
             >
               <dt className="font-display text-lg text-forest-deep">
-                {r.label}
+                {row.label}
               </dt>
               <dd className="text-sm text-ink/80">
                 <span className="mr-2 text-xs uppercase tracking-[0.15em] text-muted md:hidden">
                   Inside
                 </span>
-                {r.inside}
+                {row.inside}
               </dd>
               <dd className="text-sm text-ink">
                 <span className="mr-2 text-xs uppercase tracking-[0.15em] text-ochre-deep md:hidden">
-                  Near
+                  Outside
                 </span>
-                {r.near}
+                {row.near}
               </dd>
             </div>
           ))}
         </dl>
 
-        {/* Drive-time strip */}
         <div className="border-t border-black/10 bg-white/50 px-6 py-6 md:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
             Drive times from our gate
@@ -214,9 +266,83 @@ function CampingAtAGlance() {
         </div>
       </div>
       <figcaption className="mt-3 text-center text-xs text-muted">
-        Approximate drive times. Check fees and gate times with SANParks.
+        Kruger campsite rates are 2026/27 guide prices for Pretoriuskop and
+        Skukuza. Drive times are approximate.
       </figcaption>
     </figure>
+  );
+}
+
+// --- The worked example, as a two-column cost table --------------------
+function CostExample() {
+  const cols = [
+    { title: "South African couple", s: sa, per: fee.sa },
+    { title: "International couple", s: intl, per: fee.intl },
+  ];
+  return (
+    <div className="not-prose mx-auto mt-10 max-w-5xl px-5 lg:px-8">
+      <div className="grid gap-4 md:grid-cols-2">
+        {cols.map(({ title, s, per }) => (
+          <div
+            key={title}
+            className="overflow-hidden rounded-2xl border border-black/10 bg-bone"
+          >
+            <p className="bg-forest-deep px-6 py-4 font-display text-xl text-bone">
+              {title}
+            </p>
+            <div className="divide-y divide-black/10 px-6 text-sm">
+              <div className="py-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-muted">
+                  Inside Kruger (Pretoriuskop)
+                </p>
+                <p className="mt-2 flex justify-between text-ink/85">
+                  <span>Campsite, {nights} × {r(site_.pkLow)}</span>
+                  <span>{r(insideSite)}</span>
+                </p>
+                <p className="mt-1 flex justify-between text-ink/85">
+                  <span>
+                    Park fees, 2 adults × {nights} days × {r(per)}
+                  </span>
+                  <span>{r(s.insideFees)}</span>
+                </p>
+                <p className="mt-2 flex justify-between font-medium text-forest-deep">
+                  <span>Total</span>
+                  <span>{r(s.inside)}</span>
+                </p>
+              </div>
+              <div className="py-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-ochre-deep">
+                  Just outside, at Kanaan
+                </p>
+                <p className="mt-2 flex justify-between text-ink/85">
+                  <span>Pitch for two, {nights} × {r(campTwo)}</span>
+                  <span>{r(ourPitch)}</span>
+                </p>
+                <p className="mt-1 flex justify-between text-ink/85">
+                  <span>
+                    Park fees, 2 adults × {krugerDays} days × {r(per)}
+                  </span>
+                  <span>{r(s.outsideFees)}</span>
+                </p>
+                <p className="mt-2 flex justify-between font-medium text-forest-deep">
+                  <span>Total</span>
+                  <span>{r(s.outside)}</span>
+                </p>
+              </div>
+            </div>
+            <p className="flex justify-between bg-sand/60 px-6 py-4 font-display text-2xl text-forest-deep">
+              <span>You save</span>
+              <span>{r(s.saving)}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-center text-xs text-muted">
+        Pretoriuskop&rsquo;s rate from 1 November 2026; over the festive
+        season it is {r(site_.pkHigh)} a night. Fuel for the drive to the gate
+        is not included.
+      </p>
+    </div>
   );
 }
 
@@ -252,7 +378,7 @@ export default function CampingNearKrugerPage() {
         data={articleLd({
           headline,
           description:
-            "An honest guide to camping near Kruger National Park from the family who run Kanaan Guest Farm in Hazyview: camping near versus inside the park, what a good Lowveld campsite needs, when to go, what to pack and how many nights to plan.",
+            "Camping inside Kruger National Park versus camping just outside it in Hazyview: Kruger campsite rates on top of the daily conservation fee, a worked cost example for South African and international couples, and what camping at Kanaan Guest Farm includes.",
           path: "/blog/camping-near-kruger-national-park",
           image: img.campingAvenueWide.src,
           datePublished,
@@ -264,63 +390,77 @@ export default function CampingNearKrugerPage() {
         <BlogHero
           image={img.campingAvenueWide.src}
           alt={img.campingAvenueWide.alt}
-          eyebrow="Guide · Camping"
+          eyebrow="Guide · Camping inside vs outside Kruger"
           title={headline}
           titleSize="compact"
-          intro="Where to pitch your tent for Kruger, and the one sum that decides between inside the park and just outside it."
+          intro="Inside the park, or just outside on its doorstep? What each really costs, and what you get for the difference."
           byline="Anneli & Matthew"
           datePublished={datePublished}
-          readingMinutes={5}
+          readingMinutes={6}
         />
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
             <TLDR
               items={[
-                "Camp inside Kruger and you pay the park fee every day. Camp just outside and you pay it only on the days you drive in.",
-                "Hazyview sits between the southern gates and the Panorama Route, so one pitch covers both.",
-                `At Kanaan: ${site.capacity.campsitePitches} shaded pitches with power and water, ${gateMin}–${gateMax} minutes from Phabeni gate. R${oneNight} per person sharing for one night, R${rate} for two or more.`,
+                `Camping inside Kruger means two bills: the campsite (about ${r(site_.pkLow)} to ${r(site_.skHigh)} a night for two) and the park fee for every day you're there.`,
+                `Camp just outside and you pay park fees only on the days you drive in. A couple doing ${nights} nights with ${krugerDays} Kruger days saves about ${r(sa.saving)} (South Africans) or ${r(intl.saving)} (international guests).`,
+                `At Kanaan, camping is ${r(campTwo)} a night for two or ${r(campSolo)} on your own, ${gateMin}–${gateMax} minutes from Phabeni gate.`,
               ]}
             />
 
             <p>
               Quarter to five, still dark, and the only sound under the mango
-              trees is a kettle on a gas ring. An hour later you&rsquo;re at the
-              Phabeni gate. By lunchtime you&rsquo;re back, the tent where you
-              left it and the pool still cool.
+              trees is a kettle on a gas ring. An hour later you&rsquo;re at
+              the Phabeni gate. By lunchtime you&rsquo;re back, the tent where
+              you left it and the pool still cool.
             </p>
             <p>
-              That is <strong>camping near Kruger National Park</strong>{" "}
-              when
-              it works. Here&rsquo;s how we&rsquo;d plan it, and when camping
-              inside the park is the better call.
+              Anyone planning{" "}
+              <strong>camping near Kruger National Park</strong> ends up with
+              the same question: inside the park, or just outside on its
+              doorstep? Here&rsquo;s the honest answer, with the sums.
             </p>
           </div>
         </Section>
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              Camping near Kruger or inside it? The honest comparison.
-            </H2>
+            <H2 className="mb-4">What camping inside Kruger really costs.</H2>
             <p>
-              Kruger&rsquo;s rest camps are lovely places to camp.
-              Pretoriuskop and Skukuza, the nearest to us, have campsites booked
-              through{" "}
+              Kruger&rsquo;s rest camps are lovely places to camp, and the
+              nearest to us, Pretoriuskop and Skukuza, both have campsites. But
+              camping isn&rsquo;t included in the park fee. You pay twice.
+            </p>
+            <p>
+              First, the campsite. A site for two at Pretoriuskop is{" "}
+              {r(site_.pkLow)} a night from 1 November 2026, rising to{" "}
+              {r(site_.pkHigh)} over the festive season. Skukuza runs from{" "}
+              {r(site_.skLow)} to {r(site_.skHigh)} (
               <a
-                href="https://www.sanparks.org/parks/kruger"
+                href="https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_pretoriuskop-camp.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                SANParks
+                2026/27 rates
               </a>
-              . You wake up inside, and the night sounds are the park&rsquo;s.
+              ; SANParks itself{" "}
+              <a
+                href="https://www.sanparks.org/parks/kruger/rates-entry-fees"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                quotes on request
+              </a>
+              ).
             </p>
             <p>
-              The difference is a sum. Kruger charges a conservation fee for
-              every day you&rsquo;re in the park: from 1 November 2026, R{fee.sa} for a South African adult, R{fee.sadc} for
-              SADC nationals and R{fee.intl} for everyone else (
+              Second, the daily conservation fee, per person, for every day
+              you&rsquo;re in the park: R{fee.sa} for a South African adult,
+              R{fee.sadc} for SADC nationals and R{fee.intl} for international
+              visitors from 1 November 2026 (
               <a
                 href="https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf"
                 target="_blank"
@@ -329,13 +469,30 @@ export default function CampingNearKrugerPage() {
               >
                 SANParks fee sheet
               </a>
-              ). Camp inside and you pay it on the lazy day in camp too. Camp
-              outside and two Kruger days cost an overseas couple R
-              {(fee.intl * 4).toLocaleString("en-US")}, with
-              each extra day adding R{(fee.intl * 2).toLocaleString("en-US")}.
+              ). Camp inside and that includes the lazy day you spend in camp.
             </p>
+          </div>
+          <InsideVsOutside />
+        </Section>
+
+        <Section>
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <H2 className="mb-4">
+              The sum: a couple, {nights} nights, {krugerDays} days in Kruger.
+            </H2>
             <p>
-              The flip side: SANParks{" "}
+              Take two adults camping for {nights} nights who spend{" "}
+              {krugerDays} of those days on game drives. Inside, they pay the
+              site and the park fee for every night. Outside, they pay our
+              pitch and the park fee only on the two Kruger days.
+            </p>
+          </div>
+          <CostExample />
+          <div className="prose-kanaan mx-auto mt-8 max-w-5xl">
+            <p>
+              The gap is far bigger for international guests, because their
+              daily fee is almost five times the South African one. Two honest
+              caveats. Holders of a SANParks{" "}
               <a
                 href="https://www.sanparks.org/wild-card"
                 target="_blank"
@@ -344,75 +501,43 @@ export default function CampingNearKrugerPage() {
               >
                 Wild Card
               </a>{" "}
-              holders pay no daily fee, and if you&rsquo;ll be in the park
-              every day, inside saves the drive. For those trips, camp inside.
-            </p>
-          </div>
-          <CampingAtAGlance />
-        </Section>
-
-        <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <Figure
-            image={img.krugerRestCampCampsite}
-            caption="Camping inside the park (an illustration, not a photograph)."
-          />
-        </div>
-
-        <Section>
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              Why Hazyview is the practical base for Lowveld camping.
-            </H2>
-            <p>
-              Hazyview sits on the R40 just outside the park&rsquo;s southern
-              edge. Phabeni, the closest gate, is {gateMin}–{gateMax} minutes
-              from our farm gate, with Numbi as the fallback on a busy morning.
-              Gates open at 05:30 in summer and 06:00 in winter. Our{" "}
-              <Link href="/blog/kruger-from-hazyview" className={linkClass}>
-                guide to Kruger from Hazyview
-              </Link>{" "}
-              has the detail.
-            </p>
-            <p>
-              Turn the other way for God&rsquo;s Window, the Three Rondavels
-              and the Mac Mac, Lisbon and Berlin falls on the{" "}
-              <Link href="/blog/panorama-route-from-hazyview" className={linkClass}>
-                Panorama Route
-              </Link>
-              . Town has the supermarkets and fuel the park doesn&rsquo;t. One
-              pitch, the whole trip, and no packing up on day three.
+              pay no daily fee, so for them it comes down to site versus pitch.
+              And if you want to be in the park every single day, waking up
+              inside saves you the drive. For those trips, camp inside.
             </p>
           </div>
         </Section>
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              What to look for in a campsite near Kruger.
-            </H2>
+            <H2 className="mb-4">Why camp just outside Kruger.</H2>
           </div>
           <NumberedList
             variant="grid"
             items={[
               {
-                title: "Real shade",
-                body: "Lowveld summer afternoons are hot. Shade decides whether you rest at camp or hide in the car.",
+                title: "Park fees only on Kruger days",
+                body: "Rest days on the farm cost nothing in park fees.",
               },
               {
-                title: "Power and water at the pitch",
-                body: "For the fridge, batteries and kettle, without long leads or walks to a shared tap.",
+                title: "Day trips beyond Kruger",
+                body: "The Panorama Route, Graskop and the Sabie waterfalls are all an easy day out.",
               },
               {
-                title: "Hot, clean ablutions",
-                body: "Hot showers, basins and private toilet cubicles.",
+                title: "Hazyview on the doorstep",
+                body: "Supermarkets, fuel, restaurants and a pharmacy, a short drive away.",
               },
               {
-                title: "A fence and a gate",
-                body: "So you can leave the tent standing and drive into Kruger for the day.",
+                title: "No gate curfew",
+                body: "Kruger's camp gates close at dusk. From here you can drive into town for dinner.",
               },
               {
-                title: "Room for your rig",
-                body: "Ground tent, rooftop tent, caravan or overlander. Say what you're bringing.",
+                title: "Easier to book",
+                body: "Popular Kruger camps fill up months ahead in the holidays.",
+              },
+              {
+                title: "Better signal",
+                body: "Phone signal is patchy in parts of the park. We have free WiFi.",
               },
             ]}
           />
@@ -421,24 +546,34 @@ export default function CampingNearKrugerPage() {
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
-              Camping at Kanaan Guest Farm: what you actually get.
+              Camping at Kanaan: what you get, and what it costs.
             </H2>
             <p>
               We have {site.capacity.campsitePitches} pitches under
               forty-year-old mango trees, each with its own power point and
-              tap. The timber ablution block has hot showers, basins and private
-              toilet cubicles.
+              tap. The timber ablution block has hot showers, basins and
+              private toilet cubicles. Evenings end at the communal fire. The
+              pool and the walking and mountain-biking trails from our gate
+              are yours too, and so are we: you&rsquo;ll be welcomed by Anneli
+              or Matthew, not a reception desk. Breakfast is{" "}
+              {r(site.meals.breakfast.pricePerPersonZAR)} a person if you ask
+              the day before.
             </p>
             <p>
-              Evenings end at the communal fire. Bring wood to braai, or ask
-              the day before for a continental breakfast (R
-              {site.meals.breakfast.pricePerPersonZAR} a person) or a braai
-              dinner. The pool and the walking and mountain-biking trails from
-              our gate are yours too. We&rsquo;re not set up for pets.
+              <strong>
+                Camping is {r(campTwo)} a night for two people sharing a pitch,
+                or {r(campSolo)} a night on your own.
+              </strong>{" "}
+              Ask us about pensioner and long-stay discounts. Prefer a room?
+              Rooms are {r(roomOne)} per person for a single night and{" "}
+              {r(roomTwoPlus)} per person a night for two nights or more, so{" "}
+              {r(roomOne * 2)} or {r(roomTwoPlus * 2)} a night for a couple.
             </p>
             <p>
-              Camping is R{oneNight} per person sharing for one night, R{rate} a
-              night for two or more. More photos are on our{" "}
+              We&rsquo;re not the only campsite around Hazyview, and some cost
+              less. What we&rsquo;d point to is value: real shade, power and
+              water at every pitch, the pool, the trails and personal hosting.
+              More photos are on our{" "}
               <Link href="/camping" className={linkClass}>
                 camping page
               </Link>
@@ -457,55 +592,37 @@ export default function CampingNearKrugerPage() {
               image={img.campingAblutions}
               caption="The timber ablution block, a short walk from the trees."
             />
+            <Figure
+              image={img.campingTents}
+              caption="Tents under the mango grove, left standing while their owners are in Kruger."
+            />
+            <Figure
+              image={img.poolReal}
+              caption="The pool, for the afternoon after a dawn drive."
+            />
           </div>
         </div>
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">The best time for camping in the Lowveld.</H2>
+            <H2 className="mb-4">Before you go.</H2>
             <p>
-              <strong>Dry season, May to September.</strong> Mild days, cold
-              nights, and thinner bush, so animals are easier to see. Pack a
-              warm sleeping bag.
-            </p>
-            <p>
-              <strong>Green season, October to April.</strong> Hot and green,
-              with afternoon storms, full waterfalls and the migrant birds back.
-              Over the festive season Kruger caps day visitors at each gate, so
-              book your day entry online. See our{" "}
+              Phabeni, the closest gate, is {gateMin}–{gateMax} minutes from
+              our farm gate, with Numbi as the fallback. Gates open at 05:30 in
+              summer and 06:00 in winter. Our{" "}
+              <Link href="/blog/kruger-from-hazyview" className={linkClass}>
+                guide to Kruger from Hazyview
+              </Link>{" "}
+              has the loops, and our{" "}
               <Link
-                href="/blog/when-to-visit-kruger-hazyview-month-by-month"
+                href="/blog/panorama-route-from-hazyview"
                 className={linkClass}
               >
-                month-by-month guide
-              </Link>
-              .
+                Panorama Route guide
+              </Link>{" "}
+              covers the day trips.
             </p>
           </div>
-        </Section>
-
-        <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">
-              What to pack, and first-trip tips.
-            </H2>
-            <p>
-              Beyond the tent and sleeping bags: a head torch, binoculars, a
-              hat, sunscreen, insect repellent, a cooler box, an outdoor
-              extension lead, a rain jacket in summer and a warm layer for the
-              dark drive to the gate.
-            </p>
-          </div>
-        </Section>
-
-        <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <Figure
-            image={img.krugerCampingKitFlatlay}
-            caption="The kit that makes the trip (an illustration, not a photograph)."
-          />
-        </div>
-
-        <Section>
           <NumberedList
             items={[
               {
@@ -513,37 +630,12 @@ export default function CampingNearKrugerPage() {
                 body: `Check-in runs ${site.policies.checkIn}. Phone us from the gate.`,
               },
               {
-                title: "Be at the gate when it opens",
-                body: "The first two hours are the coolest and the best for animals.",
+                title: "Book your Kruger day entry in the festive season",
+                body: "Kruger caps day visitors at each gate over the holidays.",
               },
               {
                 title: "Lock food away in the park",
                 body: "Kruger's monkeys and baboons know what a cooler box is.",
-              },
-            ]}
-          />
-        </Section>
-
-        <Section className="pt-0!">
-          <div className="prose-kanaan mx-auto max-w-5xl">
-            <H2 className="mb-4">How many nights should you camp near Kruger?</H2>
-          </div>
-          <StatGrid
-            stats={[
-              {
-                value: "2 nights",
-                label: "A taster",
-                body: "One dawn drive. Tight, but it works.",
-              },
-              {
-                value: "3–4 nights",
-                label: "The sweet spot",
-                body: "Two Kruger mornings and a Panorama Route day.",
-              },
-              {
-                value: "5+ nights",
-                label: "Families & overlanders",
-                body: "Room for a rest day on the farm.",
               },
             ]}
           />
@@ -579,8 +671,8 @@ export default function CampingNearKrugerPage() {
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
-              title="In closing: pitch once, see both"
-              thesis="The best Kruger camping trip isn't the one closest to the animals. It's the one where you pay for the park only on the days you're in it."
+              title="In closing: pay for the park on the days you're in it"
+              thesis="Camping inside Kruger is wonderful. Camping on its doorstep usually costs less, and gives you the rest of the Lowveld too."
               body={
                 <>
                   Send us your dates and what you&rsquo;re sleeping in, and
@@ -604,8 +696,16 @@ export default function CampingNearKrugerPage() {
                   href: "https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf",
                 },
                 {
-                  label: "SANParks: Kruger National Park gates, rest camps and campsites",
-                  href: "https://www.sanparks.org/parks/kruger",
+                  label: "SANParks: Kruger rates and entry fees",
+                  href: "https://www.sanparks.org/parks/kruger/rates-entry-fees",
+                },
+                {
+                  label: "Kruger Park: Pretoriuskop campsite rates 2026/27",
+                  href: "https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_pretoriuskop-camp.html",
+                },
+                {
+                  label: "Kruger Park: Skukuza campsite rates 2026/27",
+                  href: "https://www.krugerpark.co.za/Kruger_National_Park_Lodging_&_Camping_Guide-travel/pricing_skukuza-camp.html",
                 },
                 {
                   label: "SANParks: Wild Card",
@@ -617,8 +717,8 @@ export default function CampingNearKrugerPage() {
         </Section>
 
         <WhatsAppCTA
-          title="Planning a Kruger camping trip? Pick your pitch."
-          body={`A shaded pitch in Hazyview, your base for Kruger and the Panorama Route. R${oneNight} pps for one night, R${rate} for two or more.`}
+          title="Camping near Kruger? Pick your pitch."
+          body={`A shaded pitch in Hazyview, ${gateMin}–${gateMax} minutes from Phabeni gate. ${r(campTwo)} a night for two, ${r(campSolo)} on your own.`}
           buttonLabel="Book a pitch on WhatsApp"
           pageKey="camping"
         />
