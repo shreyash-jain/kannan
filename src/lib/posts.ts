@@ -387,6 +387,20 @@ export const posts: Post[] = [
     excerpt:
       "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
   },
+  {
+    chapter: "Group functions",
+    title:
+      "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
+    category: "guide",
+    status: "live",
+    href: "/blog/year-end-functions-hazyview",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-10-22",
+    readingMinutes: 8,
+    excerpt:
+      "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
