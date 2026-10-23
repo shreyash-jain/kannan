@@ -401,6 +401,20 @@ export const posts: Post[] = [
     excerpt:
       "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
   },
+  {
+    chapter: "Perry's Bridge",
+    title:
+      "Perry's Bridge Market Hazyview: A Complete Guide to Local Crafts, Food & Shopping",
+    category: "guide",
+    status: "live",
+    href: "/blog/perrys-bridge-market-hazyview",
+    image: img.perrysBridgeCraftStall.src,
+    imageAlt: img.perrysBridgeCraftStall.alt,
+    datePublished: "2026-10-19",
+    readingMinutes: 7,
+    excerpt:
+      "Ten minutes from our gate: Perry's Bridge Trading Post and its Saturday craft market. What to buy, where to eat, the reptile park and Skyway Trails, the hours worth checking, and how to fit it around Kruger.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
