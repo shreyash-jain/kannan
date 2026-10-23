@@ -347,6 +347,20 @@ export const posts: Post[] = [
     excerpt:
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
+  {
+    chapter: "Perry's Bridge",
+    title:
+      "Perry's Bridge Market Hazyview: A Complete Guide to Local Crafts, Food & Shopping",
+    category: "guide",
+    status: "live",
+    href: "/blog/perrys-bridge-market-hazyview",
+    image: img.perrysBridgeCraftStall.src,
+    imageAlt: img.perrysBridgeCraftStall.alt,
+    datePublished: "2026-10-19",
+    readingMinutes: 7,
+    excerpt:
+      "Ten minutes from our gate: Perry's Bridge Trading Post and its Saturday craft market. What to buy, where to eat, the reptile park and Skyway Trails, the hours worth checking, and how to fit it around Kruger.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

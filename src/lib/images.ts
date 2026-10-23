@@ -906,6 +906,35 @@ export const img = {
     width: 1822,
     height: 1024,
   },
+  // Perry's Bridge market guide (2026-10-19). All four are illustrations,
+  // captioned as such: none claims to show Perry's Bridge itself.
+  perrysBridgeCraftStall: {
+    src: cldImage(
+      "perrys-bridge-craft-stall-shade",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "Illustration of a craft market table in deep shade under old trees: carved wooden bowls, beaded wire animals, woven grass baskets and folded hand-printed cloth in dappled sunlight.",
+    width: 1376,
+    height: 768,
+  },
+  perrysBridgeVerandaCoffee: {
+    src: cldImage("perrys-bridge-veranda-coffee"),
+    alt: "Illustration of a flat white and a slice of carrot cake on a weathered wooden veranda table, a green garden out of focus behind.",
+    width: 1376,
+    height: 768,
+  },
+  perrysBridgeLeatherSilk: {
+    src: cldImage("perrys-bridge-leather-silk"),
+    alt: "Illustration of hand-stitched tan leather shoes beside a folded raw silk scarf in fawn and cream on a rough wooden shelf.",
+    width: 1376,
+    height: 768,
+  },
+  perrysBridgeZipline: {
+    src: cldImage("perrys-bridge-zipline-canopy"),
+    alt: "Illustration of a steel zipline cable running away through a subtropical forest canopy from a wooden tree platform.",
+    width: 1376,
+    height: 768,
+  },
   familySafariHero: {
     src: cldImage(
       "family-kruger-selfdrive-hero",
