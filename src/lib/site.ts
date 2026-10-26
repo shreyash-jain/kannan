@@ -2,7 +2,7 @@ export const site = {
   name: "Kanaan Guest Farm",
   shortName: "Kanaan",
   tagline:
-    "A family-run guest farm in the beautiful heart of Hazyview, 48 minutes from Kruger.",
+    "A family-run guest farm in the beautiful heart of Hazyview, 30–45 minutes from Kruger's Phabeni gate.",
   description:
     "Family-managed accommodation and a wedding and gatherings venue in the beautiful heart of Hazyview, Mpumalanga. Self-catering lodge rooms, twin rooms, backpacker beds and peaceful campsites under forty-year-old mango trees, with the world-famous Kruger National Park just 48 minutes from Kruger Mpumalanga International Airport. Genuine South African hospitality, from R250 per person sharing.",
   url: "https://kanaanguestfarm.com",
@@ -70,6 +70,11 @@ export const site = {
     // Marketing (Shreyash), 2026-09-11: "School groups prices from R180 per
     // learner". Read as per learner per night, consistent with fromZAR.
     schoolGroupFromZAR: 180,
+    // Marketing, 2026-10-22: camping is priced per pitch, not per person —
+    // R250 a night for two people, R180 for one. Pensioner and long-stay
+    // discounts exist but have no published figure; say "ask us".
+    campingTwoZAR: 250,
+    campingSoloZAR: 180,
     currency: "ZAR",
     currencySymbol: "R",
     unit: "per person sharing, per night",

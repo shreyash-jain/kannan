@@ -87,6 +87,12 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   Africa"; sources disagree on highest vs second-highest, so don't rank it), Sabie's
   waterfalls and pancakes. ~415 km, about six hours' driving, only the Middelburg toll.
 
+- **Cost is the main reason, not the only one** (marketing, 2026-10-22, camping post). After the post was rebuilt around a cost comparison, marketing asked for it to be "a little less about cost". Lead with what the choice gives the guest (day trips, evenings, rest days on the farm), keep the sums in their own section after the benefits, and keep big rand figures out of the opening graphic. *Why:* a post that reads as a price list undersells the farm.
+- **Per-post author can differ** (marketing, 2026-10-22): the camping post is bylined **Matthew** alone (byline, sign-off, `metadata.authors`, `articleLd({ authors })`). Default elsewhere is still "Anneli & Matthew".
+- **Camping is priced per pitch: R250 a night for two, R180 for one** (marketing, 2026-10-22). Now `site.pricing.campingTwoZAR` / `campingSoloZAR`. The R275 (1 night) / R250 (2+ nights) per-person rate is for rooms. Pensioner and long-stay discounts exist with no published figure: write "ask us". *Why:* the first camping draft quoted the room rate for camping. Note `/camping` and `/stay/camping` still show the per-person room rate and need the owner's word before they change.
+- **Kruger cost comparisons must include the campsite fee as well as the conservation fee** (2026-10-22). Inside Kruger is two bills: the site (per site for two; SANParks quotes on request, use the krugerpark.co.za 2026/27 tables) and the per-person daily fee. Never imply camping is in the park fee. Never claim Kanaan is the cheapest campsite near Hazyview (Kiaat, Numbi and Hazy Park caravan parks list similar or lower prices). Sell value: shade, power and water at every pitch, pool, trails, the hosts.
+- **Camping post: "under 1,300 words" and "fill the space left & right"** (marketing, 2026-10-05). The brief asked for 1,500–1,800; marketing capped it at 1,300, counted from the H1 to the WhatsApp band including captions, FAQ and the infographic. They then asked for the text column to fill the width, so that post reads at `max-w-5xl` like the birthday post. *Why:* the trend is now consistently shorter and wider — default to ~1,300 words and expect a request to widen; ask before widening, as before.
+- **Infographics are coded, not generated** (2026-10-05, camping post). A comparison/drive-time panel built in the page stays sharp on phones and its numbers come from `site.ts` and the article, so they cannot drift. *Why:* generated images garble text and figures, and may not depict the farm.
 - **A brief's "Topic" and "Topic Variation" are one post, not two** (2026-09-22,
   contractor-accommodation brief). Two chats each wrote one of the pair on the same branch,
   then overwrote, restored and retired each other's version; both went live for an
@@ -166,4 +172,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-09-22.*
+*Last reviewed: 2026-10-17.*
