@@ -27,32 +27,34 @@ import {
 //                     company celebration venues near Kruger National Park ·
 //                     year-end getaway in Mpumalanga
 //
-// Editorial stance: a practical planning guide first, with Kanaan as one
-// honest option. We say in the first paragraph that we run a venue, and we
-// say plainly what we do NOT sell (no corporate package, décor or
-// coordinator; no published venue-hire price).
+// ANGLE (owner voice note, pasted 2026-10-26 — supersedes the first draft):
+// year-end functions are LOCAL, people within about 50 km, so sleeping over
+// is optional, not the point. The real selling points are: affordable (very
+// cheap against other venues), guests may BRING THEIR OWN ALCOHOL, kitchen
+// and braai facilities, room for a big crowd, nice affordable accommodation
+// close by for those who want it, and the setting in the heart of the Lowveld.
 //
-// Imagery: every frame is a real photograph of Kanaan — no AI renders
-// (marketing instruction, and the owner rule in CLIENT.md). The two
-// graphics are built in code (InfographicGlance, InfographicCountdown), so
-// they cannot drift from site.ts and stay crisp at any width.
+// OPEN QUESTION — capacity: the voice note says the venue takes "comfortably
+// up to 880 people". site.ts says 60 seated / 100 with a marquee / 150 on the
+// property. The page uses site.ts until the owner confirms the real figure.
+//
+// Editorial stance: practical planning guide first, Kanaan as one honest
+// option. We say up front that we run a venue and say what we do NOT sell
+// (no corporate package, décor or coordinator; no published hire price).
+//
+// Imagery: real Kanaan photographs only — no AI renders. The two graphics
+// are built in code so they cannot drift from site.ts.
 //
 // Facts checked against primary sources, Oct 2026:
-//   • Kruger conservation fees reset on 1 Nov each year and the 2026/27
-//     South African rate could not be confirmed — so NO gate fee is quoted.
-//   • Festive-season day-visitor quotas: SANParks' last notice is Dec 2025;
-//     the post says "check", it does not repeat 2025 fees.
-//   • Drink-drive limit 0.05 g/100 ml blood, 0.24 mg/1000 ml breath
-//     (NRTA s65). Zero tolerance is proposed, NOT law — worded that way.
+//   • Kruger conservation fees reset 1 Nov each year; the 2026/27 South
+//     African rate was not confirmed — NO gate fee is quoted.
+//   • Drink-drive limit 0.05 g/100 ml blood, 0.24 mg/1000 ml breath (NRTA
+//     s65); zero tolerance is proposed, NOT law.
 //   • SARS fringe-benefit guide: no value on meals supplied to employees
 //     "on special occasions".
-//   • Klein et al. 2009: moderate positive effect, strongest on affective
-//     and process outcomes. The role-clarification finding belongs to the
-//     1999 review and is deliberately NOT claimed.
-//   • 16 Dec 2026 is a Wednesday; 25 Dec a Friday; 26 Dec a Saturday (no
-//     day in lieu).
-//
-// Length: the brief asked for 1,500–2,000 words; this is ~1,700.
+//   • Klein et al. 2009: moderate positive effect of team building,
+//     strongest on affective and process outcomes.
+//   • 16 Dec 2026 Wednesday; 25 Dec Friday; 26 Dec Saturday (no day in lieu).
 // ---------------------------------------------------------------------
 
 const datePublished = "2026-10-22";
@@ -75,23 +77,27 @@ function A({ href, children }: { href: string; children: React.ReactNode }) {
 const faqs = [
   {
     q: "What is the best time to book a year-end function in Hazyview?",
-    a: "As early as you can, and for a November or December date that means now. Companies all want the same few weeks, and this year 16 December is a Wednesday and Christmas Day a Friday. A date in the first half of December, or a Friday in late November, is easier to get than the last working day.",
+    a: "As early as you can, and for a November or December date that means now. Every company in the Lowveld wants the same few weeks, and this year 16 December is a Wednesday and Christmas Day a Friday. A Friday in late November or the first half of December is easier to get than the last working day.",
   },
   {
     q: "How do I choose a year-end function venue in Hazyview?",
-    a: "Start with beds, not seats. Count how many people need a roof for the night, then check the covered space, the catering arrangement, whether you may bring your own caterer, and what happens in a thunderstorm. Budget and location come after that.",
+    a: "Start with what the evening will really cost per head, then check the numbers: how many it holds, whether there is a roof for the rain, a kitchen and a braai, whether you may bring your own caterer and your own drinks, and parking. Location matters less than people think when most of your guests live within an hour.",
   },
   {
     q: "Can I combine a corporate year-end function with accommodation?",
-    a: "Yes, and in the Lowveld we would say you should. It is a long drive from Gauteng and the Lowveld summer is hot. Staying over turns a dinner into a weekend and takes the drive home out of the evening.",
+    a: "Yes, if some of your people want it. Most year-end guests live locally and go home, but anyone coming from further, or anyone who would rather not drive after a few drinks, can stay on the farm in a lodge room, twin room, backpackers bed or tent, and the cost stays low.",
   },
   {
     q: "What activities can companies include in a year-end function?",
-    a: "Awards and speeches, a braai, a few games, a morning walk or a swim, and for groups who want more, a day in Kruger, the Panorama Route or one of the adventure activities around Hazyview. Fewer is better than more.",
+    a: "Awards and speeches, a braai, a few games, music, a swim before the evening, and for groups who want more, a morning walk on the farm. Fewer is better than more.",
   },
   {
     q: "Does Kanaan Guest Farm accommodate group functions?",
-    a: `Yes. We seat ${site.capacity.wedding.indoor} under a covered, open-sided venue and ${site.capacity.wedding.withMarquee} with a marquee on the lawn, and exclusive use of the farm is possible, subject to dates. We do not sell a corporate package, décor or an event coordinator, so tell us your date and numbers and we will say honestly what is open and what is not.`,
+    a: `Yes. We seat ${site.capacity.wedding.indoor} under a covered, open-sided venue and ${site.capacity.wedding.withMarquee} with a marquee on the lawn, with a kitchen and braai facilities on site, and you may bring your own drinks. Exclusive use of the farm is possible, subject to dates. We do not sell a corporate package, décor or an event coordinator, so tell us your date and numbers and we will say honestly what is open.`,
+  },
+  {
+    q: "Can I bring my own alcohol to a function at Kanaan?",
+    a: "Yes, and it is one of the biggest ways a function here saves money. The one rule: there is no alcohol at the swimming pool. Please also arrange sober drivers or a room for anyone who needs one.",
   },
   {
     q: "Can guests stay overnight at Kanaan Guest Farm?",
@@ -109,9 +115,65 @@ export const metadata = createBlogPostMetadata({
   category: "guide",
 });
 
-// --- Infographic 1: the farm at a glance ------------------------------
-// Bars are scaled against the largest number (everyone on the property).
-// All values come from site.ts so the graphic cannot disagree with the page.
+// --- Infographic 1: why it costs less here -----------------------------
+// What a function here asks of the budget, as a plain checklist graphic.
+function InfographicSaving() {
+  const items = [
+    {
+      head: "Bring your own drinks",
+      body: "The bar is usually the biggest line on a function budget. Here it is yours to stock.",
+    },
+    {
+      head: "Kitchen and braai on site",
+      body: "Cater yourselves, hire a caterer, or ask us to cook. A braai feeds a crowd cheaply.",
+    },
+    {
+      head: "Room for a crowd",
+      body: `Seated ${site.capacity.wedding.indoor} under the roof, ${site.capacity.wedding.withMarquee} with a marquee, confirmed for your date.`,
+    },
+    {
+      head: "Beds only for those who want them",
+      body: `From R${site.pricing.fromZAR} per person sharing, so the drivers and the far-away guests are covered without a big bill.`,
+    },
+  ];
+  return (
+    <figure className="not-prose my-12 mx-auto w-full max-w-5xl px-5 lg:px-0">
+      <div className="rounded-2xl border border-black/5 bg-sand/60 p-6 md:p-10">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-ochre">
+          Where the saving comes from
+        </p>
+        <h3 className="mt-2 font-display text-2xl text-forest-deep md:text-3xl">
+          Four things that make a function here cheaper
+        </h3>
+        <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((s, i) => (
+            <li key={s.head}>
+              <span
+                aria-hidden
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-ochre font-display text-lg text-bone"
+              >
+                {i + 1}
+              </span>
+              <h4 className="mt-3 font-display text-lg text-forest-deep">
+                {s.head}
+              </h4>
+              <p className="mt-1 text-sm leading-relaxed text-ink/85">
+                {s.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <figcaption className="mt-3 text-center text-xs text-muted">
+        We do not publish a venue-hire price; it depends on your date and
+        numbers. Ask and we will give you an honest one.
+      </figcaption>
+    </figure>
+  );
+}
+
+// --- Infographic 2: the farm at a glance ------------------------------
+// Bars scale against the largest number. All values come from site.ts.
 function InfographicGlance() {
   const max = site.capacity.wedding.withCamping;
   const rows: { label: string; value: number; note: string; tone: string }[] = [
@@ -153,7 +215,7 @@ function InfographicGlance() {
           The farm at a glance
         </p>
         <h3 className="mt-2 font-display text-2xl text-forest-deep md:text-3xl">
-          Seats are one number. Beds are the other.
+          Room for the whole company, and a bed for anyone who wants one
         </h3>
         <dl className="mt-8 space-y-5">
           {rows.map((r) => (
@@ -200,8 +262,8 @@ function InfographicGlance() {
             from the airport
           </li>
           <li>
-            <span className="font-display text-xl text-ochre">4½ hrs</span>{" "}
-            from OR Tambo
+            <span className="font-display text-xl text-ochre">R40</span>{" "}
+            right to our gate
           </li>
         </ul>
       </div>
@@ -213,7 +275,7 @@ function InfographicGlance() {
   );
 }
 
-// --- Infographic 2: the countdown --------------------------------------
+// --- Infographic 3: the countdown --------------------------------------
 function InfographicCountdown() {
   const steps = [
     {
@@ -224,7 +286,7 @@ function InfographicCountdown() {
     {
       when: "6 weeks out",
       head: "Lock it in",
-      body: "Confirm the date, who sleeps where, the deposit and the caterer.",
+      body: "Confirm the date, the deposit, the caterer and the drinks.",
     },
     {
       when: "3 weeks out",
@@ -243,8 +305,8 @@ function InfographicCountdown() {
     },
     {
       when: "Next morning",
-      head: "A slow start",
-      body: "Late breakfast, a swim, leave by lunch.",
+      head: "Pack up kindly",
+      body: "Rubbish out, borrowed things back, thank the host.",
     },
   ];
   return (
@@ -285,8 +347,7 @@ function InfographicCountdown() {
         </ol>
       </div>
       <figcaption className="mt-3 text-center text-xs text-muted">
-        Left-hand step is where most of you are today. For a December date,
-        &ldquo;now&rdquo; is already late.
+        For a December date, &ldquo;now&rdquo; is already late.
       </figcaption>
     </figure>
   );
@@ -299,7 +360,7 @@ export default function YearEndFunctionsHazyviewPage() {
         data={articleLd({
           headline,
           description:
-            "A practical planning guide to year-end functions in Hazyview from the family who run Kanaan Guest Farm: how to choose a venue by beds before seats, set a budget, plan the day and the drive home, what to do around Kruger and the Lowveld, and what Kanaan can and cannot offer a group.",
+            "A practical planning guide to year-end functions in Hazyview from the family who run Kanaan Guest Farm: how to choose an affordable venue, why bringing your own drinks and using a braai and kitchen cuts the cost, how to plan the day, and what Kanaan can and cannot offer a group.",
           path: `/blog/${slug}`,
           image: img.venueCovered.src,
           datePublished,
@@ -309,7 +370,7 @@ export default function YearEndFunctionsHazyviewPage() {
       <JsonLd
         data={eventVenueLd({
           name: "Kanaan Guest Farm — year-end functions & group venue",
-          description: `A covered, open-sided venue seating ${site.capacity.wedding.indoor} (${site.capacity.wedding.withMarquee} with a marquee) on a fenced, family-run guest farm in Hazyview, with around ${site.capacity.sleepingTotal} beds under roof and camping for ${site.capacity.campingPeople}. ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Kruger National Park gates.`,
+          description: `A covered, open-sided venue seating ${site.capacity.wedding.indoor} (${site.capacity.wedding.withMarquee} with a marquee) on a fenced, family-run guest farm in Hazyview, with a kitchen, braai facilities, around ${site.capacity.sleepingTotal} beds under roof and camping for ${site.capacity.campingPeople}. ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes from the Kruger National Park gates.`,
           path: "/group-functions",
           image: img.venueLawnWide.src,
           maximumAttendeeCapacity: site.capacity.wedding.withCamping,
@@ -323,37 +384,29 @@ export default function YearEndFunctionsHazyviewPage() {
           eyebrow="Guide · Group functions in Hazyview"
           title="Year-End Functions in Hazyview: How to Plan the Perfect Celebration"
           titleSize="compact"
-          intro="Venue, budget, the day itself and the question most organisers leave until too late: who drives home? A planning guide from the family who run a group venue on a Hazyview farm."
+          intro="Most year-end functions in the Lowveld are local, so the questions are price, space and who brings the drinks. A planning guide from the family who run a group venue on a Hazyview farm."
           byline="Matthew"
           datePublished={datePublished}
-          readingMinutes={8}
+          readingMinutes={7}
         />
 
         <Section className="pb-0!">
           <div className="prose-kanaan mx-auto max-w-5xl [&>aside]:mb-4">
             <TLDR
               items={[
-                "Year-end functions in Hazyview are mostly overnight affairs, because the drive from Gauteng is about 4½ hours and nobody should do it after a bar tab.",
-                "Choose by beds before seats. A venue that seats 120 and sleeps 24 is a venue for 24.",
-                `At Kanaan: ${site.capacity.wedding.indoor} seated under cover, ${site.capacity.wedding.withMarquee} with a marquee, around ${site.capacity.sleepingTotal} beds, camping for ${site.capacity.campingPeople}. Exclusive use is possible, subject to dates.`,
-                "It is the third week of October. For a November or December date, send your enquiry this week.",
-                "Fewer activities, a roof for the rain, and a late breakfast the next morning will do more for the evening than any programme.",
+                "Year-end functions in Hazyview are mostly local, with guests coming from within about 50 km, so most people go home the same night. A bed is optional.",
+                "The case for Kanaan is cost: you may bring your own alcohol, there is a kitchen and braai on site, and the venue is far cheaper than a hotel function room.",
+                `Seated ${site.capacity.wedding.indoor} under cover, ${site.capacity.wedding.withMarquee} with a marquee, exclusive use of the farm possible, subject to dates.`,
+                "For anyone who wants to stay, affordable lodge rooms, twin rooms, backpackers beds and camping are right there.",
+                "For a November or December date, send your enquiry this week.",
               ]}
             />
             <p>
-              Most year-end functions in Hazyview are booked or about to be,
-              so if your date is still blank, you are not too late, but you are
-              not early either. That shapes everything below.
-            </p>
-            <p>
-              A year-end function is the one evening when the finance team
-              and the people from the yard sit at the same table. Done well,
-              it says thank you and means it. Done badly (the venue that shuts
-              at ten, the speech that outlasts the dessert, half the room
-              driving home after the third round) it is the thing they talk
-              about in February. The Lowveld suits the first kind. It is far
-              enough from the office that nobody checks email, and the evening
-              ends when the fire does.
+              A year-end function is the one evening when the finance team and
+              the people from the yard sit at the same table. Done well, it
+              says thank you and means it. Done badly (the venue that shuts at
+              ten, the bar bill nobody expected, the speech that outlasts the
+              dessert) it is the thing they talk about in February.
             </p>
             <p>
               We run Kanaan Guest Farm, a family-run farm on the R40 in
@@ -367,31 +420,31 @@ export default function YearEndFunctionsHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">Why choose Hazyview for your year-end function?</H2>
             <p>
-              Distance does the work. Hazyview is about{" "}
-              {site.distances.kmiaMinutes} minutes from Kruger Mpumalanga
-              International Airport and roughly 4½ hours from OR Tambo on the
-              N4, and the Phabeni and Numbi gates of Kruger are{" "}
-              {site.distances.krugerGateMinutesMin}–
-              {site.distances.krugerGateMinutesMax} minutes away. Teams who
-              come this far stay put. There is no dash back to the city, which
-              is exactly why it works for a group.
+              Because your people are already here. A year-end function in the
+              Lowveld is usually staff, partners and a few clients from
+              Hazyview, White River, Sabie and the farms around, most of them
+              within about 50 km. Nobody needs a flight or a hotel, so what you
+              spend goes on the evening itself.
             </p>
             <p>
-              The area has group-friendly venues and the accommodation to
-              stretch a dinner into a weekend. The{" "}
+              Hazyview is also pleasant to be in. It sits in the heart of the
+              Lowveld, with Kruger&rsquo;s Phabeni and Numbi gates{" "}
+              {site.distances.krugerGateMinutesMin}–
+              {site.distances.krugerGateMinutesMax} minutes away, the{" "}
               <Link href="/blog/panorama-route-from-hazyview" className={linkCls}>
                 Panorama Route
               </Link>{" "}
-              starts up the hill, and our guide to{" "}
+              up the hill, and plenty more in our guide to{" "}
               <Link href="/blog/things-to-do-around-hazyview" className={linkCls}>
                 things to do around Hazyview
-              </Link>{" "}
-              covers the rest.
+              </Link>
+              . For the few who do travel in, it makes a good excuse for a
+              weekend.
             </p>
             <p>
-              The honest cost: it is a long drive, and the Lowveld in December
-              is hot, humid and given to afternoon thunderstorms. Plan for
-              both. A roof and a late afternoon swim solve most of it.
+              The honest cost: the Lowveld in December is hot, humid and given
+              to afternoon thunderstorms. A roof over the long table and a
+              swim before the evening solve most of it.
             </p>
           </div>
         </Section>
@@ -406,24 +459,21 @@ export default function YearEndFunctionsHazyviewPage() {
             <p>
               Estimate high. People bring partners, the intern turns out to be
               coming, and a venue that is exactly full is no fun. Then check
-              what &ldquo;capacity&rdquo; means: seated at tables, standing
-              with a drink, or sleeping on the property. They are three
-              different numbers, and only one of them tells you whether
-              everyone can stay.
+              what &ldquo;capacity&rdquo; means: seated at tables, or standing
+              with a drink. Ask for both numbers.
             </p>
 
             <h3 className={h3Cls}>Set a realistic event budget</h3>
             <p>
-              List it all: venue hire, beds, food, the bar, transport, sound,
-              decorations and something for the weather. The lines that get
-              forgotten are the rooms for people who would otherwise drive,
-              and the bar. On our side, a twin room is R
-              {site.pricing.singleNightZAR} per person sharing for one night
-              (R{site.pricing.fromZAR} a night for two or more), lodge rooms
-              are R300–R350, and breakfast is R
-              {site.meals.breakfast.pricePerPersonZAR} a head. A braai dinner
-              is cooked to order, so we quote it on request. We do not publish
-              a venue-hire price; it depends on your date and numbers.
+              List it all: venue hire, food, drinks, sound, decorations and
+              something for the weather. The bar is usually the biggest line,
+              and it is where a venue that lets you bring your own drinks saves
+              the most. We do. A kitchen and braai facilities are on site, so
+              you can cook yourselves, bring a caterer, or ask us to cook:
+              breakfast is R{site.meals.breakfast.pricePerPersonZAR} a head and
+              a braai dinner is cooked to order, so we quote it on request. We
+              do not publish a venue-hire price because it depends on your date
+              and numbers.
             </p>
             <p>
               A word for whoever signs the invoice. SARS&rsquo;s{" "}
@@ -431,23 +481,23 @@ export default function YearEndFunctionsHazyviewPage() {
                 fringe-benefit guide
               </A>{" "}
               places no taxable value on meals an employer supplies to
-              employees &ldquo;on special occasions&rdquo;. Overnight stays,
-              gifts and partners are different questions, so ask your
-              accountant before you promise anything.
+              employees &ldquo;on special occasions&rdquo;. Gifts, partners and
+              overnight stays are different questions, so ask your accountant
+              before you promise anything.
             </p>
 
             <h3 className={h3Cls}>Check the venue facilities</h3>
             <p>
-              Ask about indoor and outdoor space, who does the catering and
-              whether you may bring your own, parking, Wi-Fi, and above all
-              whether there is somewhere for everyone to sleep. Here is the
-              reason, plainly: South Africa&rsquo;s limit for most drivers is{" "}
+              Ask about indoor and outdoor space, whether there is a kitchen
+              and a braai, whether you may bring your own caterer and your own
+              drinks, parking and Wi-Fi. If drinks are involved, ask how
+              people get home. South Africa&rsquo;s limit for most drivers is{" "}
               <A href="https://www.arrivealive.co.za/print.aspx?i=1259">
                 0.05 g per 100 ml of blood, or 0.24 mg per 1,000 ml of breath
               </A>
               , and the government is working towards zero. That is not the law
-              yet, but it tells you where it is heading. A venue with beds on
-              site makes the question go away.
+              yet, but it tells you where it is heading. Name the sober
+              drivers beforehand, or have a few beds on hand.
             </p>
 
             <h3 className={h3Cls}>Confirm availability early</h3>
@@ -459,9 +509,9 @@ export default function YearEndFunctionsHazyviewPage() {
               need in writing, and expect to hold a date with a deposit.
             </p>
           </div>
-          <Callout eyebrow="The question that decides it">
-            Not &ldquo;how many does it seat?&rdquo; but &ldquo;where does
-            everyone sleep, and does anyone have to drive home?&rdquo;
+          <Callout eyebrow="Where the saving is">
+            Bring your own drinks, cook on the braai, and only pay for beds
+            for the people who need them.
           </Callout>
         </Section>
 
@@ -501,6 +551,7 @@ export default function YearEndFunctionsHazyviewPage() {
         </div>
 
         <Section className="pb-0!">
+          <InfographicSaving />
           <div className="prose-kanaan mx-auto max-w-5xl">
             <H2 className="mb-4">
               Creative year-end function ideas for companies and groups
@@ -516,10 +567,10 @@ export default function YearEndFunctionsHazyviewPage() {
 
             <h3 className={h3Cls}>Outdoor braai celebrations</h3>
             <p>
-              A braai solves the biggest catering problem, which is feeding
-              forty people who will not all sit down at once. Add music, a
-              table of games and a roof over the long table, and you are done.
-              It is also the cheapest way to do this well.
+              A braai solves the biggest catering problem, which is feeding a
+              crowd who will not all sit down at once. Add music, a table of
+              games and a roof over the long table, and you are done. It is
+              also the cheapest way to do this well.
             </p>
 
             <h3 className={h3Cls}>Team-building activities in Hazyview</h3>
@@ -536,12 +587,12 @@ export default function YearEndFunctionsHazyviewPage() {
               has been badly managed for eleven months.
             </p>
 
-            <h3 className={h3Cls}>Multi-day year-end getaways in Mpumalanga</h3>
+            <h3 className={h3Cls}>Year-end getaways in Mpumalanga</h3>
             <p>
-              Arrive Friday afternoon, hold the main event on Saturday and
-              leave after a slow Sunday breakfast. People who stay talk to
-              colleagues they have never spoken to, and the evening has no
-              ending time.
+              For the group that wants more than an evening, make a weekend of
+              it: arrive Friday, hold the main event on Saturday and leave
+              after a slow Sunday breakfast. It suits smaller teams and anyone
+              travelling in, and the accommodation is there if you want it.
             </p>
           </div>
         </Section>
@@ -558,10 +609,10 @@ export default function YearEndFunctionsHazyviewPage() {
               { title: "Set the date and confirm the venue", body: "In writing, with the deposit and a named person to deal with." },
               { title: "Build the guest list and send invitations", body: "Ask about partners and dietary needs in the same message." },
               { title: "Establish the budget and track it", body: "One spreadsheet, kept honest, and a 10% buffer you do not tell anyone about." },
-              { title: "Arrange food, drinks and dietary needs", body: "Vegetarian and allergy requirements first. We do not offer halaal." },
+              { title: "Arrange food, drinks and dietary needs", body: "Vegetarian and allergy requirements first. Decide who supplies the drinks." },
               { title: "Organise décor, entertainment and activities", body: "Pick two. A third is where schedules collapse." },
-              { title: "Confirm transport and accommodation", body: "Who is sleeping where, who is driving, who has the keys." },
-              { title: "Prepare for summer rain", body: "Know where sixty people go when the sky turns black at four." },
+              { title: "Confirm transport and accommodation", body: "Who is driving, who has had a drink, who needs a bed." },
+              { title: "Prepare for summer rain", body: "Know where everyone goes when the sky turns black at four." },
               { title: "Share the schedule and directions", body: "One page, with the address, the arrival time and a phone number." },
             ]}
           />
@@ -579,8 +630,8 @@ export default function YearEndFunctionsHazyviewPage() {
               Phabeni and Numbi are{" "}
               {site.distances.krugerGateMinutesMin}–
               {site.distances.krugerGateMinutesMax} minutes from the farm,
-              which makes a morning drive a sensible add-on for a group that is
-              staying over. Two cautions. SANParks fees reset every 1
+              which makes a morning drive a sensible add-on for guests who
+              are staying over. Two cautions. SANParks fees reset every 1
               November, so check the live{" "}
               <A href="https://www.sanparks.org/parks/kruger/rates-entry-fees">
                 conservation fees
@@ -642,9 +693,9 @@ export default function YearEndFunctionsHazyviewPage() {
             </H2>
             <p>
               We are one option among several, and a particular kind of one: a
-              fenced working farm with a covered venue, four kinds of bed and
-              two owners who live on site. We are not a conference hotel.
-              Here is what that means for a{" "}
+              fenced working farm with a covered venue and two owners who live
+              on site. We are not a conference hotel. Here is what that means
+              for a{" "}
               <Link href="/group-functions" className={linkCls}>
                 group function
               </Link>
@@ -657,22 +708,29 @@ export default function YearEndFunctionsHazyviewPage() {
               and a games corner, and seats around {site.capacity.wedding.indoor}.
               A marquee on the lawn takes it to about{" "}
               {site.capacity.wedding.withMarquee}, subject to arrangements.
-              With camping and overnight arrangements, larger gatherings are
-              possible; we confirm the capacity for your dates.
+              Larger gatherings may be possible; we confirm the capacity for
+              your date.
+            </p>
+            <p>
+              Two things set us apart on cost. You may bring your own alcohol
+              (the one rule is no alcohol at the swimming pool). And there is a
+              kitchen and braai facilities, so you can cater yourselves or
+              bring your own caterer.
             </p>
           </div>
           <InfographicGlance />
           <div className="prose-kanaan mx-auto max-w-5xl">
             <h3 className={h3Cls}>Accommodation for different budgets</h3>
             <p>
-              Self-catering lodge rooms with an en-suite and a kitchenette
-              (R300–R350 per person sharing). Twin rooms (R
+              Most of your guests will go home. For those who want to stay,
+              there are self-catering lodge rooms with an en-suite and a
+              kitchenette (R300–R350 per person sharing), twin rooms (R
               {site.pricing.singleNightZAR} for one night, R
-              {site.pricing.fromZAR} for longer stays). A shared backpackers
-              room with {site.capacity.backpackersBeds} beds. Campsites under
-              the mango trees. The point of the spread is that a director and
-              a graduate can both come, at a price that suits each of them.
-              See the{" "}
+              {site.pricing.fromZAR} for longer stays), a shared backpackers
+              room with {site.capacity.backpackersBeds} beds, and campsites
+              under the mango trees. The spread means a director and a
+              graduate can both stay, at a price that suits each of them. See
+              the{" "}
               <Link href="/stay" className={linkCls}>
                 rooms
               </Link>{" "}
@@ -693,17 +751,17 @@ export default function YearEndFunctionsHazyviewPage() {
 
             <h3 className={h3Cls}>Make it more than a one-day celebration</h3>
             <p>
-              A Friday arrival, the main event on Saturday and a slow Sunday
-              morning is our suggestion. Meals are arranged in advance:
-              breakfast at R{site.meals.breakfast.pricePerPersonZAR} a head, a
-              braai dinner on order, or bring your own caterer and use the
-              kitchen. Ask about exclusive use of the farm, availability and
-              catering when you enquire.
+              If your group wants to stretch it out, an arrival-day gathering,
+              the main celebration and a relaxed departure morning works well.
+              Meals can be arranged in advance, or you can self-cater. When you
+              enquire, ask about exclusive use of the farm, availability,
+              catering and suitable accommodation.
             </p>
             <p>
               What we do not offer, so nobody is surprised: no corporate
               package, no décor, no event coordinator, no boma. We have a
-              fire, a roof and a lot of space. The rest is yours to bring.
+              fire, a roof, a kitchen and a lot of space. The rest is yours to
+              bring.
             </p>
           </div>
         </Section>
@@ -722,13 +780,13 @@ export default function YearEndFunctionsHazyviewPage() {
           <NumberedList
             variant="timeline"
             items={[
-              { time: "10:00", title: "Guests arrive", body: "Welcome refreshments, name tags, directions to rooms." },
+              { time: "10:00", title: "Guests arrive", body: "Welcome refreshments, name tags, directions to the venue." },
               { time: "11:00", title: "Games and group activities", body: "Team challenges or a walk. Keep them short." },
               { time: "13:00", title: "Lunch and networking", body: "A long lunch, in the shade, with nowhere to be." },
               { time: "14:00", title: "Awards, speeches and recognition", body: "Name the specific thing each person did." },
-              { time: "15:00", title: "Swim, rest, wander", body: "Pool, trails or a sleep. Nobody needs to be anywhere." },
+              { time: "15:00", title: "Swim, rest, wander", body: "Pool, trails or a sit in the shade." },
               { time: "17:00", title: "Braai or group dinner", body: "Fire lit early so the meat is ready before the light goes." },
-              { time: "19:00", title: "Music and celebration", body: "Everyone sleeps on site, so there is no reason to stop." },
+              { time: "19:00", title: "Music and celebration", body: "Drivers sorted, music on, the evening is yours." },
             ]}
           />
         </Section>
@@ -742,12 +800,12 @@ export default function YearEndFunctionsHazyviewPage() {
           <NumberedList
             items={[
               { title: "Booking too late", body: "The good dates go first, and in the festive season they go early." },
-              { title: "Underestimating the budget", body: "The bar, transport and beds for the drivers are where it goes wrong." },
-              { title: "Choosing a venue without checking capacity", body: "Seats, beds and standing room are different numbers." },
+              { title: "Underestimating the budget", body: "The bar and the food are where it goes wrong. Bring your own drinks if the venue allows it." },
+              { title: "Choosing a venue without checking capacity", body: "Seats and standing room are different numbers." },
               { title: "Forgetting dietary and accessibility needs", body: "Ask in the invitation, not on the night." },
               { title: "Having no wet-weather plan", body: "Lowveld summer storms arrive quickly. Know where the long table goes." },
-              { title: "Scheduling too much", body: "Two activities and a good dinner beats five and a rush." },
-              { title: "Leaving transport and rooms until last", body: "Confirm both at least three weeks before." },
+              { title: "Scheduling too much", body: "Two activities and a good dinner beat five and a rush." },
+              { title: "Leaving the drive home to chance", body: "Name the sober drivers, or keep a few beds in reserve." },
             ]}
           />
         </Section>
@@ -776,14 +834,14 @@ export default function YearEndFunctionsHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
               title="Plan a year-end celebration to remember in Hazyview"
-              thesis="A good year-end function is decided by two things you can settle this week: the date, and where everyone sleeps."
+              thesis="A good year-end function is decided by two things you can settle this week: the date, and what it will cost per head."
               body={
                 <>
                   Everything else (the games, the speeches, the menu) can be
                   fixed a fortnight before. If you are planning year-end
-                  functions in Hazyview, send us the date, the rough numbers
-                  and whether anyone needs a bed, and Anneli or Matthew will
-                  reply personally with what is open and an honest price.
+                  functions in Hazyview, send us the date and the rough
+                  numbers, and Anneli or Matthew will reply personally with
+                  what is open and an honest price.
                 </>
               }
             />
@@ -824,7 +882,7 @@ export default function YearEndFunctionsHazyviewPage() {
 
         <WhatsAppCTA
           title="Planning your next year-end function in Hazyview?"
-          body="Tell us the date, roughly how many of you there are and whether anyone needs a bed. We will come back with what is open, which rooms, and an honest number."
+          body="Tell us the date and roughly how many of you there are. We will come back with what is open and an honest number."
           buttonLabel="Enquire on WhatsApp"
           pageKey="groupFunctions"
         />
