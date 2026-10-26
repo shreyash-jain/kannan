@@ -356,7 +356,7 @@ export const posts: Post[] = [
     href: "/blog/year-end-functions-hazyview",
     image: img.venueCovered.src,
     imageAlt: img.venueCovered.alt,
-    datePublished: "2026-10-22",
+    datePublished: "2026-10-26",
     readingMinutes: 8,
     excerpt:
       "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
