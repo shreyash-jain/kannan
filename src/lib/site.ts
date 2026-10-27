@@ -2,7 +2,7 @@ export const site = {
   name: "Kanaan Guest Farm",
   shortName: "Kanaan",
   tagline:
-    "A family-run guest farm in the beautiful heart of Hazyview, 48 minutes from Kruger.",
+    "A family-run guest farm in the beautiful heart of Hazyview, 30–45 minutes from Kruger's Phabeni gate.",
   description:
     "Family-managed accommodation and a wedding and gatherings venue in the beautiful heart of Hazyview, Mpumalanga. Self-catering lodge rooms, twin rooms, backpacker beds and peaceful campsites under forty-year-old mango trees, with the world-famous Kruger National Park just 48 minutes from Kruger Mpumalanga International Airport. Genuine South African hospitality, from R250 per person sharing.",
   url: "https://kanaanguestfarm.com",
@@ -25,7 +25,24 @@ export const site = {
     phoneSecondaryDisplay: "+27 82 930 2211",
     whatsapp: "+27637943880",
     whatsappDisplay: "+27 63 794 3880",
+    // The number on the Meta business-verification form. It must appear on
+    // the site verbatim so the reviewer can match it; the two above do not.
+    whatsappVerification: "+27642116345",
+    whatsappVerificationDisplay: "+27 64 211 6345",
+    // Transfers and airport pick-ups. Same digits as the verification number
+    // above — one handset, two jobs — but named for what it is used for, so
+    // changing the lift number later does not touch the Meta line.
+    whatsappRide: "+27642116345",
+    whatsappRideDisplay: "+27 64 211 6345",
     email: "bookings@kanaanguestfarm.com",
+  },
+  // Legal operator. Rendered in the footer of every page so Meta's reviewer
+  // can cross-check trading name, registered name, CIPC number and the
+  // address on the Mbombela statement against the verification form.
+  operator: {
+    legalName: "Simba Ventures (Pty) Ltd",
+    registrationNumber: "2024/504677/07",
+    registeredAddress: "Glencairn 8/4 RE, White River, 1240, Mpumalanga, South Africa",
   },
   social: {
     instagram: "https://www.instagram.com/kanaan_guest_farm/",
@@ -51,10 +68,18 @@ export const site = {
   //   - Breakfast & dinner are SET MENUS, on request
   //   - No halaal option
   pricing: {
-    fromZAR: 250, // From R250 per person sharing per night (pps)
+    // Anneli, 2026-10-03: a single-night surcharge. fromZAR stays the
+    // longer-stay rate, so every "from R250" claim on the site is still true.
+    fromZAR: 250, // 2+ nights, per person sharing per night (pps)
+    singleNightZAR: 275, // one night only, pps
     // Marketing (Shreyash), 2026-09-11: "School groups prices from R180 per
     // learner". Read as per learner per night, consistent with fromZAR.
     schoolGroupFromZAR: 180,
+    // Marketing, 2026-10-22: camping is priced per pitch, not per person —
+    // R250 a night for two people, R180 for one. Pensioner and long-stay
+    // discounts exist but have no published figure; say "ask us".
+    campingTwoZAR: 250,
+    campingSoloZAR: 180,
     currency: "ZAR",
     currencySymbol: "R",
     unit: "per person sharing, per night",
@@ -131,12 +156,22 @@ export const whatsappMessages = {
   contact: "Hi Anneli and Matthew, I'd love to make an enquiry about Kanaan.",
 } as const;
 
+// The lift goes to a different handset from bookings, so it gets its own link
+// rather than a key in whatsappMessages above.
+export const rideMessage =
+  "Hi, I would love to book a ride to Kanaan Guest Farm. Could you let me know the fare and whether you are free?";
+
 export type WhatsAppKey = keyof typeof whatsappMessages;
 
 export function whatsappLink(key: WhatsAppKey = "home"): string {
   const number = site.contact.whatsapp.replace(/\D/g, "");
   const text = encodeURIComponent(whatsappMessages[key]);
   return `https://wa.me/${number}?text=${text}`;
+}
+
+export function whatsappRideLink(): string {
+  const number = site.contact.whatsappRide.replace(/\D/g, "");
+  return `https://wa.me/${number}?text=${encodeURIComponent(rideMessage)}`;
 }
 
 // A WhatsApp link with a message we compose on the spot — used by /rooms so

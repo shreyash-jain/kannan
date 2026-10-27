@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, H2, Lede } from "@/components/Section";
 import { AccommodationCard } from "@/components/AccommodationCard";
@@ -127,7 +128,16 @@ export default function TheLandPage() {
             </dl>
             <p className="measure-tight mt-5 text-sm text-muted">
               Our fully fenced and secure property has a motorised gate — please
-              give us a call when you arrive and we will welcome you in.
+              give us a call when you arrive and we will welcome you in. That
+              gate, and the Kruger gates half an hour away, are why work teams
+              base here too — see our{" "}
+              <Link
+                href="/blog/discounted-contractor-accommodation-hazyview"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                team accommodation near Kruger National Park
+              </Link>{" "}
+              guide.
             </p>
           </div>
         </div>

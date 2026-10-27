@@ -49,16 +49,33 @@ feedback stranded on a branch — were both resolved when **`blog-7-first-light`
 (and the 12-post snapshot) is left as written on 2026-07-16 and is now out of date —
 re-verify it against `origin/main` before trusting it.
 
+## 📌 Contractor accommodation (2026-09-21/22) — what happened
+
+- Two briefs arrived for the same keyword family: *Contractor accommodation in Hazyview*
+  (this chat) and *Discounted accommodation for contractors* (a parallel chat). Both were
+  built on `blog-17-contractor-accommodation-hazyview`; PR #39 merged both live on
+  2026-09-22. Marketing then chose the pillar and PR #40 removed the other.
+- **Live:** `/blog/discounted-contractor-accommodation-hazyview` (pillar; posts 2–5 of the
+  series are listed in its header comment as "coming soon"). Rates are "quoted per
+  booking" — **Anneli has not confirmed a contractor/long-stay discount rule.**
+- **Retired:** `/blog/contractor-accommodation-hazyview` — 301 to the pillar in
+  `next.config.ts`. The post itself is recoverable from commit `938f697` if wanted.
+- `BlogHero` gained `titleSize="compact"` (on `main` via #39) for long topic-line H1s.
+- `preview` is level with `main` as of `6852bf1`.
+
 ## In flight
 
 | Work | Branch | State | Next action |
 | --- | --- | --- | --- |
 | "Under the Mango Trees" | merged to `main` | **Done / live** | none |
+| Joburg-to-Kruger road-trip guide — `johannesburg-to-kruger-national-park-hazyview` | `blog-19-johannesburg-to-kruger` | **PR open into `main`** (2026-10-13). On `preview`. | Marketing reviewed on preview (two rounds: wider column; scenic Dullstroom–Lydenburg–Sabie route, no Boer War). Merge only when marketing says publish. ~1,300 words; five code-built infographics; two AI off-farm frames (`jhbKrugerEscarpment`, `jhbKrugerFirstMorning`), real farm photos. Quotes R275 single night / R250 2+ nights from `site.pricing`. Scenic-route distances are OSRM estimates between the pinned towns. |
 | Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Merged (PR #20)** | none — this is what cleared both old blockers. |
 | Weddings guide — `wedding-venues-near-kruger-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** | Owner has not reviewed. Note it links to `/blog/where-to-eat-around-hazyview`, which does **not** exist on `main` — that link 404s until the food guide lands. |
 | Where-to-stay guide — `accommodation-near-kruger-national-park` | `blog-10-where-to-stay` | **Built, verified, PR open** | Owner has not reviewed. Branched straight off `main`, so it is independent of blog-9 — every link resolves today. |
 | Food guide — `where-to-eat-around-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** (this row said "not started" — it was wrong) | Owner has not reviewed it. It ships together with blog-9 as things stand, because both live on that one branch. |
 | School-groups guide — `affordable-school-trip-lowveld` | `blog-14-affordable-school-trip-lowveld` | **PR #36 open into `main`** (2026-09-12). On `preview`. | Marketing approved on preview; waiting on the owner. Merge only when marketing says publish. Branched straight off `main` — every dependency (`campingAvenueWide`, `woodenHouseExterior`, `hilltopViewpoint`, `site.capacity.campingPeople`, `/group-functions/school-groups`) already exists there. |
+| Milestone-birthday venues guide — `milestone-birthday-venues-kruger-national-park` | `blog-15-milestone-birthday-venues` | **Built, pushed, on `preview`** (2026-09-15) — reached `preview` by cherry-pick (`3a37c89`), same as blog-14, because the `rooms.ts` conflict below is still unsettled. No PR yet. | Marketing reviewed on localhost and asked for the preview link; waiting on their word (then the owner's) before a PR / publish. Branched off `main` at `a824b38` (after blog-14 merged) — every dependency (`venueCovered`, `venueLawnWide`, `campingAvenueWide`, `poolReal`, `pro(5708)`, `pro(5751)`, `eventVenueLd`, `/group-functions/team-family`) exists on `main` and on `preview`. Images are **all real farm photography**: the OpenRouter account had **no credit** on 2026-09-15 (`402 Insufficient credits`), so the three planned off-farm renders (lodge deck, boma, Marloth stoep) were never made — top up the account before the next post that needs generated scenes. |
+| Camping guide — `camping-near-kruger-national-park` | `blog-20-camping-near-kruger-national-park` | **PR #48 open into `main`**; on `preview`. Revised 2026-10-22 to marketing's feedback. | Waiting on marketing. Now built around inside-Kruger vs just-outside, with a worked cost example (couple, 3 nights, 2 Kruger days: saves R763 SA / R1,867 international). Site rates Pretoriuskop R411–R536, Skukuza R423–R551 (krugerpark.co.za 2026/27); conservation fees SANParks 1 Nov 2026–31 Oct 2027. Camping price R250/two, R180/one (`site.pricing`) — **confirm with Anneli**. AI frames removed; real photos only. `site.tagline` corrected to "30–45 minutes from Kruger's Phabeni gate" (footer, default title). Re-check fees after 31 Oct 2027. |
 
 ## ⚠️ `preview` is NOT level with `main` (2026-09-11)
 
@@ -179,4 +196,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-09-12*
+*Last updated: 2026-10-22*

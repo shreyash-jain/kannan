@@ -34,6 +34,8 @@ export type Room = {
    */
   priceFromZAR?: number;
   priceToZAR?: number;
+  /** Rate for a one-night stay, where it differs from the longer-stay rate. */
+  priceSingleNightZAR?: number;
   hero: Img;
   gallery: Img[];
   /** Schema.org type — omitted for spaces that are not somewhere to sleep. */
@@ -248,17 +250,44 @@ export function roomBySlug(slug: string): Room | undefined {
  * What this room costs, per person sharing per night. Falls back to the
  * site-wide from-price for rooms whose own rate we have not been given.
  */
-export function roomRate(room: Room): { from: number; to?: number } {
-  return {
-    from: room.priceFromZAR ?? site.pricing.fromZAR,
-    to: room.priceToZAR,
-  };
+export function roomRate(room: Room): {
+  from: number;
+  to?: number;
+  singleNight?: number;
+} {
+  const from = room.priceFromZAR ?? site.pricing.fromZAR;
+  // Only rooms on the standard rate carry the single-night surcharge; a room
+  // with its own price keeps it until we are told otherwise.
+  const singleNight =
+    room.priceSingleNightZAR ??
+    (room.priceFromZAR === undefined || room.priceFromZAR === site.pricing.fromZAR
+      ? site.pricing.singleNightZAR
+      : undefined);
+  return { from, to: room.priceToZAR, singleNight };
 }
 
 /** The rate as it reads on the page: "R300–R350" or "R250". */
 export function roomRateLabel(room: Room): string {
   const { from, to } = roomRate(room);
   return to ? `R${from}–R${to}` : `R${from}`;
+}
+
+/**
+ * The rate as Anneli words it, one line each:
+ *   R275 for 1 night
+ *   R250 for more than 1 night per person sharing
+ * A room on its own rate with no surcharge keeps a single line.
+ */
+export function roomRateLines(room: Room): string[] {
+  const { from, to, singleNight } = roomRate(room);
+  const base = to ? `R${from}–R${to}` : `R${from}`;
+  if (!singleNight || singleNight === from) {
+    return [`${base} ${site.pricing.unit}`];
+  }
+  return [
+    `R${singleNight} for 1 night`,
+    `${base} for more than 1 night per person sharing`,
+  ];
 }
 
 /** Every photograph of a room, hero first — used for the "N photos" badge. */

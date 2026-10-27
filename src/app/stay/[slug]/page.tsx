@@ -6,7 +6,13 @@ import { Section, Eyebrow, H1, H2 } from "@/components/Section";
 import { RoomCard } from "@/components/RoomCard";
 import { LightboxGallery } from "@/components/Lightbox";
 import { CTA } from "@/components/CTA";
-import { roomBySlug, roomPages, roomPhotos, roomRateLabel } from "@/data/rooms";
+import {
+  roomBySlug,
+  roomPages,
+  roomPhotos,
+  roomRateLabel,
+  roomRateLines,
+} from "@/data/rooms";
 import { lodgingTypeLd } from "@/lib/jsonld";
 import { site, whatsappAbout } from "@/lib/site";
 import { thumbOf } from "@/lib/images";
@@ -122,11 +128,12 @@ export default async function RoomPage({
                   Enquire about this room
                 </Link>
                 {room.ldType && (
-                  <span className="text-sm text-muted">
-                    <strong className="font-semibold text-forest-deep">
-                      {roomRateLabel(room)}
-                    </strong>{" "}
-                    {site.pricing.unit}
+                  <span className="text-sm leading-relaxed text-muted">
+                    {roomRateLines(room).map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
                   </span>
                 )}
               </div>

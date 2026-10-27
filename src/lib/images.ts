@@ -870,6 +870,42 @@ export const img = {
     width: 1600,
     height: 1200,
   },
+  // --- Christmas family vacation guide — two generated off-farm scenes ----
+  // A Kruger road and a Kruger picnic site only; no AI frame shows the farm.
+  // qwen/qwen-image-3, 1822x1024, uploaded straight to kanaan/ (2026-10-05).
+  hazyviewChristmasKrugerDawn: {
+    src: cldImage(
+      "hazyview-christmas-kruger-dawn",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A zebra mare and her foal crossing a rain-wet tar road in southern Kruger at a pink December sunrise, lush green summer bushveld and misty hills behind.",
+    width: 1822,
+    height: 1024,
+  },
+  hazyviewChristmasPicnic: {
+    src: cldImage("hazyview-christmas-picnic-breakfast"),
+    alt: "Christmas breakfast on a wooden picnic table in the green summer bushveld: a red checked cloth, an enamel coffee pot, tin mugs, mince pies, a basket of fruit and lychees, Christmas crackers and binoculars.",
+    width: 1822,
+    height: 1024,
+  },
+  // --- Johannesburg to Kruger road-trip guide — two generated off-farm
+  // scenes (the escarpment drive, a Kruger road at dawn). No AI frame shows
+  // the farm. qwen/qwen-image-3, 1822x1024, uploaded to kanaan/ (2026-10-05).
+  jhbKrugerEscarpment: {
+    src: cldImage(
+      "jhb-kruger-escarpment-descent",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "A small silver car winding down a tar road from grassy escarpment hills into the wide Mpumalanga Lowveld at golden hour, orchards and bushveld stretching to hazy blue hills.",
+    width: 1822,
+    height: 1024,
+  },
+  jhbKrugerFirstMorning: {
+    src: cldImage("jhb-kruger-first-morning-windscreen"),
+    alt: "The view through a car windscreen on an early-morning Kruger game drive: two elephants crossing a narrow tar road in pink dawn light, mist lying low in the bushveld.",
+    width: 1822,
+    height: 1024,
+  },
   familySafariHero: {
     src: cldImage(
       "family-kruger-selfdrive-hero",

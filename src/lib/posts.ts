@@ -1,5 +1,6 @@
 import type { Post } from "@/components/BlogPostList";
 import { img, wedding } from "@/lib/images";
+import { pro } from "@/data/proPhotos";
 
 /**
  * The single source of truth for every blog post on the site.
@@ -275,6 +276,90 @@ export const posts: Post[] = [
     readingMinutes: 5,
     excerpt:
       "What a Kruger school excursion really costs per learner, why SANParks counts a twelve-year-old as an adult, how budget school accommodation is actually priced, what makes group catering work — and a five-step way to build the budget in order.",
+  },
+  {
+    chapter: "Celebrations",
+    title:
+      "Best Venues for Milestone Birthday Parties Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/milestone-birthday-venues-kruger-national-park",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-09-15",
+    readingMinutes: 6,
+    excerpt:
+      "Where a fortieth, sixtieth or eightieth actually works in the Lowveld. Five areas near Kruger — Hazyview, the Sabi Sand, Hoedspruit, Marloth Park and White River — honestly compared on beds and price, from R250 to R29,600 a night, and why, once the guest list passes twenty, the bed decides the birthday.",
+  },
+  {
+    chapter: "Contractor & group stays",
+    title:
+      "Discounted accommodation for contractors in Hazyview: Kanaan Guest Farm offers reduced group rates for teams booking longer stays near Kruger",
+    category: "guide",
+    status: "live",
+    href: "/blog/discounted-contractor-accommodation-hazyview",
+    image: pro(5873).src,
+    imageAlt: "Whitewashed self-catering lodge rooms under a flowering bougainvillea at Kanaan Guest Farm — discounted contractor accommodation in Hazyview.",
+    datePublished: "2026-09-21",
+    readingMinutes: 8,
+    excerpt:
+      "For the site agent who needs beds for eight by Monday: reduced group rates for teams booking longer stays, quoted per booking on top of R250 per person sharing. Self-catering lodge rooms, twin rooms, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi, free parking and laundry on request — 48 minutes from Kruger's airport.",
+  },
+  {
+    chapter: "Work crews",
+    title:
+      "Contractor accommodation in Hazyview: affordable self-catering rooms near Kruger, with secure parking, Wi-Fi and group rates for work crews",
+    category: "guide",
+    status: "live",
+    href: "/blog/contractor-accommodation-hazyview",
+    image: pro(5782).src,
+    imageAlt: "A row of numbered lodge room doors under a shaded walkway at Kanaan Guest Farm — contractor accommodation in Hazyview.",
+    datePublished: "2026-09-21",
+    readingMinutes: 5,
+    excerpt:
+      "For the site agent who needs beds for eight by Monday: self-catering lodge rooms, twin rooms from R250 per person sharing, an 8-bed wooden house and powered campsites on a fenced farm with a motorised gate, free Wi-Fi and free parking. One day's drive from Gauteng — 394 km from Johannesburg, 372 from Pretoria — and about an hour from Nelspruit or Acornhoek. Group and long-stay bookings quoted individually.",
+  },
+  {
+    chapter: "Christmas & festive season",
+    title:
+      "Planning Your Lowveld Christmas Family Vacation: A Complete Hazyview Guide",
+    category: "guide",
+    status: "live",
+    href: "/blog/hazyview-christmas-family-vacation",
+    image: img.hazyviewChristmasKrugerDawn.src,
+    imageAlt: img.hazyviewChristmasKrugerDawn.alt,
+    datePublished: "2026-10-05",
+    readingMinutes: 7,
+    excerpt:
+      "December in Hazyview is hot, green and stormy, and Kruger caps day visitors at every gate over the holidays. Here's how we'd plan a family Christmas: December weather, the festive gate-booking rule, the Panorama Route, a five-day itinerary, a packing list and how many nights you need.",
+  },
+  {
+    chapter: "Johannesburg to Kruger",
+    title:
+      "Why Hazyview Is an Ideal Stop Between Johannesburg and Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/johannesburg-to-kruger-national-park-hazyview",
+    image: img.jhbKrugerEscarpment.src,
+    imageAlt: img.jhbKrugerEscarpment.alt,
+    datePublished: "2026-10-05",
+    readingMinutes: 6,
+    excerpt:
+      "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
+  },
+  {
+    chapter: "Camping",
+    title:
+      "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/camping-near-kruger-national-park",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
   },
   {
     chapter: "Getting Around",

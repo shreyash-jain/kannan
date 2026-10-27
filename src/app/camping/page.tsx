@@ -168,6 +168,17 @@ export default function CampingPage() {
         >
           See every room <span aria-hidden>→</span>
         </Link>
+        <p className="mt-6 max-w-2xl text-sm text-muted">
+          Bringing a work crew? The campsites are how a large or short-notice
+          team fits when the rooms are full — see our guide to{" "}
+          <Link
+            href="/blog/discounted-contractor-accommodation-hazyview"
+            className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+          >
+            discounted contractor accommodation near Kruger
+          </Link>
+          .
+        </p>
       </Section>
 
       <CTA />
