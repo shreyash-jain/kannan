@@ -284,7 +284,7 @@ export const posts: Post[] = [
     href: "/blog/cab-in-hazyview",
     image: img.cabHazyviewRoadHero.src,
     imageAlt: img.cabHazyviewRoadHero.alt,
-    datePublished: "2026-09-18",
+    datePublished: "2026-10-20",
     readingMinutes: 4,
     excerpt:
       "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
