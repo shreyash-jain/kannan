@@ -361,6 +361,19 @@ export const posts: Post[] = [
     excerpt:
       "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
   },
+  {
+    chapter: "Getting Around",
+    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
+    category: "guide",
+    status: "live",
+    href: "/blog/cab-in-hazyview",
+    image: img.cabHazyviewRoadHero.src,
+    imageAlt: img.cabHazyviewRoadHero.alt,
+    datePublished: "2026-10-20",
+    readingMinutes: 4,
+    excerpt:
+      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
