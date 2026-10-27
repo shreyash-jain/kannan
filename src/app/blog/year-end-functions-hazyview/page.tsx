@@ -57,7 +57,7 @@ import {
 //   • 16 Dec 2026 Wednesday; 25 Dec Friday; 26 Dec Saturday (no day in lieu).
 // ---------------------------------------------------------------------
 
-const datePublished = "2026-10-26";
+const datePublished = "2026-10-24";
 const slug = "year-end-functions-hazyview";
 const headline =
   "Year-End Functions in Hazyview: How to Plan the Perfect Celebration";
