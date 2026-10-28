@@ -408,8 +408,8 @@ export const posts: Post[] = [
     category: "guide",
     status: "live",
     href: "/blog/perrys-bridge-market-hazyview",
-    image: img.perrysBridgeCraftStall.src,
-    imageAlt: img.perrysBridgeCraftStall.alt,
+    image: img.perrysBridgeCuriosHero.src,
+    imageAlt: img.perrysBridgeCuriosHero.alt,
     datePublished: "2026-10-19",
     readingMinutes: 7,
     excerpt:

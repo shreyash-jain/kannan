@@ -66,6 +66,14 @@ const link =
 const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=Perry%27s+Bridge+Trading+Post+Hazyview";
 
+// Openly licensed photos (Wikimedia Commons), credited in captions and
+// under the hero as the licences require.
+const credits = {
+  hero: "https://commons.wikimedia.org/wiki/File:Curio_Sellers_at_Graskop,_Mpumalanga,_South_Africa_(20328530038).jpg",
+  beadwork: "https://commons.wikimedia.org/wiki/File:Crafts_at_Ndebele_Village,_Mpumalanga,_South_Africa_(20516084625).jpg",
+  animals: "https://commons.wikimedia.org/wiki/File:Beadwork_Wire_Art_and_Crafts_(22).JPG",
+};
+
 const gateMin = `${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`;
 
 const faqs = [
@@ -86,6 +94,10 @@ const faqs = [
     a: "Kuka Restaurant & Cocktail Lounge, Pioneers Grill and Topolinos for meals, and Plato for coffee. Each keeps its own hours, so phone ahead for an early breakfast or a late supper.",
   },
   {
+    q: "How long do you need at Perry's Bridge?",
+    a: "Half a day. It's small, so a morning covers the shops, the Saturday market, a snake show and lunch. Book the Aerial Cable Trail and that takes most of the half-day on its own.",
+  },
+  {
     q: "Is Perry's Bridge suitable for families?",
     a: "Very. The reptile park is under cover and the Skyway rope park suits older children. Check the age rules for each activity when you book.",
   },
@@ -100,7 +112,7 @@ export const metadata = createBlogPostMetadata({
   title: "Perry's Bridge Market Hazyview: Crafts, Food & Shopping",
   description:
     "Explore Perry's Bridge Market in Hazyview, South Africa, with local crafts, food, shopping tips and nearby attractions for your Mpumalanga trip.",
-  image: img.perrysBridgeCraftStall,
+  image: img.perrysBridgeCuriosHero,
   datePublished,
   category: "guide",
 });
@@ -280,7 +292,7 @@ function Photo({
   caption,
 }: {
   slot: { src: string; alt: string };
-  caption: string;
+  caption: React.ReactNode;
 }) {
   return (
     <div className="mx-auto max-w-5xl px-5 lg:px-8">
@@ -313,7 +325,7 @@ export default function PerrysBridgeMarketPage() {
           description:
             "A practical guide to Perry's Bridge Trading Post and its Saturday craft market in Hazyview, written by the family who run Kanaan Guest Farm ten minutes away: what to buy, where to eat, the reptile park and Skyway Trails, opening hours to check, and how to fit it around Kruger and the Panorama Route.",
           path: `/blog/${slug}`,
-          image: img.perrysBridgeCraftStall.src,
+          image: img.perrysBridgeCuriosHero.src,
           datePublished,
         })}
       />
@@ -321,16 +333,23 @@ export default function PerrysBridgeMarketPage() {
 
       <article>
         <BlogHero
-          image={img.perrysBridgeCraftStall.src}
-          alt={img.perrysBridgeCraftStall.alt}
+          image={img.perrysBridgeCuriosHeroBackdrop.src}
+          alt={img.perrysBridgeCuriosHeroBackdrop.alt}
           eyebrow="Guide · Hazyview"
           title={headline}
           titleSize="compact"
-          intro="Ten minutes from our gate there's an old citrus farm full of craft shops, good coffee and a green mamba behind glass. Here's how we'd spend a few hours there."
+          intro="Ten minutes from our gate there's an old citrus farm full of craft shops, good coffee and a green mamba behind glass. It's small, so give it half a day. Here's how we'd spend it."
           byline="Anneli & Matthew"
           datePublished={datePublished}
           readingMinutes={7}
         />
+        <p className="mx-auto max-w-5xl px-5 pt-3 text-right text-xs text-muted lg:px-8">
+          A curio shop in Graskop, up on the Panorama Route. Photo:{" "}
+          <a href={credits.hero} target="_blank" rel="noopener noreferrer" className="underline">
+            South African Tourism
+          </a>
+          , CC BY 2.0, cropped and darkened.
+        </p>
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
@@ -340,6 +359,7 @@ export default function PerrysBridgeMarketPage() {
                 "The craft market is a Saturday thing. The shops trade all week.",
                 "Lunch options: Kuka, Pioneers Grill and Topolinos. Coffee at Plato.",
                 "The reptile park and Skyway Trails are in the same complex.",
+                "Plan a half-day, not a whole one. It's small, and that's part of the charm.",
                 "It's free to walk around. Phone ahead for anything you'd hate to miss.",
               ]}
             />
@@ -404,8 +424,16 @@ export default function PerrysBridgeMarketPage() {
         </Section>
 
         <Photo
-          slot={img.perrysBridgeLeatherSilk}
-          caption="Leather and silk: the sort of thing worth asking about. (Illustration.)"
+          slot={img.perrysBridgeBeadwork}
+          caption={
+            <>
+              Beadwork by hand, at an Ndebele craft village in Mpumalanga. Photo:{" "}
+              <a href={credits.beadwork} target="_blank" rel="noopener noreferrer" className="underline">
+                South African Tourism
+              </a>
+              , CC BY 2.0, cropped.
+            </>
+          }
         />
 
         <Section>
@@ -441,8 +469,16 @@ export default function PerrysBridgeMarketPage() {
         </Section>
 
         <Photo
-          slot={img.perrysBridgeVerandaCoffee}
-          caption="Coffee in the shade after an early Kruger gate. (Illustration.)"
+          slot={img.perrysBridgeBeadedAnimals}
+          caption={
+            <>
+              Beaded wire animals, a South African market favourite. Photo:{" "}
+              <a href={credits.animals} target="_blank" rel="noopener noreferrer" className="underline">
+                Aurobindo Ogra
+              </a>
+              , CC BY-SA 3.0, cropped.
+            </>
+          }
         />
 
         <Section>
@@ -469,7 +505,7 @@ export default function PerrysBridgeMarketPage() {
           </div>
           <div className="prose-kanaan mx-auto max-w-5xl">
             <p className="mt-10 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
-              A Saturday at Perry&rsquo;s Bridge, the way we&rsquo;d do it
+              A Saturday morning at Perry&rsquo;s Bridge, the way we&rsquo;d do it
             </p>
           </div>
           <NumberedList
@@ -491,14 +527,14 @@ export default function PerrysBridgeMarketPage() {
                 body: "Forty-five minutes, under cover. The park opens at 10:00.",
               },
               {
-                time: "12:30",
+                time: "12:00",
                 title: "Lunch",
                 body: "Pizza at Topolinos, or a long table at Kuka.",
               },
               {
-                time: "15:00",
-                title: "Second snake show",
-                body: "Or the Skyway rope park. Some market stalls may be packing up.",
+                time: "13:30",
+                title: "Home for the afternoon",
+                body: "That's Perry's Bridge done. Back to the farm for a swim before the heat peaks.",
               },
             ]}
           />
@@ -525,17 +561,15 @@ export default function PerrysBridgeMarketPage() {
             </p>
             <h3 className={h3}>Relax with a spa treatment</h3>
             <p>
-              Dee&rsquo;s African Spa does massages and treatments. Book ahead
-              and keep it for the afternoon after a long Kruger day.
+              We&rsquo;ll be honest: Dee&rsquo;s African Spa is small. It&rsquo;s
+              fine for a quick manicure or pedicure while someone else in
+              your party browses. If you want a proper spa day, Hazyview has
+              better options, and we&rsquo;re happy to point you to one.
             </p>
           </div>
           <DurationInfographic />
         </Section>
 
-        <Photo
-          slot={img.perrysBridgeZipline}
-          caption="Skyway Trails' Aerial Cable Trail runs through the forest. (Illustration.)"
-        />
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-5xl">
@@ -563,9 +597,11 @@ export default function PerrysBridgeMarketPage() {
             </p>
             <h3 className={h3}>How much time should you spend there?</h3>
             <p>
-              An hour is enough for coffee and a browse. Add lunch and a snake
-              show and it&rsquo;s a relaxed half-day. The Aerial Cable Trail
-              takes a morning on its own.
+              Half a day. Perry&rsquo;s Bridge is small: there are plenty of
+              shops, but they&rsquo;re all a short walk apart, and a morning
+              covers the market, a snake show and lunch without rushing. Booked
+              the Aerial Cable Trail? That&rsquo;s most of your half-day on its
+              own, so save the browsing for another morning.
             </p>
           </div>
           <NumberedList
@@ -674,7 +710,7 @@ export default function PerrysBridgeMarketPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <ClosingBlock
               title="Plan your Hazyview stay"
-              thesis="Perry's Bridge isn't a reason to come to Hazyview. It's the reason your day off here is a good one."
+              thesis="Perry's Bridge isn't a full day out. Give it a morning, then spend the afternoon by the pool."
               body={
                 <>
                   Tell us which Saturday you&rsquo;re here and we&rsquo;ll tell
