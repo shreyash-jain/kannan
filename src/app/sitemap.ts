@@ -18,6 +18,7 @@ const staticRoutes: {
   { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
   { path: "/group-functions", priority: 0.9, changeFrequency: "monthly" },
   { path: "/camping", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/transfers", priority: 0.9, changeFrequency: "monthly" },
   { path: "/facilities", priority: 0.7, changeFrequency: "monthly" },
   { path: "/gallery", priority: 0.7, changeFrequency: "monthly" },
   { path: "/the-land", priority: 0.7, changeFrequency: "monthly" },
