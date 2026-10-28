@@ -361,6 +361,33 @@ export const posts: Post[] = [
     excerpt:
       "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
   },
+  {
+    chapter: "Camping",
+    title:
+      "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/camping-near-kruger-national-park",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
+  },
+  {
+    chapter: "Getting Around",
+    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
+    category: "guide",
+    status: "live",
+    href: "/blog/cab-in-hazyview",
+    image: img.cabHazyviewRoadHero.src,
+    imageAlt: img.cabHazyviewRoadHero.alt,
+    datePublished: "2026-10-20",
+    readingMinutes: 4,
+    excerpt:
+      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

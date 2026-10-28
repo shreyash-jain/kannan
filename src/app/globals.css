@@ -17,6 +17,12 @@
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
+
+  /* Widened from Tailwind's 65ch default — the long-read column felt too
+     narrow against the page on large screens. Stays under max-w-5xl
+     (64rem) so the wide data blocks (StatGrid, NumberedList) still read
+     as a deliberate break-out, not a shrink. */
+  --max-width-prose: 56rem;
 }
 
 :root {
