@@ -29,6 +29,11 @@ export const site = {
     // the site verbatim so the reviewer can match it; the two above do not.
     whatsappVerification: "+27642116345",
     whatsappVerificationDisplay: "+27 64 211 6345",
+    // Transfers and airport pick-ups. Same digits as the verification number
+    // above — one handset, two jobs — but named for what it is used for, so
+    // changing the lift number later does not touch the Meta line.
+    whatsappRide: "+27642116345",
+    whatsappRideDisplay: "+27 64 211 6345",
     email: "bookings@kanaanguestfarm.com",
   },
   // Legal operator. Rendered in the footer of every page so Meta's reviewer
@@ -151,12 +156,22 @@ export const whatsappMessages = {
   contact: "Hi Anneli and Matthew, I'd love to make an enquiry about Kanaan.",
 } as const;
 
+// The lift goes to a different handset from bookings, so it gets its own link
+// rather than a key in whatsappMessages above.
+export const rideMessage =
+  "Hi, I would love to book a ride to Kanaan Guest Farm. Could you let me know the fare and whether you are free?";
+
 export type WhatsAppKey = keyof typeof whatsappMessages;
 
 export function whatsappLink(key: WhatsAppKey = "home"): string {
   const number = site.contact.whatsapp.replace(/\D/g, "");
   const text = encodeURIComponent(whatsappMessages[key]);
   return `https://wa.me/${number}?text=${text}`;
+}
+
+export function whatsappRideLink(): string {
+  const number = site.contact.whatsappRide.replace(/\D/g, "");
+  return `https://wa.me/${number}?text=${encodeURIComponent(rideMessage)}`;
 }
 
 // A WhatsApp link with a message we compose on the spot — used by /rooms so

@@ -17,7 +17,7 @@ import {
   Sources,
 } from "@/components/blog/Blocks";
 
-const datePublished = "2026-09-18";
+const datePublished = "2026-10-20";
 const headline = "Need a cab in Hazyview? Here's the easiest way to get around";
 
 // Kanaan Transfers' own WhatsApp number — a separate local transport service,
