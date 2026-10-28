@@ -361,6 +361,20 @@ export const posts: Post[] = [
       "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
   },
   {
+    chapter: "Group functions",
+    title:
+      "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
+    category: "guide",
+    status: "live",
+    href: "/blog/year-end-functions-hazyview",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-10-24",
+    readingMinutes: 8,
+    excerpt:
+      "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
+  },
+  {
     chapter: "Camping",
     title:
       "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
