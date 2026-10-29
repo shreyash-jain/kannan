@@ -75,6 +75,7 @@ re-verify it against `origin/main` before trusting it.
 | Food guide — `where-to-eat-around-hazyview` | `blog-9-wedding-venues` | **Built, pushed, not merged** (this row said "not started" — it was wrong) | Owner has not reviewed it. It ships together with blog-9 as things stand, because both live on that one branch. |
 | School-groups guide — `affordable-school-trip-lowveld` | `blog-14-affordable-school-trip-lowveld` | **PR #36 open into `main`** (2026-09-12). On `preview`. | Marketing approved on preview; waiting on the owner. Merge only when marketing says publish. Branched straight off `main` — every dependency (`campingAvenueWide`, `woodenHouseExterior`, `hilltopViewpoint`, `site.capacity.campingPeople`, `/group-functions/school-groups`) already exists there. |
 | Milestone-birthday venues guide — `milestone-birthday-venues-kruger-national-park` | `blog-15-milestone-birthday-venues` | **Built, pushed, on `preview`** (2026-09-15) — reached `preview` by cherry-pick (`3a37c89`), same as blog-14, because the `rooms.ts` conflict below is still unsettled. No PR yet. | Marketing reviewed on localhost and asked for the preview link; waiting on their word (then the owner's) before a PR / publish. Branched off `main` at `a824b38` (after blog-14 merged) — every dependency (`venueCovered`, `venueLawnWide`, `campingAvenueWide`, `poolReal`, `pro(5708)`, `pro(5751)`, `eventVenueLd`, `/group-functions/team-family`) exists on `main` and on `preview`. Images are **all real farm photography**: the OpenRouter account had **no credit** on 2026-09-15 (`402 Insufficient credits`), so the three planned off-farm renders (lodge deck, boma, Marloth stoep) were never made — top up the account before the next post that needs generated scenes. |
+| Camping guide — `camping-near-kruger-national-park` | `blog-20-camping-near-kruger-national-park` | **PR #48 open into `main`**; on `preview`. Revised 2026-10-22 to marketing's feedback. | Waiting on marketing. Now built around inside-Kruger vs just-outside, with a worked cost example (couple, 3 nights, 2 Kruger days: saves R763 SA / R1,867 international). Site rates Pretoriuskop R411–R536, Skukuza R423–R551 (krugerpark.co.za 2026/27); conservation fees SANParks 1 Nov 2026–31 Oct 2027. Camping price R250/two, R180/one (`site.pricing`) — **confirm with Anneli**. AI frames removed; real photos only. `site.tagline` corrected to "30–45 minutes from Kruger's Phabeni gate" (footer, default title). Re-check fees after 31 Oct 2027. |
 
 ## ⚠️ `preview` is NOT level with `main` (2026-09-11)
 
@@ -195,4 +196,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-10-13*
+*Last updated: 2026-10-22*
