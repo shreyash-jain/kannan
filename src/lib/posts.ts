@@ -348,6 +348,47 @@ export const posts: Post[] = [
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
   {
+    chapter: "Group functions",
+    title:
+      "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
+    category: "guide",
+    status: "live",
+    href: "/blog/year-end-functions-hazyview",
+    image: img.venueCovered.src,
+    imageAlt: img.venueCovered.alt,
+    datePublished: "2026-10-24",
+    readingMinutes: 8,
+    excerpt:
+      "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
+  },
+  {
+    chapter: "Camping",
+    title:
+      "Camping in the Lowveld: The Ultimate Guide to Camping Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/camping-near-kruger-national-park",
+    image: img.campingAvenueWide.src,
+    imageAlt: img.campingAvenueWide.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
+  },
+  {
+    chapter: "Getting Around",
+    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
+    category: "guide",
+    status: "live",
+    href: "/blog/cab-in-hazyview",
+    image: img.cabHazyviewRoadHero.src,
+    imageAlt: img.cabHazyviewRoadHero.alt,
+    datePublished: "2026-10-20",
+    readingMinutes: 4,
+    excerpt:
+      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+  },
+  {
     chapter: "Guest farms near Kruger",
     title: "Best Guest Farms Near Kruger National Park for a Safari Holiday",
     category: "guide",
