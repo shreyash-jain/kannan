@@ -97,6 +97,45 @@ export function lodgingTypeLd(opts: {
   };
 }
 
+/**
+ * Kanaan Transfers as its own service entity. TaxiService is the narrowest
+ * schema.org type that fits a point-to-point car service, and it carries the
+ * two things a search engine (or an assistant answering "is there Uber in
+ * Hazyview?") needs: where it operates, and what it costs to start.
+ */
+export function taxiServiceLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "@id": `${site.url}/transfers#service`,
+    name: site.transfers.name,
+    url: `${site.url}/transfers`,
+    description: `A local car service covering a ${site.transfers.radiusKm}km radius around Hazyview in Mpumalanga — airport transfers from Kruger Mpumalanga International Airport, Kruger gate runs, Panorama Route day trips and town errands. Booked on WhatsApp, with the fare quoted before the trip is confirmed.`,
+    telephone: site.contact.whatsappRideDisplay,
+    provider: { "@id": `${site.url}/#lodging` },
+    areaServed: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: site.geo.lat,
+        longitude: site.geo.lng,
+      },
+      geoRadius: site.transfers.radiusKm * 1000, // schema.org wants metres
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: site.pricing.currency,
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: site.transfers.fromZAR,
+        priceCurrency: site.pricing.currency,
+        valueAddedTaxIncluded: true,
+      },
+      availability: "https://schema.org/InStock",
+    },
+  };
+}
+
 export function faqLd(faqs: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
