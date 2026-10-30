@@ -388,6 +388,20 @@ export const posts: Post[] = [
     excerpt:
       "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
   },
+  {
+    chapter: "Perry's Bridge",
+    title:
+      "Perry's Bridge Market Hazyview: A Complete Guide to Local Crafts, Food & Shopping",
+    category: "guide",
+    status: "live",
+    href: "/blog/perrys-bridge-market-hazyview",
+    image: img.perrysBridgeCuriosHero.src,
+    imageAlt: img.perrysBridgeCuriosHero.alt,
+    datePublished: "2026-10-19",
+    readingMinutes: 7,
+    excerpt:
+      "Ten minutes from our gate: Perry's Bridge Trading Post and its Saturday craft market. What to buy, where to eat, the reptile park and Skyway Trails, the hours worth checking, and how to fit it around Kruger.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

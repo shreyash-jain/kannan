@@ -76,6 +76,21 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **Real photos, not AI illustrations, for places off the farm** (client, 2026-10-27,
+  Perry's Bridge post): the AI detail shots "feel a little bit too unrealistic". Use real
+  photos found online, credited. *Credit alone is not permission*: use only openly licensed
+  images (Wikimedia Commons CC BY / CC BY-SA / CC0, checked per file), with the author,
+  licence and "cropped" in the caption. South African Tourism's Flickr set on Commons
+  (CC BY 2.0) has good Mpumalanga craft scenes without faces. No usable licensed photo of
+  Perry's Bridge itself exists; if Anneli takes a few on a visit, swap them in. When none
+  fits a slot, drop the image rather than fake it. A busy hero photo needs a darkened
+  backdrop slot (`e_blur` + `e_colorize` via Cloudinary; `e_brightness` with `f_auto`
+  posterised) so the white H1 stays legible.
+- **Perry's Bridge is a half-day, not a full day** (client, 2026-10-27): it is small; plenty
+  of shops but all a short walk apart. Frame any itinerary around a morning there.
+- **Be honest about weak local options** (client, 2026-10-27): Dee's African Spa at Perry's
+  Bridge is small, fine for a quick manicure or pedicure, not a spa day; Hazyview has better
+  spa options. Say so plainly rather than listing every business as equally good.
 - **No Boer War history — say "rich in history" instead** (Anneli, 2026-10-13, Joburg-to-
   Kruger post). A line about the Long Tom Pass being named after Boer War guns was pulled.
   *Why:* there is a lot of politics around the Boer War, and the area has plenty of other
@@ -172,4 +187,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-10-17.*
+*Last reviewed: 2026-10-29.*
