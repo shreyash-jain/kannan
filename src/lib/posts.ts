@@ -402,6 +402,19 @@ export const posts: Post[] = [
     excerpt:
       "Ten minutes from our gate: Perry's Bridge Trading Post and its Saturday craft market. What to buy, where to eat, the reptile park and Skyway Trails, the hours worth checking, and how to fit it around Kruger.",
   },
+  {
+    chapter: "Guest farms near Kruger",
+    title: "Best Guest Farms Near Kruger National Park for a Safari Holiday",
+    category: "guide",
+    status: "live",
+    href: "/blog/best-guest-farms-near-kruger-national-park",
+    image: img.lowveldViewReal.src,
+    imageAlt: img.lowveldViewReal.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
+    excerpt:
+      "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
