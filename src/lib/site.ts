@@ -100,6 +100,16 @@ export const site = {
     },
     halaal: false,
   },
+  // Kanaan Transfers — the lift service, booked on WhatsApp. Facts confirmed
+  // against the published cab guide (/blog/cab-in-hazyview, 2026-10-20).
+  transfers: {
+    name: "Kanaan Transfers",
+    fromZAR: 50, // shortest town trips; every fare is quoted before booking
+    radiusKm: 50, // standard coverage around Hazyview
+    seats: 4, // one vehicle, four passengers
+    kmiaKm: 62, // KMIA sits just outside the standard radius
+    cashFree: true, // card on file, charged after the trip
+  },
   capacity: {
     sleepingTotal: 50, // ~40–50 person sleeping capacity across rooms
     backpackersBeds: 8,
@@ -131,6 +141,7 @@ export const nav = [
   { href: "/our-story", label: "Our Story" },
   { href: "/stay", label: "Stay" },
   { href: "/camping", label: "Camping" },
+  { href: "/transfers", label: "Transfers" },
   { href: "/packages", label: "Packages" },
   { href: "/group-functions", label: "Group Functions" },
   { href: "/the-land", label: "The Land" },
@@ -154,6 +165,8 @@ export const whatsappMessages = {
     "Hi Anneli and Matthew, I'd love to know more about visiting Kruger and the Lowveld from your farm.",
   blog: "Hi Anneli and Matthew, I just read your journal — I'd love to come and see Kanaan for myself.",
   contact: "Hi Anneli and Matthew, I'd love to make an enquiry about Kanaan.",
+  transfers:
+    "Hi, I would like to book a ride with Kanaan Transfers. Could you let me know the fare?",
 } as const;
 
 // The lift goes to a different handset from bookings, so it gets its own link

@@ -906,6 +906,51 @@ export const img = {
     width: 1822,
     height: 1024,
   },
+  // Perry's Bridge market guide (2026-10-19; real photos 2026-10-27, after
+  // the client found the AI illustrations unrealistic). No openly licensed
+  // photo of Perry's Bridge itself exists at a usable size, so these are
+  // real Mpumalanga / South African craft scenes, credited on the page.
+  //   perrysBridgeCuriosHero  South African Tourism, CC BY 2.0
+  //   perrysBridgeBeadwork    South African Tourism, CC BY 2.0
+  //   perrysBridgeBeadedAnimals  Aurobindo Ogra, CC BY-SA 3.0
+  perrysBridgeCuriosHero: {
+    src: cldImage(
+      "perrys-graskop-curio-shop",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "Rows of beaded dolls on a glass shelf in a curio shop in Graskop, Mpumalanga, with wind chimes and postcards behind.",
+    width: 3840,
+    height: 2556,
+  },
+  // The same photo behind the hero title: darkened and softened, because the
+  // beadwork is busy enough to swallow white type (marketing, 2026-10-27).
+  perrysBridgeCuriosHeroBackdrop: {
+    src: cldImage(
+      "perrys-graskop-curio-shop",
+      "c_fill,g_center,ar_16:9,w_1920/e_blur:600/e_colorize:45,co_rgb:1b2a1d/f_auto,q_auto",
+    ),
+    alt: "Rows of beaded dolls on a glass shelf in a curio shop in Graskop, Mpumalanga, with wind chimes and postcards behind.",
+    width: 3840,
+    height: 2556,
+  },
+  perrysBridgeBeadwork: {
+    src: cldImage(
+      "perrys-ndebele-beadwork-hands",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1600",
+    ),
+    alt: "Hands threading tiny glass beads onto a geometric beadwork piece, a pile of loose coloured beads on the table, at an Ndebele craft village in Mpumalanga.",
+    width: 3840,
+    height: 2563,
+  },
+  perrysBridgeBeadedAnimals: {
+    src: cldImage(
+      "perrys-beaded-wire-animals",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1600",
+    ),
+    alt: "Beaded wire giraffes, rhinos, zebras and a beaded aloe laid out on a craft market table in the sun.",
+    width: 3840,
+    height: 2560,
+  },
   familySafariHero: {
     src: cldImage(
       "family-kruger-selfdrive-hero",

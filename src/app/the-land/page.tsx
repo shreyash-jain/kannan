@@ -122,6 +122,10 @@ export default function TheLandPage() {
                 <dd className="mt-1 text-sm">Around 4½ wonderful hours on the N4 east, with breathtaking Lowveld scenery as you exit toward Hazyview.</dd>
               </div>
               <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">Without a car of your own</dt>
+                <dd className="mt-1 text-sm">There is no Uber out here, so we run the lifts ourselves — airport pickups, gate runs and Panorama days through <Link href="/transfers" className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep">Kanaan Transfers</Link>.</dd>
+              </div>
+              <div className="border-t border-black/10 pt-3">
                 <dt className="font-display text-base text-forest-deep">From the Kruger gates</dt>
                 <dd className="mt-1 text-sm">Just {site.distances.krugerGateMinutesMin} to {site.distances.krugerGateMinutesMax} minutes from Phabeni or Numbi — straight back after a morning game drive.</dd>
               </div>

@@ -88,6 +88,12 @@ export default function CabInHazyviewPage() {
             <p>
               {`That catches out a lot of first-time visitors. You land at Kruger Mpumalanga International Airport, ${site.distances.kmiaMinutes} minutes from Hazyview, phone in hand, and there is no app to open. The honest answer is that a taxi Hazyview South Africa visitor can rely on isn't a tap-and-go service — it's Kanaan Transfers, a local car service you reach on WhatsApp.`}
             </p>
+            <p>
+              Everything below is the long version. If you would rather just
+              see the fares, the coverage and the booking steps on one page,
+              that lives on our{" "}
+              <Link href="/transfers">Hazyview transfers page</Link>.
+            </p>
           </div>
         </Section>
 
