@@ -348,19 +348,6 @@ export const posts: Post[] = [
       "Johannesburg to Hazyview is 394 km, about 4½ hours on the N4. Why we'd stop the night before your first game drive: the route and tolls, the three Kruger gates, a four-day plan and the best time of year.",
   },
   {
-    chapter: "Guest farms near Kruger",
-    title: "Best Guest Farms Near Kruger National Park for a Safari Holiday",
-    category: "guide",
-    status: "live",
-    href: "/blog/best-guest-farms-near-kruger-national-park",
-    image: img.lowveldViewReal.src,
-    imageAlt: img.lowveldViewReal.alt,
-    datePublished: "2026-10-17",
-    readingMinutes: 6,
-    excerpt:
-      "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
-  },
-  {
     chapter: "Group functions",
     title:
       "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
@@ -389,18 +376,17 @@ export const posts: Post[] = [
       "Camping inside Kruger or just outside it? Kruger campsite prices on top of the daily park fee, a worked cost example for South African and international couples, and why a pitch on the doorstep in Hazyview usually costs less.",
   },
   {
-    chapter: "Group functions",
-    title:
-      "Year-End Functions in Hazyview: How to Plan the Perfect Celebration",
+    chapter: "Getting Around",
+    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
     category: "guide",
     status: "live",
-    href: "/blog/year-end-functions-hazyview",
-    image: img.venueCovered.src,
-    imageAlt: img.venueCovered.alt,
-    datePublished: "2026-10-26",
-    readingMinutes: 8,
+    href: "/blog/cab-in-hazyview",
+    image: img.cabHazyviewRoadHero.src,
+    imageAlt: img.cabHazyviewRoadHero.alt,
+    datePublished: "2026-10-20",
+    readingMinutes: 4,
     excerpt:
-      "Beds before seats, who drives home, and a roof for the Lowveld rain. A practical guide to planning a year-end function in Hazyview: venue, budget, activities, a sample day and a planning countdown, from the family who run Kanaan.",
+      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
   },
   {
     chapter: "Perry's Bridge",
@@ -417,17 +403,17 @@ export const posts: Post[] = [
       "Ten minutes from our gate: Perry's Bridge Trading Post and its Saturday craft market. What to buy, where to eat, the reptile park and Skyway Trails, the hours worth checking, and how to fit it around Kruger.",
   },
   {
-    chapter: "Getting Around",
-    title: "Need a Cab in Hazyview? Here's the Easiest Way to Get Around",
+    chapter: "Guest farms near Kruger",
+    title: "Best Guest Farms Near Kruger National Park for a Safari Holiday",
     category: "guide",
     status: "live",
-    href: "/blog/cab-in-hazyview",
-    image: img.cabHazyviewRoadHero.src,
-    imageAlt: img.cabHazyviewRoadHero.alt,
-    datePublished: "2026-10-20",
-    readingMinutes: 4,
+    href: "/blog/best-guest-farms-near-kruger-national-park",
+    image: img.lowveldViewReal.src,
+    imageAlt: img.lowveldViewReal.alt,
+    datePublished: "2026-10-17",
+    readingMinutes: 6,
     excerpt:
-      "There's no Uber or Bolt in Hazyview. An honest, practical guide to how a local Hazyview taxi service actually works — how to book a reliable cab in minutes, what shapes the fare, and the airport transfers, day trips and town errands it's genuinely good for.",
+      "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
   },
 ];
 
