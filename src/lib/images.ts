@@ -1083,6 +1083,21 @@ export const img = {
     width: 712,
     height: 1600,
   },
+  // ---- "Getting around Hazyview without a car" guide (Blog 24) ------------
+  // One dedicated AI frame (qwen/qwen-image-3, 2026-11-03), OFF the farm: an
+  // empty open game-drive vehicle on a Lowveld roadside. No faces, plates or
+  // text. A second AI frame (guests on a guided drive) was dropped at
+  // marketing's request for real photos; the body uses pro(6071) and
+  // pro(5694) from the professional shoot instead.
+  carFreeHazyviewHero: {
+    src: cldImage(
+      "car-free-hazyview-hero",
+      "f_auto,q_auto,c_fill,g_center,ar_16:9,w_1920",
+    ),
+    alt: "An empty open-sided game-drive vehicle waiting on a red-dirt verge beside a quiet tarred Lowveld road at sunrise, banana plantations and misty hills behind it.",
+    width: 1920,
+    height: 1080,
+  },
 } as const;
 
 // ---------------------------------------------------------------------
