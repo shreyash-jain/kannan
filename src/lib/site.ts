@@ -18,6 +18,9 @@ export const site = {
   },
   // Approximate Hazyview coordinates — refine with exact farm GPS when Anneli confirms.
   geo: { lat: -25.0461, lng: 31.1264 },
+  // The pin Anneli shares with guests. Kept as the share link she sent rather
+  // than coordinates, so "open in Google Maps" lands on exactly her listing.
+  mapsShareUrl: "https://maps.app.goo.gl/WdT9TVihcG9aaw2x5",
   contact: {
     phonePrimary: "+27637943880",
     phonePrimaryDisplay: "+27 63 794 3880",
