@@ -153,6 +153,69 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+/**
+ * The header menu, condensed to six items with dropdowns.
+ *
+ * The flat `nav` above grew to eleven links and started overflowing the bar on
+ * a 13" laptop — the trailing items simply vanished, and they were the ones
+ * that earn bookings. Grouping keeps every page one hover away without making
+ * the reader scan eleven things to find one.
+ *
+ * `nav` is deliberately left alone: the footer still lists every page, which
+ * is what both a lost visitor and a crawler want.
+ */
+export type HeaderNavItem = {
+  href: string;
+  label: string;
+  /** Renders the rooms panel rather than a plain list. */
+  rooms?: boolean;
+  children?: { href: string; label: string; blurb: string }[];
+};
+
+export const headerNav: HeaderNavItem[] = [
+  {
+    href: "/our-story",
+    label: "Our Story",
+    children: [
+      {
+        href: "/our-story",
+        label: "Our Story",
+        blurb: "Anneli and Matthew, and how the farm came to be ours.",
+      },
+      {
+        href: "/the-land",
+        label: "The Land",
+        blurb: "Kruger, the Panorama Route and everything a day trip away.",
+      },
+      {
+        href: "/gallery",
+        label: "Gallery",
+        blurb: "The whole farm, photographed exactly as it is.",
+      },
+    ],
+  },
+  { href: "/stay", label: "Stay", rooms: true },
+  {
+    href: "/packages",
+    label: "Experiences",
+    children: [
+      {
+        href: "/packages",
+        label: "Packages",
+        blurb: "Multi-day stays with the days already planned out.",
+      },
+      {
+        href: "/group-functions",
+        label: "Group Functions",
+        blurb: "Schools, churches, teams and year-end celebrations.",
+      },
+    ],
+  },
+  { href: "/transfers", label: "Transfers" },
+  { href: "/blog", label: "Journal & Guides" },
+  { href: "/contact", label: "Contact" },
+];
+
 // Pre-filled WhatsApp messages per page — brief Section 8.
 // Use whatsappLink(pageKey) to build the URL.
 export const whatsappMessages = {

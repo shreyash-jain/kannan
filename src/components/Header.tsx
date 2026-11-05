@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { nav, site } from "@/lib/site";
+import { headerNav, site, type HeaderNavItem } from "@/lib/site";
 import { rooms, spaces, roomPhotos } from "@/data/rooms";
+
+const bookHref = `https://wa.me/${site.contact.whatsapp.replace("+", "")}`;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -28,55 +30,35 @@ export function Header() {
           />
         </Link>
 
+        {/* Six items instead of eleven. Nothing was removed — the pages that
+            used to sit in the bar now live one hover down, and all of them
+            are still listed in the footer. */}
         <nav aria-label="Primary" className="hidden min-w-0 lg:block">
-          <ul className="flex items-center gap-4 overflow-x-auto text-sm font-medium whitespace-nowrap text-ink/80 [scrollbar-width:none] xl:gap-6">
-            {nav.slice(1).map((n) =>
-              n.href === "/stay" ? (
-                <li key={n.href} className="group relative">
-                  <Link
-                    href={n.href}
-                    className="inline-flex items-center gap-1 transition-colors hover:text-ochre"
-                  >
-                    {n.label}
-                    <svg
-                      aria-hidden
-                      width="11"
-                      height="11"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mt-0.5 transition-transform group-hover:rotate-180"
-                    >
-                      <path d="M6 9l6 6 6-6" />
-                    </svg>
-                  </Link>
-                  <RoomsMenu />
-                </li>
-              ) : (
-                <li key={n.href}>
-                  <Link
-                    href={n.href}
-                    className="transition-colors hover:text-ochre"
-                  >
-                    {n.label}
-                  </Link>
-                </li>
-              ),
-            )}
+          <ul className="flex items-center gap-5 text-sm font-medium whitespace-nowrap text-ink/80 xl:gap-7">
+            {headerNav.map((item) => (
+              <li key={item.label} className="group relative">
+                <Link
+                  href={item.href}
+                  className="inline-flex items-center gap-1 py-1 transition-colors hover:text-ochre"
+                >
+                  {item.label}
+                  {(item.rooms || item.children) && <Caret />}
+                </Link>
+                {item.rooms ? <RoomsMenu /> : item.children ? <ListMenu item={item} /> : null}
+              </li>
+            ))}
           </ul>
         </nav>
 
         <div className="flex items-center gap-3">
           <a
-            href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
+            href={bookHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full bg-forest px-4 py-2 text-sm font-medium text-bone transition-colors hover:bg-forest-deep sm:inline-block"
+            className="hidden items-center gap-2 rounded-full bg-ochre-deep px-5 py-2.5 text-sm font-medium text-bone transition-colors hover:bg-[#8a4e1d] sm:inline-flex"
           >
-            Book on WhatsApp
+            Book Now
+            <span aria-hidden>&rarr;</span>
           </a>
           <button
             type="button"
@@ -114,16 +96,19 @@ export function Header() {
           className="border-t border-black/5 bg-bone lg:hidden"
         >
           <ul className="mx-auto flex max-w-7xl flex-col px-5 py-3">
-            {nav.map((n) => (
-              <li key={n.href}>
+            {headerNav.map((item) => (
+              <li key={item.label}>
                 <Link
-                  href={n.href}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="block py-2.5 text-base font-medium text-ink/85 hover:text-ochre"
                 >
-                  {n.label}
+                  {item.label}
                 </Link>
-                {n.href === "/stay" && (
+
+                {/* On a phone there is no hover, so the groups are simply
+                    shown open rather than hidden behind a tap. */}
+                {item.rooms && (
                   <ul className="mb-1 ml-3 flex flex-col border-l border-black/10 pl-4">
                     {[...rooms, ...spaces].map((room) => (
                       <li key={room.slug}>
@@ -139,27 +124,46 @@ export function Header() {
                         </Link>
                       </li>
                     ))}
-                    <li>
-                      <Link
-                        href="/facilities"
-                        onClick={() => setOpen(false)}
-                        className="block py-2 text-sm text-ink/75 hover:text-ochre"
-                      >
-                        Facilities
-                      </Link>
-                    </li>
+                    {stayExtras.map((e) => (
+                      <li key={e.href}>
+                        <Link
+                          href={e.href}
+                          onClick={() => setOpen(false)}
+                          className="block py-2 text-sm text-ink/75 hover:text-ochre"
+                        >
+                          {e.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {item.children && (
+                  <ul className="mb-1 ml-3 flex flex-col border-l border-black/10 pl-4">
+                    {item.children.map((c) => (
+                      <li key={c.href}>
+                        <Link
+                          href={c.href}
+                          onClick={() => setOpen(false)}
+                          className="block py-2 text-sm text-ink/75 hover:text-ochre"
+                        >
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>
             ))}
             <li className="pt-2">
               <a
-                href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
+                href={bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-full bg-forest px-4 py-2 text-sm font-medium text-bone"
+                className="inline-flex items-center gap-2 rounded-full bg-ochre-deep px-5 py-2.5 text-sm font-medium text-bone"
               >
-                Book on WhatsApp
+                Book Now
+                <span aria-hidden>&rarr;</span>
               </a>
             </li>
           </ul>
@@ -169,8 +173,61 @@ export function Header() {
   );
 }
 
+function Caret() {
+  return (
+    <svg
+      aria-hidden
+      width="11"
+      height="11"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-0.5 transition-transform group-hover:rotate-180"
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
+/** The two pages that belong under Stay but are not rooms in the catalogue. */
+const stayExtras = [
+  { href: "/camping", label: "Camping — pitches under the mango trees" },
+  { href: "/facilities", label: "Facilities — what is on the farm" },
+];
+
 /**
- * The panel that drops from the "Rooms" tab. Clicking Rooms goes straight
+ * The plain dropdown, used by Our Story and Experiences. Each row carries a
+ * line of explanation: a bare list of page names makes people guess, and
+ * "The Land" tells a first-time visitor nothing on its own.
+ */
+function ListMenu({ item }: { item: HeaderNavItem }) {
+  return (
+    <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="overflow-hidden rounded-2xl border border-black/8 bg-bone p-2 shadow-[0_16px_48px_-12px_rgba(31,26,23,0.28)]">
+        {item.children?.map((c) => (
+          <Link
+            key={c.href}
+            href={c.href}
+            className="block rounded-xl p-3 transition-colors hover:bg-sand"
+          >
+            <span className="block font-display text-base leading-snug text-forest-deep">
+              {c.label}
+            </span>
+            <span className="mt-0.5 block text-xs leading-relaxed text-muted">
+              {c.blurb}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * The panel that drops from the "Stay" tab. Clicking Stay goes straight
  * to the card catalogue; hovering it is a shortcut into one room. A plain
  * list of names does not answer the question people arrive with, so every
  * row carries a thumbnail, who fits, and how many photographs wait behind it.
@@ -209,17 +266,22 @@ function RoomsMenu() {
           ))}
         </div>
         <div className="flex items-center justify-between gap-4 border-t border-black/8 bg-sand/60 px-5 py-3">
-          <Link
-            href="/facilities"
-            className="text-sm font-medium text-ink/75 hover:text-ochre"
-          >
-            Facilities — what is on the farm
-          </Link>
+          <div className="flex min-w-0 flex-wrap gap-x-5 gap-y-1">
+            {stayExtras.map((e) => (
+              <Link
+                key={e.href}
+                href={e.href}
+                className="text-sm font-medium text-ink/75 hover:text-ochre"
+              >
+                {e.label}
+              </Link>
+            ))}
+          </div>
           <Link
             href="/stay"
             className="flex-none text-sm font-medium text-ochre hover:text-ochre-deep"
           >
-            See every room →
+            See every room &rarr;
           </Link>
         </div>
       </div>
