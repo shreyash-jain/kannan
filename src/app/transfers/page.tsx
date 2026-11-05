@@ -14,6 +14,60 @@ import { site, whatsappLink } from "@/lib/site";
 const t = site.transfers;
 
 /**
+ * One run, start to finish. Every frame is a road-and-car photograph the site
+ * already owns — none of them is the actual Kanaan Transfers vehicle, which
+ * is a gap only a photograph from Anneli can close.
+ */
+const theDrive = [
+  {
+    image: img.lowveldSunriseRoad,
+    caption:
+      "Set off before light and the road to Phabeni is still misted over.",
+  },
+  {
+    image: img.jhbKrugerEscarpment,
+    caption:
+      "The escarpment run — an hour and a half of it, and none of it yours to drive.",
+  },
+  {
+    image: img.stayNearKrugerArrival,
+    caption: "Back through the gate by dark, with nobody needing a designated driver.",
+  },
+];
+
+/**
+ * The four trips worth photographing, each opening the guide that covers it.
+ * Every image is one the site already uses for that place, so a tile and the
+ * article behind it show the same thing.
+ */
+const destinations = [
+  {
+    name: "Kruger gates",
+    meta: `Phabeni & Numbi · ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} min`,
+    href: "/blog/kruger-from-hazyview",
+    image: img.krugerEntranceGate,
+  },
+  {
+    name: "Panorama Route",
+    meta: "Bourke's Luck & God's Window · ~90 min",
+    href: "/blog/panorama-route-from-hazyview",
+    image: img.bourkesLuck,
+  },
+  {
+    name: "Graskop & Sabie",
+    meta: "Gorge lift and the waterfalls · ~45 min",
+    href: "/blog/things-to-do-around-hazyview",
+    image: img.graskopGorgeLift,
+  },
+  {
+    name: "Perry's Bridge",
+    meta: "Market, food and crafts · 10 min",
+    href: "/blog/perrys-bridge-market-hazyview",
+    image: img.perrysBridgeCuriosHero,
+  },
+];
+
+/**
  * The questions people actually type before they book a lift here, answered
  * plainly. They carry the page's search intent twice over: once for Google's
  * FAQ results, once for the assistants that answer "is there Uber in
@@ -165,6 +219,29 @@ export default function TransfersPage() {
             },
           ]}
         />
+
+        {/* The arc of an actual day out, in three frames. The top half of
+            this page is text-heavy, and a car service should show the roads
+            it drives rather than only describe them. */}
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {theDrive.map((f) => (
+            <figure key={f.image.src}>
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+                <Image
+                  src={f.image.src}
+                  alt={f.image.alt}
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 768px) 31vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2.5 text-sm leading-relaxed text-muted">
+                {f.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </Section>
 
       {/* Fares. Named and anchored because the hero links straight down here —
@@ -231,6 +308,40 @@ export default function TransfersPage() {
             },
           ]}
         />
+
+        {/* The list above says where we go; these say what it looks like when
+            you get there. Each tile opens the guide for that trip, so the
+            page hands people onward instead of ending. */}
+        <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {destinations.map((d) => (
+            <Link
+              key={d.href}
+              href={d.href}
+              className="group relative aspect-4/5 overflow-hidden rounded-xl"
+            >
+              <Image
+                src={d.image.src}
+                alt={d.image.alt}
+                fill
+                loading="lazy"
+                sizes="(min-width: 1024px) 23vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent"
+              />
+              <span className="absolute inset-x-0 bottom-0 p-4">
+                <span className="block font-display text-lg leading-tight text-bone">
+                  {d.name}
+                </span>
+                <span className="mt-0.5 block text-xs text-bone/80">
+                  {d.meta}
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
       </Section>
 
       {/* A screenshot of a real booking does more for trust than any promise
@@ -308,6 +419,87 @@ export default function TransfersPage() {
           </div>
         </div>
       </section>
+
+      {/* Where the farm sits, and how far the lift reaches from it. The embed
+          is Google's keyless form — no API key to leak, no quota to run out
+          of on a page that will be loaded a lot. */}
+      <Section>
+        <Eyebrow>Where we are</Eyebrow>
+        <H2 className="mt-2">The farm, and how far we reach from it.</H2>
+        <Lede>
+          Kanaan sits on the R40 just outside Hazyview. Almost everything worth
+          driving to in the Lowveld falls inside the radius we cover.
+        </Lede>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.45fr_1fr]">
+          <div className="relative min-h-[320px] overflow-hidden rounded-2xl border border-black/10 bg-sand lg:min-h-[26rem]">
+            <iframe
+              title={`Map showing ${site.name} near Hazyview, Mpumalanga`}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                `${site.name}, ${site.address.city}, ${site.address.region}`,
+              )}&z=11&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <dl className="grid gap-4 text-ink/85">
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">
+                  Inside the {t.radiusKm}km radius
+                </dt>
+                <dd className="mt-1 text-sm">
+                  Hazyview town, Perry&apos;s Bridge, the Phabeni and Numbi
+                  Kruger gates, Sabie, Graskop and most of the Panorama Route
+                  viewpoints. Quoted automatically by distance.
+                </dd>
+              </div>
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">
+                  Just outside it
+                </dt>
+                <dd className="mt-1 text-sm">
+                  Kruger Mpumalanga International Airport, about {t.kmiaKm}km
+                  and {site.distances.kmiaMinutes} minutes away. Arranged
+                  directly rather than auto-quoted.
+                </dd>
+              </div>
+              <div className="border-t border-black/10 pt-3">
+                <dt className="font-display text-base text-forest-deep">
+                  Finding the gate
+                </dt>
+                <dd className="mt-1 text-sm">
+                  The property is fenced with a motorised gate — give us a ring
+                  when you pull up and we will let you in.
+                </dd>
+              </div>
+            </dl>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href={site.mapsShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-bone transition-colors hover:bg-forest-deep"
+              >
+                Open in Google Maps
+              </Link>
+              <Link
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                  `${site.name}, ${site.address.city}, ${site.address.region}, ${site.address.country}`,
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-black/15 px-5 py-2.5 text-sm font-medium text-ink/80 transition-colors hover:border-ochre hover:text-ochre"
+              >
+                Get directions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* The FAQ is the page's quiet workhorse: it matches the long questions
           people type, and it is what an assistant quotes back at them. */}
