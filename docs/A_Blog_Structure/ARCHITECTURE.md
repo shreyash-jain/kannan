@@ -255,7 +255,18 @@ in server components; only the interactive card grid is client-side.
 `organizationLd()` has a `priceRange` marked `TODO(anneli)`. These are known and flagged in
 code — confirm with the owner before treating them as exact.
 
+### 8. A new post folder (git worktree): three things that bite
+- **Install with pnpm.** The lockfile is `pnpm-lock.yaml`, so `npm ci` refuses to run. Use
+  `pnpm install --frozen-lockfile` (about 20 seconds).
+- **Never link `node_modules` from another folder.** `next.config.ts` pins the Turbopack
+  root, so a junction or symlink crashes it: `Symlink [project]/node_modules is invalid, it
+  points out of the filesystem root`. Remove a junction with `cmd //c "rmdir node_modules"`,
+  not `rm -rf`, which can reach into the real folder.
+- **Unset the upstream straight away.** `git worktree add -b <branch> <path> origin/main`
+  makes the new branch track `origin/main`, so a bare `git push` aims at production. Run
+  `git branch --unset-upstream` first.
+
 ---
 
 *Last reviewed: 2026-07-06 — build verified (30 static routes); commands and deploy config
-read from the repo.*
+read from the repo. Trap 8 added 2026-11-06.*
