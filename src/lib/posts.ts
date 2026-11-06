@@ -422,8 +422,8 @@ export const posts: Post[] = [
     category: "guide",
     status: "live",
     href: "/blog/getting-around-hazyview-without-a-car",
-    image: img.carFreeHazyviewHero.src,
-    imageAlt: img.carFreeHazyviewHero.alt,
+    image: img.lowveldPanorama.src,
+    imageAlt: img.lowveldPanorama.alt,
     datePublished: "2026-11-03",
     readingMinutes: 6,
     excerpt:

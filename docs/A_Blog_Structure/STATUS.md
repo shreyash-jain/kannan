@@ -68,6 +68,7 @@ re-verify it against `origin/main` before trusting it.
 | Work | Branch | State | Next action |
 | --- | --- | --- | --- |
 | "Under the Mango Trees" | merged to `main` | **Done / live** | none |
+| Getting-around guide — `getting-around-hazyview-without-a-car` | `blog-24-getting-around-hazyview-without-a-car` | **PR open into `main`** (2026-11-06). On `preview`. All photos are real farm photography. | Owner has not reviewed. Merge only when marketing says publish. Open: (1) it runs about 1,550 words from H1 to the WhatsApp band against the ~1,300 default, so marketing to say whether to cut; (2) the post date is 2026-11-03, so change it in the page and `posts.ts` if it goes live much later; (3) two unused AI images are still on Cloudinary (`car-free-hazyview-hero`, `car-free-kruger-guided-drive`) and are safe to delete; (4) Anneli to confirm the safari package price against the new R692 fee (see `CLIENT.md`). Siblings it links to rather than repeats: `/blog/cab-in-hazyview`, `/transfers`. |
 | Perry's Bridge guide — `perrys-bridge-market-hazyview` | `blog-22-perrys-bridge-market-hazyview` | **PR open into `main`** (2026-10-29). On `preview`. Client feedback round 1 done (half-day, honest spa note, real CC photos). | Waiting on marketing's word to publish. Four code-built infographics; three credited CC photos + `poolReal`. |
 | Joburg-to-Kruger road-trip guide — `johannesburg-to-kruger-national-park-hazyview` | `blog-19-johannesburg-to-kruger` | **PR open into `main`** (2026-10-13). On `preview`. | Marketing reviewed on preview (two rounds: wider column; scenic Dullstroom–Lydenburg–Sabie route, no Boer War). Merge only when marketing says publish. ~1,300 words; five code-built infographics; two AI off-farm frames (`jhbKrugerEscarpment`, `jhbKrugerFirstMorning`), real farm photos. Quotes R275 single night / R250 2+ nights from `site.pricing`. Scenic-route distances are OSRM estimates between the pinned towns. |
 | Revised cost blog + Activities guide + "First Light" + `.npmrc` | `blog-7-first-light` | **Merged (PR #20)** | none — this is what cleared both old blockers. |
@@ -197,4 +198,4 @@ URLs, OpenGraph, sitemap and JSON-LD. Do not change it.
 
 ---
 
-*Last updated: 2026-10-29*
+*Last updated: 2026-11-06*

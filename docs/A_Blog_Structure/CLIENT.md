@@ -76,6 +76,21 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
 *Append every new one, newest first, with the date and the reason. Never delete an entry
 — supersede it and say so.*
 
+- **Start from real photos; do not generate one and wait to be told** (marketing,
+  2026-11-03, getting-around post): "remove this, add original pics", about an AI guided
+  Kruger drive. The post's AI hero went too, under the 2026-10-27 rule below. The library
+  has no real Kruger photograph, so that section carries an infographic instead. *Why:* the
+  same objection twice in a week; an AI picture costs a review round every time.
+- **Kruger conservation fees changed on 1 November 2026: R140 SA / R692 international
+  adult per day, to 31 Oct 2027** (SANParks rate card PDF). Supersedes the R134 / R602 in
+  "Verified 2026 comparison figures" below. `knpDay` in `PackageConfigurator` is still
+  `1825 + 602` = R2,427, and `/blog/kruger-from-hazyview` quotes R2,427 too. Flagged to
+  marketing for Anneli on 2026-11-03. *Why it matters:* do not quote R2,427 in a new post
+  until she confirms the new figure.
+- **Do not name long-distance buses without a current timetable** (2026-11-06). Booking
+  aggregators still list Greyhound and Citiliner to Hazyview. Both stopped in February 2021;
+  Greyhound was sold and returned in April 2022, and no current Hazyview route could be
+  confirmed. The getting-around post leaves buses out for that reason.
 - **Real photos, not AI illustrations, for places off the farm** (client, 2026-10-27,
   Perry's Bridge post): the AI detail shots "feel a little bit too unrealistic". Use real
   photos found online, credited. *Credit alone is not permission*: use only openly licensed
@@ -187,4 +202,4 @@ Media does **not** live in the repo — it goes to Cloudinary and is referenced 
   strong. Check whether Cloudflare is blocking AI crawlers before advising on LLM
   visibility.
 
-*Last reviewed: 2026-10-29.*
+*Last reviewed: 2026-11-06.*
