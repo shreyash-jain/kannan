@@ -39,6 +39,12 @@ import {
 // are built in code, not images, so every figure matches the body.
 // H1 and tab title are the brief's topic line verbatim (standing rule).
 //
+// Every photo here is REAL farm photography. Two AI frames were made and then
+// dropped: marketing pulled the guided-drive one ("remove this, add original
+// pics", 2026-11-03), and the hero broke the client's real-photos rule of
+// 2026-10-27 (see CLIENT.md). There is no real Kruger photo in the library, so
+// the Kruger section carries an infographic instead of a picture.
+//
 // Verified 2026-11-03:
 //   SANParks conservation fees 1 Nov 2026 – 31 Oct 2027: Kruger R692
 //     international adult, R140 SA adult (SANParks rate card PDF)
@@ -99,7 +105,7 @@ export const metadata = createBlogPostMetadata({
   title: headline,
   description:
     "No Uber in Hazyview? How to plan a Lowveld trip without a car: airport transfers, guided Kruger drives, local taxis, and Hazyview accommodation that sorts the lifts for you.",
-  image: img.carFreeHazyviewHero,
+  image: img.lowveldPanorama,
   datePublished,
   category: "guide",
 });
@@ -346,7 +352,7 @@ export default function GettingAroundHazyviewWithoutACarPage() {
           description:
             "How to plan a Hazyview and Kruger trip without your own car, from the family who run Kanaan Guest Farm: why Uber doesn't work here, the five transport options that do, three ways into Kruger without a car, and what to look for in Hazyview accommodation when you aren't driving.",
           path: `/blog/${slug}`,
-          image: img.carFreeHazyviewHero.src,
+          image: img.lowveldPanorama.src,
           datePublished,
         })}
       />
@@ -354,8 +360,8 @@ export default function GettingAroundHazyviewWithoutACarPage() {
 
       <article>
         <BlogHero
-          image={img.carFreeHazyviewHero.src}
-          alt={img.carFreeHazyviewHero.alt}
+          image={img.lowveldPanorama.src}
+          alt={img.lowveldPanorama.alt}
           eyebrow="Guide · Getting around"
           title={headline}
           titleSize="compact"
