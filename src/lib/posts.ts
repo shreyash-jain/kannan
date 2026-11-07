@@ -415,6 +415,20 @@ export const posts: Post[] = [
     excerpt:
       "Five things to check before you book a guest farm near Kruger, how Kanaan in Hazyview measures up, a guest farm against a rest camp inside the park, how many nights to stay and a four-day itinerary.",
   },
+  {
+    chapter: "Getting Around",
+    title:
+      "No Uber in the Lowveld? How to Get Around Hazyview Without Your Own Car",
+    category: "guide",
+    status: "live",
+    href: "/blog/getting-around-hazyview-without-a-car",
+    image: img.lowveldPanorama.src,
+    imageAlt: img.lowveldPanorama.alt,
+    datePublished: "2026-11-03",
+    readingMinutes: 6,
+    excerpt:
+      "How to do a Hazyview and Kruger week without hiring a car: the airport transfer, the five ways to get around that actually work, three ways into Kruger, and what to look for in accommodation when you aren't driving.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */

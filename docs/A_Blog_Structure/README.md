@@ -14,6 +14,12 @@ files in this repo.
 4. `ARCHITECTURE.md` — how the whole site works, the verified commands, and the traps.
 5. `STATUS.md` — the living ledger: where we are right now and what to do next.
 
+**Read them from `origin/main`, not from whichever folder you happen to be in:**
+`git fetch origin && git show origin/main:docs/A_Blog_Structure/CLIENT.md`. The main
+working folder often sits on an older feature branch, so its copies can be weeks behind.
+(2026-11-03: a session read a stale `CLIENT.md`, missed the real-photos rule and the
+1,300-word default, and put AI images on the preview before marketing caught one.)
+
 The day-to-day workflow is the **`/blog`** command (`.claude/commands/blog.md`). It is
 identical in every client repo; everything client-specific lives in this folder.
 
@@ -96,4 +102,4 @@ bump the `Last reviewed` date on any file whose facts you changed.
 
 ---
 
-*Last reviewed: 2026-07-06 — verified against a clean `npm run build` (30 static routes).*
+*Last reviewed: 2026-07-06 — verified against a clean `npm run build` (30 static routes). Read-from-origin note added 2026-11-06.*
