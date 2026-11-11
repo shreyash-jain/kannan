@@ -429,6 +429,20 @@ export const posts: Post[] = [
     excerpt:
       "How to do a Hazyview and Kruger week without hiring a car: the airport transfer, the five ways to get around that actually work, three ways into Kruger, and what to look for in accommodation when you aren't driving.",
   },
+  {
+    title:
+      "Early-Morning Kruger Game Drive From Hazyview: Reach the Gate Before Sunrise With Kanaan Transfers",
+    chapter: "Getting Around",
+    category: "guide",
+    status: "live",
+    href: "/blog/early-morning-kruger-game-drive-hazyview",
+    image: img.lowveldPanorama.src,
+    imageAlt: img.lowveldPanorama.alt,
+    datePublished: "2026-11-11",
+    readingMinutes: 5,
+    excerpt:
+      "No Uber in Hazyview, and the Kruger gate opens at 05:30. Gate times by season, when to leave the farm, and how to book a dawn lift to Phabeni.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
