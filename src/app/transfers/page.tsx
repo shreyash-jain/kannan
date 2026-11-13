@@ -479,12 +479,12 @@ export default function TransfersPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href={site.mapsShareUrl}
+                href={site.mapsBusinessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-bone transition-colors hover:bg-forest-deep"
               >
-                Open in Google Maps
+                See us on Google
               </Link>
               <Link
                 href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(

@@ -18,9 +18,18 @@ export const site = {
   },
   // Approximate Hazyview coordinates — refine with exact farm GPS when Anneli confirms.
   geo: { lat: -25.0461, lng: 31.1264 },
-  // The pin Anneli shares with guests. Kept as the share link she sent rather
-  // than coordinates, so "open in Google Maps" lands on exactly her listing.
-  mapsShareUrl: "https://maps.app.goo.gl/WdT9TVihcG9aaw2x5",
+  // Anneli's Google listing for the lift service. It is filed under "Simba
+  // Transfers" — the trading name behind Simba Ventures — not under the farm,
+  // so this pin and the embedded map on /transfers are deliberately two
+  // different things: the listing, and where the farm sits.
+  //
+  // Stored as the canonical maps.google.com URL, not the maps.app.goo.gl short
+  // link she sent. A shortener is an extra hop that can be blocked: Reliance in
+  // India hands out a dead IP for goo.gl, so the link times out for anyone on
+  // that network. This form is the identical destination with nothing in front
+  // of it. Resolved and verified 2026-11-13.
+  mapsBusinessUrl:
+    "https://www.google.com/maps/place/Simba+Transfers/data=!4m2!3m1!1s0x642d35c34bbda477:0x12267c230699437c",
   contact: {
     phonePrimary: "+27637943880",
     phonePrimaryDisplay: "+27 63 794 3880",
