@@ -56,6 +56,10 @@ const faqs = [
     q: "Does the transfer go straight into Kruger, or to the farm first?",
     a: "Straight to Kanaan in Hazyview, on the R40. The park itself is a separate, much shorter trip from the farm — most guests settle in first and sort out their Kruger gate for another morning.",
   },
+  {
+    q: "Is it cheaper to rent a car than book a transfer?",
+    a: "It depends on the rest of your trip, not just the airport leg. A transfer is usually the simpler choice if Kanaan and a guided Kruger drive are the plan — a rental mostly earns its cost back if you're using it for more than that one run from KMIA.",
+  },
 ];
 
 export const metadata = createBlogPostMetadata({
@@ -92,7 +96,7 @@ export default function HazyviewAirportTransferPage() {
           intro="KMIA sits just outside our standard transfer radius, so the smoothest landing is the one you arranged from home. Here's what to send before you fly, and what happens the moment you touch down."
           byline="Anneli & Matthew"
           datePublished={datePublished}
-          readingMinutes={6}
+          readingMinutes={7}
           titleSize="compact"
         />
 
@@ -106,6 +110,7 @@ export default function HazyviewAirportTransferPage() {
                 "It's a cash-free service: a card goes on file when you book, and nothing is charged until the trip is done.",
                 "Flight delayed or early? Message your driver with the new time — the pickup moves with your flight.",
                 "The drive ends at Kanaan in Hazyview, not inside Kruger itself. The park is a separate, shorter trip for another day.",
+                "Renting a car instead? It's worth it if you're exploring well beyond Hazyview — self-driving inside Kruger itself still needs your own vehicle or a guided game drive either way.",
               ]}
             />
 
@@ -205,6 +210,42 @@ export default function HazyviewAirportTransferPage() {
           />
         </Section>
 
+        <Section className="pt-0!">
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <H2 className="mb-4">Should You Rent a Car at KMIA Instead?</H2>
+            <p>
+              It&rsquo;s a fair question, and we&rsquo;d rather answer it
+              honestly than just sell you the transfer. A rental gives
+              you total freedom for day trips well beyond Hazyview, on
+              your own schedule. The trade-off is a paperwork counter and
+              an excess waiver to work through the moment you land, and a
+              car you&rsquo;re paying for every day of your stay —
+              including the days you don&rsquo;t actually drive it.
+            </p>
+          </div>
+          <NumberedList
+            variant="grid"
+            items={[
+              {
+                title: "Book a transfer if…",
+                body: "Kanaan and a guided Kruger drive are the plan. Most guests who don't self-drive inside the park book a half-day or full-day safari anyway, so a rental would mostly sit parked at the farm.",
+              },
+              {
+                title: "Rent a car if…",
+                body: "You want to explore well beyond Hazyview on your own time — the full Panorama Route at your own pace, or day trips further into Mpumalanga.",
+              },
+            ]}
+          />
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <p>
+              One thing stays true either way: self-driving inside Kruger
+              itself needs your own vehicle or a guided open-vehicle game
+              drive. A transfer, ours or a rental, can only take you as
+              far as the gate.
+            </p>
+          </div>
+        </Section>
+
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
@@ -255,6 +296,14 @@ export default function HazyviewAirportTransferPage() {
               },
             ]}
           />
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <p>
+              Here&rsquo;s what that actually looks like: a flight lands
+              at 14:20, clears arrivals by about 14:40, and is on the R40
+              toward Hazyview within a few minutes — pulling up at Kanaan
+              in time for a sundowner, not dinner.
+            </p>
+          </div>
         </Section>
 
         <Section className="pt-0!">
