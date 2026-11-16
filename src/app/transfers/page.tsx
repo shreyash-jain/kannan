@@ -434,10 +434,8 @@ export default function TransfersPage() {
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.45fr_1fr]">
           <div className="relative min-h-[320px] overflow-hidden rounded-2xl border border-black/10 bg-sand lg:min-h-[26rem]">
             <iframe
-              title={`Map showing ${site.name} near Hazyview, Mpumalanga`}
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                `${site.name}, ${site.address.city}, ${site.address.region}`,
-              )}&z=11&output=embed`}
+              title={`Map showing ${t.name} near Hazyview, Mpumalanga`}
+              src={`https://maps.google.com/maps?cid=${site.transfersListing.cid}&z=11&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 h-full w-full border-0"
@@ -479,7 +477,7 @@ export default function TransfersPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href={site.mapsBusinessUrl}
+                href={site.transfersListing.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-full bg-forest px-5 py-2.5 text-sm font-medium text-bone transition-colors hover:bg-forest-deep"
