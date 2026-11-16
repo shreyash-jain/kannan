@@ -145,6 +145,10 @@ export default function HazyviewAirportTransferPage() {
               guide is just the one trip every visitor needs sorted first:
               getting from the airport to the farm.
             </p>
+            <Callout eyebrow="The one thing to remember">
+              Everyone landing at KMIA needs a lift somehow. The only
+              real question is whether you arranged it before you flew.
+            </Callout>
           </div>
         </Section>
 
@@ -297,13 +301,33 @@ export default function HazyviewAirportTransferPage() {
             ]}
           />
           <div className="prose-kanaan mx-auto max-w-prose">
-            <p>
-              Here&rsquo;s what that actually looks like: a flight lands
-              at 14:20, clears arrivals by about 14:40, and is on the R40
-              toward Hazyview within a few minutes — pulling up at Kanaan
-              in time for a sundowner, not dinner.
-            </p>
+            <p>Here&rsquo;s what that actually looks like on a real afternoon flight:</p>
           </div>
+          <NumberedList
+            variant="timeline"
+            items={[
+              {
+                time: "14:20",
+                title: "Flight touches down",
+                body: "The part neither of us controls — everything from here is planned.",
+              },
+              {
+                time: "14:40",
+                title: "Arrivals and luggage",
+                body: "KMIA is small enough that this rarely drags on, even with a full flight.",
+              },
+              {
+                time: "14:45",
+                title: "\"We've landed\" on WhatsApp",
+                body: "The same chat from before you flew. Your driver already knows who to look for.",
+              },
+              {
+                time: "~15:35",
+                title: "Pulling in at Kanaan",
+                body: `About ${site.distances.kmiaMinutes} minutes on the R40 — in time for a sundowner, not dinner.`,
+              },
+            ]}
+          />
         </Section>
 
         <Section className="pt-0!">
