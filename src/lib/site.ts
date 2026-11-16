@@ -18,9 +18,30 @@ export const site = {
   },
   // Approximate Hazyview coordinates — refine with exact farm GPS when Anneli confirms.
   geo: { lat: -25.0461, lng: 31.1264 },
-  // The pin Anneli shares with guests. Kept as the share link she sent rather
-  // than coordinates, so "open in Google Maps" lands on exactly her listing.
-  mapsShareUrl: "https://maps.app.goo.gl/WdT9TVihcG9aaw2x5",
+  // Anneli's Google listing for the lift service, and the pin the map on
+  // /transfers drops. It was filed under "Simba Transfers" and was renamed to
+  // "Kanaan Transfers" in November 2026 — same listing, same Google place id,
+  // new name on the front of it.
+  //
+  // Held as the canonical maps.google.com address rather than the
+  // maps.app.goo.gl short link Anneli sends out. A shortener is one more hop
+  // and it is a hop that can be taken away: Reliance in India answers DNS for
+  // goo.gl with an address nothing is listening on, so the link simply times
+  // out for anyone on that network. These forms are the identical destination
+  // with nothing standing in front of it.
+  //
+  // The cid is that same listing addressed by number, which is what the embed
+  // takes. A name search can drift onto a neighbouring pin as listings change;
+  // a cid cannot. Resolved and verified 2026-11-16.
+  transfersListing: {
+    url: "https://www.google.com/maps/place/Kanaan+Transfers/data=!4m2!3m1!1s0x642d35c34bbda477:0x12267c230699437c",
+    cid: "1307869231674114940",
+    // Read off the listing itself, so these are exact. Deliberately not merged
+    // into `geo` above: that one stands for the farm as a place to sleep and
+    // feeds the lodging schema, this one is where the lift service is pinned.
+    lat: -25.0516866,
+    lng: 31.1289384,
+  },
   contact: {
     phonePrimary: "+27637943880",
     phonePrimaryDisplay: "+27 63 794 3880",
