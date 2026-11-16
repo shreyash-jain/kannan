@@ -97,7 +97,7 @@ export default function HazyviewAirportTransferPage() {
         />
 
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose">
+          <div className="prose-kanaan mx-auto max-w-prose overflow-hidden">
             <TLDR
               items={[
                 `KMIA is about ${t.kmiaKm}km and ${site.distances.kmiaMinutes} minutes from Hazyview on the R40 — just outside ${t.name}'s standard ${t.radiusKm}km radius, so airport pickups are arranged directly over WhatsApp rather than through the automatic quote.`,
@@ -108,6 +108,22 @@ export default function HazyviewAirportTransferPage() {
                 "The drive ends at Kanaan in Hazyview, not inside Kruger itself. The park is a separate, shorter trip for another day.",
               ]}
             />
+
+            <figure className="float-right ml-5 mb-3 w-32 sm:w-40">
+              <div className="overflow-hidden rounded-xl border border-black/5 shadow-sm">
+                <Image
+                  src={img.cabKanaanTransfersScreenshot.src}
+                  alt={img.cabKanaanTransfersScreenshot.alt}
+                  width={img.cabKanaanTransfersScreenshot.width}
+                  height={img.cabKanaanTransfersScreenshot.height}
+                  sizes="160px"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted">
+                Confirmed over WhatsApp, days before you fly.
+              </figcaption>
+            </figure>
 
             <H2 className="mb-4">
               Landing at KMIA? Here&rsquo;s Why You Should Book Before You Fly
@@ -208,22 +224,7 @@ export default function HazyviewAirportTransferPage() {
         </div>
 
         <Section>
-          <div className="prose-kanaan mx-auto max-w-prose overflow-hidden">
-            <figure className="float-right ml-5 mb-3 w-32 sm:w-40">
-              <div className="overflow-hidden rounded-xl border border-black/5 shadow-sm">
-                <Image
-                  src={img.cabKanaanTransfersScreenshot.src}
-                  alt={img.cabKanaanTransfersScreenshot.alt}
-                  width={img.cabKanaanTransfersScreenshot.width}
-                  height={img.cabKanaanTransfersScreenshot.height}
-                  sizes="160px"
-                  className="h-auto w-full"
-                />
-              </div>
-              <figcaption className="mt-2 text-center text-[11px] leading-snug text-muted">
-                Confirmed over WhatsApp, days before you fly.
-              </figcaption>
-            </figure>
+          <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">What Happens Once You Land</H2>
             <p>
               The flight is the unpredictable part. Everything after it
