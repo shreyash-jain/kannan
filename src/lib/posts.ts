@@ -453,7 +453,7 @@ export const posts: Post[] = [
     image: img.cabHazyviewAirportPickup.src,
     imageAlt: img.cabHazyviewAirportPickup.alt,
     datePublished: "2026-11-16",
-    readingMinutes: 6,
+    readingMinutes: 7,
     excerpt:
       "Landing at KMIA? Exactly what to send Kanaan Transfers before you fly — flight number, passengers, luggage — what happens the moment you land, and what to do if your flight changes.",
   },
