@@ -107,7 +107,10 @@ export const site = {
     fromZAR: 50, // shortest town trips; every fare is quoted before booking
     radiusKm: 50, // standard coverage around Hazyview
     seats: 4, // one vehicle, four passengers
-    kmiaKm: 62, // KMIA sits just outside the standard radius
+    // Corrected 2026-11-17 against a live Google Maps route (Hazyview to
+    // KMIA terminal: 53km, 46min, fastest route) — the old 62km figure had
+    // no cited source. Still just outside the standard radius either way.
+    kmiaKm: 53,
     cashFree: true, // card on file, charged after the trip
   },
   capacity: {
