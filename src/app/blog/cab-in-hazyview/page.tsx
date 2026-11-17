@@ -205,7 +205,7 @@ export default function CabInHazyviewPage() {
               {
                 value: "Outside 50km",
                 label: "The KMIA airport run",
-                body: `Kruger Mpumalanga International Airport is about ${site.distances.kmiaMinutes} minutes and roughly 62km from Hazyview — just past the standard radius, so it's arranged directly rather than auto-quoted.`,
+                body: `Kruger Mpumalanga International Airport is about ${site.distances.kmiaMinutes} minutes and roughly ${site.transfers.kmiaKm}km from Hazyview — just past the standard radius, so it's arranged directly rather than auto-quoted.`,
               },
             ]}
           />
