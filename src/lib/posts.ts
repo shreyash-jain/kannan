@@ -443,6 +443,20 @@ export const posts: Post[] = [
     excerpt:
       "No Uber in Hazyview, and the Kruger gate opens at 05:30. Gate times by season, when to leave the farm, and how to book a dawn lift to Phabeni.",
   },
+  {
+    chapter: "Getting Around",
+    title:
+      "Hazyview Airport Transfer: Book Your Kanaan Transfers Pickup Before You Land at KMIA",
+    category: "guide",
+    status: "live",
+    href: "/blog/hazyview-airport-transfer-kmia",
+    image: img.cabHazyviewAirportPickup.src,
+    imageAlt: img.cabHazyviewAirportPickup.alt,
+    datePublished: "2026-11-16",
+    readingMinutes: 7,
+    excerpt:
+      "Landing at KMIA? Exactly what to send Kanaan Transfers before you fly — flight number, passengers, luggage — what happens the moment you land, and what to do if your flight changes.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
