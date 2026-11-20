@@ -19,7 +19,7 @@ import {
 } from "@/components/blog/Blocks";
 
 const datePublished = "2026-11-19";
-const headline = "5 Reasons to Visit Hazyview, South Africa";
+const headline = "5 Reasons to Add Hazyview to Your South Africa Itinerary";
 
 const faqs = [
   {
