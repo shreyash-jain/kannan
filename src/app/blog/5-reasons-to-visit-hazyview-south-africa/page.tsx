@@ -121,6 +121,31 @@ export default function FiveReasonsHazyviewPage() {
           </div>
         </Section>
 
+        <NumberedList
+          items={[
+            {
+              title: "Kruger National Park",
+              body: "A half-day Big Five safari through the Phabeni gate, 30–45 minutes away.",
+            },
+            {
+              title: "The Panorama Route",
+              body: "God's Window, Bourke's Luck Potholes and the Blyde River Canyon, about 40 minutes up the escarpment.",
+            },
+            {
+              title: "The Sabie waterfalls",
+              body: "Mac Mac, Lisbon and Berlin Falls, each a short walk from the car park, about 35 minutes away.",
+            },
+            {
+              title: "Lowveld adventure",
+              body: "Zip-lines, the Graskop Big Swing and ethical wildlife sanctuaries, closer still.",
+            },
+            {
+              title: "A warm place to stay",
+              body: `Kanaan Guest Farm on the R40 — from R${site.pricing.fromZAR} per person sharing.`,
+            },
+          ]}
+        />
+
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">1. The Kruger National Park is a half-day away, not a holiday on its own.</H2>
@@ -354,6 +379,28 @@ export default function FiveReasonsHazyviewPage() {
           </figure>
         </div>
 
+        <NumberedList
+          variant="dark"
+          items={[
+            {
+              title: "Self-catering lodge rooms",
+              body: "Sleep two to seven, each with its own kitchenette — the easiest option for a family.",
+            },
+            {
+              title: "Twin rooms",
+              body: "Simple, comfortable, built for couples and smaller groups sharing the farm's facilities.",
+            },
+            {
+              title: "Backpacker beds",
+              body: "An eight-bed wooden house — the budget pick for solo travellers and small groups.",
+            },
+            {
+              title: "Camping under the mango trees",
+              body: "Ten powered pitches, room for up to eighty, under forty-year-old shade trees.",
+            },
+          ]}
+        />
+
         <Section>
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">When to come.</H2>
@@ -374,6 +421,26 @@ export default function FiveReasonsHazyviewPage() {
             </p>
           </div>
         </Section>
+
+        <StatGrid
+          stats={[
+            {
+              value: "May–Sep",
+              label: "Dry winter",
+              body: "Clear Panorama views, the best game viewing, cold sunrises.",
+            },
+            {
+              value: "Oct–Nov",
+              label: "Shoulder",
+              body: "Warmer, greener, noticeably quieter than the peak months.",
+            },
+            {
+              value: "Dec–Apr",
+              label: "Wet summer",
+              body: "Lush and dramatic, full waterfalls, thicker bush for game viewing.",
+            },
+          ]}
+        />
 
         <Section className="pt-0!">
           <div className="prose-kanaan mx-auto max-w-prose">
