@@ -459,8 +459,7 @@ export const posts: Post[] = [
   },
   {
     chapter: "Why Hazyview",
-    title:
-      "5 Reasons to Visit Hazyview, South Africa: Kruger Safaris, the Panorama Route, Sabie Waterfalls and Where to Stay Near Kruger National Park",
+    title: "5 Reasons to Visit Hazyview, South Africa",
     category: "guide",
     status: "live",
     href: "/blog/5-reasons-to-visit-hazyview-south-africa",
