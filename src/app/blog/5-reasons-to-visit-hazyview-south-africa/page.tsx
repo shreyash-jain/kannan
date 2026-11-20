@@ -51,13 +51,21 @@ const faqs = [
     q: "Where should you stay when visiting Hazyview?",
     a: "Somewhere between the park and the escarpment, so neither side of your trip costs you an extra hour on the road. We're on the R40 — lodge rooms, twin rooms, backpacker beds and camping under forty-year-old mango trees, from R250 per person sharing.",
   },
+  {
+    q: "How much does it cost to enter Kruger from Hazyview right now?",
+    a: "The daily conservation fee went up on 1 November 2026: R140 per South African adult, R296 SADC, R692 international, valid to 31 October 2027. It's charged per person for each day you drive into the park, not per night of your stay.",
+  },
+  {
+    q: "Do I need to book Kruger in advance over the festive season?",
+    a: "For a day visit, yes — SANParks caps the number of day visitors admitted at each gate over the December holidays, with a small online pre-booking fee. Book ahead rather than risk arriving to a full quota.",
+  },
 ];
 
 export const metadata = createBlogPostMetadata({
   slug: "5-reasons-to-visit-hazyview-south-africa",
   title: headline,
   description:
-    "Five real reasons Hazyview, South Africa belongs on a Kruger trip — the park gates, the Panorama Route, Sabie's waterfalls, Lowveld adventure, and a warm, affordable place to stay at Kanaan Guest Farm.",
+    "Five real reasons Hazyview, South Africa belongs on a Kruger trip — the park gates, the Panorama Route, Sabie's waterfalls, Lowveld adventure, and a warm, affordable place to stay. Updated with the 1 November 2026 Kruger conservation fee and festive-season booking rules.",
   image: img.hazyviewThingsToDoHero,
   datePublished,
   category: "guide",
@@ -100,6 +108,7 @@ export default function FiveReasonsHazyviewPage() {
                 "The Panorama Route (God's Window, Bourke's Luck Potholes, the Blyde River Canyon) is one of the cheapest full days out in South Africa.",
                 "Adventure activities and ethical wildlife sanctuaries sit closer still, most of them twenty to forty minutes away.",
                 "It's also an affordable place to actually sleep — Kanaan Guest Farm is from R250 per person sharing.",
+                "Current for the 2026/27 season: Kruger's gate fee rose on 1 November 2026, and festive-season day visitors now need to book ahead at a capped gate.",
               ]}
             />
 
@@ -190,6 +199,30 @@ export default function FiveReasonsHazyviewPage() {
             </figcaption>
           </figure>
         </div>
+
+        <Section className="pt-0!">
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <H2 className="mb-4">Two things that changed for the 2026/27 season.</H2>
+            <p>
+              Kruger isn&rsquo;t a static attraction — the gate fee and the
+              festive-season rules both moved recently, and neither has
+              filtered into most of the generic &ldquo;things to do in
+              Hazyview&rdquo; listicles yet.
+            </p>
+          </div>
+          <NumberedList
+            items={[
+              {
+                title: "The conservation fee went up on 1 November 2026",
+                body: "R140 per South African adult per day, R296 SADC, R692 international — valid to 31 October 2027. It's charged per person, per day you actually enter the park, not per night of your stay.",
+              },
+              {
+                title: "Festive-season gates now cap day visitors",
+                body: "SANParks limits the number of day visitors admitted at each gate over the December holidays, with a small online pre-booking fee. If you're planning a December trip, book your Kruger day online before you travel rather than risk being turned away at the gate.",
+              },
+            ]}
+          />
+        </Section>
 
         <Section>
           <div className="prose-kanaan mx-auto max-w-prose">
@@ -487,6 +520,11 @@ export default function FiveReasonsHazyviewPage() {
                 {
                   label: "SANParks · Kruger National Park (gates, fees)",
                   href: "https://www.sanparks.org/parks/kruger",
+                },
+                {
+                  label:
+                    "SANParks · daily conservation fees, 1 November 2026 to 31 October 2027",
+                  href: "https://www.sanparks.org/wp-content/uploads/2026/02/daily_conservation_fees_2026_27.pdf",
                 },
                 {
                   label: "Graskop Gorge Lift Company · official rates",
