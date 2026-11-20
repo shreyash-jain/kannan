@@ -457,6 +457,20 @@ export const posts: Post[] = [
     excerpt:
       "Landing at KMIA? Exactly what to send Kanaan Transfers before you fly — flight number, passengers, luggage — what happens the moment you land, and what to do if your flight changes.",
   },
+  {
+    chapter: "Why Hazyview",
+    title:
+      "5 Reasons to Visit Hazyview, South Africa: Kruger Safaris, the Panorama Route, Sabie Waterfalls and Where to Stay Near Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/5-reasons-to-visit-hazyview-south-africa",
+    image: img.hazyviewThingsToDoHero.src,
+    imageAlt: img.hazyviewThingsToDoHero.alt,
+    datePublished: "2026-11-19",
+    readingMinutes: 6,
+    excerpt:
+      "Most itineraries treat Hazyview as a drive-through on the way to Kruger. The Kruger gates, the Panorama Route, the Sabie waterfalls and a genuine adventure day all sit within about forty-five minutes — here's why it deserves its own days, and a good place to stay while you explore them.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
