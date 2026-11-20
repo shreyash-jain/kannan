@@ -459,7 +459,7 @@ export const posts: Post[] = [
   },
   {
     chapter: "Why Hazyview",
-    title: "5 Reasons to Visit Hazyview, South Africa",
+    title: "5 Reasons to Add Hazyview to Your South Africa Itinerary",
     category: "guide",
     status: "live",
     href: "/blog/5-reasons-to-visit-hazyview-south-africa",
