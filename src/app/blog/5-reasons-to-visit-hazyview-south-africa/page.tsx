@@ -19,8 +19,7 @@ import {
 } from "@/components/blog/Blocks";
 
 const datePublished = "2026-11-19";
-const headline =
-  "5 Reasons to Visit Hazyview, South Africa: Kruger Safaris, the Panorama Route, Sabie Waterfalls and Where to Stay Near Kruger National Park";
+const headline = "5 Reasons to Visit Hazyview, South Africa";
 
 const faqs = [
   {
@@ -96,7 +95,6 @@ export default function FiveReasonsHazyviewPage() {
           byline="Anneli & Matthew"
           datePublished={datePublished}
           readingMinutes={6}
-          titleSize="compact"
         />
 
         <Section>
