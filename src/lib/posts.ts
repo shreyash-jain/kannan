@@ -470,6 +470,19 @@ export const posts: Post[] = [
     excerpt:
       "Most itineraries treat Hazyview as a drive-through on the way to Kruger. The Kruger gates, the Panorama Route, the Sabie waterfalls and a genuine adventure day all sit within about forty-five minutes — here's why it deserves its own days, and a good place to stay while you explore them.",
   },
+  {
+    chapter: "Family celebrations",
+    title: "Planning a Kids' Birthday Party in Hazyview? Bring It to the Farm for a Weekend",
+    category: "guide",
+    status: "live",
+    href: "/blog/kids-birthday-party-hazyview",
+    image: img.poolReal.src,
+    imageAlt: img.poolReal.alt,
+    datePublished: "2026-11-23",
+    readingMinutes: 6,
+    excerpt:
+      "Skip the function room and the balloon-arch delivery fee. A pool with a play structure, an entertainment room, a mango grove and a covered venue — how a kids' birthday actually works at Kanaan, what it costs in real 2026 rand, and the honest safety notes nobody puts on a brochure.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
