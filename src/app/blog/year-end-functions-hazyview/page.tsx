@@ -387,7 +387,7 @@ export default function YearEndFunctionsHazyviewPage() {
           intro="Most year-end functions in the Lowveld are local, so the questions are price, space and who brings the drinks. A planning guide from the family who run a group venue on a Hazyview farm."
           byline="Matthew"
           datePublished={datePublished}
-          readingMinutes={7}
+          readingMinutes={8}
         />
 
         <Section className="pb-0!">
@@ -651,11 +651,13 @@ export default function YearEndFunctionsHazyviewPage() {
             <h3 className={h3Cls}>Enjoy outdoor adventures</h3>
             <p>
               Around Hazyview there is the Panorama Route about ninety minutes
-              from our gate, plus the river, waterfall and adventure
-              activities that tour operators run through the area. Match the
-              choice to the group. A fit sales team and a finance department
-              of fifty-somethings want different afternoons, and in December
-              heat the answer is usually the shorter one.
+              from our gate, plus quad biking, white-water rafting and
+              ziplining with tour operators in the Sabie River valley. Match
+              the choice to the group. A fit sales team and a finance
+              department of fifty-somethings want different afternoons, and
+              in December heat the answer is usually the shorter one. (We
+              don&rsquo;t book these for you — check a specific operator is
+              still running before you promise it on an invitation.)
             </p>
 
             <h3 className={h3Cls}>Relax and reconnect in nature</h3>
@@ -742,7 +744,9 @@ export default function YearEndFunctionsHazyviewPage() {
               A swimming pool, a pool table and foosball in the entertainment
               room, hiking and mountain-biking trails from the gate, a
               communal braai, free Wi-Fi and secure parking inside the fence.
-              See the full list of{" "}
+              The trails lead to a waterfall and rock pool on the far side of
+              the farm — a proper walk, not a stroll, and a good excuse to get
+              a desk-bound team outside for an hour. See the full list of{" "}
               <Link href="/facilities" className={linkCls}>
                 facilities
               </Link>
@@ -789,6 +793,53 @@ export default function YearEndFunctionsHazyviewPage() {
               { time: "19:00", title: "Music and celebration", body: "Drivers sorted, music on, the evening is yours." },
             ]}
           />
+        </Section>
+
+        <Section className="pb-0!">
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <H2 className="mb-4">
+              Turning a corporate year-end function into a weekend
+            </H2>
+            <p>
+              For a company spread across more than one town, or a team that
+              would rather not drive home the same night, stretch the
+              celebration over two days. Check-in runs from{" "}
+              {site.policies.checkIn} and check-out from{" "}
+              {site.policies.checkOut}, so a Friday-afternoon arrival and a
+              relaxed Sunday-morning departure both fit comfortably either
+              side of the main event.
+            </p>
+            <h3 className={h3Cls}>Day one — arrival and the celebration</h3>
+          </div>
+          <NumberedList
+            variant="timeline"
+            items={[
+              { time: "14:00", title: "Check-in", body: "Rooms, twin rooms, backpackers beds or tents allocated as people arrive." },
+              { time: "16:00", title: "Settle in", body: "Pool, trails or the entertainment room while everyone finds their feet." },
+              { time: "17:30", title: "Awards and speeches", body: "Short and specific, before anyone's had too much to drink." },
+              { time: "18:30", title: "Braai dinner, music and the evening", body: "Fire lit early, drinks you've brought yourselves, nothing formal." },
+            ]}
+          />
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <h3 className={h3Cls}>Day two — a slow morning, then home</h3>
+          </div>
+          <NumberedList
+            variant="timeline"
+            items={[
+              { time: "08:00", title: "Breakfast", body: "Continental, on order, or self-catered in the lodge kitchenettes." },
+              { time: "09:00", title: "A walk, a swim or a game drive", body: "The farm's waterfall, or a morning in Kruger for those who want it." },
+              { time: "10:00", title: "Check-out", body: "No need to rush a group that drove in the night before." },
+            ]}
+          />
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <p>
+              This costs more than a single evening, obviously — a second
+              night of beds, and probably a second meal. Weigh that against
+              what a hotel conference package charges for the same two days,
+              and against not having to find a designated driver for the trip
+              home.
+            </p>
+          </div>
         </Section>
 
         <Section className="pb-0!">
