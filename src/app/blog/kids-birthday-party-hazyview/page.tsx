@@ -238,8 +238,8 @@ export default function KidsBirthdayPartyHazyviewPage() {
                 Kanaan Transfers
               </Link>{" "}
               can fetch them from Kruger Mpumalanga International Airport, so
-              nobody arrives at the party in a rental car they&rsquo;re not
-              sure of on the R40.
+              nobody has to find their way down the R40 in an unfamiliar
+              rental car after a long flight.
             </p>
           </div>
         </Section>
