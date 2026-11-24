@@ -4,7 +4,7 @@ import { Section, Eyebrow, H2 } from "@/components/Section";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
-import { articleLd, faqLd, eventVenueLd } from "@/lib/jsonld";
+import { articleLd, faqLd, eventVenueLd, breadcrumbLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
 import { site, whatsappLink } from "@/lib/site";
 import {
@@ -84,7 +84,7 @@ export const metadata = createBlogPostMetadata({
   slug: "kids-birthday-party-hazyview",
   title: "Kids' Birthday Party in Hazyview: A Family Weekend Guide",
   description:
-    "Planning a kids' birthday party in Hazyview? Bring it to Kanaan Guest Farm for a weekend — the pool, the entertainment room, a covered venue, real 2026 prices and honest safety notes.",
+    "Planning a kids' birthday party in Hazyview? Book a family celebration weekend at Kanaan Guest Farm — pool, venue and real 2026 prices from R250.",
   image: img.poolReal,
   datePublished,
   category: "guide",
@@ -104,6 +104,16 @@ export default function KidsBirthdayPartyHazyviewPage() {
         })}
       />
       <JsonLd data={faqLd(faqs)} />
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", url: site.url },
+          { name: "Journal & Guides", url: `${site.url}/blog` },
+          {
+            name: "Kids' Birthday Party in Hazyview",
+            url: `${site.url}/blog/kids-birthday-party-hazyview`,
+          },
+        ])}
+      />
       <JsonLd
         data={eventVenueLd({
           name: "Kanaan Guest Farm — family celebrations & group functions venue",
@@ -206,11 +216,30 @@ export default function KidsBirthdayPartyHazyviewPage() {
               Fewer things than the Pinterest boards suggest. A single gate
               you can watch, so a toddler can&rsquo;t wander off toward a
               road. Enough beds that grandparents and cousins stay rather
-              than drive home at nine with an overtired child. A kitchen or
-              kitchenette for the cake, the snacks the fussy eater will
-              actually touch, and the bottles that need warming. And
-              somewhere covered for when the sky does what it does most
-              summer afternoons here.
+              than drive home at nine with an overtired child — see what{" "}
+              <Link
+                href="/stay"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                birthday accommodation in Hazyview
+              </Link>{" "}
+              actually looks like before you book. A kitchen or kitchenette
+              for the cake, the snacks the fussy eater will actually touch,
+              and the bottles that need warming. And somewhere covered for
+              when the sky does what it does most summer afternoons here.
+            </p>
+            <p>
+              If grandparents or out-of-town cousins are flying in rather
+              than driving, our own{" "}
+              <Link
+                href="/transfers"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                Kanaan Transfers
+              </Link>{" "}
+              can fetch them from Kruger Mpumalanga International Airport, so
+              nobody arrives at the party in a rental car they&rsquo;re not
+              sure of on the R40.
             </p>
           </div>
         </Section>
@@ -307,9 +336,30 @@ export default function KidsBirthdayPartyHazyviewPage() {
               kitchenette with a kettle, a two-plate hob and a fridge, and
               the wooden house has a shared kitchen. If you&rsquo;d rather
               not cook, we do a set continental breakfast on request at R
-              {site.meals.breakfast.pricePerPersonZAR} a person, and a South
-              African braai dinner, both arranged the day before. We
-              don&rsquo;t currently offer a halaal option.
+              {site.meals.breakfast.pricePerPersonZAR}{" "}
+              a person, and a South African braai dinner, both arranged the
+              day before. We don&rsquo;t currently offer a halaal option.
+            </p>
+            <p>
+              Not every good hour of a birthday weekend has to be on the
+              farm. Perry&rsquo;s Bridge Reptile Park and the Perry&rsquo;s
+              Bridge Trading Post are a short, undercover drive away — we
+              cover both properly, alongside Shangana Cultural Village, in
+              our{" "}
+              <Link
+                href="/blog/perrys-bridge-market-hazyview"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                Perry&rsquo;s Bridge guide
+              </Link>{" "}
+              and our{" "}
+              <Link
+                href="/blog/things-to-do-with-kids-hazyview-kruger"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                family activities guide
+              </Link>
+              .
             </p>
           </div>
         </Section>
@@ -320,15 +370,29 @@ export default function KidsBirthdayPartyHazyviewPage() {
               Real 2026 prices for a kids&rsquo; birthday weekend
             </H2>
             <p>
-              A simple example: two families, four adults and three children,
-              in two twin rooms for two nights. At R{site.pricing.fromZAR}{" "}
-              per person sharing, that&rsquo;s roughly R3,500 for the rooms
-              across the weekend, before any meals. A single-night version —
-              say, grandparents coming just for the Saturday — is R
-              {site.pricing.singleNightZAR} pps instead of R
-              {site.pricing.fromZAR}. We don&rsquo;t publish a separate rate
-              for young children; ask us when you enquire and we&rsquo;ll
-              give you a straight answer.
+              A simple example of birthday accommodation in Hazyview: six of
+              you — two couples and two children — split across a{" "}
+              <Link
+                href="/stay/lodge"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                lodge room
+              </Link>{" "}
+              (sleeping 2–7, R300–R350 per person sharing) and a{" "}
+              <Link
+                href="/stay/twin-room"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                twin room
+              </Link>{" "}
+              (sleeping 2, R{site.pricing.fromZAR}), for two nights. Together
+              that&rsquo;s roughly R3,400&ndash;R3,800 for the rooms across the
+              weekend, before any meals. A single-night version — say,
+              grandparents coming just for the Saturday — is R
+              {site.pricing.singleNightZAR}{" "}
+              pps for the twin room instead of R{site.pricing.fromZAR}. We
+              don&rsquo;t publish a separate rate for young children; ask us
+              when you enquire and we&rsquo;ll give you a straight answer.
             </p>
           </div>
           <StatGrid
@@ -446,9 +510,10 @@ export default function KidsBirthdayPartyHazyviewPage() {
           <div className="prose-kanaan mx-auto max-w-5xl">
             <Callout eyebrow="The honest bit">
               We&rsquo;re not a party-hire venue with a laminated package
-              list. We&rsquo;re a farm with a pool, a fence and a kitchen,
-              and a birthday fits into that very naturally — once you&rsquo;re
-              staying.
+              list, and we&rsquo;re not really a family celebration venue
+              in the conference-centre sense either. We&rsquo;re a farm
+              with a pool, a fence and a kitchen, and a birthday fits into
+              that very naturally — once you&rsquo;re staying.
             </Callout>
             <ClosingBlock
               title="In closing — the stay is the party"
