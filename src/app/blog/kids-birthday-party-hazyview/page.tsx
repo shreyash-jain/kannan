@@ -47,7 +47,11 @@ import {
 //
 // Imagery: every frame is a real, existing photograph of Kanaan already in
 // the library (poolReal, venueShadeLawn, poolSecond, entertainmentPoolTable,
-// kidsSafariBinoculars, campingMango) — no generated images for this post.
+// campingMango). An earlier draft also used kidsSafariBinoculars, which
+// turned out to be one of the dedicated *generated* shots from the Family &
+// Kids guide (Blog 4), not a real photo — removed 2026-11-24 per the
+// client's standing rule against AI images for off-farm scenes, since no
+// licensed real Kruger wildlife photo exists in the library to replace it.
 //
 // Prices are 2026 figures from site.ts / rooms.ts, repeated in the Sources
 // block where external (the Kruger conservation fee).
@@ -416,46 +420,40 @@ export default function KidsBirthdayPartyHazyviewPage() {
           />
         </Section>
 
-        <div className="mx-auto my-10 max-w-5xl px-5 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-2">
-            <figure>
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-                <Image
-                  src={img.kidsSafariBinoculars.src}
-                  alt={img.kidsSafariBinoculars.alt}
-                  fill
-                  sizes="(min-width: 1024px) 512px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="mt-3 text-center text-xs text-muted">
-                A self-drive Kruger morning works well for the older kids at
-                the party — see our{" "}
-                <Link
-                  href="/blog/early-morning-kruger-safari-from-hazyview"
-                  className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
-                >
-                  First Light dawn-drive guide
-                </Link>{" "}
-                for how to plan one.
-              </figcaption>
-            </figure>
-            <figure>
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-                <Image
-                  src={img.campingMango.src}
-                  alt={img.campingMango.alt}
-                  fill
-                  sizes="(min-width: 1024px) 512px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="mt-3 text-center text-xs text-muted">
-                If the guest list is really a family reunion, camping under
-                the mango trees is the cheapest bed on the property.
-              </figcaption>
-            </figure>
+        <Section className="pb-0!">
+          <div className="prose-kanaan mx-auto max-w-5xl">
+            <p>
+              For the older kids at the party, an early self-drive into
+              Kruger makes a good birthday morning — see our{" "}
+              <Link
+                href="/blog/early-morning-kruger-safari-from-hazyview"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                First Light dawn-drive guide
+              </Link>{" "}
+              for how to plan one. And if the guest list is really a family
+              reunion rather than one child&rsquo;s party, camping under the
+              mango trees is the cheapest bed on the property.
+            </p>
           </div>
+        </Section>
+
+        <div className="mx-auto my-10 max-w-5xl px-5 lg:px-8">
+          <figure>
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+              <Image
+                src={img.campingMango.src}
+                alt={img.campingMango.alt}
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-xs text-muted">
+              Camping under the mango trees, photographed as it is — real
+              Kanaan farm photography, no generated scenes.
+            </figcaption>
+          </figure>
         </div>
 
         <Section className="pb-0!">
