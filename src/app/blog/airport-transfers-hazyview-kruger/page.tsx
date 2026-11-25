@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { img } from "@/lib/images";
 import { articleLd, faqLd } from "@/lib/jsonld";
 import { createBlogPostMetadata } from "@/lib/blog";
-import { site } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
 import {
   TLDR,
   Callout,
@@ -24,6 +24,73 @@ const headline =
 const t = site.transfers;
 const h3 =
   "mt-8 mb-2 font-display text-xl text-forest-deep md:text-2xl";
+
+// --- Comparison table: the three ways to get around, side by side -----
+// One-off table for this post (per BLOG_PLAYBOOK: post-specific tables are
+// defined inline rather than promoted into Blocks.tsx until a second post
+// needs one). Columns are fixed via the same pattern as the five-options
+// infographic on the "getting around without a car" guide.
+type CompareRow = {
+  option: string;
+  price: string;
+  flexibility: string;
+  bestFor: string;
+};
+
+function CompareCell({
+  label,
+  children,
+}: {
+  label: string;
+  children: string;
+}) {
+  return (
+    <div>
+      <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ochre md:hidden">
+        {label}
+      </p>
+      <p className="mt-1 text-sm leading-relaxed text-ink/85 md:mt-0">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function TransportCompareTable({ rows }: { rows: CompareRow[] }) {
+  const cols = "md:grid-cols-[1.1fr_1fr_1.2fr_1.2fr]";
+  return (
+    <figure className="not-prose mx-auto my-12 w-full max-w-5xl px-5 lg:px-0">
+      <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
+        Private transfers vs Kanaan Transfers vs minibus taxis
+      </p>
+      <div className="overflow-hidden rounded-3xl border border-black/5 bg-bone">
+        <div
+          className={`hidden gap-6 bg-forest px-7 py-4 text-xs font-medium uppercase tracking-[0.18em] text-bone/80 md:grid ${cols}`}
+        >
+          <span>Option</span>
+          <span>Price</span>
+          <span>Flexibility</span>
+          <span>Best for</span>
+        </div>
+        <ol className="divide-y divide-black/5">
+          {rows.map((r) => (
+            <li
+              key={r.option}
+              className={`grid gap-3 px-6 py-6 md:gap-6 md:px-7 ${cols}`}
+            >
+              <h3 className="font-display text-lg leading-snug text-forest-deep">
+                {r.option}
+              </h3>
+              <CompareCell label="Price">{r.price}</CompareCell>
+              <CompareCell label="Flexibility">{r.flexibility}</CompareCell>
+              <CompareCell label="Best for">{r.bestFor}</CompareCell>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </figure>
+  );
+}
 
 const faqs = [
   {
@@ -111,6 +178,22 @@ export default function AirportTransfersHazyviewKrugerPage() {
               ]}
             />
 
+            <div className="not-prose my-8 flex flex-col items-center gap-3 rounded-2xl border border-ochre/30 bg-sand/50 p-6 text-center">
+              <p className="text-sm text-ink/80">
+                Already know you want {t.name}? Send your flight number now
+                and we&rsquo;ll confirm your fare before you book anything
+                else.
+              </p>
+              <Link
+                href={whatsappLink("transfers")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full bg-ochre px-6 py-3 text-sm font-medium text-bone hover:bg-ochre-deep"
+              >
+                Message Kanaan Transfers on WhatsApp
+              </Link>
+            </div>
+
             <H2 className="mb-4">Where Is Hazyview, and Why Transport Needs a Plan</H2>
             <p>
               {`Hazyview sits on the R40 in Mpumalanga, close enough to two of Kruger National Park's southern gates that it's become the default base for a first safari. Phabeni and Numbi are both ${site.distances.krugerGateMinutesMin}–${site.distances.krugerGateMinutesMax} minutes away, which is why so many Kruger itineraries start here rather than inside the park itself.`}
@@ -152,23 +235,42 @@ export default function AirportTransfersHazyviewKrugerPage() {
             </p>
           </div>
 
-          <NumberedList
-            variant="grid"
-            items={[
+          <TransportCompareTable
+            rows={[
               {
-                title: "Private transfer companies",
-                body: "Pre-booked, pre-paid and point-to-point — you share a flight number and an address, and a driver meets you there. It's reliable on paper, and the most expensive: one of the operators KMIA's own site lists, GAP Tours Transfers, has a KMIA-to-Hazyview transfer listed from USD $147 through an online booking platform (Pelago). You can't share the vehicle or change the destination on the day.",
+                option: "Private transfer companies",
+                price:
+                  "From $147 for the vehicle (GAP Tours Transfers, via Pelago) — one of the operators KMIA's own site lists.",
+                flexibility:
+                  "Fixed, pre-paid, point-to-point. No sharing, no changing the destination on the day.",
+                bestFor:
+                  "Travellers who want everything arranged in advance and are happy to pay for it.",
               },
               {
-                title: `${t.name} (that's us)`,
-                body: `A local car service booked on WhatsApp rather than an app. Fares inside our standard ${t.radiusKm}km radius start from R${t.fromZAR} and are quoted before you book; KMIA sits just outside that radius, so the airport leg is confirmed directly, in advance. Up to ${t.seats} passengers, cash-free — a card goes on file and nothing is charged until the trip is done.`,
+                option: `${t.name} (that's us)`,
+                price: `From R${t.fromZAR} within ${t.radiusKm}km; KMIA quoted directly over WhatsApp.`,
+                flexibility: `Fare confirmed first, up to ${t.seats} seats, cash-free — card on file, charged after the trip.`,
+                bestFor:
+                  "Most Kanaan guests — booked before you fly, no cash needed on the day.",
               },
               {
-                title: "Local minibus taxis",
-                body: "By far the cheapest way to travel in South Africa, and a genuinely different experience to the other two. There's no app and usually no fixed, published stop — a vehicle leaves once it has enough passengers, and routes are set informally by local taxi associations rather than published anywhere a visitor can check in advance.",
+                option: "Local minibus taxis",
+                price:
+                  "Cheapest by a wide margin — fares are set per route, not published.",
+                flexibility:
+                  "No fixed stop or timetable. A vehicle leaves once it's full.",
+                bestFor:
+                  "Budget travellers comfortable navigating the informal system themselves.",
               },
             ]}
           />
+
+          <div className="prose-kanaan mx-auto max-w-prose">
+            <p>
+              Each one is explained in full below — what it actually costs,
+              what you give up for the price, and who it genuinely suits.
+            </p>
+          </div>
 
           <div className="mx-auto max-w-5xl px-5 lg:px-8">
             <figure>
@@ -265,7 +367,14 @@ export default function AirportTransfersHazyviewKrugerPage() {
           <div className="prose-kanaan mx-auto max-w-prose">
             <H2 className="mb-4">Booking Your Kanaan Transfers Pickup</H2>
             <p>
-              {`If ${t.name} is the one you want, booking takes one WhatsApp message.`}
+              {`If ${t.name} is the one you want, booking takes one WhatsApp message. If you haven't sorted where you're staying yet, have a look at our `}
+              <Link
+                href="/stay"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                accommodation at Kanaan Guest Farm
+              </Link>
+              {" "}first — it helps to know your destination before you message us.
             </p>
           </div>
 
@@ -381,12 +490,7 @@ export default function AirportTransfersHazyviewKrugerPage() {
               thesis="The right way to get around Hazyview depends on what you're optimising for — price, flexibility, or one less thing to think about after a long flight."
               body={
                 <>
-                  Minibus taxis win on cost, a private shuttle wins on
-                  predictability if you&rsquo;re happy to pay for it, and{" "}
-                  {t.name} sits between the two: booked on WhatsApp, fare
-                  confirmed first, and a driver who already knows the farm
-                  you&rsquo;re heading to. Whichever you choose, arrange it
-                  before you land, not after.
+                  {`Minibus taxis win on cost, a private shuttle wins on predictability if you're happy to pay for it, and ${t.name} sits between the two: booked on WhatsApp, fare confirmed first, and a driver who already knows the farm you're heading to. Whichever you choose, arrange it before you land, not after.`}
                 </>
               }
             />
