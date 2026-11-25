@@ -483,6 +483,20 @@ export const posts: Post[] = [
     excerpt:
       "Skip the function room and the balloon-arch delivery fee. A pool with a play structure, an entertainment room, a mango grove and a covered venue — how a kids' birthday actually works at Kanaan, what it costs in real 2026 rand, and the honest safety notes nobody puts on a brochure.",
   },
+  {
+    chapter: "Getting Around",
+    title:
+      "Airport Transfers in Hazyview: A Complete Guide for Travellers Visiting Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/airport-transfers-hazyview-kruger",
+    image: img.cabHazyviewAirportPickup.src,
+    imageAlt: img.cabHazyviewAirportPickup.alt,
+    datePublished: "2026-11-25",
+    readingMinutes: 8,
+    excerpt:
+      "Private transfer company, Kanaan Transfers, or local minibus taxi? An honest, priced comparison of every way to get from KMIA to Hazyview — plus the Kruger gates and the Panorama Route once you've landed.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
