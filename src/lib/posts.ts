@@ -470,6 +470,20 @@ export const posts: Post[] = [
     excerpt:
       "Most itineraries treat Hazyview as a drive-through on the way to Kruger. The Kruger gates, the Panorama Route, the Sabie waterfalls and a genuine adventure day all sit within about forty-five minutes — here's why it deserves its own days, and a good place to stay while you explore them.",
   },
+  {
+    chapter: "Getting Around",
+    title:
+      "Airport Transfers in Hazyview: A Complete Guide for Travellers Visiting Kruger National Park",
+    category: "guide",
+    status: "live",
+    href: "/blog/airport-transfers-hazyview-kruger",
+    image: img.cabHazyviewAirportPickup.src,
+    imageAlt: img.cabHazyviewAirportPickup.alt,
+    datePublished: "2026-11-25",
+    readingMinutes: 8,
+    excerpt:
+      "Private transfer company, Kanaan Transfers, or local minibus taxi? An honest, priced comparison of every way to get from KMIA to Hazyview — plus the Kruger gates and the Panorama Route once you've landed.",
+  },
 ];
 
 /** A post that has actually shipped — narrowed so `href` is guaranteed. */
