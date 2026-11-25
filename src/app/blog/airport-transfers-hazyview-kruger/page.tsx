@@ -300,6 +300,14 @@ export default function AirportTransfersHazyviewKrugerPage() {
               >
                 dedicated KMIA transfer guide
               </Link>
+              . For the full fare and coverage picture — town trips, the
+              Panorama Route, Kruger gates — see our{" "}
+              <Link
+                href="/transfers"
+                className="font-medium text-ochre underline decoration-ochre/50 underline-offset-4 hover:text-ochre-deep"
+              >
+                Hazyview transfers page
+              </Link>
               .
             </p>
 
