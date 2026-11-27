@@ -45,9 +45,10 @@ const ROOM_DEFS: Record<
   },
   backpackers: {
     name: "Backpackers",
-    perNight: (pax) => 200 * pax,
+    // Anneli, 2026-11-26: backpackers package rate is now R250 pp/night.
+    perNight: (pax) => 250 * pax,
     maxPax: 4,
-    pricingNote: "R 200 per person per night",
+    pricingNote: "R 250 per person per night",
   },
 };
 
@@ -63,12 +64,12 @@ const TOUR_PRICES = {
 // Flat fee, return trip.
 const TRANSFER_FLAT = 1700;
 
-// Meals added to a package, per person per day. Anneli, 2026-09-01:
-// "Add R75 for breakfast and R120 for Dinner on the package". Deliberately
-// NOT the same constant as site.meals — she quoted these for packages, and
-// the standalone breakfast on /facilities is still the R60 she confirmed in
-// May. Worth reconciling with her, but not worth guessing at.
-const PACKAGE_MEALS = { breakfast: 75, dinner: 120 } as const;
+// Meals added to a package, per person per day. Anneli, 2026-11-26:
+// "Breakfast R75, Dinner R100". Deliberately NOT the same constant as
+// site.meals — she quoted these for packages, and the standalone breakfast
+// on /facilities is still the R60 she confirmed in May. Worth reconciling
+// with her, but not worth guessing at.
+const PACKAGE_MEALS = { breakfast: 75, dinner: 100 } as const;
 
 type Nights = 2 | 3 | 5;
 type Adults = 1 | 2 | 3 | 4;
@@ -161,6 +162,8 @@ export function PackageConfigurator() {
   const [panorama, setPanorama] = useState(false);
   const [shangana, setShangana] = useState(false);
   const [transfer, setTransfer] = useState(false);
+  const [breakfast, setBreakfast] = useState(false);
+  const [dinner, setDinner] = useState(false);
 
   const totalPax = adults + children;
   const roomDef = ROOM_DEFS[room];
@@ -173,10 +176,30 @@ export function PackageConfigurator() {
     const panoramaCost = panorama ? TOUR_PRICES.panorama * totalPax : 0;
     const shanganaCost = shangana ? TOUR_PRICES.shangana * totalPax : 0;
     const transferCost = transfer ? TRANSFER_FLAT : 0;
+    const breakfastCost = breakfast
+      ? PACKAGE_MEALS.breakfast * totalPax * nights
+      : 0;
+    const dinnerCost = dinner ? PACKAGE_MEALS.dinner * totalPax * nights : 0;
     const total =
-      accommodation + knp + panoramaCost + shanganaCost + transferCost;
-    return { accommodation, knp, panoramaCost, shanganaCost, transferCost, total, perNight };
-  }, [nights, totalPax, panorama, shangana, transfer, roomDef]);
+      accommodation +
+      knp +
+      panoramaCost +
+      shanganaCost +
+      transferCost +
+      breakfastCost +
+      dinnerCost;
+    return {
+      accommodation,
+      knp,
+      panoramaCost,
+      shanganaCost,
+      transferCost,
+      breakfastCost,
+      dinnerCost,
+      total,
+      perNight,
+    };
+  }, [nights, totalPax, panorama, shangana, transfer, breakfast, dinner, roomDef]);
 
   const itinerary = useMemo(
     () => buildItinerary(nights, { panorama, shangana }),
@@ -196,6 +219,8 @@ export function PackageConfigurator() {
     if (panorama) extras.push("Panorama Route day trip");
     if (shangana) extras.push("Shangana cultural evening");
     if (transfer) extras.push("KMIA airport transfer");
+    if (breakfast) extras.push("Breakfast");
+    if (dinner) extras.push("Dinner");
     if (extras.length > 0) {
       parts.push("Add-ons: " + extras.join(", ") + ".");
     }
@@ -214,6 +239,8 @@ export function PackageConfigurator() {
     panorama,
     shangana,
     transfer,
+    breakfast,
+    dinner,
     quote.total,
     roomDef.name,
     roomTooSmall,
@@ -315,18 +342,6 @@ export function PackageConfigurator() {
             and we will share our group-discounted rates.
           </p>
 
-          <p className="mt-3 border-t border-black/10 pt-3 text-xs leading-relaxed text-muted">
-            Meals can be added to any package:{" "}
-            <strong className="font-medium text-forest-deep">
-              R{PACKAGE_MEALS.breakfast}
-            </strong>{" "}
-            per person for breakfast and{" "}
-            <strong className="font-medium text-forest-deep">
-              R{PACKAGE_MEALS.dinner}
-            </strong>{" "}
-            per person for dinner, per day. Just say so when you send your
-            dates and we will add them.
-          </p>
         </div>
 
         <div>
@@ -358,6 +373,22 @@ export function PackageConfigurator() {
               selected={transfer}
               onToggle={() => setTransfer((s) => !s)}
             />
+            <AddonCard
+              title="Breakfast"
+              description="A warm continental breakfast, cooked to order every morning of your stay."
+              price={`R${PACKAGE_MEALS.breakfast} per person / day`}
+              priceNote="added for every night of the package"
+              selected={breakfast}
+              onToggle={() => setBreakfast((s) => !s)}
+            />
+            <AddonCard
+              title="Dinner"
+              description="A traditional South African dinner, cooked to order every evening of your stay."
+              price={`R${PACKAGE_MEALS.dinner} per person / day`}
+              priceNote="added for every night of the package"
+              selected={dinner}
+              onToggle={() => setDinner((s) => !s)}
+            />
           </div>
           <p className="mt-3 text-[11px] leading-relaxed text-muted">
             Child rates for the activities above are confirmed
@@ -379,7 +410,8 @@ export function PackageConfigurator() {
           <p className="text-sm text-bone/85">
             {adults} adult{adults > 1 ? "s" : ""}
             {children > 0 && `, ${children} child${children > 1 ? "ren" : ""}`}
-            {(panorama || shangana || transfer) && ", with add-ons"}
+            {(panorama || shangana || transfer || breakfast || dinner) &&
+              ", with add-ons"}
           </p>
         </div>
 
@@ -437,7 +469,7 @@ export function PackageConfigurator() {
                 />
               </ul>
 
-              {(panorama || shangana || transfer) && (
+              {(panorama || shangana || transfer || breakfast || dinner) && (
                 <>
                   <p className="mt-5 text-xs font-medium uppercase tracking-[0.16em] text-ochre">
                     Add-ons
@@ -461,6 +493,20 @@ export function PackageConfigurator() {
                       <LineItem
                         label="KMIA airport transfer"
                         amount={quote.transferCost}
+                        accent
+                      />
+                    )}
+                    {breakfast && (
+                      <LineItem
+                        label={`Breakfast × ${totalPax} guest${totalPax > 1 ? "s" : ""} × ${nights} night${nights > 1 ? "s" : ""}`}
+                        amount={quote.breakfastCost}
+                        accent
+                      />
+                    )}
+                    {dinner && (
+                      <LineItem
+                        label={`Dinner × ${totalPax} guest${totalPax > 1 ? "s" : ""} × ${nights} night${nights > 1 ? "s" : ""}`}
+                        amount={quote.dinnerCost}
                         accent
                       />
                     )}
